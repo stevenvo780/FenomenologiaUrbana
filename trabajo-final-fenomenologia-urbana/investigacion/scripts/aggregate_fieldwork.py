@@ -195,18 +195,19 @@ def build_validation_report(
     node_ids, _ = load_case_entities()
     nodes_with_data = {str(row["node_id"]) for row in rows}
     scenarios_with_data = {str(row["scenario_id"]) for row in rows if row.get("scenario_id")}
-    observed_variables = sorted(
-        {
-            variable
-            for variable in (
-                "pedestrians_5min",
-                *(["dwell_seconds_mean"] if any(row.get("dwell_seconds_mean") is not None for row in rows) else []),
-                *(["noise_db"] if any(row.get("noise_db") is not None for row in rows) else []),
-                *(["lighting_lux"] if any(row.get("lighting_lux") is not None for row in rows) else []),
-                *(["security_score"] if any(row.get("security_score") is not None for row in rows) else []),
-            )
-        }
-    )
+    observed_candidates: list[str] = []
+    if rows:
+        observed_candidates.append("pedestrians_5min")
+    if any(row.get("dwell_seconds_mean") is not None for row in rows):
+        observed_candidates.append("dwell_seconds_mean")
+    if any(row.get("noise_db") is not None for row in rows):
+        observed_candidates.append("noise_db")
+    if any(row.get("lighting_lux") is not None for row in rows):
+        observed_candidates.append("lighting_lux")
+    if any(row.get("security_score") is not None for row in rows):
+        observed_candidates.append("security_score")
+
+    observed_variables = sorted(set(observed_candidates))
 
     coverage_nodes = round(len(nodes_with_data) / max(1, len(node_ids)), 3)
     enough_samples = len(rows) >= FIELDWORK_READY_SAMPLE_THRESHOLD
