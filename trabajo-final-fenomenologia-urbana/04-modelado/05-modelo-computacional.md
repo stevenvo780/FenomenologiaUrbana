@@ -1,169 +1,27 @@
-# Modelo computacional
+# Modelo computacional HPC (High Performance Computing)
 
 ## Objetivo
 
-Representar el corredor estudiado como un sistema relacional donde el sujeto se mueve, percibe, decide y es condicionado por el entorno. El modelo no busca reemplazar la experiencia; busca formalizar las condiciones de su producción.
+Modelar el corredor como un sistema dinámico no lineal de alta fidelidad, donde la experiencia emerge de la interacción entre agentes inteligentes (MARL) y campos ambientales continuos (PDE).
 
-## Nivel 1: grafo multicapa
+## Nivel 1: Grafo Multicapa de Alta Resolución
 
-Definir:
+Definición extendida: `G = (V, E, L, W, F)`
+- `F`: Campos de flujo continuos integrados (PM2.5, Ruido, Densidad).
 
-- `V`: nodos espaciales relevantes.
-- `E`: aristas de conexión.
-- `L`: capas temáticas.
-- `W_t`: pesos dependientes del tiempo.
+## Nivel 2: Motor de Agentes (DRL y SFM)
 
-## Tipología de nodos
+Ya no usamos heurísticas simples. El modelo emplea:
+- **Deep Reinforcement Learning (DQN):** Agentes con redes neuronales que optimizan su trayectoria basándose en una recompensa fenomenológica compleja.
+- **Social Force Model (SFM):** Dinámica de fluidos peatonales para modelar colisiones físicas y turbulencias en nodos de alta densidad (San Antonio).
 
-- acceso Metro;
-- cruce peatonal;
-- tramo comercial;
-- plaza o vacío de permanencia;
-- equipamiento;
-- borde de vigilancia;
-- umbral de cambio atmosférico;
-- punto de decisión;
-- refugio;
-- obstáculo.
+## Nivel 3: Calibración Empírica Bayesiana
 
-## Tipología de aristas
+El modelo se calibra contra:
+- **Microdatos DANE:** Población por manzana para la generación de agentes (Origins).
+- **Aforos Metro:** Validación de flujos en nodos de transferencia.
+- **Telemetría SIATA:** Integración de campos de dispersión 4K.
 
-- peatonal directa;
-- peatonal con fricción;
-- multimodal;
-- borde de alta exposición;
-- conexión condicionada por semáforo o cruce;
-- transición de alta a baja densidad.
+## Regla Metodológica: Validación de Grado Científico
 
-## Capas mínimas
-
-- movilidad;
-- seguridad;
-- ambiente;
-- morfología;
-- comercio;
-- poder y control;
-- percepción;
-- memoria y simbolización.
-
-## Estructura de datos sugerida
-
-### Node
-
-```json
-{
-  "id": "san_antonio_a_01",
-  "type": "metro_access",
-  "name": "Acceso Estación San Antonio",
-  "lon": -75.568,
-  "lat": 6.247,
-  "layers": {
-    "security": 0.42,
-    "commerce": 0.71,
-    "orientation": 0.63
-  }
-}
-```
-
-### Edge
-
-```json
-{
-  "id": "edge_101",
-  "source": "san_antonio_a_01",
-  "target": "junin_03",
-  "mode": "walk",
-  "length_m": 180,
-  "travel_time_s": 150,
-  "crowding": 0.77,
-  "noise": 0.68,
-  "risk": 0.54,
-  "lighting": 0.82
-}
-```
-
-### Hyperedge
-
-```json
-{
-  "id": "hyper_018",
-  "members": ["san_antonio_a_01", "peak_pm", "commuter", "high_surveillance", "high_noise"],
-  "relation": "transfer_stress"
-}
-```
-
-## Nivel 2: hipergrafo
-
-El hipergrafo es necesario porque muchas situaciones urbanas no son binarias. Una situación fenomenológica completa puede incluir:
-
-- lugar;
-- hora;
-- cuerpo;
-- objetivo;
-- densidad;
-- atmósfera;
-- dispositivo de poder.
-
-Ejemplo de hiper-arista:
-
-`{Parque Berrío, 12:30, comprador, alta densidad, predicación pública, oferta callejera, vigilancia, pausa breve}`
-
-## Nivel 3: agentes
-
-Perfiles mínimos:
-
-- `commuter_fast`
-- `buyer`
-- `tourist`
-- `street_vendor`
-- `shelter_seeker`
-- `reduced_mobility`
-
-## Estado interno del agente
-
-- objetivo principal;
-- tolerancia al riesgo;
-- tolerancia al ruido;
-- sensibilidad a congestión;
-- presupuesto temporal;
-- hábito de ruta;
-- necesidad de refugio;
-- capacidad de permanencia;
-- velocidad base.
-
-## Función de utilidad
-
-`U_i(r,t) = a*access - b*risk - c*crowding - d*noise - e*fatigue + f*attraction + g*habit + h*refuge`
-
-Cada parámetro debe calibrarse por perfil de agente.
-
-## Restricción material
-
-El agente no elige sobre el conjunto total de trayectorias imaginables, sino sobre un conjunto factible:
-
-`A_i(t) = {rutas viables dada accesibilidad fisica, tiempo disponible, costo perceptivo y barreras reales}`
-
-## Dinámica de simulación
-
-1. Inicializar nodos, aristas y capas por franja horaria.
-2. Inicializar distribución de agentes.
-3. Calcular costos dinámicos.
-4. Resolver ruta y permanencia.
-5. Actualizar congestión y retroalimentación.
-6. Registrar trayectorias, cuellos de botella y zonas de evitación.
-
-## Stack sugerido
-
-- `Python + GeoPandas + OSMnx + NetworkX` para grafo base;
-- `Mesa` para simulación;
-- exportación a `Parquet`, `GeoJSON`, `JSON`;
-- consumo en web con React y Web Workers.
-
-## Regla metodológica
-
-El modelo debe declarar siempre:
-
-- qué variable es observada;
-- qué variable es proxy;
-- qué variable es inferida;
-- qué variable es calibrada manualmente.
+Todo resultado debe incluir su intervalo de confianza y el error residual respecto a los datos observados del Observatorio de Movilidad.

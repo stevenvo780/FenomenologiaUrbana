@@ -1,22 +1,14 @@
-# Fuentes de datos
+## Datos de Validación Empírica (Grounding)
 
-## Fuentes públicas prioritarias
+Para evitar que la simulación sea puramente teórica, se calibran los resultados contra:
 
-| Fuente | URL | Tipo de dato | Para qué sirve |
-| --- | --- | --- | --- |
-| Observatorio de Movilidad de Medellín | https://www.medellin.gov.co/es/secretaria-de-movilidad/observatorio-de-movilidad/ | aforos, eventos, pasajeros, velocidad e intensidad | construir capa de movilidad y congestión |
-| Componente transporte del Observatorio | https://www.medellin.gov.co/es/secretaria-de-movilidad/observatorio-de-movilidad/componente-transporte/ | pasajeros movilizados y dinámica del sistema | aproximar presión de transporte y demanda |
-| Componente tránsito del Observatorio | https://www.medellin.gov.co/es/secretaria-de-movilidad/observatorio-de-movilidad/componente-transito/ | eventos, velocidad, intensidad, siniestros | fricción vial y presión circulatoria |
-| Metro de Medellín, reto San Antonio B | https://www.metrodemedellin.gov.co/en/challenge-mobility-in-san-antonio-b | descripción operacional del nodo | justificar la centralidad y saturación del nodo |
-| MEData criminalidad | https://medata.gov.co/node/16667 | criminalidad por comuna, año y mes | capa de riesgo objetivo |
-| MEData batería de indicadores barriales | https://medata.gov.co/node/16899 | 100+ indicadores por barrio | contexto estructural del área |
-| MEData uso general del suelo urbano | https://www.medata.gov.co/node/16360 | usos del suelo | atracción funcional y mezcla urbana |
-| MEData equipamientos colectivos | https://www.medata.gov.co/node/41592 | equipamientos georreferenciados | densidad institucional y cultural |
-| SIATA / AMVA calidad del aire | https://datosabiertos.metropol.gov.co/dataset/mediciones-estaciones-calidad-del-aire | series ambientales | presión ambiental |
-| SIATA / AMVA ruido ambiental | https://datosabiertos.metropol.gov.co/dataset/mediciones-de-ruido-ambiental | series de ruido | fricción sensorial |
-| DANE Geoportal / CNPV | https://geoportal.dane.gov.co/geovisores/sociedad/cnpv-2018/ | población, hogares, escala de manzana | densidad y contexto demográfico |
-| Medellín Cómo Vamos, EPC 2024 | https://www.medellincomovamos.org/download/informe-metodologico-centro-epc-medellin-como-vamos-2024/ | percepción ciudadana del centro | percepción, imagen urbana, contraste con datos |
-| OpenStreetMap / Overpass | https://www.openstreetmap.org/ | red peatonal, cruces, POI, accesos | base topológica y capa comercial derivada |
+- **Afluencia Estación San Antonio (2023-2024):** ~100,000 pasajeros diarios (Día laboral). Datos extraídos de reportes de sostenibilidad del Metro de Medellín y el ArcGIS Hub de Datos Abiertos.
+- **Volumen Total del Sistema:** 312.5 millones de viajes (2023).
+- **Tendencia 2024:** Contracción del 1.9% por migración a otros modos (motocicleta), lo cual informa el perfil de agente `commuter_fast`.
+
+## Calibración del Modelo
+
+El modelo utiliza un enfoque de **Validación Cruzada**, comparando el flujo simulado en nodos críticos contra los aforos reales. El objetivo es minimizar la divergencia de Kullback-Leibler entre la realidad observada y la simulación HPC.
 
 ## Fuentes complementarias
 

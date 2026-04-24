@@ -1,93 +1,24 @@
-# Métricas
+# Métricas de Alta Complejidad
 
-## Principio
+## Métricas de Información y Fenomenología
 
-Las métricas no sustituyen la fenomenología. Funcionan como instrumentos de contraste entre experiencia, estructura y simulación.
+### Entropía de Shannon (H)
+Mide la predictibilidad de las trayectorias de los agentes. Una entropía baja indica un espacio que impone un guion de movimiento (compulsión).
 
-## Métricas de red
+### Información Mutua (MI)
+Calcula la dependencia entre la estructura espacial y las decisiones del agente.
 
-### Centralidad de intermediación
+### Entropía de Transferencia (TE)
+Mide el flujo de información entre capas (ej. cómo el ruido ambiental modifica la intención de ruta en tiempo real).
 
-Mide qué nodos concentran el paso de trayectorias y, por tanto, capacidad de condicionar decisiones.
+## Métricas Sistémicas Calibradas
 
-### Centralidad de cercanía
+### Índice de Desigualdad Fenomenológica (Gini-E)
+Mide la disparidad en la libertad de ruta (entropía) entre diferentes perfiles de agentes (ej. movilidad reducida vs. transbordo rápido).
 
-Mide qué nodos reducen distancia media hacia otros nodos del sistema.
+### Presión de Nodo HPC
+`P_v = load / (capacity * comfort_multiplier)`
+Calculado sobre simulaciones de 100k agentes para detectar puntos de ruptura sistémica.
 
-### Conectividad efectiva
-
-No basta con contar aristas. Debe descontarse la fricción. Un nodo muy conectado geométricamente puede ser pobremente conectado fenomenológicamente.
-
-## Métricas espaciales y fenomenológicas
-
-### Fricción espacial
-
-`FS_e(t) = a*travel_time + b*crowding + c*risk + d*noise + e*obstacles + f*poor_lighting - g*orientation_support`
-
-Sirve para mostrar que la dificultad de atravesar el espacio no es solo distancia.
-
-### Entropía de trayectorias
-
-`H = -sum(p_r * log(p_r))`
-
-Mide diversidad real de rutas. Entropía baja implica trayectoria muy guiada o restringida.
-
-### Concentración de flujos
-
-Puede medirse con Gini, HHI o simple distribución acumulada sobre nodos y aristas.
-
-### Accesibilidad situada
-
-Tiempo o costo necesario para alcanzar nodos relevantes desde distintos puntos y perfiles de agente.
-
-### Restricción decisional
-
-`RD_i(v,t) = 1 - |A_i^eps(v,t)| / |A_i^0(v,t)|`
-
-Donde `A_i^0` es el conjunto ideal de opciones y `A_i^eps` el conjunto realmente disponible bajo restricciones.
-
-### Intensidad fenomenológica
-
-Índice compuesto, no esencialista:
-
-`IF = z(dwell_time) + z(stimulus_density) + z(conflict_of_flows) + z(affective_marking) + z(sensorial_exposure) - z(route_redundancy)`
-
-Debe usarse como proxy analítico y siempre acompañado de notas de campo.
-
-### Presión ambiental
-
-`PA = z(pm25) + z(noise) + z(heat) - z(shade) - z(ventilation)`
-
-### Percepción de seguridad
-
-Índice mixto que combine:
-
-- encuesta breve;
-- observación de vigilancia;
-- eventos delictivos agregados;
-- iluminación;
-- permanencia diferencial por tipo de cuerpo.
-
-### Permanencia
-
-Tiempo medio de estancia por nodo o zona.
-
-### Velocidad de tránsito
-
-Distancia recorrida sobre tiempo real observado. Útil para detectar espacios de flujo impuesto.
-
-## Métricas de validación
-
-- correlación entre flujo simulado y flujo observado;
-- diferencia entre ruta mínima por tiempo y ruta realmente usada;
-- error entre permanencia observada y permanencia modelada;
-- contraste entre percepción declarada y capa de riesgo objetivo.
-
-## Métricas que requieren cautela
-
-- intensidad fenomenológica;
-- seguridad percibida;
-- confort;
-- sensación de orientación.
-
-Estas no deben presentarse como hechos duros aislados, sino como resultados triangulados.
+### Divergencia de Kullback-Leibler (D_KL)
+Utilizada para medir la diferencia entre la distribución de flujos simulada y la observada empíricamente en los aforos del Metro.

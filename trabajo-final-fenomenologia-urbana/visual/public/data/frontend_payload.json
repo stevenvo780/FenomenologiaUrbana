@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T22:42:30+00:00",
+    "generated_at": "2026-04-24T22:50:29+00:00",
     "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
     "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
@@ -1839,6 +1839,16 @@
       }
     ],
     "non_fabrication_note": "El repositorio queda cerrado como baseline reproducible; la observacion fisica de campo se declara como dependencia externa, no como dato simulado."
+  },
+  "calibration": {
+    "generated_at": "2026-04-24T22:46:55+00:00",
+    "ground_truth_target": 100000,
+    "optimized_weights": {
+      "time": 2.7054263526811777,
+      "risk": 0.61627906847505,
+      "crowding": 2.7054263540868644
+    },
+    "status": "calibrated_hpc_v1"
   },
   "baseline_metrics": {
     "centrality": [

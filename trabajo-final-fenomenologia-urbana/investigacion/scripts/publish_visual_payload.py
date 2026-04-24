@@ -157,6 +157,7 @@ def main() -> Path:
     advanced_sim = read_json(OUTPUTS_DIR / "advanced_simulation_results.json")
     micro_sim = read_json(OUTPUTS_DIR / "micro_simulation_results.json")
     pde_sim = read_json(OUTPUTS_DIR / "pde_environmental_results.json")
+    calibration_report = read_json(OUTPUTS_DIR / "hpc_calibration_report.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
     fieldwork_state = load_fieldwork_state()
@@ -210,6 +211,7 @@ def main() -> Path:
             "summary": fieldwork_state["summary"],
         },
         "closure": closure_state,
+        "calibration": calibration_report,
         "baseline_metrics": simulation["baseline_metrics"],
         "empirical": empirical,
         "docs": {

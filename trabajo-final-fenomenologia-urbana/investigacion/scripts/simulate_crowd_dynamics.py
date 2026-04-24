@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import json
 from pathlib import Path
 import numpy as np
@@ -8,89 +6,83 @@ from tqdm import tqdm
 
 from _shared import read_json, write_json, OUTPUTS_DIR, now_iso
 
-# CONFIGURACIÓN TOP LVL: 100,000 Agentes en tiempo real
+# CONFIGURACIÓN HPC 24H
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-GRID_SIZE = 512.0  # Espacio de 512x512 metros
-NUM_AGENTS = 100000 
-STEPS = 1200       # 2 minutos de simulación a 10Hz
+GRID_SIZE = 512.0
+BASE_NUM_AGENTS = 50000  # Se multiplicará por el factor horario (Max 150k)
+STEPS_PER_HOUR = 300    # Snapshots representativos por hora
 DT = 0.1
 
-def simulate_hpc_crowd(scenario_id: str, density_factor: float):
-    print(f"[{DEVICE}] Ejecutando Simulación HPC de Fluidos Peatonales: {scenario_id} ({NUM_AGENTS} agentes)...")
+def simulate_hpc_24h():
+    print(f"[{DEVICE}] Iniciando Simulación de Ciclo Completo 24h (HPC Mode)...")
     
-    # Inicialización masiva en GPU
-    positions = torch.rand((NUM_AGENTS, 2), device=DEVICE) * GRID_SIZE
-    velocities = torch.zeros((NUM_AGENTS, 2), device=DEVICE)
+    # Cargar perfil temporal
+    profile = read_json(OUTPUTS_DIR / "temporal_24h_profile.json")
     
-    # Objetivos urbanos (San Antonio, Junín, etc.)
-    targets = torch.tensor([
-        [GRID_SIZE * 0.1, GRID_SIZE * 0.9],
-        [GRID_SIZE * 0.9, GRID_SIZE * 0.1],
-        [GRID_SIZE * 0.5, GRID_SIZE * 0.5],
-        [GRID_SIZE * 0.2, GRID_SIZE * 0.2],
-        [GRID_SIZE * 0.8, GRID_SIZE * 0.8],
-    ], device=DEVICE)
-    
-    agent_targets = targets[torch.randint(0, len(targets), (NUM_AGENTS,), device=DEVICE)]
-    desired_speeds = 1.2 + torch.randn(NUM_AGENTS, device=DEVICE) * 0.25
-    
-    # Tensores para resultados
-    trajectory_density = torch.zeros((1024, 1024), device=DEVICE)
-    
-    # Simulación por lotes para no desbordar memoria en la matriz de distancias
-    # O(N^2) es prohibitivo para 100k, usamos una aproximación de cuadrícula (Grid-based interaction)
-    
-    for step in tqdm(range(STEPS)):
-        # 1. Fuerza de Deseo (Hacia el objetivo)
-        direction = agent_targets - positions
-        dist_to_target = torch.norm(direction, dim=1, keepdim=True)
-        direction = direction / torch.clamp(dist_to_target, min=1e-5)
-        driving_force = (direction * desired_speeds.unsqueeze(1) - velocities) / 0.5
-        
-        # 2. Fuerza Social (Repulsión) - Optimizada por Grid
-        # Dividimos el espacio en celdas para solo calcular interacciones cercanas
-        cell_size = 2.0
-        grid_dim = int(GRID_SIZE / cell_size)
-        
-        # 3. Integración de Euler
-        total_force = driving_force 
-        # Añadimos un ruido "fenomenológico" (incertidumbre en la decisión)
-        perceptual_noise = torch.randn_like(total_force) * 0.1
-        
-        velocities = velocities + (total_force + perceptual_noise) * DT
-        # Límite físico de velocidad
-        speed = torch.norm(velocities, dim=1, keepdim=True)
-        velocities = velocities / torch.clamp(speed, min=1.0) * torch.clamp(speed, max=2.5)
-        
-        positions = positions + velocities * DT
-        positions = torch.clamp(positions, 0, GRID_SIZE - 0.1)
-        
-        # Acumular densidad en alta resolución (1024x1024)
-        scaled_pos = (positions / GRID_SIZE * 1023).long()
-        indices = scaled_pos[:, 0] * 1024 + scaled_pos[:, 1]
-        trajectory_density.view(-1).scatter_add_(0, indices, torch.ones_like(indices, dtype=torch.float32))
+    # Resultados acumulados
+    hourly_results = []
+    total_density_24h = torch.zeros((1024, 1024), device=DEVICE)
 
-    # Guardar resultados científicos
-    density_map = (trajectory_density / STEPS).cpu().numpy()
-    np.save(OUTPUTS_DIR / f"hpc_density_{scenario_id}.npy", density_map)
+    for h in range(24):
+        multiplier = profile["demand_multiplier"][h]
+        num_agents = int(BASE_NUM_AGENTS * multiplier)
+        
+        if num_agents < 100: continue # Saltar horas muertas de madrugada
+        
+        print(f"--- Simulando Hora {h:02d}:00 | Agentes: {num_agents} ---")
+        
+        # Inicialización
+        positions = torch.rand((num_agents, 2), device=DEVICE) * GRID_SIZE
+        velocities = torch.zeros((num_agents, 2), device=DEVICE)
+        
+        # Objetivos dinámicos según hora (Simplificado)
+        targets = torch.tensor([
+            [GRID_SIZE * 0.1, GRID_SIZE * 0.9],
+            [GRID_SIZE * 0.9, GRID_SIZE * 0.1],
+            [GRID_SIZE * 0.5, GRID_SIZE * 0.5],
+        ], device=DEVICE)
+        agent_targets = targets[torch.randint(0, len(targets), (num_agents,), device=DEVICE)]
+        
+        hourly_density = torch.zeros((1024, 1024), device=DEVICE)
+
+        for step in range(STEPS_PER_HOUR):
+            # Fuerza de Deseo
+            direction = agent_targets - positions
+            dist = torch.norm(direction, dim=1, keepdim=True)
+            direction = direction / torch.clamp(dist, min=1e-5)
+            force = (direction * 1.3 - velocities) / 0.5
+            
+            # Integración
+            velocities = velocities + force * DT
+            positions = positions + velocities * DT
+            positions = torch.clamp(positions, 0, GRID_SIZE - 0.1)
+            
+            # Acumular densidad
+            scaled_pos = (positions / GRID_SIZE * 1023).long()
+            indices = scaled_pos[:, 0] * 1024 + scaled_pos[:, 1]
+            hourly_density.view(-1).scatter_add_(0, indices, torch.ones_like(indices, dtype=torch.float32))
+
+        # Promediar hora
+        hourly_density = hourly_density / STEPS_PER_HOUR
+        total_density_24h += hourly_density
+        
+        hourly_results.append({
+            "hour": h,
+            "agents": num_agents,
+            "max_load": float(hourly_density.max().cpu().numpy()),
+            "mean_energy": float(torch.mean(velocities**2).cpu().numpy())
+        })
+
+    # Guardar mapa de calor consolidado de 24h
+    np.save(OUTPUTS_DIR / "hpc_24h_density_atlas.npy", total_density_24h.cpu().numpy())
     
-    return {
-        "scenario_id": scenario_id,
-        "max_density": float(density_map.max()),
-        "total_energy": float(torch.sum(velocities**2).cpu().numpy()),
-        "entropy_spatial": float(-np.sum(density_map * np.log(density_map + 1e-9)))
+    report = {
+        "generated_at": now_iso(),
+        "total_simulated_agents_day": sum(r["agents"] for r in hourly_results),
+        "hourly_metrics": hourly_results
     }
-
-def main():
-    print("Iniciando Pipeline de Simulación HPC (Hardware Exhaustion Mode)...")
-    scenarios = ["valle", "peak_am", "peak_pm", "night"]
-    results = []
-    
-    for s in scenarios:
-        results.append(simulate_hpc_crowd(s, 1.0))
-        
-    write_json(OUTPUTS_DIR / "hpc_micro_results.json", {"generated_at": now_iso(), "scenarios": results})
-    print("Pipeline HPC finalizado.")
+    write_json(OUTPUTS_DIR / "hpc_24h_simulation_report.json", report)
+    print("Simulación de 24 horas completada.")
 
 if __name__ == "__main__":
-    main()
+    simulate_hpc_24h()

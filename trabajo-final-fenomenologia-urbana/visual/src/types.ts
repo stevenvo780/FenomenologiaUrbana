@@ -167,6 +167,16 @@ export type Payload = {
     }>
     non_fabrication_note: string
   }
+  calibration?: {
+    generated_at: string
+    ground_truth_target: number
+    optimized_weights: {
+      time: number
+      risk: number
+      crowding: number
+    }
+    status: string
+  }
   baseline_metrics: {
     centrality: Array<{
       node_id: string

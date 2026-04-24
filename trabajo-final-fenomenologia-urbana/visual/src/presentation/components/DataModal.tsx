@@ -104,6 +104,19 @@ function ModalContent({
           <MetricLine label="Generado" value={formatDate(data.meta.generated_at)} />
           <p>{data.case_study.epistemic_note}</p>
         </ModalCard>
+        {data.calibration && (
+          <ModalCard title="Validación Bayesiana HPC">
+            <MetricLine label="Ground Truth (Metro)" value={compactNumber(data.calibration.ground_truth_target)} />
+            <MetricLine label="Status" value={data.calibration.status} />
+            <div className="calibration-weights">
+              <p>Pesos Optimizados:</p>
+              <MetricLine label="Tiempo" value={data.calibration.optimized_weights.time.toFixed(3)} />
+              <MetricLine label="Riesgo" value={data.calibration.optimized_weights.risk.toFixed(3)} />
+              <MetricLine label="Congestión" value={data.calibration.optimized_weights.crowding.toFixed(3)} />
+            </div>
+            <p className="modal-note">Validación contra ~100k pax/día en San Antonio.</p>
+          </ModalCard>
+        )}
         <ModalCard title="Cierre operativo">
           {data.closure.gates.map((gate) => (
             <div key={gate.id} className="modal-row">
