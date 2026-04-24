@@ -1,6 +1,8 @@
 import type { CaseNode, Payload, ScenarioSummary } from '../../types'
+import { motion } from 'framer-motion'
 import type { ModalKind } from '../deckTypes'
 import { AnimatedSimulationStage } from '../components/visuals/AnimatedSimulationStage'
+import { RecordedSimulationClip } from '../components/visuals/RecordedSimulationClip'
 import { RouteStack } from '../components/visuals/RouteVisuals'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { formatRatio, mapScenarioStatus } from '../utils'
@@ -26,8 +28,24 @@ export function SimulationSlide({
       />
 
       <div className="simulation-grid">
-        <AnimatedSimulationStage data={data} scenario={scenario} selectedNodeId={selectedNode.id} />
-        <aside className="deck-panel sim-panel">
+        <div className="simulation-theater">
+          <RecordedSimulationClip scenario={scenario} />
+          <motion.div
+            className="live-network-inset"
+            initial={{ opacity: 0, y: 24, scale: 0.92 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1], delay: 0.32 }}
+          >
+            <span className="live-network-label">Red SVG viva · nodo seleccionado</span>
+            <AnimatedSimulationStage data={data} scenario={scenario} selectedNodeId={selectedNode.id} />
+          </motion.div>
+        </div>
+        <motion.aside
+          className="deck-panel sim-panel"
+          initial={{ opacity: 0, x: 36 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1], delay: 0.22 }}
+        >
           <p className="deck-eyebrow">Escenario activo</p>
           <h2>{scenario.label}</h2>
           <p>{scenario.note}</p>
@@ -48,8 +66,8 @@ export function SimulationSlide({
               status={mapScenarioStatus(scenario.epistemic_status)}
             />
           </div>
-          <RouteStack data={data} routes={scenario.top_routes.slice(0, 6)} />
-        </aside>
+          <RouteStack data={data} routes={scenario.top_routes.slice(0, 4)} />
+        </motion.aside>
       </div>
     </SlideShell>
   )

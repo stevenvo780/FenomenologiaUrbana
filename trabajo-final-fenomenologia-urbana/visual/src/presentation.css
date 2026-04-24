@@ -1,8 +1,11 @@
 html {
-  scroll-snap-type: y proximity;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
+  height: 100%;
+  overflow: hidden;
   overflow-x: hidden;
   background:
     radial-gradient(circle at 20% 0%, rgba(224, 122, 70, 0.18), transparent 34%),
@@ -29,8 +32,25 @@ body {
 .deck-shell {
   position: relative;
   isolation: isolate;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
   color: #efe5d5;
+  perspective: 1400px;
+}
+
+.deck-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.deck-stage-slide {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
 .ambient-field {
@@ -96,7 +116,7 @@ body {
   z-index: 20;
   min-height: 62px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
   gap: 18px;
   align-items: center;
   padding: 12px 14px;
@@ -196,6 +216,46 @@ body {
   font-size: 0.72rem;
 }
 
+.deck-arrows {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.deck-arrows button {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: #171311;
+  background: #f4c87a;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.deck-arrows button:hover:not(:disabled) {
+  transform: scale(1.06);
+}
+
+.deck-arrows button:disabled {
+  cursor: not-allowed;
+  opacity: 0.32;
+}
+
+.deck-arrows span {
+  min-width: 74px;
+  color: rgba(255, 248, 236, 0.78);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
 .deck-progress {
   position: absolute;
   left: 24px;
@@ -220,12 +280,14 @@ body {
 
 .deck-slide {
   position: relative;
-  min-height: 100vh;
-  scroll-snap-align: start;
+  height: 100dvh;
+  max-height: 100dvh;
   display: grid;
   align-content: center;
   gap: 24px;
-  padding: 112px clamp(18px, 4vw, 72px) 48px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  padding: 104px clamp(18px, 3.4vw, 58px) 34px;
 }
 
 .deck-panel {
@@ -276,14 +338,14 @@ body {
 
 .deck-shell h1 {
   max-width: 11ch;
-  font-size: clamp(3.3rem, 7.2vw, 8.4rem);
+  font-size: clamp(3rem, 6.6vw, 7.6rem);
   line-height: 0.88;
   letter-spacing: -0.075em;
   text-wrap: balance;
 }
 
 .deck-shell h2 {
-  font-size: clamp(2.2rem, 4.8vw, 5.7rem);
+  font-size: clamp(2rem, 4.2vw, 5rem);
   line-height: 0.9;
   letter-spacing: -0.055em;
   text-wrap: balance;
@@ -407,7 +469,7 @@ body {
 }
 
 .constellation-panel {
-  min-height: 620px;
+  min-height: min(620px, calc(100dvh - 152px));
   display: grid;
   grid-template-rows: 1fr auto;
   padding: 24px;
@@ -416,7 +478,7 @@ body {
 
 .constellation-core {
   position: relative;
-  min-height: 480px;
+  min-height: min(480px, calc(100dvh - 288px));
 }
 
 .core-ring {
@@ -583,7 +645,7 @@ body {
 
 .corridor-map {
   width: 100%;
-  min-height: 58vh;
+  min-height: min(52vh, 470px);
   border-radius: 28px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -731,13 +793,186 @@ body {
   grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
 }
 
+.simulation-theater {
+  position: relative;
+  min-height: min(58vh, 560px);
+  transform-style: preserve-3d;
+}
+
+.recorded-sim {
+  position: relative;
+  height: 100%;
+  min-height: min(58vh, 560px);
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 34px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(244, 200, 122, 0.22), transparent 40%),
+    linear-gradient(135deg, rgba(12, 9, 8, 0.96), rgba(37, 30, 24, 0.96));
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.38),
+    0 0 90px rgba(224, 122, 70, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.recorded-sim-frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.recorded-sim-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(1.08) contrast(1.04);
+}
+
+.recorded-sim-vignette,
+.recorded-sim-scan,
+.recorded-sim-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.recorded-sim-vignette {
+  background:
+    radial-gradient(circle at 50% 46%, transparent 35%, rgba(12, 9, 8, 0.2) 68%, rgba(12, 9, 8, 0.66) 100%),
+    linear-gradient(180deg, rgba(12, 9, 8, 0.18), transparent 28%, rgba(12, 9, 8, 0.34));
+}
+
+.recorded-sim-scan {
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 248, 236, 0),
+    rgba(255, 248, 236, 0) 5px,
+    rgba(255, 248, 236, 0.24) 6px
+  );
+  animation: scanDrift 4s linear infinite;
+}
+
+.recorded-sim-corners {
+  margin: 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(244, 200, 122, 0.28);
+  box-shadow: inset 0 0 40px rgba(244, 200, 122, 0.08);
+}
+
+.recorded-sim-caption,
+.recorded-sim-badges {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(12, 9, 8, 0.62);
+  backdrop-filter: blur(14px);
+}
+
+.recorded-sim-caption {
+  left: 18px;
+  top: 18px;
+  right: 18px;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 999px;
+  color: #fff8ec;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.recorded-sim-caption span,
+.recorded-sim-badges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.recorded-sim-caption strong {
+  color: #f4c87a;
+}
+
+.recorded-sim-badges {
+  left: 18px;
+  bottom: 18px;
+  padding: 10px;
+  border-radius: 999px;
+  color: rgba(255, 248, 236, 0.8);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.recorded-sim-fallback {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 10px;
+  padding: 32px;
+  color: #fff8ec;
+  text-align: center;
+}
+
+.recorded-sim-fallback svg {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto;
+  color: #f4c87a;
+}
+
+.live-network-inset {
+  position: absolute;
+  z-index: 3;
+  right: 18px;
+  bottom: 18px;
+  width: min(380px, 44%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  background: rgba(12, 9, 8, 0.68);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.live-network-label {
+  display: block;
+  padding: 11px 14px 0;
+  color: #f4c87a;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.live-network-inset .simulation-canvas {
+  min-height: 160px;
+  max-height: 190px;
+  padding: 6px 10px 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.live-network-inset .simulation-canvas svg {
+  max-height: 168px;
+}
+
 .simulation-canvas {
-  min-height: 62vh;
+  min-height: min(58vh, 560px);
   padding: 14px;
 }
 
 .simulation-canvas svg {
   width: 100%;
+  max-height: min(58vh, 560px);
   height: auto;
   display: block;
 }
@@ -792,7 +1027,7 @@ body {
 .route-stack {
   display: grid;
   gap: 12px;
-  max-height: 46vh;
+  max-height: 38vh;
   overflow: auto;
   padding-right: 4px;
 }
@@ -829,7 +1064,7 @@ body {
 
 .recharts-radar-wrap {
   width: 100%;
-  min-height: 520px;
+  min-height: min(520px, calc(100dvh - 250px));
 }
 
 .recharts-radar-wrap .recharts-wrapper {
@@ -971,7 +1206,7 @@ body {
 .pressure-card {
   position: relative;
   overflow: hidden;
-  min-height: 420px;
+  min-height: min(420px, calc(100dvh - 290px));
   display: grid;
   align-content: space-between;
   gap: 20px;
@@ -1412,6 +1647,15 @@ body {
   }
 }
 
+@keyframes scanDrift {
+  from {
+    transform: translateY(-18px);
+  }
+  to {
+    transform: translateY(18px);
+  }
+}
+
 @keyframes floatWord {
   from {
     transform: translateY(0) rotate(-1deg);
@@ -1443,11 +1687,19 @@ body {
   .source-card {
     grid-column: auto;
   }
+
+  .live-network-inset {
+    width: min(360px, 46%);
+  }
 }
 
 @media (max-width: 760px) {
   html {
-    scroll-snap-type: none;
+    overflow: auto;
+  }
+
+  body {
+    overflow: auto;
   }
 
   .deck-nav {
@@ -1462,13 +1714,25 @@ body {
     flex-wrap: nowrap;
   }
 
-  .data-room-button {
+  .data-room-button,
+  .deck-arrows {
     grid-column: 1 / -1;
   }
 
   .deck-slide {
-    min-height: auto;
+    height: auto;
+    max-height: none;
+    min-height: 100dvh;
     padding: 150px 14px 36px;
+    overflow: auto;
+  }
+
+  .deck-shell,
+  .deck-stage,
+  .deck-stage-slide {
+    min-height: 100dvh;
+    height: auto;
+    overflow: visible;
   }
 
   .deck-shell h1 {
@@ -1485,6 +1749,25 @@ body {
 
   .corridor-map {
     min-height: 440px;
+  }
+
+  .simulation-theater,
+  .recorded-sim {
+    min-height: 420px;
+  }
+
+  .live-network-inset {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .recorded-sim-caption {
+    align-items: flex-start;
+    border-radius: 20px;
+    flex-direction: column;
   }
 
   .delta-grid,

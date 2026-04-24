@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-04-24T22:12:17+00:00",
+  "engine": "Advanced Parallel Renderer V2",
+  "clips": [
+    {
+      "scenario_id": "peak_am",
+      "src": "/data/simulations/peak_am.mp4",
+      "poster": "/data/simulations/peak_am_poster.png"
+    },
+    {
+      "scenario_id": "midday",
+      "src": "/data/simulations/midday.mp4",
+      "poster": "/data/simulations/midday_poster.png"
+    },
+    {
+      "scenario_id": "peak_pm",
+      "src": "/data/simulations/peak_pm.mp4",
+      "poster": "/data/simulations/peak_pm_poster.png"
+    },
+    {
+      "scenario_id": "night",
+      "src": "/data/simulations/night.mp4",
+      "poster": "/data/simulations/night_poster.png"
+    }
+  ]
+}

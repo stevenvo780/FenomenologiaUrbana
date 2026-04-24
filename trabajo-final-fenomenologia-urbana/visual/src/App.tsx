@@ -1,4 +1,4 @@
-import { PresentationDeck } from './PresentationDeck'
+import { PresentationDeck } from './PresentationDeck.tsx'
 import { useProjectData } from './hooks/useProjectData'
 
 function App() {

@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-04-24T22:12:43+00:00",
+  "key_findings": "An\u00e1lisis de desigualdad fenomenol\u00f3gica basado en M-MASS x100.",
+  "scenarios": [
+    {
+      "scenario_id": "peak_am",
+      "label": "Hora pico AM",
+      "entropy_gini": 0.0421,
+      "most_restricted_profile": "Turista cultural",
+      "most_free_profile": "Movilidad reducida",
+      "inequity_ratio": 1.26
+    },
+    {
+      "scenario_id": "midday",
+      "label": "Franja media",
+      "entropy_gini": 0.0426,
+      "most_restricted_profile": "Turista cultural",
+      "most_free_profile": "Movilidad reducida",
+      "inequity_ratio": 1.26
+    },
+    {
+      "scenario_id": "peak_pm",
+      "label": "Hora pico PM",
+      "entropy_gini": 0.0421,
+      "most_restricted_profile": "Turista cultural",
+      "most_free_profile": "Movilidad reducida",
+      "inequity_ratio": 1.26
+    },
+    {
+      "scenario_id": "night",
+      "label": "Noche",
+      "entropy_gini": 0.04,
+      "most_restricted_profile": "Turista cultural",
+      "most_free_profile": "Movilidad reducida",
+      "inequity_ratio": 1.24
+    }
+  ],
+  "conclusion": "La desigualdad en la libertad de ruta (entrop\u00eda) es un indicador de la calidad democr\u00e1tica del espacio urbano."
+}

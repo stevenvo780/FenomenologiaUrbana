@@ -47,6 +47,8 @@ export type DeckController = {
   setCompareAgentId: (value: string) => void
   setSelectedNodeId: (value: string) => void
   goToSlide: (id: SlideId) => void
+  goToNextSlide: () => void
+  goToPreviousSlide: () => void
   openModal: (kind: ModalKind) => void
   closeModal: () => void
 }

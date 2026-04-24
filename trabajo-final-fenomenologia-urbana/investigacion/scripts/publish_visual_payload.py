@@ -154,6 +154,7 @@ def build_closure_state(
 def main() -> Path:
     case_model = read_json(OUTPUTS_DIR / "case_model.json")
     simulation = read_json(OUTPUTS_DIR / "simulation_results.json")
+    advanced_sim = read_json(OUTPUTS_DIR / "advanced_simulation_results.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
     fieldwork_state = load_fieldwork_state()
@@ -162,13 +163,29 @@ def main() -> Path:
         sources=sources,
         fieldwork_state=fieldwork_state,
     )
+    
+    # Merge advanced metrics into scenarios
+    advanced_map = {s["id"]: s for s in advanced_sim["scenarios"]}
+    for scenario in simulation["scenarios"]:
+        adv = advanced_map.get(scenario["id"])
+        if adv:
+            # Override with M-MASS high-fidelity metrics
+            scenario["metrics"]["route_entropy"] = adv["metrics"]["m_mass_entropy"]
+            scenario["metrics"]["mean_pressure"] = adv["metrics"]["systemic_pressure"]
+            # Decision restriction is inversely proportional to entropy
+            scenario["metrics"]["decision_restriction"] = max(0, 1.0 - adv["metrics"]["m_mass_entropy"])
+            scenario["node_loads"] = adv["node_loads"]
+            scenario["edge_loads"] = adv["edge_loads"]
+            scenario["advanced_stats"] = adv["profile_stats"]
+
     has_field_calibration = str(case_model["meta"].get("status", "")).startswith("field_")
 
     payload = {
         "meta": {
             "generated_at": now_iso(),
-            "pipeline_version": "0.2.0-field" if has_field_calibration else "0.2.0-baseline",
+            "pipeline_version": "0.3.0-m-mass" if has_field_calibration else "0.3.0-advanced",
             "status": closure_state["status"],
+            "engine": "M-MASS (Massive Multi-Agent Stochastic Simulation)"
         },
         "case_study": case_model["meta"],
         "nodes": merge_nodes_with_centrality(case_model, simulation),

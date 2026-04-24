@@ -43,27 +43,54 @@ export function useDeckController(data: Payload): DeckController {
   const progress = ((activeIndex + 1) / SLIDES.length) * 100
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0]
+    const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target
+      const isTyping =
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement
 
-        if (visible?.target instanceof HTMLElement) {
-          setActiveSlide(visible.target.dataset.slideId as SlideId)
-        }
-      },
-      { threshold: [0.48, 0.62, 0.76] },
-    )
+      if (modal || isTyping) {
+        return
+      }
 
-    const slideNodes = document.querySelectorAll<HTMLElement>('[data-slide-id]')
-    slideNodes.forEach((node) => observer.observe(node))
+      if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(event.key)) {
+        event.preventDefault()
+        setActiveSlide(SLIDES[Math.min(activeIndex + 1, SLIDES.length - 1)].id)
+      }
 
-    return () => observer.disconnect()
-  }, [])
+      if (['ArrowLeft', 'PageUp', 'Backspace'].includes(event.key)) {
+        event.preventDefault()
+        setActiveSlide(SLIDES[Math.max(activeIndex - 1, 0)].id)
+      }
+
+      if (event.key === 'Home') {
+        event.preventDefault()
+        setActiveSlide(SLIDES[0].id)
+      }
+
+      if (event.key === 'End') {
+        event.preventDefault()
+        setActiveSlide(SLIDES.at(-1)?.id ?? 'cierre')
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [activeIndex, modal])
 
   function goToSlide(id: SlideId) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    setActiveSlide(id)
+  }
+
+  function goToNextSlide() {
+    const next = SLIDES[Math.min(activeIndex + 1, SLIDES.length - 1)]
+    setActiveSlide(next.id)
+  }
+
+  function goToPreviousSlide() {
+    const previous = SLIDES[Math.max(activeIndex - 1, 0)]
+    setActiveSlide(previous.id)
   }
 
   return {
@@ -90,6 +117,8 @@ export function useDeckController(data: Payload): DeckController {
     setCompareAgentId,
     setSelectedNodeId,
     goToSlide,
+    goToNextSlide,
+    goToPreviousSlide,
     openModal: setModal,
     closeModal: () => setModal(null),
   }

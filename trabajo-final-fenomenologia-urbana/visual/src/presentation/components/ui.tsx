@@ -15,10 +15,10 @@ export function SlideShell({ id, className = '', children }: SlideShellProps) {
       id={id}
       className={`deck-slide ${className}`}
       data-slide-id={id}
-      initial={{ opacity: 0, y: 46, filter: 'blur(12px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ amount: 0.34, once: false }}
-      transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, scale: 0.94, rotateX: 7, x: 54, filter: 'blur(18px)' }}
+      animate={{ opacity: 1, scale: 1, rotateX: 0, x: 0, filter: 'blur(0px)' }}
+      exit={{ opacity: 0, scale: 1.04, rotateX: -5, x: -72, filter: 'blur(16px)' }}
+      transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.section>
@@ -39,10 +39,9 @@ export function SlideHeader({
   return (
     <motion.header
       className="slide-header"
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ amount: 0.5, once: false }}
-      transition={{ duration: 0.55 }}
+      initial={{ opacity: 0, y: 22 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.56, delay: 0.1 }}
     >
       <div>
         <p className="deck-eyebrow">{eyebrow}</p>

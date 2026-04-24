@@ -1,4 +1,4 @@
-import { Activity, Database, Flag, Gauge, MapPinned, Network, Sparkles, UsersRound, type LucideIcon } from 'lucide-react'
+import { Activity, ChevronLeft, ChevronRight, Database, Flag, Gauge, MapPinned, Network, Sparkles, UsersRound, type LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
 import type { CSSProperties } from 'react'
 
@@ -17,13 +17,19 @@ const slideIcons: Record<SlideId, LucideIcon> = {
 
 export function DeckNav({
   activeSlide,
+  activeIndex,
   progress,
   onGoToSlide,
+  onNext,
+  onPrevious,
   onOpenData,
 }: {
   activeSlide: SlideId
+  activeIndex: number
   progress: number
   onGoToSlide: (id: SlideId) => void
+  onNext: () => void
+  onPrevious: () => void
   onOpenData: () => void
 }) {
   return (
@@ -61,6 +67,15 @@ export function DeckNav({
         <Database size={15} aria-hidden="true" />
         data room
       </button>
+      <div className="deck-arrows" aria-label="Controles de presentación">
+        <button type="button" onClick={onPrevious} disabled={activeIndex === 0} aria-label="Slide anterior">
+          <ChevronLeft size={20} aria-hidden="true" />
+        </button>
+        <span>{String(activeIndex + 1).padStart(2, '0')} / {String(SLIDES.length).padStart(2, '0')}</span>
+        <button type="button" onClick={onNext} disabled={activeIndex === SLIDES.length - 1} aria-label="Slide siguiente">
+          <ChevronRight size={20} aria-hidden="true" />
+        </button>
+      </div>
       <div className="deck-progress" style={{ '--progress': `${progress}%` } as CSSProperties} />
     </motion.header>
   )

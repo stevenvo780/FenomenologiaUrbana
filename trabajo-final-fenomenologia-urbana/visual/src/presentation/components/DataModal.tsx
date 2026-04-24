@@ -215,6 +215,16 @@ function ModalContent({
         <MetricLine label="Restricción" value={formatRatio(scenario.metrics.decision_restriction)} />
         <MetricLine label="Nodo seleccionado" value={selectedNode.label} />
       </ModalCard>
+      <ModalCard title="Desigualdad de Experiencia (M-MASS)">
+        {scenario.advanced_stats?.map((stat: any) => (
+          <MetricLine 
+            key={stat.agent_id} 
+            label={stat.label} 
+            value={`${formatRatio(stat.path_entropy)} (E) | ${formatRatio(stat.diversity_index)} (D)`} 
+          />
+        ))}
+        <p className="modal-note">E: Entropía de ruta (Libertad) | D: Índice de diversidad.</p>
+      </ModalCard>
       <ModalCard title="Nodos del grafo">
         {data.nodes.map((node) => (
           <div key={node.id} className="modal-row">
