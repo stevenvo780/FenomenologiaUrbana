@@ -78,13 +78,21 @@ Priorizar estas aristas para observación de flujo y fricción:
 Nombre sugerido: `field_counts_YYYY_MM_DD.csv`
 
 ```csv
-fecha,franja,entity_type,entity_id,timestamp,variable,valor,observador,notas
-2026-04-24,07-09,node,san_antonio_metro,07:15,headcount,145,ObsA,congestion alta
-2026-04-24,07-09,edge,san_antonio_metro__junin_paseo,07:30,flow_forward,89,ObsA,salida hacia Junin
-2026-04-24,12-14,node,junin_paseo,12:45,dwell_seconds,180,ObsB,compradores con pausa
-2026-04-24,20-22,node,san_antonio_metro,20:30,noise_db,72,ObsA,medicion puntual
-2026-04-24,20-22,node,parque_berrio,20:30,lighting_lux,46,ObsB,iluminacion media
+timestamp,node_id,node_label,source_node_id,target_node_id,edge_id,subsegment_label,direction,time_window,observer_id,pedestrians_5min,dwell_seconds_mean,noise_db,lighting_lux,security_score,obstacle_notes,weather_notes
+2026-04-24T07:15:00-05:00,san_antonio_metro,San Antonio Metro,san_antonio_metro,junin_paseo,san_antonio_metro__junin_paseo,San Antonio Metro -> Junin Peatonal,northbound,07:00-08:00,obs_01,145,25,72,820,4,congestion puntual,despejado
+2026-04-24T12:45:00-05:00,junin_paseo,Junin Peatonal,junin_paseo,parque_berrio,junin_paseo__parque_berrio,Junin Peatonal -> Parque Berrio,northbound,12:00-13:00,obs_02,210,180,68,1200,4,,soleado
+2026-04-24T20:30:00-05:00,parque_berrio,Parque Berrio,parque_berrio,plaza_botero,parque_berrio__plaza_botero,Parque Berrio -> Plaza Botero,northbound,20:00-21:00,obs_02,88,65,74,46,2,venta informal bloqueando paso,llovizna
 ```
+
+### Columnas mínimas que debe respetar el pipeline
+
+- `node_id` debe coincidir con los IDs de `outputs/case_model.json`;
+- `source_node_id`, `target_node_id` y `edge_id` deben usar el formato exacto del corredor (`source__target`);
+- `pedestrians_5min` es el conteo de la ventana observada;
+- `dwell_seconds_mean` es la permanencia media observada en segundos;
+- `security_score` usa escala 1–5;
+- `noise_db` y `lighting_lux` se capturan como numéricos;
+- `obstacle_notes` puede dejarse vacío, pero si tiene contenido el pipeline lo cuenta como evidencia de obstáculo.
 
 ## Formato Markdown fenomenológico
 
@@ -108,6 +116,14 @@ Debe contener, al menos:
 - puntos de decisión;
 - obstáculos temporales relevantes;
 - subtramos con observación destacada.
+
+Campos recomendados en `properties`:
+
+- `feature_type` (`decision_point`, `obstacle`, `pause_zone`);
+- `node_id`;
+- `source_node_id` / `target_node_id` si la observación es de arista;
+- `edge_id` si ya se conoce la arista exacta;
+- `timestamp`, `time_window`, `observer_id`, `notes`.
 
 ## Muestra mínima razonable
 
@@ -166,6 +182,15 @@ Debe contener, al menos:
 | iluminación | `lighting` |
 | seguridad percibida | validación o ajuste de `security` |
 | obstáculos | `obstacle` |
+
+### Pipeline implementado a partir de este protocolo
+
+El repositorio ya debe asumir esta cadena cuando existan datos reales:
+
+1. `scripts/ingest_fieldwork.py` valida y normaliza jornadas en `interim/`;
+2. `scripts/aggregate_fieldwork.py` consolida observaciones en `processed/`;
+3. `scripts/calibrate_case_model.py` ajusta `case_model.json` sin romper la baseline;
+4. `scripts/run_all.py` vuelve a correr simulaciones y publica payload actualizado.
 
 ## Criterio mínimo de jornada válida
 

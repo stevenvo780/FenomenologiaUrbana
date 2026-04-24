@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-04-24T21:04:41+00:00",
+  "sessions_count": 0,
+  "row_count": 0,
+  "node_groups": 0,
+  "edge_groups": 0,
+  "coverage": {
+    "nodes_with_data": 0,
+    "node_coverage_ratio": 0.0,
+    "scenarios_with_data": 0
+  },
+  "variables_observed": [
+    "pedestrians_5min"
+  ],
+  "validation_status": "pending_no_capture",
+  "pending_tasks": [
+    {
+      "task": "Registro de tiempos de permanencia",
+      "variable": "permanencia",
+      "method": "muestreo con cronometro"
+    },
+    {
+      "task": "Encuesta breve de seguridad percibida",
+      "variable": "seguridad percibida",
+      "method": "escala 1-5 por subtramo"
+    },
+    {
+      "task": "Medicion puntual de ruido e iluminacion",
+      "variable": "presion ambiental",
+      "method": "sonometro o app calibrada y luxometro"
+    }
+  ]
+}

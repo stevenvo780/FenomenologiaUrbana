@@ -1,0 +1,1 @@
+node_id,scenario_id,time_window,sample_count,pedestrians_mean_5min,pedestrians_total_5min,dwell_seconds_mean,noise_mean_db,lighting_mean_lux,security_score_mean,obstacle_event_rate,crowding_observed,security_observed

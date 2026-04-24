@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-24T16:38:37+00:00",
-  "source_count": 10,
+  "generated_at": "2026-04-24T21:04:40+00:00",
+  "source_count": 14,
   "downloaded_count": 9,
-  "failed_count": 1,
+  "failed_count": 5,
   "sources": [
     {
       "id": "movilidad_observatorio",
@@ -83,6 +83,32 @@
       "note": "captured"
     },
     {
+      "id": "medata_land_use_page",
+      "label": "MEData uso general del suelo urbano",
+      "url": "https://medata.gov.co/node/16360",
+      "kind": "medata_page",
+      "status": "failed",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0,
+      "local_path": null,
+      "resolved_url": "https://medata.gov.co/node/16360",
+      "note": "http_403"
+    },
+    {
+      "id": "medata_equipamientos_page",
+      "label": "MEData equipamientos colectivos",
+      "url": "https://medata.gov.co/node/41592",
+      "kind": "medata_page",
+      "status": "failed",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0,
+      "local_path": null,
+      "resolved_url": "https://medata.gov.co/node/41592",
+      "note": "http_403"
+    },
+    {
       "id": "siata_air_dataset",
       "label": "AMVA mediciones estaciones calidad del aire",
       "url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-estaciones-calidad-del-aire",
@@ -107,6 +133,32 @@
       "local_path": "raw/siata_noise_dataset.html",
       "resolved_url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-de-ruido-ambiental",
       "note": "captured_ssl_retry"
+    },
+    {
+      "id": "siata_air_package",
+      "label": "AMVA calidad del aire metadata CKAN",
+      "url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-estaciones-calidad-del-aire",
+      "kind": "ckan_package",
+      "status": "failed",
+      "http_status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0,
+      "local_path": null,
+      "resolved_url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-estaciones-calidad-del-aire",
+      "note": "http_404_ssl_retry"
+    },
+    {
+      "id": "siata_noise_package",
+      "label": "AMVA ruido ambiental metadata CKAN",
+      "url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-de-ruido-ambiental",
+      "kind": "ckan_package",
+      "status": "failed",
+      "http_status": 404,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 0,
+      "local_path": null,
+      "resolved_url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-de-ruido-ambiental",
+      "note": "http_404_ssl_retry"
     },
     {
       "id": "dane_cnpv",

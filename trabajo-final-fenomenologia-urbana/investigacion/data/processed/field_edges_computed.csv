@@ -1,0 +1,1 @@
+edge_id,source_node_id,target_node_id,scenario_id,time_window,sample_count,pedestrians_mean_5min,crowding_observed,noise_mean_db,noise_observed,lighting_mean_lux,lighting_observed,obstacle_event_rate

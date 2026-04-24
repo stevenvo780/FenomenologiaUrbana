@@ -47,16 +47,55 @@ def merge_nodes_with_centrality(case_model: dict[str, object], simulation: dict[
     return merged
 
 
+def load_fieldwork_state() -> dict[str, object]:
+    validation_path = OUTPUTS_DIR.parent / "data" / "processed" / "field_validation_report.json"
+    delta_path = OUTPUTS_DIR / "field_calibration_delta.json"
+
+    if not validation_path.exists():
+        return {
+            "status": "pending_partial_capture",
+            "pending": FIELDWORK_PENDING,
+            "summary": {
+                "sessions_count": 0,
+                "node_coverage_ratio": 0.0,
+                "variables_observed": [],
+            },
+        }
+
+    validation = read_json(validation_path)
+    delta = read_json(delta_path) if delta_path.exists() else {"node_changes": [], "edge_changes": [], "scenario_changes": []}
+    pending = validation.get("pending_tasks") or []
+    status_map = {
+        "pending_no_capture": "pending_partial_capture",
+        "partial_capture": "partial_field_capture",
+        "ready_for_calibration": "field_observed_partial",
+    }
+
+    return {
+        "status": status_map.get(validation.get("validation_status", "pending_no_capture"), "pending_partial_capture"),
+        "pending": pending,
+        "summary": {
+            "sessions_count": validation.get("sessions_count", 0),
+            "node_coverage_ratio": validation.get("coverage", {}).get("node_coverage_ratio", 0.0),
+            "variables_observed": validation.get("variables_observed", []),
+            "node_changes": len(delta.get("node_changes", [])),
+            "edge_changes": len(delta.get("edge_changes", [])),
+            "scenario_changes": len(delta.get("scenario_changes", [])),
+        },
+    }
+
+
 def main() -> Path:
     case_model = read_json(OUTPUTS_DIR / "case_model.json")
     simulation = read_json(OUTPUTS_DIR / "simulation_results.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
+    fieldwork_state = load_fieldwork_state()
 
     payload = {
         "meta": {
             "generated_at": now_iso(),
-            "pipeline_version": "0.1.0",
+            "pipeline_version": "0.2.0-alpha" if str(case_model["meta"].get("status", "")).startswith("field_") else "0.1.0",
             "status": "research_to_visual_synced",
         },
         "case_study": case_model["meta"],
@@ -71,8 +110,9 @@ def main() -> Path:
             "total": sources["source_count"],
         },
         "fieldwork": {
-            "status": "pending_partial_capture",
-            "pending": FIELDWORK_PENDING,
+            "status": fieldwork_state["status"],
+            "pending": fieldwork_state["pending"],
+            "summary": fieldwork_state["summary"],
         },
         "baseline_metrics": simulation["baseline_metrics"],
         "empirical": empirical,
