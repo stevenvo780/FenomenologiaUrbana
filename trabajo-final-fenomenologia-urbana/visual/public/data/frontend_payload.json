@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T21:04:41+00:00",
+    "generated_at": "2026-04-24T21:06:39+00:00",
     "pipeline_version": "0.1.0",
     "status": "research_to_visual_synced"
   },
@@ -1316,7 +1316,7 @@
       "status": "downloaded",
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 21592,
+      "bytes": 20090,
       "local_path": "raw/medata_criminalidad_page.html",
       "resolved_url": "https://medata.gov.co/node/16667",
       "note": "captured"
@@ -1474,6 +1474,11 @@
     "status": "pending_partial_capture",
     "pending": [
       {
+        "task": "Conteo peatonal fino por nodo",
+        "variable": "densidad peatonal",
+        "method": "conteo manual cada 15 minutos"
+      },
+      {
         "task": "Registro de tiempos de permanencia",
         "variable": "permanencia",
         "method": "muestreo con cronometro"
@@ -1492,9 +1497,7 @@
     "summary": {
       "sessions_count": 0,
       "node_coverage_ratio": 0.0,
-      "variables_observed": [
-        "pedestrians_5min"
-      ],
+      "variables_observed": [],
       "node_changes": 0,
       "edge_changes": 0,
       "scenario_changes": 0
@@ -1550,7 +1553,7 @@
     ]
   },
   "empirical": {
-    "generated_at": "2026-04-24T21:04:40+00:00",
+    "generated_at": "2026-04-24T21:06:38+00:00",
     "center_perception": {
       "source": "Medellin Como Vamos EPC 2024",
       "image_favorable_pct": 53.3,
