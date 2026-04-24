@@ -22,7 +22,7 @@ export function ProfileRadar({ primary, secondary }: { primary: AgentProfile; se
 
   return (
     <div className="radar-wrap recharts-radar-wrap">
-      <ResponsiveContainer width="100%" height={520}>
+      <ResponsiveContainer width="100%" height={520} minWidth={0} minHeight={320}>
         <RadarChart data={chartData} outerRadius="72%">
           <PolarGrid stroke="rgba(255,255,255,0.15)" />
           <PolarAngleAxis dataKey="dimension" tick={{ fill: 'rgba(255, 248, 236, 0.78)', fontSize: 12 }} />

@@ -1,4 +1,4 @@
-import { Bar, BarChart, RadialBar, RadialBarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
+import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
 import type { CSSProperties } from 'react'
 
 import type { Payload } from '../../types'
@@ -44,21 +44,13 @@ function EvidenceGallery({
   const barrio = data.empirical.barrio_la_candelaria
   const environment = data.empirical.environmental_context
   const peak = findPeakPeriod(crime.monthly_2023)
-  const radialData = [{ name: 'favorable', value: center.image_favorable_pct, fill: '#1f7f79' }]
 
   return (
     <div className="evidence-gallery">
       <article className="deck-panel evidence-hero-card">
-        <div className="donut chart-donut">
-          <ResponsiveContainer width="100%" height="100%">
-            <RadialBarChart data={radialData} innerRadius="72%" outerRadius="100%" startAngle={90} endAngle={-270}>
-              <RadialBar dataKey="value" background={{ fill: 'rgba(255,255,255,0.08)' }} cornerRadius={24} />
-            </RadialBarChart>
-          </ResponsiveContainer>
-          <div className="donut-label">
-            <strong>{center.image_favorable_pct.toFixed(1)}%</strong>
-            <span>imagen favorable</span>
-          </div>
+        <div className="donut" style={{ '--pct': `${center.image_favorable_pct}%` } as CSSProperties}>
+          <strong>{center.image_favorable_pct.toFixed(1)}%</strong>
+          <span>imagen favorable</span>
         </div>
         <div>
           <p className="deck-eyebrow">Percepción del centro</p>
@@ -91,7 +83,7 @@ function EvidenceGallery({
         <p className="deck-eyebrow">Criminalidad comuna 10</p>
         <h3>{compactNumber(crime.yearly_totals.at(-1)?.cases ?? 0)} casos en 2023</h3>
         <div className="crime-chart">
-          <ResponsiveContainer width="100%" height={190}>
+          <ResponsiveContainer width="100%" height={190} minWidth={0} minHeight={160}>
             <BarChart data={crime.monthly_2023} margin={{ top: 8, right: 4, bottom: 0, left: 4 }}>
               <XAxis dataKey="period" tickFormatter={(value) => String(value).slice(5)} tick={{ fill: 'rgba(255,248,236,0.62)', fontSize: 11 }} axisLine={false} tickLine={false} />
               <Tooltip
