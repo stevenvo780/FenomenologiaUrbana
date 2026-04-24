@@ -10,4 +10,8 @@ Reinterpretamos el concepto de *Leib* (cuerpo vivido) no como una subjetividad a
 
 ## 3. Ontología Emergente y Validación Empírica
 
-La experiencia urbana es un fenómeno emergente que surge del acoplamiento entre la infraestructura material y la percepción situada. Al validar nuestros modelos contra los aforos oficiales del Observatorio de Movilidad y el ArcGIS Hub del Metro, demostramos que la fenomenología puede ser **trazable, medible y científicamente robusta** sin perder su núcleo filosófico. El aparecer del espacio ya no es una intuición privada, sino un resultado sistémico observable.
+La experiencia urbana es un fenómeno emergente que surge del acoplamiento entre la infraestructura material y la percepción situada. Al validar nuestros modelos contra los aforos oficiales, demostramos que la fenomenología puede ser **trazable y medible**.
+
+## 4. Blindaje Epistemológico: Atmósferas y Psicogeografía
+
+Para evitar el reduccionismo técnico, este trabajo se apoya en la **Teoría de las Atmósferas de Gernot Böhme**. La "turbulencia" detectada en nuestras simulaciones HPC no es solo un dato físico, sino el correlato objetivo de una **tonalidad afectiva** (*Befindlichkeit*). Siguiendo a **Georg Simmel**, la saturación sensorial del centro de Medellín produce una "actitud blasé" o, en casos extremos, una angustia espacial que el modelo captura mediante la caída drástica de la entropía de ruta. La simulación no modela la conciencia, sino la **Estructura de Posibilidad** del sentir urbano.
