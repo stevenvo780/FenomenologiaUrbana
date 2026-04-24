@@ -16,7 +16,7 @@ export function EvidenceSlide({
   return (
     <SlideShell id="evidencia" className="evidence-slide">
       <SlideHeader
-        eyebrow="Slide 06 · datos para curiosos"
+        eyebrow="Slide 15 · evidencia y fuentes"
         title="Lo denso va a modales; lo visible queda gráfico"
         text="La capa empírica aparece como indicadores grandes, nubes semánticas, barras temporales y tarjetas accionables. Quien quiera tablas completas abre el data room."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Data room empírico</button>}

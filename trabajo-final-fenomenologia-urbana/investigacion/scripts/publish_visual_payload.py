@@ -151,6 +151,38 @@ def build_closure_state(
     }
 
 
+def build_drl_inventory() -> dict[str, object]:
+    models = sorted(OUTPUTS_DIR.glob("drl_agent_*.pth"))
+    total_bytes = sum(model.stat().st_size for model in models)
+    profiles = []
+
+    for model in models:
+        stem = model.stem.removeprefix("drl_agent_")
+        parts = stem.rsplit("_", 2)
+
+        if len(parts) == 3:
+            profile_id = parts[0]
+            scenario_id = f"{parts[1]}_{parts[2]}"
+        else:
+            profile_id = stem
+            scenario_id = "unknown"
+
+        profiles.append(
+            {
+                "file": model.name,
+                "profile_id": profile_id,
+                "scenario_id": scenario_id,
+                "bytes": model.stat().st_size,
+            }
+        )
+
+    return {
+        "trained_models": len(models),
+        "total_bytes": total_bytes,
+        "profiles": profiles,
+    }
+
+
 def main() -> Path:
     case_model = read_json(OUTPUTS_DIR / "case_model.json")
     simulation = read_json(OUTPUTS_DIR / "simulation_results.json")
@@ -160,10 +192,18 @@ def main() -> Path:
     historical_sim = read_json(OUTPUTS_DIR / "historical_evolution_results.json")
     isovist_sim = read_json(OUTPUTS_DIR / "perceptual_visibility_results.json")
     economic_sim = read_json(OUTPUTS_DIR / "economic_gravity_results.json")
+    urban_inequality = read_json(OUTPUTS_DIR / "urban_inequality_analysis.json")
+    hpc_day_report = read_json(OUTPUTS_DIR / "hpc_24h_simulation_report.json")
+    hpc_environmental_report = read_json(OUTPUTS_DIR / "hpc_environmental_report.json")
+    hpc_stress_test = read_json(OUTPUTS_DIR / "hpc_urban_stress_test.json")
+    hpc_uncertainty = read_json(OUTPUTS_DIR / "hpc_uncertainty_quantification.json")
+    hpc_multipoint_calibration = read_json(OUTPUTS_DIR / "hpc_multipoint_calibration.json")
+    hpc_chaos_report = read_json(OUTPUTS_DIR / "hpc_chaos_simulation_report.json")
     calibration_report = read_json(OUTPUTS_DIR / "hpc_calibration_report.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
     fieldwork_state = load_fieldwork_state()
+    drl_inventory = build_drl_inventory()
     closure_state = build_closure_state(
         case_model=case_model,
         sources=sources,
@@ -204,6 +244,16 @@ def main() -> Path:
             "historical_evolution": historical_sim,
             "perceptual_visibility": isovist_sim,
             "economic_gravity": economic_sim
+        },
+        "advanced_reports": {
+            "urban_inequality": urban_inequality,
+            "hpc_24h": hpc_day_report,
+            "hpc_environmental": hpc_environmental_report,
+            "hpc_stress": hpc_stress_test,
+            "hpc_uncertainty": hpc_uncertainty,
+            "hpc_multipoint_calibration": hpc_multipoint_calibration,
+            "hpc_chaos": hpc_chaos_report,
+            "drl_inventory": drl_inventory,
         },
         "sources": sources["sources"],
         "source_summary": {

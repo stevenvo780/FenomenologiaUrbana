@@ -5,13 +5,22 @@ import { AmbientField } from './presentation/components/AmbientField'
 import { DataModal } from './presentation/components/DataModal'
 import { DeckNav } from './presentation/components/DeckNav'
 import { useDeckController } from './presentation/hooks/useDeckController'
+import { CalibrationSlide } from './presentation/slides/CalibrationSlide'
 import { ClosingSlide } from './presentation/slides/ClosingSlide'
+import { CrowdDynamicsSlide } from './presentation/slides/CrowdDynamicsSlide'
+import { EconomySlide } from './presentation/slides/EconomySlide'
+import { EnvironmentSlide } from './presentation/slides/EnvironmentSlide'
 import { EvidenceSlide } from './presentation/slides/EvidenceSlide'
+import { HistorySlide } from './presentation/slides/HistorySlide'
+import { InequalitySlide } from './presentation/slides/InequalitySlide'
 import { MapSlide } from './presentation/slides/MapSlide'
+import { MethodSlide } from './presentation/slides/MethodSlide'
 import { OpenSlide } from './presentation/slides/OpenSlide'
 import { PressureSlide } from './presentation/slides/PressureSlide'
 import { ProfilesSlide } from './presentation/slides/ProfilesSlide'
 import { SimulationSlide } from './presentation/slides/SimulationSlide'
+import { StressSlide } from './presentation/slides/StressSlide'
+import { VisibilitySlide } from './presentation/slides/VisibilitySlide'
 import type { Payload } from './types'
 
 export function PresentationDeck({ data }: { data: Payload }) {
@@ -31,6 +40,8 @@ export function PresentationDeck({ data }: { data: Payload }) {
             onSelectNode={deck.setSelectedNodeId}
           />
         )
+      case 'metodo':
+        return <MethodSlide data={data} onOpenModal={deck.openModal} />
       case 'mapa':
         return (
           <MapSlide
@@ -45,15 +56,6 @@ export function PresentationDeck({ data }: { data: Payload }) {
             onAgentChange={deck.setAgentId}
             onCompareAgentChange={deck.setCompareAgentId}
             onSelectNode={deck.setSelectedNodeId}
-            onOpenModal={deck.openModal}
-          />
-        )
-      case 'simulacion':
-        return (
-          <SimulationSlide
-            data={data}
-            scenario={deck.scenario}
-            selectedNode={deck.selectedNode}
             onOpenModal={deck.openModal}
           />
         )
@@ -79,6 +81,38 @@ export function PresentationDeck({ data }: { data: Payload }) {
             onOpenModal={deck.openModal}
           />
         )
+      case 'simulacion':
+        return (
+          <SimulationSlide
+            data={data}
+            scenario={deck.scenario}
+            selectedNode={deck.selectedNode}
+            onOpenModal={deck.openModal}
+          />
+        )
+      case 'desigualdad':
+        return (
+          <InequalitySlide
+            data={data}
+            scenario={deck.scenario}
+            onScenarioChange={deck.setScenarioId}
+            onOpenModal={deck.openModal}
+          />
+        )
+      case 'calibracion':
+        return <CalibrationSlide data={data} onOpenModal={deck.openModal} />
+      case 'multitudes':
+        return <CrowdDynamicsSlide data={data} onOpenModal={deck.openModal} />
+      case 'estres':
+        return <StressSlide data={data} onOpenModal={deck.openModal} />
+      case 'ambiente':
+        return <EnvironmentSlide data={data} onOpenModal={deck.openModal} />
+      case 'visibilidad':
+        return <VisibilitySlide data={data} onOpenModal={deck.openModal} />
+      case 'economia':
+        return <EconomySlide data={data} onOpenModal={deck.openModal} />
+      case 'historia':
+        return <HistorySlide data={data} onOpenModal={deck.openModal} />
       case 'evidencia':
         return <EvidenceSlide data={data} onOpenModal={deck.openModal} />
       case 'cierre':

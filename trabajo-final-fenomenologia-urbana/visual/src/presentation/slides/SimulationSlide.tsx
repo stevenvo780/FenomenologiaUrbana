@@ -21,7 +21,7 @@ export function SimulationSlide({
   return (
     <SlideShell id="simulacion" className="simulation-slide">
       <SlideHeader
-        eyebrow="Slide 03 · cine de agentes"
+        eyebrow="Slide 06 · cine de agentes"
         title="Simulación convertida en movimiento"
         text="Las trayectorias calculadas por el pipeline se animan como partículas sobre la red: no son observación física inventada, son rutas proxy ejecutadas y trazables."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Detalles de simulación</button>}
@@ -56,13 +56,13 @@ export function SimulationSlide({
               status={mapScenarioStatus(scenario.epistemic_status)}
             />
             <KpiPill
-              label="Restricción"
-              value={formatRatio(scenario.metrics.decision_restriction)}
+              label="Concentración"
+              value={formatRatio(scenario.metrics.concentration_index)}
               status={mapScenarioStatus(scenario.epistemic_status)}
             />
             <KpiPill
               label="Entropía"
-              value={formatRatio(scenario.metrics.route_entropy)}
+              value={scenario.metrics.route_entropy.toFixed(2)}
               status={mapScenarioStatus(scenario.epistemic_status)}
             />
           </div>

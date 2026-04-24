@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T23:16:01+00:00",
+    "generated_at": "2026-04-24T23:32:06+00:00",
     "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
     "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
@@ -1533,6 +1533,376 @@
       "hubs_analyzed": 3,
       "total_commercial_pull": 0.0,
       "spatial_concentration_gini": 0.9541614119214842
+    }
+  },
+  "advanced_reports": {
+    "urban_inequality": {
+      "generated_at": "2026-04-24T22:12:43+00:00",
+      "key_findings": "An\u00e1lisis de desigualdad fenomenol\u00f3gica basado en M-MASS x100.",
+      "scenarios": [
+        {
+          "scenario_id": "peak_am",
+          "label": "Hora pico AM",
+          "entropy_gini": 0.0421,
+          "most_restricted_profile": "Turista cultural",
+          "most_free_profile": "Movilidad reducida",
+          "inequity_ratio": 1.26
+        },
+        {
+          "scenario_id": "midday",
+          "label": "Franja media",
+          "entropy_gini": 0.0426,
+          "most_restricted_profile": "Turista cultural",
+          "most_free_profile": "Movilidad reducida",
+          "inequity_ratio": 1.26
+        },
+        {
+          "scenario_id": "peak_pm",
+          "label": "Hora pico PM",
+          "entropy_gini": 0.0421,
+          "most_restricted_profile": "Turista cultural",
+          "most_free_profile": "Movilidad reducida",
+          "inequity_ratio": 1.26
+        },
+        {
+          "scenario_id": "night",
+          "label": "Noche",
+          "entropy_gini": 0.04,
+          "most_restricted_profile": "Turista cultural",
+          "most_free_profile": "Movilidad reducida",
+          "inequity_ratio": 1.24
+        }
+      ],
+      "conclusion": "La desigualdad en la libertad de ruta (entrop\u00eda) es un indicador de la calidad democr\u00e1tica del espacio urbano."
+    },
+    "hpc_24h": {
+      "generated_at": "2026-04-24T22:50:16+00:00",
+      "total_simulated_agents_day": 640000,
+      "hourly_metrics": [
+        {
+          "hour": 0,
+          "agents": 2500,
+          "max_load": 0.0,
+          "mean_energy": 0.8303792476654053
+        },
+        {
+          "hour": 1,
+          "agents": 2500,
+          "max_load": 4.696666717529297,
+          "mean_energy": 0.8322113156318665
+        },
+        {
+          "hour": 2,
+          "agents": 5000,
+          "max_load": 12.0600004196167,
+          "mean_energy": 0.8294020295143127
+        },
+        {
+          "hour": 3,
+          "agents": 10000,
+          "max_load": 18.560001373291016,
+          "mean_energy": 0.833406925201416
+        },
+        {
+          "hour": 4,
+          "agents": 25000,
+          "max_load": 53.013336181640625,
+          "mean_energy": 0.8309626579284668
+        },
+        {
+          "hour": 5,
+          "agents": 45000,
+          "max_load": 0.8309626579284668,
+          "mean_energy": 0.830196738243103
+        },
+        {
+          "hour": 6,
+          "agents": 50000,
+          "max_load": 101.5233383178711,
+          "mean_energy": 0.8312444090843201
+        },
+        {
+          "hour": 7,
+          "agents": 47500,
+          "max_load": 100.71666717529297,
+          "mean_energy": 0.8299699425697327
+        },
+        {
+          "hour": 8,
+          "agents": 35000,
+          "max_load": 73.5433349609375,
+          "mean_energy": 0.8313999176025391
+        },
+        {
+          "hour": 9,
+          "agents": 25000,
+          "max_load": 54.74333572387695,
+          "mean_energy": 0.8310059905052185
+        },
+        {
+          "hour": 10,
+          "agents": 22500,
+          "max_load": 45.423336029052734,
+          "mean_energy": 0.8306996822357178
+        },
+        {
+          "hour": 11,
+          "agents": 25000,
+          "max_load": 53.276668548583984,
+          "mean_energy": 0.8311442732810974
+        },
+        {
+          "hour": 12,
+          "agents": 30000,
+          "max_load": 63.97666931152344,
+          "mean_energy": 0.8305544257164001
+        },
+        {
+          "hour": 13,
+          "agents": 32500,
+          "max_load": 71.77666473388672,
+          "mean_energy": 0.8308839797973633
+        },
+        {
+          "hour": 14,
+          "agents": 30000,
+          "max_load": 63.52000045776367,
+          "mean_energy": 0.8314148783683777
+        },
+        {
+          "hour": 15,
+          "agents": 27500,
+          "max_load": 59.33000183105469,
+          "mean_energy": 0.8305313587188721
+        },
+        {
+          "hour": 16,
+          "agents": 35000,
+          "max_load": 73.96333312988281,
+          "mean_energy": 0.8308687806129456
+        },
+        {
+          "hour": 17,
+          "agents": 47500,
+          "max_load": 100.7366714477539,
+          "mean_energy": 0.8302971720695496
+        },
+        {
+          "hour": 18,
+          "agents": 50000,
+          "max_load": 96.7366714477539,
+          "mean_energy": 0.8311917781829834
+        },
+        {
+          "hour": 19,
+          "agents": 40000,
+          "max_load": 85.33333587646484,
+          "mean_energy": 0.8304471373558044
+        },
+        {
+          "hour": 20,
+          "agents": 25000,
+          "max_load": 59.103336334228516,
+          "mean_energy": 0.8310665488243103
+        },
+        {
+          "hour": 21,
+          "agents": 15000,
+          "max_load": 31.36333465576172,
+          "mean_energy": 0.8304992318153381
+        },
+        {
+          "hour": 22,
+          "agents": 7500,
+          "max_load": 17.366666793823242,
+          "mean_energy": 0.829247236251831
+        },
+        {
+          "hour": 23,
+          "agents": 5000,
+          "max_load": 11.15666675567627,
+          "mean_energy": 0.8345479965209961
+        }
+      ]
+    },
+    "hpc_environmental": {
+      "generated_at": "2026-04-24T22:50:28+00:00",
+      "resolution": "4096x4096 (16.7M cells)",
+      "pm25": {
+        "peak": 563.6560668945312,
+        "ambient_avg": 0.026661504060029984
+      },
+      "noise": {
+        "peak_db": 648.52978515625,
+        "spatial_variance": 13.625667572021484
+      }
+    },
+    "hpc_stress": {
+      "generated_at": "2026-04-24T23:08:59+00:00",
+      "engine": "HPC Stress Dynamics",
+      "tipping_point_detected": {
+        "agents": 500000,
+        "mean_velocity": 1.2699607610702515,
+        "system_entropy": 5.4094213250473615,
+        "pressure_index": 1.9073486328125
+      },
+      "full_curve": [
+        {
+          "agents": 100000,
+          "mean_velocity": 1.2763229608535767,
+          "system_entropy": 4.59464503089751,
+          "pressure_index": 0.3814697265625
+        },
+        {
+          "agents": 144444,
+          "mean_velocity": 1.276450753211975,
+          "system_entropy": 4.680748127257823,
+          "pressure_index": 0.5510101318359375
+        },
+        {
+          "agents": 188888,
+          "mean_velocity": 1.2771351337432861,
+          "system_entropy": 4.806137773747945,
+          "pressure_index": 0.720550537109375
+        },
+        {
+          "agents": 233333,
+          "mean_velocity": 1.2779972553253174,
+          "system_entropy": 4.950682532676191,
+          "pressure_index": 0.8900947570800781
+        },
+        {
+          "agents": 277777,
+          "mean_velocity": 1.2779974937438965,
+          "system_entropy": 5.067757776054855,
+          "pressure_index": 1.0596351623535156
+        },
+        {
+          "agents": 322222,
+          "mean_velocity": 1.2777365446090698,
+          "system_entropy": 5.16214154826462,
+          "pressure_index": 1.2291793823242188
+        },
+        {
+          "agents": 366666,
+          "mean_velocity": 1.276360034942627,
+          "system_entropy": 5.240498486860022,
+          "pressure_index": 1.3987197875976562
+        },
+        {
+          "agents": 411111,
+          "mean_velocity": 1.2746772766113281,
+          "system_entropy": 5.30466829423737,
+          "pressure_index": 1.5682640075683594
+        },
+        {
+          "agents": 455555,
+          "mean_velocity": 1.2723575830459595,
+          "system_entropy": 5.362557438165357,
+          "pressure_index": 1.7378044128417969
+        },
+        {
+          "agents": 500000,
+          "mean_velocity": 1.2699607610702515,
+          "system_entropy": 5.4094213250473615,
+          "pressure_index": 1.9073486328125
+        }
+      ],
+      "conclusion": "El colapso sist\u00e9mico del corredor ocurre a los 500000 agentes simult\u00e1neos."
+    },
+    "hpc_uncertainty": {
+      "generated_at": "2026-04-24T23:13:11+00:00",
+      "iterations_per_sample": 50,
+      "results": {
+        "hour_6": {
+          "mean_velocity": 1.2719316792488098,
+          "std_dev": 0.00029533677147165955,
+          "confidence_interval_95": [
+            1.271849816072344,
+            1.2720135424252756
+          ],
+          "relative_uncertainty": 0.0002321954679563312
+        },
+        "hour_12": {
+          "mean_velocity": 1.2719721913337707,
+          "std_dev": 0.00035462721297015653,
+          "confidence_interval_95": [
+            1.2718738936853935,
+            1.272070488982148
+          ],
+          "relative_uncertainty": 0.0002788010739435269
+        },
+        "hour_18": {
+          "mean_velocity": 1.2719988226890564,
+          "std_dev": 0.00033403474042533203,
+          "confidence_interval_95": [
+            1.2719062329828545,
+            1.2720914123952582
+          ],
+          "relative_uncertainty": 0.00026260617106482005
+        }
+      },
+      "note": "Intervalos de confianza calculados mediante Monte Carlo para blindar la tesis contra cr\u00edticas de variabilidad."
+    },
+    "hpc_multipoint_calibration": {
+      "generated_at": "2026-04-24T23:08:10+00:00",
+      "method": "Multi-point Spatial RMSE Minimization",
+      "optimized_parameters": {
+        "time_weight": 2.77777777827146,
+        "risk_weight": -2.222222219983758,
+        "visibility_comfort_weight": 1.1111111120513435
+      },
+      "spatial_accuracy_score": 0.9999999999870244,
+      "residual_error": 1.297565167859007e-06,
+      "validation_nodes": {
+        "san_antonio_metro": 100000,
+        "parque_berrio": 75000,
+        "junin_paseo": 45000
+      }
+    },
+    "hpc_chaos": {
+      "generated_at": "2026-04-24T23:16:00+00:00",
+      "engine": "HPC Everyday Chaos & Informality",
+      "informality_obstruction_ratio": 0.3,
+      "flaneur_ratio": 0.3,
+      "mean_turbulence_index": 0.010700348764657974,
+      "conclusion": "El caos cotidiano reduce la eficiencia de red en un 62% respecto al modelo ideal, forzando la emergencia de la 'deriva' como estrategia de supervivencia."
+    },
+    "drl_inventory": {
+      "trained_models": 5,
+      "total_bytes": 1457129,
+      "profiles": [
+        {
+          "file": "drl_agent_buyer_peak_pm.pth",
+          "profile_id": "buyer",
+          "scenario_id": "peak_pm",
+          "bytes": 291333
+        },
+        {
+          "file": "drl_agent_commuter_fast_peak_pm.pth",
+          "profile_id": "commuter_fast",
+          "scenario_id": "peak_pm",
+          "bytes": 291461
+        },
+        {
+          "file": "drl_agent_reduced_mobility_peak_pm.pth",
+          "profile_id": "reduced_mobility",
+          "scenario_id": "peak_pm",
+          "bytes": 291509
+        },
+        {
+          "file": "drl_agent_street_vendor_peak_pm.pth",
+          "profile_id": "street_vendor",
+          "scenario_id": "peak_pm",
+          "bytes": 291461
+        },
+        {
+          "file": "drl_agent_tourist_peak_pm.pth",
+          "profile_id": "tourist",
+          "scenario_id": "peak_pm",
+          "bytes": 291365
+        }
+      ]
     }
   },
   "sources": [

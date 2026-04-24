@@ -130,6 +130,24 @@ function ModalContent({
             <p className="modal-note">Simulación basada en evolución censal y de criminalidad real.</p>
           </ModalCard>
         )}
+        {data.advanced_reports?.urban_inequality && (
+          <ModalCard title="Desigualdad fenomenológica">
+            {data.advanced_reports.urban_inequality.scenarios.map((entry) => (
+              <div key={entry.scenario_id} className="modal-row">
+                <strong>{entry.label}</strong>
+                <p>Gini {entry.entropy_gini.toFixed(4)} · ratio {entry.inequity_ratio.toFixed(2)}× · {entry.most_restricted_profile} ↔ {entry.most_free_profile}</p>
+              </div>
+            ))}
+          </ModalCard>
+        )}
+        {data.advanced_reports?.hpc_stress && (
+          <ModalCard title="Stress test HPC">
+            <MetricLine label="Tipping point" value={compactNumber(data.advanced_reports.hpc_stress.tipping_point_detected.agents)} />
+            <MetricLine label="Presión crítica" value={data.advanced_reports.hpc_stress.tipping_point_detected.pressure_index.toFixed(2)} />
+            <MetricLine label="Entropía crítica" value={data.advanced_reports.hpc_stress.tipping_point_detected.system_entropy.toFixed(2)} />
+            <p className="modal-note">{data.advanced_reports.hpc_stress.conclusion}</p>
+          </ModalCard>
+        )}
         <ModalCard title="Cierre operativo">
           {data.closure.gates.map((gate) => (
             <div key={gate.id} className="modal-row">
@@ -238,15 +256,16 @@ function ModalContent({
         <MetricLine label="Escenario" value={scenario.label} />
         <MetricLine label="Franja" value={scenario.time_window} />
         <MetricLine label="Costo medio" value={scenario.metrics.avg_path_cost.toFixed(2)} />
-        <MetricLine label="Restricción" value={formatRatio(scenario.metrics.decision_restriction)} />
+        <MetricLine label="Entropía M-MASS" value={scenario.metrics.route_entropy.toFixed(2)} />
+        <MetricLine label="Concentración" value={formatRatio(scenario.metrics.concentration_index)} />
         <MetricLine label="Nodo seleccionado" value={selectedNode.label} />
       </ModalCard>
       <ModalCard title="Desigualdad de Experiencia (M-MASS)">
-        {scenario.advanced_stats?.map((stat: any) => (
+        {scenario.advanced_stats?.map((stat) => (
           <MetricLine 
             key={stat.agent_id} 
             label={stat.label} 
-            value={`${formatRatio(stat.path_entropy)} (E) | ${formatRatio(stat.diversity_index)} (D)`} 
+            value={`${stat.path_entropy.toFixed(2)} (E) | ${stat.diversity_index.toFixed(2)} (D)`} 
           />
         ))}
         <p className="modal-note">E: Entropía de ruta (Libertad) | D: Índice de diversidad.</p>

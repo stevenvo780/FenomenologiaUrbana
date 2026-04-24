@@ -105,6 +105,71 @@ export type ScenarioSummary = {
   }>
 }
 
+export type MicroSimulationResult = {
+  scenario_id: string
+  heatmap_file: string
+  max_density: number
+  turbulence_index: number
+  agents_simulated: number
+}
+
+export type PdeFieldSummary = {
+  max_concentration?: number
+  mean_concentration?: number
+  max_intensity?: number
+  mean_intensity?: number
+}
+
+export type HistoricalEvolutionEntry = {
+  year: string
+  empirical_data: {
+    densidad: number
+    comercio: number
+    casos_crimen: number
+  }
+  agents_simulated: number
+  max_density: number
+  entropy_spatial: number
+  turbulence: number
+}
+
+export type UrbanInequalityScenario = {
+  scenario_id: string
+  label: string
+  entropy_gini: number
+  most_restricted_profile: string
+  most_free_profile: string
+  inequity_ratio: number
+}
+
+export type Hpc24hMetric = {
+  hour: number
+  agents: number
+  max_load: number
+  mean_energy: number
+}
+
+export type StressCurvePoint = {
+  agents: number
+  mean_velocity: number
+  system_entropy: number
+  pressure_index: number
+}
+
+export type HpcConfidenceWindow = {
+  mean_velocity: number
+  std_dev: number
+  confidence_interval_95: [number, number]
+  relative_uncertainty: number
+}
+
+export type DrlInventoryEntry = {
+  file: string
+  profile_id: string
+  scenario_id: string
+  bytes: number
+}
+
 export type Payload = {
   meta: {
     generated_at: string
@@ -123,24 +188,109 @@ export type Payload = {
   agents: AgentProfile[]
   scenarios: ScenarioSummary[]
   advanced_models?: {
-    micro_simulation: any
-    environmental_pde: any
+    micro_simulation: {
+      generated_at: string
+      engine: string
+      resolution: string
+      results: MicroSimulationResult[]
+    }
+    environmental_pde: {
+      generated_at: string
+      engine: string
+      resolution: string
+      fields: {
+        pm25: PdeFieldSummary
+        noise: PdeFieldSummary
+      }
+    }
     historical_evolution?: {
       generated_at: string
       engine: string
       years_analyzed: string[]
-      evolution: Array<{
-        year: string
-        empirical_data: {
-          densidad: number
-          comercio: number
-          casos_crimen: number
-        }
-        agents_simulated: number
-        max_density: number
-        entropy_spatial: number
-        turbulence: number
+      evolution: HistoricalEvolutionEntry[]
+    }
+    perceptual_visibility?: {
+      generated_at: string
+      resolution: string
+      points_sampled: number
+      ray_count: number
+      max_panoptic_exposure: number
+      mean_openness: number
+    }
+    economic_gravity?: {
+      generated_at: string
+      engine: string
+      hubs_analyzed: number
+      total_commercial_pull: number
+      spatial_concentration_gini: number
+      strongest_interactions?: Array<{
+        source: string
+        target: string
+        weight: number
       }>
+    }
+  }
+  advanced_reports?: {
+    urban_inequality: {
+      generated_at: string
+      key_findings: string
+      scenarios: UrbanInequalityScenario[]
+      conclusion: string
+    }
+    hpc_24h: {
+      generated_at: string
+      total_simulated_agents_day: number
+      hourly_metrics: Hpc24hMetric[]
+    }
+    hpc_environmental: {
+      generated_at: string
+      resolution: string
+      pm25: {
+        peak: number
+        ambient_avg: number
+      }
+      noise: {
+        peak_db: number
+        spatial_variance: number
+      }
+    }
+    hpc_stress: {
+      generated_at: string
+      engine: string
+      tipping_point_detected: StressCurvePoint
+      full_curve: StressCurvePoint[]
+      conclusion: string
+    }
+    hpc_uncertainty: {
+      generated_at: string
+      iterations_per_sample: number
+      results: Record<string, HpcConfidenceWindow>
+      note: string
+    }
+    hpc_multipoint_calibration: {
+      generated_at: string
+      method: string
+      optimized_parameters: {
+        time_weight: number
+        risk_weight: number
+        visibility_comfort_weight: number
+      }
+      spatial_accuracy_score: number
+      residual_error: number
+      validation_nodes: Record<string, number>
+    }
+    hpc_chaos: {
+      generated_at: string
+      engine: string
+      informality_obstruction_ratio: number
+      flaneur_ratio: number
+      mean_turbulence_index: number
+      conclusion: string
+    }
+    drl_inventory: {
+      trained_models: number
+      total_bytes: number
+      profiles: DrlInventoryEntry[]
     }
   }
   sources: SourceEntry[]

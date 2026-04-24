@@ -6,10 +6,19 @@ export type ModalKind = 'status' | 'evidence' | 'sources' | 'fieldwork' | 'model
 
 export type SlideId =
   | 'apertura'
+  | 'metodo'
   | 'mapa'
-  | 'simulacion'
   | 'perfiles'
   | 'presion'
+  | 'simulacion'
+  | 'desigualdad'
+  | 'calibracion'
+  | 'multitudes'
+  | 'estres'
+  | 'ambiente'
+  | 'visibilidad'
+  | 'economia'
+  | 'historia'
   | 'evidencia'
   | 'cierre'
 

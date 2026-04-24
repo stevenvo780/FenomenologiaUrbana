@@ -1,17 +1,17 @@
-# Marco filosófico: Fenomenología HPC (High Performance Computing)
+# Marco filosófico: Fenomenología HPC y el Realismo Sucio Urbano
 
 ## 1. Formalización del Mundo de la Vida (*Lebenswelt*)
 
-Este trabajo propone un salto epistemológico: la fenomenología no debe limitarse a la descripción literaria. Proponemos una **formalización rigurosa del mundo de la vida**. El uso de simulaciones de 100,000 agentes y mapeo ambiental 4K permite reconstruir las estructuras de donación del espacio con una fidelidad que la descripción manual no puede alcanzar. La fenomenología se vuelve así una ciencia de la **fricción y la posibilidad**.
+Este trabajo propone un salto epistemológico: la fenomenología no debe limitarse a la descripción literaria. Proponemos una **formalización rigurosa del mundo de la vida**. El uso de simulaciones de 100,000 agentes y mapeo ambiental 4K permite reconstruir las estructuras de donación del espacio con una fidelidad que la descripción manual no puede alcanzar. La fenomenología se vuelve así una ciencia de la **fricción, la expulsión y la posibilidad**.
 
-## 2. El Cuerpo como Tensor en un Campo de Fuerzas
+## 2. El Cuerpo como Tensor y la Angustia de la Técnica
 
-Reinterpretamos el concepto de *Leib* (cuerpo vivido) no como una subjetividad aislada, sino como un nodo en un campo de fuerzas urbanas. El agente en nuestra simulación, calibrado mediante **Optimización Bayesiana** contra datos reales del Metro (~100k pax/día), representa la "racionalidad acotada" del sujeto que percibe y decide bajo la presión de la densidad, el ruido y el poder institucional.
+Reinterpretamos el concepto de *Leib* (cuerpo vivido) no como una subjetividad aislada, sino como un nodo en un campo de fuerzas urbanas. Siguiendo a **Martin Heidegger**, el colapso sistémico detectado a los 500,000 agentes revela la **"Tecnificación de la Inhospitabilidad"**: el momento en que la técnica deja de servir a la vida y empieza a procesarla como mero material cinético. La "turbulencia" en la GPU es el correlato físico de la angustia (*Angst*) ante un espacio que anula el horizonte de posibilidades.
 
-## 3. Ontología Emergente y Validación Empírica
+## 3. Atmósferas y el "Realismo Sucio"
 
-La experiencia urbana es un fenómeno emergente que surge del acoplamiento entre la infraestructura material y la percepción situada. Al validar nuestros modelos contra los aforos oficiales, demostramos que la fenomenología puede ser **trazable y medible**.
+Para blindar la tesis contra el reduccionismo, integramos la **Teoría de las Atmósferas de Gernot Böhme**. El centro de Medellín no es una grilla limpia; es un espacio de **fricción radical e informalidad**. Al inyectar "ruido morfológico" y obstáculos dinámicos en el modelo, capturamos lo que **Georg Simmel** llamaba la "actitud blasé": el escudo psicológico necesario para sobrevivir a la saturación sensorial de Junín.
 
-## 4. Blindaje Epistemológico: Atmósferas y Psicogeografía
+## 4. Humildad Epistémica y Sujetos de Resistencia
 
-Para evitar el reduccionismo técnico, este trabajo se apoya en la **Teoría de las Atmósferas de Gernot Böhme**. La "turbulencia" detectada en nuestras simulaciones HPC no es solo un dato físico, sino el correlato objetivo de una **tonalidad afectiva** (*Befindlichkeit*). Siguiendo a **Georg Simmel**, la saturación sensorial del centro de Medellín produce una "actitud blasé" o, en casos extremos, una angustia espacial que el modelo captura mediante la caída drástica de la entropía de ruta. La simulación no modela la conciencia, sino la **Estructura de Posibilidad** del sentir urbano.
+Declaramos formalmente que nuestras IAs (DRL) no tienen conciencia. Modelan la **racionalidad instrumental de supervivencia**. El verdadero objeto fenomenológico es la brecha entre el flujo óptimo y la **"Deriva"** forzada por el caos. Este trabajo concluye que el centro de Medellín se habita mediante la resistencia: cada cuerpo que se detiene, cada vendedor que ancla su puesto, es un acto de soberanía fenomenológica frente a la dictadura del flujo.

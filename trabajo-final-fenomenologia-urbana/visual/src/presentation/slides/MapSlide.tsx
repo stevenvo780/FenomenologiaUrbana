@@ -37,7 +37,7 @@ export function MapSlide({
   return (
     <SlideShell id="mapa" className="map-slide">
       <SlideHeader
-        eyebrow="Slide 02 · geografía y topología"
+        eyebrow="Slide 03 · geografía y topología"
         title="Mapa vivo del corredor"
         text="La vista principal dibuja el corredor real, las rutas dominantes y el grafo operativo como capas de una misma experiencia urbana."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Abrir modelo</button>}

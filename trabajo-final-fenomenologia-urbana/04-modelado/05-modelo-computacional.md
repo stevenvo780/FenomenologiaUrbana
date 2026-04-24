@@ -9,18 +9,16 @@ Modelar el corredor como un sistema dinámico no lineal de alta fidelidad, donde
 Definición extendida: `G = (V, E, L, W, F)`
 - `F`: Campos de flujo continuos integrados (PM2.5, Ruido, Densidad).
 
-## Nivel 2: Motor de Agentes (DRL y SFM)
+## Nivel 2: Motor de Agentes (DRL, SFM y Sujetos de Resistencia)
 
-Ya no usamos heurísticas simples. El modelo emplea:
-- **Deep Reinforcement Learning (DQN):** Agentes con redes neuronales que optimizan su trayectoria basándose en una recompensa fenomenológica compleja.
-- **Social Force Model (SFM):** Dinámica de fluidos peatonales para modelar colisiones físicas y turbulencias en nodos de alta densidad (San Antonio).
+El modelo trasciende la simulación de transporte tradicional mediante:
+- **Deep Reinforcement Learning (DQN):** Modela la "racionalidad de supervivencia" ante la presión sistémica.
+- **Social Force Model (SFM):** Dinámica de fluidos para capturar la turbulencia física.
+- **Agentes de Resistencia (Static Anchors):** Siguiendo a **Saskia Sassen**, modelamos cuerpos que no fluyen (informalidad, habitantes de calle, vigilancia), actuando como "puntos de soberanía" que deforman el campo de posibilidades del flujo masivo.
 
-## Nivel 3: Calibración Empírica Bayesiana
+## Nivel 3: La Expulsión Fenomenológica
 
-El modelo se calibra contra:
-- **Microdatos DANE:** Población por manzana para la generación de agentes (Origins).
-- **Aforos Metro:** Validación de flujos en nodos de transferencia.
-- **Telemetría SIATA:** Integración de campos de dispersión 4K.
+El colapso sistémico detectado en el **HPC Stress Test** no se interpreta solo como congestión, sino como una **Estructura de Expulsión**: el momento en que la escala técnica del sistema anula la escala fenomenológica del cuerpo, forzando la transición de "habitar" a "ser procesado".
 
 ## Regla Metodológica: Validación de Grado Científico
 

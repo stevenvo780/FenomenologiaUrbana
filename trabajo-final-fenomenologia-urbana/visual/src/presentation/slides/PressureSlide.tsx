@@ -24,7 +24,7 @@ export function PressureSlide({
       <SlideHeader
         eyebrow="Slide 05 · presión temporal"
         title="La hora modifica el campo de posibilidades"
-        text="La ciudad cambia de régimen: hora pico, mediodía y noche no son fondos neutros, son estados distintos del sistema."
+        text="La ciudad cambia de régimen: hora pico, mediodía y noche no son fondos neutros, sino configuraciones distintas de carga, concentración y libertad de trayecto."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Abrir escenarios</button>}
       />
 
@@ -73,9 +73,9 @@ function ScenarioPressureStage({
               <em>{scenario.metrics.mean_pressure.toFixed(0)}</em>
             </div>
             <div className="pressure-lines">
-              <MetricLine label="Restricción" value={formatRatio(scenario.metrics.decision_restriction)} />
-              <MetricLine label="Entropía" value={formatRatio(scenario.metrics.route_entropy)} />
               <MetricLine label="Concentración" value={formatRatio(scenario.metrics.concentration_index)} />
+              <MetricLine label="Entropía" value={scenario.metrics.route_entropy.toFixed(2)} />
+              <MetricLine label="Carga" value={scenario.metrics.mean_pressure.toFixed(0)} />
             </div>
           </motion.button>
         )

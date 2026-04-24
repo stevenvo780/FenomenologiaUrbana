@@ -1,4 +1,4 @@
-import { Activity, ChevronLeft, ChevronRight, Database, Flag, Gauge, MapPinned, Network, Sparkles, UsersRound, type LucideIcon } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Clock3, Cpu, Crosshair, Database, Eye, Film, Flag, LineChart, MapPinned, Network, Orbit, Scale, ShoppingBag, Sparkles, TriangleAlert, UsersRound, Wind, type LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
 import type { CSSProperties } from 'react'
 
@@ -7,10 +7,19 @@ import type { SlideId } from '../deckTypes'
 
 const slideIcons: Record<SlideId, LucideIcon> = {
   apertura: Sparkles,
+  metodo: Cpu,
   mapa: MapPinned,
-  simulacion: Activity,
   perfiles: UsersRound,
-  presion: Gauge,
+  presion: Clock3,
+  simulacion: Film,
+  desigualdad: Scale,
+  calibracion: Crosshair,
+  multitudes: Orbit,
+  estres: TriangleAlert,
+  ambiente: Wind,
+  visibilidad: Eye,
+  economia: ShoppingBag,
+  historia: LineChart,
   evidencia: Database,
   cierre: Flag,
 }
