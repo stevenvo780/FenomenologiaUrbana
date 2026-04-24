@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-04-24T22:42:26+00:00",
+  "scenarios": [
+    {
+      "scenario_id": "valle",
+      "max_density": 252.52084350585938,
+      "total_energy": 16974.31640625,
+      "entropy_spatial": 203659.609375
+    },
+    {
+      "scenario_id": "peak_am",
+      "max_density": 252.81417846679688,
+      "total_energy": 16974.31640625,
+      "entropy_spatial": 203203.828125
+    },
+    {
+      "scenario_id": "peak_pm",
+      "max_density": 260.6983337402344,
+      "total_energy": 17504.21484375,
+      "entropy_spatial": 203323.296875
+    },
+    {
+      "scenario_id": "night",
+      "max_density": 259.822509765625,
+      "total_energy": 17267.697265625,
+      "entropy_spatial": 203399.4375
+    }
+  ]
+}

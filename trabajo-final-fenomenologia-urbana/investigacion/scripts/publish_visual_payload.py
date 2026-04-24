@@ -155,6 +155,8 @@ def main() -> Path:
     case_model = read_json(OUTPUTS_DIR / "case_model.json")
     simulation = read_json(OUTPUTS_DIR / "simulation_results.json")
     advanced_sim = read_json(OUTPUTS_DIR / "advanced_simulation_results.json")
+    micro_sim = read_json(OUTPUTS_DIR / "micro_simulation_results.json")
+    pde_sim = read_json(OUTPUTS_DIR / "pde_environmental_results.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
     fieldwork_state = load_fieldwork_state()
@@ -183,15 +185,19 @@ def main() -> Path:
     payload = {
         "meta": {
             "generated_at": now_iso(),
-            "pipeline_version": "0.3.0-m-mass" if has_field_calibration else "0.3.0-advanced",
+            "pipeline_version": "0.4.0-top-lvl",
             "status": closure_state["status"],
-            "engine": "M-MASS (Massive Multi-Agent Stochastic Simulation)"
+            "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
         },
         "case_study": case_model["meta"],
         "nodes": merge_nodes_with_centrality(case_model, simulation),
         "edges": case_model["edges"],
         "agents": case_model["agents"],
         "scenarios": simulation["scenarios"],
+        "advanced_models": {
+            "micro_simulation": micro_sim,
+            "environmental_pde": pde_sim
+        },
         "sources": sources["sources"],
         "source_summary": {
             "downloaded": sources["downloaded_count"],

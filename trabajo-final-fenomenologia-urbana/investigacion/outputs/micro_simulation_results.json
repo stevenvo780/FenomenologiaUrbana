@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-04-24T22:30:01+00:00",
+  "engine": "PyTorch Social Force Tensor Dynamics",
+  "resolution": "256x256m",
+  "results": [
+    {
+      "scenario_id": "valle",
+      "heatmap_file": "crowd_density_valle.npy",
+      "max_density": 6.548333644866943,
+      "turbulence_index": 0.20778606832027435,
+      "agents_simulated": 5000
+    },
+    {
+      "scenario_id": "peak_pm",
+      "heatmap_file": "crowd_density_peak_pm.npy",
+      "max_density": 3.6000001430511475,
+      "turbulence_index": 0.16446374356746674,
+      "agents_simulated": 5000
+    }
+  ]
+}

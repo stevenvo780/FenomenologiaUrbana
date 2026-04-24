@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 from _shared import read_json, write_json, OUTPUTS_DIR, now_iso
 
-def analyze_inequality():
+def main():
     advanced_results = read_json(OUTPUTS_DIR / "advanced_simulation_results.json")
     case_model = read_json(OUTPUTS_DIR / "case_model.json")
     
@@ -50,4 +50,4 @@ def analyze_inequality():
     print("Inequality analysis complete.")
 
 if __name__ == "__main__":
-    analyze_inequality()
+    main()

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T22:12:32+00:00",
-    "pipeline_version": "0.3.0-advanced",
+    "generated_at": "2026-04-24T22:42:30+00:00",
+    "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
-    "engine": "M-MASS (Massive Multi-Agent Stochastic Simulation)"
+    "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
   },
   "case_study": {
     "title": "Corredor fenomenologico de La Candelaria",
@@ -493,9 +493,9 @@
       "metrics": {
         "avg_path_cost": 8.084,
         "avg_travel_minutes": 5.977,
-        "route_entropy": 2.4658,
+        "route_entropy": 2.4746,
         "decision_restriction": 0,
-        "mean_pressure": 7161.89,
+        "mean_pressure": 7194.78,
         "concentration_index": 0.168
       },
       "top_bottlenecks": [
@@ -660,30 +660,30 @@
         }
       ],
       "node_loads": {
-        "palacio_nacional": 0.578,
+        "palacio_nacional": 0.5841,
         "parque_berrio": 1.0,
-        "san_antonio_metro": 0.5063,
-        "junin_paseo": 0.6748,
-        "oriental_cruce": 0.3426,
-        "carabobo_cultural": 0.3343,
-        "parque_san_antonio": 0.0278,
-        "plaza_botero": 0.2736,
-        "museo_antioquia": 0.0613
+        "junin_paseo": 0.6657,
+        "san_antonio_metro": 0.5057,
+        "carabobo_cultural": 0.3314,
+        "oriental_cruce": 0.3402,
+        "parque_san_antonio": 0.0254,
+        "plaza_botero": 0.2771,
+        "museo_antioquia": 0.0661
       },
       "edge_loads": {
-        "palacio_nacional__parque_berrio": 6543,
-        "san_antonio_metro__palacio_nacional": 3034,
-        "palacio_nacional__junin_paseo": 2661,
-        "junin_paseo__oriental_cruce": 2245,
-        "san_antonio_metro__junin_paseo": 5398,
-        "oriental_cruce__parque_berrio": 3568,
-        "parque_berrio__carabobo_cultural": 5672,
-        "junin_paseo__parque_berrio": 4877,
-        "san_antonio_metro__parque_san_antonio": 280,
-        "parque_san_antonio__junin_paseo": 196,
-        "parque_berrio__plaza_botero": 4551,
-        "carabobo_cultural__plaza_botero": 91,
-        "plaza_botero__museo_antioquia": 1041
+        "palacio_nacional__parque_berrio": 6750,
+        "palacio_nacional__junin_paseo": 2611,
+        "san_antonio_metro__junin_paseo": 5317,
+        "junin_paseo__parque_berrio": 4871,
+        "parque_berrio__carabobo_cultural": 5653,
+        "oriental_cruce__parque_berrio": 3543,
+        "junin_paseo__oriental_cruce": 2261,
+        "san_antonio_metro__palacio_nacional": 3156,
+        "san_antonio_metro__parque_san_antonio": 276,
+        "parque_san_antonio__junin_paseo": 160,
+        "parque_berrio__plaza_botero": 4624,
+        "carabobo_cultural__plaza_botero": 104,
+        "plaza_botero__museo_antioquia": 1127
       },
       "epistemic_status": "proxy_calibrated",
       "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo.",
@@ -692,36 +692,36 @@
           "agent_id": "commuter_fast",
           "label": "Trabajador en transito",
           "total_trips": 12000,
-          "path_entropy": 2.3767,
-          "diversity_index": 0.0014
+          "path_entropy": 2.3819,
+          "diversity_index": 0.0015
         },
         {
           "agent_id": "buyer",
           "label": "Comprador",
           "total_trips": 5500,
-          "path_entropy": 2.545,
+          "path_entropy": 2.5546,
           "diversity_index": 0.004
         },
         {
           "agent_id": "tourist",
           "label": "Turista cultural",
           "total_trips": 2000,
-          "path_entropy": 2.1656,
-          "diversity_index": 0.007
+          "path_entropy": 2.2,
+          "diversity_index": 0.0075
         },
         {
           "agent_id": "street_vendor",
           "label": "Vendedor ambulante",
           "total_trips": 3000,
-          "path_entropy": 2.511,
+          "path_entropy": 2.5012,
           "diversity_index": 0.006
         },
         {
           "agent_id": "reduced_mobility",
           "label": "Movilidad reducida",
           "total_trips": 1800,
-          "path_entropy": 2.7307,
-          "diversity_index": 0.0144
+          "path_entropy": 2.7353,
+          "diversity_index": 0.015
         }
       ]
     },
@@ -732,9 +732,9 @@
       "metrics": {
         "avg_path_cost": 6.324,
         "avg_travel_minutes": 6.331,
-        "route_entropy": 2.4694,
+        "route_entropy": 2.4812,
         "decision_restriction": 0,
-        "mean_pressure": 9297.11,
+        "mean_pressure": 9312.11,
         "concentration_index": 0.168
       },
       "top_bottlenecks": [
@@ -898,30 +898,30 @@
         }
       ],
       "node_loads": {
-        "palacio_nacional": 0.5213,
-        "junin_paseo": 0.6064,
-        "oriental_cruce": 0.2531,
+        "palacio_nacional": 0.5249,
         "parque_berrio": 1.0,
-        "san_antonio_metro": 0.5073,
-        "carabobo_cultural": 0.2708,
-        "plaza_botero": 0.4284,
-        "parque_san_antonio": 0.024,
-        "museo_antioquia": 0.1209
+        "carabobo_cultural": 0.2727,
+        "junin_paseo": 0.6041,
+        "oriental_cruce": 0.2538,
+        "san_antonio_metro": 0.5028,
+        "parque_san_antonio": 0.0249,
+        "plaza_botero": 0.4235,
+        "museo_antioquia": 0.1193
       },
       "edge_loads": {
-        "palacio_nacional__junin_paseo": 2985,
-        "oriental_cruce__parque_berrio": 3199,
-        "san_antonio_metro__junin_paseo": 6619,
-        "junin_paseo__parque_berrio": 6878,
-        "parque_berrio__carabobo_cultural": 6072,
-        "san_antonio_metro__palacio_nacional": 4580,
-        "palacio_nacional__parque_berrio": 7709,
-        "junin_paseo__oriental_cruce": 2475,
-        "parque_berrio__plaza_botero": 9430,
-        "carabobo_cultural__plaza_botero": 174,
-        "san_antonio_metro__parque_san_antonio": 325,
-        "parque_san_antonio__junin_paseo": 217,
-        "plaza_botero__museo_antioquia": 2711
+        "palacio_nacional__parque_berrio": 7836,
+        "parque_berrio__carabobo_cultural": 6133,
+        "palacio_nacional__junin_paseo": 3052,
+        "junin_paseo__oriental_cruce": 2492,
+        "oriental_cruce__parque_berrio": 3216,
+        "san_antonio_metro__junin_paseo": 6564,
+        "junin_paseo__parque_berrio": 6891,
+        "san_antonio_metro__palacio_nacional": 4552,
+        "san_antonio_metro__parque_san_antonio": 343,
+        "parque_san_antonio__junin_paseo": 220,
+        "parque_berrio__plaza_botero": 9323,
+        "carabobo_cultural__plaza_botero": 203,
+        "plaza_botero__museo_antioquia": 2684
       },
       "epistemic_status": "proxy_calibrated",
       "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo.",
@@ -930,36 +930,36 @@
           "agent_id": "commuter_fast",
           "label": "Trabajador en transito",
           "total_trips": 7200,
-          "path_entropy": 2.3743,
-          "diversity_index": 0.0022
+          "path_entropy": 2.3837,
+          "diversity_index": 0.0024
         },
         {
           "agent_id": "buyer",
           "label": "Comprador",
           "total_trips": 10000,
-          "path_entropy": 2.5622,
+          "path_entropy": 2.56,
           "diversity_index": 0.0024
         },
         {
           "agent_id": "tourist",
           "label": "Turista cultural",
           "total_trips": 6400,
-          "path_entropy": 2.1736,
+          "path_entropy": 2.1769,
           "diversity_index": 0.0023
         },
         {
           "agent_id": "street_vendor",
           "label": "Vendedor ambulante",
           "total_trips": 4500,
-          "path_entropy": 2.5,
-          "diversity_index": 0.004
+          "path_entropy": 2.5222,
+          "diversity_index": 0.0042
         },
         {
           "agent_id": "reduced_mobility",
           "label": "Movilidad reducida",
           "total_trips": 2200,
-          "path_entropy": 2.7369,
-          "diversity_index": 0.0127
+          "path_entropy": 2.7634,
+          "diversity_index": 0.0123
         }
       ]
     },
@@ -970,9 +970,9 @@
       "metrics": {
         "avg_path_cost": 7.753,
         "avg_travel_minutes": 5.579,
-        "route_entropy": 2.4687,
+        "route_entropy": 2.4682,
         "decision_restriction": 0,
-        "mean_pressure": 8502.89,
+        "mean_pressure": 8512.33,
         "concentration_index": 0.166
       },
       "top_bottlenecks": [
@@ -1135,30 +1135,30 @@
         }
       ],
       "node_loads": {
-        "oriental_cruce": 0.3476,
+        "san_antonio_metro": 0.5017,
+        "palacio_nacional": 0.5887,
         "parque_berrio": 1.0,
-        "carabobo_cultural": 0.3335,
-        "san_antonio_metro": 0.4988,
-        "junin_paseo": 0.6532,
-        "palacio_nacional": 0.595,
-        "parque_san_antonio": 0.0211,
-        "plaza_botero": 0.2769,
-        "museo_antioquia": 0.0635
+        "oriental_cruce": 0.3494,
+        "carabobo_cultural": 0.3268,
+        "junin_paseo": 0.6625,
+        "parque_san_antonio": 0.0198,
+        "plaza_botero": 0.2797,
+        "museo_antioquia": 0.0609
       },
       "edge_loads": {
-        "oriental_cruce__parque_berrio": 4260,
-        "parque_berrio__carabobo_cultural": 6734,
-        "san_antonio_metro__junin_paseo": 6013,
-        "junin_paseo__parque_berrio": 5447,
-        "palacio_nacional__parque_berrio": 8112,
-        "palacio_nacional__junin_paseo": 3188,
-        "junin_paseo__oriental_cruce": 2759,
-        "san_antonio_metro__palacio_nacional": 3906,
-        "san_antonio_metro__parque_san_antonio": 278,
-        "parque_san_antonio__junin_paseo": 154,
-        "parque_berrio__plaza_botero": 5493,
-        "carabobo_cultural__plaza_botero": 99,
-        "plaza_botero__museo_antioquia": 1283
+        "san_antonio_metro__palacio_nacional": 3837,
+        "palacio_nacional__parque_berrio": 8041,
+        "oriental_cruce__parque_berrio": 4301,
+        "parque_berrio__carabobo_cultural": 6607,
+        "junin_paseo__oriental_cruce": 2762,
+        "san_antonio_metro__junin_paseo": 6184,
+        "junin_paseo__parque_berrio": 5625,
+        "palacio_nacional__junin_paseo": 3160,
+        "san_antonio_metro__parque_san_antonio": 259,
+        "parque_san_antonio__junin_paseo": 148,
+        "parque_berrio__plaza_botero": 5555,
+        "carabobo_cultural__plaza_botero": 100,
+        "plaza_botero__museo_antioquia": 1232
       },
       "epistemic_status": "proxy_calibrated",
       "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo.",
@@ -1168,34 +1168,34 @@
           "label": "Trabajador en transito",
           "total_trips": 13800,
           "path_entropy": 2.3755,
-          "diversity_index": 0.0012
+          "diversity_index": 0.0014
         },
         {
           "agent_id": "buyer",
           "label": "Comprador",
           "total_trips": 7200,
-          "path_entropy": 2.5531,
-          "diversity_index": 0.0033
+          "path_entropy": 2.5487,
+          "diversity_index": 0.0032
         },
         {
           "agent_id": "tourist",
           "label": "Turista cultural",
           "total_trips": 2600,
-          "path_entropy": 2.1743,
-          "diversity_index": 0.0062
+          "path_entropy": 2.181,
+          "diversity_index": 0.0058
         },
         {
           "agent_id": "street_vendor",
           "label": "Vendedor ambulante",
           "total_trips": 3600,
-          "path_entropy": 2.5055,
-          "diversity_index": 0.0053
+          "path_entropy": 2.5062,
+          "diversity_index": 0.005
         },
         {
           "agent_id": "reduced_mobility",
           "label": "Movilidad reducida",
           "total_trips": 1600,
-          "path_entropy": 2.7352,
+          "path_entropy": 2.7298,
           "diversity_index": 0.0163
         }
       ]
@@ -1207,9 +1207,9 @@
       "metrics": {
         "avg_path_cost": 7.114,
         "avg_travel_minutes": 6.0,
-        "route_entropy": 2.4712,
+        "route_entropy": 2.4739,
         "decision_restriction": 0,
-        "mean_pressure": 3222.22,
+        "mean_pressure": 3233.33,
         "concentration_index": 0.172
       },
       "top_bottlenecks": [
@@ -1369,30 +1369,30 @@
         }
       ],
       "node_loads": {
-        "san_antonio_metro": 0.5026,
-        "palacio_nacional": 0.5149,
+        "oriental_cruce": 0.2762,
         "parque_berrio": 1.0,
-        "junin_paseo": 0.6269,
-        "carabobo_cultural": 0.3037,
-        "oriental_cruce": 0.2598,
-        "parque_san_antonio": 0.039,
-        "plaza_botero": 0.3728,
-        "museo_antioquia": 0.1121
+        "palacio_nacional": 0.5201,
+        "carabobo_cultural": 0.3105,
+        "junin_paseo": 0.6352,
+        "san_antonio_metro": 0.5095,
+        "plaza_botero": 0.3701,
+        "museo_antioquia": 0.1103,
+        "parque_san_antonio": 0.0395
       },
       "edge_loads": {
-        "san_antonio_metro__palacio_nacional": 1426,
-        "palacio_nacional__parque_berrio": 2689,
-        "san_antonio_metro__junin_paseo": 2368,
-        "junin_paseo__parque_berrio": 2451,
-        "parque_berrio__carabobo_cultural": 2360,
-        "junin_paseo__oriental_cruce": 817,
-        "palacio_nacional__junin_paseo": 1013,
-        "oriental_cruce__parque_berrio": 1202,
-        "san_antonio_metro__parque_san_antonio": 193,
-        "parque_san_antonio__junin_paseo": 113,
-        "parque_berrio__plaza_botero": 2821,
-        "carabobo_cultural__plaza_botero": 76,
-        "plaza_botero__museo_antioquia": 871
+        "oriental_cruce__parque_berrio": 1237,
+        "palacio_nacional__parque_berrio": 2680,
+        "parque_berrio__carabobo_cultural": 2396,
+        "palacio_nacional__junin_paseo": 1041,
+        "san_antonio_metro__palacio_nacional": 1436,
+        "san_antonio_metro__junin_paseo": 2392,
+        "junin_paseo__parque_berrio": 2411,
+        "junin_paseo__oriental_cruce": 894,
+        "parque_berrio__plaza_botero": 2785,
+        "carabobo_cultural__plaza_botero": 71,
+        "plaza_botero__museo_antioquia": 851,
+        "san_antonio_metro__parque_san_antonio": 190,
+        "parque_san_antonio__junin_paseo": 116
       },
       "epistemic_status": "proxy_calibrated",
       "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo.",
@@ -1401,40 +1401,78 @@
           "agent_id": "commuter_fast",
           "label": "Trabajador en transito",
           "total_trips": 3800,
-          "path_entropy": 2.3826,
-          "diversity_index": 0.0045
+          "path_entropy": 2.378,
+          "diversity_index": 0.0042
         },
         {
           "agent_id": "buyer",
           "label": "Comprador",
           "total_trips": 2400,
-          "path_entropy": 2.5624,
-          "diversity_index": 0.0096
+          "path_entropy": 2.565,
+          "diversity_index": 0.0088
         },
         {
           "agent_id": "tourist",
           "label": "Turista cultural",
           "total_trips": 1800,
-          "path_entropy": 2.1861,
-          "diversity_index": 0.0078
+          "path_entropy": 2.165,
+          "diversity_index": 0.0083
         },
         {
           "agent_id": "street_vendor",
           "label": "Vendedor ambulante",
           "total_trips": 1400,
-          "path_entropy": 2.5103,
+          "path_entropy": 2.5206,
           "diversity_index": 0.0129
         },
         {
           "agent_id": "reduced_mobility",
           "label": "Movilidad reducida",
           "total_trips": 1200,
-          "path_entropy": 2.7144,
+          "path_entropy": 2.7409,
           "diversity_index": 0.0208
         }
       ]
     }
   ],
+  "advanced_models": {
+    "micro_simulation": {
+      "generated_at": "2026-04-24T22:30:01+00:00",
+      "engine": "PyTorch Social Force Tensor Dynamics",
+      "resolution": "256x256m",
+      "results": [
+        {
+          "scenario_id": "valle",
+          "heatmap_file": "crowd_density_valle.npy",
+          "max_density": 6.548333644866943,
+          "turbulence_index": 0.20778606832027435,
+          "agents_simulated": 5000
+        },
+        {
+          "scenario_id": "peak_pm",
+          "heatmap_file": "crowd_density_peak_pm.npy",
+          "max_density": 3.6000001430511475,
+          "turbulence_index": 0.16446374356746674,
+          "agents_simulated": 5000
+        }
+      ]
+    },
+    "environmental_pde": {
+      "generated_at": "2026-04-24T22:30:32+00:00",
+      "engine": "PyTorch PDE Solver (Euler FTCS)",
+      "resolution": "512x512",
+      "fields": {
+        "pm25": {
+          "max_concentration": 419.1219177246094,
+          "mean_concentration": 0.31075990200042725
+        },
+        "noise": {
+          "max_intensity": 595.9021606445312,
+          "mean_intensity": 0.5098522901535034
+        }
+      }
+    }
+  },
   "sources": [
     {
       "id": "movilidad_observatorio",
@@ -1470,7 +1508,7 @@
       "status": "downloaded",
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 20090,
+      "bytes": 21592,
       "local_path": "raw/medata_criminalidad_page.html",
       "resolved_url": "https://medata.gov.co/node/16667",
       "note": "captured"
@@ -1520,12 +1558,12 @@
       "url": "https://medata.gov.co/node/16360",
       "kind": "medata_page",
       "status": "failed",
-      "http_status": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "http_status": null,
+      "content_type": null,
       "bytes": 0,
       "local_path": null,
       "resolved_url": "https://medata.gov.co/node/16360",
-      "note": "http_403"
+      "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=10)\"))"
     },
     {
       "id": "medata_equipamientos_page",
@@ -1762,7 +1800,7 @@
       {
         "id": "medata_land_use_page",
         "label": "MEData uso general del suelo urbano",
-        "note": "http_403",
+        "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=10)\"))",
         "url": "https://medata.gov.co/node/16360"
       },
       {
@@ -1852,7 +1890,7 @@
     ]
   },
   "empirical": {
-    "generated_at": "2026-04-24T21:32:04+00:00",
+    "generated_at": "2026-04-24T22:34:38+00:00",
     "center_perception": {
       "source": "Medellin Como Vamos EPC 2024",
       "image_favorable_pct": 53.3,

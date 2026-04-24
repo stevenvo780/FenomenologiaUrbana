@@ -96,6 +96,13 @@ export type ScenarioSummary = {
   edge_loads: Record<string, number>
   epistemic_status: string
   note: string
+  advanced_stats?: Array<{
+    agent_id: string
+    label: string
+    total_trips: number
+    path_entropy: number
+    diversity_index: number
+  }>
 }
 
 export type Payload = {

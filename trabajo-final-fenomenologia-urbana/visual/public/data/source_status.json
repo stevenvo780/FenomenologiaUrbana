@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T21:32:04+00:00",
+  "generated_at": "2026-04-24T22:34:38+00:00",
   "source_count": 19,
   "downloaded_count": 16,
   "failed_count": 3,
@@ -38,7 +38,7 @@
       "status": "downloaded",
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 20090,
+      "bytes": 21592,
       "local_path": "raw/medata_criminalidad_page.html",
       "resolved_url": "https://medata.gov.co/node/16667",
       "note": "captured"
@@ -88,12 +88,12 @@
       "url": "https://medata.gov.co/node/16360",
       "kind": "medata_page",
       "status": "failed",
-      "http_status": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "http_status": null,
+      "content_type": null,
       "bytes": 0,
       "local_path": null,
       "resolved_url": "https://medata.gov.co/node/16360",
-      "note": "http_403"
+      "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=10)\"))"
     },
     {
       "id": "medata_equipamientos_page",

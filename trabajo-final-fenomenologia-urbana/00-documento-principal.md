@@ -17,16 +17,16 @@ Este trabajo busca romper esa limitación. Su propósito es demostrar que puede 
 
 El problema general es el siguiente: la experiencia del espacio urbano suele presentarse como libre, espontánea e individual, cuando en realidad está fuertemente condicionada por una malla de restricciones y posibilidades materiales. Esa malla incluye rutas, topología urbana, transporte público, congestión, vigilancia, iluminación, ruido, inseguridad, comercio, memoria social, hábitos corporales, infraestructuras algorítmicas y distribución desigual del poder.
 
-El problema filosófico específico es cómo pensar el **aparecer fenomenológico del espacio** sin reducirlo ni a interioridad subjetiva ni a determinismo físico bruto. El problema metodológico es cómo conectar descripción de experiencia con datos observables. El problema técnico es cómo representar esas relaciones de modo trazable, medible y visualizable.
+El problema filosófico específico es cómo pensar el **aparecer fenomenológico del espacio** sin reducirlo ni a interioridad subjetiva ni a determinismo físico bruto. El problema metodológico es cómo conectar descripción de experiencia con datos observables de altísima resolución. El problema técnico es cómo representar esas relaciones de modo trazable, medible y visualizable, aprovechando arquitecturas de cómputo de alto rendimiento (GPU/CPU-Parallel) para integrar modelos de fuerza social (micro-simulación), ecuaciones diferenciales parciales (PDEs) para la dispersión ambiental y Aprendizaje por Refuerzo Profundo (Deep Reinforcement Learning) para el comportamiento adaptativo de los agentes.
 
 ## Justificación
 
 Este trabajo se justifica por cuatro razones.
 
-1. Filosófica. Permite defender una fenomenología no ornamental, capaz de formalizar sus intuiciones sin renunciar a la experiencia.
-2. Urbana. El centro de Medellín es un condensador de flujos, conflictos, memorias y asimetrías; por eso es un lugar privilegiado para estudiar la experiencia situada.
-3. Metodológica. El caso permite combinar teoría, datos públicos, trabajo de campo, modelos de red y visualización interactiva.
-4. Pedagógica. Sirve para mostrar a un grupo de filosofía que hoy la fenomenología puede trabajar con herramientas contemporáneas sin degradarse a tecnicismo positivista.
+1. Filosófica. Permite defender una fenomenología no ornamental, capaz de formalizar sus intuiciones sin renunciar a la experiencia, llevándola al estado del arte computacional.
+2. Urbana. El centro de Medellín es un condensador de flujos, conflictos, memorias y asimetrías; por eso es un lugar privilegiado para estudiar la experiencia situada a nivel micro y macro.
+3. Metodológica. El caso permite combinar teoría, Big Data, telemetría satelital, LiDAR, modelos de fluidos peatonales (Social Force Model) y visualización en tiempo real.
+4. Pedagógica. Sirve para mostrar a un grupo de filosofía que hoy la fenomenología puede trabajar con la ciencia de datos más avanzada (IA, Supercómputo) sin degradarse a tecnicismo positivista.
 
 ## Pregunta de investigación
 

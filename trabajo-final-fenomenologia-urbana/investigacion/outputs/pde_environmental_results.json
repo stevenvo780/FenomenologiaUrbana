@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-04-24T22:30:32+00:00",
+  "engine": "PyTorch PDE Solver (Euler FTCS)",
+  "resolution": "512x512",
+  "fields": {
+    "pm25": {
+      "max_concentration": 419.1219177246094,
+      "mean_concentration": 0.31075990200042725
+    },
+    "noise": {
+      "max_intensity": 595.9021606445312,
+      "mean_intensity": 0.5098522901535034
+    }
+  }
+}
