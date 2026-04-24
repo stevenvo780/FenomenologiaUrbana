@@ -1,0 +1,851 @@
+{
+  "generated_at": "2026-04-24T16:17:58+00:00",
+  "case_focus": "San Antonio - Junin - Parque Berrio - Plaza Botero",
+  "scenario_count": 4,
+  "baseline_metrics": {
+    "centrality": [
+      {
+        "node_id": "parque_berrio",
+        "betweenness": 0.5357,
+        "closeness": 0.0035
+      },
+      {
+        "node_id": "junin_paseo",
+        "betweenness": 0.3929,
+        "closeness": 0.0035
+      },
+      {
+        "node_id": "plaza_botero",
+        "betweenness": 0.25,
+        "closeness": 0.0026
+      },
+      {
+        "node_id": "san_antonio_metro",
+        "betweenness": 0.0357,
+        "closeness": 0.0025
+      },
+      {
+        "node_id": "parque_san_antonio",
+        "betweenness": 0.0,
+        "closeness": 0.0024
+      },
+      {
+        "node_id": "palacio_nacional",
+        "betweenness": 0.0,
+        "closeness": 0.0029
+      },
+      {
+        "node_id": "oriental_cruce",
+        "betweenness": 0.0,
+        "closeness": 0.0026
+      },
+      {
+        "node_id": "carabobo_cultural",
+        "betweenness": 0.0,
+        "closeness": 0.003
+      },
+      {
+        "node_id": "museo_antioquia",
+        "betweenness": 0.0,
+        "closeness": 0.0022
+      }
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "peak_am",
+      "label": "Hora pico AM",
+      "time_window": "07:00-09:00",
+      "metrics": {
+        "avg_path_cost": 8.084,
+        "avg_travel_minutes": 5.977,
+        "route_entropy": 0.903,
+        "decision_restriction": 0.097,
+        "mean_pressure": 73.44,
+        "concentration_index": 0.168
+      },
+      "top_bottlenecks": [
+        {
+          "node_id": "parque_berrio",
+          "label": "Parque Berrio",
+          "kind": "square",
+          "load": 172,
+          "phenomenology": "Aparece como condensador de trayectorias y mezcla social inestable."
+        },
+        {
+          "node_id": "junin_paseo",
+          "label": "Junin Peatonal",
+          "kind": "commercial_axis",
+          "load": 144,
+          "phenomenology": "Aparece como promenade dirigida, vitrina y espacio de decision comercial."
+        },
+        {
+          "node_id": "san_antonio_metro",
+          "label": "San Antonio Metro",
+          "kind": "interchange",
+          "load": 89,
+          "phenomenology": "Aparece como umbral, prisa, saturacion y redistribucion de trayectorias."
+        },
+        {
+          "node_id": "palacio_nacional",
+          "label": "Palacio Nacional",
+          "kind": "commercial",
+          "load": 71,
+          "phenomenology": "Aparece como interior de compensacion y proteccion relativa frente al caos exterior."
+        }
+      ],
+      "profile_stats": [
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "trip_count": 120,
+          "avg_cost": 9.521,
+          "avg_travel_minutes": 4.597,
+          "route_entropy": 0.983
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "trip_count": 55,
+          "avg_cost": 6.227,
+          "avg_travel_minutes": 6.216,
+          "route_entropy": 0.942
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "trip_count": 30,
+          "avg_cost": 2.982,
+          "avg_travel_minutes": 7.355,
+          "route_entropy": 0.948
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "trip_count": 20,
+          "avg_cost": 7.032,
+          "avg_travel_minutes": 9.048,
+          "route_entropy": 0.879
+        },
+        {
+          "agent_id": "reduced_mobility",
+          "label": "Movilidad reducida",
+          "trip_count": 18,
+          "avg_cost": 13.854,
+          "avg_travel_minutes": 8.737,
+          "route_entropy": 0.942
+        }
+      ],
+      "top_routes": [
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "palacio_nacional",
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 18,
+          "share": 0.15
+        },
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "oriental_cruce",
+            "junin_paseo"
+          ],
+          "count": 17,
+          "share": 0.142
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo",
+            "parque_berrio"
+          ],
+          "count": 9,
+          "share": 0.164
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "palacio_nacional",
+            "parque_berrio"
+          ],
+          "count": 8,
+          "share": 0.145
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo",
+            "parque_berrio",
+            "plaza_botero"
+          ],
+          "count": 6,
+          "share": 0.3
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo",
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 6,
+          "share": 0.3
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "path": [
+            "junin_paseo",
+            "parque_berrio"
+          ],
+          "count": 5,
+          "share": 0.167
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "path": [
+            "junin_paseo",
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 5,
+          "share": 0.167
+        }
+      ],
+      "node_loads": {
+        "palacio_nacional": 71,
+        "parque_berrio": 172,
+        "carabobo_cultural": 63,
+        "junin_paseo": 144,
+        "san_antonio_metro": 89,
+        "oriental_cruce": 63,
+        "plaza_botero": 44,
+        "museo_antioquia": 7,
+        "parque_san_antonio": 8
+      },
+      "edge_loads": {
+        "palacio_nacional__parque_berrio": 41,
+        "parque_berrio__carabobo_cultural": 63,
+        "palacio_nacional__junin_paseo": 24,
+        "san_antonio_metro__junin_paseo": 82,
+        "junin_paseo__parque_berrio": 80,
+        "oriental_cruce__parque_berrio": 37,
+        "junin_paseo__oriental_cruce": 26,
+        "parque_berrio__plaza_botero": 44,
+        "san_antonio_metro__palacio_nacional": 6,
+        "plaza_botero__museo_antioquia": 7,
+        "san_antonio_metro__parque_san_antonio": 5,
+        "parque_san_antonio__junin_paseo": 3
+      },
+      "epistemic_status": "proxy_calibrated",
+      "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo."
+    },
+    {
+      "id": "midday",
+      "label": "Franja media",
+      "time_window": "12:00-14:00",
+      "metrics": {
+        "avg_path_cost": 6.324,
+        "avg_travel_minutes": 6.331,
+        "route_entropy": 0.939,
+        "decision_restriction": 0.061,
+        "mean_pressure": 93.0,
+        "concentration_index": 0.168
+      },
+      "top_bottlenecks": [
+        {
+          "node_id": "parque_berrio",
+          "label": "Parque Berrio",
+          "kind": "square",
+          "load": 220,
+          "phenomenology": "Aparece como condensador de trayectorias y mezcla social inestable."
+        },
+        {
+          "node_id": "junin_paseo",
+          "label": "Junin Peatonal",
+          "kind": "commercial_axis",
+          "load": 186,
+          "phenomenology": "Aparece como promenade dirigida, vitrina y espacio de decision comercial."
+        },
+        {
+          "node_id": "san_antonio_metro",
+          "label": "San Antonio Metro",
+          "kind": "interchange",
+          "load": 117,
+          "phenomenology": "Aparece como umbral, prisa, saturacion y redistribucion de trayectorias."
+        },
+        {
+          "node_id": "plaza_botero",
+          "label": "Plaza Botero",
+          "kind": "cultural_square",
+          "load": 96,
+          "phenomenology": "Aparece como museo abierto, escena turistica y campo de vigilancia simultanea."
+        }
+      ],
+      "profile_stats": [
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "trip_count": 100,
+          "avg_cost": 5.263,
+          "avg_travel_minutes": 5.605,
+          "route_entropy": 0.976
+        },
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "trip_count": 72,
+          "avg_cost": 9.211,
+          "avg_travel_minutes": 4.597,
+          "route_entropy": 0.981
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "trip_count": 64,
+          "avg_cost": 5.487,
+          "avg_travel_minutes": 8.291,
+          "route_entropy": 0.98
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "trip_count": 45,
+          "avg_cost": 2.362,
+          "avg_travel_minutes": 7.12,
+          "route_entropy": 0.947
+        },
+        {
+          "agent_id": "reduced_mobility",
+          "label": "Movilidad reducida",
+          "trip_count": 22,
+          "avg_cost": 12.229,
+          "avg_travel_minutes": 7.996,
+          "route_entropy": 0.96
+        }
+      ],
+      "top_routes": [
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "palacio_nacional",
+            "junin_paseo"
+          ],
+          "count": 17,
+          "share": 0.17
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo",
+            "parque_berrio",
+            "plaza_botero",
+            "museo_antioquia"
+          ],
+          "count": 14,
+          "share": 0.219
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "parque_berrio",
+            "plaza_botero",
+            "museo_antioquia"
+          ],
+          "count": 14,
+          "share": 0.219
+        },
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo",
+            "parque_berrio"
+          ],
+          "count": 13,
+          "share": 0.181
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo"
+          ],
+          "count": 11,
+          "share": 0.11
+        },
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "oriental_cruce",
+            "junin_paseo"
+          ],
+          "count": 9,
+          "share": 0.125
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "path": [
+            "junin_paseo",
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 7,
+          "share": 0.156
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "path": [
+            "parque_berrio",
+            "junin_paseo"
+          ],
+          "count": 7,
+          "share": 0.156
+        }
+      ],
+      "node_loads": {
+        "oriental_cruce": 54,
+        "junin_paseo": 186,
+        "palacio_nacional": 74,
+        "parque_berrio": 220,
+        "carabobo_cultural": 52,
+        "san_antonio_metro": 117,
+        "plaza_botero": 96,
+        "museo_antioquia": 30,
+        "parque_san_antonio": 8
+      },
+      "edge_loads": {
+        "junin_paseo__oriental_cruce": 26,
+        "palacio_nacional__parque_berrio": 34,
+        "parque_berrio__carabobo_cultural": 52,
+        "palacio_nacional__junin_paseo": 32,
+        "san_antonio_metro__junin_paseo": 107,
+        "oriental_cruce__parque_berrio": 28,
+        "junin_paseo__parque_berrio": 113,
+        "parque_berrio__plaza_botero": 96,
+        "san_antonio_metro__palacio_nacional": 8,
+        "plaza_botero__museo_antioquia": 30,
+        "parque_san_antonio__junin_paseo": 3,
+        "san_antonio_metro__parque_san_antonio": 5
+      },
+      "epistemic_status": "proxy_calibrated",
+      "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo."
+    },
+    {
+      "id": "peak_pm",
+      "label": "Hora pico PM",
+      "time_window": "17:00-19:00",
+      "metrics": {
+        "avg_path_cost": 7.753,
+        "avg_travel_minutes": 5.579,
+        "route_entropy": 0.911,
+        "decision_restriction": 0.089,
+        "mean_pressure": 85.0,
+        "concentration_index": 0.166
+      },
+      "top_bottlenecks": [
+        {
+          "node_id": "parque_berrio",
+          "label": "Parque Berrio",
+          "kind": "square",
+          "load": 188,
+          "phenomenology": "Aparece como condensador de trayectorias y mezcla social inestable."
+        },
+        {
+          "node_id": "junin_paseo",
+          "label": "Junin Peatonal",
+          "kind": "commercial_axis",
+          "load": 178,
+          "phenomenology": "Aparece como promenade dirigida, vitrina y espacio de decision comercial."
+        },
+        {
+          "node_id": "san_antonio_metro",
+          "label": "San Antonio Metro",
+          "kind": "interchange",
+          "load": 94,
+          "phenomenology": "Aparece como umbral, prisa, saturacion y redistribucion de trayectorias."
+        },
+        {
+          "node_id": "palacio_nacional",
+          "label": "Palacio Nacional",
+          "kind": "commercial",
+          "load": 85,
+          "phenomenology": "Aparece como interior de compensacion y proteccion relativa frente al caos exterior."
+        }
+      ],
+      "profile_stats": [
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "trip_count": 138,
+          "avg_cost": 9.537,
+          "avg_travel_minutes": 4.446,
+          "route_entropy": 0.97
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "trip_count": 72,
+          "avg_cost": 5.58,
+          "avg_travel_minutes": 5.37,
+          "route_entropy": 0.957
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "trip_count": 36,
+          "avg_cost": 2.709,
+          "avg_travel_minutes": 6.74,
+          "route_entropy": 0.935
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "trip_count": 26,
+          "avg_cost": 6.028,
+          "avg_travel_minutes": 7.701,
+          "route_entropy": 0.946
+        },
+        {
+          "agent_id": "reduced_mobility",
+          "label": "Movilidad reducida",
+          "trip_count": 16,
+          "avg_cost": 16.304,
+          "avg_travel_minutes": 10.237,
+          "route_entropy": 0.95
+        }
+      ],
+      "top_routes": [
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "oriental_cruce",
+            "junin_paseo"
+          ],
+          "count": 22,
+          "share": 0.159
+        },
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "oriental_cruce",
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 21,
+          "share": 0.152
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "palacio_nacional",
+            "junin_paseo"
+          ],
+          "count": 15,
+          "share": 0.208
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "oriental_cruce",
+            "parque_berrio"
+          ],
+          "count": 9,
+          "share": 0.125
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "path": [
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 8,
+          "share": 0.222
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo",
+            "parque_berrio",
+            "plaza_botero",
+            "museo_antioquia"
+          ],
+          "count": 6,
+          "share": 0.231
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 6,
+          "share": 0.231
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "path": [
+            "junin_paseo",
+            "parque_berrio",
+            "plaza_botero"
+          ],
+          "count": 5,
+          "share": 0.139
+        }
+      ],
+      "node_loads": {
+        "san_antonio_metro": 94,
+        "junin_paseo": 178,
+        "parque_berrio": 188,
+        "oriental_cruce": 77,
+        "carabobo_cultural": 73,
+        "palacio_nacional": 85,
+        "plaza_botero": 52,
+        "museo_antioquia": 14,
+        "parque_san_antonio": 4
+      },
+      "edge_loads": {
+        "san_antonio_metro__junin_paseo": 88,
+        "junin_paseo__parque_berrio": 84,
+        "junin_paseo__oriental_cruce": 37,
+        "parque_berrio__carabobo_cultural": 73,
+        "palacio_nacional__parque_berrio": 38,
+        "oriental_cruce__parque_berrio": 40,
+        "palacio_nacional__junin_paseo": 41,
+        "san_antonio_metro__palacio_nacional": 6,
+        "parque_berrio__plaza_botero": 52,
+        "plaza_botero__museo_antioquia": 14,
+        "parque_san_antonio__junin_paseo": 3,
+        "san_antonio_metro__parque_san_antonio": 1
+      },
+      "epistemic_status": "proxy_calibrated",
+      "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo."
+    },
+    {
+      "id": "night",
+      "label": "Noche",
+      "time_window": "20:00-22:00",
+      "metrics": {
+        "avg_path_cost": 7.114,
+        "avg_travel_minutes": 6.0,
+        "route_entropy": 0.918,
+        "decision_restriction": 0.082,
+        "mean_pressure": 31.44,
+        "concentration_index": 0.172
+      },
+      "top_bottlenecks": [
+        {
+          "node_id": "parque_berrio",
+          "label": "Parque Berrio",
+          "kind": "square",
+          "load": 76,
+          "phenomenology": "Aparece como condensador de trayectorias y mezcla social inestable."
+        },
+        {
+          "node_id": "junin_paseo",
+          "label": "Junin Peatonal",
+          "kind": "commercial_axis",
+          "load": 61,
+          "phenomenology": "Aparece como promenade dirigida, vitrina y espacio de decision comercial."
+        },
+        {
+          "node_id": "san_antonio_metro",
+          "label": "San Antonio Metro",
+          "kind": "interchange",
+          "load": 45,
+          "phenomenology": "Aparece como umbral, prisa, saturacion y redistribucion de trayectorias."
+        },
+        {
+          "node_id": "palacio_nacional",
+          "label": "Palacio Nacional",
+          "kind": "commercial",
+          "load": 31,
+          "phenomenology": "Aparece como interior de compensacion y proteccion relativa frente al caos exterior."
+        }
+      ],
+      "profile_stats": [
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "trip_count": 38,
+          "avg_cost": 8.727,
+          "avg_travel_minutes": 4.528,
+          "route_entropy": 0.912
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "trip_count": 24,
+          "avg_cost": 5.713,
+          "avg_travel_minutes": 5.716,
+          "route_entropy": 0.96
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "trip_count": 18,
+          "avg_cost": 6.339,
+          "avg_travel_minutes": 8.287,
+          "route_entropy": 0.961
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "trip_count": 14,
+          "avg_cost": 3.244,
+          "avg_travel_minutes": 7.049,
+          "route_entropy": 0.965
+        },
+        {
+          "agent_id": "reduced_mobility",
+          "label": "Movilidad reducida",
+          "trip_count": 12,
+          "avg_cost": 10.489,
+          "avg_travel_minutes": 6.578,
+          "route_entropy": 0.952
+        }
+      ],
+      "top_routes": [
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "palacio_nacional",
+            "parque_berrio"
+          ],
+          "count": 10,
+          "share": 0.263
+        },
+        {
+          "agent_id": "commuter_fast",
+          "label": "Trabajador en transito",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo"
+          ],
+          "count": 7,
+          "share": 0.184
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo",
+            "parque_berrio",
+            "plaza_botero"
+          ],
+          "count": 5,
+          "share": 0.278
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "palacio_nacional",
+            "junin_paseo"
+          ],
+          "count": 4,
+          "share": 0.167
+        },
+        {
+          "agent_id": "buyer",
+          "label": "Comprador",
+          "path": [
+            "palacio_nacional",
+            "parque_berrio"
+          ],
+          "count": 4,
+          "share": 0.167
+        },
+        {
+          "agent_id": "tourist",
+          "label": "Turista cultural",
+          "path": [
+            "parque_berrio",
+            "carabobo_cultural"
+          ],
+          "count": 4,
+          "share": 0.222
+        },
+        {
+          "agent_id": "street_vendor",
+          "label": "Vendedor ambulante",
+          "path": [
+            "san_antonio_metro",
+            "junin_paseo"
+          ],
+          "count": 3,
+          "share": 0.214
+        },
+        {
+          "agent_id": "reduced_mobility",
+          "label": "Movilidad reducida",
+          "path": [
+            "parque_berrio",
+            "plaza_botero"
+          ],
+          "count": 3,
+          "share": 0.25
+        }
+      ],
+      "node_loads": {
+        "san_antonio_metro": 45,
+        "junin_paseo": 61,
+        "parque_berrio": 76,
+        "carabobo_cultural": 19,
+        "oriental_cruce": 15,
+        "palacio_nacional": 31,
+        "plaza_botero": 26,
+        "museo_antioquia": 7,
+        "parque_san_antonio": 3
+      },
+      "edge_loads": {
+        "san_antonio_metro__junin_paseo": 40,
+        "junin_paseo__parque_berrio": 36,
+        "parque_berrio__carabobo_cultural": 19,
+        "oriental_cruce__parque_berrio": 9,
+        "palacio_nacional__parque_berrio": 18,
+        "junin_paseo__oriental_cruce": 6,
+        "palacio_nacional__junin_paseo": 10,
+        "parque_berrio__plaza_botero": 26,
+        "san_antonio_metro__palacio_nacional": 3,
+        "plaza_botero__museo_antioquia": 7,
+        "san_antonio_metro__parque_san_antonio": 3
+      },
+      "epistemic_status": "proxy_calibrated",
+      "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo."
+    }
+  ]
+}
