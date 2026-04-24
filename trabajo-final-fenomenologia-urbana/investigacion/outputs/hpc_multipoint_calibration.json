@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-04-24T23:08:10+00:00",
+  "method": "Multi-point Spatial RMSE Minimization",
+  "optimized_parameters": {
+    "time_weight": 2.77777777827146,
+    "risk_weight": -2.222222219983758,
+    "visibility_comfort_weight": 1.1111111120513435
+  },
+  "spatial_accuracy_score": 0.9999999999870244,
+  "residual_error": 1.297565167859007e-06,
+  "validation_nodes": {
+    "san_antonio_metro": 100000,
+    "parque_berrio": 75000,
+    "junin_paseo": 45000
+  }
+}

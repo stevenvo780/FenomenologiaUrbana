@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-04-24T23:13:11+00:00",
+  "iterations_per_sample": 50,
+  "results": {
+    "hour_6": {
+      "mean_velocity": 1.2719316792488098,
+      "std_dev": 0.00029533677147165955,
+      "confidence_interval_95": [
+        1.271849816072344,
+        1.2720135424252756
+      ],
+      "relative_uncertainty": 0.0002321954679563312
+    },
+    "hour_12": {
+      "mean_velocity": 1.2719721913337707,
+      "std_dev": 0.00035462721297015653,
+      "confidence_interval_95": [
+        1.2718738936853935,
+        1.272070488982148
+      ],
+      "relative_uncertainty": 0.0002788010739435269
+    },
+    "hour_18": {
+      "mean_velocity": 1.2719988226890564,
+      "std_dev": 0.00033403474042533203,
+      "confidence_interval_95": [
+        1.2719062329828545,
+        1.2720914123952582
+      ],
+      "relative_uncertainty": 0.00026260617106482005
+    }
+  },
+  "note": "Intervalos de confianza calculados mediante Monte Carlo para blindar la tesis contra cr\u00edticas de variabilidad."
+}

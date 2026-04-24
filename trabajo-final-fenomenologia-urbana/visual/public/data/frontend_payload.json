@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T22:57:53+00:00",
+    "generated_at": "2026-04-24T23:13:12+00:00",
     "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
     "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
@@ -1520,12 +1520,12 @@
       ]
     },
     "perceptual_visibility": {
-      "generated_at": "2026-04-24T22:57:40+00:00",
-      "method": "GPU Ray-Casting Isovist Analysis",
-      "total_points_analyzed": 10000,
-      "mean_visibility_m2": 0.8759753557264804,
-      "max_exposure_index": 1.0,
-      "note": "Este mapa identifica las 'Zonas de Refugio' vs 'Zonas de Exposici\u00f3n' fenomenol\u00f3gica."
+      "generated_at": "2026-04-24T23:03:22+00:00",
+      "resolution": "2048x2048",
+      "points_sampled": 4985,
+      "ray_count": 3589200,
+      "max_panoptic_exposure": 198506.0,
+      "mean_openness": 0.9987924098968506
     },
     "economic_gravity": {
       "generated_at": "2026-04-24T22:57:52+00:00",

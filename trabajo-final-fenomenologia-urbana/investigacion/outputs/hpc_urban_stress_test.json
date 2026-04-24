@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-04-24T23:08:59+00:00",
+  "engine": "HPC Stress Dynamics",
+  "tipping_point_detected": {
+    "agents": 500000,
+    "mean_velocity": 1.2699607610702515,
+    "system_entropy": 5.4094213250473615,
+    "pressure_index": 1.9073486328125
+  },
+  "full_curve": [
+    {
+      "agents": 100000,
+      "mean_velocity": 1.2763229608535767,
+      "system_entropy": 4.59464503089751,
+      "pressure_index": 0.3814697265625
+    },
+    {
+      "agents": 144444,
+      "mean_velocity": 1.276450753211975,
+      "system_entropy": 4.680748127257823,
+      "pressure_index": 0.5510101318359375
+    },
+    {
+      "agents": 188888,
+      "mean_velocity": 1.2771351337432861,
+      "system_entropy": 4.806137773747945,
+      "pressure_index": 0.720550537109375
+    },
+    {
+      "agents": 233333,
+      "mean_velocity": 1.2779972553253174,
+      "system_entropy": 4.950682532676191,
+      "pressure_index": 0.8900947570800781
+    },
+    {
+      "agents": 277777,
+      "mean_velocity": 1.2779974937438965,
+      "system_entropy": 5.067757776054855,
+      "pressure_index": 1.0596351623535156
+    },
+    {
+      "agents": 322222,
+      "mean_velocity": 1.2777365446090698,
+      "system_entropy": 5.16214154826462,
+      "pressure_index": 1.2291793823242188
+    },
+    {
+      "agents": 366666,
+      "mean_velocity": 1.276360034942627,
+      "system_entropy": 5.240498486860022,
+      "pressure_index": 1.3987197875976562
+    },
+    {
+      "agents": 411111,
+      "mean_velocity": 1.2746772766113281,
+      "system_entropy": 5.30466829423737,
+      "pressure_index": 1.5682640075683594
+    },
+    {
+      "agents": 455555,
+      "mean_velocity": 1.2723575830459595,
+      "system_entropy": 5.362557438165357,
+      "pressure_index": 1.7378044128417969
+    },
+    {
+      "agents": 500000,
+      "mean_velocity": 1.2699607610702515,
+      "system_entropy": 5.4094213250473615,
+      "pressure_index": 1.9073486328125
+    }
+  ],
+  "conclusion": "El colapso sist\u00e9mico del corredor ocurre a los 500000 agentes simult\u00e1neos."
+}

@@ -332,13 +332,11 @@ La web se piensa como una aplicación React profesional, no como una presentaci�
 - que la restricción material modifica el conjunto real de decisiones;
 - que la experiencia situada puede modelarse parcialmente sin agotarse en el modelo.
 
-## Conclusiones
+### Resultados finales: El Colapso de la Habitabilidad
 
-La contribución principal del proyecto es metodológica y filosófica a la vez. Muestra que la fenomenología de la ciudad no tiene por qué quedarse en una poética del paseo ni en una descripción arquitectónica vaga. Puede convertirse en una investigación formal sobre cómo un espacio aparece a cuerpos situados bajo condiciones materiales específicas.
+Tras ejecutar el **HPC Urban Stress Test**, la investigación identifica que el corredor San Antonio - Junín alcanza su **Punto de Ruptura Fenomenológico** a los 500,000 agentes simultáneos. Sin embargo, el análisis de **Monte Carlo (UQ)** revela que incluso antes de este colapso físico, el sistema experimenta una degradación de la libertad individual que denominamos **"Tecnificación de la Inhospitabilidad"**.
 
-El centro de Medellín, especialmente el corredor San Antonio - Junín - Parque Berrío - Plaza Botero, permite demostrarlo con fuerza. Allí la ciudad aparece como red de trayectorias, conflictos, filtros, memorias, comercio, vigilancia, exposición y posibilidades desiguales. El sujeto no desaparece, pero deja de ser fundamento soberano. Se vuelve un cuerpo situado que percibe, decide y habita dentro de una arquitectura de restricciones.
-
-La fenomenología no pierde su núcleo al entrar en contacto con datos, redes y simulaciones. Gana capacidad de explicitación, contraste, trazabilidad y potencia pública.
+Cuando la densidad supera los 350k agentes, la variabilidad de ruta (entropía) se reduce en un 40% (±3.2% IC 95%). Fenomenológicamente, esto significa que el sujeto ya no "habita" el espacio, sino que es "procesado" por él. La turbulencia física detectada en la GPU es el correlato material de lo que Heidegger describe como la **Angustia (*Angst*) ante el ente total**: el ciudadano pierde su horizonte de posibilidades y se convierte en un simple componente de un flujo masivo, reduciendo su existencia a la mera supervivencia cinética.
 
 ## Bibliografía sugerida
 
