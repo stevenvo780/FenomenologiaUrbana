@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T16:24:52+00:00",
+    "generated_at": "2026-04-24T16:38:38+00:00",
     "pipeline_version": "0.1.0",
     "status": "research_to_visual_synced"
   },
@@ -1316,7 +1316,7 @@
       "status": "downloaded",
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 20090,
+      "bytes": 21592,
       "local_path": "raw/medata_criminalidad_page.html",
       "resolved_url": "https://medata.gov.co/node/16667",
       "note": "captured"
@@ -1493,7 +1493,7 @@
     ]
   },
   "empirical": {
-    "generated_at": "2026-04-24T16:24:51+00:00",
+    "generated_at": "2026-04-24T16:38:37+00:00",
     "center_perception": {
       "source": "Medellin Como Vamos EPC 2024",
       "image_favorable_pct": 53.3,

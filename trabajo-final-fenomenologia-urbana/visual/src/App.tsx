@@ -1,13 +1,17 @@
-import { startTransition, useDeferredValue, useState } from 'react'
+import * as L from 'leaflet'
+import { startTransition, useDeferredValue, useEffect, useRef, useState } from 'react'
 
 import './App.css'
 import { useProjectData } from './hooks/useProjectData'
 import type { CaseNode, Payload, ScenarioSummary } from './types'
 
+type EpistemicStatus = 'documented' | 'proxy' | 'pending'
+
 function App() {
   const state = useProjectData()
   const [scenarioId, setScenarioId] = useState('peak_pm')
   const [agentId, setAgentId] = useState('commuter_fast')
+  const [compareAgentId, setCompareAgentId] = useState('reduced_mobility')
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null)
   const deferredScenarioId = useDeferredValue(scenarioId)
 
@@ -37,16 +41,30 @@ function App() {
     )
   }
 
-  return <Dashboard data={state.data} scenarioId={deferredScenarioId} agentId={agentId} selectedNodeId={selectedNodeId} onScenarioChange={setScenarioId} onAgentChange={setAgentId} onSelectNode={setSelectedNodeId} />
+  return (
+    <Dashboard
+      data={state.data}
+      scenarioId={deferredScenarioId}
+      agentId={agentId}
+      compareAgentId={compareAgentId}
+      selectedNodeId={selectedNodeId}
+      onScenarioChange={setScenarioId}
+      onAgentChange={setAgentId}
+      onCompareAgentChange={setCompareAgentId}
+      onSelectNode={setSelectedNodeId}
+    />
+  )
 }
 
 type DashboardProps = {
   data: Payload
   scenarioId: string
   agentId: string
+  compareAgentId: string
   selectedNodeId: string | null
   onScenarioChange: (value: string) => void
   onAgentChange: (value: string) => void
+  onCompareAgentChange: (value: string) => void
   onSelectNode: (value: string) => void
 }
 
@@ -54,20 +72,33 @@ function Dashboard({
   data,
   scenarioId,
   agentId,
+  compareAgentId,
   selectedNodeId,
   onScenarioChange,
   onAgentChange,
+  onCompareAgentChange,
   onSelectNode,
 }: DashboardProps) {
   const scenario = data.scenarios.find((entry) => entry.id === scenarioId) ?? data.scenarios[0]
   const agent = data.agents.find((entry) => entry.id === agentId) ?? data.agents[0]
+  const compareAgent =
+    data.agents.find((entry) => entry.id === compareAgentId && entry.id !== agent.id) ??
+    data.agents.find((entry) => entry.id !== agent.id) ??
+    data.agents[0]
   const selectedNode =
     data.nodes.find((entry) => entry.id === selectedNodeId) ?? data.nodes[0]
   const selectedProfile =
     scenario.profile_stats.find((entry) => entry.agent_id === agent.id) ??
     scenario.profile_stats[0]
+  const compareProfile =
+    scenario.profile_stats.find((entry) => entry.agent_id === compareAgent.id) ??
+    scenario.profile_stats[0]
   const topRoutes =
     scenario.top_routes.filter((entry) => entry.agent_id === agent.id).slice(0, 3)
+  const compareTopRoutes =
+    scenario.top_routes.filter((entry) => entry.agent_id === compareAgent.id).slice(0, 3)
+  const leadRoute = topRoutes[0]
+  const compareLeadRoute = compareTopRoutes[0]
   const downloadedRatio = `${data.source_summary.downloaded}/${data.source_summary.total}`
   const scenarioSequence = data.scenarios
   const nodeLoad = scenario.node_loads[selectedNode.id] ?? 0
@@ -91,6 +122,8 @@ function Dashboard({
   const publicSpaceDeficitMetric = barrio.la_candelaria_metrics.find(
     (entry) => entry.label === 'Déficit espacio público efectivo',
   )
+  const comparison = buildProfileComparison(selectedProfile, compareProfile)
+  const fieldworkMatrix = buildFieldworkMatrix(data.fieldwork.pending)
 
   return (
     <main className="app-shell">
@@ -110,18 +143,30 @@ function Dashboard({
 
         <div className="hero-panel">
           <div className="status-grid">
-            <MetricCard label="Escenario activo" value={scenario.label} accent="clay" />
+            <MetricCard
+              label="Escenario activo"
+              value={scenario.label}
+              accent="clay"
+              status={mapScenarioStatus(scenario.epistemic_status)}
+            />
             <MetricCard
               label="Restriccion decisional"
               value={formatRatio(scenario.metrics.decision_restriction)}
               accent="ink"
+              status={mapScenarioStatus(scenario.epistemic_status)}
             />
             <MetricCard
               label="Ruta media"
               value={`${scenario.metrics.avg_travel_minutes.toFixed(1)} min`}
               accent="teal"
+              status={mapScenarioStatus(scenario.epistemic_status)}
             />
-            <MetricCard label="Fuentes descargadas" value={downloadedRatio} accent="sand" />
+            <MetricCard
+              label="Fuentes descargadas"
+              value={downloadedRatio}
+              accent="sand"
+              status="documented"
+            />
           </div>
           <p className="meta-line">
             Pipeline {data.meta.pipeline_version} · generado {formatDate(data.meta.generated_at)}
@@ -166,26 +211,88 @@ function Dashboard({
             ))}
           </div>
         </div>
+
+        <div className="control-block control-block-inline">
+          <p className="control-label">Comparar con</p>
+          <label className="select-shell">
+            <span className="visually-hidden">Selecciona perfil de comparación</span>
+            <select
+              value={compareAgent.id}
+              onChange={(event) => {
+                startTransition(() => onCompareAgentChange(event.target.value))
+              }}
+            >
+              {data.agents
+                .filter((entry) => entry.id !== agent.id)
+                .map((entry) => (
+                  <option key={entry.id} value={entry.id}>
+                    {entry.label}
+                  </option>
+                ))}
+            </select>
+          </label>
+        </div>
       </section>
 
       <section className="content-grid">
         <article className="card map-card">
           <div className="card-header">
             <div>
-              <p className="eyebrow">Topologia del corredor</p>
-              <h2>Grafo operativo del caso</h2>
+              <p className="eyebrow">Geografia y topologia</p>
+              <h2>Mapa y grafo operativo del caso</h2>
             </div>
             <p className="muted">
-              Clic en un nodo para ver lectura fenomenologica, carga simulada y centralidad.
+              El mapa ubica el corredor real y resalta la ruta dominante del perfil activo.
             </p>
           </div>
-          <NetworkView
-            nodes={data.nodes}
-            edges={data.edges}
-            scenario={scenario}
-            selectedNodeId={selectedNode.id}
-            onSelectNode={onSelectNode}
-          />
+          <div className="spatial-grid">
+            <div className="spatial-pane">
+              <CorridorMap
+                nodes={data.nodes}
+                edges={data.edges}
+                scenario={scenario}
+                selectedNodeId={selectedNode.id}
+                onSelectNode={onSelectNode}
+                primaryHighlightedPath={leadRoute?.path ?? []}
+                secondaryHighlightedPath={compareLeadRoute?.path ?? []}
+              />
+              <div className="spatial-caption">
+                <p className="eyebrow">Ruta dominante del perfil</p>
+                <div className="route-legend-list">
+                  <div className="route-legend-item">
+                    <span className="route-legend-swatch route-legend-primary" />
+                    <p>
+                      {leadRoute
+                        ? `${agent.label}: ${leadRoute.path
+                            .map((nodeId) => resolveNodeLabel(data, nodeId))
+                            .join(' -> ')} (${Math.round(leadRoute.share * 100)}%)`
+                        : 'Sin ruta dominante para el perfil principal.'}
+                    </p>
+                  </div>
+                  <div className="route-legend-item">
+                    <span className="route-legend-swatch route-legend-secondary" />
+                    <p>
+                      {compareLeadRoute
+                        ? `${compareAgent.label}: ${compareLeadRoute.path
+                            .map((nodeId) => resolveNodeLabel(data, nodeId))
+                            .join(' -> ')} (${Math.round(compareLeadRoute.share * 100)}%)`
+                        : 'Sin ruta dominante para el perfil comparado.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="spatial-pane spatial-pane-graph">
+              <NetworkView
+                nodes={data.nodes}
+                edges={data.edges}
+                scenario={scenario}
+                selectedNodeId={selectedNode.id}
+                onSelectNode={onSelectNode}
+              />
+            </div>
+          </div>
           <div className="node-strip">
             {data.nodes.map((entry) => (
               <button
@@ -209,24 +316,59 @@ function Dashboard({
             <span className="tag">{selectedNode.kind.replaceAll('_', ' ')}</span>
           </div>
           <p className="lead">{selectedNode.description}</p>
+          <div className="meta-pill-row">
+            <span className="meta-pill">
+              Heterotopia: {selectedNode.heterotopia.replaceAll('_', ' ')}
+            </span>
+            <EpistemicBadge status={selectedNode.proxy ? 'proxy' : 'documented'} />
+          </div>
           <div className="metric-table">
-            <MetricRow label="Carga simulada" value={`${nodeLoad} trayectorias`} />
+            <MetricRow
+              label="Carga simulada"
+              value={`${nodeLoad} trayectorias`}
+              status={mapScenarioStatus(scenario.epistemic_status)}
+            />
             <MetricRow
               label="Betweenness"
               value={selectedNode.centrality.betweenness.toFixed(3)}
+              status={selectedNode.proxy ? 'proxy' : 'documented'}
             />
             <MetricRow
               label="Closeness"
               value={selectedNode.centrality.closeness.toFixed(3)}
+              status={selectedNode.proxy ? 'proxy' : 'documented'}
             />
-            <MetricRow label="Seguridad estructural" value={formatRatio(selectedNode.security)} />
-            <MetricRow label="Atraccion comercial" value={formatRatio(selectedNode.commerce)} />
-            <MetricRow label="Control visible" value={formatRatio(selectedNode.control)} />
-            <MetricRow label="Memoria urbana" value={formatRatio(selectedNode.memory)} />
+            <MetricRow
+              label="Seguridad estructural"
+              value={formatRatio(selectedNode.security)}
+              status={selectedNode.proxy ? 'proxy' : 'documented'}
+            />
+            <MetricRow
+              label="Atraccion comercial"
+              value={formatRatio(selectedNode.commerce)}
+              status={selectedNode.proxy ? 'proxy' : 'documented'}
+            />
+            <MetricRow
+              label="Control visible"
+              value={formatRatio(selectedNode.control)}
+              status={selectedNode.proxy ? 'proxy' : 'documented'}
+            />
+            <MetricRow
+              label="Memoria urbana"
+              value={formatRatio(selectedNode.memory)}
+              status={selectedNode.proxy ? 'proxy' : 'documented'}
+            />
           </div>
           <div className="insight-box">
             <p className="eyebrow">Lectura fenomenologica</p>
             <p>{selectedNode.phenomenology}</p>
+          </div>
+          <div className="insight-box insight-neutral">
+            <p className="eyebrow">Lectura heterotopica</p>
+            <p>
+              Este nodo opera como <strong>{selectedNode.heterotopia.replaceAll('_', ' ')}</strong>
+              , articulando umbral, memoria, comercio o friccion segun el regimen de uso.
+            </p>
           </div>
           <div className="insight-box insight-warm">
             <p className="eyebrow">Lectura sistemica</p>
@@ -237,32 +379,51 @@ function Dashboard({
         <article className="card route-card">
           <div className="card-header">
             <div>
-              <p className="eyebrow">Perfil seleccionado</p>
-              <h2>{agent.label}</h2>
+              <p className="eyebrow">Comparacion de perfiles</p>
+              <h2>{agent.label} vs. {compareAgent.label}</h2>
             </div>
             <span className="tag">{scenario.label}</span>
           </div>
-          <div className="metric-table">
-            <MetricRow label="Costo medio" value={selectedProfile.avg_cost.toFixed(2)} />
-            <MetricRow
-              label="Tiempo medio"
-              value={`${selectedProfile.avg_travel_minutes.toFixed(1)} min`}
+          <div className="route-delta-grid">
+            <DeltaCard
+              label="Delta tiempo"
+              value={formatSignedMinutes(comparison.deltaTravelMinutes)}
+              note="positivo = el perfil principal tarda mas"
             />
-            <MetricRow label="Entropia de rutas" value={formatRatio(selectedProfile.route_entropy)} />
-            <MetricRow label="Viajes simulados" value={`${selectedProfile.trip_count}`} />
+            <DeltaCard
+              label="Delta costo"
+              value={formatSignedNumber(comparison.deltaCost)}
+              note="positivo = mayor costo para el perfil principal"
+            />
+            <DeltaCard
+              label="Delta entropia"
+              value={formatSignedPercent(comparison.deltaEntropy)}
+              note="positivo = mas diversidad de rutas"
+            />
+            <DeltaCard
+              label="Delta viajes"
+              value={formatSignedInteger(comparison.deltaTrips)}
+              note="diferencia de carga simulada del escenario"
+            />
           </div>
-          <div className="route-list">
-            {topRoutes.map((route) => (
-              <div key={`${route.agent_id}-${route.path.join('-')}`} className="route-item">
-                <div className="route-meta">
-                  <p>{route.path.map((nodeId) => resolveNodeLabel(data, nodeId)).join(' -> ')}</p>
-                  <span>{Math.round(route.share * 100)}%</span>
-                </div>
-                <div className="route-bar">
-                  <div style={{ width: `${route.share * 100}%` }} />
-                </div>
-              </div>
-            ))}
+
+          <div className="route-compare-grid">
+            <ProfileRoutePanel
+              title={agent.label}
+              profile={selectedProfile}
+              routes={topRoutes}
+              data={data}
+              accent="primary"
+              status={mapScenarioStatus(scenario.epistemic_status)}
+            />
+            <ProfileRoutePanel
+              title={compareAgent.label}
+              profile={compareProfile}
+              routes={compareTopRoutes}
+              data={data}
+              accent="secondary"
+              status={mapScenarioStatus(scenario.epistemic_status)}
+            />
           </div>
         </article>
 
@@ -348,6 +509,14 @@ function Dashboard({
             </div>
             <div className="trace-column">
               <p className="trace-title">Pendientes de campo</p>
+              <div className="trace-task trace-task-legend">
+                <strong>Estado del frente de campo</strong>
+                <p>
+                  {data.fieldwork.pending.length} tareas siguen pendientes antes de pasar de
+                  baseline proxy a calibracion de campo.
+                </p>
+                <EpistemicBadge status="pending" />
+              </div>
               {data.fieldwork.pending.map((entry) => (
                 <div key={entry.task} className="trace-task">
                   <strong>{entry.task}</strong>
@@ -356,6 +525,71 @@ function Dashboard({
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </article>
+
+        <article className="card fieldwork-card">
+          <div className="card-header">
+            <div>
+              <p className="eyebrow">Trabajo de campo</p>
+              <h2>Matriz minima para calibracion</h2>
+            </div>
+            <EpistemicBadge status="pending" />
+          </div>
+
+          <div className="fieldwork-summary">
+            <div className="fieldwork-summary-copy">
+              <p>
+                La version actual ya es demostrable, pero todavia necesita una captura minima
+                de campo para mover el sistema desde <strong>baseline proxy</strong> hacia una
+                calibracion mas defendible.
+              </p>
+              <p>
+                Archivo operativo: <code>investigacion/docs/protocolo-campo-minimo.md</code>
+              </p>
+            </div>
+            <div className="fieldwork-summary-stats">
+              <MetricCard
+                label="Pendientes clave"
+                value={`${data.fieldwork.pending.length}`}
+                accent="sand"
+                status="pending"
+              />
+            </div>
+          </div>
+
+          <div className="fieldwork-grid">
+            {fieldworkMatrix.map((group) => (
+              <div key={group.title} className="fieldwork-group">
+                <div className="fieldwork-group-head">
+                  <h3>{group.title}</h3>
+                  <EpistemicBadge status="pending" compact />
+                </div>
+                <p>{group.description}</p>
+                <div className="fieldwork-task-list">
+                  {group.tasks.map((task) => (
+                    <div key={task.task} className="fieldwork-task-item">
+                      <strong>{task.task}</strong>
+                      <span>{task.variable}</span>
+                      <small>{task.method}</small>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="fieldwork-assets">
+            <div className="fieldwork-asset-card">
+              <strong>Plantillas sugeridas</strong>
+              <p>`investigacion/data/interim/templates/field_counts_template.csv`</p>
+              <p>`investigacion/data/interim/templates/field_notes_template.md`</p>
+              <p>`investigacion/data/interim/templates/field_points_template.geojson`</p>
+            </div>
+            <div className="fieldwork-asset-card">
+              <strong>Salida esperada</strong>
+              <p>conteo peatonal + flujo direccional + permanencia + ruido + iluminacion</p>
             </div>
           </div>
         </article>
@@ -379,18 +613,22 @@ function Dashboard({
                 <MetricRow
                   label="Imagen favorable"
                   value={`${center.image_favorable_pct.toFixed(1)}%`}
+                  status="documented"
                 />
                 <MetricRow
                   label="Imagen desfavorable"
                   value={`${center.image_unfavorable_pct.toFixed(1)}%`}
+                  status="documented"
                 />
                 <MetricRow
                   label="Visita al menos mensual"
                   value={`${center.visited_monthly_pct.toFixed(1)}%`}
+                  status="documented"
                 />
                 <MetricRow
                   label="Motivo principal"
                   value={`${center.main_motives[0].label} ${center.main_motives[0].pct.toFixed(1)}%`}
+                  status="documented"
                 />
               </div>
               <div className="micro-bars">
@@ -407,14 +645,20 @@ function Dashboard({
             <section className="evidence-column">
               <p className="trace-title">Criminalidad comuna 10</p>
               <div className="metric-table">
-                <MetricRow label="Ultimo mes disponible" value={crime.latest_month} />
+                <MetricRow
+                  label="Ultimo mes disponible"
+                  value={crime.latest_month}
+                  status="documented"
+                />
                 <MetricRow
                   label="Conducta dominante 2023"
                   value={`${crime.top_conducts_2023[0].label} ${compactNumber(crime.top_conducts_2023[0].cases)}`}
+                  status="documented"
                 />
                 <MetricRow
                   label="Pico 2023"
                   value={`${findPeakPeriod(crime.monthly_2023).period} · ${findPeakPeriod(crime.monthly_2023).cases}`}
+                  status="documented"
                 />
               </div>
               <div className="timeline-bars">
@@ -440,18 +684,22 @@ function Dashboard({
                 <MetricRow
                   label="Densidad poblacional"
                   value={`${barrio.highlights.population_density.toFixed(1)} hab/ha`}
+                  status="documented"
                 />
                 <MetricRow
                   label="Densidad empresarial"
                   value={`${barrio.highlights.business_density.toFixed(1)} empresas/1000 hab`}
+                  status="documented"
                 />
                 <MetricRow
                   label="Espacio publico efectivo"
                   value={`${publicSpaceMetric?.value.toFixed(2) ?? '0.00'} m2/hab`}
+                  status="documented"
                 />
                 <MetricRow
                   label="Deficit de espacio publico"
                   value={`${publicSpaceDeficitMetric?.value.toFixed(2) ?? '0.00'} m2/hab`}
+                  status="documented"
                 />
               </div>
               <div className="comparison-stack">
@@ -483,6 +731,18 @@ function Dashboard({
             de acceso, ruido, vigilancia, habito, comercio y memoria.
           </p>
         </div>
+        <div>
+          <p className="eyebrow">Leyenda epistemica</p>
+          <div className="legend-row">
+            <EpistemicBadge status="documented" />
+            <EpistemicBadge status="proxy" />
+            <EpistemicBadge status="pending" />
+          </div>
+          <p>
+            Documented = dato trazable desde fuente o derivacion consolidada; Proxy =
+            baseline analitico aun no calibrado en campo; Pending = frente abierto.
+          </p>
+        </div>
       </section>
     </main>
   )
@@ -494,25 +754,73 @@ function MetricCard({
   label,
   value,
   accent,
+  status,
 }: {
   label: string
   value: string
   accent: 'clay' | 'ink' | 'teal' | 'sand'
+  status?: EpistemicStatus
 }) {
   return (
     <div className={`metric-card metric-${accent}`}>
-      <span>{label}</span>
+      <div className="metric-card-head">
+        <span>{label}</span>
+        {status ? <EpistemicBadge status={status} compact /> : null}
+      </div>
       <strong>{value}</strong>
     </div>
   )
 }
 
-function MetricRow({ label, value }: { label: string; value: string }) {
+function MetricRow({
+  label,
+  value,
+  status,
+}: {
+  label: string
+  value: string
+  status?: EpistemicStatus
+}) {
   return (
     <div className="metric-row">
-      <span>{label}</span>
+      <div className="metric-row-label">
+        <span>{label}</span>
+        {status ? <EpistemicBadge status={status} compact /> : null}
+      </div>
       <strong>{value}</strong>
     </div>
+  )
+}
+
+function EpistemicBadge({
+  status,
+  compact = false,
+}: {
+  status: EpistemicStatus
+  compact?: boolean
+}) {
+  const config = {
+    documented: {
+      label: 'documented',
+      title: 'Dato sustentado en fuente publica o derivacion consolidada.',
+    },
+    proxy: {
+      label: 'proxy',
+      title: 'Dato o metrica analitica todavia no calibrada con trabajo de campo fino.',
+    },
+    pending: {
+      label: 'pending',
+      title: 'Frente todavia abierto o pendiente de captura.',
+    },
+  }[status]
+
+  return (
+    <span
+      className={compact ? `epistemic-badge epistemic-${status} epistemic-compact` : `epistemic-badge epistemic-${status}`}
+      title={config.title}
+    >
+      {config.label}
+    </span>
   )
 }
 
@@ -551,6 +859,78 @@ function ComparisonList({
           <strong>{compactNumber(entry.value)}</strong>
         </div>
       ))}
+    </div>
+  )
+}
+
+function DeltaCard({
+  label,
+  value,
+  note,
+}: {
+  label: string
+  value: string
+  note: string
+}) {
+  return (
+    <div className="delta-card">
+      <span>{label}</span>
+      <strong>{value}</strong>
+      <small>{note}</small>
+    </div>
+  )
+}
+
+function ProfileRoutePanel({
+  title,
+  profile,
+  routes,
+  data,
+  accent,
+  status,
+}: {
+  title: string
+  profile: ScenarioSummary['profile_stats'][number]
+  routes: ScenarioSummary['top_routes']
+  data: Payload
+  accent: 'primary' | 'secondary'
+  status: EpistemicStatus
+}) {
+  return (
+    <div className={`profile-route-panel profile-route-${accent}`}>
+      <div className="profile-route-head">
+        <h3>{title}</h3>
+        <EpistemicBadge status={status} compact />
+      </div>
+
+      <div className="metric-table">
+        <MetricRow label="Costo medio" value={profile.avg_cost.toFixed(2)} status={status} />
+        <MetricRow
+          label="Tiempo medio"
+          value={`${profile.avg_travel_minutes.toFixed(1)} min`}
+          status={status}
+        />
+        <MetricRow
+          label="Entropia de rutas"
+          value={formatRatio(profile.route_entropy)}
+          status={status}
+        />
+        <MetricRow label="Viajes simulados" value={`${profile.trip_count}`} status={status} />
+      </div>
+
+      <div className="route-list compact-route-list">
+        {routes.map((route) => (
+          <div key={`${title}-${route.path.join('-')}`} className="route-item">
+            <div className="route-meta">
+              <p>{route.path.map((nodeId) => resolveNodeLabel(data, nodeId)).join(' -> ')}</p>
+              <span>{Math.round(route.share * 100)}%</span>
+            </div>
+            <div className="route-bar">
+              <div style={{ width: `${route.share * 100}%` }} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -641,6 +1021,156 @@ function NetworkView({
   )
 }
 
+function CorridorMap({
+  nodes,
+  edges,
+  scenario,
+  selectedNodeId,
+  onSelectNode,
+  primaryHighlightedPath,
+  secondaryHighlightedPath,
+}: {
+  nodes: CaseNode[]
+  edges: Payload['edges']
+  scenario: ScenarioSummary
+  selectedNodeId: string
+  onSelectNode: (value: string) => void
+  primaryHighlightedPath: string[]
+  secondaryHighlightedPath: string[]
+}) {
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const mapRef = useRef<L.Map | null>(null)
+  const layerGroupRef = useRef<L.LayerGroup | null>(null)
+  const primaryHighlightedEdges = buildPathEdgeKeys(primaryHighlightedPath)
+  const secondaryHighlightedEdges = buildPathEdgeKeys(secondaryHighlightedPath)
+
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) {
+      return
+    }
+
+    const mapInstance = L.map(containerRef.current, {
+      scrollWheelZoom: false,
+      zoomControl: false,
+    })
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+    }).addTo(mapInstance)
+
+    layerGroupRef.current = L.layerGroup().addTo(mapInstance)
+    mapRef.current = mapInstance
+
+    return () => {
+      layerGroupRef.current?.clearLayers()
+      layerGroupRef.current?.remove()
+      mapInstance.remove()
+      mapRef.current = null
+      layerGroupRef.current = null
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!mapRef.current || !layerGroupRef.current) {
+      return
+    }
+
+    const mapInstance = mapRef.current
+    const layerGroup = layerGroupRef.current
+    const bounds = L.latLngBounds(nodes.map((node) => [node.lat, node.lon] as [number, number]))
+
+    layerGroup.clearLayers()
+    mapInstance.fitBounds(bounds.pad(0.12))
+
+    for (const edge of edges) {
+      const source = nodes.find((node) => node.id === edge.source)
+      const target = nodes.find((node) => node.id === edge.target)
+
+      if (!source || !target) {
+        continue
+      }
+
+      const edgeKey = `${edge.source}__${edge.target}`
+      const reverseKey = `${edge.target}__${edge.source}`
+      const load = scenario.edge_loads[edgeKey] ?? scenario.edge_loads[reverseKey] ?? 0
+
+      L.polyline(
+        [
+          [source.lat, source.lon],
+          [target.lat, target.lon],
+        ],
+        {
+          color: '#1f7f79',
+          opacity: 0.42,
+          weight: 2 + load / 45,
+        },
+      ).addTo(layerGroup)
+    }
+
+    const primaryCoordinates = getPathCoordinates(primaryHighlightedPath, nodes)
+
+    if (primaryCoordinates.length > 1) {
+      L.polyline(primaryCoordinates, {
+        color: '#cf5d2d',
+        opacity: 0.94,
+        weight: 6,
+      }).addTo(layerGroup)
+    }
+
+    const secondaryCoordinates = getPathCoordinates(secondaryHighlightedPath, nodes)
+
+    if (secondaryCoordinates.length > 1) {
+      L.polyline(secondaryCoordinates, {
+        color: '#1f7f79',
+        opacity: 0.96,
+        weight: 5,
+        dashArray: '10 8',
+      }).addTo(layerGroup)
+    }
+
+    for (const node of nodes) {
+      const load = scenario.node_loads[node.id] ?? 0
+      const active = node.id === selectedNodeId
+      const primaryHighlighted =
+        primaryHighlightedEdges.has(node.id) || primaryHighlightedPath.includes(node.id)
+      const secondaryHighlighted =
+        secondaryHighlightedEdges.has(node.id) || secondaryHighlightedPath.includes(node.id)
+
+      const marker = L.circleMarker([node.lat, node.lon], {
+        radius: active ? 12 : primaryHighlighted || secondaryHighlighted ? 10 : 7 + load / 45,
+        color: active ? '#cf5d2d' : primaryHighlighted ? '#cf5d2d' : secondaryHighlighted ? '#1f7f79' : '#171311',
+        fillColor: active ? '#cf5d2d' : primaryHighlighted ? '#cf5d2d' : secondaryHighlighted ? '#1f7f79' : getNodeColor(node),
+        fillOpacity: 0.92,
+        weight: active ? 3 : 2,
+      })
+
+      marker.bindTooltip(
+        `<div class="map-tooltip"><strong>${node.label}</strong><span>${node.phenomenology}</span><small>Carga: ${load} · Seguridad: ${formatRatio(node.security)}</small></div>`,
+        {
+          direction: 'top',
+          offset: [0, -8],
+          opacity: 1,
+          className: 'corridor-tooltip',
+        },
+      )
+      marker.on('click', () => onSelectNode(node.id))
+      marker.addTo(layerGroup)
+    }
+  }, [
+    edges,
+    nodes,
+    onSelectNode,
+    primaryHighlightedEdges,
+    primaryHighlightedPath,
+    scenario,
+    secondaryHighlightedEdges,
+    secondaryHighlightedPath,
+    selectedNodeId,
+  ])
+
+  return <div ref={containerRef} className="corridor-map" role="img" aria-label="Mapa del corredor" />
+}
+
 function getBounds(nodes: CaseNode[]) {
   const lats = nodes.map((node) => node.lat)
   const lons = nodes.map((node) => node.lon)
@@ -651,6 +1181,43 @@ function getBounds(nodes: CaseNode[]) {
     minLon: Math.min(...lons),
     maxLon: Math.max(...lons),
   }
+}
+
+function buildPathEdgeKeys(path: string[]) {
+  const keys = new Set<string>()
+
+  for (const [source, target] of pairwise(path)) {
+    keys.add(`${source}__${target}`)
+    keys.add(source)
+    keys.add(target)
+  }
+
+  return keys
+}
+
+function* pairwise(path: string[]) {
+  for (let index = 0; index < path.length - 1; index += 1) {
+    yield [path[index], path[index + 1]] as const
+  }
+}
+
+function getNodeColor(node: CaseNode) {
+  if (node.security >= 0.55) {
+    return '#1f7f79'
+  }
+
+  if (node.security >= 0.45) {
+    return '#b79862'
+  }
+
+  return '#cf5d2d'
+}
+
+function getPathCoordinates(path: string[], nodes: CaseNode[]) {
+  return path
+    .map((nodeId) => nodes.find((node) => node.id === nodeId))
+    .filter((node): node is CaseNode => Boolean(node))
+    .map((node) => [node.lat, node.lon] as [number, number])
 }
 
 function projectNode(node: CaseNode, bounds: ReturnType<typeof getBounds>) {
@@ -673,6 +1240,18 @@ function resolveNodeLabel(data: Payload, nodeId: string) {
 
 function formatRatio(value: number) {
   return `${Math.round(value * 100)}%`
+}
+
+function mapScenarioStatus(value: string): EpistemicStatus {
+  if (value.includes('proxy')) {
+    return 'proxy'
+  }
+
+  if (value.includes('pending')) {
+    return 'pending'
+  }
+
+  return 'documented'
 }
 
 function formatDate(value: string) {
@@ -718,4 +1297,71 @@ function buildNodeNarrative(
     : ''
 
   return `${node.label} se comporta como un nodo ${pressure} de la presion media del sistema. Su mezcla de control ${formatRatio(node.control)}, comercio ${formatRatio(node.commerce)} y memoria ${formatRatio(node.memory)} explica por que el espacio no se vive solo como forma fisica sino como regimen de circulacion y permanencia.${bottleneckNote}`
+}
+
+function buildProfileComparison(
+  primary: ScenarioSummary['profile_stats'][number],
+  secondary: ScenarioSummary['profile_stats'][number],
+) {
+  return {
+    deltaCost: primary.avg_cost - secondary.avg_cost,
+    deltaTravelMinutes: primary.avg_travel_minutes - secondary.avg_travel_minutes,
+    deltaEntropy: primary.route_entropy - secondary.route_entropy,
+    deltaTrips: primary.trip_count - secondary.trip_count,
+  }
+}
+
+function buildFieldworkMatrix(
+  pending: Payload['fieldwork']['pending'],
+) {
+  const groups = [
+    {
+      title: 'Movilidad y flujo',
+      description: 'Sirve para recalibrar crowding, flujo direccional y comparacion entre rutas simuladas y trayectorias observadas.',
+      matcher: (task: Payload['fieldwork']['pending'][number]) =>
+        /densidad|peatonal|flujo/i.test(task.variable) || /conteo/i.test(task.task),
+    },
+    {
+      title: 'Permanencia y uso',
+      description: 'Afina la permanencia base de nodos y la diferencia entre paso, pausa, espera y refugio.',
+      matcher: (task: Payload['fieldwork']['pending'][number]) =>
+        /permanencia/i.test(task.variable) || /permanencia/i.test(task.task),
+    },
+    {
+      title: 'Seguridad percibida',
+      description: 'Permite contrastar criminalidad estructural con experiencia situada por subtramo.',
+      matcher: (task: Payload['fieldwork']['pending'][number]) =>
+        /seguridad/i.test(task.variable) || /seguridad/i.test(task.task),
+    },
+    {
+      title: 'Ambiente y accesibilidad',
+      description: 'Completa ruido e iluminacion para horas nocturnas y momentos de sobrecarga sensorial.',
+      matcher: (task: Payload['fieldwork']['pending'][number]) =>
+        /ambiental|iluminacion|ruido/i.test(task.variable) || /ruido|iluminacion/i.test(task.task),
+    },
+  ]
+
+  return groups
+    .map((group) => ({
+      title: group.title,
+      description: group.description,
+      tasks: pending.filter(group.matcher),
+    }))
+    .filter((group) => group.tasks.length > 0)
+}
+
+function formatSignedNumber(value: number) {
+  return `${value >= 0 ? '+' : ''}${value.toFixed(2)}`
+}
+
+function formatSignedMinutes(value: number) {
+  return `${value >= 0 ? '+' : ''}${value.toFixed(1)} min`
+}
+
+function formatSignedPercent(value: number) {
+  return `${value >= 0 ? '+' : ''}${Math.round(value * 100)}%`
+}
+
+function formatSignedInteger(value: number) {
+  return `${value >= 0 ? '+' : ''}${value}`
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T16:24:51+00:00",
+  "generated_at": "2026-04-24T16:38:37+00:00",
   "source_count": 10,
   "downloaded_count": 9,
   "failed_count": 1,
@@ -38,7 +38,7 @@
       "status": "downloaded",
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 20090,
+      "bytes": 21592,
       "local_path": "raw/medata_criminalidad_page.html",
       "resolved_url": "https://medata.gov.co/node/16667",
       "note": "captured"

@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "name": "field_points_template",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "timestamp": "2026-04-24T07:00:00-05:00",
+        "node_id": "san_antonio_b",
+        "node_label": "San Antonio B",
+        "time_window": "07:00-08:00",
+        "observer_id": "obs_01",
+        "security_score": 0,
+        "lighting_lux": 0,
+        "noise_db": 0,
+        "notes": "Reemplazar con observación real"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.5687, 6.2463]
+      }
+    }
+  ]
+}

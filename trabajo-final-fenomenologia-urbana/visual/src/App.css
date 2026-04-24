@@ -102,6 +102,13 @@
   font-size: 0.82rem;
 }
 
+.metric-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
 .metric-card strong {
   font-family: var(--mono);
   font-size: 1.28rem;
@@ -149,6 +156,38 @@
   font-family: var(--mono);
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+.control-block-inline {
+  align-self: end;
+}
+
+.select-shell {
+  display: inline-flex;
+  min-width: 240px;
+}
+
+.select-shell select {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--ink);
+  padding: 12px 14px;
+  font: inherit;
+  box-shadow: var(--shadow-soft);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .chip-row {
@@ -233,6 +272,93 @@
   grid-column: span 8;
 }
 
+.spatial-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 16px;
+}
+
+.spatial-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.spatial-pane-graph {
+  justify-content: stretch;
+}
+
+.corridor-map {
+  width: 100%;
+  min-height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+}
+
+.spatial-caption {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+}
+
+.route-legend-list {
+  display: grid;
+  gap: 10px;
+}
+
+.route-legend-item {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.route-legend-swatch {
+  width: 100%;
+  height: 14px;
+  border-radius: 999px;
+  margin-top: 4px;
+}
+
+.route-legend-primary {
+  background: #cf5d2d;
+}
+
+.route-legend-secondary {
+  background:
+    linear-gradient(90deg, #1f7f79 0 70%, rgba(31, 127, 121, 0) 70% 100%);
+  background-size: 14px 100%;
+}
+
+.map-tooltip {
+  display: grid;
+  gap: 6px;
+  max-width: 240px;
+  color: var(--ink);
+}
+
+.corridor-tooltip {
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  box-shadow: var(--shadow-soft);
+  background: rgba(255, 252, 246, 0.96);
+  color: var(--ink);
+}
+
+.map-tooltip strong {
+  font-family: var(--mono);
+}
+
+.map-tooltip span {
+  font-size: 0.88rem;
+}
+
+.map-tooltip small {
+  color: var(--muted);
+}
+
 .inspector-card {
   grid-column: span 4;
 }
@@ -242,6 +368,10 @@
 .bottleneck-card,
 .trace-card {
   grid-column: span 6;
+}
+
+.fieldwork-card {
+  grid-column: span 12;
 }
 
 .network-svg {
@@ -311,6 +441,25 @@
   color: var(--ink);
 }
 
+.meta-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(183, 152, 98, 0.16);
+  color: var(--ink);
+  font-size: 0.82rem;
+  border: 1px solid rgba(23, 19, 17, 0.08);
+}
+
 .metric-table {
   display: grid;
   gap: 8px;
@@ -319,9 +468,17 @@
 .metric-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 12px;
   padding: 10px 0;
   border-bottom: 1px solid rgba(23, 19, 17, 0.08);
+}
+
+.metric-row-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
 }
 
 .metric-row span {
@@ -340,8 +497,50 @@
   background: rgba(31, 127, 121, 0.08);
 }
 
+.insight-neutral {
+  background: rgba(183, 152, 98, 0.14);
+}
+
 .insight-warm {
   background: rgba(224, 122, 70, 0.1);
+}
+
+.epistemic-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.72rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--mono);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.epistemic-compact {
+  padding: 4px 8px;
+  font-size: 0.67rem;
+}
+
+.epistemic-documented {
+  background: rgba(31, 127, 121, 0.12);
+  border-color: rgba(31, 127, 121, 0.2);
+  color: var(--accent-2);
+}
+
+.epistemic-proxy {
+  background: rgba(207, 93, 45, 0.12);
+  border-color: rgba(207, 93, 45, 0.2);
+  color: var(--accent);
+}
+
+.epistemic-pending {
+  background: rgba(183, 152, 98, 0.18);
+  border-color: rgba(183, 152, 98, 0.24);
+  color: #7a5d2e;
 }
 
 .route-list,
@@ -349,6 +548,74 @@
 .bottleneck-list {
   display: grid;
   gap: 12px;
+}
+
+.route-delta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.delta-card {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  display: grid;
+  gap: 8px;
+}
+
+.delta-card span,
+.delta-card small {
+  color: var(--muted);
+}
+
+.delta-card strong {
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 1.08rem;
+}
+
+.route-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.profile-route-panel {
+  padding: 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  display: grid;
+  gap: 14px;
+}
+
+.profile-route-primary {
+  background: rgba(224, 122, 70, 0.08);
+}
+
+.profile-route-secondary {
+  background: rgba(31, 127, 121, 0.08);
+}
+
+.profile-route-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.profile-route-head h3,
+.fieldwork-group-head h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--heading);
+  font-size: 1.1rem;
+}
+
+.compact-route-list .route-item {
+  padding: 12px;
 }
 
 .route-item,
@@ -426,6 +693,91 @@
   gap: 18px;
 }
 
+.fieldwork-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.fieldwork-summary-copy {
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  display: grid;
+  gap: 10px;
+}
+
+.fieldwork-summary-stats {
+  display: grid;
+}
+
+.fieldwork-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.fieldwork-group {
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  display: grid;
+  gap: 12px;
+}
+
+.fieldwork-group-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.fieldwork-task-list {
+  display: grid;
+  gap: 10px;
+}
+
+.fieldwork-task-item {
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(244, 236, 224, 0.62);
+  display: grid;
+  gap: 4px;
+}
+
+.fieldwork-task-item strong {
+  color: var(--ink);
+}
+
+.fieldwork-task-item span,
+.fieldwork-task-item small {
+  color: var(--muted);
+}
+
+.fieldwork-assets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.fieldwork-asset-card {
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  display: grid;
+  gap: 8px;
+}
+
+.trace-task-legend {
+  display: grid;
+  gap: 10px;
+}
+
 .trace-title {
   margin: 0 0 12px;
   font-family: var(--mono);
@@ -442,10 +794,17 @@
 
 .footer-band {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   padding: 24px;
   border-radius: 28px;
+}
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
 .evidence-card {
@@ -520,12 +879,25 @@
     grid-template-columns: 1fr;
   }
 
+  .spatial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-delta-grid,
+  .route-compare-grid,
+  .fieldwork-grid,
+  .fieldwork-assets,
+  .fieldwork-summary {
+    grid-template-columns: 1fr;
+  }
+
   .map-card,
   .inspector-card,
   .route-card,
   .scenario-card,
   .bottleneck-card,
-  .trace-card {
+  .trace-card,
+  .fieldwork-card {
     grid-column: span 12;
   }
 }

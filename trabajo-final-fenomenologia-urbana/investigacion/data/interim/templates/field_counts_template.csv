@@ -1,0 +1,4 @@
+timestamp,node_id,node_label,subsegment,direction,time_window,observer_id,pedestrians_5min,dwell_count,noise_db,lighting_lux,security_score,obstacle_notes,weather_notes
+2026-04-24T07:00:00-05:00,san_antonio_b,San Antonio B,San Antonio B -> Junin,northbound,07:00-08:00,obs_01,0,0,0,0,0,,
+2026-04-24T12:00:00-05:00,junin_commercial,Junin comercial,Junin comercial -> Parque Berrio,northbound,12:00-13:00,obs_01,0,0,0,0,0,,
+2026-04-24T18:00:00-05:00,parque_berrio,Parque Berrio,Parque Berrio -> Plaza Botero,northbound,18:00-19:00,obs_02,0,0,0,0,0,,
