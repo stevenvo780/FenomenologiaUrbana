@@ -117,6 +117,19 @@ function ModalContent({
             <p className="modal-note">Validación contra ~100k pax/día en San Antonio.</p>
           </ModalCard>
         )}
+        {data.advanced_models?.historical_evolution && (
+          <ModalCard title="Transformación Longitudinal (2012-2024)">
+            {data.advanced_models.historical_evolution.evolution.map((evo) => (
+              <div key={evo.year} className="modal-row">
+                <strong>{evo.year}</strong>
+                <p>
+                  Agentes: {compactNumber(evo.agents_simulated)} · Crimen: {compactNumber(evo.empirical_data.casos_crimen)} · Entropía Espacial: {evo.entropy_spatial.toFixed(2)}
+                </p>
+              </div>
+            ))}
+            <p className="modal-note">Simulación basada en evolución censal y de criminalidad real.</p>
+          </ModalCard>
+        )}
         <ModalCard title="Cierre operativo">
           {data.closure.gates.map((gate) => (
             <div key={gate.id} className="modal-row">

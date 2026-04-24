@@ -122,6 +122,27 @@ export type Payload = {
   edges: CaseEdge[]
   agents: AgentProfile[]
   scenarios: ScenarioSummary[]
+  advanced_models?: {
+    micro_simulation: any
+    environmental_pde: any
+    historical_evolution?: {
+      generated_at: string
+      engine: string
+      years_analyzed: string[]
+      evolution: Array<{
+        year: string
+        empirical_data: {
+          densidad: number
+          comercio: number
+          casos_crimen: number
+        }
+        agents_simulated: number
+        max_density: number
+        entropy_spatial: number
+        turbulence: number
+      }>
+    }
+  }
   sources: SourceEntry[]
   source_summary: {
     downloaded: number

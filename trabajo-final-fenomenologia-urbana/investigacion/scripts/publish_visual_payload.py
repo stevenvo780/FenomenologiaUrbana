@@ -157,6 +157,9 @@ def main() -> Path:
     advanced_sim = read_json(OUTPUTS_DIR / "advanced_simulation_results.json")
     micro_sim = read_json(OUTPUTS_DIR / "micro_simulation_results.json")
     pde_sim = read_json(OUTPUTS_DIR / "pde_environmental_results.json")
+    historical_sim = read_json(OUTPUTS_DIR / "historical_evolution_results.json")
+    isovist_sim = read_json(OUTPUTS_DIR / "perceptual_visibility_results.json")
+    economic_sim = read_json(OUTPUTS_DIR / "economic_gravity_results.json")
     calibration_report = read_json(OUTPUTS_DIR / "hpc_calibration_report.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
@@ -197,7 +200,10 @@ def main() -> Path:
         "scenarios": simulation["scenarios"],
         "advanced_models": {
             "micro_simulation": micro_sim,
-            "environmental_pde": pde_sim
+            "environmental_pde": pde_sim,
+            "historical_evolution": historical_sim,
+            "perceptual_visibility": isovist_sim,
+            "economic_gravity": economic_sim
         },
         "sources": sources["sources"],
         "source_summary": {

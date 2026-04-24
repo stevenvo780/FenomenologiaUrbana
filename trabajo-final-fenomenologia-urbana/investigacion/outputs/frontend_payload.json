@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T22:50:29+00:00",
+    "generated_at": "2026-04-24T22:57:53+00:00",
     "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
     "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
@@ -1471,6 +1471,68 @@
           "mean_intensity": 0.5098522901535034
         }
       }
+    },
+    "historical_evolution": {
+      "generated_at": "2026-04-24T22:53:25+00:00",
+      "engine": "Historical M-MASS Longitudinal Series",
+      "years_analyzed": [
+        "2012",
+        "2018",
+        "2024"
+      ],
+      "evolution": [
+        {
+          "year": "2012",
+          "empirical_data": {
+            "densidad": 177.38377563809328,
+            "comercio": 1.0,
+            "casos_crimen": 2370
+          },
+          "agents_simulated": 94604,
+          "max_density": 122.6550064086914,
+          "entropy_spatial": 186607.453125,
+          "turbulence": 0.0
+        },
+        {
+          "year": "2018",
+          "empirical_data": {
+            "densidad": 175.96161295482824,
+            "comercio": 1.0,
+            "casos_crimen": 13387
+          },
+          "agents_simulated": 93846,
+          "max_density": 482.5783386230469,
+          "entropy_spatial": 194960.015625,
+          "turbulence": 0.5588905215263367
+        },
+        {
+          "year": "2024",
+          "empirical_data": {
+            "densidad": 1.0,
+            "comercio": 1.0,
+            "casos_crimen": 5000
+          },
+          "agents_simulated": 533,
+          "max_density": 2.4800000190734863,
+          "entropy_spatial": 1666.833251953125,
+          "turbulence": 0.2164381742477417
+        }
+      ]
+    },
+    "perceptual_visibility": {
+      "generated_at": "2026-04-24T22:57:40+00:00",
+      "method": "GPU Ray-Casting Isovist Analysis",
+      "total_points_analyzed": 10000,
+      "mean_visibility_m2": 0.8759753557264804,
+      "max_exposure_index": 1.0,
+      "note": "Este mapa identifica las 'Zonas de Refugio' vs 'Zonas de Exposici\u00f3n' fenomenol\u00f3gica."
+    },
+    "economic_gravity": {
+      "generated_at": "2026-04-24T22:57:52+00:00",
+      "engine": "HPC Economic Gravity Model",
+      "hubs_analyzed": 3,
+      "total_commercial_pull": 0.0,
+      "spatial_concentration_gini": 0.9541614119214842
     }
   },
   "sources": [

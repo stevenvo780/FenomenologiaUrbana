@@ -25,7 +25,7 @@ Este trabajo se justifica por cuatro razones.
 
 1. Filosófica. Permite defender una fenomenología no ornamental, capaz de formalizar sus intuiciones sin renunciar a la experiencia, llevándola al estado del arte computacional.
 2. Urbana. El centro de Medellín es un condensador de flujos, conflictos, memorias y asimetrías; por eso es un lugar privilegiado para estudiar la experiencia situada a nivel micro y macro.
-3. Metodológica. El caso permite combinar teoría, Big Data, telemetría satelital, LiDAR, modelos de fluidos peatonales (Social Force Model) y visualización en tiempo real.
+3. Metodológica. El caso permite combinar teoría, Big Data (2012-2024), telemetría satelital, LiDAR, modelos de fluidos peatonales (Social Force Model) y visualización en tiempo real. Este enfoque longitudinal permite medir la transformación del espacio a lo largo de una década.
 4. Pedagógica. Sirve para mostrar a un grupo de filosofía que hoy la fenomenología puede trabajar con la ciencia de datos más avanzada (IA, Supercómputo) sin degradarse a tecnicismo positivista.
 
 ## Pregunta de investigación

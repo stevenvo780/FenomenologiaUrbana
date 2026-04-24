@@ -12,6 +12,6 @@ Las simulaciones se ejecutan a una escala de **100,000 agentes simultáneos** pa
 | Saturación Junín | 80,000 agentes | Velocidad de flujo < 0.5 m/s |
 | Noche (Baja Densidad) | 15,000 agentes | Aumento de rutas de evitación |
 
-## Calibración Dinámica de Parámetros
+## Estudio Longitudinal Histórico (2012 - 2024)
 
-Se utiliza un algoritmo de optimización para ajustar los pesos de la función de utilidad de los agentes, buscando que la distribución de rutas simuladas coincida con los datos del Observatorio de Movilidad y el ArcGIS Hub del Metro.
+Para entender la transformación del espacio a lo largo del tiempo, se ejecutan simulaciones retrospectivas para los años clave (2012, 2018, 2024). Estas simulaciones se calibran con los microdatos censales (densidad) y los registros de criminalidad (como proxy de fricción) de cada año específico, demostrando cómo ha evolucionado la entropía y la turbulencia fenomenológica en el corredor durante la última década.
