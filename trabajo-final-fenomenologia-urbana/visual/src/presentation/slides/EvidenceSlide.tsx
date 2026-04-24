@@ -1,8 +1,9 @@
-import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts'
+import { Bar, BarChart, Tooltip, XAxis } from 'recharts'
 import type { CSSProperties } from 'react'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
+import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, findPeakPeriod } from '../utils'
 
@@ -83,16 +84,18 @@ function EvidenceGallery({
         <p className="deck-eyebrow">Criminalidad comuna 10</p>
         <h3>{compactNumber(crime.yearly_totals.at(-1)?.cases ?? 0)} casos en 2023</h3>
         <div className="crime-chart">
-          <ResponsiveContainer width="100%" height={190} minWidth={0} minHeight={160}>
-            <BarChart data={crime.monthly_2023} margin={{ top: 8, right: 4, bottom: 0, left: 4 }}>
-              <XAxis dataKey="period" tickFormatter={(value) => String(value).slice(5)} tick={{ fill: 'rgba(255,248,236,0.62)', fontSize: 11 }} axisLine={false} tickLine={false} />
-              <Tooltip
-                contentStyle={{ background: 'rgba(20,16,15,0.95)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: 16 }}
-                labelFormatter={(value) => `Periodo ${value}`}
-              />
-              <Bar dataKey="cases" fill="#e07a46" radius={[999, 999, 6, 6]} />
-            </BarChart>
-          </ResponsiveContainer>
+          <MeasuredChart minHeight={190}>
+            {({ width, height }) => (
+              <BarChart width={width} height={height} data={crime.monthly_2023} margin={{ top: 8, right: 4, bottom: 0, left: 4 }}>
+                <XAxis dataKey="period" tickFormatter={(value) => String(value).slice(5)} tick={{ fill: 'rgba(255,248,236,0.62)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                <Tooltip
+                  contentStyle={{ background: 'rgba(20,16,15,0.95)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: 16 }}
+                  labelFormatter={(value) => `Periodo ${value}`}
+                />
+                <Bar dataKey="cases" fill="#e07a46" radius={[999, 999, 6, 6]} />
+              </BarChart>
+            )}
+          </MeasuredChart>
         </div>
         <p>Pico mensual: {peak.period} · {peak.cases} casos.</p>
       </article>

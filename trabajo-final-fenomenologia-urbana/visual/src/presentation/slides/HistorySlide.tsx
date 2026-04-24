@@ -1,7 +1,8 @@
-import { Bar, CartesianGrid, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, CartesianGrid, ComposedChart, Line, Tooltip, XAxis, YAxis } from 'recharts'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
+import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber } from '../utils'
 
@@ -30,18 +31,20 @@ export function HistorySlide({
             <KpiPill label="Motor" value={data.advanced_models?.historical_evolution?.engine?.split(' ').slice(0, 2).join(' ') ?? 'HPC'} status="proxy" />
           </div>
           <div className="chart-shell chart-shell-tall">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={240}>
-              <ComposedChart data={history} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
-                <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
-                <XAxis dataKey="year" tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis yAxisId="left" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis yAxisId="right" orientation="right" tick={{ fill: 'rgba(255,248,236,0.45)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
-                <Bar yAxisId="left" dataKey="empirical_data.casos_crimen" fill="#e07a46" radius={[12, 12, 0, 0]} />
-                <Line yAxisId="right" type="monotone" dataKey="entropy_spatial" stroke="#f4c87a" strokeWidth={2.4} dot={{ r: 4 }} />
-                <Line yAxisId="right" type="monotone" dataKey="turbulence" stroke="#1f7f79" strokeWidth={2.2} dot={{ r: 4 }} />
-              </ComposedChart>
-            </ResponsiveContainer>
+            <MeasuredChart minHeight={240}>
+              {({ width, height }) => (
+                <ComposedChart width={width} height={height} data={history} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
+                  <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
+                  <XAxis dataKey="year" tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis yAxisId="left" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis yAxisId="right" orientation="right" tick={{ fill: 'rgba(255,248,236,0.45)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
+                  <Bar yAxisId="left" dataKey="empirical_data.casos_crimen" fill="#e07a46" radius={[12, 12, 0, 0]} />
+                  <Line yAxisId="right" type="monotone" dataKey="entropy_spatial" stroke="#f4c87a" strokeWidth={2.4} dot={{ r: 4 }} />
+                  <Line yAxisId="right" type="monotone" dataKey="turbulence" stroke="#1f7f79" strokeWidth={2.2} dot={{ r: 4 }} />
+                </ComposedChart>
+              )}
+            </MeasuredChart>
           </div>
         </article>
 

@@ -1198,6 +1198,22 @@ body {
   height: min(27vh, 230px);
 }
 
+.chart-measure {
+  width: 100%;
+  height: 100%;
+}
+
+.chart-shell-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04), rgba(244, 200, 122, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.04);
+  background-size: 200% 100%;
+  animation: shimmerPane 1.4s linear infinite;
+}
+
 .spotlight-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1991,6 +2007,15 @@ body {
   }
   to {
     transform: translateY(18px);
+  }
+}
+
+@keyframes shimmerPane {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
   }
 }
 

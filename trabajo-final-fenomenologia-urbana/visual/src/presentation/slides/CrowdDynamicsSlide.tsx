@@ -1,7 +1,8 @@
-import { Area, AreaChart, CartesianGrid, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Area, AreaChart, CartesianGrid, Line, Tooltip, XAxis, YAxis } from 'recharts'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
+import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber } from '../utils'
 
@@ -36,23 +37,25 @@ export function CrowdDynamicsSlide({
             </div>
           </div>
           <div className="chart-shell chart-shell-tall">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={240}>
-              <AreaChart data={hourly} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="agentsFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#f4c87a" stopOpacity={0.65} />
-                    <stop offset="100%" stopColor="#f4c87a" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
-                <XAxis dataKey="hour" tickFormatter={(value) => `${value}:00`} tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis yAxisId="left" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis yAxisId="right" orientation="right" tick={{ fill: 'rgba(255,248,236,0.45)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
-                <Area yAxisId="left" type="monotone" dataKey="agents" stroke="#f4c87a" fill="url(#agentsFill)" strokeWidth={2.4} />
-                <Line yAxisId="right" type="monotone" dataKey="max_load" stroke="#1f7f79" strokeWidth={2.2} dot={false} />
-              </AreaChart>
-            </ResponsiveContainer>
+            <MeasuredChart minHeight={240}>
+              {({ width, height }) => (
+                <AreaChart width={width} height={height} data={hourly} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="agentsFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#f4c87a" stopOpacity={0.65} />
+                      <stop offset="100%" stopColor="#f4c87a" stopOpacity={0} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
+                  <XAxis dataKey="hour" tickFormatter={(value) => `${value}:00`} tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis yAxisId="left" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis yAxisId="right" orientation="right" tick={{ fill: 'rgba(255,248,236,0.45)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
+                  <Area yAxisId="left" type="monotone" dataKey="agents" stroke="#f4c87a" fill="url(#agentsFill)" strokeWidth={2.4} />
+                  <Line yAxisId="right" type="monotone" dataKey="max_load" stroke="#1f7f79" strokeWidth={2.2} dot={false} />
+                </AreaChart>
+              )}
+            </MeasuredChart>
           </div>
         </article>
 

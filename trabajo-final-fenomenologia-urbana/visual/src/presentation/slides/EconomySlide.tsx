@@ -1,8 +1,9 @@
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
 import type { CSSProperties } from 'react'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
+import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, formatRatio } from '../utils'
 
@@ -39,15 +40,17 @@ export function EconomySlide({
             </div>
           </div>
           <div className="chart-shell chart-shell-tall">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={220}>
-              <BarChart data={topCommerce} margin={{ top: 12, right: 8, left: 0, bottom: 0 }}>
-                <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
-                <XAxis dataKey="label" tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
-                <Bar dataKey="commerce" fill="#f4c87a" radius={[12, 12, 6, 6]} />
-              </BarChart>
-            </ResponsiveContainer>
+            <MeasuredChart minHeight={220}>
+              {({ width, height }) => (
+                <BarChart width={width} height={height} data={topCommerce} margin={{ top: 12, right: 8, left: 0, bottom: 0 }}>
+                  <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
+                  <XAxis dataKey="label" tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
+                  <Bar dataKey="commerce" fill="#f4c87a" radius={[12, 12, 6, 6]} />
+                </BarChart>
+              )}
+            </MeasuredChart>
           </div>
         </article>
 

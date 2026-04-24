@@ -1,7 +1,8 @@
-import { CartesianGrid, ComposedChart, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, Bar } from 'recharts'
+import { CartesianGrid, ComposedChart, Line, Tooltip, XAxis, YAxis, Bar } from 'recharts'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
+import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, formatRatio } from '../utils'
 
@@ -33,17 +34,19 @@ export function StressSlide({
             <KpiPill label="Entropía crítica" value={tipping?.system_entropy.toFixed(2) ?? 's/d'} status="proxy" />
           </div>
           <div className="chart-shell chart-shell-tall">
-            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={240}>
-              <ComposedChart data={stress?.full_curve ?? []} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
-                <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
-                <XAxis dataKey="agents" tickFormatter={(value) => compactNumber(Number(value))} tick={{ fill: 'rgba(255,248,236,0.65)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis yAxisId="left" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <YAxis yAxisId="right" orientation="right" tick={{ fill: 'rgba(255,248,236,0.45)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
-                <Bar yAxisId="left" dataKey="pressure_index" fill="#e07a46" radius={[10, 10, 0, 0]} />
-                <Line yAxisId="right" type="monotone" dataKey="system_entropy" stroke="#f4c87a" strokeWidth={2.4} dot={false} />
-              </ComposedChart>
-            </ResponsiveContainer>
+            <MeasuredChart minHeight={240}>
+              {({ width, height }) => (
+                <ComposedChart width={width} height={height} data={stress?.full_curve ?? []} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
+                  <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
+                  <XAxis dataKey="agents" tickFormatter={(value) => compactNumber(Number(value))} tick={{ fill: 'rgba(255,248,236,0.65)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis yAxisId="left" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <YAxis yAxisId="right" orientation="right" tick={{ fill: 'rgba(255,248,236,0.45)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                  <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
+                  <Bar yAxisId="left" dataKey="pressure_index" fill="#e07a46" radius={[10, 10, 0, 0]} />
+                  <Line yAxisId="right" type="monotone" dataKey="system_entropy" stroke="#f4c87a" strokeWidth={2.4} dot={false} />
+                </ComposedChart>
+              )}
+            </MeasuredChart>
           </div>
         </article>
 
