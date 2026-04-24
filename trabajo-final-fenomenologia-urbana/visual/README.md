@@ -12,7 +12,10 @@ Esta carpeta contiene la interfaz interactiva del proyecto.
   - percepción ciudadana 2024;
   - criminalidad de comuna 10;
   - indicadores 2021 del barrio La Candelaria;
-- trazabilidad de fuentes y pendientes de campo.
+  - pasajeros SITVA;
+  - PM2.5, PM10 y ruido SIATA/AMVA;
+- cierre operativo del proyecto;
+- trazabilidad de fuentes, fallos y pendientes físicos de campo.
 
 ## Requisitos
 
@@ -43,6 +46,8 @@ Ese archivo se genera desde:
 1. Correr el pipeline de `investigacion/`.
 2. Confirmar que `public/data/frontend_payload.json` fue actualizado.
 3. Levantar la app con `npm run dev`.
+
+El payload actual es `0.2.0-baseline`: repo listo para defensa, con campo físico marcado como dependencia externa.
 
 ## Nota de entorno
 

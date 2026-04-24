@@ -30,7 +30,8 @@ investigacion/
 3. Ejecuta simulaciones de agentes para cuatro escenarios horarios.
 4. Calcula metricas de centralidad, friccion, concentracion y restriccion decisional.
 5. Deriva una capa empirica real desde criminalidad, bateria barrial y percepcion ciudadana.
-6. Exporta un `frontend_payload.json` a `../visual/public/data/`.
+6. Integra pasajeros SITVA, SIATA/AMVA PM2.5/PM10/ruido y fallback DANE municipal/microdatos.
+7. Exporta un `frontend_payload.json` a `../visual/public/data/`.
 
 ## Estado epistemico
 
@@ -54,10 +55,11 @@ python3 scripts/run_all.py
 - `outputs/empirical_summary.json`
 - `outputs/simulation_results.json`
 - `outputs/frontend_payload.json`
+- `outputs/field_calibration_delta.json`
 
 ## Siguiente iteracion recomendada
 
-Reemplazar progresivamente los pesos `proxy` por:
+La versión actual queda como `0.2.0-baseline`. Para pasar a `0.2.0-field`, cargar observaciones reales en `data/interim/` y reemplazar progresivamente los pesos `proxy` por:
 
 - conteos peatonales reales;
 - mediciones puntuales de ruido e iluminacion;

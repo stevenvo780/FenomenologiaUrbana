@@ -227,8 +227,8 @@ Cerrar el proyecto como investigación, no solo como laboratorio visual.
 ### Bloqueos duros
 
 - sin datos de campo no hay recalibración empírica seria;
-- sin un reemplazo o cierre metodológico del hueco DANE queda una debilidad abierta;
-- sin estructurar aire/ruido y uso del suelo, parte del modelo sigue demasiado apoyada en proxy.
+- sin acceso automatizado o cierre metodológico de DANE geovisor fino, MEData uso del suelo y equipamientos queda una debilidad de fuente abierta;
+- aire/ruido ya están estructurados como red pública macro, pero siguen sin medición situada por subtramo.
 
 ### Dependencias blandas
 
@@ -239,10 +239,10 @@ Cerrar el proyecto como investigación, no solo como laboratorio visual.
 
 Con base en esta ola paralela, el siguiente movimiento más rentable del agente principal debería ser:
 
-1. implementar **Sprint 0 de datos**;
-2. crear la **infraestructura de ingesta de campo**;
-3. preparar el pipeline para aceptar una versión `field_calibrated` sin romper `baseline_proxy`;
-4. solo después rematar la app con comparaciones de escenarios y paneles situados.
+1. cargar campo físico real en `interim/`;
+2. correr `python3 scripts/run_all.py`;
+3. revisar `field_calibration_delta.json`;
+4. rematar la app con comparación baseline vs. campo cuando exista `field_calibrated`.
 
 ## 6. Recomendación final
 
@@ -250,9 +250,8 @@ La decisión correcta no es abrir más planeación. Es empezar a mover el proyec
 
 ### Carril A — datos estructurales
 
-- DANE fallback;
-- SIATA/AMVA real;
-- uso del suelo y equipamientos;
+- DANE geovisor fino, si se consigue acceso no bloqueado;
+- uso del suelo y equipamientos, si se descarga manualmente o por otra API;
 - validación topológica mínima.
 
 ### Carril B — campo e ingestión
@@ -264,16 +263,16 @@ La decisión correcta no es abrir más planeación. Es empezar a mover el proyec
 
 Eso es lo que permite pasar de:
 
-> `baseline_proxy_demostrable`
+> `0.2.0-baseline`
 
 hacia:
 
-> `field_calibrated_defendible`
+> `0.2.0-field` / `field_calibrated_defendible`
 
 ## 7. Próximo corte sugerido
 
 En el siguiente corte ya no deberíamos volver a preguntar “qué falta”, sino verificar si ya quedaron resueltos estos tres hitos:
 
-- datos estructurales desbloqueados;
-- scripts de ingestión de campo creados;
-- modelo listo para coexistencia `v0.1.0` / `v0.2.0`.
+- sesiones de campo cargadas;
+- `field_calibration_delta.json` con cambios reales;
+- UI mostrando comparación entre baseline y datos observados.

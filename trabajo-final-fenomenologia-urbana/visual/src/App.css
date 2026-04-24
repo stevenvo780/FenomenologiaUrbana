@@ -809,12 +809,17 @@
 }
 
 .fieldwork-asset-card {
+  min-width: 0;
   padding: 16px;
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.74);
   border: 1px solid rgba(23, 19, 17, 0.08);
   display: grid;
   gap: 8px;
+}
+
+.fieldwork-asset-card p {
+  overflow-wrap: anywhere;
 }
 
 .trace-task-legend {

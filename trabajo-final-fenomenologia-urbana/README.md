@@ -41,7 +41,10 @@ trabajo-final-fenomenologia-urbana/
 │   └── 08-web-react.md
 ├── 06-gestion/
 │   ├── 09-trazabilidad-y-pendientes.md
-│   └── 10-guion-exposicion.md
+│   ├── 10-guion-exposicion.md
+│   ├── 12-hallazgos-y-conclusiones.md
+│   ├── 13-plan-operativo-cierre-empirico.md
+│   └── 14-cierre-final-repo.md
 ├── investigacion/
 │   ├── README.md
 │   ├── data/
@@ -65,6 +68,7 @@ trabajo-final-fenomenologia-urbana/
 7. Usa [`06-gestion/10-guion-exposicion.md`](./06-gestion/10-guion-exposicion.md) para la exposición final.
 8. Usa [`investigacion/README.md`](./investigacion/README.md) para correr el pipeline empírico.
 9. Usa [`visual/README.md`](./visual/README.md) para levantar el dashboard.
+10. Usa [`06-gestion/14-cierre-final-repo.md`](./06-gestion/14-cierre-final-repo.md) como checklist de cierre.
 
 ## Enfoque filosófico
 
