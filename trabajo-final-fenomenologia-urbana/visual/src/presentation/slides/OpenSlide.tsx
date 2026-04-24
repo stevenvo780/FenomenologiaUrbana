@@ -26,11 +26,11 @@ export function OpenSlide({
     <SlideShell id="apertura" className="hero-slide">
       <div className="hero-grid">
         <div className="hero-copy deck-panel">
-          <p className="deck-eyebrow">Fenomenología contemporánea · demo visual</p>
+          <p className="deck-eyebrow">Fenomenología contemporánea · deck doctoral</p>
           <h1>Centro de Medellín como red viva</h1>
           <p className="hero-lead">
-            El dashboard se reorganiza como una presentación escénica: mapa, simulación,
-            cuerpos, presión urbana y evidencia aparecen por actos, no como una tabla infinita.
+            La defensa se despliega ahora como una presentación escénica de 16 actos: topología,
+            simulación avanzada, desigualdad fenomenológica, PDE ambiental, panóptico urbano e historia computable.
           </p>
           <div className="hero-actions">
             <button type="button" className="primary-action" onClick={() => onGoToSlide('mapa')}>
