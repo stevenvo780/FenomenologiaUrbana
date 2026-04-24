@@ -75,6 +75,22 @@ function Dashboard({
     (entry) => entry.node_id === selectedNode.id,
   )
   const nodeNarrative = buildNodeNarrative(selectedNode, scenario, nodeLoad, nodeBottleneck)
+  const center = data.empirical.center_perception
+  const crime = data.empirical.crime_comuna_10
+  const barrio = data.empirical.barrio_la_candelaria
+  const metro = data.empirical.source_evidence.metro_operational
+  const densityComparison = barrio.metric_comparisons.find(
+    (entry) => entry.metric === 'Densidad poblacional',
+  )
+  const businessComparison = barrio.metric_comparisons.find(
+    (entry) => entry.metric === 'Densidad empresarial',
+  )
+  const publicSpaceMetric = barrio.la_candelaria_metrics.find(
+    (entry) => entry.label === 'Espacio público efectivo por habitante',
+  )
+  const publicSpaceDeficitMetric = barrio.la_candelaria_metrics.find(
+    (entry) => entry.label === 'Déficit espacio público efectivo',
+  )
 
   return (
     <main className="app-shell">
@@ -303,7 +319,7 @@ function Dashboard({
           <div className="trace-grid">
             <div className="trace-column">
               <p className="trace-title">Fuentes intentadas</p>
-              {data.sources.slice(0, 6).map((entry) => (
+              {data.sources.slice(0, 8).map((entry) => (
                 <div key={entry.id} className="trace-row">
                   <span>{entry.label}</span>
                   <strong className={entry.status === 'downloaded' ? 'ok' : 'warn'}>
@@ -311,6 +327,24 @@ function Dashboard({
                   </strong>
                 </div>
               ))}
+            </div>
+            <div className="trace-column">
+              <p className="trace-title">Actualizacion conocida</p>
+              <div className="trace-task">
+                <strong>MEData criminalidad</strong>
+                <p>{data.empirical.source_evidence.freshness.medata_criminalidad_last_updated ?? 'sin dato'}</p>
+              </div>
+              <div className="trace-task">
+                <strong>MEData bateria barrial</strong>
+                <p>{data.empirical.source_evidence.freshness.medata_barrio_last_updated ?? 'sin dato'}</p>
+              </div>
+              <div className="trace-task">
+                <strong>San Antonio B</strong>
+                <p>
+                  flujo alto diurno: {String(metro.high_flow_day)} · presion PM:{' '}
+                  {String(metro.afternoon_rush_pressure)}
+                </p>
+              </div>
             </div>
             <div className="trace-column">
               <p className="trace-title">Pendientes de campo</p>
@@ -323,6 +357,114 @@ function Dashboard({
                 </div>
               ))}
             </div>
+          </div>
+        </article>
+
+        <article className="card evidence-card">
+          <div className="card-header">
+            <div>
+              <p className="eyebrow">Evidencia empirica ya integrada</p>
+              <h2>Centro, criminalidad y estructura barrial</h2>
+            </div>
+            <p className="muted">
+              Esta capa ya no es proxy puro: resume datos reales de percepcion ciudadana,
+              criminalidad y capacidad de soporte del centro.
+            </p>
+          </div>
+
+          <div className="evidence-grid">
+            <section className="evidence-column">
+              <p className="trace-title">Percepcion del centro 2024</p>
+              <div className="metric-table">
+                <MetricRow
+                  label="Imagen favorable"
+                  value={`${center.image_favorable_pct.toFixed(1)}%`}
+                />
+                <MetricRow
+                  label="Imagen desfavorable"
+                  value={`${center.image_unfavorable_pct.toFixed(1)}%`}
+                />
+                <MetricRow
+                  label="Visita al menos mensual"
+                  value={`${center.visited_monthly_pct.toFixed(1)}%`}
+                />
+                <MetricRow
+                  label="Motivo principal"
+                  value={`${center.main_motives[0].label} ${center.main_motives[0].pct.toFixed(1)}%`}
+                />
+              </div>
+              <div className="micro-bars">
+                {center.word_associations.map((entry) => (
+                  <BarRow
+                    key={`${entry.dimension}-${entry.label}`}
+                    label={`${entry.dimension}: ${entry.label}`}
+                    value={entry.pct / 100}
+                  />
+                ))}
+              </div>
+            </section>
+
+            <section className="evidence-column">
+              <p className="trace-title">Criminalidad comuna 10</p>
+              <div className="metric-table">
+                <MetricRow label="Ultimo mes disponible" value={crime.latest_month} />
+                <MetricRow
+                  label="Conducta dominante 2023"
+                  value={`${crime.top_conducts_2023[0].label} ${compactNumber(crime.top_conducts_2023[0].cases)}`}
+                />
+                <MetricRow
+                  label="Pico 2023"
+                  value={`${findPeakPeriod(crime.monthly_2023).period} · ${findPeakPeriod(crime.monthly_2023).cases}`}
+                />
+              </div>
+              <div className="timeline-bars">
+                {crime.monthly_2023.map((entry) => (
+                  <div key={entry.period} className="timeline-bar">
+                    <span>{entry.period.slice(5)}</span>
+                    <div className="timeline-track">
+                      <div
+                        style={{
+                          width: `${(entry.cases / findPeakPeriod(crime.monthly_2023).cases) * 100}%`,
+                        }}
+                      />
+                    </div>
+                    <strong>{entry.cases}</strong>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section className="evidence-column">
+              <p className="trace-title">Barrio La Candelaria 2021</p>
+              <div className="metric-table">
+                <MetricRow
+                  label="Densidad poblacional"
+                  value={`${barrio.highlights.population_density.toFixed(1)} hab/ha`}
+                />
+                <MetricRow
+                  label="Densidad empresarial"
+                  value={`${barrio.highlights.business_density.toFixed(1)} empresas/1000 hab`}
+                />
+                <MetricRow
+                  label="Espacio publico efectivo"
+                  value={`${publicSpaceMetric?.value.toFixed(2) ?? '0.00'} m2/hab`}
+                />
+                <MetricRow
+                  label="Deficit de espacio publico"
+                  value={`${publicSpaceDeficitMetric?.value.toFixed(2) ?? '0.00'} m2/hab`}
+                />
+              </div>
+              <div className="comparison-stack">
+                <ComparisonList
+                  title="Ranking por densidad poblacional"
+                  entries={densityComparison?.ranked_values.slice(0, 5) ?? []}
+                />
+                <ComparisonList
+                  title="Ranking por densidad empresarial"
+                  entries={businessComparison?.ranked_values.slice(0, 5) ?? []}
+                />
+              </div>
+            </section>
           </div>
         </article>
       </section>
@@ -384,6 +526,31 @@ function BarRow({ label, value }: { label: string; value: number }) {
       <div className="bar-track">
         <div style={{ width: `${value * 100}%` }} />
       </div>
+    </div>
+  )
+}
+
+function ComparisonList({
+  title,
+  entries,
+}: {
+  title: string
+  entries: Array<{ barrio: string; value: number; unit: string }>
+}) {
+  const max = Math.max(...entries.map((entry) => entry.value), 1)
+
+  return (
+    <div className="comparison-card">
+      <p className="comparison-title">{title}</p>
+      {entries.map((entry) => (
+        <div key={`${title}-${entry.barrio}`} className="timeline-bar">
+          <span>{entry.barrio}</span>
+          <div className="timeline-track">
+            <div style={{ width: `${(entry.value / max) * 100}%` }} />
+          </div>
+          <strong>{compactNumber(entry.value)}</strong>
+        </div>
+      ))}
     </div>
   )
 }
@@ -525,6 +692,17 @@ function normalizePressure(value: number, scenarios: ScenarioSummary[]) {
   }
 
   return (value - min) / (max - min)
+}
+
+function compactNumber(value: number) {
+  return new Intl.NumberFormat('es-CO', {
+    notation: 'compact',
+    maximumFractionDigits: 1,
+  }).format(value)
+}
+
+function findPeakPeriod(entries: Array<{ period: string; cases: number }>) {
+  return entries.reduce((peak, current) => (current.cases > peak.cases ? current : peak), entries[0])
 }
 
 function buildNodeNarrative(

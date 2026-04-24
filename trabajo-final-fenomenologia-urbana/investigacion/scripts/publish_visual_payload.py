@@ -51,6 +51,7 @@ def main() -> Path:
     case_model = read_json(OUTPUTS_DIR / "case_model.json")
     simulation = read_json(OUTPUTS_DIR / "simulation_results.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
+    empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
 
     payload = {
         "meta": {
@@ -74,10 +75,12 @@ def main() -> Path:
             "pending": FIELDWORK_PENDING,
         },
         "baseline_metrics": simulation["baseline_metrics"],
+        "empirical": empirical,
         "docs": {
             "principal": "../00-documento-principal.md",
             "modelo": "../04-modelado/05-modelo-computacional.md",
             "metricas": "../04-modelado/06-metricas.md",
+            "estado_empirico": "../investigacion/docs/estado-empirico.md",
         },
     }
 
@@ -88,6 +91,7 @@ def main() -> Path:
     shutil.copy2(output_path, VISUAL_DATA_DIR / "frontend_payload.json")
     shutil.copy2(OUTPUTS_DIR / "source_status.json", VISUAL_DATA_DIR / "source_status.json")
     shutil.copy2(OUTPUTS_DIR / "simulation_results.json", VISUAL_DATA_DIR / "simulation_results.json")
+    shutil.copy2(OUTPUTS_DIR / "empirical_summary.json", VISUAL_DATA_DIR / "empirical_summary.json")
     return output_path
 
 

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T16:17:58+00:00",
+    "generated_at": "2026-04-24T16:24:52+00:00",
     "pipeline_version": "0.1.0",
     "status": "research_to_visual_synced"
   },
@@ -1492,9 +1492,599 @@
       }
     ]
   },
+  "empirical": {
+    "generated_at": "2026-04-24T16:24:51+00:00",
+    "center_perception": {
+      "source": "Medellin Como Vamos EPC 2024",
+      "image_favorable_pct": 53.3,
+      "image_unfavorable_pct": 44.5,
+      "visited_monthly_pct": 23.4,
+      "visited_several_week_pct": 19.5,
+      "visited_weekly_pct": 17.7,
+      "main_motives": [
+        {
+          "label": "comercio",
+          "pct": 42.9
+        },
+        {
+          "label": "servicios de salud",
+          "pct": 16.9
+        },
+        {
+          "label": "trabajo",
+          "pct": 16.1
+        }
+      ],
+      "word_associations": [
+        {
+          "dimension": "actividades",
+          "label": "comercio",
+          "pct": 65.6
+        },
+        {
+          "dimension": "seguridad",
+          "label": "inseguro",
+          "pct": 70.5
+        },
+        {
+          "dimension": "empleo",
+          "label": "informalidad",
+          "pct": 70.9
+        },
+        {
+          "dimension": "movilidad",
+          "label": "congestion",
+          "pct": 82.8
+        },
+        {
+          "dimension": "poblacion",
+          "label": "habitantes de calle",
+          "pct": 66.2
+        }
+      ]
+    },
+    "crime_comuna_10": {
+      "source": "MEData criminalidad por comunas",
+      "latest_month": "2023-11",
+      "yearly_totals": [
+        {
+          "year": "2016",
+          "cases": 7511
+        },
+        {
+          "year": "2017",
+          "cases": 10906
+        },
+        {
+          "year": "2018",
+          "cases": 13387
+        },
+        {
+          "year": "2019",
+          "cases": 15429
+        },
+        {
+          "year": "2020",
+          "cases": 9306
+        },
+        {
+          "year": "2021",
+          "cases": 9806
+        },
+        {
+          "year": "2022",
+          "cases": 11260
+        },
+        {
+          "year": "2023",
+          "cases": 6737
+        }
+      ],
+      "monthly_2023": [
+        {
+          "period": "2023-01",
+          "cases": 692
+        },
+        {
+          "period": "2023-02",
+          "cases": 695
+        },
+        {
+          "period": "2023-03",
+          "cases": 735
+        },
+        {
+          "period": "2023-04",
+          "cases": 731
+        },
+        {
+          "period": "2023-05",
+          "cases": 811
+        },
+        {
+          "period": "2023-06",
+          "cases": 797
+        },
+        {
+          "period": "2023-07",
+          "cases": 738
+        },
+        {
+          "period": "2023-08",
+          "cases": 624
+        },
+        {
+          "period": "2023-09",
+          "cases": 392
+        },
+        {
+          "period": "2023-10",
+          "cases": 309
+        },
+        {
+          "period": "2023-11",
+          "cases": 213
+        }
+      ],
+      "top_conducts_2023": [
+        {
+          "label": "Hurto a persona",
+          "cases": 5888
+        },
+        {
+          "label": "Hurto de moto",
+          "cases": 593
+        },
+        {
+          "label": "Extorsi\u00f3n",
+          "cases": 94
+        },
+        {
+          "label": "Hurto a residencia",
+          "cases": 86
+        },
+        {
+          "label": "Hurto de carro",
+          "cases": 76
+        }
+      ],
+      "latest_month_top_conducts": [
+        {
+          "label": "Hurto a persona",
+          "cases": 185
+        },
+        {
+          "label": "Hurto de moto",
+          "cases": 16
+        },
+        {
+          "label": "Extorsi\u00f3n",
+          "cases": 8
+        },
+        {
+          "label": "Hurto de carro",
+          "cases": 2
+        },
+        {
+          "label": "Hurto a residencia",
+          "cases": 2
+        }
+      ]
+    },
+    "barrio_la_candelaria": {
+      "source": "MEData bateria barrial 2021",
+      "year": 2021,
+      "target_barrio": "La Candelaria",
+      "la_candelaria_metrics": [
+        {
+          "label": "Poblaci\u00f3n total",
+          "value": 3535.0,
+          "unit": "N\u00famero",
+          "theme": "Vivienda y poblaci\u00f3n"
+        },
+        {
+          "label": "Densidad poblacional",
+          "value": 85.0632039596995,
+          "unit": "Habitantes por hect\u00e1rea",
+          "theme": "Estado del territorio"
+        },
+        {
+          "label": "Suelo m\u00faltiple (comercio y servicios)",
+          "value": 264243.202306352,
+          "unit": "Metros cuadrados",
+          "theme": "Estado del territorio"
+        },
+        {
+          "label": "Metros cuadrados construidos en m\u00faltiple (comercio y servicios)",
+          "value": 1154830.0,
+          "unit": "Metros cuadrados construidos",
+          "theme": "Estado del territorio"
+        },
+        {
+          "label": "Espacio p\u00fablico efectivo por habitante",
+          "value": 2.07078425473127,
+          "unit": "Metros cuadrados por habitante",
+          "theme": "Espacio p\u00fablico"
+        },
+        {
+          "label": "D\u00e9ficit espacio p\u00fablico efectivo",
+          "value": 4.92921574526873,
+          "unit": "Metros cuadrados por habitante",
+          "theme": "Espacio p\u00fablico"
+        },
+        {
+          "label": "Densidad de espacio p\u00fablico efectivo",
+          "value": 0.0796020260925405,
+          "unit": "Cantidad EP/Ha",
+          "theme": "Espacio p\u00fablico"
+        },
+        {
+          "label": "Densidad empresarial",
+          "value": 1719.09476661952,
+          "unit": "Empresas por cada 1.000 habitantes",
+          "theme": "Econom\u00eda"
+        }
+      ],
+      "comparison_barrios": [
+        "La Candelaria",
+        "Prado",
+        "Boston",
+        "Villa Nueva",
+        "Guayaquil",
+        "Perpetuo Socorro",
+        "San Diego"
+      ],
+      "metric_comparisons": [
+        {
+          "metric": "Poblaci\u00f3n total",
+          "ranked_values": [
+            {
+              "barrio": "Boston",
+              "value": 14270.0,
+              "unit": "N\u00famero"
+            },
+            {
+              "barrio": "Prado",
+              "value": 9466.0,
+              "unit": "N\u00famero"
+            },
+            {
+              "barrio": "San Diego",
+              "value": 8416.0,
+              "unit": "N\u00famero"
+            },
+            {
+              "barrio": "Villa Nueva",
+              "value": 4443.0,
+              "unit": "N\u00famero"
+            },
+            {
+              "barrio": "La Candelaria",
+              "value": 3535.0,
+              "unit": "N\u00famero"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 793.0,
+              "unit": "N\u00famero"
+            },
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 76.0,
+              "unit": "N\u00famero"
+            }
+          ]
+        },
+        {
+          "metric": "Densidad poblacional",
+          "ranked_values": [
+            {
+              "barrio": "Boston",
+              "value": 412.414107492492,
+              "unit": "Habitantes por hect\u00e1rea"
+            },
+            {
+              "barrio": "Villa Nueva",
+              "value": 209.417018865278,
+              "unit": "Habitantes por hect\u00e1rea"
+            },
+            {
+              "barrio": "Prado",
+              "value": 201.286095432682,
+              "unit": "Habitantes por hect\u00e1rea"
+            },
+            {
+              "barrio": "San Diego",
+              "value": 195.757689079526,
+              "unit": "Habitantes por hect\u00e1rea"
+            },
+            {
+              "barrio": "La Candelaria",
+              "value": 85.0632039596995,
+              "unit": "Habitantes por hect\u00e1rea"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 40.6848211980379,
+              "unit": "Habitantes por hect\u00e1rea"
+            },
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 1.65686376724045,
+              "unit": "Habitantes por hect\u00e1rea"
+            }
+          ]
+        },
+        {
+          "metric": "Densidad empresarial",
+          "ranked_values": [
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 10986.8421052632,
+              "unit": "Empresas por cada 1.000 habitantes"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 4158.89029003783,
+              "unit": "Empresas por cada 1.000 habitantes"
+            },
+            {
+              "barrio": "La Candelaria",
+              "value": 1719.09476661952,
+              "unit": "Empresas por cada 1.000 habitantes"
+            },
+            {
+              "barrio": "Villa Nueva",
+              "value": 196.713932027909,
+              "unit": "Empresas por cada 1.000 habitantes"
+            },
+            {
+              "barrio": "San Diego",
+              "value": 132.96102661597,
+              "unit": "Empresas por cada 1.000 habitantes"
+            },
+            {
+              "barrio": "Boston",
+              "value": 67.4842326559215,
+              "unit": "Empresas por cada 1.000 habitantes"
+            },
+            {
+              "barrio": "Prado",
+              "value": 56.2011409254173,
+              "unit": "Empresas por cada 1.000 habitantes"
+            }
+          ]
+        },
+        {
+          "metric": "Suelo m\u00faltiple (comercio y servicios)",
+          "ranked_values": [
+            {
+              "barrio": "La Candelaria",
+              "value": 264243.202306352,
+              "unit": "Metros cuadrados"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 137407.912948703,
+              "unit": "Metros cuadrados"
+            },
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 92280.3162165097,
+              "unit": "Metros cuadrados"
+            },
+            {
+              "barrio": "Villa Nueva",
+              "value": 91769.0709629018,
+              "unit": "Metros cuadrados"
+            },
+            {
+              "barrio": "San Diego",
+              "value": 67098.035459213,
+              "unit": "Metros cuadrados"
+            },
+            {
+              "barrio": "Boston",
+              "value": 60482.0748864375,
+              "unit": "Metros cuadrados"
+            },
+            {
+              "barrio": "Prado",
+              "value": 52082.3941272505,
+              "unit": "Metros cuadrados"
+            }
+          ]
+        },
+        {
+          "metric": "Metros cuadrados construidos en m\u00faltiple (comercio y servicios)",
+          "ranked_values": [
+            {
+              "barrio": "La Candelaria",
+              "value": 1154830.0,
+              "unit": "Metros cuadrados construidos"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 419918.0,
+              "unit": "Metros cuadrados construidos"
+            },
+            {
+              "barrio": "Villa Nueva",
+              "value": 216859.0,
+              "unit": "Metros cuadrados construidos"
+            },
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 174388.0,
+              "unit": "Metros cuadrados construidos"
+            },
+            {
+              "barrio": "San Diego",
+              "value": 139131.0,
+              "unit": "Metros cuadrados construidos"
+            },
+            {
+              "barrio": "Boston",
+              "value": 110189.0,
+              "unit": "Metros cuadrados construidos"
+            },
+            {
+              "barrio": "Prado",
+              "value": 79225.0,
+              "unit": "Metros cuadrados construidos"
+            }
+          ]
+        },
+        {
+          "metric": "Espacio p\u00fablico efectivo por habitante",
+          "ranked_values": [
+            {
+              "barrio": "San Diego",
+              "value": 7.37627836534776,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 7.01698002506793,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 6.32211407561342,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Boston",
+              "value": 2.53766258682784,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "La Candelaria",
+              "value": 2.07078425473127,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Prado",
+              "value": 1.96139581507028,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Villa Nueva",
+              "value": 1.23042504198921,
+              "unit": "Metros cuadrados por habitante"
+            }
+          ]
+        },
+        {
+          "metric": "D\u00e9ficit espacio p\u00fablico efectivo",
+          "ranked_values": [
+            {
+              "barrio": "Villa Nueva",
+              "value": 5.76957495801079,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Prado",
+              "value": 5.03860418492972,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "La Candelaria",
+              "value": 4.92921574526873,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Boston",
+              "value": 4.46233741317216,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 0.677885924386579,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 0.0,
+              "unit": "Metros cuadrados por habitante"
+            },
+            {
+              "barrio": "San Diego",
+              "value": 0.0,
+              "unit": "Metros cuadrados por habitante"
+            }
+          ]
+        },
+        {
+          "metric": "Densidad de espacio p\u00fablico efectivo",
+          "ranked_values": [
+            {
+              "barrio": "Boston",
+              "value": 0.255329412062855,
+              "unit": "Cantidad EP/Ha"
+            },
+            {
+              "barrio": "San Diego",
+              "value": 0.17506146229487,
+              "unit": "Cantidad EP/Ha"
+            },
+            {
+              "barrio": "Guayaquil",
+              "value": 0.0954641732341927,
+              "unit": "Cantidad EP/Ha"
+            },
+            {
+              "barrio": "Prado",
+              "value": 0.0872758537720308,
+              "unit": "Cantidad EP/Ha"
+            },
+            {
+              "barrio": "La Candelaria",
+              "value": 0.0796020260925405,
+              "unit": "Cantidad EP/Ha"
+            },
+            {
+              "barrio": "Perpetuo Socorro",
+              "value": 0.0312963125907139,
+              "unit": "Cantidad EP/Ha"
+            },
+            {
+              "barrio": "Villa Nueva",
+              "value": 0.00703253320114235,
+              "unit": "Cantidad EP/Ha"
+            }
+          ]
+        }
+      ],
+      "highlights": {
+        "population_density": 85.0632039596995,
+        "business_density": 1719.09476661952,
+        "public_space_per_capita": 2.07078425473127
+      },
+      "comparison_means": {
+        "mean_population_density": 163.75,
+        "mean_business_density": 2474.03
+      }
+    },
+    "source_evidence": {
+      "metro_operational": {
+        "station": "San Antonio B",
+        "high_flow_day": true,
+        "afternoon_rush_pressure": true,
+        "line_b_running_time_rush_minutes_before": 4.75,
+        "line_b_running_time_rush_minutes_after": 3.8,
+        "waiting_time_increase_mentioned": true
+      },
+      "freshness": {
+        "medata_criminalidad_last_updated": "02/01/2025",
+        "medata_barrio_last_updated": "08/10/2023"
+      }
+    }
+  },
   "docs": {
     "principal": "../00-documento-principal.md",
     "modelo": "../04-modelado/05-modelo-computacional.md",
-    "metricas": "../04-modelado/06-metricas.md"
+    "metricas": "../04-modelado/06-metricas.md",
+    "estado_empirico": "../investigacion/docs/estado-empirico.md"
   }
 }

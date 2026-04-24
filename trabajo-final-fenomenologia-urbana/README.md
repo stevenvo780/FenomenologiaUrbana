@@ -39,9 +39,19 @@ trabajo-final-fenomenologia-urbana/
 │   └── 07-simulaciones.md
 ├── 05-web/
 │   └── 08-web-react.md
-└── 06-gestion/
-    ├── 09-trazabilidad-y-pendientes.md
-    └── 10-guion-exposicion.md
+├── 06-gestion/
+│   ├── 09-trazabilidad-y-pendientes.md
+│   └── 10-guion-exposicion.md
+├── investigacion/
+│   ├── README.md
+│   ├── data/
+│   ├── docs/
+│   ├── outputs/
+│   └── scripts/
+└── visual/
+    ├── README.md
+    ├── public/data/
+    └── src/
 ```
 
 ## Cómo leer el proyecto
@@ -53,6 +63,8 @@ trabajo-final-fenomenologia-urbana/
 5. Usa [`05-web/08-web-react.md`](./05-web/08-web-react.md) para implementar la interfaz.
 6. Usa [`06-gestion/09-trazabilidad-y-pendientes.md`](./06-gestion/09-trazabilidad-y-pendientes.md) para repartir trabajo real.
 7. Usa [`06-gestion/10-guion-exposicion.md`](./06-gestion/10-guion-exposicion.md) para la exposición final.
+8. Usa [`investigacion/README.md`](./investigacion/README.md) para correr el pipeline empírico.
+9. Usa [`visual/README.md`](./visual/README.md) para levantar el dashboard.
 
 ## Enfoque filosófico
 
@@ -78,13 +90,14 @@ Lo que ya queda resuelto en estos archivos:
 - justificación del espacio urbano elegido;
 - inventario inicial de datos públicos disponibles;
 - modelo computacional y métricas;
-- arquitectura técnica implementable de la web;
+- pipeline investigativo ejecutable;
+- simulación inicial ya corrida y publicada;
+- dashboard React ya conectado a outputs reales;
 - matriz de trazabilidad para trabajo real.
 
 Lo que todavía falta para completar el proyecto empírico:
 
-- descarga, limpieza y normalización de datasets;
 - captura de campo en varias franjas horarias;
 - validación de proxies para seguridad percibida y densidad peatonal;
-- decisión final de librería de grafo y formato geoespacial;
-- producción de las visualizaciones reales con datos procesados.
+- sustitución progresiva de pesos proxy por observación fina;
+- mejora geoespacial si se quiere pasar de grafo espacializado a cartografía base completa.

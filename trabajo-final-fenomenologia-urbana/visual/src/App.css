@@ -422,7 +422,7 @@
 
 .trace-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -448,10 +448,75 @@
   border-radius: 28px;
 }
 
+.evidence-card {
+  grid-column: span 12;
+}
+
+.evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.evidence-column {
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+}
+
+.micro-bars,
+.comparison-stack {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.timeline-bars {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.timeline-bar {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 54px;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.86rem;
+}
+
+.timeline-track {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(23, 19, 17, 0.08);
+  overflow: hidden;
+}
+
+.timeline-track div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #bc9a65, #cf5d2d);
+}
+
+.comparison-card {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(244, 236, 224, 0.62);
+}
+
+.comparison-title {
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
 @media (max-width: 1080px) {
   .hero-shell,
   .footer-band,
-  .trace-grid {
+  .trace-grid,
+  .evidence-grid {
     grid-template-columns: 1fr;
   }
 

@@ -136,5 +136,88 @@ export type Payload = {
       closeness: number
     }>
   }
+  empirical: {
+    generated_at: string
+    center_perception: {
+      source: string
+      image_favorable_pct: number
+      image_unfavorable_pct: number
+      visited_monthly_pct: number
+      visited_several_week_pct: number
+      visited_weekly_pct: number
+      main_motives: Array<{
+        label: string
+        pct: number
+      }>
+      word_associations: Array<{
+        dimension: string
+        label: string
+        pct: number
+      }>
+    }
+    crime_comuna_10: {
+      source: string
+      latest_month: string
+      yearly_totals: Array<{
+        year: string
+        cases: number
+      }>
+      monthly_2023: Array<{
+        period: string
+        cases: number
+      }>
+      top_conducts_2023: Array<{
+        label: string
+        cases: number
+      }>
+      latest_month_top_conducts: Array<{
+        label: string
+        cases: number
+      }>
+    }
+    barrio_la_candelaria: {
+      source: string
+      year: number
+      target_barrio: string
+      la_candelaria_metrics: Array<{
+        label: string
+        value: number
+        unit: string
+        theme: string
+      }>
+      comparison_barrios: string[]
+      metric_comparisons: Array<{
+        metric: string
+        ranked_values: Array<{
+          barrio: string
+          value: number
+          unit: string
+        }>
+      }>
+      highlights: {
+        population_density: number
+        business_density: number
+        public_space_per_capita: number
+      }
+      comparison_means: {
+        mean_population_density: number
+        mean_business_density: number
+      }
+    }
+    source_evidence: {
+      metro_operational: {
+        station: string
+        high_flow_day: boolean
+        afternoon_rush_pressure: boolean
+        line_b_running_time_rush_minutes_before: number | null
+        line_b_running_time_rush_minutes_after: number | null
+        waiting_time_increase_mentioned: boolean
+      }
+      freshness: {
+        medata_criminalidad_last_updated: string | null
+        medata_barrio_last_updated: string | null
+      }
+    }
+  }
   docs: Record<string, string>
 }

@@ -29,7 +29,8 @@ investigacion/
 2. Construye un modelo base del corredor `San Antonio - Junin - Parque Berrio - Plaza Botero`.
 3. Ejecuta simulaciones de agentes para cuatro escenarios horarios.
 4. Calcula metricas de centralidad, friccion, concentracion y restriccion decisional.
-5. Exporta un `frontend_payload.json` a `../visual/public/data/`.
+5. Deriva una capa empirica real desde criminalidad, bateria barrial y percepcion ciudadana.
+6. Exporta un `frontend_payload.json` a `../visual/public/data/`.
 
 ## Estado epistemico
 
@@ -50,6 +51,7 @@ python3 scripts/run_all.py
 
 - `outputs/source_status.json`
 - `outputs/case_model.json`
+- `outputs/empirical_summary.json`
 - `outputs/simulation_results.json`
 - `outputs/frontend_payload.json`
 

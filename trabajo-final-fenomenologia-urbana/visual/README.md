@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# Visualización React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta carpeta contiene la interfaz interactiva del proyecto.
 
-Currently, two official plugins are available:
+## Qué muestra
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- grafo operativo del corredor `San Antonio - Junin - Parque Berrio - Plaza Botero`;
+- escenarios horarios de simulación;
+- perfiles de agente;
+- inspector fenomenológico por nodo;
+- evidencia empírica real del centro:
+  - percepción ciudadana 2024;
+  - criminalidad de comuna 10;
+  - indicadores 2021 del barrio La Candelaria;
+- trazabilidad de fuentes y pendientes de campo.
 
-## React Compiler
+## Requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js 22+
+- npm 10+
 
-## Expanding the ESLint configuration
+## Comandos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
+npm run build
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Origen de datos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+La app no inventa su payload. Lee:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- `public/data/frontend_payload.json`
+
+Ese archivo se genera desde:
+
+- `../investigacion/scripts/run_all.py`
+
+## Flujo correcto
+
+1. Correr el pipeline de `investigacion/`.
+2. Confirmar que `public/data/frontend_payload.json` fue actualizado.
+3. Levantar la app con `npm run dev`.
+
+## Nota de entorno
+
+En este repo los scripts de `package.json` llaman explícitamente a `node ./node_modules/...` porque los wrappers ejecutables de `node_modules/.bin` no son fiables en este mount.
