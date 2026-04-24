@@ -93,11 +93,13 @@ Lo que ya queda resuelto en estos archivos:
 - pipeline investigativo ejecutable;
 - simulación inicial ya corrida y publicada;
 - dashboard React ya conectado a outputs reales;
+- fuentes públicas ampliadas a SIATA/AMVA JSON, pasajeros SITVA y fallback DANE municipal/microdatos;
+- payload visual `0.2.0-baseline` con cierre operativo y límites explícitos;
 - matriz de trazabilidad para trabajo real.
 
-Lo que todavía falta para completar el proyecto empírico:
+Lo que todavía queda fuera del repo y no debe inventarse:
 
-- captura de campo en varias franjas horarias;
+- captura física de campo en varias franjas horarias;
 - validación de proxies para seguridad percibida y densidad peatonal;
 - sustitución progresiva de pesos proxy por observación fina;
-- mejora geoespacial si se quiere pasar de grafo espacializado a cartografía base completa.
+- cierre de acceso automatizado a fuentes que hoy bloquean `403`: DANE geovisor fino, MEData uso del suelo y MEData equipamientos.

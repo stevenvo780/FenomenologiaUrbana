@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html>
+
+<head>    
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Colombia - Censo Nacional de Población y Vivienda - CNPV - 2018</title>
+<meta name="description" content="El Censo de Población y Vivienda, es la operación estadística más grande y de mayor importancia que se realiza en cualquier país. Se constituye en la columna vertebral del sistema nacional de información estadística. Por su universalidad, la información que se obtiene es el soporte de la planeación y formulación de políticas públicas. De igual forma, es la herramienta que permite llevar a cabo la caracterización de la población, sus hogares y viviendas como insumo para el ordenamiento territorial y para el seguimiento, la evaluación y la formulación de nuevas metas a los compromisos del país, entre otros como los Objetivos de Desarrollo Sostenible (ODS), el Consenso de Montevideo (CDM) y los compromisos con la Organización para la Cooperación y el Desarrollo Económico  -  OCDE.   El propósito del Censo Nacional de Población y Vivienda, en adelante - CNPV 2018, es el de contar la población residente en el territorio nacional y obtener información sociodemográfica para la planificación, gestión y toma de decisiones de política pública a nivel nacional, territorial y local. Entre sus principales objetivos específicos están los de producir información demográfica básica para la elaboración de proyecciones de población, identificar y caracterizar las condiciones de vida de los grupos étnicos localizados en el país, suministrar información para la construcción de indicadores de Necesidades Básicas Insatisfechas (NBI) y Objetivos de Desarrollo Sostenible (ODS) entre otros, así como actualizar los marcos de muestras para la elaboración de encuestas específicas.  El Departamento Administrativo Nacional de Estadística (DANE) efectuará el CNVP 2018, siguiendo la práctica iniciada con el Censo General 2005 cuando se incorporó el componente tecnológico con el uso de los Dispositivos Móviles de Captura y cartografía digital para la recolección de información en campo, entre otros; para el CNPV 2018 se avanza en el diseño de procesos de innovación en concordancia con las recomendaciones internacionales y prácticas de otras instituciones estadísticas del mundo, entre los cuales se encuentran la incorporación de registros administrativos para fines estadísticos y el diseño de nuevas metodologías como la recolección electrónica en estas operaciones estadísticas.   Es así como en la misma dirección de este contexto mundial, el DANE definió cinco pilares en concordancia con la visión establecida para la entidad, entre los que está el de innovación que consiste en “promover mejoras significativas en el quehacer, crear y aplicar nuevos productos, servicios, procesos, métodos organizativos que revolucionen la entidad y la producción y difusión estadística, de manera que el país y sus ciudadanos cuenten con más y mejor información para la toma de decisiones.  En el marco de este pilar, la entidad se propuso generar innovaciones para la ejecución del CNVP 2018, centradas especialmente en:  · La recolección de información vía web, por primera vez en el país, de manera complementaria con la recolección presencial en hogares.  · La introducción de componentes de innovación en el entrenamiento general del CNPV 2018, con simuladores y herramientas para entrenamiento B-Learning.  · El desarrollo de metodologías y tecnologías para aseguramiento de la calidad en tiempo real, en especial, adoptando estándares de medición geoespacial que fortalecen el control del operativo censal.   El presente documento define los principales componentes de cada una de las fases del proceso estadístico, diseñadas para llevar a cabo la operación censal; estructurado por capítulos, uno de los cuales es el de diseño de la operación estadística, compuesto por los diseños: temático, estadístico, ejecución, sistemas, control de calidad, pruebas, análisis de resultados, difusión y evaluación.  En el subcapítulo de diseño temático se establecen las principales necesidades de información de los usuarios, se definen los objetivos, el alcance, los diferentes marcos de referencia (teórico, conceptual y legal), los indicadores y cuadros de salida y el contenido del cuestionario. En el diseño estadístico se establecen los principales componentes básicos del diseño. El diseño de la ejecución muestra lo relacionado con el aprendizaje, que por primera vez contempla el componente virtual además del presencial, las actividades preparatorias como la sensibilización, selección y contratación de personal, entre otros; el diseño de instrumentos y  la recolección de información con sus diferentes métodos y estrategias. En el subcapítulo referido al control de calidad se plantean los indicadores definidos para monitorear el avance de la recolección en términos de calidad y cobertura. El subcapítulo de pruebas ilustra aquellas que fueron realizadas con sus correspondientes aportes en la construcción de procesos, instrumentos y actividades. Así mismo se muestran los otros componentes como el diseño de sistemas, análisis de resultados, difusión y evaluación. Finalmente el de difusión muestra las principales herramientas dispuestas para la entrega de los resultados censales."/>
+<link rel="stylesheet" href="https://microdatos.dane.gov.co/themes/nada/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://microdatos.dane.gov.co/themes/nada/css/bootstrap.min.css">
+    
+
+<link rel="stylesheet" href="https://microdatos.dane.gov.co/themes/nada/css/style.css?v03212019">
+<link rel="stylesheet" href="https://microdatos.dane.gov.co/themes/nada/css/custom.css?v03212019">
+
+    <script src="https://microdatos.dane.gov.co/javascript/jquery/jquery.js"></script>
+    <script src="https://microdatos.dane.gov.co/themes/nada/js/popper.min.js"></script>
+    <script src="https://microdatos.dane.gov.co/themes/nada/js/bootstrap.min.js"></script>
+
+<script src="https://microdatos.dane.gov.co/themes/nada/js/script.js"></script>
+<script type="text/javascript" src="https://microdatos.dane.gov.co/javascript/jquery.ba-bbq.js"></script>
+
+<script type="text/javascript">
+    var CI = {'base_url': 'https://microdatos.dane.gov.co/index.php'};
+
+    if (top.frames.length!=0) {
+        top.location=self.document.location;
+    }
+
+    $(document).ready(function()  {
+        /*global ajax error handler */
+        $( document ).ajaxError(function(event, jqxhr, settings, exception) {
+            if(jqxhr.status==401){
+                window.location=CI.base_url+'/auth/login/?destination=catalog/';
+            }
+            else if (jqxhr.status>=500){
+                alert(jqxhr.responseText);
+            }
+        });
+
+    }); //end-document-ready
+
+</script>
+
+
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org/",
+    "@type": "Dataset",
+    "name": "Censo Nacional de Poblaci\u00f3n y Vivienda - CNPV - 2018 - Colombia",
+    "description": "Resumen\r\n---------------------------\r\n\r\nEl Censo de Poblaci\u00f3n y Vivienda, es la operaci\u00f3n estad\u00edstica m\u00e1s grande y de mayor importancia que se realiza en cualquier pa\u00eds. Se constituye en la columna vertebral del sistema nacional de informaci\u00f3n estad\u00edstica. Por su universalidad, la informaci\u00f3n que se obtiene es el soporte de la planeaci\u00f3n y formulaci\u00f3n de pol\u00edticas p\u00fablicas. De igual forma, es la herramienta que permite llevar a cabo la caracterizaci\u00f3n de la poblaci\u00f3n, sus hogares y viviendas como insumo para el ordenamiento territorial y para el seguimiento, la evaluaci\u00f3n y la formulaci\u00f3n de nuevas metas a los compromisos del pa\u00eds, entre otros como los Objetivos de Desarrollo Sostenible (ODS), el Consenso de Montevideo (CDM) y los compromisos con la Organizaci\u00f3n para la Cooperaci\u00f3n y el Desarrollo Econ\u00f3mico  -  OCDE. \n\nEl prop\u00f3sito del Censo Nacional de Poblaci\u00f3n y Vivienda, en adelante - CNPV 2018, es el de contar la poblaci\u00f3n residente en el territorio nacional y obtener informaci\u00f3n sociodemogr\u00e1fica para la planificaci\u00f3n, gesti\u00f3n y toma de decisiones de pol\u00edtica p\u00fablica a nivel nacional, territorial y local. Entre sus principales objetivos espec\u00edficos est\u00e1n los de producir informaci\u00f3n demogr\u00e1fica b\u00e1sica para la elaboraci\u00f3n de proyecciones de poblaci\u00f3n, identificar y caracterizar las condiciones de vida de los grupos \u00e9tnicos localizados en el pa\u00eds, suministrar informaci\u00f3n para la construcci\u00f3n de indicadores de Necesidades B\u00e1sicas Insatisfechas (NBI) y Objetivos de Desarrollo Sostenible (ODS) entre otros, as\u00ed como actualizar los marcos de muestras para la elaboraci\u00f3n de encuestas espec\u00edficas.\n\nEl Departamento Administrativo Nacional de Estad\u00edstica (DANE) efectuar\u00e1 el CNVP 2018, siguiendo la pr\u00e1ctica iniciada con el Censo General 2005 cuando se incorpor\u00f3 el componente tecnol\u00f3gico con el uso de los Dispositivos M\u00f3viles de Captura y cartograf\u00eda digital para la recolecci\u00f3n de informaci\u00f3n en campo, entre otros; para el CNPV 2018 se avanza en el dise\u00f1o de procesos de innovaci\u00f3n en concordancia con las recomendaciones internacionales y pr\u00e1cticas de otras instituciones estad\u00edsticas del mundo, entre los cuales se encuentran la incorporaci\u00f3n de registros administrativos para fines estad\u00edsticos y el dise\u00f1o de nuevas metodolog\u00edas como la recolecci\u00f3n electr\u00f3nica en estas operaciones estad\u00edsticas. \n\nEs as\u00ed como en la misma direcci\u00f3n de este contexto mundial, el DANE defini\u00f3 cinco pilares en concordancia con la visi\u00f3n establecida para la entidad, entre los que est\u00e1 el de innovaci\u00f3n que consiste en \u201cpromover mejoras significativas en el quehacer, crear y aplicar nuevos productos, servicios, procesos, m\u00e9todos organizativos que revolucionen la entidad y la producci\u00f3n y difusi\u00f3n estad\u00edstica, de manera que el pa\u00eds y sus ciudadanos cuenten con m\u00e1s y mejor informaci\u00f3n para la toma de decisiones.\n\nEn el marco de este pilar, la entidad se propuso generar innovaciones para la ejecuci\u00f3n del CNVP 2018, centradas especialmente en:\n\n\u00b7 La recolecci\u00f3n de informaci\u00f3n v\u00eda web, por primera vez en el pa\u00eds, de manera complementaria con la recolecci\u00f3n presencial en hogares.\n\n\u00b7 La introducci\u00f3n de componentes de innovaci\u00f3n en el entrenamiento general del CNPV 2018, con simuladores y herramientas para entrenamiento B-Learning.\n\n\u00b7 El desarrollo de metodolog\u00edas y tecnolog\u00edas para aseguramiento de la calidad en tiempo real, en especial, adoptando est\u00e1ndares de medici\u00f3n geoespacial que fortalecen el control del operativo censal. \n\nEl presente documento define los principales componentes de cada una de las fases del proceso estad\u00edstico, dise\u00f1adas para llevar a cabo la operaci\u00f3n censal; estructurado por cap\u00edtulos, uno de los cuales es el de dise\u00f1o de la operaci\u00f3n estad\u00edstica, compuesto por los dise\u00f1os: tem\u00e1tico, estad\u00edstico, ejecuci\u00f3n, sistemas, control de calidad, pruebas, an\u00e1lisis de resultados, difusi\u00f3n y evaluaci\u00f3n.\n\nEn el subcap\u00edtulo de dise\u00f1o tem\u00e1tico se establecen las principales necesidades de informaci\u00f3n de los usuarios, se definen los objetivos, el alcance, los diferentes marcos de referencia (te\u00f3rico, conceptual y legal), los indicadores y cuadros de salida y el contenido del cuestionario. En el dise\u00f1o estad\u00edstico se establecen los principales componentes b\u00e1sicos del dise\u00f1o. El dise\u00f1o de la ejecuci\u00f3n muestra lo relacionado con el aprendizaje, que por primera vez contempla el componente virtual adem\u00e1s del presencial, las actividades preparatorias como la sensibilizaci\u00f3n, selecci\u00f3n y contrataci\u00f3n de personal, entre otros; el dise\u00f1o de instrumentos y  la recolecci\u00f3n de informaci\u00f3n con sus diferentes m\u00e9todos y estrategias. En el subcap\u00edtulo referido al control de calidad se plantean los indicadores definidos para monitorear el avance de la recolecci\u00f3n en t\u00e9rminos de calidad y cobertura. El subcap\u00edtulo de pruebas ilustra aquellas que fueron realizadas con sus correspondientes aportes en la construcci\u00f3n de procesos, instrumentos y actividades. As\u00ed mismo se muestran los otros componentes como el dise\u00f1o de sistemas, an\u00e1lisis de resultados, difusi\u00f3n y evaluaci\u00f3n. Finalmente el de difusi\u00f3n muestra las principales herramientas dispuestas para la entrega de los resultados censales.\r\n\r\nGeographic coverage\r\n---------------------------\r\n\r\nCOBERTURA GEOGR\u00c1FICA \n\nEl CNPV 2018 abarcar\u00e1 la totalidad del territorio nacional, correspondiente a 32 departamentos, 1.101 municipios, 20 \u00e1reas no municipalizadas y el archipi\u00e9lago de San Andr\u00e9s, Providencia y Santa Catalina.\r\n\r\nAnalysis unit\r\n---------------------------\r\n\r\nUNIDAD DE OBSERVACI\u00d3N\n\n Corresponde a las viviendas, los hogares y los Lugares Especiales de Alojamiento.\n \n \nUNIDAD DE AN\u00c1LISIS\n \n Corresponde a las viviendas, los hogares y las personas.\r\n\r\nUniverso de estudio\r\n---------------------------\r\n\r\nEst\u00e1 compuesto por todas las viviendas, hogares y personas residentes habituales en el territorio colombiano, que en su \u00e1rea continental e insular tiene una superficie de 1.141.748 kil\u00f3metros cuadrados y se encuentra conformado por 32 departamentos y el Distrito Capital. El territorio cuenta con un total de 1.101 municipios, 20 \u00e1reas no municipalizadas, el archipi\u00e9lago de San Andr\u00e9s, Providencia y Santa Catalina.\n\nTambi\u00e9n se incluye la poblaci\u00f3n residente habitual en embajadas y consulados donde Colombia act\u00faa  de conformidad con el Derecho Internacional o con las leyes colombianas.\n\nIgualmente hacen parte del Universo las personas residentes habituales en los LEA.\n\nCon respecto a la poblaci\u00f3n de habitantes de la calle, en el marco de la Ley 1641 de 2013, el DANE en conjunto con las administraciones municipales tiene la responsabilidad de levantar esta informaci\u00f3n. Sin embargo teniendo en cuenta que la ley establece lineamientos espec\u00edficos para la caracterizaci\u00f3n de esta poblaci\u00f3n, se hace necesario una  operacionalizaci\u00f3n diferente por lo cual la recolecci\u00f3n de informaci\u00f3n de esta poblaci\u00f3n se est\u00e1 realizando en tiempos distintos a los del CNPV 2018.\r\n\r\nKind of data\r\n---------------------------\r\n\r\nCensos (cen)\r\n\r\nMode of data collection\r\n---------------------------\r\n\r\nEntrevista personal asistida con DMC (dispositivo m\u00f3vil de captura)\r\n\r\nResearch instrument\r\n---------------------------\r\n\r\nDISE\u00d1O DE INSTRUMENTOS\n\nAlgunos de instrumentos dise\u00f1ados para la recolecci\u00f3n de informaci\u00f3n del CNPV 2018 y el correspondiente control, en hogares particulares, LEA y entorno y equipamiento urbano, se listan a continuaci\u00f3n:\n\n\nCUESTIONARIO ELECTR\u00d3NICO EN DISPOSITIVO M\u00d3VIL DE CAPTURA  (DMC)\n\nPermite realizar la captura de datos a trav\u00e9s de computadores de mano. Llevan incorporadas validaciones b\u00e1sicas, la cartograf\u00eda censal y un GPS (Sistema de posicionamiento global) que permite georreferenciar la ubicaci\u00f3n de cada una de las viviendas visitadas.\n\n\nCUESTIONARIO ELECTR\u00d3NICO EN  WEB\n\nEs un cuestionario id\u00e9ntico en t\u00e9rminos de contenido, al que se llevar\u00e1 al operativo en campo en dispositivo m\u00f3vil de captura o en papel, pero que ha pasado por un proceso de usabilidad, que permite obtener un cuestionario para recolecci\u00f3n v\u00eda web con caracter\u00edsticas de accesibilidad, f\u00e1cil de diligenciar e intuitivo, entre otras caracter\u00edsticas. Este instrumento se dispondr\u00e1 en la web, con los respectivos canales de comunicaci\u00f3n (chat, correo electr\u00f3nico y voz) que ser\u00e1n habilitados con el fin de dar soporte durante el proceso de diligenciamiento de la informaci\u00f3n por parte de la poblaci\u00f3n. \n\n\nCUESTIONARIOS EN PAPEL\n\nSer\u00e1n utilizados como contingencia para las \u00e1reas con dificultades de orden p\u00fablico y para aquellas zonas donde se har\u00e1 recolecci\u00f3n por el m\u00e9todo de rutas. \n\n\nPLANTILLA PARA LEA\n\nCorresponde a un formato en excel de referencia, utilizado en los grandes LEA, dise\u00f1ado a partir del cuestionario correspondiente. Este formato fu\u00e9 suministrado a cada una de estas instituciones despu\u00e9s de establecer contacto telef\u00f3nico, con el proposito de que cada una de ellas  consolide su informacion mediante la conformaci\u00f3n de un archivo digital con las variables solicitadas. \n\n\nAPLICATIVO WEB PARA LEA\n\nPara aquellos LEA con m\u00e1s de 20 residentes habituales, se dise\u00f1\u00f3 un aplicativo para ser utilizado accediendo a trav\u00e9s de internet al cuestionario dispuesto en un servidor web. Un correo es enviado a cada LEA con nombre de usuario y contrase\u00f1a para el acceso al cuestionario y diligenciamiento de la informaci\u00f3n.\r\n\r\nCleaning operations\r\n---------------------------\r\n\r\nNORMAS, ESPECIFICACIONES O REGLAS DE VALIDACI\u00d3N, CONSISTENCIA E IMPUTACI\u00d3N\n\nUno de los grandes retos para el CNPV 2018 es obtener en terreno informaci\u00f3n v\u00e1lida, precisa y consistente, para esto es necesario agotar todos los recursos para minimizar la falta de respuesta total y/o parcial, hacer un buen entrenamiento a los recolectores de informaci\u00f3n, exigir un buen trabajo de campo y aplicar mecanismos de supervisi\u00f3n y monitoreo rigurosos a la informaci\u00f3n recolectada desde el inicio del operativo.  No obstante, subsisten aspectos t\u00e9cnicos de la informaci\u00f3n declarada por las personas y que son sujeto de mejora para verificar la consistencia l\u00f3gica de la informaci\u00f3n estad\u00edstica censal, en \u00e9ste sentido, a continuaci\u00f3n se describen brevemente los principales lineamientos t\u00e9cnicos de su implementaci\u00f3n.\n\nLos datos censales en la mayor parte del territorio nacional se obtendr\u00e1n a trav\u00e9s de un dispositivo m\u00f3vil de captura - DMC el cual tiene incorporada la evaluaci\u00f3n de rangos de variables priorizadas (validaci\u00f3n), flujos de las variables (universo donde se aplica cada variable) y las consistencias m\u00ednimas necesarias. El DMC muestra alertas que permiten al censista identificar que est\u00e1 ingresando datos errados, o universos a los que no aplica la variable. Esto tambi\u00e9n se usa para las personas que brinden la informaci\u00f3n a trav\u00e9s de internet por el eCenso el cual le permitir\u00e1 a la persona darse cuenta de que no es v\u00e1lida la opci\u00f3n que ha seleccionado.\n\nEl proceso inicia antes del operativo de campo, con la malla de validaci\u00f3n para el DMC y el eCenso, el dise\u00f1o de los documentos necesarios para evaluar el proceso, los programas inform\u00e1ticos que permitan la implementaci\u00f3n de las normas de validaci\u00f3n, y la estructura de la base bajo el diccionario de datos construido para tal fin. Hay que tener presente que la programaci\u00f3n contempla la transformaci\u00f3n del archivo plano de las tablas de datos en formato SAS y SQL ya que estas ser\u00e1n las herramientas inform\u00e1ticas utilizadas en el procesamiento. \n\nLos m\u00e9todos que se utilizar\u00e1n para corregir datos faltantes, no v\u00e1lidos o inconsistentes ser\u00e1n los siguientes: el aprovechamiento de fuentes externas, como los registros administrativos, uso de la informaci\u00f3n contenida y de coherencia con el cuestionario mediante el m\u00e9todo de imputaci\u00f3n Hot Deck como el vecino m\u00e1s cercano, secuencial e imputaci\u00f3n m\u00faltiple, entre otras. \n\nImputaciones l\u00f3gicas: Este m\u00e9todo consiste en encontrar un valor aceptable para reemplazar un valor incorrecto, en situaciones en que las respuestas inconsistentes o que faltan se pueden deducir a partir de los valores del resto de variables del cuestionario censal.\n\nImputaciones por Hot Deck (HD): Este m\u00e9todo desarrollado por Madow, Nisselson y Olkin, 1983, se utilizar\u00e1 para corregir los problemas de estructura. Este m\u00e9todo de imputaci\u00f3n ha sido extensamente probado en muchos pa\u00edses y en Colombia con el censo general 2005. El m\u00e9todo preserva la distribuci\u00f3n de probabilidad de las variables y los datos faltantes se reemplazan a partir de una selecci\u00f3n aleatoria de valores observados, lo cual no introduce sesgos en la varianza del estimador. \n\nDentro de este proceso se dise\u00f1an y desarrollan las especificaciones, programas, herramientas, reglas y procedimientos necesarios para la adecuaci\u00f3n de los datos requeridos en el procesamiento y la difusi\u00f3n, los cuales no solamente pretenden clasificar y caracterizar los problemas sino plantear las soluciones en cada caso. Este proceso est\u00e1 compuesto por: \n\n\u00b7 La edici\u00f3n y control de estructura de las bases.\n\u00b7 La validaci\u00f3n, consistencia e imputaci\u00f3n.\n\n\nPROCESAMIENTO\n\nEl procesamiento de la base de datos consta de 5 grandes fases, asociadas a la transformaci\u00f3n de la base original de manera consecutiva que inician de la lectura de la informaci\u00f3n almacenada por la oficina de sistemas y finaliza con las tablas imputadas, a partir de las cuales se generar\u00e1n los resultados finales del censo.  La siguiente gr\u00e1fica  muestra el proceso general del procesamiento en donde se resumen las actividades del proceso general.\n\nLa primera fase comienza con la lectura de tres bases de datos independientes: una de ellas, llamada de indicadores, que corresponde a la vista que genera la Oficina de  sistemas para el procesamiento general, la siguiente base de datos \u201cbase de calidad\u201d que contiene los datos de una nueva consolidaci\u00f3n con informaci\u00f3n guardada (Backups) que se ten\u00edan de las encuestas realizadas en campo, y la \u00faltima base, llamada de \u201cvalidaci\u00f3n\u201d, contiene los datos de una nueva retrasmisi\u00f3n directa de las DMC. La base de calidad y de validaci\u00f3n son controles de cobertura que se realizan para garantizar que toda la informaci\u00f3n recolectada en campo este completa en la base de datos. Cada base contiene las tablas de viviendas, hogares, personas, personas fallecidas, personas residentes, tabla de resultados de las encuestas, personas LEA, instituciones LEA y la geo codificaci\u00f3n de cada uno de los m\u00e9todos de recolecci\u00f3n (DMC, eCenso, papel y LEA). A esta lectura se le denota Base 0. \n\nUna vez se carga la informaci\u00f3n en el software \u201cSAS\u201d se integran las tres bases mediante la variable \u201cUID_ENCUESTA\u201d. Asegurando la totalidad de registros en la base de datos, se unen las correspondientes tablas de viviendas, hogares, personas, personas residentes, personas fallecidas y resultados de las encuestas de cada uno de los m\u00e9todos de recolecci\u00f3n (DMC, papel y eCenso) generando una sola tabla de viviendas, personas, personas residentes, hogares, personas fallecidas y resultados. Para el caso de LEA, la tabla de instituciones se une con la tabla de viviendas y la tabla de personas LEA se une con la tabla de personas. A esta base se denomina Base 1, la cual tiene una copia en formato texto delimitado por tabuladores (.Tab) y una en formato SAS (.sas7bdat).\n\nLa tercera fase tiene dos partes que se trabajan de manera paralela, la primera de ellas est\u00e1 conformada por varios procesos: la calidad de los datos de las variables de identificaci\u00f3n en la tabla de personas, el mejoramiento de informaci\u00f3n faltante con la base del Archivo Nacional de Identificaci\u00f3n (ANI) y Registro Civil de Nacimiento (RCN) de la Registraduria Nacional del Estado Civil (RNEC), el cruce con el registro de salud (BDUA+BDEX) y el registro de la Planilla de Afiliaciones (PILA). \n\nEl proceso de calidad consiste en la creaci\u00f3n de una variable adicional por cada variable de identificaci\u00f3n de personas (tipo y numero de documento, nombres, apellidos y fecha de nacimiento) indicando si hay  datos consistentes, faltantes o inconsistentes, de tal forma que cuando hay un campo faltante en el Censo este se sustituye por el campo que brinda la Registraduria, siempre y cuando se garantizara la misma persona. \n\nEl proceso de identificaci\u00f3n de duplicados para personas, se realiza mediante la construcci\u00f3n de dos variables adicionales que informan si un registro esta duplicado con otro por tipo y n\u00famero de documento o por nombres y fecha de nacimiento. En estas dos variables se pueden identificar hogares duplicados por tener todas las personas residentes duplicadas en los mismos. Los cruces con los registros administrativos generan nuevas variables a la tabla de personas que se le denomina \u201cIMP_PERSONAS\u201d, su tratamiento se hace a trav\u00e9s del software SQLserver.  \n\nLa segunda parte de la tercera fase, consistir\u00e1 en la integraci\u00f3n de las tablas de personas, hogares, viviendas y personas fallecidas. Recordemos que la Base 1 contiene una tabla de personas, una tabla de hogares, una tabla de viviendas, una tabla de personas fallecidas y una tabla de resultados solamente uniendo los registros seg\u00fan los diversos m\u00e9todos de recolecci\u00f3n (eCenso, DMC, LEA y Papel) mas no realizando la integraci\u00f3n.\n\nEsta integraci\u00f3n tendr\u00e1  como resultado la construcci\u00f3n de una variable en cada una de las tablas llamada \u201cestados\u201d que permitir\u00e1 identificar el registro real o el duplicado en cada tabla. Iniciamos con el estado en la tabla de hogares, la cual toma en cuenta la pregunta 11 permitiendo saber si un registro de hogar fue eCenso, fue realizado por DMC o es un eCenso verificado en DMC. A partir del estado en la tabla de hogares se genera el \u201cestado\" en la tabla de viviendas, identificando vivienda con todos sus hogares por eCenso, viviendas con hogares eCenso y DMC, viviendas con solo hogares DMC, instituciones de LEA y Viviendas sin personas. \n\nLa generaci\u00f3n del \u201cestado\u201d de personas, parte de la tabla de IMP_PERSONAS de la primera parte de la fase con los estados de la tabla de hogares y viviendas identificando personas duplicadas en todo un hogar, personas duplicadas dentro de un hogar, personas duplicadas entre un hogar particular y una LEA, personas duplicadas con un hogar unipersonal, personas duplicadas entre hogares con m\u00e1s de una persona y personas sin duplicidad. El primer y tercer estado permite identificar hogares duplicados y posibles viviendas duplicadas, lo cual genera la actualizaci\u00f3n del estado de hogares y viviendas mencionados al comienzo de esta segunda parte. La base de datos que contienen las tablas de personas, hogares y viviendas con los correspondientes estados se denomina base 2. \n\nCon la base dos construida se deshabilitan los registros duplicados de personas, hogares, viviendas y de personas fallecidas en cada una de las tablas y se realiza la asignaci\u00f3n de la ubicaci\u00f3n cuando la encuesta de eCenso es verificada en DMC teniendo en cuenta la pregunta 11.1 del cuestionario. Las tablas sin duplicados se almacenan en lo que se denomina base 3. \n\nLa \u00faltima fase del procesamiento es la implementaci\u00f3n de las reglas de validaci\u00f3n e imputaci\u00f3n, pero antes se toma como insumo la geocodificaci\u00f3n de las encuestas y la verificaci\u00f3n de aquellas que se encuentran en territorios \u00e9tnicos. La primera parte del proceso es similar que la validaci\u00f3n de las variables de identificaci\u00f3n en la cual primero se construye una variable de calidad por cada variable a imputar que indica si el valor es inconsistente, consistente o faltante. A partir de esto, e identificado el faltante o inconsistente, se implementa la norma de imputaci\u00f3n establecida. La tabla final se almacena en lo denominado base 4 de las cuales se generan los resultados finales.  \n\n Es importante mencionar que el DANE salvaguardar\u00e1 las bases resultantes de todas las fases del procesamiento, incluyendo la base 0.",
+    "url": "https://microdatos.dane.gov.co/index.php/catalog/643",
+    "sameAs": "https://microdatos.dane.gov.co/index.php/catalog/study/DANE-DCD-CNPV-2018",
+    "identifier": "DANE-DCD-CNPV-2018",
+    "includedInDataCatalog": {
+        "@type": "DataCatalog",
+        "name": "https://microdatos.dane.gov.co/"
+    },
+    "temporalCoverage": "2018",
+    "dateCreated": "2019-10-11T13:11:22+00:00",
+    "dateModified": "2023-02-23T21:29:01+00:00",
+    "spatialCoverage": {
+        "@type": "Place",
+        "name": "Colombia"
+    },
+    "keywords": [
+        "Edificaci\u00f3n",
+        "Unidad",
+        "Vivienda (Unidad de uso vivienda)",
+        "Unidad mixta",
+        "Unidad NO residencial",
+        "Residente habitual",
+        "Hogar",
+        "Jefe o jefa de hogar",
+        "Autoreconocimiento",
+        "Afrodescendiente, afrocolombiano/a",
+        "Clan",
+        "Gitano/a o Rrom",
+        "Grupos \u00e9tnicos",
+        "Identidad \u00e9tnica",
+        "Ind\u00edgena",
+        "Lenguas nativas",
+        "Mulato/a",
+        "Negro/a",
+        "Palenquero/a de San Basilio",
+        "Pertenencia \u00e9tnica.",
+        "Pueblo ind\u00edgena",
+        "Raizal del archipi\u00e9lago de San Andr\u00e9s, Providencia y Santa Catalina.",
+        "Lugar Especial de Alojamiento (LEA)",
+        "Entorno urbano",
+        "Equipamiento p\u00fablico",
+        "Infraestructura vial",
+        "Georreferenciaci\u00f3n",
+        "Encuestado id\u00f3neo",
+        "Funcionamiento humano",
+        "Limitaciones en la actividad",
+        "Usabilidad",
+        "Accesibilidad",
+        "Clase"
+    ],
+    "creator": [
+        {
+            "@type": "Organization",
+            "name": "Direcci\u00f3n de Censos y Demograf\u00eda - DCD"
+        },
+        {
+            "@type": "Organization",
+            "name": "Departamento Administrativo Nacional de Estad\u00edstica - DANE"
+        }
+    ],
+    "producer": [
+        {
+            "@type": "Organization",
+            "name": "Direcci\u00f3n de Censos y Demograf\u00eda"
+        }
+    ]
+}</script></head>
+<body>
+
+<!-- site header -->
+<header id="header" class="header shadow-sm">
+      <div class="container-fluid">
+        <div class="row contenedor-header">
+          <div class="col-xs-12 col-md-6 col-xl-6 p-0 column-1">
+            <!-- <img src=https://microdatos.dane.gov.co/themes/nada/images/header/LogoAnda.svg alt="LogoANDA"
+              class="img-fluid logoANDA" /> -->
+              <img src=https://microdatos.dane.gov.co/themes/nada/images/header/logo_colombia_potencia_de_vida.svg alt="">
+          </div>
+          <div class="col-xs-12 col-md-6 col-xl-6 p-0 column-2">
+            <div class="col-box">
+              <a href="#"><img class="log1" src=https://microdatos.dane.gov.co/themes/nada/images/header/logo_anda.svg alt=""></a>
+              <a href="https://www.dane.gov.co/"><img class="log2" src="https://www.dane.gov.co/files/images/logos/logo-dane-blanco.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header><!-- page body -->
+<div class="container-fluid-n">    
+           
+                            <div class="body-content-wrap">
+                    
+                                        <!--breadcrumbs -->
+                    <div class="container">
+                                                                <ol class="breadcrumb wb-breadcrumb">
+                            	    <div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+           <span typeof="v:Breadcrumb">
+                		         <a href="https://microdatos.dane.gov.co/index.php/" rel="v:url" property="v:title">Página principal</a> /
+                        
+       </span>
+                  <span typeof="v:Breadcrumb">
+                		         <a href="https://microdatos.dane.gov.co/index.php/catalog" rel="v:url" property="v:title">Catálogo Central de Datos</a> /
+                        
+       </span>
+                  <span typeof="v:Breadcrumb">
+                		         <a href="https://microdatos.dane.gov.co/index.php/catalog/DEM-Microdatos" rel="v:url" property="v:title">DEM-MICRODATOS</a> /
+                        
+       </span>
+                  <span typeof="v:Breadcrumb">
+        	         	         <a class="active" href="https://microdatos.dane.gov.co/index.php/catalog/643" rel="v:url" property="v:title">DANE-DCD-CNPV-2018</a>
+                        
+       </span>
+               </div>
+                        </ol>
+                                        </div>
+                    <!-- /breadcrumbs -->
+                                        
+<div class="page-body-full study-metadata-page">
+	<span 
+		id="dataset-metadata-info" 
+		data-repositoryid="DEM-Microdatos"
+		data-id="643"
+		data-idno="DANE-DCD-CNPV-2018"
+	></span>
+
+<div class="container-fluid page-header">
+<div class="container">
+
+
+<div class="row">
+			<div class="col-md-2">
+	<div class="collection-thumb-container">
+		<a href="https://microdatos.dane.gov.co/index.php/catalog/DEM-Microdatos">
+		<img  src="https://microdatos.dane.gov.co/files/images/demografia-y-poblacion3.png" class="mr-3 img-fluid img-thumbnail" alt="DEM-Microdatos" title="Demografía y población."/>
+		</a>
+			</div>
+	</div>
+			
+	<div class="col-md-10">
+		<h1 class="mt-0 mb-1" id="dataset-title">Censo Nacional de Población y Vivienda - CNPV - 2018</h1>
+		<h6 class="sub-title" id="dataset-sub-title"><span id="dataset-country">Colombia</span>, <span id="dataset-year">2018</span>
+		                    
+							<div class="collection badge badge-light"><a href="https://microdatos.dane.gov.co/index.php/catalog/DEM-Microdatos">Demografía y población.</a></div>
+			                    
+		
+		</h6>
+					
+
+		<div class="producers mb-3">
+					Dirección de Censos y Demografía - DCD, Departamento Administrativo Nacional de Estadística - DANE				</div>
+	
+
+		<div class="dataset-footer-bar mt-2">					
+			
+			<span class="mr-3 link-col float-left">
+				<small>
+					Creado el 
+					<strong>February 23, 2023</strong>
+				</small>
+			</span>
+			
+			<span class="mr-3 link-col float-left">
+				<small>
+					Última modificación 
+					<strong>February 23, 2023</strong>
+				</small>
+			</span>
+			
+                        <span class="mr-3 link-col float-left">
+                <small>
+				<i class="fa fa-eye" aria-hidden="true"></i> 
+				Visitas a la página 
+				<strong>1.661.715</strong>
+			</small>
+            </span>
+			
+			            <span class="mr-3 link-col float-left">
+                <small>
+				<i class="fa fa-eye" aria-hidden="true"></i> 
+				Descargar 
+				<strong>697.966</strong>
+			</small>
+            </span>
+						
+										<span class="mr-3 link-col float-left">
+					<small><a href="https://microdatos.dane.gov.co/index.php/catalog/643/pdf-documentation" title="PDF" >
+					<i class="fa fa-file-pdf-o" aria-hidden="true"> </i> Documentación en PDF					</a> 
+					</small>
+				</span>            
+			
+					
+			
+			<span class="mr-3 link-col  float-left">
+				<small><i class="fa fa-download" aria-hidden="true"> </i> metadata</small>
+									<a href="https://microdatos.dane.gov.co/index.php/metadata/export/643/ddi" title="metadata_in_ddi_xml">
+						<span class="badge badge-primary"> DDI/XML</span>
+					</a>
+				
+				<a href="https://microdatos.dane.gov.co/index.php/metadata/export/643/json" title="metadata_in_json">
+					<span class="badge badge-info">JSON</span>
+				</a>
+			</span>			
+
+		</div>
+
+	</div>
+</div>
+
+
+
+
+
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs wb-nav-tab-space flex-wrap" role="tablist">
+								<li class="nav-item tab-study_description active"  >
+				<a href="https://microdatos.dane.gov.co/index.php/catalog/643/study-description" class="nav-link wb-nav-link wb-text-link active" role="tab"  data-id="related-materials" title="Related documentation: questionnaires, reports, technical documents, tables">Descripción de la operación estadística</a>
+			</li>
+										<li class="nav-item tab-related_materials "  >
+				<a href="https://microdatos.dane.gov.co/index.php/catalog/643/related-materials" class="nav-link wb-nav-link wb-text-link " role="tab"  data-id="related-materials" title="Related documentation: questionnaires, reports, technical documents, tables">Materiales Relacionados</a>
+			</li>
+										<li class="nav-item tab-data_dictionary "  >
+				<a href="https://microdatos.dane.gov.co/index.php/catalog/643/data-dictionary" class="nav-link wb-nav-link wb-text-link " role="tab"  data-id="related-materials" title="Related documentation: questionnaires, reports, technical documents, tables">Diccionario de Datos</a>
+			</li>
+										<li class="nav-item nav-item-get-microdata tab-get_microdata" >
+				<a href="https://microdatos.dane.gov.co/index.php/catalog/643/get-microdata" class="nav-link wb-nav-link wb-text-link " role="tab" data-id="related-materials" title="Related documentation: questionnaires, reports, technical documents, tables">
+					<span class="get-microdata icon-da-direct"></span> Obtener Microdatos				</a>
+			</li>                            
+								
+	<!--review-->
+	</ul>
+<!-- end nav tabs -->
+</div>
+</div>
+
+
+
+<div class="container study-metadata-body-content " >
+
+
+<!-- tabs -->
+<div id="tabs" class="study-metadata ui-tabs ui-widget ui-widget-content ui-corner-all study-tabs" >	
+  
+  <div id="tabs-1" aria-labelledby="ui-id-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" >
+  	
+        <div class="tab-body-no-sidebar-x"><div class="row metadata-container">    
+    
+
+
+
+<!-- identification section -->
+
+
+<!-- version -->
+
+
+<!-- scope -->
+
+
+<!-- coverage -->
+
+
+<!-- producers_sponsors -->
+
+
+<!-- sampling -->
+
+
+<!-- data_collection -->
+
+
+<!-- questionnaires -->
+
+
+<!-- data_processing -->
+
+
+<!-- data_appraisal -->
+
+
+<!-- data_access -->
+
+
+<!-- disclaimer_copyright -->
+
+
+<!-- metadata_production -->
+
+
+<!-- sidebar with section links -->
+<div class="col-sm-2 col-lg-2  d-none d-sm-block">
+<div class="navbar-collapse sticky-top">
+
+    <ul class="navbar-nav flex-column wb--full-width">
+                
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-identification">Identificación</a>
+        </li>
+                        
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-scope">Alcance</a>
+        </li>
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-coverage">Cobertura</a>
+        </li>
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-producers_sponsors">Productores patrocinadores</a>
+        </li>
+                        
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-data_collection">Recolección de Datos</a>
+        </li>
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-questionnaires">Cuestionarios</a>
+        </li>
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-data_processing">Procesamiento de datos</a>
+        </li>
+                        
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-data_access">Acceso a los datos</a>
+        </li>
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-disclaimer_copyright">Descargo de responsabilidad derechos de autor</a>
+        </li>
+                        
+            
+        <li class="nav-item">
+            <a href="https://microdatos.dane.gov.co/index.php/catalog/643#metadata-metadata_production">Producción del metadato</a>
+        </li>
+                </ul>
+</div>
+</div>
+<!--metadata content-->
+<div class="col-12 col-sm-10 col-lg-10 wb-border-left">
+                                                                                                    
+    <div id="metadata-identification" class="section-identification">
+        <h2 class="xsl-subtitle">Identificación</h2>
+        <div class="field field-idno">
+    <div class="xsl-caption field-caption">idno</div>
+    <div class="field-value">
+                    <span>DANE-DCD-CNPV-2018</span>
+            </div>
+</div>
+<div class="field field-title">
+    <div class="xsl-caption field-caption">Título</div>
+    <div class="field-value">
+                    <span>Censo Nacional de Población y Vivienda - CNPV - 2018</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.title_statement.translated_title">
+    <div class="xsl-caption field-caption">Título traducido</div>
+    <div class="field-value">
+                    <span>National Population and Housing Census</span>
+            </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.study_info.nation">
+    <div class="xsl-caption field-caption">País</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre</th>
+                                    <th>Código país</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            COLOMBIA                                
+                        </td>
+                                                                    <td>
+                                                            COL                                
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="field field-metadata.study_desc.series_statement.series_name">
+    <div class="xsl-caption field-caption">Nombre de la serie</div>
+    <div class="field-value">
+                    <span>Censo de población y vivienda [hh/popcen]</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.series_statement.series_info">
+    <div class="xsl-caption field-caption">Información de las series</div>
+    <div class="field-value">
+                    <span>ANTECEDENTES DE LA OPERACIÓN ESTADÍSTICA<br />
+<br />
+Colombia ha venido realizando censos de población desde la época de la Colonia. En un comienzo fueron con periodicidad irregular y desde finales del siglo pasado, cada 10 años aproximadamente, siguiendo las recomendaciones de Naciones Unidas.<br />
+<br />
+En 1550 la Corona Española cuantificó recursos y posesiones en el territorio colombiano con el objetivo de establecer controles a políticas de tributos. Durante 1772 y 1776 se realizó el Censo del Virreinato de Santafé en el que se cuantificó población blanca, libre, indígena y esclava, con el propósito de obligar a los pobladores a cumplir la ley. En 1778 se realizó el primer censo del periodo colonial, debido a su cobertura territorial porque comprendía la suma de los padrones territoriales parciales realizados desde 1770. Entre 1788 y 1789 se estimó el número de población blanca, libre, indígena y esclava. <br />
+<br />
+Durante el periodo republicano, se realizó el primer y único censo de la Gran Colombia en 1825. Se enumeraron familias con cada uno de sus integrantes por sexo, edad, estado civil y por separado a los sirvientes y a los esclavos. En 1835 se ejecutó un censo que se inspiró en el cumplimiento de los artículos 41 y 50 de la Constitución sobre representación electoral con base en el número de la población. En 1843 se realizó un censo en el que se diseñaron formatos modelo que eran consolidados por el alcalde o jefe político del Distrito; en este censo se enumeraron esclavos por edad y aptitud para el trabajo, la población residente en conventos, colegios, hospitales, hospicios y demás casas públicas, por sexo y edad; población indígena y extranjeros residentes. En 1851, se realizó otro censo similar al anterior. En 1864, se realizó un censo con cifras estimadas de los estados de Bolívar, Boyacá y Magdalena. El censo de 1870 indagó por la condición Colombia ha venido realizando censos de población desde la época de la Colonia. En un comienzo fueron con periodicidad irregular y desde finales del siglo pasado, cada 10 años aproximadamente, siguiendo las recomendaciones de Naciones Unidas.<br />
+<br />
+En 1550 la Corona Española cuantificó recursos y posesiones en el territorio colombiano con el objetivo de establecer controles a políticas de tributos. Durante 1772 y 1776 se realizó el Censo del Virreinato de Santafé en el que se cuantificó población blanca, libre, indígena y esclava, con el propósito de obligar a los pobladores a cumplir la ley. En 1778 se realizó el primer censo del periodo colonial, debido a su cobertura territorial porque comprendía la suma de los padrones territoriales parciales realizados desde 1770. Entre 1788 y 1789 se estimó el número de población blanca, libre, indígena y esclava. <br />
+<br />
+Durante el periodo republicano, se realizó el primer y único censo de la Gran Colombia en 1825. Se enumeraron familias con cada uno de sus integrantes por sexo, edad, estado civil y por separado a los sirvientes y a los esclavos. En 1835 se ejecutó un censo que se inspiró en el cumplimiento de los artículos 41 y 50 de la Constitución sobre representación electoral con base en el número de la población. En 1843 se realizó un censo en el que se diseñaron formatos modelo que eran consolidados por el alcalde o jefe político del Distrito; en este censo se enumeraron esclavos por edad y aptitud para el trabajo, la población residente en conventos, colegios, hospitales, hospicios y demás casas públicas, por sexo y edad; población indígena y extranjeros residentes. En 1851, se realizó otro censo similar al anterior. En 1864, se realizó un censo con cifras estimadas de los estados de Bolívar, Boyacá y Magdalena. El censo de 1870 indagó por la condición Colombia ha venido realizando censos de población desde la época de la Colonia. En un comienzo fueron con periodicidad irregular y desde finales del siglo pasado, cada 10 años aproximadamente, siguiendo las recomendaciones de Naciones Unidas.<br />
+<br />
+En 1550 la Corona Española cuantificó recursos y posesiones en el territorio colombiano con el objetivo de establecer controles a políticas de tributos. Durante 1772 y 1776 se realizó el Censo del Virreinato de Santafé en el que se cuantificó población blanca, libre, indígena y esclava, con el propósito de obligar a los pobladores a cumplir la ley. En 1778 se realizó el primer censo del periodo colonial, debido a su cobertura territorial porque comprendía la suma de los padrones territoriales parciales realizados desde 1770. Entre 1788 y 1789 se estimó el número de población blanca, libre, indígena y esclava. <br />
+<br />
+Durante el periodo republicano, se realizó el primer y único censo de la Gran Colombia en 1825. Se enumeraron familias con cada uno de sus integrantes por sexo, edad, estado civil y por separado a los sirvientes y a los esclavos. En 1835 se ejecutó un censo que se inspiró en el cumplimiento de los artículos 41 y 50 de la Constitución sobre representación electoral con base en el número de la población. En 1843 se realizó un censo en el que se diseñaron formatos modelo que eran consolidados por el alcalde o jefe político del Distrito; en este censo se enumeraron esclavos por edad y aptitud para el trabajo, la población residente en conventos, colegios, hospitales, hospicios y demás casas públicas, por sexo y edad; población indígena y extranjeros residentes. En 1851, se realizó otro censo similar al anterior. En 1864, se realizó un censo con cifras estimadas de los estados de Bolívar, Boyacá y Magdalena. El censo de 1870 indagó por la condición social de la población según sexo. Se categorizó la condición social en 13 tipos, se crearon grupos estratégicos por rango de edad y se indagó por el estado civil según sexo.<br />
+<br />
+Durante el siglo XX, el censo de 1905 indagó por origen, religión, sexo, edad, estado civil, alfabetismo, profesión, arte u oficio de la población. Se expidió la cédula de vecindad con los datos obtenidos del censo. En 1912, se realizó el primer censo moderno del país por su metodología, organización y contenido. Se creó la Junta Central del Censo Nacional a nivel nacional, las Juntas Seccionales del censo a nivel departamental y las Juntas Municipales del censo. Se ordenó realizar el censo en un día; incluyó preguntas sobre riqueza, industria, establecimientos agrícolas, pecuarios y desarrollo escolar con destino a la estadística nacional. Se clasificó la población entre rural y urbana y los resultados se publicaron con prontitud. <br />
+<br />
+En 1918, la Dirección General de Estadística (Ministerio de Hacienda) realizó un censo de viviendas previo al censo de población. Los boletines censales se distribuyeron en los hogares con anterioridad para ser diligenciados por los jefes de casa. En 1928, el censo fue realizado por la Dirección General del Censo (Contraloría General de la República). Se hicieron campañas de información y motivación a cargo de los párrocos de iglesias. Se diseñaron boletines de vivienda, boletines individuales y boletines de familia. Se censaron por primera vez los colombianos en el exterior.<br />
+<br />
+En 1938 se realizó el Censo General de Población y Edificios, a cargo de la recién creada Dirección de Censos, como parte de la Dirección Nacional de Estadística. Por primera vez se inmovilizó totalmente la población y se usó cartografía. Se registró la población presente el día del censo (censo de facto). La información se recolectó por medio de empadronadores y no de jefes de casa.<br />
+<br />
+El censo de 1951 adoptó recomendaciones de expertos internacionales contratados para el diseño, la ejecución y la evaluación del proceso censal. Se amplió la información en cuanto a actividades económicas. La recolección duró cerca de un año y la publicación de resultados se realizó en diciembre de 1954 a cargo del recién creado Departamento Administrativo Nacional de Estadística (DANE). En 1964, el DANE planeó y programó el XIII Censo Nacional de Población, incorporó recomendaciones de la Comisión Internacional para el mejoramiento de las Estadísticas Nacionales (COINS) y la asesoría del Instituto Interamericano de Estadística (IASI). Se realizó un censo de facto para lo cual se inmovilizó la población en las cabeceras municipales. Se realizaron innovaciones tecnológicas en el procesamiento de la información, la crítica, codificación y validación de resultados. <br />
+<br />
+El censo de 1973 realizó actividades preparatorias, como el Censo de los Resguardos Indígenas del Cauca en 1972. Para su ejecución se inmovilizó la población por un día en zonas urbanas. Se incluyeron preguntas sobre fecundidad, migraciones internas, entre otras. En mayo de 1974, se realizó un censo de la población indígena. <br />
+<br />
+En 1985 se efectuó un censo que registró la población residente habitual en las viviendas (Censo de Jure), de manera que la población no se inmovilizó. En este censo se aplicaron dos cuestionarios: uno para toda la población con un número básico de preguntas y otro por muestra cocensal del 10% de las viviendas particulares. Se reemplazó el concepto de hogar censal por el de vivienda. Se introdujo el autoempadronamiento en algunas zonas urbanas y mediante cuestionario específico se censó la población indígena residente en reservas, resguardos y asentamientos especiales. Las actividades generales de Dirección fueron competencia de la Presidencia de la República asesorada por la Junta Nacional del Censo y de la Jefatura del DANE asesorada por el Comité Técnico del Censo.<br />
+<br />
+El censo de 1993 enumeró la población residente habitual en los hogares (Censo de Jure). Se retomó el hogar como unidad y observación. Se aplicaron tres formularios diferentes: población residente en hogares particulares, población residente en Lugares Especiales de Alojamiento (LEA) y población indígena. Se adicionaron preguntas sobre pertenencia étnica y discapacidad.<br />
+<br />
+El último censo realizado en el territorio colombiano fue el Censo General 2005 que incluyó temas no investigados antes en este tipo de operación estadística en el país e implementó el uso de Dispositivos Móviles de Captura (DMC) y de cartografía digital integrada a la información del cuestionario. Se usó el periodo extendido de recolección de la información (cerca de 1 año); se implementó el método de la conciliación censal como instrumento principal para estimar la omisión de cobertura en el censo, con posterioridad a la estimación hecha para el área no censada. Por primera vez, se realizó un ejercicio de evaluación abierta del desarrollo de un censo de población, con la participación de diferentes instancias nacionales e internacionales. <br />
+<br />
+A nivel mundial, en 138 países se llevó a cabo el Censo de Población entre 2010 y 2012. De 20 países latinoamericanos, 16 realizaron el Censo de la ronda del 2010. Chile lo realizó en 2012 pero la evaluación de sus resultados llevó a este país a realizarlo nuevamente en el 2017. Perú también lo realizó en 2017 y Colombia lo hará en 2018.<br />
+<br />
+El Censo General 2005 introdujo un conjunto de cambios con respecto a la forma tradicional de hacer censos en el país. Las principales lecciones fueron:<br />
+<br />
+· Innovación tecnológica, utilización de DMC.<br />
+<br />
+· Cartografía digital integrada a las DMC.<br />
+<br />
+· Tiempo extendido de la recolección.<br />
+<br />
+· Encuesta cocensal con selección automática de la muestra.<br />
+<br />
+· Uso del método de la conciliación censal como instrumento principal para estimar la omisión de cobertura en el Censo, con posterioridad a la estimación hecha para el área no censada.<br />
+<br />
+· Mayor alcance de contenido al de Censo de Población y Viviendas.<br />
+<br />
+· Evaluación mediante la conformación de una Comisión de expertos de prestigio internacional, que después de un rigoroso estudio emitió una serie de conclusiones y recomendaciones que permitió la “Asimilación y el cierre del Censo General 2005”.<br />
+<br />
+El DANE adelantó el 3er Censo Nacional Agropecuario en 2014. Su realización redundó en un conjunto de lecciones para la realización del CNPV 2018, en la medida en que propicia una mayor precisión para su planeación y ejecución, dado que muchas de las tareas realizadas para el Censo Agropecuario, son base fundamental para la realización del censo tales como: <br />
+<br />
+· La cartografía censal: como insumo fundamental para la ejecución de un Censo y para la planeación, ejecución, control de los operativos, procesamiento y divulgación de resultados de las operaciones estadísticas.<br />
+<br />
+· Los recuentos de vivienda rural, dado que un producto del CNA es la obtención del listado georreferenciado de todas las viviendas ubicadas en el rural disperso del país. Esto permitirá contar con información actualizada y suficiente para la conformación de una base de control, necesaria para realizar el seguimiento, monitoreo y control del operativo de campo durante el Censo Nacional de Población y Vivienda, con el fin de garantizar la cobertura y calidad de los resultados del mismo. <br />
+<br />
+· Históricamente la información estadística de los departamentos que hacen parte de la Amazonía, Orinoquía y Andén Pacífico de Colombia, ha presentado problemas de cobertura y calidad, debido a las dificultades logísticas y operativas, para acceso a las diferentes comunidades localizadas en esas regiones. El 3er Censo Nacional Agropecuario en su proceso operativo contempló la realización del operativo por rutas, similar al que se propone para llevar a cabo el próximo CNPV.<br />
+<br />
+· Diseño y alistamiento de los aspectos tecnológicos; la adquisición de los DMC que se utilizan en uno y otro censo; el diseño y puesta en marcha del Sistema de Monitoreo y Control censal; el diseño y estructuración de la arquitectura de captura y transmisión de la información.<br />
+<br />
+· La implementación del sistema de entrenamiento virtual, mediante una plataforma E-learning, (Moodle), compuesta por una serie de objetos de aprendizaje basado en su mayoría por instrumentos multimedia, tales como: videos, secuencias de diapositivas, software de simulación, animaciones, hipertextos e imágenes, entre otros; combinado con entrenamiento presencial.</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.study_info.abstract">
+    <div class="xsl-caption field-caption">Resumen</div>
+    <div class="field-value">
+                    <span>El Censo de Población y Vivienda, es la operación estadística más grande y de mayor importancia que se realiza en cualquier país. Se constituye en la columna vertebral del sistema nacional de información estadística. Por su universalidad, la información que se obtiene es el soporte de la planeación y formulación de políticas públicas. De igual forma, es la herramienta que permite llevar a cabo la caracterización de la población, sus hogares y viviendas como insumo para el ordenamiento territorial y para el seguimiento, la evaluación y la formulación de nuevas metas a los compromisos del país, entre otros como los Objetivos de Desarrollo Sostenible (ODS), el Consenso de Montevideo (CDM) y los compromisos con la Organización para la Cooperación y el Desarrollo Económico  -  OCDE. <br />
+<br />
+El propósito del Censo Nacional de Población y Vivienda, en adelante - CNPV 2018, es el de contar la población residente en el territorio nacional y obtener información sociodemográfica para la planificación, gestión y toma de decisiones de política pública a nivel nacional, territorial y local. Entre sus principales objetivos específicos están los de producir información demográfica básica para la elaboración de proyecciones de población, identificar y caracterizar las condiciones de vida de los grupos étnicos localizados en el país, suministrar información para la construcción de indicadores de Necesidades Básicas Insatisfechas (NBI) y Objetivos de Desarrollo Sostenible (ODS) entre otros, así como actualizar los marcos de muestras para la elaboración de encuestas específicas.<br />
+<br />
+El Departamento Administrativo Nacional de Estadística (DANE) efectuará el CNVP 2018, siguiendo la práctica iniciada con el Censo General 2005 cuando se incorporó el componente tecnológico con el uso de los Dispositivos Móviles de Captura y cartografía digital para la recolección de información en campo, entre otros; para el CNPV 2018 se avanza en el diseño de procesos de innovación en concordancia con las recomendaciones internacionales y prácticas de otras instituciones estadísticas del mundo, entre los cuales se encuentran la incorporación de registros administrativos para fines estadísticos y el diseño de nuevas metodologías como la recolección electrónica en estas operaciones estadísticas. <br />
+<br />
+Es así como en la misma dirección de este contexto mundial, el DANE definió cinco pilares en concordancia con la visión establecida para la entidad, entre los que está el de innovación que consiste en “promover mejoras significativas en el quehacer, crear y aplicar nuevos productos, servicios, procesos, métodos organizativos que revolucionen la entidad y la producción y difusión estadística, de manera que el país y sus ciudadanos cuenten con más y mejor información para la toma de decisiones.<br />
+<br />
+En el marco de este pilar, la entidad se propuso generar innovaciones para la ejecución del CNVP 2018, centradas especialmente en:<br />
+<br />
+· La recolección de información vía web, por primera vez en el país, de manera complementaria con la recolección presencial en hogares.<br />
+<br />
+· La introducción de componentes de innovación en el entrenamiento general del CNPV 2018, con simuladores y herramientas para entrenamiento B-Learning.<br />
+<br />
+· El desarrollo de metodologías y tecnologías para aseguramiento de la calidad en tiempo real, en especial, adoptando estándares de medición geoespacial que fortalecen el control del operativo censal. <br />
+<br />
+El presente documento define los principales componentes de cada una de las fases del proceso estadístico, diseñadas para llevar a cabo la operación censal; estructurado por capítulos, uno de los cuales es el de diseño de la operación estadística, compuesto por los diseños: temático, estadístico, ejecución, sistemas, control de calidad, pruebas, análisis de resultados, difusión y evaluación.<br />
+<br />
+En el subcapítulo de diseño temático se establecen las principales necesidades de información de los usuarios, se definen los objetivos, el alcance, los diferentes marcos de referencia (teórico, conceptual y legal), los indicadores y cuadros de salida y el contenido del cuestionario. En el diseño estadístico se establecen los principales componentes básicos del diseño. El diseño de la ejecución muestra lo relacionado con el aprendizaje, que por primera vez contempla el componente virtual además del presencial, las actividades preparatorias como la sensibilización, selección y contratación de personal, entre otros; el diseño de instrumentos y  la recolección de información con sus diferentes métodos y estrategias. En el subcapítulo referido al control de calidad se plantean los indicadores definidos para monitorear el avance de la recolección en términos de calidad y cobertura. El subcapítulo de pruebas ilustra aquellas que fueron realizadas con sus correspondientes aportes en la construcción de procesos, instrumentos y actividades. Así mismo se muestran los otros componentes como el diseño de sistemas, análisis de resultados, difusión y evaluación. Finalmente el de difusión muestra las principales herramientas dispuestas para la entrega de los resultados censales.</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.study_info.data_kind">
+    <div class="xsl-caption field-caption">Tipo de datos</div>
+    <div class="field-value">
+                    <span>Censos (cen)</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.study_info.analysis_unit">
+    <div class="xsl-caption field-caption">Unidad de Análisis</div>
+    <div class="field-value">
+                    <span>UNIDAD DE OBSERVACIÓN<br />
+<br />
+ Corresponde a las viviendas, los hogares y los Lugares Especiales de Alojamiento.<br />
+ <br />
+ <br />
+UNIDAD DE ANÁLISIS<br />
+ <br />
+ Corresponde a las viviendas, los hogares y las personas.</span>
+            </div>
+</div>
+    </div>
+                        
+                        
+    <div id="metadata-scope" class="section-scope">
+        <h2 class="xsl-subtitle">Alcance</h2>
+        <div class="field field-metadata.study_desc.study_info.notes">
+    <div class="xsl-caption field-caption">Notas de estudio</div>
+    <div class="field-value">
+                    <span>ALCANCE <br />
+<br />
+COBERTURA TEMÁTICA <br />
+ <br />
+Para la realización del CNPV 2018 se definió dentro de sus alcances, además de la obtención de información de viviendas, hogares y población, la obtención de información sobre entorno y equipamiento urbano con el fin de incorporar características relacionadas con el paisaje urbano para apoyar la consecución de políticas enfocadas a mejorar las condiciones de vida en las áreas urbanas y adicionalmente como insumo para actualizar la cartografía básica censal. <br />
+<br />
+Por primera vez, para un censo de población, en atención al acuerdo realizado por el DANE con el Ministerio de Defensa, del cual hacen parte: el Comando General de Fuerzas Militares, el Ejército Nacional de Colombia, la Armada Nacional de Colombia, la Fuerza Aérea Colombiana y la Policía Nacional; fue necesario modificar el método de recolección para la población que se encuentra en cuarteles, guarniciones militares (Ejército, Armada y Fuerza Aérea) y los comandos y estaciones de policía, los cuales se encuentran clasificados como Lugares Especiales de Alojamiento LEA (Categorías 06 y 07), para efectos del CNPV 2018. <br />
+<br />
+Aunque dichos lugares cumplen con la definición de Lugares Especiales de Alojamiento - LEA, dada la disponibilidad y acceso de esta población a los medios digitales y el compromiso del Ministerio de Defensa de sumarse al e-Censo, en cumplimento de acuerdo antes mencionado, la población que hace parte de estos lugares, realizó el censo con su hogar (núcleo familiar) a través del censo electrónico. <br />
+<br />
+<br />
+Las temáticas incluidas en el CNPV 2018, proporcionan la siguiente información de tipo estructural: <br />
+<br />
+<br />
+<br />
+Cuestionario dirigido a hogares<br />
+<br />
+<br />
+Tema: Ubicación<br />
+Variables: 	<br />
+- Departamento y municipio	<br />
+- Clase	<br />
+- De identificación operativa y ubicación geográfica	<br />
+- Uso de la Unidad	<br />
+<br />
+<br />
+Tema: Vivienda	<br />
+Variables:<br />
+- Tipo de vivienda y condición de ocupación	<br />
+- Total de hogares	<br />
+- Material de paredes  y pisos	<br />
+- Servicios públicos	<br />
+- Tipo de servicio sanitario	<br />
+<br />
+<br />
+Tema: Hogar	<br />
+Variables: <br />
+- Total de cuartos y cuartos usados para dormir	<br />
+- Fuente de obtención de agua para preparar alimentos	<br />
+- Personas fallecidas últimos doce meses	<br />
+- Residentes Habituales del hogar	<br />
+<br />
+<br />
+Tema: Personas - Todas las personas	<br />
+Variables: <br />
+- Información demográfica y relaciones de parentesco	<br />
+- Autorreconocimiento étnico y multilingüismo	<br />
+- Lugar de nacimiento	<br />
+- Migración últimos cinco años	<br />
+- Migración reciente - últimos doce meses	<br />
+- Enfermedad o problema odontológico  últimos treinta días	<br />
+- Acción emprendida para atender la enfermedad.	<br />
+- Dificultades para realizar actividades	<br />
+- Causa de la enfermedad que le ocasiona la limitación permanente	<br />
+- Ayudas utilizadas para esa dificultad.	<br />
+<br />
+<br />
+Tema: Personas - Menores de 5 años	<br />
+Variables:<br />
+- Cuidado de los niños la mayor parte del tiempo entre semana. 	<br />
+<br />
+<br />
+Tema: Personas - 5 años o más	<br />
+Variables:<br />
+- Alfabetismo	<br />
+- Asistencia escolar	<br />
+- Nivel educativo más alto alcanzado y último año aprobado en ese nivel.	<br />
+<br />
+<br />
+Tema: Personas - 10 años o más	<br />
+Variables:<br />
+- Actividad realizada la semana anterior al censo	<br />
+- Estado civil	<br />
+- Personas - Mujeres de 10 años o más	Fecundidad	<br />
+<br />
+<br />
+Fuente: DANE - Dirección de Censos y Demografía <br />
+<br />
+<br />
+A continuación se explican las diferentes temáticas incluidas en el cuestionario dirigido a hogares particulares para cada uno de los capítulos. <br />
+<br />
+Capítulo I. Ubicación <br />
+<br />
+La ubicación permite georreferenciar la información censal del país a nivel nacional, departamental, municipal y por áreas (cabecera, centro poblado y rural disperso). <br />
+<br />
+Tiene entre otros propósitos proveer la base para la actualización del marco muestral para las operaciones estadísticas del Sistema Estadístico Nacional - SEN. <br />
+<br />
+Los objetivos de este capítulo son: <br />
+<br />
+• Obtener la distribución espacial de la población y sus características con los mayores niveles de desagregación. <br />
+• Determinar la ubicación (georreferenciación) de las viviendas incluyendo las de los resguardos indígenas y territorios colectivos de comunidades negras. <br />
+• Proveer la base para la construcción de marcos de áreas para la realización de investigaciones específicas. <br />
+• Servir como una herramienta de control en los procesos de recolección, alistamiento, evaluación de cobertura y captura de la información. <br />
+• Representar gráficamente la información censal. <br />
+<br />
+<br />
+Capítulo II. Vivienda <br />
+<br />
+El reconocimiento del derecho a la vivienda por los estados nacionales y organismos internacionales, incentiva el desarrollo de políticas tendientes a lograr el acceso a la vivienda digna y el pleno ejercicio del derecho. Así lo ha entendido Colombia, cuando consagra la vivienda digna como un derecho fundamental (Constitución Política de Colombia 1991. Art. 51, Cap. 2). <br />
+<br />
+Por tanto, uno de los propósitos del CNPV 2018 es responder a las preguntas &quot;¿Dónde vivimos? ¿cómo vivimos?&quot; en términos de calidad de vivienda, acceso al agua, disponibilidad de instalaciones y servicios básicos, entre otros aspectos que definen el bienestar de los hogares, en general de la satisfacción de las necesidades que tienen de habitación adecuada, las personas residentes en el país. <br />
+<br />
+Se recogerán datos demográficos y sociales respecto de las personas residentes en las viviendas, para ofrecer una descripción de las condiciones de vida, así como para realizar estimaciones de déficit de vivienda actual y futura. <br />
+<br />
+<br />
+<br />
+Los objetivos del capítulo de vivienda son: <br />
+<br />
+• Obtener un inventario completo de las viviendas ubicadas en el territorio nacional con sus características (tipo, servicios de la vivienda y materiales de paredes y pisos). <br />
+• Suministrar la información necesaria a los organismos encargados del diseño de políticas sobre el tema habitacional y a la oferta privada de construcción de vivienda. <br />
+• Obtener información para construir el marco muestral que sirva en la aplicación de encuestas especializadas. <br />
+• Aportar información para la construcción de indicadores de pobreza (Necesidades Básicas Insatisfechas (NBI) y pobreza mutidimensional ajustado IPM, así como para la medición del déficit de vivienda tanto cuantitativo como cualitativo y el análisis de la calidad de vida de los hogares. <br />
+• Contribuir con información para la realización de análisis de los factores determinantes de las condiciones de salud de los residentes en la vivienda. <br />
+<br />
+<br />
+Capítulo III. Hogar <br />
+<br />
+El hogar es una unidad de análisis del censo; la información de la población se organiza de acuerdo con este tipo de agrupamiento y en su interior se configuran las relaciones de parentesco de los residentes del hogar con respecto a un Jefe(a), posibilitando la construcción de tipologías de hogares. <br />
+<br />
+La descripción y caracterización de las condiciones de habitación de los hogares, constituye una temática relevante de estudio, debido a que corresponde al entorno físico y a las condiciones mínimas que posibilitan a sus habitantes la reproducción, la realización de las actividades de la vida cotidiana relacionadas con la alimentación, el descanso, la higiene personal, la protección al medio ambiente, entre otras, y la social más próxima como es la vida en comunidad; es, por lo tanto, un ámbito de intimidad y al mismo tiempo un espacio territorial mínimo donde residen las personas. <br />
+<br />
+<br />
+Lo anterior genera una creciente demanda de información específica sobre el hogar, a fin de disponer de herramientas útiles para dimensionar y describir con mayor precisión las realidades de los hogares y sus necesidades habitacionales. En tal sentido, en el marco del diseño conceptual del CNPV 2018, se incorporan preguntas tendientes a describir características de los hogares y sus condiciones habitacionales, con la intención de contar con información más completa e integrada y favorecer la generación de conocimiento sobre el bienestar de la población. <br />
+<br />
+<br />
+Los objetivos de este capítulo son: <br />
+<br />
+<br />
+• Conocer condiciones de salubridad del hogar, medidas a través de la fuente del agua que consumen y del tipo de servicio sanitario con que cuenta la vivienda. <br />
+• Aportar información para la construcción de indicadores NBI, IPM ajustado), así como para los ODS y análisis de condiciones de vida. <br />
+• Evaluar la cobertura subnacional de los registros de hechos vitales de defunción, específicamente contemplando las variables de edad, sexo y área de residencia que determinan en gran medida la evolución de la mortalidad en los territorios. Así mismo permiten caracterizar la incidencia de la mortalidad al interior de los hogares. <br />
+<br />
+<br />
+Capítulo IV. Personas <br />
+<br />
+A nivel general los objetivos de este capítulo son: <br />
+<br />
+• Brindar información sobre las características sociodemográficas de la población residente en el país. <br />
+• Obtener el tamaño, composición, distribución espacial de la población y su dinámica demográfica. <br />
+• Generar información de la migración por edad y sexo y estimar la inmigración internacional. <br />
+• Caracterizar la migración interna interdepartamental, intradepartamental, intermunicipal e intramunicipal. <br />
+• Obtener información para la actualización de las proyecciones demográficas de la población. <br />
+• Caracterizar la actividad educativa de la población. <br />
+• Brindar información que permita realizar análisis de la composición de los hogares. <br />
+• Obtener información que permita la caracterización sociodemográfica de la población del país según su pertenencia étnica. <br />
+• Caracterizar la población con dificultades diarias de funcionamiento humano, en concordancia con los lineamientos del Grupo de Washington. <br />
+• Seguimiento a las tendencias de los componentes del cambio demográfico. <br />
+<br />
+Este capítulo comprende diferentes temáticas, cuya conceptualización se aborda a continuación. <br />
+<br />
+<br />
+Demográficas básicas <br />
+<br />
+En el conjunto de información demográfica básica se incluyen el sexo, la edad, la relación de parentesco y el estado civil. <br />
+<br />
+<br />
+Diversos estudios realizados muestran que en Colombia, al igual que los países de América Latina, se presentan cambios en su dinámica demográfica y social que deben ser considerados en el diseño y la formulación de las políticas públicas, acordes con las necesidades del país. <br />
+<br />
+La transición demográfica ha generado un avance en el proceso de envejecimiento, el cual debe ser visto como el resultado de un cambio importante en la composición por edades, derivado de una menor participación de población infantil como consecuencia del descenso de los niveles de la fecundidad. Si bien este proceso ha sido acelerado, igual que en el promedio de América Latina, al tener en cuenta las dinámicas por departamento y, aún más, por municipio, la transición demográfica se presenta de manera heterogénea y correlacionada con los diferenciales de desarrollo que se observan entre los entes territoriales. <br />
+<br />
+Los cambios sociales y políticos que enfrentan diferentes sectores de la población, la variedad de temas poblacionales que de ello surge y la diversidad de enfoques para abordarlos, conllevan a nuevas demandas de información sociodemográfica, la cual no sólo constituye una herramienta técnica, sino también un recurso político a favor del ejercicio de los derechos, la democracia y el buen gobierno. <br />
+<br />
+<br />
+Sexo y Edad <br />
+<br />
+Las variables de sexo y edad son básicas para el análisis demográfico de la estructura de la población; permiten: <br />
+<br />
+• Establecer la estructura poblacional por sexo y edad. <br />
+• Definir y orientar políticas y programas diferenciales atendiendo a las necesidades de diversos grupos específicos de población: niñez y adolescencia, juventud y vejez, además del enfoque de género, como elemento transversal en el marco de los derechos humanos, y la igualdad de oportunidades, tanto para hombres como para mujeres. <br />
+• El estudio científico de la población identifica estas variables como transversales para el análisis de los fenómenos socioeconómicos por su diversidad para evaluar la vulnerabilidad y las condiciones de vida de la sociedad. <br />
+• Realizar análisis con perspectiva de género. <br />
+<br />
+<br />
+La fecha de nacimiento se incluye con el propósito de mejorar la calidad de la información sobre la edad y la identificación de las personas. <br />
+<br />
+Se incluyen además dos variables relacionadas con tipo y número de identificación de las personas, además del mejoramiento de la declaración de la edad, de posibilitar el uso estadístico de los registros administrativos como complemento del CNPV 2018 en las variables relacionadas con la seguridad social en salud y su uso futuro para la construcción del registro estadístico de población en el país. <br />
+<br />
+<br />
+Migración interna <br />
+<br />
+La migración interna es la dimensión demográfica que impacta la distribución espacial de la población y tiene una incidencia directa en las estructuras y su dinámica de crecimiento. En las últimas décadas Colombia ha tenido importantes transformaciones en el campo y las ciudades debidas a la movilidad de la población; este intercambio de personas se está experimentando entre las zonas rurales y las cabeceras municipales, los municipios y las ciudades, lo que genera necesidades de información que posibiliten dimensionar la magnitud de esa dinámica. Por ser el censo una operación estadística que llega a todos los lugares del país, es la más apropiada para recoger información reciente sobre la movilidad interna, que no podrían ser captadas a través de encuestas. <br />
+<br />
+Con las variables que se incorporan en el CNPV 2018, se caracteriza la población migrante interna e inmigrante internacional, se generan los insumos requeridos para la construcción de las proyecciones de población y se provee información para el análisis de series históricas que contribuyen a explicar el poblamiento del territorio. <br />
+<br />
+De esta manera es posible cuantificar la migración de toda la vida de la población residente en Colombia, la magnitud y dirección de los movimientos migratorios recientes, la medición de la migración entre cabecera - resto a diferentes niveles geográficos y facilitar la comprensión de las particularidades de este fenómeno. <br />
+<br />
+<br />
+Población étnica y sus características <br />
+<br />
+En 1991 se promulgó la nueva Constitución Política del país, base del actual marco jurídico y normativo sobre los derechos de los grupos étnicos y en la que se reconoce al país como multicultural y plurilingüe. Cerca de 30 artículos son referidos a los grupos étnicos, su cultura y sus particularidades. Los más importantes son: &quot;El Estado colombiano reconoce y protege la diversidad étnica y cultural de la Nación Colombiana&quot; (artículo 7); &quot;[...] las lenguas y dialectos de los grupos étnicos son también oficiales en sus territorios. La enseñanza que se imparte en las comunidades con tradiciones lingüísticas propias, será bilingüe&quot; (artículo 10); &quot;Las tierras de resguardo [...] son inalienables, imprescriptibles e inembargables&quot; (artículo 63); &quot;[...] tendrán derecho a una formación que respete y desarrolle su identidad cultural [...]&quot; (artículo 68); &quot;Son entidades territoriales los departamentos, los distritos, los municipios y los territorios indígenas&quot; (artículo 286).<br />
+ <br />
+A partir de 1991, los derechos fundamentales de los grupos étnicos se han cimentado a través de las políticas del Estado dirigidas hacia estas poblaciones: &quot;[...] el gran agregado de la constitución de 1991 fue la concreción y expresión normativa de la necesidad de fomentar en toda la sociedad relaciones de mutualidad e interculturalidad, en vez de relaciones de dominación de la sociedad hegemónica hacia las minorías étnicas&quot; (Bodnar, 2005). <br />
+<br />
+El reconocimiento del Pueblo Rrom o gitano como grupo étnico colombiano, se otorgó formalmente mediante la resolución No. 022 del 2 de septiembre de 1999 expedida por la Dirección General de Etnias del Ministerio el Interior y de Justicia. En ella, <br />
+<br />
+[...] se reconoce que el pueblo Rrom de Colombia habita el país ininterrumpidamente desde antes del establecimiento de la República y que por consiguiente es un grupo étnico que ha realizado aportes importantes al proceso de conformación de la nacionalidad colombiana […] Que es un deber constitucional del Estado proteger la diversidad étnica y cultural de la Nación colombiana, de la cual el pueblo Rrom hace parte integral […] Que para atender las demandas y reivindicaciones propias del pueblo Rrom de Colombia, las distintas entidades públicas deben hacer las adecuaciones institucionales que se requieran a fin de incorporar la existencia de este grupo étnico. <br />
+<br />
+La población raizal del Archipiélago de San Andrés, Providencia y Santa Catalina no fue la excepción frente a su reconocimiento formal, teniendo en cuenta que conforme a la Sentencia C-169/01, los incluye como comunidades negras para efectos de la circunscripción especial. Asimismo, la Corte Constitucional reconoce su particularidad como grupo étnico, con una identidad particular y rasgos significativos, mediante sentencia de la Corte Constitucional C-530 de 1993: <br />
+<br />
+La cultura de las personas raizales de las islas es diferente de la cultura del resto de los colombianos, particularmente en materia de lengua, religión y costumbres, que le confieren al raizal una cierta identidad. <br />
+<br />
+Es así como, actualmente en Colombia se reconocen cuatro grupos étnicos: los pueblos indígenas, la población negra, afrocolombiana y afrodescendiente (que contienen a la población palenquera originaria del pueblo de San Basilio de Palenque), las comunidades Raizales del Archipiélago de San Andrés, Providencia y Santa Catalina y el pueblo Rrom o gitano. <br />
+<br />
+Desde el 2015, el DANE inició el proceso de Consulta y Concertación para el CNPV 2018, con los pueblos indígenas. Se construyó la ruta metodológica de la consulta y concertación y se realizaron talleres de socialización del cuestionario censal y de los procesos censales: con la ONIC8 se realizaron 40 talleres, con la OPIAC9 25; con AICO10 19 talleres; con el pueblo Cofán y otros, 27 talleres; con el Gobierno Mayor 14; con la CIT11 12; con el pueblo Wayúu 10; con el pueblo Kogüi 8; con el Resguardo Selva Matavén . <br />
+<br />
+Con la Población Negra, Afrocolombiana, Raizal y Palenquera, el proceso de Consulta y Concertación inicia en 2016. Se realizaron 3 reuniones de Espacio Nacional, 9 reuniones con la Comisión VII -Comunicaciones, Tics, Censos, Estadísticas, Innovación, Ciencia y Tecnología-, 1 espacio autónomo y 33 asambleas departamentales de socialización del cuestionario y procesos censales. Las asambleas departamentales corresponden a 32 reuniones en cada uno de los departamentos y 1 en el Distrito Capital, en las cuáles participaron líderes de organizaciones de base y consejos comunitarios convocados, a través de los canales de representación liderados por los delegados departamentales que asumieron dicha labor en cada departamento. <br />
+<br />
+Como resultado de este proceso, se protocolizaron acuerdos sobre el cuestionario censal, fundamentalmente su adecuación desde un enfoque diferencial que tiene entre sus principales logros las preguntas de autoreconocimiento, territorialidad étnica y la incorporación de ajustes al tema de la lengua. <br />
+<br />
+Con el Pueblo Rrom, se realizaron cuatro reuniones con la Comisión Nacional de Diálogo, que iniciaron en 2016. Las tres primeras para la socialización y retroalimentación del cuestionario censal que concluyó con su aprobación y la inclusión de las siguientes categorías de respuesta, &quot;Vitsa&quot; y &quot;Kumpania&quot;en la pregunta de pertenencia étnica. <br />
+<br />
+En la cuarta reunión se acuerda la participación del pueblo Rrom en la fase censal. <br />
+<br />
+Asimismo, se protocolizaron acuerdos sobre los procesos censales. A Continuación se relacionan los acuerdos más relevantes logrados con las organizaciones indígenas: <br />
+<br />
+• Codificación de las comunidades étnicas por parte del DANE. Se asignó un código a todas las comunidades reportadas en los territorios indígenas (necesaria para el desarrollo de los procesos censales y post-censales). <br />
+• Complementación del marco Precensal para fines estadísticos, a través de sesiones técnicas permanentes con equipos técnicos de las Organizaciones indígenas de la MPC. Este ejercicio se constituye en un insumo cartográfico de interés para la operación censal. <br />
+• Rendimientos diferenciados para el desarrollo del operativo en territorios indígenas. Se definió un rendimiento entre 4 y 6 encuestas día - persona, para la operación en rutas. <br />
+• Definición de una novena área operativa correspondiente a aquella que cubre territorios indígenas en los cuales las organizaciones indígenas de la MPC hacen presencia y en las cuales podrán ser operadores de movilidad de personal. <br />
+• Convenios de Asociación, para el caso de las áreas de rutas y por predominancia étnica. Este acuerdo permitió la participación de las organizaciones Indígenas de la MPC para la movilidad de personal del CNPV, a través de Convenios de Asociación con fundamento en el Decreto 092 de 2017 y la normatividad étnica vigente y al diseño operativo del DANE, tanto en los recorridos, como en el tiempo definido, la cobertura, oportunidad y calidad en el servicio de acuerdo a los requisitos del servicio para la operación censal. <br />
+<br />
+• Participación personal operativo: <br />
+<br />
+- Los censistas y supervisores que conformarán los grupos en las Rutas, Barridos, Mixtos, en los territorios indígenas, serán de los territorios y comunidades presentes en dichas áreas, lo cual garantiza el conocimiento del territorio que se está abordando. De igual manera se definieron perfiles diferenciados para el personal operativo de los pueblos indígenas. <br />
+- Para el coordinador operativo de campo en los municipios donde exista este rol el personal que desempeñara las funciones correspondientes se seleccionará de acuerdo a los criterios técnicos definidos por el DANE, los aspirantes que cumplan el perfil requerido para este rol participarán en igualdad de condiciones. <br />
+- Para el caso de los municipios que poseen una población indígena mayor al 60% el jefe municipal fue avalado por las organizaciones indígenas de los respectivos municipios los cuales presentaron las hojas de vida cumpliendo con el perfil definido y la aprobación del proceso de capacitación definido por el DANE. <br />
+- Para la estructura de staff municipal (apoyo informático y apoyo administrativo), el personal se seleccionó de acuerdo a los criterios técnicos definidos por el DANE. Los aspirantes participaron en igualdad de condiciones y cumpliendo el perfil definido. <br />
+<br />
+• Proceso de aprendizaje diferencial. El proceso de aprendizaje para comunidades étnicas cuenta con enfoque diferencial pertinente para las comunidades étnicas, tanto en los recursos didácticos como en su planteamiento metodológico y en los tiempos. Se trata de un proceso presencial que enfatiza la práctica para que los distintos roles operativos desarrollen las habilidades y destrezas que deben aplicar en el desarrollo de sus actividades, contribuyendo a la calidad y cobertura de la operación estadística. <br />
+• Instalación de un consejo editorial DANE- Organizaciones, que tuvo como responsabilidad la definición de los contenidos de los productos de la estrategia de comunicación del Censo Nacional de Población y Vivienda de los pueblos indígenas. <br />
+• Convenios con cada Organización Indígena de la MPC, para el desarrollo de la estrategia de comunicación que cada una desarrolló en el marco del Censo Nacional de Población y Vivienda 2018. <br />
+<br />
+Para el caso de las comunidades Negras, Afrocolombianas, Raizales y Palenqueras los principales acuerdos relacionados con los procesos censales son los siguientes: <br />
+<br />
+• Participación de la población Negra, Afrocolombiana, Raizal y Palenquera en el personal operativo (Censistas y Supervisores). La participación de la población Negra en el personal operativo (Censistas y Supervisores) para el CNPV, fue mínimo del 10%, El DANE, para el caso de las comunidades Negras, Afrocolombianas, Raizales y Palenqueras, garantiza su participación conforme con la diferencia porcentual y/o proporcional sobre el total de la población de los grupos étnicos reconocidos constitucionalmente. <br />
+• Convenio de Asociación para el desarrollo de la estrategia de comunicación a través de Convenios de Asociación con fundamento en el Decreto 092 de 2017, la normatividad étnica vigente, y el diseño operativo del DANE. <br />
+• Convenios de Asociación para movilidad de personal. En el caso de los Territorios colectivos de comunidades negras legalmente constituidos (departamentos: Antioquia, Cauca, Chocó, Nariño, Valle del Cauca, y en San Andrés Islas), la participación de las comunidades Negras Afrocolombianas Raizales y Palenqueras en el desplazamiento de personal del CNPV, se realizará a través de Convenios de Asociación con fundamento en el Decreto 092 de 2017 y la normatividad étnica vigente, y de acuerdo con el diseño operativo del DANE, tanto en los rendimientos, como en el tiempo definido para la duración de la operación censal. <br />
+• Participación de la población Negra, Afrocolombiana, Raizal y Palenquera en el personal operativo (Censistas y Supervisores) para el CNPV, cumpliendo con los perfiles establecidos y la aprobación del proceso de selección establecido por el DANE. Considerando las particularidades culturales, sociales y educativas de las zonas rurales y urbanas, en los casos que sea necesario, el DANE flexibilizará los perfiles para los roles de supervisores y censistas preservando los aspectos que el diseño y operativo técnico del DANE consideran para la calidad, cobertura y oportunidad. <br />
+• Seguimiento a acuerdos. Comisión de Seguimiento a través de la realización de tres (3) reuniones de Comisión VII. <br />
+<br />
+Con el Pueblo Rrom, se acordó la participación en la fase censal relacionada con la contratación de personal operativo perteneciente a este grupo étnico para censar exclusivamente a sus hogares. <br />
+<br />
+<br />
+Atención en salud <br />
+<br />
+En el marco de la Ronda Censal 2010, la CEPAL, hace explícito el interés porque los países mejoren las estadísticas sobre Salud y Protección Social, información que debe estar al servicio de la gestión pública (CEPAL, 2010), y en promover su uso en los procesos de planeación social con un enfoque de derechos. <br />
+<br />
+En Colombia esta temática comenzó a incluirse en los Censos en el año 2005. En el CNPV 2018 se obtendrá información estadística como insumo para la construcción de indicadores que muestren la situación de la población respecto al derecho a la Salud, indicadores que explorarán, además del estado de salud de las personas, la calidad de la atención recibida, y además información para el cálculo del indicador de pobreza ajustado (IPM). <br />
+<br />
+<br />
+Funcionamiento humano <br />
+<br />
+A partir de la Ronda de Censos del 2000, se inició para Latinoamérica una nueva etapa en la búsqueda de información sobre funcionamiento humano. <br />
+<br />
+Con el propósito de obtener mediciones comparables entre los países y al interior de los mismos, en 2001 la Comisión de Estadísticas de las Naciones Unidas creó el &quot;Grupo de Washington&quot; responsable de definir el marco conceptual con base en la Clasificación Internacional del Funcionamiento, la Discapacidad y la salud - CIF - y de realizar la propuesta para la inclusión del tema en los censos y en las encuestas. <br />
+<br />
+El Grupo de Enlace Sectorial de Promoción y Prevención - GES P&amp;P -, espacio de coordinación de las entidades del estado y la sociedad civil, comenzó a trabajar sobre la necesidad de desarrollar un &quot;Sistema Nacional de Información Estadística sobre Discapacidad&quot;- SNIED12. En 2002, producto de este proceso, el DANE acordó con las entidades responsables del tema, el rediseño de la pregunta para el Censo de 2005 y logró acuerdos para la implementación en todo el territorio nacional de un Registro Único y Continuo que permitiera, además de profundizar la caracterización de la discapacidad, identificar y localizar a las personas en lo territorial. <br />
+<br />
+El concepto de discapacidad ha evolucionado de un enfoque meramente físico hacia un avance conceptual bajo un enfoque de derechos; Colombia adhiere mediante Ley 1346 de 2009 a la Convención de las Naciones Unidas sobre los Derechos de las Personas con Discapacidad. <br />
+<br />
+Finalmente, para el CNPV 2018, se incorpora el tema de Funcionamiento humano definido &quot;como la capacidad de una persona para llevar a cabo las actividades que responden a sus necesidades diarias básicas, instrumentales y funcionales, cuya pérdida genera el peligro de caer en la discapacidad y la dependencia&quot;. <br />
+<br />
+El módulo definido comprende las cuatro actividades que Naciones Unidas denomina &quot;fundamentales o esenciales&quot;: movilidad, visión, audición y capacidad cognitiva y algunos ámbitos adicionales como: dificultades para la comunicación el autocuidado y las relaciones interpersonales. <br />
+<br />
+<br />
+Educación, atención de niños y niñas menores de 5 años <br />
+<br />
+La denominada &quot;segunda generación&quot; de los derechos humanos comprende la divulgación y promoción de los Derechos Económicos, Sociales, y Culturales (DESC), incluyen cuestiones tan básicas para la dignidad humana como la alimentación, la seguridad social, la vivienda, la educación, el agua, el acceso al trabajo y la protección ante el desempleo, entre otros. <br />
+<br />
+En este marco, los países deben garantizar el ejercicio pleno del derecho a la educación a toda su población, un derecho señalado en diferentes tratados internacionales, en la Constitución Política del país, en la jurisprudencia y en diversas normas ordinarias que buscan la igualdad y la equidad para todos, independientemente del sexo, edad, etnia, discapacidad o la condición socioeconómica. <br />
+<br />
+Desde la perspectiva de los derechos humanos, existen diversos argumentos sobre la importancia del derecho a la educación, generalmente se dice que es el medio más eficiente para que las personas desarrollen todas sus potencialidades; que la educación facilita la exigencia y el ejercicio de otros derechos humanos; que la educación es un factor determinante en la reducción de la pobreza y la exclusión social y que se constituye en la piedra angular en la construcción de sociedades más democráticas, tolerantes y pacíficas (PNUD, 2001). <br />
+<br />
+Por lo tanto, las preguntas sobre educación en el CNPV 2018, están orientadas a proporcionar información que permita al gobierno y otros agentes sociales, adoptar las medidas necesarias para garantizar el disfrute de este derecho de modo universal, y en especial en la población menor de 5 años, y focalizar acciones que permitan avances en el desarrollo educativo de la población en general. <br />
+<br />
+En esa vía, las políticas y la acción gubernamental están orientadas a que todos los niños, desde su nacimiento hasta el ingreso a la educación formal cuenten con protección, cuidado y educación inicial, por lo cual se indagará sobre la atención que reciben los infantes la mayor parte del tiempo entre semana. <br />
+<br />
+Complementando la información obtenida para la población menor de cinco años, se incluyó el módulo dirigido a las personas de 5 años o más, con el cuál se podrá obtener información sobre el acceso y cobertura del sistema educativo, tasas de alfabetismo, asistencia escolar, nivel y grado de escolaridad, insumos para el cálculo de indicadores de pobreza (NBI e IPM), entre otros.<br />
+ <br />
+ <br />
+Situación laboral <br />
+<br />
+La inclusión de variables laborales en los censos de población reviste especial importancia en la medida en que el trabajo es principalmente el medio que utilizan las personas para generar ingresos y satisfacer sus necesidades. Contar con información sobre fuerza de trabajo que permita estimar de alguna manera la población económicamente activa e inactiva, permite disponer de una panorámica de la situación económica de la población colombiana y las relaciones existentes entre las diferentes variables consideradas.<br />
+ <br />
+Este módulo proporcionará datos aproximados sobre el volumen de la población económicamente activa, y, de manera particular, de la población ocupada, identificando a quienes trabajaron por lo menos una hora en una actividad que les genera algún ingreso, a los que no trabajaron pero tenían un empleo, trabajo o negocio y a los trabajadores o ayudantes sin remuneración. Adicionalmente permitirá de manera general hacer una aproximación a la población desocupada.<br />
+<br />
+ <br />
+Estado civil <br />
+<br />
+El estado civil es la situación de cada persona en relación con las leyes o costumbres relativas al matrimonio que existen en el país. Inicialmente era solo uno el estado civil, el de soltero, en aquella época en la que no existía legalmente el matrimonio. Con su institucionalización surge el estado de casado que sólo se perdía con la muerte, adquiriendo el cónyuge supérstite la calidad de viudo. En esos tiempos fueron solo tres los estados civiles: soltero, casado o viudo. Cuando se legaliza el divorcio se suma el de divorciado, lo mismo sucede con la separación de cuerpos para el separado, y, finalmente, con la aceptación de la convivencia, con el conviviente; situaciones estas que se han incorporado en el cuestionario censal. <br />
+<br />
+<br />
+Fecundidad <br />
+<br />
+Es de conocimiento general, que las Estadísticas Vitales (EEVV), son la fuente directa para obtener información que permita hacer estimaciones de mortalidad y fecundidad, pero debido a que en muchos países de América Latina, entre los cuales se puede contar Colombia, están afectadas por el sub-registro, es necesario que sean complementadas con otras fuentes, como los censos de población o las encuestas a profundidad. <br />
+<br />
+La debilidad de las encuestas radica en los errores de muestreo y que no son representativas a nivel de áreas menores y sub-poblacionales, lo que sí es posible con la información censal. Estas razones, hacen indispensable que las temáticas de fecundidad y mortalidad estén presentes en los censos de población. <br />
+<br />
+Indagar sobre estas temáticas en los censos, permitirá contar con información para conocer los comportamientos reproductivos y el panorama de mortalidad en general, por niveles educativos, socioeconómicos, su lugar de residencia, e incluso en su componente étnico. <br />
+<br />
+La definición de política pública, exige contar con información estadística de su población, a los niveles más desagregados de su estructura político-administrativa. Esta información debe ir mucho más allá del simple conocimiento de cuántos somos. Conocer ciertas características básicas pero determinantes de la población, permite a los hacedores de política ser más eficientes en las propuestas, desarrollos e implementaciones de las mismas. <br />
+<br />
+De lo anterior, se desprende que para el diseño de la política pública se requiere como insumo principal el conocimiento del tamaño efectivo de la población (o el efectivo poblacional), el cual constantemente es modificado por los cambios demográficos que se dan, como la natalidad, la mortalidad y la migración. La asignación de recursos y las implementaciones de política pública, requieren igualmente, el conocimiento expedito de la intensidad del crecimiento demográfico, así como también conocer el volumen poblacional futuro, el cual se determina a través de las proyecciones de población. La información de fecundidad muestra el comportamiento reproductivo de la población y sus variaciones, información relevante en la planificación económica y social, y la información de mortalidad, brindan información importante para el conocimiento de las condiciones socio-económicas de la población.<br />
+ <br />
+La información sobre la mortalidad general buscará indagar por los fallecimientos ocurridos en el hogar en los últimos 12 meses previos al censo, clasificados por sexo y edad. La información resultante permite conocer los niveles, estructura y comportamiento de la mortalidad; así mismo, suministra información para evaluar la cobertura del subsistema de Estadísticas Vitales y el cálculo de indicadores tan importantes como la mortalidad infantil. <br />
+<br />
+La información de fecundidad, posibilitará identificar los niveles y cambios en el comportamiento reproductivo de la población, así como los factores asociados que lo condicionan, con el cálculo de indicadores de fecundidad actual y retrospectiva, mujeres con hijos nacidos vivos, tasas globales de fecundidad, tasas brutas de natalidad, paridez media de diferentes generaciones, fecundidad acumulada por edades de la madre, entre otros. <br />
+<br />
+<br />
+MOMENTO CENSAL  <br />
+<br />
+En concordancia con lo aplicado en el Censo General 2005 y por la incertidumbre con relación al inicio de la etapa censal, debido a las disponibilidades presupuestales, así como en el total de personas que responderían al censo por medio del eCenso, así como a las expectativas y esfuerzos del DANE para llegar a tener un gran porcentaje de población por este medio, se considera que la mejor opción es definir el momento censal a posteriori, es decir, establecer la fecha censal como el momento en el cual se recolecta el 50% de la población censada en el periodo ampliado de la operación estadística, teniendo en cuenta las consideraciones asociadas a que la mayor parte de las recomendaciones internacionales, coinciden en que lo ideal es establecer el momento censal previo al desarrollo de la operación con el fin de evitar duplicados y omisión en el conteo. Lo anterior hace que el CNPV 2018 cuente con características particulares con relación a los censos realizados en Latinoamérica y el mundo, en la decisión de la definición del momento censal; desde el punto de vista temático, su estimación a posteriori, es la mejor opción para la fecha de referencia de ésta operación estadística en el país. <br />
+<br />
+Por lo anterior, aunque si bien deben tratarse con mayor cuidado las preguntas sobre los componentes del cambio demográfico, en especial las de migración si la fecha del censo no es la misma para todos los encuestados, (es decir se presenta una temporalidad dinámica y ampliada), dada la finalidad de las preguntas sobre migraciones para identificar el status migratorio de las personas en unas &quot;fechas&quot; determinadas y no la de establecer una cronología del proceso migratorio, se decide desde la conceptualización temática realizar preguntas sin utilizar una fecha fija de calendario, que mantienen un intervalo temporal idéntico para todos los interrogados que responde correctamente al criterio técnico de migrante de largo plazo consensuado como referente internacional por la Organización de Naciones Unidas: una residencia igual o superior a un año en un lugar. <br />
+<br />
+Al tener en cuenta una fecha de referencia (aún no conocida) se encontraría con una proporción muy elevada de población con intervalos temporales desiguales. Por lo anterior, se debe tener en cuenta que la utilidad fundamental del censo es su aplicación en las proyecciones, para las cuales es necesario medir las propensiones migratorias por sexo y edad para intervalos de un año equiparable a la definición de Naciones Unidas (la única aceptada en los estándares internacionales de medida de las migraciones internas e internacionales). <br />
+<br />
+<br />
+DISEÑO TEMÁTICO METODOLÓGICO<br />
+<br />
+NECESIDADES DE INFORMACIÓN<br />
+<br />
+En la Ley 79 de 1993, se regula la realización de los censos de población y vivienda en todo el territorio nacional. Establece en su artículo 1, que “El Departamento Administrativo Nacional de Estadística (DANE) debe realizar Censos de Población y Vivienda en las fechas que, mediante decreto, señale el Gobierno Nacional. También podrá realizar, como parte del programa censal, encuestas de ampliación o para, medir la cobertura del Censo”. <br />
+En el Decreto 262 de 2004, sobre la reestructuración del DANE se establece como una de las funciones de la Dirección de Censos y Demografía, el diseño y realización de censos para la producción de estadísticas estratégicas y demográficas con el fin de apoyar la planeación y toma de decisiones por parte de las entidades estatales. <br />
+<br />
+El Plan Nacional de Desarrollo 2014-2018 “Todos por un nuevo País” aprobado por el Congreso de la República, contempla en el Artículo 161°. Censo Nacional de Población y Vivienda. “El Departamento Administrativo Nacional de Estadística (DANE) realizará el XVIII Censo Nacional de Población y VII de Vivienda en el 2016. Se llevará a cabo un conteo intercensal de población a los cinco años de realizado el censo de población y vivienda para el monitoreo y seguimiento de la dinámica demográfica, y la actualización y mantenimiento del Marco Geoestadístico Nacional y de las proyecciones de población”. Adicionalmente se establece que el DANE debe actualizar la información básica poblacional a través del desarrollo del XVIII Censo Nacional de Población y VII de Vivienda para renovar los marcos estadísticos que fundamentan la mayoría de las operaciones de esta índole. Lo anterior permitirá contar con una estructura etaria actualizada, renovar la medición de fecundidad y mortalidad, contar con una información vigente sobre movilidad espacial y ajustar las proyecciones de población”.<br />
+<br />
+La realización del CNPV  2018, se efectúa en el marco del Decreto censal 1899 de 2017 por medio del cual se dictan lineamientos para su ejecución, como la obligatoriedad de las instituciones públicas en desarrollo de su deber misional, de apoyar su realización, así como de la población domiciliada o residente en Colombia de permanecer en sus viviendas para atender la visita del censista, según la notificación efectuada por el DANE.<br />
+<br />
+Las bases legales del censo son imprescindibles para:<br />
+<br />
+· Fijar las responsabilidades administrativas e institucionales a nivel nacional departamental y municipal.<br />
+<br />
+· Obtener los recursos necesarios para la implementación de todos los procesos y procedimientos que se definen en el diseño conceptual y metodológico.<br />
+<br />
+· Fijar sus alcances y tiempos para lograrlos.<br />
+<br />
+· Establecer los mecanismos y obligaciones de la población y asegurar su cooperación.<br />
+<br />
+· Fijar los parámetros de confidencialidad de la información de cada una de las personas censadas.<br />
+<br />
+· Establecer la periodicidad de los censos de acuerdo con las recomendaciones internacionales</span>
+            </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.study_info.topics">
+    <div class="xsl-caption field-caption">Clasificación de temas</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Tema</th>
+                                    <th>Vocabulario</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Censos [14.1]                                
+                        </td>
+                                                                    <td>
+                                                            CESSDA                                
+                        </td>
+                                                                
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Fertilidad [14.2]                                
+                        </td>
+                                                                    <td>
+                                                            CESSDA                                
+                        </td>
+                                                                
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Migración [14.3]                                
+                        </td>
+                                                                    <td>
+                                                            CESSDA                                
+                        </td>
+                                                                
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Mortalidad y morbilidad [14.4]                                
+                        </td>
+                                                                    <td>
+                                                            CESSDA                                
+                        </td>
+                                                                
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.study_info.keywords">
+    <div class="xsl-caption field-caption">Palabras clave</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Palabra clave</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Edificación                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Unidad                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Vivienda (Unidad de uso vivienda)                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Unidad mixta                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Unidad NO residencial                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Residente habitual                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Hogar                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Jefe o jefa de hogar                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Autoreconocimiento                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Afrodescendiente, afrocolombiano/a                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Clan                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Gitano/a o Rrom                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Grupos étnicos                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Identidad étnica                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Indígena                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Lenguas nativas                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Mulato/a                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Negro/a                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Palenquero/a de San Basilio                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Pertenencia étnica.                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Pueblo indígena                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Raizal del archipiélago de San Andrés, Providencia y Santa Catalina.                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Lugar Especial de Alojamiento (LEA)                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Entorno urbano                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Equipamiento público                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Infraestructura vial                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Georreferenciación                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Encuestado idóneo                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Funcionamiento humano                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Limitaciones en la actividad                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Usabilidad                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Accesibilidad                                
+                        </td>
+                                                                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Clase                                
+                        </td>
+                                                                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+    </div>
+                                
+    <div id="metadata-coverage" class="section-coverage">
+        <h2 class="xsl-subtitle">Cobertura</h2>
+        <div class="field field-metadata.study_desc.study_info.geog_coverage">
+    <div class="xsl-caption field-caption">Cobertura Geografica</div>
+    <div class="field-value">
+                    <span>COBERTURA GEOGRÁFICA <br />
+<br />
+El CNPV 2018 abarcará la totalidad del territorio nacional, correspondiente a 32 departamentos, 1.101 municipios, 20 áreas no municipalizadas y el archipiélago de San Andrés, Providencia y Santa Catalina.</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.study_info.geog_unit">
+    <div class="xsl-caption field-caption">Unidad Geográfica</div>
+    <div class="field-value">
+                    <span>DESAGREGACIÓN GEOGRÁFICA <br />
+<br />
+Para el CNPV 2018, el nivel de desagregación geográfica es departamental y municipal por cabecera, centros poblados y rural disperso.</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.study_info.universe">
+    <div class="xsl-caption field-caption">Universo</div>
+    <div class="field-value">
+                    <span>Está compuesto por todas las viviendas, hogares y personas residentes habituales en el territorio colombiano, que en su área continental e insular tiene una superficie de 1.141.748 kilómetros cuadrados y se encuentra conformado por 32 departamentos y el Distrito Capital. El territorio cuenta con un total de 1.101 municipios, 20 áreas no municipalizadas, el archipiélago de San Andrés, Providencia y Santa Catalina.<br />
+<br />
+También se incluye la población residente habitual en embajadas y consulados donde Colombia actúa  de conformidad con el Derecho Internacional o con las leyes colombianas.<br />
+<br />
+Igualmente hacen parte del Universo las personas residentes habituales en los LEA.<br />
+<br />
+Con respecto a la población de habitantes de la calle, en el marco de la Ley 1641 de 2013, el DANE en conjunto con las administraciones municipales tiene la responsabilidad de levantar esta información. Sin embargo teniendo en cuenta que la ley establece lineamientos específicos para la caracterización de esta población, se hace necesario una  operacionalización diferente por lo cual la recolección de información de esta población se está realizando en tiempos distintos a los del CNPV 2018.</span>
+            </div>
+</div>
+    </div>
+                                
+    <div id="metadata-producers_sponsors" class="section-producers_sponsors">
+        <h2 class="xsl-subtitle">Productores patrocinadores</h2>
+        <div class="table-responsive field field-metadata.study_desc.authoring_entity">
+    <div class="xsl-caption field-caption">Entidad autora / Investigadores primarios</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre agencia</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Dirección de Censos y Demografía - DCD                                
+                        </td>
+                                                                
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Departamento Administrativo Nacional de Estadística - DANE                                
+                        </td>
+                                                                
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.production_statement.producers">
+    <div class="xsl-caption field-caption">Productores</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre</th>
+                                    <th>Afiliación</th>
+                                    <th>Rol</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Dirección de Censos y Demografía                                
+                        </td>
+                                                                    <td>
+                                                            Departamento Administrativo Nacional de Estadística - DANE                                
+                        </td>
+                                                                    <td>
+                                                            Equipo Técnico                                 
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.production_statement.funding_agencies">
+    <div class="xsl-caption field-caption">Agencia financiadora / Patrocinador</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre</th>
+                                    <th>Abreviación</th>
+                                    <th>Rol</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Departamento Administrativo Nacional de Estadística                                
+                        </td>
+                                                                    <td>
+                                                            DANE                                
+                        </td>
+                                                                    <td>
+                                                            Ejecutor                                
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+    </div>
+                                
+                                                                
+    <div id="metadata-data_collection" class="section-data_collection">
+        <h2 class="xsl-subtitle">Recolección de Datos</h2>
+        <div class="table-responsive field field-metadata.study_desc.study_info.coll_dates">
+    <div class="xsl-caption field-caption">Fechas de recopilación de datos (YYYY/MM/DD)</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Fecha inicio</th>
+                                    <th>Fecha final</th>
+                                    <th>Ciclo</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            2018                                
+                        </td>
+                                                                    <td>
+                                                            2018                                
+                        </td>
+                                                                    <td>
+                                                            El CNPV 2018 se realizará durante 4 meses del año 2018, a partir del mes de abril.                                
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.study_info.time_periods">
+    <div class="xsl-caption field-caption">Períodos de tiempo (YYYY/MM/DD)</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Fecha inicio</th>
+                                    <th>Fecha final</th>
+                                    <th>Ciclo</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            2018                                
+                        </td>
+                                                                    <td>
+                                                            2018                                
+                        </td>
+                                                                    <td>
+                                                            Los periodos de referencia utilizados en las preguntas del cuestionario censal son los siguientes:  HOGAR:  Año 2017 para la pregunta de mortalidad. PERSONAS: • 5 años para migración. • 12 meses para migración reciente. • Últimos 30 días para problemas de salud u odontológicos. • Semana pasada para situación laboral. Los periodos de referencia utilizados en las preguntas del cuestionario censal son los siguientes:  Hogar Año 2017 para la pregunta de mortalidad. Personas • 5 años para migración. • 12 meses para migración reciente. • Últimos 30 días para problemas de salud u odontológicos. • Semana pasada para situación laboral.                                 
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="field field-metadata.study_desc.method.data_collection.coll_mode">
+    <div class="xsl-caption field-caption">Mode of data collection</div>
+    <div class="field-value">
+                    <span>Entrevista personal asistida con DMC (dispositivo móvil de captura)</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.method.data_collection.act_min">
+    <div class="xsl-caption field-caption">Supervision</div>
+    <div class="field-value">
+                    <span>FORMATOS<br />
+<br />
+Fueron elaborados con el fin de realizar seguimiento y control del CNPV 2018 durante su ejecución. Se diseñaron formatos para los diferentes procesos y grupos para el diligenciamiento por parte de cada uno de los roles de la estructura operativa. <br />
+<br />
+Formatos de aprendizaje como listas de asistencia y otros para verificación de recepción y devolución de equipos técnicos, mobiliario y materiales de aprendizaje. <br />
+<br />
+Formatos de logística para el control, recepción, y devolución de equipos y materiales.<br />
+<br />
+Formatos de Sistemas para la verificación de las características técnicas de los equipos.<br />
+<br />
+Formatos administrativos, diseñados para el control de instalaciones y bienes, así como el flujo de materiales durante el operativo. <br />
+<br />
+Formatos operativos, diseñados para registrar el avance de la operación censal. Deben ser diligenciados por los diferentes roles que sustentan la estructura organizacional jerárquica de recolección, partiendo desde el censista y supervisor como la estructura básica de ejecución y control censal.  <br />
+<br />
+Estos formatos permiten brindar datos del estado y cobertura de la operación de barrido con los siguientes indicadores:<br />
+<br />
+• Avance de cobertura en unidades urbanas y rurales.<br />
+• Resultado de la entrevista (encuestas completas, incompletas y rechazos).<br />
+• Estado de ocupación de la vivienda.<br />
+• Rendimiento real vs. esperado.<br />
+<br />
+<br />
+MÓDULO DE CONTROL DE CALIDAD<br />
+<br />
+Durante el diseño, se ha previsto la visualización de indicadores de calidad en forma simultánea con el operativo, sobre las siguientes temáticas:<br />
+<br />
+- Personas<br />
+- Hogares<br />
+- Viviendas<br />
+- Educación<br />
+- Reconocimiento étnico<br />
+<br />
+<br />
+HOGARES POR VIVIENDA<br />
+<br />
+Permite conocer el número promedio de hogares por vivienda, que se obtiene de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+El cálculo de este indicador permite detectar la omisión de hogares por parte de los censistas, al compararlo con la información de referencia a nivel nacional y sus diferentes desagregaciones territoriales. <br />
+<br />
+<br />
+PERSONAS POR HOGAR<br />
+<br />
+Permite conocer el número de personas por hogar, que se obtiene de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+El cálculo de este indicador permite detectar la omisión de personas por parte de los censistas, al compararlo con la información de referencia a nivel nacional y sus diferentes desagregaciones territoriales. <br />
+<br />
+<br />
+DISTRIBUCIÓN DE LA POBLACIÓN CENSADA TOTAL POR GRUPOS QUINQUENALES DE EDAD Y SEXO.<br />
+<br />
+Permite conocer el número de personas desagregado por grupos quinquenales de edad y sexo, de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+Su objetivo es detectar la omisión de menores y de personas mayores así como los comportamientos atípicos en la estructura de la población por sexo y edad, al comparar este indicador con la información de referencia a nivel nacional y sus diferentes desagregaciones territoriales. <br />
+<br />
+<br />
+RELACIÓN DE MASCULINIDAD POR GRUPOS QUINQUENALES DE EDAD<br />
+<br />
+Dado que las variables sexo y edad en los Censos de Población son imprescindibles, este indicador permite detectar comportamientos atípicos en los patrones de la distribución de la población por sexo. <br />
+<br />
+Permite conocer el número de hombres por cada 100 mujeres, obtenidos de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+<br />
+RELACIÓN NIÑOS - MUJER<br />
+<br />
+Permite conocer el número de niños menores de 5 años por cada 1000 mujeres en edad fértil (15-49 años) que se obtiene de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+ Este es un indicador proxi de la fecundidad y la fecundidad es el principal componente que afecta las estimaciones de población.<br />
+ <br />
+<br />
+PARTICIPACIÓN DE LA POBLACIÓN ESCOLAR FRENTE AL TOTAL DE POBLACIÓN ENTRE 5 Y 14 AÑOS<br />
+<br />
+Permite conocer la proporción de personas entre 5 y 14 años que asiste a un establecimiento educativo por cada 100 personas entre 5 y 14 años de la población total, que se obtiene de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+Existe una política pública que debe garantizar el acceso de la población entre 5 y 15 años al sistema educativo. Un comportamiento atípico de este indicador muestra deficiencia en la calidad de la información recolectada.<br />
+<br />
+Por otra parte la medición de este indicador permitirá dar seguimiento a la completitud de la información del cuestionario por parte del censista. <br />
+<br />
+<br />
+PROPORCIÓN DE MENORES DE UN AÑO RESPECTO A MENORES DE 5 AÑOS<br />
+<br />
+Permite conocer la proporción de los menores de un año con respecto a los menores de 5 años que se obtiene de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+Históricamente en el grupo de menores de un año es frecuente la omisión de esta población y adicionalmente se presentan deficiencias en el reporte de la edad.<br />
+<br />
+Por otra parte esta información es básica para el cálculo de la fecundidad.<br />
+<br />
+<br />
+PORCENTAJE DE PERSONAS QUE SE AUTORRECONOCEN COMO PERTENECIENTES A UN GRUPO ÉTNICO<br />
+<br />
+Permite conocer el número de personas que se autorreconocen como pertenecientes a una etnia, que se obtiene de la base de datos resultante de los cuestionarios transmitidos.<br />
+<br />
+Su objetivo es analizar la composición de la población según su pertenencia étnica.</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.method.data_collection.coll_situation">
+    <div class="xsl-caption field-caption">Características de la situación de recopilación de datos: notas sobre la recopilación de datos</div>
+    <div class="field-value">
+                    <span>RECOLECCIÓN DE DATOS<br />
+<br />
+La organización operativa se define en consideración a la estructura geográfica, la cual establece la disposición y distribución del territorio para su acceso, recolección de información y su posterior análisis.<br />
+<br />
+Tomando esta estructura geográfica,  se realizó todo el proceso de asignación de cargas operativas de trabajo, monitoreo y control operativo.<br />
+<br />
+<br />
+ESTRUCTURA FUNCIONAL OPERATIVA<br />
+<br />
+Para la realización del CNPV 2018, se ha planteado una estructura operativa basada en la organización de los niveles nacional, departamental, regional y municipal, asegurando la línea de transmisión de instrucciones, el control de la operación, la organización de las comunicaciones y la responsabilidad del desempeño en cada uno de los niveles establecidos. <br />
+<br />
+En este sentido la estructura funcional operativa, es jerárquica vertical y contempla desde el DANE nivel central, el liderazgo y coordinación operativa a nivel nacional, así como la gestión operativa a nivel municipal con seguimiento, monitoreo y control a nivel regional, departamental y nacional.<br />
+<br />
+La estructura departamental es la organización funcional del operativo por departamento del país, desde la etapa pre censal hasta la etapa postcensal. Contiene el personal con los roles encargados de articular todos los municipios de la división político-administrativa como puente entre los equipos operativos en terreno y la estructura nacional.<br />
+<br />
+En esta organización se incluye el enfoque diferencial étnico con la participación de esta población en el operativo censal buscando garantizar la cobertura de los territorios y población étnica en la operación censal. <br />
+<br />
+En cada uno de los niveles, se crean los correspondientes espacios estratégicos para la organización y coordinación del trabajo de campo. A nivel nacional El Centro Operativo Nacional (CONAL) y a nivel municipal el Centro Operativo Municipal (COM).<br />
+ <br />
+Las responsabilidades generales de cada uno de los roles es la siguiente:<br />
+<br />
+Coordinador departamental: Es el responsable del operativo en el departamento asignado desde la etapa previa hasta la etapa posoperativa. Lidera y coordina las actividades operativas y administrativas censales, garantizando el 100% de la cobertura y la calidad de la información. <br />
+<br />
+Adicionalmente le corresponde llevar a cabo el monitoreo de la actividad de campo de cada una de las regiones y de los municipios, y solucionar en ese nivel jerárquico las situaciones que puedan ocurrir y afectar el avance de la recolección. Además de liderar y dirigir las actividades operativas, logísticas, administrativas y de aprendizaje que se requieran para garantizar la puesta en marcha de la operación censal.<br />
+<br />
+Por otra parte, el coordinador departamental tiene comunicación con el responsable del operador (de personal o de transporte) en su jurisdicción y con él buscará cubrir los requerimientos a nivel técnico que demande el operativo en terreno.<br />
+<br />
+Es responsable de la ejecución de las actividades programadas para el censo a nivel departamental a lo largo de la línea de tiempo en los procesos de movilización, aprendizaje y operativo en campo, garantizando la calidad y completitud de los procesos ejecutados en cada una de las etapas y articulando la estructura organizacional a nivel de las subcoordinaciones, los conglomerados y los municipios.<br />
+<br />
+En la etapa precensal, durante el proceso de movilización, la coordinación departamental realiza el monitoreo, seguimiento y control a los procesos de sensibilización voz a voz, relacionamiento del censo con las autoridades y la comunidad en general a nivel municipal y departamental, así como de la inscripción de hojas de vida, consecución de centros de aprendizaje (salones) y centros operativos municipales. <br />
+<br />
+El coordinador departamental encabeza el primer nivel de aprendizaje, realizando la transmisión del conocimiento. Además, realiza seguimiento, monitoreo y control al aprendizaje en todas las fases y etapas, para garantizar la oportuna ejecución y puesta en marcha del CNPV, asegurando que la totalidad del personal operativo reciba el aprendizaje requerido para el desarrollo de la operación censal.<br />
+<br />
+Durante la operación censal, el coordinador departamental garantiza la cobertura, calidad y oportunidad de la información censal recopilada, realizando el seguimiento a la ejecución del operativo en su departamento. Consolida la información operativa a nivel departamental y la remite a nivel central. Igualmente realiza seguimiento, monitoreo y control al operativo de eCenso en los municipios de su coordinación. <br />
+<br />
+Subcoordinador departamental: Este rol existe únicamente en aquellos departamentos que tienen una mayor cantidad de municipios y que presentan una mayor complejidad operativa, siendo necesaria esta estructura para garantizar el control de la operación en estos territorios. Se han establecido para cinco departamentos: Antioquia, Boyacá, Cundinamarca, Nariño y Santander. Los subcoordinadores son responsables de la ejecución de las actividades programadas para el censo a nivel subdepartamental desde la etapa previa hasta la etapa post-operativa, garantizando el 100% de la cobertura y calidad de la información y estará a las órdenes del coordinador departamental.<br />
+<br />
+Lidera los responsables de la ejecución de las operaciones en campo para los distintos fines: movilización, aprendizaje y operativo a nivel subdepartamental garantizando la calidad y completitud de los procesos ejecutados en cada una de las etapas y articulando la estructura organizacional de conglomerados y sus municipios.<br />
+<br />
+El subcoordinador departamental en los departamentos que cuentan con este rol, encabeza la cascada del aprendizaje realizando la transmisión del conocimiento de las actividades a realizar por los roles del staff departamental, y realiza el seguimiento y monitoreo del avance de los procesos de aprendizaje al interior del área subdepartamental.<br />
+<br />
+En la operación censal el subcoordinador departamental garantiza la cobertura, calidad y oportunidad de la información censal recopilada, realizando el seguimiento a la ejecución del operativo en el área subdepartamental que le corresponda y en su interior los municipios que la integran.<br />
+<br />
+Equipo de apoyo departamental: Es el equipo que acompaña a la coordinación departamental y corresponde a los roles de: coordinador de conglomerado, profesional operativo de barrido, profesional operativo de rutas, apoyo administrativo departamental y apoyo informático departamental.<br />
+<br />
+Según las características departamentales y la complejidad operativa las tres grandes capitales Bogotá, Medellín y Cali, están a cargo de un rol para la ciudad que asume las funciones de jefe municipal y tiene líderes de localidad o comuna.<br />
+<br />
+Coordinador de conglomerado: El diseño operativo, prevé una organización censal basada en una ordenación al interior de cada departamento y/o territorio según las facilidades de acceso geográfico que permiten a cada uno de los roles dispuestos ejercer efectivamente el control geográfico sobre la asignación.<br />
+<br />
+Esta organización operativa es liderada por el rol de coordinador de conglomerado, que tiene a cargo un grupo de municipios con sede administrativa y operativa en una capital, desde la cual se desplaza a los municipios de la asignación. Esta organización le permite comunicarse y monitorear el operativo de campo con los jefes municipales.<br />
+<br />
+Es el responsable del operativo en los municipios asignados desde la etapa previa hasta la etapa posoperativa. Acompaña y monitorea el desarrollo operativo en los municipios asignados, garantizando el 100% de la cobertura y la calidad de la información. <br />
+<br />
+Cuando el departamento no requiere de este cargo, por el número de municipios a trabajar, se remplaza por el Profesional operativo de barrido con sede en la capital departamental.<br />
+<br />
+Profesional operativo de barrido: Es el responsable de monitorear el avance del operativo en los municipios asignados desde la etapa previa hasta la etapa posoperativa. <br />
+<br />
+Acompaña y realiza seguimiento a la cobertura y calidad en los municipios, solucionando inconvenientes y garantizando el 100% de la cobertura y calidad. <br />
+<br />
+Profesional operativo de rutas: Es el responsable de monitorear el avance del operativo en las rutas fijadas y del seguimiento al operativo de los territorios étnicos asignados desde la etapa previa hasta la etapa posoperativa. Articula acciones y soluciones con las autoridades de las comunidades de grupos étnicos y consulta con el nivel departamental las diferentes situaciones que se presenten en el territorio. Realiza seguimiento para garantizar el 100% de la cobertura y la calidad de la información. <br />
+<br />
+Apoyo informático departamental: Es el responsable de hacer seguimiento a la transmisión de los datos recolectados y de las copias de seguridad en los municipios asignados, garantizando la disponibilidad permanente y la confidencialidad de la información al DANE Central. Igualmente es el responsable de efectuar reentrenamiento y prestar asistencia a los apoyos informáticos municipales.<br />
+<br />
+Apoyo administrativo departamental: Es el responsable del seguimiento y consolidación del control de pagos, avance de contratación, control y seguimiento de asistencia del personal de campo en los municipios, trámite de pernoctaciones, prestación del servicio de transporte, organización de elementos y logística inversa en los municipios asignados.<br />
+<br />
+<br />
+EQUIPO DE NIVEL MUNICIPAL <br />
+<br />
+Jefe municipal: Es el responsable del operativo en el municipio asignado desde la etapa de inicio hasta la etapa posoperativa. Lidera y monitorea el equipo de trabajo, gestiona y resuelve los inconvenientes presentados en desarrollo del operativo garantizando el 100% de la cobertura y calidad de la información.<br />
+<br />
+Delegado municipal: Es el responsable de liderar y articular las acciones al interior del municipio con el fin de generar las condiciones adecuadas para la realización del censo, sensibilizando a las autoridades locales, los líderes comunales y la población en general. Sigue las instrucciones que le imparte el jefe municipal.<br />
+<br />
+Líder de localidad/comuna: Es el responsable del operativo en la localidad/comuna asignada desde la etapa de inicio hasta la etapa posoperativa. Lidera y monitorea el trabajo en terreno de supervisores y censistas en la zona urbana de las grandes ciudades, para garantizar el 100% de la cobertura y la calidad de la información. <br />
+<br />
+Coordinador operativo de campo: Es el responsable del operativo censal en el área de coordinación operativa asignada en el municipio correspondiente desde la etapa de inicio hasta la etapa posoperativa. Lidera y monitorea el trabajo en terreno de supervisores y censistas y coordina al apoyo informático y administrativo, para garantizar el 100% de la cobertura y la calidad de la información. <br />
+<br />
+Apoyo técnico de ruta: Este rol tiene como función garantizar el uso adecuado y el correcto funcionamiento de los medios que se le suministran al equipo de trabajo para la recolección de la información en los DMC, así como realizar el conteo de viviendas, hogares y personas para consolidar la información preliminar de cobertura. Igualmente, en los casos donde la recolección se efectúe por medio de cuestionarios en papel, se encarga de verificar la consistencia y completitud de la información recolectada por el grupo de trabajo al cual ha sido asignado.<br />
+<br />
+Apoyo informático municipal: Es el responsable de asegurar la transmisión permanente de los datos recolectados, realizando las copias de seguridad, garantizando la disponibilidad y confidencialidad de la información al DANE Central. Verificar que los datos enviados han sido cargados a la base de datos. Dar buen uso a los elementos entregados y demás actividades para garantizar el 100% de la cobertura y la calidad de la información siguiendo la metodología e instrucciones técnicas impartidas según la jerarquía censal.<br />
+<br />
+Apoyo administrativo municipal: Es el responsable de llevar el control de los pagos y los soportes del personal del equipo operativo, supervisar el avance de la contratación, prestación del transporte, entrega y recepción de materiales y el centro operativo, y demás actividades que permita la operación en campo.<br />
+<br />
+Supervisor: Es el responsable del operativo en campo, desde la etapa de inicio hasta la etapa posoperativa. Se encarga de garantizar el 100% de la cobertura y la calidad de la información recolectada, realizando un acompañamiento y seguimiento permanente a su grupo de censistas.<br />
+<br />
+Censista: Es el responsable de aplicar de manera correcta el cuestionario censal en cada una de las unidades de observación asignadas, diligenciar los formatos respectivos y garantizar el 100% de la cobertura de las unidades asignadas, siguiendo la metodología e instrucciones técnicas impartidas según la jerarquía censal.<br />
+<br />
+La relación supervisor censistas en el área urbana es de 1 / 4 y en el área rural 1/3.</span>
+            </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.method.data_collection.data_collectors">
+    <div class="xsl-caption field-caption">Recolectores de datos</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre</th>
+                                    <th>Abreviación</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Departamento Administrativo Nacional de Estadística                                
+                        </td>
+                                                                    <td>
+                                                            DANE                                
+                        </td>
+                                                                
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+    </div>
+        
+    <div id="metadata-questionnaires" class="section-questionnaires">
+        <h2 class="xsl-subtitle">Cuestionarios</h2>
+        <div class="field field-metadata.study_desc.method.data_collection.research_instrument">
+    <div class="xsl-caption field-caption">Tipo de instrumento de investigación</div>
+    <div class="field-value">
+                    <span>DISEÑO DE INSTRUMENTOS<br />
+<br />
+Algunos de instrumentos diseñados para la recolección de información del CNPV 2018 y el correspondiente control, en hogares particulares, LEA y entorno y equipamiento urbano, se listan a continuación:<br />
+<br />
+<br />
+CUESTIONARIO ELECTRÓNICO EN DISPOSITIVO MÓVIL DE CAPTURA  (DMC)<br />
+<br />
+Permite realizar la captura de datos a través de computadores de mano. Llevan incorporadas validaciones básicas, la cartografía censal y un GPS (Sistema de posicionamiento global) que permite georreferenciar la ubicación de cada una de las viviendas visitadas.<br />
+<br />
+<br />
+CUESTIONARIO ELECTRÓNICO EN  WEB<br />
+<br />
+Es un cuestionario idéntico en términos de contenido, al que se llevará al operativo en campo en dispositivo móvil de captura o en papel, pero que ha pasado por un proceso de usabilidad, que permite obtener un cuestionario para recolección vía web con características de accesibilidad, fácil de diligenciar e intuitivo, entre otras características. Este instrumento se dispondrá en la web, con los respectivos canales de comunicación (chat, correo electrónico y voz) que serán habilitados con el fin de dar soporte durante el proceso de diligenciamiento de la información por parte de la población. <br />
+<br />
+<br />
+CUESTIONARIOS EN PAPEL<br />
+<br />
+Serán utilizados como contingencia para las áreas con dificultades de orden público y para aquellas zonas donde se hará recolección por el método de rutas. <br />
+<br />
+<br />
+PLANTILLA PARA LEA<br />
+<br />
+Corresponde a un formato en excel de referencia, utilizado en los grandes LEA, diseñado a partir del cuestionario correspondiente. Este formato fué suministrado a cada una de estas instituciones después de establecer contacto telefónico, con el proposito de que cada una de ellas  consolide su informacion mediante la conformación de un archivo digital con las variables solicitadas. <br />
+<br />
+<br />
+APLICATIVO WEB PARA LEA<br />
+<br />
+Para aquellos LEA con más de 20 residentes habituales, se diseñó un aplicativo para ser utilizado accediendo a través de internet al cuestionario dispuesto en un servidor web. Un correo es enviado a cada LEA con nombre de usuario y contraseña para el acceso al cuestionario y diligenciamiento de la información.</span>
+            </div>
+</div>
+    </div>
+                
+    <div id="metadata-data_processing" class="section-data_processing">
+        <h2 class="xsl-subtitle">Procesamiento de datos</h2>
+        <div class="field field-metadata.study_desc.method.data_collection.cleaning_operations">
+    <div class="xsl-caption field-caption">Operaciones de limpieza</div>
+    <div class="field-value">
+                    <span>NORMAS, ESPECIFICACIONES O REGLAS DE VALIDACIÓN, CONSISTENCIA E IMPUTACIÓN<br />
+<br />
+Uno de los grandes retos para el CNPV 2018 es obtener en terreno información válida, precisa y consistente, para esto es necesario agotar todos los recursos para minimizar la falta de respuesta total y/o parcial, hacer un buen entrenamiento a los recolectores de información, exigir un buen trabajo de campo y aplicar mecanismos de supervisión y monitoreo rigurosos a la información recolectada desde el inicio del operativo.  No obstante, subsisten aspectos técnicos de la información declarada por las personas y que son sujeto de mejora para verificar la consistencia lógica de la información estadística censal, en éste sentido, a continuación se describen brevemente los principales lineamientos técnicos de su implementación.<br />
+<br />
+Los datos censales en la mayor parte del territorio nacional se obtendrán a través de un dispositivo móvil de captura - DMC el cual tiene incorporada la evaluación de rangos de variables priorizadas (validación), flujos de las variables (universo donde se aplica cada variable) y las consistencias mínimas necesarias. El DMC muestra alertas que permiten al censista identificar que está ingresando datos errados, o universos a los que no aplica la variable. Esto también se usa para las personas que brinden la información a través de internet por el eCenso el cual le permitirá a la persona darse cuenta de que no es válida la opción que ha seleccionado.<br />
+<br />
+El proceso inicia antes del operativo de campo, con la malla de validación para el DMC y el eCenso, el diseño de los documentos necesarios para evaluar el proceso, los programas informáticos que permitan la implementación de las normas de validación, y la estructura de la base bajo el diccionario de datos construido para tal fin. Hay que tener presente que la programación contempla la transformación del archivo plano de las tablas de datos en formato SAS y SQL ya que estas serán las herramientas informáticas utilizadas en el procesamiento. <br />
+<br />
+Los métodos que se utilizarán para corregir datos faltantes, no válidos o inconsistentes serán los siguientes: el aprovechamiento de fuentes externas, como los registros administrativos, uso de la información contenida y de coherencia con el cuestionario mediante el método de imputación Hot Deck como el vecino más cercano, secuencial e imputación múltiple, entre otras. <br />
+<br />
+Imputaciones lógicas: Este método consiste en encontrar un valor aceptable para reemplazar un valor incorrecto, en situaciones en que las respuestas inconsistentes o que faltan se pueden deducir a partir de los valores del resto de variables del cuestionario censal.<br />
+<br />
+Imputaciones por Hot Deck (HD): Este método desarrollado por Madow, Nisselson y Olkin, 1983, se utilizará para corregir los problemas de estructura. Este método de imputación ha sido extensamente probado en muchos países y en Colombia con el censo general 2005. El método preserva la distribución de probabilidad de las variables y los datos faltantes se reemplazan a partir de una selección aleatoria de valores observados, lo cual no introduce sesgos en la varianza del estimador. <br />
+<br />
+Dentro de este proceso se diseñan y desarrollan las especificaciones, programas, herramientas, reglas y procedimientos necesarios para la adecuación de los datos requeridos en el procesamiento y la difusión, los cuales no solamente pretenden clasificar y caracterizar los problemas sino plantear las soluciones en cada caso. Este proceso está compuesto por: <br />
+<br />
+· La edición y control de estructura de las bases.<br />
+· La validación, consistencia e imputación.<br />
+<br />
+<br />
+PROCESAMIENTO<br />
+<br />
+El procesamiento de la base de datos consta de 5 grandes fases, asociadas a la transformación de la base original de manera consecutiva que inician de la lectura de la información almacenada por la oficina de sistemas y finaliza con las tablas imputadas, a partir de las cuales se generarán los resultados finales del censo.  La siguiente gráfica  muestra el proceso general del procesamiento en donde se resumen las actividades del proceso general.<br />
+<br />
+La primera fase comienza con la lectura de tres bases de datos independientes: una de ellas, llamada de indicadores, que corresponde a la vista que genera la Oficina de  sistemas para el procesamiento general, la siguiente base de datos “base de calidad” que contiene los datos de una nueva consolidación con información guardada (Backups) que se tenían de las encuestas realizadas en campo, y la última base, llamada de “validación”, contiene los datos de una nueva retrasmisión directa de las DMC. La base de calidad y de validación son controles de cobertura que se realizan para garantizar que toda la información recolectada en campo este completa en la base de datos. Cada base contiene las tablas de viviendas, hogares, personas, personas fallecidas, personas residentes, tabla de resultados de las encuestas, personas LEA, instituciones LEA y la geo codificación de cada uno de los métodos de recolección (DMC, eCenso, papel y LEA). A esta lectura se le denota Base 0. <br />
+<br />
+Una vez se carga la información en el software “SAS” se integran las tres bases mediante la variable “UID_ENCUESTA”. Asegurando la totalidad de registros en la base de datos, se unen las correspondientes tablas de viviendas, hogares, personas, personas residentes, personas fallecidas y resultados de las encuestas de cada uno de los métodos de recolección (DMC, papel y eCenso) generando una sola tabla de viviendas, personas, personas residentes, hogares, personas fallecidas y resultados. Para el caso de LEA, la tabla de instituciones se une con la tabla de viviendas y la tabla de personas LEA se une con la tabla de personas. A esta base se denomina Base 1, la cual tiene una copia en formato texto delimitado por tabuladores (.Tab) y una en formato SAS (.sas7bdat).<br />
+<br />
+La tercera fase tiene dos partes que se trabajan de manera paralela, la primera de ellas está conformada por varios procesos: la calidad de los datos de las variables de identificación en la tabla de personas, el mejoramiento de información faltante con la base del Archivo Nacional de Identificación (ANI) y Registro Civil de Nacimiento (RCN) de la Registraduria Nacional del Estado Civil (RNEC), el cruce con el registro de salud (BDUA+BDEX) y el registro de la Planilla de Afiliaciones (PILA). <br />
+<br />
+El proceso de calidad consiste en la creación de una variable adicional por cada variable de identificación de personas (tipo y numero de documento, nombres, apellidos y fecha de nacimiento) indicando si hay  datos consistentes, faltantes o inconsistentes, de tal forma que cuando hay un campo faltante en el Censo este se sustituye por el campo que brinda la Registraduria, siempre y cuando se garantizara la misma persona. <br />
+<br />
+El proceso de identificación de duplicados para personas, se realiza mediante la construcción de dos variables adicionales que informan si un registro esta duplicado con otro por tipo y número de documento o por nombres y fecha de nacimiento. En estas dos variables se pueden identificar hogares duplicados por tener todas las personas residentes duplicadas en los mismos. Los cruces con los registros administrativos generan nuevas variables a la tabla de personas que se le denomina “IMP_PERSONAS”, su tratamiento se hace a través del software SQLserver.  <br />
+<br />
+La segunda parte de la tercera fase, consistirá en la integración de las tablas de personas, hogares, viviendas y personas fallecidas. Recordemos que la Base 1 contiene una tabla de personas, una tabla de hogares, una tabla de viviendas, una tabla de personas fallecidas y una tabla de resultados solamente uniendo los registros según los diversos métodos de recolección (eCenso, DMC, LEA y Papel) mas no realizando la integración.<br />
+<br />
+Esta integración tendrá  como resultado la construcción de una variable en cada una de las tablas llamada “estados” que permitirá identificar el registro real o el duplicado en cada tabla. Iniciamos con el estado en la tabla de hogares, la cual toma en cuenta la pregunta 11 permitiendo saber si un registro de hogar fue eCenso, fue realizado por DMC o es un eCenso verificado en DMC. A partir del estado en la tabla de hogares se genera el “estado&quot; en la tabla de viviendas, identificando vivienda con todos sus hogares por eCenso, viviendas con hogares eCenso y DMC, viviendas con solo hogares DMC, instituciones de LEA y Viviendas sin personas. <br />
+<br />
+La generación del “estado” de personas, parte de la tabla de IMP_PERSONAS de la primera parte de la fase con los estados de la tabla de hogares y viviendas identificando personas duplicadas en todo un hogar, personas duplicadas dentro de un hogar, personas duplicadas entre un hogar particular y una LEA, personas duplicadas con un hogar unipersonal, personas duplicadas entre hogares con más de una persona y personas sin duplicidad. El primer y tercer estado permite identificar hogares duplicados y posibles viviendas duplicadas, lo cual genera la actualización del estado de hogares y viviendas mencionados al comienzo de esta segunda parte. La base de datos que contienen las tablas de personas, hogares y viviendas con los correspondientes estados se denomina base 2. <br />
+<br />
+Con la base dos construida se deshabilitan los registros duplicados de personas, hogares, viviendas y de personas fallecidas en cada una de las tablas y se realiza la asignación de la ubicación cuando la encuesta de eCenso es verificada en DMC teniendo en cuenta la pregunta 11.1 del cuestionario. Las tablas sin duplicados se almacenan en lo que se denomina base 3. <br />
+<br />
+La última fase del procesamiento es la implementación de las reglas de validación e imputación, pero antes se toma como insumo la geocodificación de las encuestas y la verificación de aquellas que se encuentran en territorios étnicos. La primera parte del proceso es similar que la validación de las variables de identificación en la cual primero se construye una variable de calidad por cada variable a imputar que indica si el valor es inconsistente, consistente o faltante. A partir de esto, e identificado el faltante o inconsistente, se implementa la norma de imputación establecida. La tabla final se almacena en lo denominado base 4 de las cuales se generan los resultados finales.  <br />
+<br />
+ Es importante mencionar que el DANE salvaguardará las bases resultantes de todas las fases del procesamiento, incluyendo la base 0.</span>
+            </div>
+</div>
+    </div>
+                
+                                                                                
+    <div id="metadata-data_access" class="section-data_access">
+        <h2 class="xsl-subtitle">Acceso a los datos</h2>
+        <div class="table-responsive field field-metadata.study_desc.data_access.dataset_use.contact">
+    <div class="xsl-caption field-caption">Contacto</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre</th>
+                                    <th>Afiliación</th>
+                                    <th>Email</th>
+                                    <th>URI</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Departamento Administrativo Nacional de Estadística                                
+                        </td>
+                                                                    <td>
+                                                            Gobierno Nacional                                    
+                        </td>
+                                                                    <td>
+                                                            dane@dane.gov.co                                 
+                        </td>
+                                                                    <td>
+                                                            www.dane.gov.co                                   
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.distribution_statement.contact">
+    <div class="xsl-caption field-caption">Contacto</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre</th>
+                                    <th>Afiliación</th>
+                                    <th>Correo electrónico</th>
+                                    <th>URI</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            contacto@dane.gov.co                                
+                        </td>
+                                                                    <td>
+                                                            DANE                                
+                        </td>
+                                                                    <td>
+                                                            contacto@dane.gov.co                                
+                        </td>
+                                                                    <td>
+                                                            http://www.dane.gov.co/index.php/contactenos                                
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="table-responsive field field-metadata.study_desc.data_access.dataset_use.conf_dec">
+    <div class="xsl-caption field-caption">Declaración de confidencialidad</div>
+    <div class="field-value">                
+                        Ley 79 de 1993 Artículo 5:
+ 
+Los datos suministrados al Departamento Administrativo Nacional de Estadística DANE, en el desarrollo de los censos y encuestas, no podrán darse a conocer al público ni a las entidades u organismos oficiales, ni a las autoridades públicas, sino únicamente en resúmenes numéricos, que no hagan posible deducir de ellos información alguna de carácter individual que pudiera utilizarse para fines comerciales, de tributación fiscal, de investigación judicial o cualquier otro diferente del propiamente estadístico.        
+    </div>
+</div>
+<div class="field field-metadata.study_desc.data_access.dataset_use.conditions">
+    <div class="xsl-caption field-caption">Condiciones</div>
+    <div class="field-value">
+                    <span>El acceso a los microdatos anonimizados de uso público es de carácter gratuito y estará disponible en la página Web del DANE.<br />
+<br />
+El acceso a los microdatos anonimizados por licencia,cuando requiera procesamientos adicionales, podrá tener un costo que será definido mediante acto administrativo.</span>
+            </div>
+</div>
+<div class="field field-metadata.study_desc.data_access.dataset_use.cit_req">
+    <div class="xsl-caption field-caption">Requisito de cita</div>
+    <div class="field-value">
+                    <span>Se autoriza el uso de la información contenida en esta portal, siempre y cuando se haga la siguiente cita textual: &quot;Fuente: Departamento Administrativo Nacional de Estadística: www.dane.gov.co . Queda en cambio prohibida la copia o reproducción de los datos en cualquier medio electrónico (redes, bases de datos, cd rom, diskettes) que permita la disponibilidad de esta información a múltiples usuarios sin el previo visto bueno del DANE por medio escrito.<br />
+ <br />
+Calidad de la información. Los datos y la información en general que aparecen en este portal se han introducido siguiendo estrictos procedimientos de control de calidad. No obstante, el DANE no se responsabiliza por el uso e interpretación realizado por terceros.</span>
+            </div>
+</div>
+    </div>
+                
+    <div id="metadata-disclaimer_copyright" class="section-disclaimer_copyright">
+        <h2 class="xsl-subtitle">Descargo de responsabilidad derechos de autor</h2>
+        <div class="field field-metadata.study_desc.production_statement.copyright">
+    <div class="xsl-caption field-caption">Derechos de autor</div>
+    <div class="field-value">
+                    <span>Ley 1032 de 2006</span>
+            </div>
+</div>
+    </div>
+                                
+    <div id="metadata-metadata_production" class="section-metadata_production">
+        <h2 class="xsl-subtitle">Producción del metadato</h2>
+        <div class="field field-metadata.doc_desc.idno">
+    <div class="xsl-caption field-caption">ID del documento</div>
+    <div class="field-value">
+                    <span>COL-DANE-CNPV-2018</span>
+            </div>
+</div>
+<div class="table-responsive field field-metadata.doc_desc.producers">
+    <div class="xsl-caption field-caption">Productores</div>
+    <div class="field-value">                
+                        
+        <table class="table table-bordered table-striped table-condensed xsl-table table-grid">
+            <tr>
+                                    <th>Nombre</th>
+                                    <th>Abreviatura</th>
+                                    <th>Afiliación</th>
+                                    <th>Rol</th>
+                            </tr>
+            
+                            <tr>
+                                                                    <td>
+                                                            Luisa Fernanda Suarez León                                
+                        </td>
+                                                                    <td>
+                                                            Lfsuarezl@dane.gov.co                                
+                        </td>
+                                                                    <td>
+                                                            Dirección de Regulación, Planeación, Estandarización y Normalización - DIRPEN                                  
+                        </td>
+                                                                    <td>
+                                                             Coordinadora Regulaciòn                                
+                        </td>
+                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Carolina Polanco Hurtado                                
+                        </td>
+                                                                    <td>
+                                                            cpolancoh@dane.gov.co                                
+                        </td>
+                                                                    <td>
+                                                            Dirección de Censos y Demografia                                  
+                        </td>
+                                                                    <td>
+                                                            Documentador DCD                                
+                        </td>
+                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Rafael Humberto Zorro Cubides                                
+                        </td>
+                                                                    <td>
+                                                            rhzorroc@dane.gov.co                                
+                        </td>
+                                                                    <td>
+                                                            Dirección de Regulación, Planeación, Estandarización y Normalización - DIRPEN                                  
+                        </td>
+                                                                    <td>
+                                                            Actualizador DIRPEN                                
+                        </td>
+                                        
+                </tr>
+                            <tr>
+                                                                    <td>
+                                                            Jimena Marcela Parejo Bermeo                                
+                        </td>
+                                                                    <td>
+                                                            jmparejob@dane.gov.co                                
+                        </td>
+                                                                    <td>
+                                                            Dirección de Información y Cultura Estadística – DICE                                
+                        </td>
+                                                                    <td>
+                                                            Verificador DICE                                
+                        </td>
+                                        
+                </tr>
+                    </table>
+        
+    </div>
+</div>
+<div class="field field-metadata.doc_desc.prod_date">
+    <div class="xsl-caption field-caption">Fecha de producción</div>
+    <div class="field-value">
+                    <span>2020-02-17</span>
+            </div>
+</div>
+    </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/2.1.8/linkify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-linkify/2.1.8/linkify-jquery.min.js"></script>
+
+<script>
+    $(function() {
+        $(".metadata-container").linkify();
+    });
+</script>    </div></div>
+      </div>
+</div>
+<!-- end-tabs-->    
+   </div> 
+</div>
+
+
+<!--survey summary resources-->
+<script type="text/javascript">
+	function toggle_resource(element_id){
+		$("#"+element_id).parent(".resource").toggleClass("active");
+		$("#"+element_id).toggle();
+	}
+	
+	$(document).ready(function () { 
+		bind_behaviours();
+		
+		$(".show-datafiles").click(function(){
+			$(".data-files .hidden").removeClass("hidden");
+			$(".show-datafiles").hide();
+			return false;
+		});
+
+	});	
+	
+	function bind_behaviours() {
+		//show variable info by id
+		$(".resource-info").unbind('click');
+		$(".resource-info").click(function(){
+			if($(this).attr("id")!=''){
+				toggle_resource('info_'+$(this).attr("id"));
+			}
+			return false;
+		});			
+	}
+</script>                </div>
+                       
+
+</div>
+
+<!-- page footer -->
+ <!-- footer -->
+ <div id="footer">
+    <!-- contedores de footer se pueden incluir los que sean necesarios. de debe crear una clase de flexbox para el contenedor principal y a ese elementos los atribuitos que se deseen para su alineacion y posicionamiento la clase creada es content_footerinfo, que esta en custom.css. Esta nueva libreria de flexbox esta inlcuida dentro del header del archivo y puede ser mezclado con boostrap sin problemas-->
+    <div class="container-fluid bg-footer footer-enc content_footerinfo">
+       <div class="content-footer_dane container-fluid row" style="">
+
+          <div class="item-info_dane col-12 col-lg-3">
+             <div class="icon-position"> <img src=https://microdatos.dane.gov.co/themes/nada/images/call-icon.png> </div>
+             <div class="text-info_dane">
+                <h5>CALL CENTER</h5>
+                <p><strong>Conmutador:</strong> (+57 601) 597 8300 ó (+57 601) 597 8398 / <strong> <br>Línea gratuita de
+                      atención:</strong> 01 8000
+                   912002 </p>
+             </div>
+          </div>
+
+          <!--espacio 2-->
+          <div class="col-12 col-lg-3 item-info_dane">
+             <div class="icon-position"> <img src=https://microdatos.dane.gov.co/themes/nada/images/clock-icon.png> </div>
+             <div class="text-info_dane">
+                <h5>HORARIO DE ATENCIÓN</h5>
+                <p>Lunes a viernes 8:00 a 17:00</p>
+             </div>
+          </div>
+
+          <!--espacio 3-->
+          <div class="col-12 col-lg-3 item-info_dane" style="border: none;">
+             <div class="icon-position"> <img src=https://microdatos.dane.gov.co/themes/nada/images/location-icon.png>
+             </div>
+             <div class="text-info_dane">
+                <h5>DIRECCIÓN</h5>
+                <p>Carrera 59 No. 26-70 Interior I - CAN / <strong>Bogotá D.C. - Colombia </strong></p>
+                <p><strong></strong></p>
+             </div>
+          </div>
+
+          <div class="logo-gobierno col-12 col-lg-3">
+             <!-- <img class="pull-right img-fluid hidden-xs mx-auto"
+                src="https://www.dane.gov.co/files/images/nuevaImg/logo-gobierno.png" style="width: 70%; "> -->
+          </div>
+       </div>
+    </div>
+ </div></body>
+
+</html>

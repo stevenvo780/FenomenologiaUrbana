@@ -58,6 +58,14 @@ Top conductas 2023:
 - San Antonio B presenta alto flujo durante el día: True.
 - San Antonio B presenta presión en hora pico de la tarde: True.
 - Optimización reportada de Línea B en hora pico: 4.75 min a 3.8 min.
+- Pasajeros SITVA último periodo disponible: Línea B 89735; red 1057234.
+- DANE CNPV: estado fallback_documented; ficha municipal descargada: True.
+
+## Ambiente SIATA / AMVA
+
+- PM2.5: 20 estaciones con último valor válido; estación más cercana: {'name': 'Estación Tráfico Centro', 'short_name': 'CEN-TRAF', 'distance_km': 0.3, 'latest_at': '2022-10-12 04:00:00', 'latest_value': 23.0}.
+- PM10: 7 estaciones con último valor válido; estación más cercana: {'name': 'Estación Tráfico Centro', 'short_name': 'CEN-TRAF', 'distance_km': 0.3, 'latest_at': '2022-12-14 04:00:00', 'latest_value': 14.0}.
+- Ruido: 0 muestras válidas; estado documented_public_network_not_geolocated.
 
 ## Lo que sigue dependiendo de campo
 

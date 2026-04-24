@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T21:06:39+00:00",
-    "pipeline_version": "0.1.0",
-    "status": "research_to_visual_synced"
+    "generated_at": "2026-04-24T21:32:05+00:00",
+    "pipeline_version": "0.2.0-baseline",
+    "status": "final_repo_ready_with_external_fieldwork_dependency"
   },
   "case_study": {
     "title": "Corredor fenomenologico de La Candelaria",
@@ -1375,68 +1375,107 @@
     },
     {
       "id": "medata_equipamientos_page",
-      "label": "MEData equipamientos colectivos",
-      "url": "https://medata.gov.co/node/41592",
+      "label": "MEData inventario de equipamientos",
+      "url": "https://medata.gov.co/node/41535",
       "kind": "medata_page",
       "status": "failed",
       "http_status": 403,
       "content_type": "text/html; charset=UTF-8",
       "bytes": 0,
       "local_path": null,
-      "resolved_url": "https://medata.gov.co/node/41592",
+      "resolved_url": "https://medata.gov.co/node/41535",
       "note": "http_403"
     },
     {
-      "id": "siata_air_dataset",
-      "label": "AMVA mediciones estaciones calidad del aire",
-      "url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-estaciones-calidad-del-aire",
+      "id": "medata_pasajeros_mov_page",
+      "label": "MEData pasajeros movilizados",
+      "url": "https://medata.gov.co/node/16624",
       "kind": "html",
       "status": "downloaded",
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 8252,
-      "local_path": "raw/siata_air_dataset.html",
-      "resolved_url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-estaciones-calidad-del-aire",
-      "note": "captured_ssl_retry"
+      "bytes": 19871,
+      "local_path": "raw/medata_pasajeros_mov_page.html",
+      "resolved_url": "https://medata.gov.co/node/16624",
+      "note": "captured"
     },
     {
-      "id": "siata_noise_dataset",
-      "label": "AMVA mediciones de ruido ambiental",
-      "url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-de-ruido-ambiental",
+      "id": "medata_pasajeros_mov_csv",
+      "label": "MEData pasajeros movilizados CSV",
+      "url": "https://medata.gov.co/sites/default/files/distribution/1-023-25-000292/Pasajeros_movilizados.csv",
+      "kind": "csv",
+      "status": "downloaded",
+      "http_status": 200,
+      "content_type": "application/octet-stream",
+      "bytes": 9406,
+      "local_path": "raw/medata_pasajeros_mov_csv.csv",
+      "resolved_url": "https://medata.gov.co/sites/default/files/distribution/1-023-25-000292/Pasajeros_movilizados.csv",
+      "note": "captured"
+    },
+    {
+      "id": "siata_air_metadata",
+      "label": "AMVA/SIATA mediciones estaciones calidad del aire",
+      "url": "https://datosabiertos.metropol.gov.co/node/99",
       "kind": "html",
       "status": "downloaded",
       "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 8243,
-      "local_path": "raw/siata_noise_dataset.html",
-      "resolved_url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-de-ruido-ambiental",
+      "bytes": 44073,
+      "local_path": "raw/siata_air_metadata.html",
+      "resolved_url": "https://datosabiertos.metropol.gov.co/node/99",
       "note": "captured_ssl_retry"
     },
     {
-      "id": "siata_air_package",
-      "label": "AMVA calidad del aire metadata CKAN",
-      "url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-estaciones-calidad-del-aire",
-      "kind": "ckan_package",
-      "status": "failed",
-      "http_status": 404,
-      "content_type": "text/html; charset=UTF-8",
-      "bytes": 0,
-      "local_path": null,
-      "resolved_url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-estaciones-calidad-del-aire",
-      "note": "http_404_ssl_retry"
+      "id": "siata_air_pm25_json",
+      "label": "AMVA/SIATA PM2.5 JSON",
+      "url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Aire_pm25.json",
+      "kind": "json",
+      "status": "downloaded",
+      "http_status": 200,
+      "content_type": "application/json",
+      "bytes": 18599575,
+      "local_path": "raw/siata_air_pm25_json.json",
+      "resolved_url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Aire_pm25.json",
+      "note": "captured_ssl_retry"
     },
     {
-      "id": "siata_noise_package",
-      "label": "AMVA ruido ambiental metadata CKAN",
-      "url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-de-ruido-ambiental",
-      "kind": "ckan_package",
-      "status": "failed",
-      "http_status": 404,
+      "id": "siata_air_pm10_json",
+      "label": "AMVA/SIATA PM10 JSON",
+      "url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Aire_pm10.json",
+      "kind": "json",
+      "status": "downloaded",
+      "http_status": 200,
+      "content_type": "application/json",
+      "bytes": 8373812,
+      "local_path": "raw/siata_air_pm10_json.json",
+      "resolved_url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Aire_pm10.json",
+      "note": "captured_ssl_retry"
+    },
+    {
+      "id": "siata_noise_metadata",
+      "label": "AMVA/SIATA mediciones de ruido",
+      "url": "https://datosabiertos.metropol.gov.co/node/102",
+      "kind": "html",
+      "status": "downloaded",
+      "http_status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "bytes": 0,
-      "local_path": null,
-      "resolved_url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-de-ruido-ambiental",
-      "note": "http_404_ssl_retry"
+      "bytes": 40923,
+      "local_path": "raw/siata_noise_metadata.html",
+      "resolved_url": "https://datosabiertos.metropol.gov.co/node/102",
+      "note": "captured_ssl_retry"
+    },
+    {
+      "id": "siata_noise_json",
+      "label": "AMVA/SIATA ruido JSON",
+      "url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Ruido_ruido.json",
+      "kind": "json",
+      "status": "downloaded",
+      "http_status": 200,
+      "content_type": "application/json",
+      "bytes": 3207706,
+      "local_path": "raw/siata_noise_json.json",
+      "resolved_url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Ruido_ruido.json",
+      "note": "captured_ssl_retry"
     },
     {
       "id": "dane_cnpv",
@@ -1450,6 +1489,32 @@
       "local_path": null,
       "resolved_url": "https://geoportal.dane.gov.co/geovisores/sociedad/cnpv-2018/",
       "note": "http_403"
+    },
+    {
+      "id": "dane_cnpv_microdatos_catalog",
+      "label": "DANE microdatos CNPV 2018 catalogo",
+      "url": "https://microdatos.dane.gov.co/index.php/catalog/643",
+      "kind": "html",
+      "status": "downloaded",
+      "http_status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "bytes": 185118,
+      "local_path": "raw/dane_cnpv_microdatos_catalog.html",
+      "resolved_url": "https://microdatos.dane.gov.co/index.php/catalog/643",
+      "note": "captured"
+    },
+    {
+      "id": "dane_medellin_ficha_cnpv_pdf",
+      "label": "DANE ficha municipal CNPV 2018 Medellin",
+      "url": "https://sitios.dane.gov.co/cnpv/app/views/informacion/fichas/05001.pdf",
+      "kind": "pdf",
+      "status": "downloaded",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 399630,
+      "local_path": "raw/dane_medellin_ficha_cnpv_pdf.pdf",
+      "resolved_url": "https://sitios.dane.gov.co/cnpv/app/views/informacion/fichas/05001.pdf",
+      "note": "captured"
     },
     {
       "id": "medellin_como_vamos_centro_pdf",
@@ -1466,9 +1531,9 @@
     }
   ],
   "source_summary": {
-    "downloaded": 9,
-    "failed": 5,
-    "total": 14
+    "downloaded": 16,
+    "failed": 3,
+    "total": 19
   },
   "fieldwork": {
     "status": "pending_partial_capture",
@@ -1500,8 +1565,88 @@
       "variables_observed": [],
       "node_changes": 0,
       "edge_changes": 0,
-      "scenario_changes": 0
+      "scenario_changes": 0,
+      "external_dependency": true
     }
+  },
+  "closure": {
+    "status": "final_repo_ready_with_external_fieldwork_dependency",
+    "case_status": "baseline_proxy",
+    "gates": [
+      {
+        "id": "argumento_academico",
+        "label": "Argumento academico",
+        "status": "complete",
+        "evidence": "Documento principal, marco teorico, hallazgos base y guion estan versionados."
+      },
+      {
+        "id": "pipeline_reproducible",
+        "label": "Pipeline reproducible",
+        "status": "complete",
+        "evidence": "run_all.py genera modelo, capa empirica, simulacion y payload visual."
+      },
+      {
+        "id": "datos_publicos",
+        "label": "Datos publicos",
+        "status": "complete_with_limits",
+        "evidence": "16/19 fuentes descargadas; los fallos quedan trazados."
+      },
+      {
+        "id": "campo",
+        "label": "Trabajo de campo",
+        "status": "external_required",
+        "evidence": "No se fabrican observaciones: el cierre empirico fuerte exige captura fisica en sitio."
+      },
+      {
+        "id": "web_demo",
+        "label": "Demo web",
+        "status": "complete",
+        "evidence": "La interfaz consume frontend_payload.json y muestra mapa, rutas, fuentes, campo y evidencia."
+      }
+    ],
+    "failed_sources": [
+      {
+        "id": "medata_land_use_page",
+        "label": "MEData uso general del suelo urbano",
+        "note": "http_403",
+        "url": "https://medata.gov.co/node/16360"
+      },
+      {
+        "id": "medata_equipamientos_page",
+        "label": "MEData inventario de equipamientos",
+        "note": "http_403",
+        "url": "https://medata.gov.co/node/41535"
+      },
+      {
+        "id": "dane_cnpv",
+        "label": "DANE Geoportal CNPV 2018",
+        "note": "http_403",
+        "url": "https://geoportal.dane.gov.co/geovisores/sociedad/cnpv-2018/"
+      }
+    ],
+    "remaining_external_activities": [
+      {
+        "task": "Conteo peatonal fino por nodo",
+        "variable": "densidad peatonal",
+        "method": "conteo manual cada 15 minutos"
+      },
+      {
+        "task": "Registro de tiempos de permanencia",
+        "variable": "permanencia",
+        "method": "muestreo con cronometro"
+      },
+      {
+        "task": "Encuesta breve de seguridad percibida",
+        "variable": "seguridad percibida",
+        "method": "escala 1-5 por subtramo"
+      },
+      {
+        "task": "Medicion puntual de ruido e iluminacion",
+        "variable": "presion ambiental",
+        "method": "sonometro o app calibrada y luxometro"
+      }
+    ],
+    "non_fabrication_note": "El repositorio queda cerrado como baseline reproducible; la observacion fisica de campo se declara como dependencia externa, no como dato simulado."
   },
   "baseline_metrics": {
     "centrality": [
@@ -1553,7 +1698,7 @@
     ]
   },
   "empirical": {
-    "generated_at": "2026-04-24T21:06:38+00:00",
+    "generated_at": "2026-04-24T21:32:04+00:00",
     "center_perception": {
       "source": "Medellin Como Vamos EPC 2024",
       "image_favorable_pct": 53.3,
@@ -2125,6 +2270,67 @@
         "mean_population_density": 163.75,
         "mean_business_density": 2474.03
       }
+    },
+    "mobility_sitva": {
+      "source": "MEData pasajeros movilizados",
+      "status": "documented",
+      "latest_period": "2021-dic",
+      "line_b_passengers_latest": 89735,
+      "network_passengers_latest": 1057234,
+      "records": 76,
+      "note": "Indicador SITVA de escala sistema/linea; no reemplaza conteo peatonal fino por nodo."
+    },
+    "environmental_context": {
+      "source": "AMVA/SIATA datos abiertos",
+      "air": {
+        "pm25": {
+          "variable": "pm25",
+          "status": "documented_public_network",
+          "station_count": 21,
+          "stations_with_valid_latest": 20,
+          "nearest_station": {
+            "name": "Estaci\u00f3n Tr\u00e1fico Centro",
+            "short_name": "CEN-TRAF",
+            "distance_km": 0.3,
+            "latest_at": "2022-10-12 04:00:00",
+            "latest_value": 23.0
+          },
+          "network_latest_mean": 18.729,
+          "note": "Red SIATA/AMVA; la estacion mas cercana orienta presion ambiental pero no sustituye medicion puntual en el corredor."
+        },
+        "pm10": {
+          "variable": "pm10",
+          "status": "documented_public_network",
+          "station_count": 10,
+          "stations_with_valid_latest": 7,
+          "nearest_station": {
+            "name": "Estaci\u00f3n Tr\u00e1fico Centro",
+            "short_name": "CEN-TRAF",
+            "distance_km": 0.3,
+            "latest_at": "2022-12-14 04:00:00",
+            "latest_value": 14.0
+          },
+          "network_latest_mean": 21.429,
+          "note": "Red SIATA/AMVA; la estacion mas cercana orienta presion ambiental pero no sustituye medicion puntual en el corredor."
+        }
+      },
+      "noise": {
+        "source": "AMVA/SIATA ruido",
+        "status": "documented_public_network_not_geolocated",
+        "station_count": 1,
+        "valid_samples": 0,
+        "latest_at": null,
+        "latest_frequency_mean": null,
+        "note": "El recurso oficial no trae coordenadas de estacion en el JSON descargado; sirve como evidencia ambiental macro, no como calibracion por subtramo."
+      }
+    },
+    "dane_cnpv_fallback": {
+      "source": "DANE CNPV 2018",
+      "direct_geoportal_downloaded": false,
+      "microdata_catalog_downloaded": true,
+      "municipal_ficha_downloaded": true,
+      "status": "fallback_documented",
+      "note": "El geovisor directo puede bloquear descargas automatizadas; la ficha municipal y el catalogo de microdatos documentan CNPV sin resolver todavia manzana fina del corredor."
     },
     "source_evidence": {
       "metro_operational": {

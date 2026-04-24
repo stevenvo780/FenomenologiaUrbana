@@ -2,7 +2,7 @@
 
 **Fecha de corte:** 2026-04-24  
 **Origen:** consolidación de 4 agentes `Explore` en paralelo  
-**Estado del proyecto:** `baseline_proxy_demostrable`
+**Estado del proyecto:** `0.2.0-baseline` / `final_repo_ready_with_external_fieldwork_dependency`
 
 ## 1. Propósito
 
@@ -14,11 +14,11 @@ Este documento consolida la segunda ola de exploración paralela enfocada ya no 
 
 #### Huecos verificados
 
-- `DANE CNPV` sigue bloqueado por `403`;
-- `MEData uso del suelo` y `MEData equipamientos colectivos` están en la documentación, pero todavía no entran al pipeline;
-- `SIATA / AMVA` aire y ruido se descargan como HTML, no como datasets estructurados útiles para derivación;
+- `DANE CNPV` geovisor fino sigue bloqueado por `403`, pero ya existe fallback con ficha municipal y catálogo de microdatos;
+- `MEData uso del suelo` y `MEData inventario de equipamientos` siguen bloqueando automatización por `403`;
+- `SIATA / AMVA` aire ya entra como JSON PM2.5/PM10 y ruido entra como JSON macro no geolocalizado;
 - `OSM / Overpass` todavía no participa de la topología realmente ejecutada;
-- el `Observatorio de Movilidad` se descarga como HTML, pero no se extraen componentes o capas desagregadas.
+- el `Observatorio de Movilidad` se descarga como HTML; pasajeros SITVA ya entra por CSV MEData.
 
 #### Archivos del repo a tocar
 
@@ -31,21 +31,20 @@ Este documento consolida la segunda ola de exploración paralela enfocada ya no 
 
 Antes del siguiente salto grande de modelado conviene ejecutar un **Sprint 0 de datos**:
 
-1. resolver fallback de DANE;
-2. cambiar SIATA/AMVA hacia CKAN/API o recurso estructurado real;
-3. integrar uso del suelo y equipamientos;
-4. decidir si OSM entra ya como validación topológica mínima o como refactor posterior.
+1. resolver manualmente o documentar definitivamente los tres `403`;
+2. decidir si OSM entra ya como validación topológica mínima o como refactor posterior;
+3. mantener SIATA/AMVA y SITVA como fuentes públicas macro, no como sustituto de campo.
 
 ### 2.2. Ingestión de trabajo de campo
 
 #### Estado real del repo
 
 - `investigacion/data/interim/` solo contiene `templates/`;
-- `investigacion/data/processed/` está vacío;
-- no existe aún una cadena de ingesta y validación desde captura cruda hacia datos consolidados;
-- `publish_visual_payload.py` todavía expone el frente de campo solo como lista de pendientes.
+- `investigacion/data/processed/` contiene reportes reproducibles en estado `pending_no_capture`;
+- ya existe cadena de ingesta, validación, agregación y recalibración desde captura cruda hacia datos consolidados;
+- `publish_visual_payload.py` expone resumen de campo, cambios de calibración y dependencia externa.
 
-#### Archivos nuevos sugeridos
+#### Scripts ya creados
 
 - `investigacion/scripts/ingest_fieldwork.py`
 - `investigacion/scripts/validate_fieldwork.py`
@@ -89,7 +88,7 @@ Antes del siguiente salto grande de modelado conviene ejecutar un **Sprint 0 de 
 
 - los 9 nodos siguen marcados como `proxy: true`;
 - todas las aristas del corredor tienen pesos hardcodeados;
-- los modificadores de escenario siguen siendo teóricos;
+- los modificadores de escenario siguen siendo teóricos hasta que entren CSV de campo;
 - los perfiles de agente siguen sin calibración empírica.
 
 #### Cambio epistemológico recomendado
@@ -107,8 +106,9 @@ En vez de usar solo `documented / proxy / pending`, conviene evolucionar el pipe
 
 No romper la demo actual. Mantener un esquema de **doble payload**:
 
-- `v0.1.0` = baseline proxy actual
-- `v0.2.0` = primera capa con observación de campo o calibración parcial
+- `v0.1.0` = baseline proxy inicial
+- `v0.2.0-baseline` = baseline final de repo con fuentes públicas ampliadas y límites explícitos
+- `v0.2.0-field` = primera capa con observación de campo o calibración parcial
 
 Esto permite:
 

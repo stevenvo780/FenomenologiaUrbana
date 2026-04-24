@@ -13,19 +13,22 @@
 - comparación de perfiles y rutas visible en la web con deltas básicos de costo, tiempo, entropía y viajes;
 - badges epistemológicos `documented`, `proxy` y `pending` ya integrados en la UI;
 - protocolo mínimo de campo ya formalizado en `investigacion/docs/protocolo-campo-minimo.md` y acompañado de plantillas reutilizables en `investigacion/data/interim/templates/`;
-- 9 de 10 fuentes públicas ya descargadas con trazabilidad explícita.
+- infraestructura de ingesta, validación, agregación y recalibración de campo ya creada;
+- fuentes públicas ampliadas: pasajeros SITVA, SIATA/AMVA PM2.5, PM10 y ruido, DANE ficha municipal y catálogo de microdatos;
+- 16 de 19 fuentes configuradas descargadas con trazabilidad explícita.
 
 ### Estado epistemológico real
 
 - el proyecto ya no está en fase conceptual; está en fase **baseline proxy demostrable**;
 - la parte más madura hoy es la integración teoría + pipeline + visual;
-- la principal deuda no es de estructura sino de **calibración empírica fina**, **geovisualización más fuerte** y **cierre analítico final**.
+- la principal deuda ya no es de estructura técnica sino de **captura física de campo** y **acceso automatizado a tres fuentes bloqueadas**.
 
 ### Bloqueos y alertas abiertos
 
-- DANE CNPV falló por `403`, así que población/hogares siguen sin una ruta de descarga estable dentro del pipeline;
-- no hay todavía trabajo de campo cargado en `investigacion/data/interim/` o `processed/`;
-- la UI actual ya muestra mapa, comparación de rutas y señalización epistemológica, pero todavía no consume datos de campo reales ni compara escenarios recalibrados.
+- DANE CNPV geovisor fino falló por `403`, aunque ya existe fallback documentado con ficha municipal y catálogo de microdatos;
+- MEData uso del suelo y MEData inventario de equipamientos siguen bloqueando descarga automatizada por `403`;
+- `processed/` ya existe con reportes reproducibles, pero `sessions_count = 0`: no hay observaciones físicas cargadas en `interim/`;
+- la UI actual ya muestra cierre operativo, mapa, comparación de rutas, fuentes, señalización epistemológica y dependencia externa de campo.
 
 ## Matriz operativa
 
@@ -37,8 +40,8 @@
 | Capacidad de soporte barrial | disponible | equipo datos | descarga MEData | CSV | contexto estructural |
 | Uso del suelo | disponible | equipo datos | descarga MEData | CSV / GIS | atracción funcional |
 | Equipamientos colectivos | disponible | equipo datos | descarga MEData | CSV / GIS | densidad institucional |
-| Aire y ruido | disponible / cobertura pendiente | equipo datos | portal AMVA | JSON / CSV | presión ambiental |
-| Población y hogares | bloqueado parcial | equipo datos | DANE Geoportal o fuente alternativa | GIS / tablas | densidad demográfica |
+| Aire y ruido | disponible macro / campo pendiente | equipo datos | AMVA/SIATA JSON | JSON | presión ambiental macro |
+| Población y hogares | fallback documentado | equipo datos | DANE ficha municipal + microdatos | PDF / HTML | densidad demográfica municipal |
 | Percepción ciudadana del centro | disponible | equipo filosofía-datos | informe Medellín Cómo Vamos | PDF / tabla manual | percepción macro |
 | Red peatonal y POI | disponible | equipo geodatos | OSM / Overpass | GeoJSON | grafo base |
 | Conteo peatonal fino | pendiente | equipo campo | observación estructurada | CSV | calibración de flujo |
@@ -49,30 +52,29 @@
 | Ruido puntual de campo | pendiente | equipo campo | sonómetro o app calibrada | CSV | validación ambiental |
 | Iluminación nocturna | pendiente | equipo campo | checklist y luxómetro | CSV | accesibilidad nocturna |
 | Notas fenomenológicas | pendiente | equipo filosofía-campo | ficha estructurada | Markdown / CSV | panel interpretativo |
-| Modelo de agentes | baseline proxy implementado | equipo modelado | calibración con datos y supuestos | JSON / Python | simulación |
-| Web React | baseline proxy implementado | equipo web | implementación incremental | código | visualización final |
+| Modelo de agentes | baseline proxy v0.2 implementado | equipo modelado | calibración con datos y supuestos | JSON / Python | simulación |
+| Web React | cierre operativo implementado | equipo web | implementación incremental | código | visualización final |
 
 ## Prioridad de ejecución
 
 ### Prioridad alta
 
-- descargar todas las fuentes públicas;
-- fijar el polígono exacto;
-- hacer primera jornada de campo;
-- construir grafo base;
-- cerrar esquema de datos.
+- ejecutar primera jornada física de campo;
+- cargar CSV/GeoJSON/notas reales en `investigacion/data/interim/`;
+- resolver manualmente o documentar definitivamente los tres `403` restantes;
+- recalibrar con datos observados y regenerar payload `field_calibrated`.
 
 ### Prioridad media
 
-- calibrar agentes;
-- producir métricas iniciales;
-- montar prototipo React con mapa y filtros.
+- mejorar cartografía base con OSM/Overpass si el tiempo del curso lo exige;
+- añadir fotos o notas situadas reales a la UI;
+- comparar baseline vs. campo cuando existan observaciones.
 
 ### Prioridad baja
 
-- visualizaciones avanzadas;
-- simulaciones comparativas complejas;
-- refinamiento estético final.
+- visualizaciones avanzadas no necesarias para defensa básica;
+- simulaciones complejas posteriores a campo;
+- refinamiento estético menor.
 
 ## Riesgos abiertos
 
@@ -84,31 +86,32 @@
 
 ## Criterio de cierre real
 
-El proyecto solo debe considerarse completo cuando existan:
+El proyecto ya queda completo como **baseline reproducible de curso** cuando existan:
 
 - datos públicos descargados y versionados;
-- base de campo consistente;
 - grafo e hipergrafo ejecutables;
 - métricas calculadas;
 - una simulación validada al menos de forma básica;
 - una web navegable con trazabilidad de fuentes.
 
+El cierre **empírico fuerte** exige además una base de campo consistente. Esa parte queda declarada como dependencia física externa y no se simula.
+
 ## Brechas reales para cerrar el proyecto
 
 ### 1. Validación de campo
 
-Falta capturar y versionar, al menos, cuatro capas mínimas:
+Falta capturar físicamente y versionar, al menos, cuatro capas mínimas:
 
 - conteo peatonal fino por nodo y por franja;
 - tiempos de permanencia;
 - seguridad percibida por subtramo;
 - medición puntual de ruido e iluminación.
 
-Sin esa capa, el proyecto funciona como demostración seria, pero no como cierre empírico fuerte.
+Sin esa capa, el proyecto funciona como demostración seria y defendible de baseline, pero no como cierre empírico fuerte.
 
 ### 2. Recalibración del modelo
 
-El sistema corre bien, pero todavía con pesos `proxy` en nodos y aristas. La siguiente versión debe sustituir progresivamente esos pesos por:
+El sistema corre bien en payload `0.2.0-baseline`, pero todavía con pesos `proxy` en nodos y aristas. La siguiente versión debe sustituir progresivamente esos pesos por:
 
 - observación estructurada;
 - limpieza de datasets públicos descargados;
@@ -116,7 +119,7 @@ El sistema corre bien, pero todavía con pesos `proxy` en nodos y aristas. La si
 
 ### 3. Madurez visual
 
-La interfaz actual ya comunica baseline, escenarios, mapa geográfico, comparación de perfiles y trazabilidad epistemológica. Para una versión final defendible todavía faltan tres piezas de cierre:
+La interfaz actual ya comunica baseline, escenarios, mapa geográfico, comparación de perfiles, trazabilidad epistemológica, cierre operativo y dependencia externa de campo. Para una versión final con campo todavía faltan tres piezas:
 
 - comparación explícita entre escenarios recalibrados, no solo entre perfiles en un mismo escenario;
 - ingestión visible de datos de campo y/o fotos/notas situadas dentro de la experiencia web;

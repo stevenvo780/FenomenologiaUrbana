@@ -1,7 +1,7 @@
 # Hallazgos y conclusiones base
 
 **Fecha de corte:** 2026-04-24  
-**Estado del proyecto:** `baseline_proxy_demostrable`
+**Estado del proyecto:** `0.2.0-baseline` / `final_repo_ready_with_external_fieldwork_dependency`
 
 ## 1. Tesis de trabajo
 
@@ -18,7 +18,9 @@ El proyecto ya cuenta con:
 - caso de estudio definido y filosóficamente justificado;
 - pipeline reproducible de datos y simulación;
 - interfaz web conectada a outputs reales;
-- distinción explícita entre capas `documented`, `proxy` y `pending`.
+- distinción explícita entre capas `documented`, `proxy` y `pending`;
+- fuentes públicas ampliadas a pasajeros SITVA, SIATA/AMVA PM2.5/PM10/ruido y fallback DANE municipal/microdatos;
+- cierre operativo visible en el payload y en la web.
 
 Esto prueba que la fenomenología urbana no tiene por qué quedarse en una descripción impresionista: puede traducirse en un dispositivo técnico sin renunciar a su pregunta central por la aparición del mundo vivido.
 
@@ -53,9 +55,9 @@ El proyecto ya usa la heterotopía no como adorno conceptual, sino como clave pa
 
 La versión actual no debe presentarse como cierre empírico total. Sus límites principales siguen siendo:
 
-- ausencia de trabajo de campo ya incorporado en `interim/` y `processed/`;
+- ausencia de trabajo de campo físico ya incorporado en `interim/`;
 - dependencia parcial de pesos `proxy` en nodos y aristas;
-- bloqueo de la ruta DANE por `403`;
+- bloqueo de DANE geovisor fino, MEData uso del suelo y MEData equipamientos por `403`;
 - falta de recalibración con conteos, permanencia, ruido e iluminación observados;
 - falta de comparación entre escenarios ya recalibrados con datos nuevos.
 
@@ -80,7 +82,7 @@ Por eso, la fenomenología urbana que aquí se propone es contemporánea en un d
 
 ## 6. Siguiente paso correcto
 
-El cierre fuerte del proyecto exige ahora este orden:
+El repositorio queda cerrado como baseline reproducible. El cierre fuerte del proyecto exige ahora este orden externo + técnico:
 
 1. capturar trabajo de campo mínimo con el protocolo ya preparado;
 2. consolidar observaciones en `investigacion/data/interim/` y `processed/`;

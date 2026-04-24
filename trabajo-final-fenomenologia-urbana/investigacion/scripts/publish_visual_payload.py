@@ -59,6 +59,7 @@ def load_fieldwork_state() -> dict[str, object]:
                 "sessions_count": 0,
                 "node_coverage_ratio": 0.0,
                 "variables_observed": [],
+                "external_dependency": True,
             },
         }
 
@@ -81,7 +82,72 @@ def load_fieldwork_state() -> dict[str, object]:
             "node_changes": len(delta.get("node_changes", [])),
             "edge_changes": len(delta.get("edge_changes", [])),
             "scenario_changes": len(delta.get("scenario_changes", [])),
+            "external_dependency": validation.get("sessions_count", 0) == 0,
         },
+    }
+
+
+def build_closure_state(
+    *,
+    case_model: dict[str, object],
+    sources: dict[str, object],
+    fieldwork_state: dict[str, object],
+) -> dict[str, object]:
+    failed_sources = [
+        {
+            "id": entry["id"],
+            "label": entry["label"],
+            "note": entry.get("note"),
+            "url": entry["url"],
+        }
+        for entry in sources.get("sources", [])
+        if entry.get("status") == "failed"
+    ]
+    has_field_capture = int(fieldwork_state["summary"].get("sessions_count", 0)) > 0
+    public_data_ready = int(sources.get("downloaded_count", 0)) >= int(sources.get("source_count", 0)) - 3
+
+    gates = [
+        {
+            "id": "argumento_academico",
+            "label": "Argumento academico",
+            "status": "complete",
+            "evidence": "Documento principal, marco teorico, hallazgos base y guion estan versionados.",
+        },
+        {
+            "id": "pipeline_reproducible",
+            "label": "Pipeline reproducible",
+            "status": "complete",
+            "evidence": "run_all.py genera modelo, capa empirica, simulacion y payload visual.",
+        },
+        {
+            "id": "datos_publicos",
+            "label": "Datos publicos",
+            "status": "complete_with_limits" if public_data_ready else "partial",
+            "evidence": f"{sources.get('downloaded_count', 0)}/{sources.get('source_count', 0)} fuentes descargadas; los fallos quedan trazados.",
+        },
+        {
+            "id": "campo",
+            "label": "Trabajo de campo",
+            "status": "external_required" if not has_field_capture else "field_observed",
+            "evidence": "No se fabrican observaciones: el cierre empirico fuerte exige captura fisica en sitio." if not has_field_capture else "Hay sesiones de campo cargadas y procesadas.",
+        },
+        {
+            "id": "web_demo",
+            "label": "Demo web",
+            "status": "complete",
+            "evidence": "La interfaz consume frontend_payload.json y muestra mapa, rutas, fuentes, campo y evidencia.",
+        },
+    ]
+
+    return {
+        "status": "final_repo_ready_with_external_fieldwork_dependency"
+        if not has_field_capture
+        else "field_calibrated_ready",
+        "case_status": case_model["meta"].get("status"),
+        "gates": gates,
+        "failed_sources": failed_sources,
+        "remaining_external_activities": fieldwork_state.get("pending", []),
+        "non_fabrication_note": "El repositorio queda cerrado como baseline reproducible; la observacion fisica de campo se declara como dependencia externa, no como dato simulado.",
     }
 
 
@@ -91,12 +157,18 @@ def main() -> Path:
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
     fieldwork_state = load_fieldwork_state()
+    closure_state = build_closure_state(
+        case_model=case_model,
+        sources=sources,
+        fieldwork_state=fieldwork_state,
+    )
+    has_field_calibration = str(case_model["meta"].get("status", "")).startswith("field_")
 
     payload = {
         "meta": {
             "generated_at": now_iso(),
-            "pipeline_version": "0.2.0-alpha" if str(case_model["meta"].get("status", "")).startswith("field_") else "0.1.0",
-            "status": "research_to_visual_synced",
+            "pipeline_version": "0.2.0-field" if has_field_calibration else "0.2.0-baseline",
+            "status": closure_state["status"],
         },
         "case_study": case_model["meta"],
         "nodes": merge_nodes_with_centrality(case_model, simulation),
@@ -114,6 +186,7 @@ def main() -> Path:
             "pending": fieldwork_state["pending"],
             "summary": fieldwork_state["summary"],
         },
+        "closure": closure_state,
         "baseline_metrics": simulation["baseline_metrics"],
         "empirical": empirical,
         "docs": {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T21:06:38+00:00",
+  "generated_at": "2026-04-24T21:32:04+00:00",
   "center_perception": {
     "source": "Medellin Como Vamos EPC 2024",
     "image_favorable_pct": 53.3,
@@ -571,6 +571,67 @@
       "mean_population_density": 163.75,
       "mean_business_density": 2474.03
     }
+  },
+  "mobility_sitva": {
+    "source": "MEData pasajeros movilizados",
+    "status": "documented",
+    "latest_period": "2021-dic",
+    "line_b_passengers_latest": 89735,
+    "network_passengers_latest": 1057234,
+    "records": 76,
+    "note": "Indicador SITVA de escala sistema/linea; no reemplaza conteo peatonal fino por nodo."
+  },
+  "environmental_context": {
+    "source": "AMVA/SIATA datos abiertos",
+    "air": {
+      "pm25": {
+        "variable": "pm25",
+        "status": "documented_public_network",
+        "station_count": 21,
+        "stations_with_valid_latest": 20,
+        "nearest_station": {
+          "name": "Estaci\u00f3n Tr\u00e1fico Centro",
+          "short_name": "CEN-TRAF",
+          "distance_km": 0.3,
+          "latest_at": "2022-10-12 04:00:00",
+          "latest_value": 23.0
+        },
+        "network_latest_mean": 18.729,
+        "note": "Red SIATA/AMVA; la estacion mas cercana orienta presion ambiental pero no sustituye medicion puntual en el corredor."
+      },
+      "pm10": {
+        "variable": "pm10",
+        "status": "documented_public_network",
+        "station_count": 10,
+        "stations_with_valid_latest": 7,
+        "nearest_station": {
+          "name": "Estaci\u00f3n Tr\u00e1fico Centro",
+          "short_name": "CEN-TRAF",
+          "distance_km": 0.3,
+          "latest_at": "2022-12-14 04:00:00",
+          "latest_value": 14.0
+        },
+        "network_latest_mean": 21.429,
+        "note": "Red SIATA/AMVA; la estacion mas cercana orienta presion ambiental pero no sustituye medicion puntual en el corredor."
+      }
+    },
+    "noise": {
+      "source": "AMVA/SIATA ruido",
+      "status": "documented_public_network_not_geolocated",
+      "station_count": 1,
+      "valid_samples": 0,
+      "latest_at": null,
+      "latest_frequency_mean": null,
+      "note": "El recurso oficial no trae coordenadas de estacion en el JSON descargado; sirve como evidencia ambiental macro, no como calibracion por subtramo."
+    }
+  },
+  "dane_cnpv_fallback": {
+    "source": "DANE CNPV 2018",
+    "direct_geoportal_downloaded": false,
+    "microdata_catalog_downloaded": true,
+    "municipal_ficha_downloaded": true,
+    "status": "fallback_documented",
+    "note": "El geovisor directo puede bloquear descargas automatizadas; la ficha municipal y el catalogo de microdatos documentan CNPV sin resolver todavia manzana fina del corredor."
   },
   "source_evidence": {
     "metro_operational": {

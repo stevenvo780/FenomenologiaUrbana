@@ -109,6 +109,8 @@ function Dashboard({
   const center = data.empirical.center_perception
   const crime = data.empirical.crime_comuna_10
   const barrio = data.empirical.barrio_la_candelaria
+  const mobility = data.empirical.mobility_sitva
+  const environment = data.empirical.environmental_context
   const metro = data.empirical.source_evidence.metro_operational
   const densityComparison = barrio.metric_comparisons.find(
     (entry) => entry.metric === 'Densidad poblacional',
@@ -124,6 +126,7 @@ function Dashboard({
   )
   const comparison = buildProfileComparison(selectedProfile, compareProfile)
   const fieldworkMatrix = buildFieldworkMatrix(data.fieldwork.pending)
+  const fieldworkBadge = data.fieldwork.summary.external_dependency ? 'pending' : 'documented'
 
   return (
     <main className="app-shell">
@@ -235,6 +238,37 @@ function Dashboard({
       </section>
 
       <section className="content-grid">
+        <article className="card closure-card">
+          <div className="card-header">
+            <div>
+              <p className="eyebrow">Cierre operativo</p>
+              <h2>Estado final defendible del proyecto</h2>
+            </div>
+            <EpistemicBadge status={mapGateStatus(data.closure.status)} />
+          </div>
+          <p className="lead">{data.closure.non_fabrication_note}</p>
+          <div className="closure-grid">
+            {data.closure.gates.map((gate) => (
+              <div key={gate.id} className="closure-gate">
+                <div className="closure-gate-head">
+                  <strong>{gate.label}</strong>
+                  <EpistemicBadge status={mapGateStatus(gate.status)} compact />
+                </div>
+                <p>{formatGateStatus(gate.status)}</p>
+                <small>{gate.evidence}</small>
+              </div>
+            ))}
+          </div>
+          <div className="closure-alert">
+            <strong>Dependencia externa real</strong>
+            <p>
+              {data.closure.remaining_external_activities.length
+                ? `${data.closure.remaining_external_activities.length} actividades fisicas siguen fuera del repo: conteo, permanencia, seguridad percibida y ruido/iluminacion.`
+                : 'Las actividades externas ya fueron cargadas y procesadas por el pipeline.'}
+            </p>
+          </div>
+        </article>
+
         <article className="card map-card">
           <div className="card-header">
             <div>
@@ -480,7 +514,7 @@ function Dashboard({
           <div className="trace-grid">
             <div className="trace-column">
               <p className="trace-title">Fuentes intentadas</p>
-              {data.sources.slice(0, 8).map((entry) => (
+              {data.sources.slice(0, 10).map((entry) => (
                 <div key={entry.id} className="trace-row">
                   <span>{entry.label}</span>
                   <strong className={entry.status === 'downloaded' ? 'ok' : 'warn'}>
@@ -508,14 +542,31 @@ function Dashboard({
               </div>
             </div>
             <div className="trace-column">
+              <p className="trace-title">Fuentes criticas fallidas</p>
+              {data.closure.failed_sources.length ? (
+                data.closure.failed_sources.slice(0, 5).map((entry) => (
+                  <div key={entry.id} className="trace-task">
+                    <strong>{entry.label}</strong>
+                    <p>{entry.note ?? 'sin nota'}</p>
+                  </div>
+                ))
+              ) : (
+                <div className="trace-task">
+                  <strong>Sin fallos criticos</strong>
+                  <p>Las fuentes configuradas descargaron correctamente en esta corrida.</p>
+                </div>
+              )}
+            </div>
+            <div className="trace-column">
               <p className="trace-title">Pendientes de campo</p>
               <div className="trace-task trace-task-legend">
                 <strong>Estado del frente de campo</strong>
                 <p>
-                  {data.fieldwork.pending.length} tareas siguen pendientes antes de pasar de
-                  baseline proxy a calibracion de campo.
+                  {data.fieldwork.summary.sessions_count} sesiones cargadas · cobertura nodal{' '}
+                  {formatRatio(data.fieldwork.summary.node_coverage_ratio)} ·{' '}
+                  {data.fieldwork.pending.length} tareas externas pendientes.
                 </p>
-                <EpistemicBadge status="pending" />
+                <EpistemicBadge status={fieldworkBadge} />
               </div>
               {data.fieldwork.pending.map((entry) => (
                 <div key={entry.task} className="trace-task">
@@ -535,7 +586,7 @@ function Dashboard({
               <p className="eyebrow">Trabajo de campo</p>
               <h2>Matriz minima para calibracion</h2>
             </div>
-            <EpistemicBadge status="pending" />
+            <EpistemicBadge status={fieldworkBadge} />
           </div>
 
           <div className="fieldwork-summary">
@@ -551,10 +602,16 @@ function Dashboard({
             </div>
             <div className="fieldwork-summary-stats">
               <MetricCard
-                label="Pendientes clave"
-                value={`${data.fieldwork.pending.length}`}
+                label="Sesiones cargadas"
+                value={`${data.fieldwork.summary.sessions_count}`}
                 accent="sand"
-                status="pending"
+                status={fieldworkBadge}
+              />
+              <MetricCard
+                label="Cobertura nodal"
+                value={formatRatio(data.fieldwork.summary.node_coverage_ratio)}
+                accent="teal"
+                status={fieldworkBadge}
               />
             </div>
           </div>
@@ -711,6 +768,44 @@ function Dashboard({
                   title="Ranking por densidad empresarial"
                   entries={businessComparison?.ranked_values.slice(0, 5) ?? []}
                 />
+              </div>
+            </section>
+
+            <section className="evidence-column">
+              <p className="trace-title">Movilidad y ambiente</p>
+              <div className="metric-table">
+                <MetricRow
+                  label="SITVA periodo"
+                  value={mobility.latest_period || 'sin dato'}
+                  status={mobility.status === 'documented' ? 'documented' : 'pending'}
+                />
+                <MetricRow
+                  label="Linea B pasajeros"
+                  value={compactNumber(mobility.line_b_passengers_latest ?? 0)}
+                  status={mobility.status === 'documented' ? 'documented' : 'pending'}
+                />
+                <MetricRow
+                  label="PM2.5 estacion cercana"
+                  value={environment.air.pm25.nearest_station?.short_name ?? 'sin dato'}
+                  status={mapPublicNetworkStatus(environment.air.pm25.status)}
+                />
+                <MetricRow
+                  label="PM10 estacion cercana"
+                  value={environment.air.pm10.nearest_station?.short_name ?? 'sin dato'}
+                  status={mapPublicNetworkStatus(environment.air.pm10.status)}
+                />
+                <MetricRow
+                  label="Ruido SIATA"
+                  value={`${environment.noise.valid_samples ?? 0} muestras`}
+                  status={mapPublicNetworkStatus(environment.noise.status)}
+                />
+              </div>
+              <div className="insight-box insight-neutral">
+                <p className="eyebrow">Alcance</p>
+                <p>
+                  Aire y ruido entran como red publica ambiental. Siguen siendo contraste macro
+                  hasta que haya medicion puntual de campo en el corredor.
+                </p>
               </div>
             </section>
           </div>
@@ -1252,6 +1347,44 @@ function mapScenarioStatus(value: string): EpistemicStatus {
   }
 
   return 'documented'
+}
+
+function mapGateStatus(value: string): EpistemicStatus {
+  if (value.includes('external') || value.includes('pending')) {
+    return 'pending'
+  }
+
+  if (value.includes('partial') || value.includes('limit') || value.includes('baseline')) {
+    return 'proxy'
+  }
+
+  return 'documented'
+}
+
+function mapPublicNetworkStatus(value: string): EpistemicStatus {
+  if (value.includes('unavailable')) {
+    return 'pending'
+  }
+
+  if (value.includes('not_geolocated') || value.includes('network')) {
+    return 'proxy'
+  }
+
+  return 'documented'
+}
+
+function formatGateStatus(value: string) {
+  const labels: Record<string, string> = {
+    complete: 'Completo',
+    complete_with_limits: 'Completo con limites declarados',
+    partial: 'Parcial',
+    external_required: 'Requiere captura externa',
+    field_observed: 'Campo observado',
+    final_repo_ready_with_external_fieldwork_dependency: 'Repo listo; campo fisico pendiente',
+    field_calibrated_ready: 'Calibrado con campo',
+  }
+
+  return labels[value] ?? value.replaceAll('_', ' ')
 }
 
 function formatDate(value: string) {

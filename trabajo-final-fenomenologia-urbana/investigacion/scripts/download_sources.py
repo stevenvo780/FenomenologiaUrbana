@@ -5,8 +5,11 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
+from urllib3.exceptions import InsecureRequestWarning
 
 from _shared import RAW_DIR, now_iso, slugify, write_json
+
+requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
 
 SOURCES = [
     {
@@ -53,39 +56,69 @@ SOURCES = [
     },
     {
         "id": "medata_equipamientos_page",
-        "label": "MEData equipamientos colectivos",
-        "url": "https://medata.gov.co/node/41592",
+        "label": "MEData inventario de equipamientos",
+        "url": "https://medata.gov.co/node/41535",
         "kind": "medata_page",
     },
     {
-        "id": "siata_air_dataset",
-        "label": "AMVA mediciones estaciones calidad del aire",
-        "url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-estaciones-calidad-del-aire",
+        "id": "medata_pasajeros_mov_page",
+        "label": "MEData pasajeros movilizados",
+        "url": "https://medata.gov.co/node/16624",
         "kind": "html",
     },
     {
-        "id": "siata_noise_dataset",
-        "label": "AMVA mediciones de ruido ambiental",
-        "url": "https://datosabiertos.metropol.gov.co/dataset/mediciones-de-ruido-ambiental",
+        "id": "medata_pasajeros_mov_csv",
+        "label": "MEData pasajeros movilizados CSV",
+        "url": "https://medata.gov.co/sites/default/files/distribution/1-023-25-000292/Pasajeros_movilizados.csv",
+        "kind": "csv",
+    },
+    {
+        "id": "siata_air_metadata",
+        "label": "AMVA/SIATA mediciones estaciones calidad del aire",
+        "url": "https://datosabiertos.metropol.gov.co/node/99",
         "kind": "html",
     },
     {
-        "id": "siata_air_package",
-        "label": "AMVA calidad del aire metadata CKAN",
-        "url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-estaciones-calidad-del-aire",
-        "kind": "ckan_package",
+        "id": "siata_air_pm25_json",
+        "label": "AMVA/SIATA PM2.5 JSON",
+        "url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Aire_pm25.json",
+        "kind": "json",
     },
     {
-        "id": "siata_noise_package",
-        "label": "AMVA ruido ambiental metadata CKAN",
-        "url": "https://datosabiertos.metropol.gov.co/api/3/action/package_search?fq=name:mediciones-de-ruido-ambiental",
-        "kind": "ckan_package",
+        "id": "siata_air_pm10_json",
+        "label": "AMVA/SIATA PM10 JSON",
+        "url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Aire_pm10.json",
+        "kind": "json",
+    },
+    {
+        "id": "siata_noise_metadata",
+        "label": "AMVA/SIATA mediciones de ruido",
+        "url": "https://datosabiertos.metropol.gov.co/node/102",
+        "kind": "html",
+    },
+    {
+        "id": "siata_noise_json",
+        "label": "AMVA/SIATA ruido JSON",
+        "url": "https://datosabiertos.metropol.gov.co/sites/default/files/uploaded_resources/Datos_SIATA_Ruido_ruido.json",
+        "kind": "json",
     },
     {
         "id": "dane_cnpv",
         "label": "DANE Geoportal CNPV 2018",
         "url": "https://geoportal.dane.gov.co/geovisores/sociedad/cnpv-2018/",
         "kind": "html",
+    },
+    {
+        "id": "dane_cnpv_microdatos_catalog",
+        "label": "DANE microdatos CNPV 2018 catalogo",
+        "url": "https://microdatos.dane.gov.co/index.php/catalog/643",
+        "kind": "html",
+    },
+    {
+        "id": "dane_medellin_ficha_cnpv_pdf",
+        "label": "DANE ficha municipal CNPV 2018 Medellin",
+        "url": "https://sitios.dane.gov.co/cnpv/app/views/informacion/fichas/05001.pdf",
+        "kind": "pdf",
     },
     {
         "id": "medellin_como_vamos_centro_pdf",
@@ -240,6 +273,8 @@ def download_derived_resource(
 def download_source_entries(source: dict[str, str]) -> list[dict[str, object]]:
     headers = {"User-Agent": "Mozilla/5.0 Codex research pipeline"}
     timeout = (8, 20)
+    if source["id"] in {"medata_land_use_page", "medata_equipamientos_page", "dane_cnpv"}:
+        timeout = (6, 10)
 
     try:
         response, ssl_retry = request_url(source["url"], headers=headers, timeout=timeout)

@@ -128,6 +128,37 @@ export type Payload = {
       variable: string
       method: string
     }>
+    summary: {
+      sessions_count: number
+      node_coverage_ratio: number
+      variables_observed: string[]
+      node_changes?: number
+      edge_changes?: number
+      scenario_changes?: number
+      external_dependency?: boolean
+    }
+  }
+  closure: {
+    status: string
+    case_status: string
+    gates: Array<{
+      id: string
+      label: string
+      status: string
+      evidence: string
+    }>
+    failed_sources: Array<{
+      id: string
+      label: string
+      note: string | null
+      url: string
+    }>
+    remaining_external_activities: Array<{
+      task: string
+      variable: string
+      method: string
+    }>
+    non_fabrication_note: string
   }
   baseline_metrics: {
     centrality: Array<{
@@ -204,6 +235,39 @@ export type Payload = {
         mean_business_density: number
       }
     }
+    mobility_sitva: {
+      source: string
+      status: string
+      latest_period?: string
+      line_b_passengers_latest?: number
+      network_passengers_latest?: number
+      records?: number
+      note: string
+    }
+    environmental_context: {
+      source: string
+      air: {
+        pm25: EnvironmentalAirComponent
+        pm10: EnvironmentalAirComponent
+      }
+      noise: {
+        source: string
+        status: string
+        station_count?: number
+        valid_samples?: number
+        latest_at?: string | null
+        latest_frequency_mean?: number | null
+        note: string
+      }
+    }
+    dane_cnpv_fallback: {
+      source: string
+      direct_geoportal_downloaded: boolean
+      microdata_catalog_downloaded: boolean
+      municipal_ficha_downloaded: boolean
+      status: string
+      note: string
+    }
     source_evidence: {
       metro_operational: {
         station: string
@@ -220,4 +284,20 @@ export type Payload = {
     }
   }
   docs: Record<string, string>
+}
+
+export type EnvironmentalAirComponent = {
+  variable: string
+  status: string
+  station_count?: number
+  stations_with_valid_latest?: number
+  nearest_station?: {
+    name: string
+    short_name: string
+    distance_km: number
+    latest_at: string
+    latest_value: number
+  } | null
+  network_latest_mean?: number | null
+  note?: string
 }

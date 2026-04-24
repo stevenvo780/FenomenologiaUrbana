@@ -272,6 +272,49 @@
   grid-column: span 8;
 }
 
+.closure-card {
+  grid-column: span 12;
+}
+
+.closure-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.closure-gate {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(23, 19, 17, 0.08);
+  display: grid;
+  gap: 8px;
+}
+
+.closure-gate-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.closure-gate p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.closure-gate small {
+  color: var(--muted);
+}
+
+.closure-alert {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  background: rgba(207, 93, 45, 0.1);
+  border: 1px solid rgba(207, 93, 45, 0.18);
+}
+
 .spatial-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
@@ -689,7 +732,7 @@
 
 .trace-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -711,6 +754,7 @@
 
 .fieldwork-summary-stats {
   display: grid;
+  gap: 12px;
 }
 
 .fieldwork-grid {
@@ -813,7 +857,7 @@
 
 .evidence-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -875,7 +919,8 @@
   .hero-shell,
   .footer-band,
   .trace-grid,
-  .evidence-grid {
+  .evidence-grid,
+  .closure-grid {
     grid-template-columns: 1fr;
   }
 
@@ -892,6 +937,7 @@
   }
 
   .map-card,
+  .closure-card,
   .inspector-card,
   .route-card,
   .scenario-card,

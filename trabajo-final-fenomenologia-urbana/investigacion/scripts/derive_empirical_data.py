@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import csv
+import json
+import math
 import re
 from collections import defaultdict
 from pathlib import Path
@@ -8,6 +10,8 @@ from statistics import mean
 from subprocess import check_output
 
 from _shared import ROOT, RAW_DIR, OUTPUTS_DIR, now_iso, write_json
+
+CORRIDOR_CENTER = (6.25, -75.5687)
 
 
 def parse_number(value: str) -> float:
@@ -21,6 +25,31 @@ def parse_number(value: str) -> float:
         return float(text)
     except ValueError:
         return 0.0
+
+
+def safe_float(value: object) -> float | None:
+    if value is None:
+        return None
+    try:
+        number = float(str(value).replace(",", "."))
+    except ValueError:
+        return None
+    if number == -9999 or math.isnan(number):
+        return None
+    return number
+
+
+def haversine_km(lat_a: float, lon_a: float, lat_b: float, lon_b: float) -> float:
+    radius = 6371.0
+    phi_a = math.radians(lat_a)
+    phi_b = math.radians(lat_b)
+    delta_phi = math.radians(lat_b - lat_a)
+    delta_lambda = math.radians(lon_b - lon_a)
+    value = (
+        math.sin(delta_phi / 2) ** 2
+        + math.cos(phi_a) * math.cos(phi_b) * math.sin(delta_lambda / 2) ** 2
+    )
+    return radius * 2 * math.atan2(math.sqrt(value), math.sqrt(1 - value))
 
 
 def latest_updated(html_path: Path) -> str | None:
@@ -218,6 +247,176 @@ def derive_barrio_summary(csv_path: Path) -> dict[str, object]:
     }
 
 
+def first_existing_key(row: dict[str, str], candidates: list[str]) -> str | None:
+    normalized = {re.sub(r"[^a-z0-9]", "", key.lower()): key for key in row}
+    for candidate in candidates:
+        key = normalized.get(re.sub(r"[^a-z0-9]", "", candidate.lower()))
+        if key:
+            return key
+    return None
+
+
+def derive_sitva_mobility(csv_path: Path) -> dict[str, object]:
+    if not csv_path.exists():
+        return {
+            "source": "MEData pasajeros movilizados",
+            "status": "unavailable",
+            "note": "La fuente no se descargo en esta corrida.",
+        }
+
+    rows: list[dict[str, str]] = []
+    with csv_path.open(encoding="utf-8", errors="replace") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            rows.append(row)
+
+    if not rows:
+        return {
+            "source": "MEData pasajeros movilizados",
+            "status": "unavailable",
+            "note": "El CSV esta vacio.",
+        }
+
+    first_row = rows[0]
+    period_key = first_existing_key(first_row, ["ANO-MES", "AÑO-MES", "ANOMES"])
+    order_key = first_existing_key(first_row, ["ORDEN"])
+    line_b_key = first_existing_key(first_row, ["L_B_PAX_MOV"])
+    passenger_keys = [key for key in first_row if key.endswith("_PAX_MOV") or key == "LINEA_O"]
+
+    def order_value(row: dict[str, str]) -> tuple[float, str]:
+        return (
+            parse_number(row.get(order_key, "")) if order_key else 0,
+            row.get(period_key, "") if period_key else "",
+        )
+
+    latest = max(rows, key=order_value)
+    line_b_value = parse_number(latest.get(line_b_key, "")) if line_b_key else 0.0
+    network_value = sum(parse_number(latest.get(key, "")) for key in passenger_keys)
+
+    return {
+        "source": "MEData pasajeros movilizados",
+        "status": "documented",
+        "latest_period": latest.get(period_key, "") if period_key else "",
+        "line_b_passengers_latest": int(line_b_value),
+        "network_passengers_latest": int(network_value),
+        "records": len(rows),
+        "note": "Indicador SITVA de escala sistema/linea; no reemplaza conteo peatonal fino por nodo.",
+    }
+
+
+def latest_station_value(station: dict[str, object]) -> dict[str, object] | None:
+    valid: list[dict[str, object]] = []
+    for item in station.get("datos", []):
+        if not isinstance(item, dict):
+            continue
+        value = safe_float(item.get("valor"))
+        if value is None:
+            continue
+        valid.append({"fecha": str(item.get("fecha") or ""), "valor": value})
+    if not valid:
+        return None
+    return max(valid, key=lambda item: item["fecha"])
+
+
+def derive_air_component(path: Path, variable: str) -> dict[str, object]:
+    if not path.exists():
+        return {"variable": variable, "status": "unavailable"}
+
+    stations = json.loads(path.read_text(encoding="utf-8"))
+    station_summaries = []
+    for station in stations:
+        lat = safe_float(station.get("latitud"))
+        lon = safe_float(station.get("longitud"))
+        latest = latest_station_value(station)
+        if lat is None or lon is None or latest is None:
+            continue
+        station_summaries.append(
+            {
+                "name": station.get("nombre") or station.get("nombreCorto"),
+                "short_name": station.get("nombreCorto"),
+                "distance_km": round(haversine_km(CORRIDOR_CENTER[0], CORRIDOR_CENTER[1], lat, lon), 2),
+                "latest_at": latest["fecha"],
+                "latest_value": round(float(latest["valor"]), 3),
+            }
+        )
+
+    station_summaries.sort(key=lambda item: item["distance_km"])
+    latest_values = [float(item["latest_value"]) for item in station_summaries]
+
+    return {
+        "variable": variable,
+        "status": "documented_public_network",
+        "station_count": len(stations),
+        "stations_with_valid_latest": len(station_summaries),
+        "nearest_station": station_summaries[0] if station_summaries else None,
+        "network_latest_mean": round(mean(latest_values), 3) if latest_values else None,
+        "note": "Red SIATA/AMVA; la estacion mas cercana orienta presion ambiental pero no sustituye medicion puntual en el corredor.",
+    }
+
+
+def derive_noise_summary(path: Path) -> dict[str, object]:
+    if not path.exists():
+        return {"source": "AMVA/SIATA ruido", "status": "unavailable"}
+
+    stations = json.loads(path.read_text(encoding="utf-8"))
+    valid_samples = []
+    latest_at = ""
+    latest_values: list[float] = []
+
+    for station in stations:
+        for sample in station.get("datos", []):
+            if not isinstance(sample, dict):
+                continue
+            values = [
+                value
+                for value in (safe_float(item.get("valor")) for item in sample.get("datos", []))
+                if value is not None and value > 0
+            ]
+            if not values:
+                continue
+            timestamp = str(sample.get("fecha") or "")
+            valid_samples.append({"fecha": timestamp, "mean": mean(values)})
+            if timestamp >= latest_at:
+                latest_at = timestamp
+                latest_values = values
+
+    return {
+        "source": "AMVA/SIATA ruido",
+        "status": "documented_public_network_not_geolocated",
+        "station_count": len(stations),
+        "valid_samples": len(valid_samples),
+        "latest_at": latest_at or None,
+        "latest_frequency_mean": round(mean(latest_values), 3) if latest_values else None,
+        "note": "El recurso oficial no trae coordenadas de estacion en el JSON descargado; sirve como evidencia ambiental macro, no como calibracion por subtramo.",
+    }
+
+
+def derive_environment_summary() -> dict[str, object]:
+    return {
+        "source": "AMVA/SIATA datos abiertos",
+        "air": {
+            "pm25": derive_air_component(RAW_DIR / "siata_air_pm25_json.json", "pm25"),
+            "pm10": derive_air_component(RAW_DIR / "siata_air_pm10_json.json", "pm10"),
+        },
+        "noise": derive_noise_summary(RAW_DIR / "siata_noise_json.json"),
+    }
+
+
+def derive_dane_fallback_summary() -> dict[str, object]:
+    ficha_path = RAW_DIR / "dane_medellin_ficha_cnpv_pdf.pdf"
+    catalog_path = RAW_DIR / "dane_cnpv_microdatos_catalog.html"
+    direct_path = RAW_DIR / "dane_cnpv.html"
+
+    return {
+        "source": "DANE CNPV 2018",
+        "direct_geoportal_downloaded": direct_path.exists(),
+        "microdata_catalog_downloaded": catalog_path.exists(),
+        "municipal_ficha_downloaded": ficha_path.exists(),
+        "status": "fallback_documented" if ficha_path.exists() and catalog_path.exists() else "partial",
+        "note": "El geovisor directo puede bloquear descargas automatizadas; la ficha municipal y el catalogo de microdatos documentan CNPV sin resolver todavia manzana fina del corredor.",
+    }
+
+
 def derive_source_evidence() -> dict[str, object]:
     metro_text = (RAW_DIR / "metro_san_antonio_b.html").read_text(encoding="utf-8", errors="replace")
 
@@ -244,6 +443,9 @@ def write_empirical_markdown(payload: dict[str, object]) -> Path:
     crime = payload["crime_comuna_10"]
     barrio = payload["barrio_la_candelaria"]
     evidence = payload["source_evidence"]
+    mobility = payload["mobility_sitva"]
+    environment = payload["environmental_context"]
+    dane = payload["dane_cnpv_fallback"]
 
     lines = [
         "# Estado empírico del proyecto",
@@ -311,6 +513,14 @@ def write_empirical_markdown(payload: dict[str, object]) -> Path:
             f"- San Antonio B presenta alto flujo durante el día: {evidence['metro_operational']['high_flow_day']}.",
             f"- San Antonio B presenta presión en hora pico de la tarde: {evidence['metro_operational']['afternoon_rush_pressure']}.",
             f"- Optimización reportada de Línea B en hora pico: {evidence['metro_operational']['line_b_running_time_rush_minutes_before']} min a {evidence['metro_operational']['line_b_running_time_rush_minutes_after']} min.",
+            f"- Pasajeros SITVA último periodo disponible: Línea B {mobility.get('line_b_passengers_latest', 0)}; red {mobility.get('network_passengers_latest', 0)}.",
+            f"- DANE CNPV: estado {dane['status']}; ficha municipal descargada: {dane['municipal_ficha_downloaded']}.",
+            "",
+            "## Ambiente SIATA / AMVA",
+            "",
+            f"- PM2.5: {environment['air']['pm25'].get('stations_with_valid_latest', 0)} estaciones con último valor válido; estación más cercana: {environment['air']['pm25'].get('nearest_station')}.",
+            f"- PM10: {environment['air']['pm10'].get('stations_with_valid_latest', 0)} estaciones con último valor válido; estación más cercana: {environment['air']['pm10'].get('nearest_station')}.",
+            f"- Ruido: {environment['noise'].get('valid_samples', 0)} muestras válidas; estado {environment['noise'].get('status')}.",
             "",
             "## Lo que sigue dependiendo de campo",
             "",
@@ -335,6 +545,9 @@ def main() -> Path:
         "center_perception": derive_center_perception(pdf_text),
         "crime_comuna_10": derive_crime_summary(RAW_DIR / "medata_criminalidad_csv.csv"),
         "barrio_la_candelaria": derive_barrio_summary(RAW_DIR / "medata_barrio_csv.csv"),
+        "mobility_sitva": derive_sitva_mobility(RAW_DIR / "medata_pasajeros_mov_csv.csv"),
+        "environmental_context": derive_environment_summary(),
+        "dane_cnpv_fallback": derive_dane_fallback_summary(),
         "source_evidence": derive_source_evidence(),
     }
 

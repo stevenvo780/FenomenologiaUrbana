@@ -106,6 +106,7 @@ def simulate_scenario(
     scenario: dict[str, object],
     agents: list[dict[str, object]],
     trip_counts: dict[str, int],
+    case_status: str,
 ) -> dict[str, object]:
     seed = sum(ord(ch) for ch in scenario["id"]) + 20260424
     rng = random.Random(seed)
@@ -191,6 +192,13 @@ def simulate_scenario(
     decision_restriction = round(1.0 - normalized_entropy, 3)
     mean_pressure = round(sum(node_loads.values()) / max(1, len(node_loads)), 2)
 
+    scenario_status = "field_calibrated" if case_status.startswith("field_") else "proxy_calibrated"
+    scenario_note = (
+        "Escenario ejecutado sobre grafo recalibrado con observaciones de campo parciales."
+        if scenario_status == "field_calibrated"
+        else "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo."
+    )
+
     return {
         "id": scenario["id"],
         "label": scenario["label"],
@@ -208,8 +216,8 @@ def simulate_scenario(
         "top_routes": sorted(top_routes, key=lambda item: item["count"], reverse=True)[:8],
         "node_loads": dict(node_loads),
         "edge_loads": dict(edge_loads),
-        "epistemic_status": "proxy_calibrated",
-        "note": "Escenario ejecutado sobre grafo base proxy, listo para recalibracion con trabajo de campo.",
+        "epistemic_status": scenario_status,
+        "note": scenario_note,
     }
 
 
@@ -226,6 +234,7 @@ def main() -> Path:
                 scenario=scenario,
                 agents=case_model["agents"],
                 trip_counts=case_model["trip_counts"][scenario["id"]],
+                case_status=str(case_model["meta"].get("status", "")),
             )
         )
 
