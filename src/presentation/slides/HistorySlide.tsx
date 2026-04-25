@@ -64,6 +64,7 @@ export function HistorySlide({
             {field && active ? (
               <motion.div
                 key={active.year}
+                className="history-raster-motion"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

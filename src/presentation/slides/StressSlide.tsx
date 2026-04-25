@@ -26,34 +26,61 @@ export function StressSlide({
 
       <div className="slide-content">
         <SlideGrid className="slide-grid-analysis stress-layout">
-          <ChartPanel
-            eyebrow="Tipping point analysis"
-            title="Curva de Presión vs Entropía"
-            className="stress-chart-panel"
-            bodyClassName="stress-chart-body"
-          >
-            <MeasuredChart minHeight={280}>
-              {({ width, height }) => (
-                <ComposedChart width={width} height={height} data={stress?.full_curve ?? []}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                  <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
-                  <YAxis stroke="var(--accent)" fontSize={10} tickLine={false} axisLine={false} />
-                  <Tooltip
-                    contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px' }}
-                  />
-                  <Line type="monotone" dataKey="system_entropy" stroke="var(--accent)" strokeWidth={2.8} dot={false} />
-                  {tipping ? (
-                    <ReferenceLine
-                      x={tipping.agents}
-                      stroke="var(--danger)"
-                      strokeDasharray="3 3"
-                      label={{ value: 'COLAPSO', position: 'top', fill: 'var(--danger)', fontSize: 10 }}
+          <div className="stress-left-column">
+            <ChartPanel
+              eyebrow="Tipping point analysis"
+              title="Curva de Presión vs Entropía"
+              className="stress-chart-panel"
+              bodyClassName="stress-chart-body"
+            >
+              <MeasuredChart minHeight={220}>
+                {({ width, height }) => (
+                  <ComposedChart width={width} height={height} data={stress?.full_curve ?? []}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
+                    <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={12} tickLine={false} axisLine={false} />
+                    <YAxis stroke="var(--accent)" fontSize={12} tickLine={false} axisLine={false} />
+                    <Tooltip
+                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '12px' }}
                     />
-                  ) : null}
-                </ComposedChart>
-              )}
-            </MeasuredChart>
-          </ChartPanel>
+                    <Line type="monotone" dataKey="system_entropy" stroke="var(--accent)" strokeWidth={2.8} dot={false} />
+                    {tipping ? (
+                      <ReferenceLine
+                        x={tipping.agents}
+                        stroke="var(--danger)"
+                        strokeDasharray="3 3"
+                        label={{ value: 'COLAPSO', position: 'top', fill: 'var(--danger)', fontSize: 12 }}
+                      />
+                    ) : null}
+                  </ComposedChart>
+                )}
+              </MeasuredChart>
+            </ChartPanel>
+
+            <PanelFrame eyebrow="Presión sistémica" title="Curva de carga" tone="amber" className="stress-pressure-panel panel-frame-compact">
+              <div className="stress-pressure-chart">
+                <ResponsiveContainer width="100%" height={140}>
+                  <AreaChart data={stress?.full_curve ?? []} margin={{ top: 4, right: 8, left: 0, bottom: 0 }}>
+                    <defs>
+                      <linearGradient id="stressPressureFill" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stopColor="#f4c87a" stopOpacity={0.7} />
+                        <stop offset="100%" stopColor="#f4c87a" stopOpacity={0.05} />
+                      </linearGradient>
+                    </defs>
+                    <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#f4c87a" fontSize={10} tickLine={false} axisLine={false} width={28} />
+                    <Tooltip
+                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '11px', borderRadius: 12 }}
+                      labelFormatter={(v) => `${Number(v).toLocaleString('es-CO')} agentes`}
+                      formatter={(value: unknown) => [Number(value).toFixed(2), 'Presión']}
+                    />
+                    <Area type="monotone" dataKey="pressure_index" stroke="#f4c87a" strokeWidth={2.4} fill="url(#stressPressureFill)" />
+                    {tipping ? <ReferenceLine x={tipping.agents} stroke="var(--danger)" strokeDasharray="3 3" /> : null}
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+              <p className="stress-pressure-caption">Presión sistémica vs. agentes simultáneos. La línea punteada marca el punto de colapso.</p>
+            </PanelFrame>
+          </div>
 
           <div className="slide-grid-side stress-aside">
             <PanelFrame
@@ -78,33 +105,10 @@ export function StressSlide({
             ) : null}
 
             <motion.div className="stress-verdict-shell" initial={{ x: 20, opacity: 0 }} animate={{ x: 0, opacity: 1 }}>
-              <PanelFrame eyebrow="Síntesis computacional" title="Veredicto técnico" tone="teal" className="analysis-note-panel stress-verdict-panel panel-frame-compact">
+              <PanelFrame eyebrow="Síntesis computacional" title="Veredicto técnico" tone="teal" className="analysis-note-panel stress-verdict-panel">
                 <p className="analysis-note-copy">{chaos?.conclusion ?? stress?.conclusion}</p>
               </PanelFrame>
             </motion.div>
-
-            <PanelFrame eyebrow="Presión sistémica" title="Curva de carga" tone="amber" className="stress-pressure-panel panel-frame-compact">
-              <div className="stress-pressure-chart">
-                <ResponsiveContainer width="100%" height={120}>
-                  <AreaChart data={stress?.full_curve ?? []} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
-                    <defs>
-                      <linearGradient id="stressPressureFill" x1="0" x2="0" y1="0" y2="1">
-                        <stop offset="0%" stopColor="#f4c87a" stopOpacity={0.7} />
-                        <stop offset="100%" stopColor="#f4c87a" stopOpacity={0.05} />
-                      </linearGradient>
-                    </defs>
-                    <Tooltip
-                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px', borderRadius: 12 }}
-                      labelFormatter={(v) => `${Number(v).toLocaleString('es-CO')} agentes`}
-                      formatter={(value: unknown) => [Number(value).toFixed(2), 'Presión']}
-                    />
-                    <Area type="monotone" dataKey="pressure_index" stroke="#f4c87a" strokeWidth={2} fill="url(#stressPressureFill)" />
-                    {tipping ? <ReferenceLine x={tipping.agents} stroke="var(--danger)" strokeDasharray="3 3" /> : null}
-                  </AreaChart>
-                </ResponsiveContainer>
-              </div>
-              <p className="stress-pressure-caption">Presión sistémica vs. agentes simultáneos. La línea punteada marca el punto de colapso.</p>
-            </PanelFrame>
           </div>
         </SlideGrid>
       </div>

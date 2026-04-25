@@ -1,4 +1,7 @@
 html {
+  /* Proyector pass: scale base font-size so all rem-based typography
+     reads from a distance. 17px = ~6% bump; 18px on large displays. */
+  font-size: clamp(16.5px, 0.55vw + 14px, 19px);
   height: 100%;
   overflow: hidden;
 }
@@ -393,6 +396,17 @@ body {
 }
 .nav-bar-data:hover {
   background: rgba(224,122,70,0.22);
+}
+
+.nav-bar-thesis {
+  background: rgba(224, 122, 70, 0.12);
+  border-color: rgba(224, 122, 70, 0.3);
+  margin-left: 4px;
+}
+
+.nav-bar-thesis:hover {
+  background: rgba(224, 122, 70, 0.22);
+  border-color: var(--accent);
 }
 
 /* ── Slide picker modal ───────────────────────────────────────── */
@@ -3551,7 +3565,7 @@ body {
 .profile-entropy-bar span {
   color: var(--text-dim);
   font-family: var(--mono);
-  font-size: 0.62rem;
+  font-size: 0.86rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -4475,3 +4489,393 @@ body {
   display: block;
 }
 
+/* ============================================================
+   PROYECTOR PASS — bump tiny text + bigger animations (round 3)
+   ============================================================ */
+
+/* Global type bump for projector readability */
+.deck-eyebrow {
+  font-size: 0.86rem !important;
+  letter-spacing: 0.16em;
+}
+.slide-citation {
+  font-size: 0.86rem;
+}
+.metric-line span {
+  font-size: 0.86rem;
+}
+.metric-line strong {
+  font-size: 1.05rem;
+}
+.metric-line.compact span {
+  font-size: 0.82rem;
+}
+.metric-line.compact strong {
+  font-size: 0.98rem;
+}
+.spotlight-card span {
+  font-size: 0.84rem;
+}
+.spotlight-card strong {
+  font-size: 1.1rem;
+}
+.spotlight-card p {
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+.kpi-pill,
+.kpi-pill span {
+  font-size: 0.78rem !important;
+}
+.field-raster .legend {
+  font-size: 0.78rem;
+}
+.simulation-theater-pill {
+  font-size: 0.86rem !important;
+}
+.simulation-counter-caption {
+  font-size: 0.95rem !important;
+}
+
+/* Vista 5 (Profiles) — radar bigger, texts bigger */
+.profile-slide .radar-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.profile-slide .radar-panel .radar-wrap,
+.profile-slide .radar-panel .recharts-radar-wrap {
+  flex: 1;
+  min-height: 0;
+  align-self: stretch;
+  justify-self: stretch;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-slide .recharts-polar-angle-axis-tick text,
+.profile-slide .recharts-polar-radius-axis-tick text {
+  font-size: 14px !important;
+}
+.profile-slide .recharts-default-legend {
+  font-size: 14px !important;
+}
+.profile-slide .profile-entropy,
+.profile-slide .entropy-bar,
+.profile-slide .profile-entropy-bar {
+  font-size: 0.95rem !important;
+}
+.profile-slide .deck-panel h3,
+.profile-slide .deck-panel h4 {
+  font-size: 1.05rem;
+}
+.profile-slide .route-list li,
+.profile-slide .top-routes li {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+.profile-slide .panel-tile,
+.profile-slide .stat-card {
+  font-size: 0.92rem;
+}
+.profile-slide .profile-select-grid select {
+  font-size: 0.92rem !important;
+}
+
+/* Vista 2 (Symploké) — bigger decoration animations */
+.symploke-decoration {
+  height: 200px !important;
+  width: 100% !important;
+  margin: 14px 0 18px !important;
+  opacity: 1;
+  display: block;
+}
+.symploke-slide .symploke-card .deck-panel,
+.symploke-slide .symploke-grid > article {
+  display: flex;
+  flex-direction: column;
+}
+.symploke-slide .symploke-copy,
+.symploke-slide article p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.symploke-slide .glyph-icon,
+.symploke-slide .symploke-glyph {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+/* Vista 4 (Heterotopias) — bigger pulse + bars */
+.heterotopia-pulse {
+  height: 64px !important;
+  margin-top: 12px !important;
+}
+.heterotopia-bars i {
+  height: 12px !important;
+  margin: 6px 0 !important;
+}
+.heterotopia-slide article p,
+.heterotopias-slide article p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Vista 7 (Simulation) — better thesis paragraph rendering */
+.simulation-note-copy {
+  font-size: 0.96rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 10px;
+}
+.simulation-note-copy-second {
+  color: var(--text-dim);
+  font-size: 0.9rem !important;
+}
+.simulation-note-extra {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(244, 200, 122, 0.22);
+  font-style: italic;
+  color: rgba(255, 248, 236, 0.7);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+.simulation-note-card h3 {
+  font-size: 1.18rem;
+  margin: 4px 0 10px;
+}
+
+/* Vista 9 (Stress) — left column stack + bigger fonts */
+.stress-layout {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr) !important;
+  gap: 18px !important;
+}
+.stress-left-column {
+  display: grid;
+  grid-template-rows: minmax(280px, 1.4fr) minmax(220px, 1fr);
+  gap: 14px;
+  min-height: 0;
+}
+.stress-left-column > * {
+  min-height: 0;
+}
+.stress-pressure-panel {
+  margin-top: 0 !important;
+}
+.stress-pressure-caption {
+  font-size: 0.85rem !important;
+  line-height: 1.45;
+  margin-top: 6px;
+}
+.stress-aside .alert-number {
+  font-size: 2.6rem;
+}
+.stress-aside .alert-caption {
+  font-size: 0.88rem;
+}
+.stress-verdict-panel .analysis-note-copy {
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+/* Vista 11 (Environment) — fix raster sizing + bigger texts + bigger flow */
+.environment-raster-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.environment-field-split {
+  flex: 1;
+  min-height: 0;
+}
+.environment-field-figure {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 8px;
+}
+.environment-field-canvas {
+  min-height: 0;
+  position: relative;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.environment-field-canvas .field-raster {
+  height: 100%;
+  min-height: 0;
+}
+.environment-field-canvas .field-raster img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.environment-field-figure figcaption {
+  font-size: 0.82rem !important;
+}
+.environment-field-figure figcaption strong {
+  font-size: 0.9rem !important;
+}
+.environment-poetic {
+  font-size: 1.04rem !important;
+  line-height: 1.55 !important;
+}
+.environment-stat-row .metric-line span {
+  font-size: 0.92rem;
+}
+.environment-stat-row .metric-line strong {
+  font-size: 1.05rem;
+}
+.environment-flow-svg {
+  height: 130px !important;
+}
+.environment-flow-caption {
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
+}
+.environment-flow-eyebrow {
+  font-size: 0.82rem !important;
+}
+
+/* Vista 13 (Economy) — fix margins, fix chart cutoff, add animation */
+.economy-slide .doctoral-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 24px !important;
+  align-items: stretch;
+}
+.economy-slide .chart-panel {
+  padding: 22px 24px !important;
+  min-height: 0;
+}
+.economy-slide .chart-shell-tall {
+  min-height: 360px;
+  height: 100%;
+}
+.economy-slide .economy-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px 24px !important;
+}
+.economy-slide .economy-gauge {
+  display: flex;
+  justify-content: center;
+}
+.economy-slide .economy-gauge-ring {
+  width: 200px;
+  height: 200px;
+}
+.economy-slide .economy-gauge-ring strong {
+  font-size: 2rem;
+}
+.economy-slide .economy-gauge-ring span {
+  font-size: 0.84rem;
+}
+.economy-slide .recharts-cartesian-axis-tick-value {
+  font-size: 12px !important;
+}
+.economy-slide .spotlight-card p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+.economy-pulse-card {
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(244, 200, 122, 0.22);
+  background: linear-gradient(140deg, rgba(244, 200, 122, 0.06), rgba(224, 122, 70, 0.04));
+}
+.economy-pulse-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f4c87a;
+  margin: 0 0 8px;
+}
+.economy-pulse-svg {
+  width: 100%;
+  height: 90px;
+  display: block;
+}
+.economy-pulse-caption {
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  margin: 6px 0 0;
+  line-height: 1.5;
+}
+
+/* Vista 14 (History) — image full visible, bigger texts */
+.history-raster-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.history-raster-panel .field-raster {
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+}
+.history-raster-panel > div[style*="opacity"],
+.history-raster-panel .history-raster-motion {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.history-raster-panel .field-raster img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  background: rgba(0, 0, 0, 0.2);
+}
+.history-trend-svg {
+  height: 110px !important;
+}
+.history-trend-eyebrow {
+  font-size: 0.8rem !important;
+}
+.history-slide .panel-tile span,
+.history-slide .panel-tile strong,
+.history-slide .deck-panel p {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   PROYECTOR PASS — round 4: GLOBAL minimum readable type-floor
+   Single cascade-layer override that lifts ANY font-size below
+   ~0.82rem inside a slide stage to a legible minimum, regardless
+   of the offending selector. Avoids per-slide patching.
+   ============================================================ */
+.deck-stage :where(
+  span, label, em, small, code, figcaption,
+  .deck-eyebrow, .slide-citation,
+  .metric-line span, .kpi-pill, .kpi-pill span,
+  .field-raster .legend, .field-raster .legend *,
+  .recharts-legend-item-text,
+  .recharts-cartesian-axis-tick-value,
+  .recharts-polar-angle-axis-tick text,
+  .recharts-polar-radius-axis-tick text,
+  .panel-tile span, .stat-card span,
+  .spotlight-card span,
+  .heterotopia-bars span,
+  .top-routes li, .route-list li,
+  select, option, button.ghost-action
+) {
+  font-size: max(0.86rem, 1em) !important;
+}
+
+/* Inline <style> attrs with hardcoded fontSize on selects/labels */
+.deck-stage select[style] {
+  font-size: 0.92rem !important;
+}
+
+/* Recharts SVG ticks (cannot use rem inside <text>) */
+.deck-stage .recharts-cartesian-axis-tick-value,
+.deck-stage .recharts-polar-angle-axis-tick text,
+.deck-stage .recharts-polar-radius-axis-tick text {
+  font-size: 13px !important;
+}

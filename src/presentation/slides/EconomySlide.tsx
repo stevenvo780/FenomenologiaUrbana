@@ -1,5 +1,6 @@
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
 import type { CSSProperties } from 'react'
+import { motion } from 'framer-motion'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
@@ -67,6 +68,37 @@ export function EconomySlide({
               Un gini de {formatRatio(gravity?.spatial_concentration_gini ?? 0)} indica que la gravitación comercial se concentra
               en pocos nodos, intensificando la convergencia peatonal y la desigualdad de trayectorias.
             </p>
+          </div>
+          <div className="economy-pulse-card">
+            <p className="economy-pulse-eyebrow">Gravitación · atracción acumulada</p>
+            <svg viewBox="0 0 280 90" className="economy-pulse-svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="economyPulseGrad" x1="0" x2="1">
+                  <stop offset="0%" stopColor="#1f7f79" />
+                  <stop offset="55%" stopColor="#f4c87a" />
+                  <stop offset="100%" stopColor="#e07a46" />
+                </linearGradient>
+              </defs>
+              <path d="M5 80 Q60 70 90 60 T160 35 T260 12" fill="none" stroke="url(#economyPulseGrad)" strokeWidth={2.4} strokeOpacity={0.55} />
+              {topCommerce.map((node, i) => {
+                const max = Math.max(...topCommerce.map((n) => n.commerce), 1)
+                const x = 20 + i * 60
+                const y = 80 - (node.commerce / max) * 65
+                return (
+                  <motion.circle
+                    key={node.label}
+                    cx={x}
+                    cy={y}
+                    r={4}
+                    fill="#f4c87a"
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: [0, 1.4, 1], opacity: [0, 1, 0.85] }}
+                    transition={{ duration: 1.6, delay: i * 0.18, repeat: Infinity, repeatDelay: 2.4 }}
+                  />
+                )
+              })}
+            </svg>
+            <p className="economy-pulse-caption">Cada destello marca un nodo del Top-5: la curva muestra cómo el comercio acumula gravedad a medida que sube el ranking.</p>
           </div>
         </aside>
       </div>

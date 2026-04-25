@@ -35,13 +35,15 @@ export function EnvironmentSlide({
           <div className="environment-field-split">
             {pm25 ? (
               <figure className="environment-field-figure">
-                <FieldRaster
-                  src={pm25.src}
-                  alt="Campo PM2.5 4K"
-                  colormap={pm25.cmap}
-                  legend={{ min: pm25.min, max: pm25.max, unit: pm25.units }}
-                  motionMode="breathing"
-                />
+                <div className="environment-field-canvas">
+                  <FieldRaster
+                    src={pm25.src}
+                    alt="Campo PM2.5 4K"
+                    colormap={pm25.cmap}
+                    legend={{ min: pm25.min, max: pm25.max, unit: pm25.units }}
+                    motionMode="breathing"
+                  />
+                </div>
                 <figcaption>
                   <strong>PM2.5 — material particulado</strong>
                   <span>Manchas oscuras = aire denso. Las rutas peatonales se desvían hacia las zonas claras.</span>
@@ -50,13 +52,15 @@ export function EnvironmentSlide({
             ) : null}
             {noise ? (
               <figure className="environment-field-figure">
-                <FieldRaster
-                  src={noise.src}
-                  alt="Campo de ruido 4K"
-                  colormap={noise.cmap}
-                  legend={{ min: noise.min, max: noise.max, unit: noise.units }}
-                  motionMode="breathing"
-                />
+                <div className="environment-field-canvas">
+                  <FieldRaster
+                    src={noise.src}
+                    alt="Campo de ruido 4K"
+                    colormap={noise.cmap}
+                    legend={{ min: noise.min, max: noise.max, unit: noise.units }}
+                    motionMode="breathing"
+                  />
+                </div>
                 <figcaption>
                   <strong>Ruido — presión acústica</strong>
                   <span>Los focos brillantes saturan la audición; el cuerpo busca corredores de baja intensidad.</span>

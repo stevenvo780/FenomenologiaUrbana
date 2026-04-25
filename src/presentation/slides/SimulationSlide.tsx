@@ -79,9 +79,15 @@ export function SimulationSlide({
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            <p className="deck-eyebrow">Lectura situada</p>
+            <p className="deck-eyebrow">Lectura situada · tesis central</p>
             <h3>Análisis fenomenológico</h3>
-            <p className="simulation-note-copy">{scenario.note}</p>
+            <p className="simulation-note-copy">
+              <strong>La simulación no representa: presenta lo múltiple.</strong> Siguiendo a Badiou, los {compactNumber(totalAgents)} cuerpos no son una metáfora estadística de Medellín: son la inscripción computacional de la <em>multiplicidad del ser</em>. Cada agente es una decisión local sobre tiempo, riesgo, ruido y atracción; la suma no es agregación, es <em>Symploké</em> &mdash; el entrelazamiento de tres materialidades (campo físico M₁, sujeto situado M₂, panóptico de flujo M₃) que el HPC vuelve auditable.
+            </p>
+            <p className="simulation-note-copy simulation-note-copy-second">
+              En este escenario {scenario.metrics.route_entropy.toFixed(2)} bits de entropía de ruta y presión media de {scenario.metrics.mean_pressure.toLocaleString('es-CO', { maximumFractionDigits: 0 })} unidades muestran cómo la calle, lejos de “fluir libre”, opera como <em>estructura de expulsión</em> (Sassen): la eficiencia técnica produce regresión fenomenológica. La ciudad no se vive: se atraviesa.
+            </p>
+            <p className="simulation-note-extra">“{scenario.note}”</p>
           </motion.article>
         </aside>
       </div>

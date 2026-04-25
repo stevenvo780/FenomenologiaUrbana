@@ -104,7 +104,7 @@ function SymplokeDecoration({ kind }: { kind: string }) {
     // Campo de partículas pulsantes
     const dots = Array.from({ length: 18 })
     return (
-      <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true">
+      <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true" preserveAspectRatio="none">
         {dots.map((_, idx) => {
           const cx = 8 + (idx * 13) % 232
           const cy = 10 + ((idx * 19) % 50)
@@ -133,7 +133,7 @@ function SymplokeDecoration({ kind }: { kind: string }) {
       'M5 20 C90 28 150 55 235 60',
     ]
     return (
-      <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true">
+      <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true" preserveAspectRatio="none">
         {paths.map((d, idx) => (
           <motion.path
             key={idx}
@@ -157,7 +157,7 @@ function SymplokeDecoration({ kind }: { kind: string }) {
   }
   // m3: barrido panóptico
   return (
-    <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true">
+    <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true" preserveAspectRatio="none">
       {Array.from({ length: 12 }).map((_, idx) => {
         const angle = (idx / 12) * Math.PI - Math.PI / 2
         const x2 = 120 + Math.cos(angle) * 110
