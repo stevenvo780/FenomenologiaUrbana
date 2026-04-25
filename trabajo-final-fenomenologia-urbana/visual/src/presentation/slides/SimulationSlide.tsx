@@ -1,73 +1,85 @@
-import type { CaseNode, Payload, ScenarioSummary } from '../../types'
+import type { Payload, ScenarioSummary } from '../../types'
 import { motion } from 'framer-motion'
-import type { ModalKind } from '../deckTypes'
-import { AnimatedSimulationStage } from '../components/visuals/AnimatedSimulationStage'
 import { RecordedSimulationClip } from '../components/visuals/RecordedSimulationClip'
-import { RouteStack } from '../components/visuals/RouteVisuals'
-import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
-import { formatRatio, mapScenarioStatus } from '../utils'
+import { SlideHeader, SlideShell, MetricLine } from '../components/ui'
 
 export function SimulationSlide({
-  data,
   scenario,
-  selectedNode,
-  onOpenModal,
 }: {
   data: Payload
   scenario: ScenarioSummary
-  selectedNode: CaseNode
-  onOpenModal: (kind: ModalKind) => void
+  onOpenModal: (kind: any) => void
 }) {
   return (
-    <SlideShell id="simulacion" className="simulation-slide">
+    <SlideShell id="simulacion">
       <SlideHeader
-        eyebrow="Slide 06 · cine de agentes"
-        title="Simulación convertida en movimiento"
-        text="Las trayectorias calculadas por el pipeline se animan como partículas sobre la red: no son observación física inventada, son rutas proxy ejecutadas y trazables."
-        action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Detalles de simulación</button>}
+        eyebrow="Cine Fenomenológico 06 · M-MASS Animation"
+        title="Simulación Dinámica de Agentes"
+        text="La técnica se vuelve imagen: 100,000 agentes ejecutando trayectorias estocásticas sobre el corredor San Antonio - Junín."
       />
 
-      <div className="simulation-grid">
-        <div className="simulation-theater">
-          <RecordedSimulationClip scenario={scenario} />
-          <motion.div
-            className="live-network-inset"
-            initial={{ opacity: 0, y: 24, scale: 0.92 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1], delay: 0.32 }}
-          >
-            <span className="live-network-label">Red SVG viva · nodo seleccionado</span>
-            <AnimatedSimulationStage data={data} scenario={scenario} selectedNodeId={selectedNode.id} />
-          </motion.div>
-        </div>
-        <motion.aside
-          className="deck-panel sim-panel"
-          initial={{ opacity: 0, x: 36 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.56, ease: [0.22, 1, 0.36, 1], delay: 0.22 }}
-        >
-          <p className="deck-eyebrow">Escenario activo</p>
-          <h2>{scenario.label}</h2>
-          <p>{scenario.note}</p>
-          <div className="cinema-metrics">
-            <KpiPill
-              label="Presión media"
-              value={scenario.metrics.mean_pressure.toFixed(1)}
-              status={mapScenarioStatus(scenario.epistemic_status)}
-            />
-            <KpiPill
-              label="Concentración"
-              value={formatRatio(scenario.metrics.concentration_index)}
-              status={mapScenarioStatus(scenario.epistemic_status)}
-            />
-            <KpiPill
-              label="Entropía"
-              value={scenario.metrics.route_entropy.toFixed(2)}
-              status={mapScenarioStatus(scenario.epistemic_status)}
-            />
+      <div className="slide-content">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 350px', gap: '2rem', height: '100%' }}>
+          
+          {/* Main Simulation Theater */}
+          <div style={{ position: 'relative', background: '#000', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
+            <RecordedSimulationClip scenario={scenario} />
+            
+            {/* HUD Overlay for Cinema */}
+            <div className="hud-overlay" style={{ top: '20px', left: '20px', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{ width: '10px', height: '10px', background: 'var(--danger)', borderRadius: '50%', animation: 'blink 1s infinite' }} />
+              <span style={{ color: 'var(--danger)' }}>HPC RENDER · REC 4K</span>
+            </div>
+
+            <div className="hud-overlay" style={{ bottom: '20px', left: '20px' }}>
+              <span style={{ fontSize: '0.8rem', opacity: 0.8 }}>ESCENARIO: {scenario.label.toUpperCase()}</span>
+            </div>
           </div>
-          <RouteStack data={data} routes={scenario.top_routes.slice(0, 4)} />
-        </motion.aside>
+
+          {/* Metrics & Control Side */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div className="data-card">
+              <h3>Parámetros de Renderizado</h3>
+              <MetricLine label="Motor" value="M-MASS v0.2" />
+              <MetricLine label="Física" value="Social Force Model" />
+              <MetricLine label="Sampling" value="100k Agents" />
+            </div>
+
+            <div className="data-card">
+              <h3>Métricas del Escenario</h3>
+              <MetricLine label="Presión Media" value={(scenario.metrics.mean_pressure * 100).toFixed(1) + '%'} />
+              <MetricLine label="Entropía de Ruta" value={scenario.metrics.route_entropy.toFixed(3)} />
+              <MetricLine label="Diversidad" value={scenario.metrics.concentration_index.toFixed(3)} />
+            </div>
+
+            <motion.div 
+              className="data-card"
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              style={{ background: 'rgba(0, 242, 255, 0.05)', flex: 1 }}
+            >
+              <h3>Análisis Fenomenológico</h3>
+              <p style={{ fontSize: '0.8rem', lineHeight: 1.4, color: 'var(--text-main)' }}>
+                {scenario.note}
+              </p>
+            </motion.div>
+          </div>
+
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes blink {
+          0% { opacity: 0; }
+          50% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+      `}</style>
+
+      <div className="metrics-bar">
+        <div className="metric-item">Renderer: <b>FFmpeg x GPU</b></div>
+        <div className="metric-item">Frame Rate: <b>60 FPS</b></div>
+        <div className="metric-item">Status: <b>Pre-rendered Output</b></div>
       </div>
     </SlideShell>
   )

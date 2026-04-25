@@ -1,81 +1,92 @@
-import { CartesianGrid, ComposedChart, Line, Tooltip, XAxis, YAxis, Bar } from 'recharts'
-
+import { CartesianGrid, ComposedChart, Line, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer, ReferenceLine } from 'recharts'
 import type { Payload } from '../../types'
-import type { ModalKind } from '../deckTypes'
-import { MeasuredChart } from '../components/visuals/MeasuredChart'
-import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
-import { compactNumber, formatRatio } from '../utils'
+import { SlideHeader, SlideShell, MetricLine } from '../components/ui'
+import { motion } from 'framer-motion'
 
 export function StressSlide({
   data,
-  onOpenModal,
 }: {
   data: Payload
-  onOpenModal: (kind: ModalKind) => void
 }) {
   const stress = data.advanced_reports?.hpc_stress
   const chaos = data.advanced_reports?.hpc_chaos
   const tipping = stress?.tipping_point_detected
 
   return (
-    <SlideShell id="estres" className="stress-slide">
+    <SlideShell id="estres">
       <SlideHeader
-        eyebrow="Slide 10 · estrés y caos"
-        title="El corredor tiene un punto de quiebre y un caos cotidiano medible"
-        text="La simulación de estrés no solo dibuja una curva: detecta el momento de colapso sistémico y lo pone en relación con la informalidad y la deriva peatonal."
-        action={<button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>Abrir reporte de estrés</button>}
+        eyebrow="HPC Auditoría 10 · Stress Test"
+        title="Punto de Quiebre Fenomenológico"
+        text="La simulación de estrés detecta el colapso de la habitabilidad cuando la técnica procesa cuerpos en lugar de albergar vidas."
       />
 
-      <div className="doctoral-grid doctoral-grid-tight">
-        <article className="deck-panel chart-panel">
-          <div className="status-strip">
-            <KpiPill label="Tipping point" value={compactNumber(tipping?.agents ?? 0)} status="documented" />
-            <KpiPill label="Presión crítica" value={tipping?.pressure_index.toFixed(2) ?? 's/d'} status="proxy" />
-            <KpiPill label="Entropía crítica" value={tipping?.system_entropy.toFixed(2) ?? 's/d'} status="proxy" />
-          </div>
-          <div className="chart-shell chart-shell-tall">
-            <MeasuredChart minHeight={240}>
-              {({ width, height }) => (
-                <ComposedChart width={width} height={height} data={stress?.full_curve ?? []} margin={{ top: 10, right: 12, left: 0, bottom: 0 }}>
-                  <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
-                  <XAxis dataKey="agents" tickFormatter={(value) => compactNumber(Number(value))} tick={{ fill: 'rgba(255,248,236,0.65)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                  <YAxis yAxisId="left" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                  <YAxis yAxisId="right" orientation="right" tick={{ fill: 'rgba(255,248,236,0.45)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                  <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
-                  <Bar yAxisId="left" dataKey="pressure_index" fill="#e07a46" radius={[10, 10, 0, 0]} />
-                  <Line yAxisId="right" type="monotone" dataKey="system_entropy" stroke="#f4c87a" strokeWidth={2.4} dot={false} />
+      <div className="slide-content">
+        <div className="data-grid">
+          
+          {/* Main Stress Chart */}
+          <div className="data-card" style={{ gridColumn: 'span 8', height: '400px' }}>
+            <h3>Curva de Presión vs Entropía (Tipping Point Analysis)</h3>
+            <div style={{ height: '320px', marginTop: '1rem' }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <ComposedChart data={stress?.full_curve ?? []}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
+                  <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                  <YAxis yAxisId="left" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                  <YAxis yAxisId="right" orientation="right" stroke="var(--accent)" fontSize={10} tickLine={false} axisLine={false} />
+                  <Tooltip 
+                    contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px' }}
+                  />
+                  <Bar yAxisId="left" dataKey="pressure_index" fill="rgba(255, 45, 85, 0.3)" radius={[2, 2, 0, 0]} />
+                  <Line yAxisId="right" type="monotone" dataKey="system_entropy" stroke="var(--accent)" strokeWidth={2} dot={false} />
+                  {tipping && <ReferenceLine x={tipping.agents} yAxisId="left" stroke="var(--danger)" strokeDasharray="3 3" label={{ value: 'COLLAPSE', position: 'top', fill: 'var(--danger)', fontSize: 10 }} />}
                 </ComposedChart>
-              )}
-            </MeasuredChart>
-          </div>
-        </article>
-
-        <aside className="deck-panel stress-side-panel">
-          <div className="spotlight-grid spotlight-grid-compact">
-            <article className="spotlight-card highlight">
-              <span>Velocidad crítica</span>
-              <strong>{tipping?.mean_velocity.toFixed(3) ?? 's/d'}</strong>
-              <p>El colapso sistémico emerge con {compactNumber(tipping?.agents ?? 0)} agentes simultáneos.</p>
-            </article>
-            <article className="spotlight-card">
-              <span>Obstrucción informal</span>
-              <strong>{formatRatio(chaos?.informality_obstruction_ratio ?? 0)}</strong>
-              <p>Proporción de informalidad incorporada al caos cotidiano.</p>
-            </article>
-            <article className="spotlight-card">
-              <span>Ratio flâneur</span>
-              <strong>{formatRatio(chaos?.flaneur_ratio ?? 0)}</strong>
-              <p>Deriva peatonal como estrategia emergente del sistema.</p>
-            </article>
+              </ResponsiveContainer>
+            </div>
           </div>
 
-          <div className="stress-callout">
-            <p className="deck-eyebrow">Conclusión sintética</p>
-            <h3>{chaos?.engine ?? stress?.engine}</h3>
-            <p>{chaos?.conclusion ?? stress?.conclusion}</p>
-            <em>Turbulencia media {chaos?.mean_turbulence_index.toFixed(4) ?? 's/d'}</em>
+          {/* Side Metrics & Alerts */}
+          <div style={{ gridColumn: 'span 4', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div className="data-card" style={{ border: '1px solid var(--danger)', animation: 'pulse-red 2s infinite' }}>
+              <h3 style={{ color: 'var(--danger)' }}>CRITICAL COLLAPSE DETECTED</h3>
+              <div className="data-value" style={{ color: 'var(--danger)' }}>{tipping?.agents.toLocaleString() ?? '0'}</div>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>AGENTES SIMULTÁNEOS</div>
+            </div>
+
+            <div className="data-card">
+              <h3>Parámetros de Caos</h3>
+              <MetricLine label="Obstrucción Informal" value={((chaos?.informality_obstruction_ratio ?? 0) * 100).toFixed(1) + '%'} />
+              <MetricLine label="Ratio Flâneur (Deriva)" value={((chaos?.flaneur_ratio ?? 0) * 100).toFixed(1) + '%'} />
+              <MetricLine label="Turbulencia Media" value={chaos?.mean_turbulence_index.toFixed(4) ?? '0.0000'} />
+            </div>
+
+            <motion.div 
+              className="data-card"
+              initial={{ x: 20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              style={{ background: 'rgba(0, 242, 255, 0.05)', flex: 1 }}
+            >
+              <h3>Veredicto Técnico</h3>
+              <p style={{ fontSize: '0.8rem', lineHeight: 1.4, color: 'var(--text-main)' }}>
+                {chaos?.conclusion ?? stress?.conclusion}
+              </p>
+            </motion.div>
           </div>
-        </aside>
+
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes pulse-red {
+          0% { box-shadow: 0 0 0 0 rgba(255, 45, 85, 0.4); }
+          70% { box-shadow: 0 0 0 10px rgba(255, 45, 85, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(255, 45, 85, 0); }
+        }
+      `}</style>
+
+      <div className="metrics-bar">
+        <div className="metric-item">Engine: <b>HPC Urban Stress Test</b></div>
+        <div className="metric-item">Method: <b>System Dynamics x SFM</b></div>
+        <div className="metric-item">Status: <b>High-Intensity Simulated</b></div>
       </div>
     </SlideShell>
   )

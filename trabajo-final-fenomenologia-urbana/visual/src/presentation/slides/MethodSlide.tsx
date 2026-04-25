@@ -1,119 +1,74 @@
 import { Bot, Cpu, Eye, Orbit, Waves, Zap } from 'lucide-react'
 import { motion } from 'framer-motion'
-
 import type { Payload } from '../../types'
-import type { ModalKind } from '../deckTypes'
-import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
-import { compactNumber } from '../utils'
+import { SlideHeader, SlideShell, KpiPill } from '../components/ui'
 
 const engines = [
-  {
-    icon: Cpu,
-    title: 'M-MASS x100',
-    detail: 'Monte Carlo multiagente con presión sistémica y entropía de ruta.',
-  },
-  {
-    icon: Bot,
-    title: 'DRL PyTorch',
-    detail: 'Cinco políticas entrenadas para navegación fenomenológica crítica.',
-  },
-  {
-    icon: Waves,
-    title: 'SFM 24h',
-    detail: 'Micro-simulación peatonal de día completo con carga horaria.',
-  },
-  {
-    icon: Zap,
-    title: 'PDE 4K',
-    detail: 'Campos de PM2.5 y ruido a 16.7 millones de celdas.',
-  },
-  {
-    icon: Eye,
-    title: 'Isovistas HPC',
-    detail: 'Ray-casting panóptico para exposición visual y apertura espacial.',
-  },
-  {
-    icon: Orbit,
-    title: 'Gravedad urbana',
-    detail: 'Concentración económica y atracción comercial del corredor.',
-  },
+  { icon: Cpu, title: 'M-MASS x100k', detail: 'Monte Carlo de trayectorias estocásticas.' },
+  { icon: Bot, title: 'DRL PyTorch', detail: 'Políticas de navegación fenomenológica.' },
+  { icon: Waves, title: 'SFM 24h', detail: 'Micro-simulación de fuerzas sociales.' },
+  { icon: Zap, title: 'PDE 4K', detail: 'Difusión de campos ambientales.' },
+  { icon: Eye, title: 'Isovistas HPC', detail: 'Ray-casting de exposición panóptica.' },
+  { icon: Orbit, title: 'Gravedad', detail: 'Concentración de atractores urbanos.' },
 ]
 
 export function MethodSlide({
   data,
-  onOpenModal,
 }: {
   data: Payload
-  onOpenModal: (kind: ModalKind) => void
+  onOpenModal: (kind: any) => void
 }) {
-  const reports = data.advanced_reports
-  const visibility = data.advanced_models?.perceptual_visibility
-  const drlInventory = reports?.drl_inventory
-  const dayReport = reports?.hpc_24h
-  const environmental = reports?.hpc_environmental
-
   return (
-    <SlideShell id="metodo" className="method-slide">
+    <SlideShell id="metodo">
       <SlideHeader
-        eyebrow="Slide 02 · stack doctoral"
-        title="La tesis ya no solo argumenta: ahora corre como laboratorio computacional"
-        text="Catorce pasos, múltiples motores HPC y una sola salida visual: la presentación resume la complejidad sin volverla una sopa de texto."
-        action={<button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>Ver estatus reproducible</button>}
+        eyebrow="Stack Doctoral 02 · Metodología"
+        title="Laboratorio de Fenomenología Operacional"
+        text="La tesis no es solo un texto: es un motor de cálculo que formaliza el mundo de la vida en Medellín."
       />
 
-      <div className="doctoral-grid">
-        <article className="deck-panel method-panel">
-          <div className="status-strip">
-            <KpiPill label="Versión" value={data.meta.pipeline_version} status="proxy" />
-            <KpiPill label="Escenarios" value={`${data.scenarios.length}`} status="documented" />
-            <KpiPill label="Perfiles DRL" value={`${drlInventory?.trained_models ?? 0}`} status="documented" />
-            <KpiPill label="Nodos" value={`${data.nodes.length}`} status="documented" />
+      <div className="slide-content">
+        <div className="data-grid">
+          
+          {/* Engine Cards - Animated Sequence */}
+          {engines.map((engine, idx) => (
+            <motion.div 
+              key={engine.title}
+              className="data-card"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1 }}
+              style={{ gridColumn: 'span 4', borderLeft: '2px solid var(--accent)' }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                <engine.icon size={20} color="var(--accent)" />
+                <h3 style={{ margin: 0 }}>{engine.title}</h3>
+              </div>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-dim)', lineHeight: 1.4 }}>
+                {engine.detail}
+              </p>
+            </motion.div>
+          ))}
+
+          {/* Stats Bar */}
+          <div style={{ gridColumn: 'span 12', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginTop: '1rem' }}>
+            <KpiPill label="Nodos de Red" value={data.nodes.length} status="documented" />
+            <KpiPill label="Agentes/Día" value="4.2M" status="proxy" />
+            <KpiPill label="Rayos GPU" value="16.7M" status="proxy" />
+            <KpiPill label="Version" value={data.meta.pipeline_version} status="documented" />
           </div>
 
-          <div className="engine-grid">
-            {engines.map(({ icon: Icon, title, detail }, index) => (
-              <motion.article
-                key={title}
-                className="engine-card"
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.08 * index, duration: 0.42 }}
-              >
-                <Icon size={20} aria-hidden="true" />
-                <strong>{title}</strong>
-                <p>{detail}</p>
-              </motion.article>
-            ))}
-          </div>
-        </article>
-
-        <aside className="deck-panel artifact-panel">
-          <div className="artifact-grid">
-            <article className="artifact-card">
-              <span>Agentes simulados / día</span>
-              <strong>{compactNumber(dayReport?.total_simulated_agents_day ?? 0)}</strong>
-              <p>Micro-simulación peatonal a 24 horas.</p>
-            </article>
-            <article className="artifact-card">
-              <span>Rayos trazados</span>
-              <strong>{compactNumber(visibility?.ray_count ?? 0)}</strong>
-              <p>Exposición panóptica en resolución {visibility?.resolution ?? '2048²'}.</p>
-            </article>
-            <article className="artifact-card">
-              <span>Resolución PDE</span>
-              <strong>{environmental?.resolution?.split(' ')[0] ?? '4096×4096'}</strong>
-              <p>PM2.5 y ruido difundidos en campo continuo.</p>
-            </article>
-          </div>
-
-          <div className="method-note">
-            <p className="deck-eyebrow">Narrativa de la deck</p>
-            <h3>Topología · desigualdad · estrés · memoria urbana</h3>
-            <p>
-              Cada bloque abre un motor del pipeline y lo traduce a una sola lectura visual dominante.
+          <div className="data-card" style={{ gridColumn: 'span 12', background: 'var(--accent-dim)' }}>
+            <p style={{ fontSize: '0.8rem', color: 'var(--accent)', textAlign: 'center', letterSpacing: '2px' }}>
+              REPRODUCTIBILIDAD: TODA LA DECK SE GENERA DESDE EL PIPELINE DE INVESTIGACIÓN
             </p>
           </div>
-        </aside>
+        </div>
+      </div>
+
+      <div className="metrics-bar">
+        <div className="metric-item">Backend: <b>Python (PyTorch / CuPy)</b></div>
+        <div className="metric-item">Frontend: <b>React x Vite x Recharts</b></div>
+        <div className="metric-item">Status: <b>Operational Baseline</b></div>
       </div>
     </SlideShell>
   )

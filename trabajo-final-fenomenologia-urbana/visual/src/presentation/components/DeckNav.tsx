@@ -1,6 +1,5 @@
 import { ChevronLeft, ChevronRight, Clock3, Cpu, Crosshair, Database, Eye, Film, Flag, LineChart, MapPinned, Network, Orbit, Scale, ShoppingBag, Sparkles, TriangleAlert, UsersRound, Wind, type LucideIcon } from 'lucide-react'
 import { motion } from 'framer-motion'
-import type { CSSProperties } from 'react'
 
 import { SLIDES } from '../constants'
 import type { SlideId } from '../deckTypes'
@@ -42,50 +41,75 @@ export function DeckNav({
   onOpenData: () => void
 }) {
   return (
-    <motion.header
-      className="deck-nav"
-      aria-label="Navegación de presentación"
-      initial={{ opacity: 0, y: -18 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <button type="button" className="deck-brand" onClick={() => onGoToSlide('apertura')}>
-        <Network size={18} aria-hidden="true" />
-        <span>FU</span>
-      </button>
-      <nav>
+    <header className="deck-nav">
+      <div className="nav-progress" style={{ width: `${progress}%` }} />
+      
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginRight: '2rem' }}>
+        <Network size={20} color="var(--accent)" />
+        <span style={{ fontWeight: 800, fontSize: '0.8rem', letterSpacing: '2px' }}>HPC-FENOM</span>
+      </div>
+
+      <div style={{ display: 'flex', gap: '0.5rem', flex: 1, overflowX: 'auto', paddingBottom: '4px' }}>
         {SLIDES.map((slide) => {
           const Icon = slideIcons[slide.id]
+          const isActive = slide.id === activeSlide
 
           return (
             <button
               key={slide.id}
               type="button"
-              className={slide.id === activeSlide ? 'nav-dot nav-dot-active' : 'nav-dot'}
               onClick={() => onGoToSlide(slide.id)}
-              aria-current={slide.id === activeSlide ? 'step' : undefined}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                color: isActive ? 'var(--accent)' : 'var(--text-dim)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                cursor: 'pointer',
+                padding: '4px 8px',
+                whiteSpace: 'nowrap',
+                transition: 'all 0.2s',
+                opacity: isActive ? 1 : 0.6
+              }}
             >
-              <Icon size={14} aria-hidden="true" />
-              <small>{slide.shortLabel}</small>
-              <span>{slide.label}</span>
+              <Icon size={14} />
+              <span style={{ fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{slide.shortLabel}</span>
             </button>
           )
         })}
-      </nav>
-      <button type="button" className="data-room-button" onClick={onOpenData}>
-        <Database size={15} aria-hidden="true" />
-        data room
-      </button>
-      <div className="deck-arrows" aria-label="Controles de presentación">
-        <button type="button" onClick={onPrevious} disabled={activeIndex === 0} aria-label="Slide anterior">
-          <ChevronLeft size={20} aria-hidden="true" />
-        </button>
-        <span>{String(activeIndex + 1).padStart(2, '0')} / {String(SLIDES.length).padStart(2, '0')}</span>
-        <button type="button" onClick={onNext} disabled={activeIndex === SLIDES.length - 1} aria-label="Slide siguiente">
-          <ChevronRight size={20} aria-hidden="true" />
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginLeft: '2rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-dim)', fontSize: '0.7rem' }}>
+          <button onClick={onPrevious} style={{ background: 'transparent', border: 'none', color: 'inherit', cursor: 'pointer' }}>
+            <ChevronLeft size={16} />
+          </button>
+          <span style={{ fontVariantNumeric: 'tabular-nums' }}>{activeIndex + 1} / {SLIDES.length}</span>
+          <button onClick={onNext} style={{ background: 'transparent', border: 'none', color: 'inherit', cursor: 'pointer' }}>
+            <ChevronRight size={16} />
+          </button>
+        </div>
+
+        <button 
+          onClick={onOpenData}
+          style={{
+            background: 'var(--accent-dim)',
+            border: '1px solid var(--accent)',
+            color: 'var(--accent)',
+            fontSize: '0.6rem',
+            padding: '4px 8px',
+            borderRadius: '2px',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
+          }}
+        >
+          <Database size={12} />
+          DATA ROOM
         </button>
       </div>
-      <div className="deck-progress" style={{ '--progress': `${progress}%` } as CSSProperties} />
-    </motion.header>
+    </header>
   )
 }
