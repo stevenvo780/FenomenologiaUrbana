@@ -776,12 +776,14 @@ body {
 }
 
 .chart-panel-body .chart-measure,
+.chart-panel-body .chart-surface,
 .chart-panel-body .chart-shell,
 .chart-panel-body .recharts-wrapper {
   min-height: 0;
 }
 
 .chart-panel-body .chart-measure,
+.chart-panel-body .chart-surface,
 .chart-panel-body .chart-shell {
   width: 100%;
   height: 100%;
@@ -828,6 +830,18 @@ body {
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.slide-header-eyebrow {
+  color: var(--accent);
+  font-size: 0.7rem;
+  opacity: 0.72;
+}
+
+.slide-header-text {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.42;
 }
 
 .hero-grid,
@@ -2015,6 +2029,68 @@ body {
   text-transform: uppercase;
 }
 
+.stat-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  min-height: 0;
+}
+
+.stat-tile {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 0;
+  height: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.stat-tile-label {
+  color: rgba(244, 200, 122, 0.82);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stat-tile-value {
+  color: #fff8ec;
+  font-family: var(--mono);
+  font-size: clamp(1.05rem, 1.8vw, 1.55rem);
+  line-height: 1.02;
+}
+
+.stat-tile-note {
+  margin: 0;
+  color: rgba(255, 248, 236, 0.72);
+  font-size: 0.84rem;
+  line-height: 1.34;
+}
+
+.stat-tone-amber {
+  background:
+    radial-gradient(circle at top right, rgba(244, 200, 122, 0.2), transparent 38%),
+    rgba(255, 255, 255, 0.07);
+}
+
+.stat-tone-teal {
+  border-color: rgba(31, 127, 121, 0.24);
+  background:
+    radial-gradient(circle at top right, rgba(31, 127, 121, 0.18), transparent 40%),
+    rgba(255, 255, 255, 0.06);
+}
+
+.stat-tone-danger {
+  border-color: rgba(255, 59, 85, 0.24);
+  background:
+    radial-gradient(circle at top right, rgba(255, 59, 85, 0.18), transparent 40%),
+    rgba(255, 255, 255, 0.06);
+}
+
 .method-note,
 .visibility-note,
 .stress-callout {
@@ -2027,6 +2103,20 @@ body {
 .chart-shell {
   position: relative;
   width: 100%;
+  overflow: hidden;
+  padding: 10px 6px 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top, rgba(244, 200, 122, 0.08), transparent 42%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.chart-surface {
+  position: relative;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
   overflow: hidden;
   padding: 10px 6px 4px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -2265,8 +2355,38 @@ body {
 }
 
 .stress-layout,
-.visibility-layout {
+.visibility-layout,
+.crowd-layout {
   gap: 16px;
+}
+
+.crowd-chart-layout {
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+  min-height: 0;
+  height: 100%;
+}
+
+.crowd-kpi-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.crowd-chart-surface {
+  min-height: 0;
+  height: 100%;
+  padding: 0;
+}
+
+.crowd-side-panel {
+  min-height: 0;
+}
+
+.crowd-side-grid {
+  grid-auto-rows: minmax(0, 1fr);
+  align-content: stretch;
+  min-height: 0;
+  height: 100%;
 }
 
 .stress-chart-panel,
@@ -2337,8 +2457,9 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .crowd-kpi-grid,
   .surface-pill-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -3240,6 +3361,7 @@ body {
   .delta-grid,
   .engine-grid,
   .artifact-grid,
+  .stat-tile-grid,
   .spotlight-grid,
   .field-grid,
   .micro-result-grid,
