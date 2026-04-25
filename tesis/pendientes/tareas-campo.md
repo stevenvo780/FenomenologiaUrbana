@@ -7,7 +7,7 @@ Este documento deja explícito qué falta para que la tesis pase de un **baselin
 - Estado empírico actual: `pending_no_capture`.
 - Archivo que lo confirma: `investigacion/outputs/field_calibration_delta.json`.
 - Significado: el pipeline está preparado para recibir datos de campo, pero todavía no hay observaciones situadas suficientes para recalibrar nodos, aristas o escenarios.
-- Regla: no cambiar este estado ni redactar como si hubiese trabajo de campo hasta que existan archivos reales en `investigacion/data/interim/`.
+- Regla: no cambiar este estado ni redactar como si hubiese trabajo de campo hasta que existan archivos reales en `investigacion/data/interim/` fuera de `templates/` y `examples/`.
 
 ## 1. Entregables que sí se podían preparar en PC
 

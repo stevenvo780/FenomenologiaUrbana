@@ -24,7 +24,11 @@ def is_synthetic_session(path: Path) -> bool:
     if not metadata_path.exists():
         return False
 
-    metadata = read_json(metadata_path)
+    try:
+        metadata = read_json(metadata_path)
+    except Exception:
+        return False
+
     status = str(metadata.get("status", "")).lower()
     session_type = str(metadata.get("type", "")).lower()
     return "synthetic" in status or "synthetic" in session_type

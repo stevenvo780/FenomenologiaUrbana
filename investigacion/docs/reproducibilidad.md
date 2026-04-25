@@ -68,13 +68,13 @@ Para un jurado o revisor que no quiera ejecutar todo el pipeline pesado, usar es
 
 ```bash
 cd investigacion
-python3 -m data.ingest_fieldwork
-python3 -m data.aggregate_fieldwork
-python3 -m models.calibrate_case_model
-python3 -m models.build_case_graph
-python3 -m data.derive_empirical_data
-python3 -m analysis.analyze_urban_inequality
-python3 -m visualization.publish_visual_payload
+PYTHONPATH=scripts python3 -m data.ingest_fieldwork
+PYTHONPATH=scripts python3 -m data.aggregate_fieldwork
+PYTHONPATH=scripts python3 -m models.build_case_graph
+PYTHONPATH=scripts python3 -m data.derive_empirical_data
+PYTHONPATH=scripts python3 -m models.calibrate_case_model
+PYTHONPATH=scripts python3 -m analysis.analyze_urban_inequality
+PYTHONPATH=scripts python3 -m visualization.publish_visual_payload
 ```
 
 Si no hay datos reales de campo, este modo debe conservar `pending_no_capture`.
