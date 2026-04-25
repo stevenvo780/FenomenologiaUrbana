@@ -93,11 +93,13 @@ function RouteColumn({
   data: Payload
   accent: 'primary' | 'secondary'
 }) {
+  const visibleRoutes = routes.slice(0, 2)
+
   return (
     <div className={`route-column ${accent}`}>
       <h3>{title}</h3>
-      {routes.length ? (
-        routes.map((route) => (
+      {visibleRoutes.length ? (
+        visibleRoutes.map((route) => (
           <div key={`${title}-${route.path.join('-')}`} className="route-rail">
             <p>{route.path.map((nodeId) => resolveNodeLabel(data, nodeId)).join(' → ')}</p>
             <div className="rail-track">

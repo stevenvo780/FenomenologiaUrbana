@@ -27,7 +27,7 @@ export function ProfilesSlide({
       <SlideHeader
         eyebrow="Slide 04 · cuerpos situados"
         title="El mismo centro no aparece igual para todos"
-        text="Cambiar el perfil cambia costo, tiempo, ruta, sensibilidad al obstáculo y forma de habitar el corredor. La diferencia fenomenológica ya puede leerse como firma vectorial."
+        text="Cambiar de perfil altera costo, tiempo, ruta y sensibilidad al obstáculo: la diferencia fenomenológica ya puede leerse como firma vectorial."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Ver pesos</button>}
       />
 

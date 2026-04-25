@@ -25,16 +25,16 @@ export function InequalitySlide({
   }))
 
   return (
-    <SlideShell id="desigualdad">
+    <SlideShell id="desigualdad" className="inequality-slide">
       <SlideHeader
         eyebrow="Auditoría 07 · Desigualdad Fenomenológica"
         title="Inequidad Radical de la Libertad de Ruta"
-        text="El supercómputo revela un 'Apartheid Espacial Técnico': mientras el turista goza de libertad de deriva, el vendedor ambulante opera en un régimen de restricción absoluta."
+        text="El turista deriva con libertad; el vendedor ambulante opera bajo una restricción técnica de ruta casi absoluta."
       />
 
       <div className="slide-content">
-        <div className="data-grid">
-          <div className="data-card" style={{ gridColumn: 'span 2' }}>
+        <div className="data-grid inequality-grid">
+          <div className="data-card inequality-chart-card">
             <h3>Análisis de Entropía por Perfil de Agente (M-MASS)</h3>
             <div style={{ height: '300px', marginTop: '1rem' }}>
               <MeasuredChart minHeight={300}>
@@ -54,7 +54,7 @@ export function InequalitySlide({
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div className="inequality-side-column">
             <div className="data-card">
               <h3>Estatus del Escenario</h3>
               <div style={{ marginBottom: '1rem' }}>

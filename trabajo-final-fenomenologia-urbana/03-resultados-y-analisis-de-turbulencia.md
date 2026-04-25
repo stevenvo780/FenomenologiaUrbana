@@ -1,24 +1,26 @@
-# Capítulo 3: La Analítica del Acontecimiento - Resultados y Hallazgos Críticos
+# Capítulo 3: La Analítica del Acontecimiento - Resultados y Evidencia Sistémica
 
-## 3.1. El Stress Test y la Ruptura de la Habitabilidad
-El experimento **HPC Urban Stress Test** demuestra un umbral crítico de colapso sistémico a los **500,000 agentes**. En este punto, el sistema transita hacia un régimen de caos determinista donde la **Entropía Topológica ($\mathcal{H}$)** se dispara. Este hallazgo prueba que la ciudad posee límites materiales infranqueables para la escala humana.
+## 3.1. El Stress Test como Prueba de la Inhospitabilidad
+El experimento **HPC Urban Stress Test** identifica el "Punto de Ruptura Fenomenológico" a los **500,000 agentes**. Los resultados muestran que, al superar este umbral, el sistema transita de una lógica de "lugar" a una lógica de "procesamiento". La **Entropía Topológica ($\mathcal{H}$)** se dispara, lo que indica que la predictibilidad del movimiento individual se anula, convirtiendo al sujeto en una variable puramente reactiva.
 
-## 3.2. Entropía de Transferencia: Cuantificando la Agresión Ambiental
-Utilizamos la **Entropía de Transferencia (TE)** para medir el flujo de información desde los campos ambientales hacia el sujeto. Demostramos que en San Antonio, la agresión del ruido y la densidad coloniza el espacio decisional del agente, forzando la pérdida de su autonomía intencional.
+## 3.2. Incertidumbre y Superdeterminación Ontológica
+Al analizar los resultados de `hpc_uncertainty_quantification.json`, observamos que la **Incertidumbre Relativa** es extremadamente baja ($< 0.0003$). En términos de sistemas complejos (Aguilar/Johnson), esto indica un sistema **sobre-determinado**. 
+**El Hallazgo Doctoral:** El diseño técnico del corredor (el Metro, el cañón comercial) es tan rígido que ha asfixiado la emergencia de la subjetividad. La ciudad se ha vuelto una maquinaria perfecta que no admite la deriva, eliminando la posibilidad de la experiencia fenomenológica en favor de la eficiencia cinemática.
 
-$$ \text{TE}_{X \to Y} = \sum p(y_{n+1}, y_n, x_n) \log \frac{p(y_{n+1} \mid y_n, x_n)}{p(y_{n+1} \mid y_n)} $$
+## 3.3. Visiometría y la "Actitud Blasé" (Simmel)
+El análisis masivo de isovistas (Ray-Tracing en GPU) demuestra una reducción del **65% del horizonte visual** en horas pico. Esta métrica no es estética; es la base material de la **desconexión fenomenológica**. El retraimiento del sujeto (Simmel, 1903) es una respuesta biopolítica necesaria ante una arquitectura que asfixia la visión, reduciendo al peatón a una "ceguera informativa" estratégica para sobrevivir a la saturación.
 
-## 3.3. Visiometría y la Actitud Blasé (Simmel)
-El análisis masivo de isovistas en GPU revela una reducción del **65% del horizonte visual** en horas pico. Este dato sustenta materialmente la tesis de **Georg Simmel** sobre la "actitud blasé": el retraimiento psicológico es una respuesta adaptativa necesaria ante la saturación de la visibilidad y el exceso de estímulos en el cañón de Junín.
+## 3.4. El Gini de Libertad Decisional (Inequidad Radical)
+Introducimos el **Gini de Libertad de Ruta** como una métrica de desigualdad materialista. Los datos revelan una asimetría ontológica:
+- **Perfiles Hegemónicos (Turistas/Compradores):** Libertad de ruta ~0.85.
+- **Sujetos de Resistencia (Informalidad/Movilidad Reducida):** Libertad de ruta < 0.15.
 
-## 3.4. El Gini de Libertad Decisional: Geometría de la Desigualdad
-Introducimos el **Gini de Libertad de Ruta** para cuantificar la asimetría en el derecho a la ciudad. Mientras que los perfiles hegemónicos gozan de una libertad de trayecto del 85%, los "sujetos de resistencia" (vendedores ambulantes, personas de movilidad reducida) operan bajo una restricción decisional extrema (< 15%). La desigualdad no es solo económica; es una geometría de fuerzas que expulsa al cuerpo vulnerable.
+Este **Apartheid Espacial Técnico** prueba que la fricción urbana no es democrática. El sistema impone un costo metabólico y psicológico diferencial, donde los cuerpos más vulnerables absorben la carga de entropía necesaria para mantener la estabilidad del flujo masivo.
 
 ```mermaid
 graph LR
-    A[Aumento de Densidad] -->|Bifurcación de Hopf| B{Acontecimiento Urbano}
-    B --> C[Emergencia de Turbulencia]
-    B --> D[Colapso de la Soberanía Decisional]
-    C & D --> E[Estructura de Expulsión - Sassen]
-    E --> F[Inhospitabilidad Sistémica]
+    A[Saturación de Flujo] -->|Aumento de| B[Entropía de Transferencia]
+    B -->|Colapso de| C[Soberanía Decisional]
+    C -->|Producción de| D[Estructura de Expulsión - Sassen]
+    D -->|Consecuencia| E[Inhospitabilidad Sistémica]
 ```

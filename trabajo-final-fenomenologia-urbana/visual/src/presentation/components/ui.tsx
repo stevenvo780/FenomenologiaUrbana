@@ -36,14 +36,16 @@ export function SlideHeader({
 }) {
   return (
     <header className="slide-header">
-      <p className="deck-eyebrow" style={{ color: 'var(--accent)', marginBottom: '0.5rem', fontSize: '0.75rem', opacity: 0.7 }}>
-        {eyebrow}
-      </p>
-      <h1>{title}</h1>
-      <p style={{ color: 'var(--text-dim)', maxWidth: '800px', fontSize: '0.95rem', lineHeight: 1.5 }}>
-        {text}
-      </p>
-      {action && <div style={{ marginTop: '1rem' }}>{action}</div>}
+      <div className="slide-header-copy">
+        <p className="deck-eyebrow" style={{ color: 'var(--accent)', fontSize: '0.7rem', opacity: 0.7 }}>
+          {eyebrow}
+        </p>
+        <h1>{title}</h1>
+        <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: 1.42 }}>
+          {text}
+        </p>
+      </div>
+      {action ? <div className="slide-action">{action}</div> : null}
     </header>
   )
 }
@@ -80,17 +82,19 @@ export function EpistemicBadge({
   )
 }
 
-export function MetricLine({ label, value }: { label: string; value: ReactNode }) {
+export function MetricLine({
+  label,
+  value,
+  compact = false,
+}: {
+  label: string
+  value: ReactNode
+  compact?: boolean
+}) {
   return (
-    <div style={{ 
-      display: 'flex', 
-      justifyContent: 'space-between', 
-      padding: '0.5rem 0',
-      borderBottom: '1px solid rgba(255,255,255,0.05)',
-      fontSize: '0.85rem'
-    }}>
-      <span style={{ color: 'var(--text-dim)' }}>{label}</span>
-      <strong style={{ color: 'var(--accent)' }}>{value}</strong>
+    <div className={`metric-line${compact ? ' compact' : ''}`}>
+      <span>{label}</span>
+      <strong>{value}</strong>
     </div>
   )
 }

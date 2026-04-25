@@ -30,14 +30,15 @@ export function CalibrationSlide({
     hour: key.replace('hour_', ''),
     ...value,
   }))
-  const sampledConfidenceCards = confidenceCards.slice(0, 3)
+  const sampledConfidenceCards = confidenceCards.slice(0, 1)
+  const validationEntries = Object.entries(multi?.validation_nodes ?? {}).slice(0, 2)
 
   return (
     <SlideShell id="calibracion" className="calibration-slide">
       <SlideHeader
         eyebrow="Slide 08 · calibración y blindaje"
         title="La simulación ya viene calibrada, validada y con incertidumbre explícita"
-        text="La defensa doctoral no depende de frases grandilocuentes: muestra pesos ajustados, precisión espacial casi unitaria e intervalos de confianza Monte Carlo."
+        text="Pesos ajustados, precisión espacial casi unitaria e intervalos Monte Carlo auditables sin recurrir a retórica vacía."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>Validación completa</button>}
       />
 
@@ -47,17 +48,17 @@ export function CalibrationSlide({
             <article className="spotlight-card highlight">
               <span>Accuracy espacial</span>
               <strong>{multi?.spatial_accuracy_score.toFixed(6) ?? 's/d'}</strong>
-              <p>Multi-point RMSE minimization sobre nodos de validación reales.</p>
+              <p>Ajuste multicriterio sobre nodos de validación.</p>
             </article>
             <article className="spotlight-card">
               <span>Error residual</span>
               <strong>{multi ? multi.residual_error.toExponential(2) : 's/d'}</strong>
-              <p>Residual extremadamente bajo para el ajuste multicriterio.</p>
+              <p>Residual bajo tras optimización espacial.</p>
             </article>
             <article className="spotlight-card">
               <span>Ground truth</span>
               <strong>{compactNumber(calibration?.ground_truth_target ?? 0)}</strong>
-              <p>Objetivo empírico de validación contra alto flujo operacional.</p>
+              <p>Flujo objetivo para la calibración.</p>
             </article>
           </div>
 
@@ -80,7 +81,7 @@ export function CalibrationSlide({
           </div>
 
           <div className="validation-node-grid">
-            {Object.entries(multi?.validation_nodes ?? {}).map(([node, value]) => (
+            {validationEntries.map(([node, value]) => (
               <div key={node} className="validation-chip">
                 <span>{node.replaceAll('_', ' ')}</span>
                 <strong>{compactNumber(value)}</strong>
@@ -108,7 +109,6 @@ export function CalibrationSlide({
               </article>
             ))}
           </div>
-          <p className="modal-note">Resumen visual de ventanas críticas; la serie completa queda disponible en el modal de validación.</p>
         </aside>
       </div>
     </SlideShell>
