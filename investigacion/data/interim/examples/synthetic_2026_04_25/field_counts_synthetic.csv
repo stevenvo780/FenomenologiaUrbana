@@ -1,0 +1,5 @@
+timestamp,node_id,time_window,observer_id,pedestrians_5min,dwell_seconds_mean,noise_db,lighting_lux,security_score,obstacle_notes,weather_notes
+2026-04-25T07:15:00-05:00,parque_berrio,07:00-08:00,synthetic_obs,42,75,68,220,3,SINTETICO: obstaculo hipotetico,dry synthetic example
+2026-04-25T12:15:00-05:00,san_antonio_metro,12:00-13:00,synthetic_obs,57,95,71,350,3,SINTETICO: obstaculo hipotetico,dry synthetic example
+2026-04-25T17:15:00-05:00,plaza_botero,17:00-18:00,synthetic_obs,64,130,74,180,2,SINTETICO: obstaculo hipotetico,dry synthetic example
+2026-04-25T20:15:00-05:00,carabobo_cultural,20:00-21:00,synthetic_obs,31,60,66,95,2,SINTETICO: obstaculo hipotetico,dry synthetic example

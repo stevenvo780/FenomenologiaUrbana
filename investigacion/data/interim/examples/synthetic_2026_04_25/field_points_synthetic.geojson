@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "status": "synthetic_example_do_not_ingest_as_real_fieldwork"
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "timestamp": "2026-04-25T17:15:00-05:00",
+        "node_id": "plaza_botero",
+        "feature_type": "decision_point",
+        "time_window": "17:00-18:00",
+        "observer_id": "synthetic_obs",
+        "notes": "SINTETICO: punto de prueba sin observacion real"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.5689, 6.2523]
+      }
+    }
+  ]
+}

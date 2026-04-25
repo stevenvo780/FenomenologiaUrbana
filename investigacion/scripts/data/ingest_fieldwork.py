@@ -13,6 +13,22 @@ from data.validate_fieldwork import (
     validate_geojson_feature,
 )
 
+EXCLUDED_INTERIM_DIRS = {"templates", "examples"}
+
+
+def is_synthetic_session(path: Path) -> bool:
+    if "synthetic" in path.name.lower():
+        return True
+
+    metadata_path = path / "metadata.json"
+    if not metadata_path.exists():
+        return False
+
+    metadata = read_json(metadata_path)
+    status = str(metadata.get("status", "")).lower()
+    session_type = str(metadata.get("type", "")).lower()
+    return "synthetic" in status or "synthetic" in session_type
+
 
 def discover_sessions() -> list[Path]:
     if not INTERIM_DIR.exists():
@@ -20,7 +36,9 @@ def discover_sessions() -> list[Path]:
     return sorted(
         path
         for path in INTERIM_DIR.iterdir()
-        if path.is_dir() and path.name != "templates"
+        if path.is_dir()
+        and path.name not in EXCLUDED_INTERIM_DIRS
+        and not is_synthetic_session(path)
     )
 
 

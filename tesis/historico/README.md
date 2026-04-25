@@ -14,3 +14,4 @@ Esta carpeta registra cambios críticos en la tesis a lo largo del tiempo. No re
 | Fecha | Archivo | Motivo |
 | --- | --- | --- |
 | 2026-04-25 | `2026-04-25-autocritica-jurado.md` | Autocrítica exigente de suficiencia ante jurado antes de completar anexos PC. |
+| 2026-04-25 | `2026-04-25-cierre-faltantes-pc.md` | Registro del cierre de faltantes preparables en computador y límites que siguen pendientes. |

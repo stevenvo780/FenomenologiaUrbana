@@ -9,23 +9,23 @@ Este documento deja explícito qué falta para que la tesis pase de un **baselin
 - Significado: el pipeline está preparado para recibir datos de campo, pero todavía no hay observaciones situadas suficientes para recalibrar nodos, aristas o escenarios.
 - Regla: no cambiar este estado ni redactar como si hubiese trabajo de campo hasta que existan archivos reales en `investigacion/data/interim/`.
 
-## 1. Pendientes que sí se pueden hacer en PC
+## 1. Entregables que sí se podían preparar en PC
 
-Estas tareas pueden hacerse entre usuario y asistente en el computador, sin salir a campo. No sustituyen la captura empírica, pero fortalecen la tesis ante una evaluación exigente.
+Estas tareas pueden hacerse entre usuario y asistente en el computador, sin salir a campo. No sustituyen la captura empírica, pero fortalecen la tesis ante una evaluación exigente. A fecha 25 de abril de 2026, quedaron convertidas en artefactos verificables o protocolos listos para ejecución posterior.
 
-| Prioridad | Tarea | Entregable | Archivo sugerido |
+| Prioridad | Tarea | Estado | Entregable |
 | --- | --- | --- | --- |
-| Alta | Documentar reproducibilidad | versiones, dependencias, comandos, GPU/CPU, semillas, parámetros | `investigacion/docs/reproducibilidad.md` |
-| Alta | Crear modo de ejecución reducido | instrucciones para correr un mini-pipeline en CPU | `investigacion/README.md` |
-| Alta | Auditoría de sensibilidad | matriz de variación ±10%, ±20%, ±30% para pesos de tiempo/riesgo/ruido/densidad | `investigacion/docs/sensibilidad.md` |
-| Alta | Pruebas de ablación | escenarios sin ruido, sin riesgo, sin congestión, sin atracción comercial | `investigacion/outputs/` + capítulo 3 |
-| Alta | Probar pipeline con datos sintéticos | CSV/MD/GeoJSON de ejemplo claramente marcados como sintéticos | `investigacion/data/interim/examples/` |
-| Media | Crear anexo ético | consentimiento, anonimización, fotografía, datos sensibles | `investigacion/docs/etica-campo.md` |
-| Media | Tabla de trazabilidad | afirmación → fuente/script/output/pendiente | `investigacion/docs/trazabilidad-tesis.md` |
-| Media | Ampliar bibliografía empírica reciente | literatura 2020–2025 sobre Medellín, movilidad peatonal, seguridad, ruido y espacio público | `bibliografia/referencias-academicas.md` |
-| Media | Revisar consistencia APA restante | DOI, URLs, ediciones completas y reemplazo de extractos locales por fuentes verificables | capítulo 4 + bibliografía |
-| Media | Generar tablas listas para tesis | fuentes, variables, límites, resultados defendibles/no defendibles | capítulos 2 y 3 |
-| Baja | Preparar preguntas de defensa | respuestas a objeciones previsibles del jurado | `tesis/pendientes/preguntas-defensa.md` |
+| Alta | Documentar reproducibilidad | completado | `investigacion/docs/reproducibilidad.md` |
+| Alta | Crear modo de ejecución reducido | completado | `investigacion/README.md` |
+| Alta | Auditoría de sensibilidad | protocolo completado; corridas extensivas pendientes | `investigacion/docs/sensibilidad.md` |
+| Alta | Pruebas de ablación | diseño completado; resultados cuantitativos pendientes | `investigacion/docs/sensibilidad.md` |
+| Alta | Probar pipeline con datos sintéticos | ejemplo creado y protegido | `investigacion/data/interim/examples/` |
+| Media | Crear anexo ético | completado | `investigacion/docs/etica-campo.md` |
+| Media | Tabla de trazabilidad | completado | `investigacion/docs/trazabilidad-tesis.md` |
+| Media | Ampliar bibliografía empírica reciente | revisión inicial documentada; búsqueda externa sigue abierta | `bibliografia/revision-empirica-2020-2025.md` |
+| Media | Revisar consistencia APA restante | parcialmente completado; quedan DOI/URLs/ediciones por verificar con fuentes externas | capítulo 4 + bibliografía |
+| Media | Generar tablas listas para tesis | completado | `tesis/pendientes/tablas-listas.md` |
+| Baja | Preparar preguntas de defensa | completado | `tesis/pendientes/preguntas-defensa.md` |
 
 ### 1.1. Criterio para no confundir datos sintéticos con campo
 
@@ -35,6 +35,7 @@ Si se crean datos de ejemplo para probar el pipeline, deben cumplir estas reglas
 - llevar una nota visible: “datos sintéticos para prueba técnica; no usar como evidencia empírica”;
 - no modificar la conclusión `pending_no_capture`;
 - no citarse en la tesis como observación real.
+- el script `ingest_fieldwork.py` excluye `examples/` y sesiones con metadatos sintéticos para evitar contaminación accidental.
 
 ## 2. Pendientes de campo indispensables
 
@@ -96,19 +97,19 @@ Para una jornada piloto defendible:
 - notas fenomenológicas en mínimo 2 nodos por franja;
 - registro GeoJSON de obstáculos y puntos de decisión.
 
-## 3. Instrumentos de campo que faltan preparar
+## 3. Instrumentos de campo preparados, pero no ejecutados
 
-Existen plantillas base, pero aún faltan instrumentos más completos:
+Existen plantillas base y un anexo operativo. Lo pendiente no es escribir el instrumento sino aplicarlo en campo real.
 
-| Instrumento | Estado | Pendiente |
+| Instrumento | Estado | Archivo |
 | --- | --- | --- |
-| `field_counts_template.csv` | existe | probar con datos sintéticos y ajustar columnas |
-| `field_notes_template.md` | existe | añadir guía de codificación fenomenológica |
-| `field_points_template.geojson` | existe | definir categorías cerradas de obstáculos/puntos |
-| Encuesta seguridad percibida | falta | crear 5 preguntas máximo + consentimiento |
-| Formato de consentimiento | falta | redactar versión breve y comprensible |
-| Guía de fotografía ética | falta | evitar rostros, menores, habitantes de calle identificables |
-| Manual de observadores | falta | instrucciones paso a paso y control de calidad |
+| `field_counts_template.csv` | existe; ejemplo sintético creado | `investigacion/data/interim/templates/` + `examples/` |
+| `field_notes_template.md` | existe; codificación fenomenológica agregada en anexo | `investigacion/docs/instrumentos-campo.md` |
+| `field_points_template.geojson` | existe; categorías cerradas documentadas | `investigacion/docs/instrumentos-campo.md` |
+| Encuesta seguridad percibida | preparada | `investigacion/docs/instrumentos-campo.md` |
+| Formato de consentimiento | preparado | `investigacion/docs/etica-campo.md` |
+| Guía de fotografía ética | preparada | `investigacion/docs/etica-campo.md` |
+| Manual de observadores | preparado | `investigacion/docs/instrumentos-campo.md` |
 
 ## 4. Pendientes por fuentes externas
 
@@ -160,11 +161,13 @@ Puede cambiarse solo si existe:
 
 ### Fase PC inmediata
 
-1. Documentar reproducibilidad.
-2. Crear anexo ético.
-3. Probar pipeline con datos sintéticos claramente marcados.
-4. Diseñar sensibilidad y ablación.
-5. Ampliar bibliografía empírica reciente.
+1. ~~Documentar reproducibilidad.~~
+2. ~~Crear anexo ético.~~
+3. ~~Probar pipeline con datos sintéticos claramente marcados.~~
+4. ~~Diseñar sensibilidad y ablación.~~
+5. ~~Ampliar bibliografía empírica reciente en una revisión inicial.~~
+
+Queda abierto ejecutar corridas cuantitativas extensivas de sensibilidad y completar búsqueda bibliográfica externa con bases académicas.
 
 ### Fase pre-campo
 

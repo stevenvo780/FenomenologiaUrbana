@@ -1,0 +1,8 @@
+{
+  "session_id": "synthetic_2026_04_25",
+  "type": "synthetic_example",
+  "status": "do_not_ingest_as_real_fieldwork",
+  "created_at": "2026-04-25",
+  "purpose": "technical format test only",
+  "warning": "These rows are synthetic and must not be used as empirical evidence or field calibration."
+}
