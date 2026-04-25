@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
   BookOpen,
@@ -132,17 +133,16 @@ export function DeckNav({
           <span>Data</span>
         </button>
 
-        <a
-          href="./tesis.html"
+        <Link
+          to="/tesis"
           target="_blank"
-          rel="noopener noreferrer"
           className="nav-bar-data nav-bar-thesis"
           aria-label="Ver Tesis Escrita (abre en pestaña nueva)"
           style={{ textDecoration: 'none' }}
         >
           <BookOpen size={13} />
           <span>Tesis</span>
-        </a>
+        </Link>
       </nav>
 
       {/* ─── Slide-picker modal ─── */}

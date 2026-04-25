@@ -28,3 +28,12 @@ export const MODAL_TITLES: Record<ModalKind, string> = {
   'calibration-detail': 'Calibración, incertidumbre y desigualdad',
   'stress-detail': 'Stress test, caos y presión sistémica',
 }
+
+export const DECK_CHART_TEXT = {
+  axis: 13,
+  axisCompact: 12,
+  legend: 13,
+  tooltip: 13,
+  annotation: 13,
+  sparkline: 11,
+} as const

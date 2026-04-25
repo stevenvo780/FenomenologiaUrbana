@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect } from 'react'
 
 import type { Payload } from '../../types'
+import { DECK_CHART_TEXT } from '../constants'
 import type { ModalKind } from '../deckTypes'
 import { FieldRaster } from '../components/visuals/FieldRaster'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
@@ -146,7 +147,7 @@ export function HistorySlide({
                       return (
                         <g key={entry.year}>
                           <circle cx={x} cy={y} r={active ? 5 : 3} fill={active ? '#e07a46' : '#f4c87a'} stroke="#141417" strokeWidth={1} />
-                          <text x={x} y={88} textAnchor="middle" fontSize="8" fill={active ? '#e07a46' : '#9aa3ab'} fontFamily="var(--mono)">
+                          <text x={x} y={88} textAnchor="middle" fontSize={DECK_CHART_TEXT.sparkline} fill={active ? '#e07a46' : '#9aa3ab'} fontFamily="var(--mono)">
                             {entry.year}
                           </text>
                         </g>

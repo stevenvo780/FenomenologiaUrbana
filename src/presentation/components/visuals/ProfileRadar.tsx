@@ -1,6 +1,7 @@
 import { Legend, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, Tooltip } from 'recharts'
 
 import type { AgentProfile } from '../../../types'
+import { DECK_CHART_TEXT } from '../../constants'
 import { MeasuredChart } from './MeasuredChart'
 
 const dimensions = [
@@ -34,15 +35,15 @@ export function ProfileRadar({ primary, secondary }: { primary: AgentProfile; se
           <RadarChart width={width} height={height} data={chartData} outerRadius="84%" cx="50%" cy="44%">
             <PolarGrid stroke="rgba(255,255,255,0.15)" />
             <PolarRadiusAxis axisLine={false} tick={false} domain={[0, 100]} />
-            <PolarAngleAxis dataKey="dimension" tick={{ fill: 'rgba(255, 248, 236, 0.78)', fontSize: 12 }} />
+            <PolarAngleAxis dataKey="dimension" tick={{ fill: 'rgba(255, 248, 236, 0.78)', fontSize: DECK_CHART_TEXT.axis }} />
             <Tooltip
-              contentStyle={{ background: 'rgba(20,16,15,0.95)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: 16 }}
+              contentStyle={{ background: 'rgba(20,16,15,0.95)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: 16, fontSize: DECK_CHART_TEXT.tooltip }}
               formatter={(_value, _name, entry) => {
                 const rawValue = entry.dataKey === 'primaryScaled' ? entry.payload.primaryRaw : entry.payload.secondaryRaw
                 return [`${Number(rawValue).toFixed(2)}`, 'peso bruto']
               }}
             />
-            <Legend wrapperStyle={{ color: '#fff8ec', paddingTop: 12, fontSize: 12 }} iconSize={10} />
+            <Legend wrapperStyle={{ color: '#fff8ec', paddingTop: 12, fontSize: DECK_CHART_TEXT.legend }} iconSize={10} />
             <Radar name={secondary.label} dataKey="secondaryScaled" stroke="#1f7f79" fill="#1f7f79" fillOpacity={0.24} />
             <Radar name={primary.label} dataKey="primaryScaled" stroke="#e07a46" fill="#e07a46" fillOpacity={0.34} />
           </RadarChart>

@@ -5,15 +5,6 @@ import { RouteDuel } from '../components/visuals/RouteVisuals'
 import { DeltaTile, SlideHeader, SlideShell } from '../components/ui'
 import { formatSignedInteger, formatSignedMinutes, formatSignedNumber, formatSignedPercent } from '../utils'
 
-const selectStyle = {
-  background: 'rgba(8, 8, 9, 0.92)',
-  color: '#fff8ec',
-  border: '1px solid rgba(224, 122, 70, 0.35)',
-  borderRadius: '12px',
-  padding: '0.5rem 0.62rem',
-  fontSize: '0.74rem',
-} as const
-
 export function ProfilesSlide({
   data,
   scenario,
@@ -52,15 +43,15 @@ export function ProfilesSlide({
       <div className="profile-stage-grid">
         <article className="deck-panel radar-panel">
           <div className="profile-select-grid">
-            <label>
-              <span>Perfil fenomenológico</span>
-              <select value={agent.id} onChange={(event) => onAgentChange(event.target.value)} style={selectStyle}>
+            <label className="deck-control-stack">
+              <span className="deck-control-label">Perfil fenomenológico</span>
+              <select className="deck-select" value={agent.id} onChange={(event) => onAgentChange(event.target.value)}>
                 {data.agents.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
               </select>
             </label>
-            <label>
-              <span>Perfil de contraste</span>
-              <select value={compareAgent.id} onChange={(event) => onCompareAgentChange(event.target.value)} style={selectStyle}>
+            <label className="deck-control-stack">
+              <span className="deck-control-label">Perfil de contraste</span>
+              <select className="deck-select" value={compareAgent.id} onChange={(event) => onCompareAgentChange(event.target.value)}>
                 {data.agents.filter((entry) => entry.id !== agent.id).map((entry) => (
                   <option key={entry.id} value={entry.id}>{entry.label}</option>
                 ))}

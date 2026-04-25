@@ -1,4 +1,6 @@
+import { Routes, Route } from 'react-router-dom'
 import { PresentationDeck } from './PresentationDeck.tsx'
+import { ThesisView } from './ThesisView.tsx'
 import { useProjectData } from './hooks/useProjectData'
 
 function App() {
@@ -31,7 +33,12 @@ function App() {
     )
   }
 
-  return <PresentationDeck data={state.data} />
+  return (
+    <Routes>
+      <Route path="/" element={<PresentationDeck data={state.data} />} />
+      <Route path="/tesis" element={<ThesisView />} />
+    </Routes>
+  )
 }
 
 export default App

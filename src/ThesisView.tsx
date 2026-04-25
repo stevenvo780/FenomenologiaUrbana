@@ -3,14 +3,17 @@ import ReactMarkdown from 'react-markdown'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import mermaid from 'mermaid'
-import { X, Home } from 'lucide-react'
+import { Home } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { AmbientField } from './presentation/components/AmbientField'
 import './ThesisView.css'
+import './presentation.css' 
 
 // Initialize mermaid
 mermaid.initialize({
   startOnLoad: false,
-  theme: 'neutral',
+  theme: 'dark',
   securityLevel: 'loose',
   fontFamily: 'Space Grotesk'
 })
@@ -49,53 +52,65 @@ export function ThesisView({ onClose }: { onClose?: () => void }) {
   }, [])
 
   return (
-    <motion.div 
-      className="thesis-view"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
-    >
-      {onClose ? (
-        <button className="thesis-close-btn" onClick={onClose} aria-label="Cerrar tesis">
-          <X size={24} />
-        </button>
-      ) : (
-        <a href="./" className="thesis-close-btn" aria-label="Volver al laboratorio">
-          <Home size={24} />
-        </a>
-      )}
-
+    <div className="thesis-page-wrapper">
+      <AmbientField />
+      
       <motion.div 
-        className="thesis-container"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.5 }}
+        className="thesis-view"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
       >
-        <article className="thesis-content">
-          <ReactMarkdown
-            remarkPlugins={[remarkMath]}
-            rehypePlugins={[rehypeKatex]}
-            components={{
-              code({ node, inline, className, children, ...props }: any) {
-                const match = /language-(\w+)/.exec(className || '')
-                const isMermaid = match && match[1] === 'mermaid'
+        <header className="thesis-header">
+          <div className="thesis-header-nav">
+            <Link to="/" className="thesis-home-link" title="Volver al laboratorio">
+              <Home size={20} />
+              <span>Laboratorio</span>
+            </Link>
+          </div>
+          <div className="thesis-title-block">
+            <p className="deck-eyebrow">Tesis de Grado</p>
+            <h1>Fenomenología Urbana Operacional</h1>
+            <p className="thesis-subtitle">Corredor San Antonio - Junín · Medellín</p>
+          </div>
+        </header>
 
-                if (!inline && isMermaid) {
-                  return <MermaidRenderer chart={String(children).replace(/\n$/, '')} />
+        <motion.div 
+          className="thesis-container"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+        >
+          <article className="thesis-content">
+            <ReactMarkdown
+              remarkPlugins={[remarkMath]}
+              rehypePlugins={[rehypeKatex]}
+              components={{
+                code({ node, inline, className, children, ...props }: any) {
+                  const match = /language-(\w+)/.exec(className || '')
+                  const isMermaid = match && match[1] === 'mermaid'
+
+                  if (!inline && isMermaid) {
+                    return <MermaidRenderer chart={String(children).replace(/\n$/, '')} />
+                  }
+
+                  return (
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  )
                 }
+              }}
+            >
+              {content}
+            </ReactMarkdown>
+          </article>
+        </motion.div>
 
-                return (
-                  <code className={className} {...props}>
-                    {children}
-                  </code>
-                )
-              }
-            }}
-          >
-            {content}
-          </ReactMarkdown>
-        </article>
+        <footer className="thesis-footer">
+          <p>© 2024 · Medellín, Colombia · Laboratorio de Fenomenología Urbana</p>
+        </footer>
       </motion.div>
-    </motion.div>
+    </div>
   )
 }

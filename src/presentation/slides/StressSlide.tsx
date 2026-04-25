@@ -1,5 +1,6 @@
 import { Area, AreaChart, CartesianGrid, ComposedChart, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import type { Payload } from '../../types'
+import { DECK_CHART_TEXT } from '../constants'
 import { FieldRaster } from '../components/visuals/FieldRaster'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { ChartPanel, PanelFrame, SlideGrid, SlideHeader, SlideShell } from '../components/ui'
@@ -37,10 +38,10 @@ export function StressSlide({
                 {({ width, height }) => (
                   <ComposedChart width={width} height={height} data={stress?.full_curve ?? []}>
                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                    <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={12} tickLine={false} axisLine={false} />
-                    <YAxis stroke="var(--accent)" fontSize={12} tickLine={false} axisLine={false} />
+                    <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={DECK_CHART_TEXT.axis} tickLine={false} axisLine={false} />
+                    <YAxis stroke="var(--accent)" fontSize={DECK_CHART_TEXT.axis} tickLine={false} axisLine={false} />
                     <Tooltip
-                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '12px' }}
+                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: DECK_CHART_TEXT.tooltip }}
                     />
                     <Line type="monotone" dataKey="system_entropy" stroke="var(--accent)" strokeWidth={2.8} dot={false} />
                     {tipping ? (
@@ -48,7 +49,7 @@ export function StressSlide({
                         x={tipping.agents}
                         stroke="var(--danger)"
                         strokeDasharray="3 3"
-                        label={{ value: 'COLAPSO', position: 'top', fill: 'var(--danger)', fontSize: 12 }}
+                        label={{ value: 'COLAPSO', position: 'top', fill: 'var(--danger)', fontSize: DECK_CHART_TEXT.annotation }}
                       />
                     ) : null}
                   </ComposedChart>
@@ -66,10 +67,10 @@ export function StressSlide({
                         <stop offset="100%" stopColor="#f4c87a" stopOpacity={0.05} />
                       </linearGradient>
                     </defs>
-                    <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
-                    <YAxis stroke="#f4c87a" fontSize={10} tickLine={false} axisLine={false} width={28} />
+                    <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={DECK_CHART_TEXT.axisCompact} tickLine={false} axisLine={false} />
+                    <YAxis stroke="#f4c87a" fontSize={DECK_CHART_TEXT.axisCompact} tickLine={false} axisLine={false} width={28} />
                     <Tooltip
-                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '11px', borderRadius: 12 }}
+                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: DECK_CHART_TEXT.tooltip, borderRadius: 12 }}
                       labelFormatter={(v) => `${Number(v).toLocaleString('es-CO')} agentes`}
                       formatter={(value: unknown) => [Number(value).toFixed(2), 'Presión']}
                     />

@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react'
 import { motion } from 'framer-motion'
 
 import type { Payload } from '../../types'
+import { DECK_CHART_TEXT } from '../constants'
 import type { ModalKind } from '../deckTypes'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
@@ -44,9 +45,9 @@ export function EconomySlide({
               {({ width, height }) => (
                 <BarChart width={width} height={height} data={topCommerce} margin={{ top: 12, right: 8, left: 0, bottom: 0 }}>
                   <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
-                  <XAxis dataKey="label" tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                  <YAxis tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                  <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }} />
+                  <XAxis dataKey="label" tick={{ fill: 'rgba(255,248,236,0.68)', fontSize: DECK_CHART_TEXT.axis }} axisLine={false} tickLine={false} />
+                  <YAxis tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: DECK_CHART_TEXT.axis }} axisLine={false} tickLine={false} />
+                  <Tooltip contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16, fontSize: DECK_CHART_TEXT.tooltip }} />
                   <Bar dataKey="commerce" fill="#f4c87a" radius={[12, 12, 6, 6]} />
                 </BarChart>
               )}

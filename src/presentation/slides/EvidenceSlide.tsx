@@ -2,6 +2,7 @@ import { Bar, BarChart, Tooltip, XAxis } from 'recharts'
 import type { CSSProperties } from 'react'
 
 import type { Payload } from '../../types'
+import { DECK_CHART_TEXT } from '../constants'
 import type { ModalKind } from '../deckTypes'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
@@ -89,9 +90,9 @@ function EvidenceGallery({
           <MeasuredChart minHeight={190}>
             {({ width, height }) => (
               <BarChart width={width} height={height} data={crime.monthly_2023} margin={{ top: 8, right: 4, bottom: 0, left: 4 }}>
-                <XAxis dataKey="period" tickFormatter={(value) => String(value).slice(5)} tick={{ fill: 'rgba(255,248,236,0.62)', fontSize: 11 }} axisLine={false} tickLine={false} />
+                <XAxis dataKey="period" tickFormatter={(value) => String(value).slice(5)} tick={{ fill: 'rgba(255,248,236,0.62)', fontSize: DECK_CHART_TEXT.axis }} axisLine={false} tickLine={false} />
                 <Tooltip
-                  contentStyle={{ background: 'rgba(20,16,15,0.95)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: 16 }}
+                  contentStyle={{ background: 'rgba(20,16,15,0.95)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: 16, fontSize: DECK_CHART_TEXT.tooltip }}
                   labelFormatter={(value) => `Periodo ${value}`}
                 />
                 <Bar dataKey="cases" fill="#e07a46" radius={[999, 999, 6, 6]} />

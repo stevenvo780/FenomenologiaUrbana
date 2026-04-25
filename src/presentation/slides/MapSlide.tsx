@@ -6,20 +6,6 @@ import { RouteMarquee } from '../components/visuals/RouteVisuals'
 import { SlideHeader, SlideShell } from '../components/ui'
 import { motion } from 'framer-motion'
 
-const controlLabelStyle = {
-  fontSize: '0.56rem',
-  color: 'var(--text-dim)',
-} as const
-
-const selectStyle = {
-  background: 'rgba(8, 8, 9, 0.92)',
-  color: '#fff8ec',
-  border: '1px solid rgba(224, 122, 70, 0.35)',
-  borderRadius: '12px',
-  padding: '0.5rem 0.62rem',
-  fontSize: '0.74rem',
-} as const
-
 export function MapSlide({
   data,
   scenario,
@@ -67,14 +53,16 @@ export function MapSlide({
             </div>
 
             <div className="map-control-grid">
-              <label style={controlLabelStyle}>ESCENARIO HORARIO</label>
-              <select
-                value={scenario.id}
-                onChange={(e) => onScenarioChange(e.target.value)}
-                style={{ ...selectStyle, width: '100%' }}
-              >
-                {data.scenarios.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
-              </select>
+              <label className="deck-control-stack">
+                <span className="deck-control-label">Escenario horario</span>
+                <select
+                  className="deck-select"
+                  value={scenario.id}
+                  onChange={(e) => onScenarioChange(e.target.value)}
+                >
+                  {data.scenarios.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
+                </select>
+              </label>
 
             </div>
 

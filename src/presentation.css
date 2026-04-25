@@ -51,6 +51,10 @@ body {
   --text-main:  rgba(255, 248, 236, 0.9);
   --card-bg:    rgba(255, 255, 255, 0.06);
   --border:     rgba(255, 255, 255, 0.12);
+  --type-overline: clamp(0.82rem, 0.14vw + 0.79rem, 0.96rem);
+  --type-label: clamp(0.88rem, 0.14vw + 0.84rem, 1rem);
+  --type-body-sm: clamp(0.94rem, 0.14vw + 0.9rem, 1.05rem);
+  --type-control: clamp(0.92rem, 0.12vw + 0.88rem, 1.02rem);
 }
 
 .deck-stage {
@@ -1182,14 +1186,15 @@ body {
 }
 
 .control-title,
-.compare-select span {
+.compare-select span,
+.deck-control-label {
   display: flex;
   gap: 8px;
   align-items: center;
   margin-bottom: 10px;
   color: rgba(255, 248, 236, 0.6);
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: var(--type-label);
 }
 
 .chip-cloud {
@@ -1222,6 +1227,22 @@ body {
   color: #fff8ec;
   background: rgba(255, 255, 255, 0.08);
   padding: 0 14px;
+  font: inherit;
+}
+
+.deck-control-stack {
+  display: grid;
+  gap: 6px;
+}
+
+.deck-select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid rgba(224, 122, 70, 0.35);
+  border-radius: 12px;
+  color: #fff8ec;
+  background: rgba(8, 8, 9, 0.92);
+  padding: 0.5rem 0.75rem;
   font: inherit;
 }
 
@@ -4845,37 +4866,99 @@ body {
 
 
 /* ============================================================
-   PROYECTOR PASS — round 4: GLOBAL minimum readable type-floor
-   Single cascade-layer override that lifts ANY font-size below
-   ~0.82rem inside a slide stage to a legible minimum, regardless
-   of the offending selector. Avoids per-slide patching.
+   TYPOGRAPHY CONSOLIDATION — single source of truth
+   Replaces ad hoc per-slide font nudges with semantic roles.
    ============================================================ */
+.slide :where(
+  .deck-eyebrow,
+  .slide-citation,
+  .metric-item,
+  .hud-overlay,
+  .metric-line span,
+  .kpi-pill,
+  .kpi-pill span,
+  .pressure-card span,
+  .route-card-mini span,
+  .delta-tile span,
+  .source-row small,
+  .source-row em,
+  .spotlight-card span,
+  .profile-select-grid span,
+  .profile-entropy-bar span,
+  .field-raster .legend,
+  .field-raster .legend *,
+  .economy-pulse-eyebrow,
+  .environment-flow-eyebrow,
+  .history-trend-eyebrow,
+  .heatline-legend span,
+  .heatline-legend em,
+  .heatline-strip span,
+  .year-card span,
+  .year-card em,
+  .asphyxia-tile-grid span,
+  .asphyxia-tile-grid em,
+  .mini-stat-card span,
+  .stat-tile-label,
+  .map-live-tile span,
+  .symploke-metric span,
+  .heterotopia-bar-legend,
+  .heterotopia-chip,
+  .open-terms span,
+  .systemic-pressure-chip,
+  .alert-caption,
+  .recorded-sim-caption,
+  .recorded-sim-badges,
+  .simulation-theater-pill,
+  .live-network-label
+) {
+  font-size: var(--type-label) !important;
+}
+
+.slide :where(
+  .spotlight-card p,
+  .analysis-note-copy,
+  .simulation-note-copy,
+  .simulation-note-copy-second,
+  .simulation-note-extra,
+  .environment-flow-caption,
+  .environment-poetic,
+  .environment-field-figure figcaption,
+  .environment-field-figure figcaption strong,
+  .field-card small,
+  .heatline-clock-card p,
+  .top-routes li,
+  .route-list li,
+  .route-rail p,
+  .map-slide .route-marquee p,
+  .node-spotlight.compact > p:not(.deck-eyebrow):not(.spotlight-note),
+  .node-spotlight.compact .spotlight-note,
+  .crowd-bottom-axis,
+  .crowd-bottom-copy,
+  .stress-pressure-caption,
+  .simulation-counter-caption,
+  .heterotopia-footnote,
+  .heterotopia-lead p,
+  .symploke-copy,
+  .symploke-card p,
+  .history-slide .deck-panel p,
+  .economy-pulse-caption
+) {
+  font-size: var(--type-body-sm) !important;
+  line-height: 1.52;
+}
+
+.slide :where(select, option, button.ghost-action, .deck-control-label, .deck-select) {
+  font-size: var(--type-control) !important;
+}
+
 .deck-stage :where(
-  span, label, em, small, code, figcaption,
-  .deck-eyebrow, .slide-citation,
-  .metric-line span, .kpi-pill, .kpi-pill span,
-  .field-raster .legend, .field-raster .legend *,
-  .recharts-legend-item-text,
   .recharts-cartesian-axis-tick-value,
   .recharts-polar-angle-axis-tick text,
   .recharts-polar-radius-axis-tick text,
-  .panel-tile span, .stat-card span,
-  .spotlight-card span,
-  .heterotopia-bars span,
-  .top-routes li, .route-list li,
-  select, option, button.ghost-action
+  .recharts-legend-item-text,
+  .node-label,
+  .sim-node text,
+  .radar-label
 ) {
-  font-size: max(0.86rem, 1em) !important;
-}
-
-/* Inline <style> attrs with hardcoded fontSize on selects/labels */
-.deck-stage select[style] {
-  font-size: 0.92rem !important;
-}
-
-/* Recharts SVG ticks (cannot use rem inside <text>) */
-.deck-stage .recharts-cartesian-axis-tick-value,
-.deck-stage .recharts-polar-angle-axis-tick text,
-.deck-stage .recharts-polar-radius-axis-tick text {
   font-size: 13px !important;
 }
