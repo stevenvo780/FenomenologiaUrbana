@@ -55,6 +55,8 @@ body {
   --type-label: clamp(0.88rem, 0.14vw + 0.84rem, 1rem);
   --type-body-sm: clamp(0.94rem, 0.14vw + 0.9rem, 1.05rem);
   --type-control: clamp(0.92rem, 0.12vw + 0.88rem, 1.02rem);
+  --type-value-sm: clamp(1rem, 0.18vw + 0.96rem, 1.14rem);
+  --type-value: clamp(1.14rem, 0.22vw + 1.08rem, 1.32rem);
 }
 
 .deck-stage {
@@ -991,7 +993,7 @@ body {
 .kpi-pill strong {
   color: #fff8ec;
   font-family: var(--mono);
-  font-size: 1.1rem;
+  font-size: var(--type-value);
 }
 
 .kpi-pill.kpi-compact {
@@ -1006,7 +1008,7 @@ body {
 }
 
 .kpi-pill.kpi-compact strong {
-  font-size: 0.92rem;
+  font-size: var(--type-value-sm);
 }
 
 .epistemic-badge {
@@ -1321,7 +1323,7 @@ body {
 .map-live-tile strong {
   color: #fff8ec;
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: var(--type-value-sm);
   line-height: 1.15;
   overflow-wrap: anywhere;
 }
@@ -1522,7 +1524,7 @@ body {
 }
 
 .node-spotlight.compact .metric-line strong {
-  font-size: 0.74rem;
+  font-size: var(--type-value-sm);
 }
 
 .metric-line {
@@ -1550,7 +1552,7 @@ body {
 }
 
 .metric-line.compact strong {
-  font-size: 0.78rem;
+  font-size: var(--type-value-sm);
 }
 
 .spotlight-note {
@@ -2095,7 +2097,7 @@ body {
 .stat-tile-value {
   color: #fff8ec;
   font-family: var(--mono);
-  font-size: clamp(1.05rem, 1.8vw, 1.55rem);
+  font-size: clamp(1.16rem, 1.9vw, 1.7rem);
   line-height: 1.02;
 }
 
@@ -2340,7 +2342,7 @@ body {
 .mini-stat-card strong {
   color: #fff8ec;
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: var(--type-value-sm);
   line-height: 1.2;
 }
 
@@ -2661,7 +2663,7 @@ body {
 .delta-tile strong {
   color: #f4c87a;
   font-family: var(--mono);
-  font-size: 1.15rem;
+  font-size: var(--type-value);
 }
 
 .route-duel {
@@ -3613,9 +3615,11 @@ body {
 }
 
 .profile-entropy-bar span {
+  display: flex;
+  align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  padding: 8px 10px;
+  padding: 12px 14px;
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -4884,7 +4888,6 @@ body {
   .source-row em,
   .spotlight-card span,
   .profile-select-grid span,
-  .profile-entropy-bar span,
   .field-raster .legend,
   .field-raster .legend *,
   .economy-pulse-eyebrow,
@@ -4941,10 +4944,46 @@ body {
   .symploke-copy,
   .symploke-card p,
   .history-slide .deck-panel p,
-  .economy-pulse-caption
+  .economy-pulse-caption,
+  .profile-entropy-bar span
 ) {
-  font-size: var(--type-body-sm) !important;
+  font-size: clamp(1rem, 0.18vw + 0.96rem, 1.12rem) !important;
   line-height: 1.52;
+}
+
+.slide :where(
+  .kpi-pill-value,
+  .metric-line-value,
+  .delta-tile-value,
+  .stat-tile-value,
+  .map-live-tile strong,
+  .mini-stat-card strong,
+  .field-card strong,
+  .year-card strong,
+  .asphyxia-tile-grid strong,
+  .profile-entropy-bar strong,
+  .comparison-headline strong
+) {
+  font-size: max(var(--type-value-sm), 1em) !important;
+  line-height: 1.15;
+}
+
+.slide :where(
+  .kpi-pill.kpi-compact .kpi-pill-value,
+  .metric-line.compact .metric-line-value,
+  .node-spotlight.compact .metric-line-value,
+  .map-live-tile strong,
+  .mini-stat-card strong
+) {
+  font-size: var(--type-value-sm) !important;
+}
+
+.slide :where(
+  .kpi-pill:not(.kpi-compact) .kpi-pill-value,
+  .delta-tile-value,
+  .stat-tile-value
+) {
+  font-size: var(--type-value) !important;
 }
 
 .slide :where(select, option, button.ghost-action, .deck-control-label, .deck-select) {
@@ -4960,5 +4999,5 @@ body {
   .sim-node text,
   .radar-label
 ) {
-  font-size: 13px !important;
+  font-size: 14px !important;
 }

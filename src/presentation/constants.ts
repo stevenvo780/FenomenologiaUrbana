@@ -30,10 +30,10 @@ export const MODAL_TITLES: Record<ModalKind, string> = {
 }
 
 export const DECK_CHART_TEXT = {
-  axis: 13,
-  axisCompact: 12,
-  legend: 13,
-  tooltip: 13,
-  annotation: 13,
-  sparkline: 11,
+  axis: 14,
+  axisCompact: 13,
+  legend: 14,
+  tooltip: 14,
+  annotation: 14,
+  sparkline: 12,
 } as const

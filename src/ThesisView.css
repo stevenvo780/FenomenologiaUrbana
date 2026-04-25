@@ -153,19 +153,60 @@ html, body {
   margin: 3rem 0;
 }
 
+.thesis-content code {
+  background: rgba(224, 122, 70, 0.15);
+  color: #f4c87a;
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.9em;
+  border: 1px solid rgba(224, 122, 70, 0.2);
+}
+
+.thesis-content pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: rgba(255, 248, 236, 0.9);
+}
+
 .mermaid-container {
   display: flex;
   justify-content: center;
   margin: 4rem 0;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
   padding: 40px;
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
 .mermaid-container svg {
   max-width: 100% !important;
   height: auto !important;
+}
+
+/* Ensure mermaid text is readable */
+.mermaid-container .node label, 
+.mermaid-container .edgeLabel,
+.mermaid-container .cluster-label span {
+  color: #efe5d5 !important;
+  fill: #efe5d5 !important;
+}
+
+.mermaid-container .node rect,
+.mermaid-container .node circle,
+.mermaid-container .node ellipse,
+.mermaid-container .node polygon,
+.mermaid-container .node path {
+  fill: rgba(31, 127, 121, 0.2) !important;
+  stroke: var(--accent-2) !important;
+  stroke-width: 1px !important;
+}
+
+.mermaid-container .edgePath .path {
+  stroke: rgba(255, 248, 236, 0.3) !important;
+  stroke-width: 1.5px !important;
 }
 
 .thesis-footer {

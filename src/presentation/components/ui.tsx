@@ -62,8 +62,8 @@ export function KpiPill({
 }) {
   return (
     <div className={`kpi-pill${compact ? ' kpi-compact' : ''}`}>
-      <span>{label}</span>
-      <strong>{value}</strong>
+      <span className="kpi-pill-label">{label}</span>
+      <strong className="kpi-pill-value">{value}</strong>
       <EpistemicBadge status={status} compact />
     </div>
   )
@@ -151,8 +151,8 @@ export function MetricLine({
 }) {
   return (
     <div className={`metric-line${compact ? ' compact' : ''}`}>
-      <span>{label}</span>
-      <strong>{value}</strong>
+      <span className="metric-line-label">{label}</span>
+      <strong className="metric-line-value">{value}</strong>
     </div>
   )
 }
@@ -169,8 +169,8 @@ export function ModalCard({ title, children }: { title: string; children: ReactN
 export function DeltaTile({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div className="delta-tile">
-      <span>{label}</span>
-      <strong>{value}</strong>
+      <span className="delta-tile-label">{label}</span>
+      <strong className="delta-tile-value">{value}</strong>
     </div>
   )
 }
