@@ -82,6 +82,7 @@ export function SymplokeSlide({ data }: { data: Payload }) {
                 <div className="symploke-glyph" aria-hidden="true">
                   <Icon size={44} strokeWidth={1.4} />
                 </div>
+                <SymplokeDecoration kind={key} />
                 <p className="symploke-copy">{copy}</p>
                 <div className="symploke-metric">
                   <span>{metric.label}</span>
@@ -95,5 +96,95 @@ export function SymplokeSlide({ data }: { data: Payload }) {
         <p className="slide-citation">Bueno, 1972 · Husserl, 1936/1991</p>
       </div>
     </SlideShell>
+  )
+}
+
+function SymplokeDecoration({ kind }: { kind: string }) {
+  if (kind === 'm1') {
+    // Campo de partículas pulsantes
+    const dots = Array.from({ length: 18 })
+    return (
+      <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true">
+        {dots.map((_, idx) => {
+          const cx = 8 + (idx * 13) % 232
+          const cy = 10 + ((idx * 19) % 50)
+          return (
+            <motion.circle
+              key={idx}
+              cx={cx}
+              cy={cy}
+              r={1.6}
+              fill="#1f7f79"
+              animate={{ opacity: [0.2, 0.9, 0.2], r: [1.2, 2.4, 1.2] }}
+              transition={{ duration: 2.4 + (idx % 5) * 0.3, repeat: Infinity, delay: (idx % 6) * 0.18 }}
+            />
+          )
+        })}
+      </svg>
+    )
+  }
+  if (kind === 'm2') {
+    // 5 trayectorias caminando
+    const paths = [
+      'M5 55 C60 50 100 30 235 18',
+      'M5 50 C70 40 130 38 235 30',
+      'M5 40 C80 35 140 35 235 40',
+      'M5 30 C70 30 140 50 235 50',
+      'M5 20 C90 28 150 55 235 60',
+    ]
+    return (
+      <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true">
+        {paths.map((d, idx) => (
+          <motion.path
+            key={idx}
+            d={d}
+            stroke="#f4c87a"
+            strokeWidth={1.2}
+            fill="none"
+            strokeOpacity={0.55}
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2.6, delay: idx * 0.18, repeat: Infinity, repeatType: 'reverse', repeatDelay: 1.4 }}
+          />
+        ))}
+        {paths.map((d, idx) => (
+          <circle key={`c-${idx}`} r={2.2} fill="#e07a46">
+            <animateMotion dur={`${3 + idx * 0.3}s`} repeatCount="indefinite" path={d} />
+          </circle>
+        ))}
+      </svg>
+    )
+  }
+  // m3: barrido panóptico
+  return (
+    <svg viewBox="0 0 240 70" className="symploke-decoration" aria-hidden="true">
+      {Array.from({ length: 12 }).map((_, idx) => {
+        const angle = (idx / 12) * Math.PI - Math.PI / 2
+        const x2 = 120 + Math.cos(angle) * 110
+        const y2 = 70 + Math.sin(angle) * 70
+        return (
+          <motion.line
+            key={idx}
+            x1={120}
+            y1={70}
+            x2={x2}
+            y2={y2}
+            stroke="#e07a46"
+            strokeWidth={0.8}
+            strokeOpacity={0.4}
+            animate={{ strokeOpacity: [0.1, 0.7, 0.1] }}
+            transition={{ duration: 2.4, repeat: Infinity, delay: idx * 0.12 }}
+          />
+        )
+      })}
+      <motion.circle
+        cx={120}
+        cy={70}
+        r={5}
+        fill="#e07a46"
+        animate={{ scale: [1, 1.4, 1], opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      />
+    </svg>
   )
 }

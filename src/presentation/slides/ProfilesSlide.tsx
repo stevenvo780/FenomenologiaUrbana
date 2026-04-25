@@ -82,8 +82,12 @@ export function ProfilesSlide({
             <DeltaTile label="Viajes" value={formatSignedInteger(profileComparison.deltaTrips)} />
           </div>
           <div className="profile-entropy-bar">
-            <span>{agent.label}: E={activeStats?.path_entropy.toFixed(3) ?? 'n/d'} · D={activeStats?.diversity_index.toFixed(3) ?? 'n/d'}</span>
-            <span>{compareAgent.label}: E={compareStats?.path_entropy.toFixed(3) ?? 'n/d'} · D={compareStats?.diversity_index.toFixed(3) ?? 'n/d'}</span>
+            <span title="Entropía de Shannon sobre la distribución de rutas elegidas. Cuanto más alto, más diverso es el repertorio del perfil. Índice de diversidad: 1 − Herfindahl, mide concentración de las rutas.">
+              {agent.label}: E={activeStats?.path_entropy.toFixed(3) ?? 'n/d'} · D={activeStats?.diversity_index.toFixed(3) ?? 'n/d'}
+            </span>
+            <span title="Entropía de Shannon sobre la distribución de rutas elegidas. Cuanto más alto, más diverso es el repertorio del perfil. Índice de diversidad: 1 − Herfindahl, mide concentración de las rutas.">
+              {compareAgent.label}: E={compareStats?.path_entropy.toFixed(3) ?? 'n/d'} · D={compareStats?.diversity_index.toFixed(3) ?? 'n/d'}
+            </span>
           </div>
           <RouteDuel
             data={data}

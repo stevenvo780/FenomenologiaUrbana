@@ -2,7 +2,7 @@ import { animate, motion, useMotionValue, useTransform } from 'framer-motion'
 import { useEffect } from 'react'
 
 import type { Payload, ScenarioSummary } from '../../types'
-import { RecordedSimulationClip } from '../components/visuals/RecordedSimulationClip'
+import { AnimatedSimulationStage } from '../components/visuals/AnimatedSimulationStage'
 import { SlideHeader, SlideShell, MetricLine } from '../components/ui'
 import { compactNumber } from '../utils'
 
@@ -45,7 +45,11 @@ export function SimulationSlide({
 
       <div className="simulation-grid">
         <article className="deck-panel simulation-theater">
-          <RecordedSimulationClip scenario={scenario} />
+          <AnimatedSimulationStage data={data} scenario={scenario} selectedNodeId={scenario.top_routes[0]?.path[0] ?? data.nodes[0]?.id ?? ''} />
+          <div className="simulation-theater-overlay" aria-hidden="true">
+            <span className="simulation-theater-pill">⬢ flujo en vivo · {scenario.top_routes.length} rutas top</span>
+            <span className="simulation-theater-pill simulation-theater-pill-accent">{compactNumber(totalAgents)} cuerpos / día</span>
+          </div>
         </article>
 
         <aside className="simulation-sidebar">

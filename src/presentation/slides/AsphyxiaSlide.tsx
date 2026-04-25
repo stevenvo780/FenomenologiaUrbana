@@ -102,6 +102,43 @@ export function AsphyxiaSlide({
             />
           ))}
         </PanelFrame>
+
+        <PanelFrame eyebrow="Compresión de trayectorias" title="Cono de libertad" tone="teal" className="asphyxia-compression">
+          <p className="asphyxia-compression-copy">Cinco perfiles entran al corredor con divergencia máxima; salen con trayectorias casi indistinguibles.</p>
+          <svg viewBox="0 0 320 140" className="asphyxia-compression-svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="asphyxiaConvergence" x1="0" x2="1">
+                <stop offset="0%" stopColor="#1f7f79" stopOpacity="0.85" />
+                <stop offset="100%" stopColor="#e07a46" stopOpacity="0.95" />
+              </linearGradient>
+            </defs>
+            {[0.05, 0.28, 0.5, 0.72, 0.95].map((y, idx) => (
+              <motion.path
+                key={idx}
+                d={`M0 ${20 + y * 100} C120 ${20 + y * 100}, 200 70, 320 70`}
+                fill="none"
+                stroke="url(#asphyxiaConvergence)"
+                strokeWidth={1.6}
+                strokeOpacity={0.78}
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.8, delay: idx * 0.12, ease: [0.16, 1, 0.3, 1], repeat: Infinity, repeatType: 'reverse', repeatDelay: 1.2 }}
+              />
+            ))}
+            <motion.circle
+              cx={320}
+              cy={70}
+              r={6}
+              fill="#e07a46"
+              animate={{ scale: [1, 1.6, 1], opacity: [0.85, 0.4, 0.85] }}
+              transition={{ duration: 2.2, repeat: Infinity }}
+            />
+          </svg>
+          <div className="asphyxia-compression-legend">
+            <span><i style={{ background: '#1f7f79' }} /> entrada · 5 perfiles</span>
+            <span><i style={{ background: '#e07a46' }} /> salida · 1 régimen</span>
+          </div>
+        </PanelFrame>
       </div>
 
       <p className="slide-citation">Foucault, 1975/2002</p>

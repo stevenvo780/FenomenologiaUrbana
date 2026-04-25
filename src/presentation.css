@@ -3556,6 +3556,20 @@ body {
   text-transform: uppercase;
 }
 
+.profile-entropy-bar span {
+  font-size: 0.86rem !important;
+  color: var(--text-strong, #fff8ec);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  cursor: help;
+  line-height: 1.45;
+}
+
+.profile-entropy-bar span:hover {
+  border-color: rgba(244, 200, 122, 0.55);
+  background: rgba(244, 200, 122, 0.08);
+}
+
 .profile-entropy-bar {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4188,3 +4202,276 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============== SECOND-PASS POLISH ============== */
+
+/* SimulationSlide overlay (Vista 7) */
+.simulation-theater {
+  position: relative;
+}
+.simulation-theater-overlay {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 5;
+}
+.simulation-theater-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(20, 16, 15, 0.72);
+  backdrop-filter: blur(10px);
+  color: #fff8ec;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.simulation-theater-pill-accent {
+  background: linear-gradient(120deg, rgba(244, 200, 122, 0.32), rgba(224, 122, 70, 0.22));
+  border-color: rgba(244, 200, 122, 0.45);
+  color: #fff;
+}
+
+/* Symploké decoration (Vista 2) */
+.symploke-decoration {
+  width: 100%;
+  height: 60px;
+  margin: 4px 0 6px;
+  display: block;
+  opacity: 0.85;
+}
+
+/* Heterotopía pulse (Vista 4) */
+.heterotopia-pulse {
+  width: 100%;
+  height: 30px;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+.heterotopia-bars i {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  margin: 4px 0;
+  box-shadow: 0 0 12px rgba(244, 200, 122, 0.18);
+}
+
+/* Crowd Dynamics bottom panel (Vista 8) */
+.crowd-bottom-panel {
+  margin-top: 14px;
+}
+.crowd-bottom-body {
+  display: grid;
+  gap: 10px;
+}
+.crowd-bottom-copy {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-strong, #fff8ec);
+  margin: 0;
+}
+.crowd-bottom-copy strong {
+  color: #f4c87a;
+  font-weight: 700;
+}
+.crowd-bottom-strip {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 50px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.crowd-bottom-tick {
+  flex: 1;
+  border-radius: 2px;
+  transition: filter 200ms;
+}
+.crowd-bottom-tick:hover {
+  filter: brightness(1.4);
+}
+.crowd-bottom-axis {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+/* Stress pressure mini-chart (Vista 9) */
+.stress-pressure-panel {
+  margin-top: 10px;
+}
+.stress-pressure-chart {
+  width: 100%;
+}
+.stress-pressure-caption {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  margin: 6px 0 0;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+/* Asphyxia compression panel (Vista 10) */
+.asphyxia-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-rows: auto auto;
+  align-items: stretch;
+}
+.asphyxia-hero { grid-column: 1 / 2; grid-row: 1; }
+.asphyxia-gini-panel { grid-column: 2 / 3; grid-row: 1; }
+.asphyxia-uncertainty { grid-column: 1 / 2; grid-row: 2; }
+.asphyxia-compression { grid-column: 2 / 3; grid-row: 2; }
+
+.asphyxia-compression-copy {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-strong, #fff8ec);
+  margin: 0 0 8px;
+}
+.asphyxia-compression-svg {
+  width: 100%;
+  height: 130px;
+  display: block;
+}
+.asphyxia-compression-legend {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  margin-top: 6px;
+}
+.asphyxia-compression-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Environment slide (Vista 11) */
+.environment-field-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+.environment-field-figure figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+.environment-field-figure figcaption strong {
+  color: #f4c87a;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.environment-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.environment-stat-row .metric-line {
+  flex: 1;
+}
+.environment-stat-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(244, 200, 122, 0.16);
+  color: #f4c87a;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: help;
+  border: 1px solid rgba(244, 200, 122, 0.3);
+}
+.environment-flow-card {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+.environment-flow-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+.environment-flow-svg {
+  width: 100%;
+  height: 90px;
+  display: block;
+}
+.environment-flow-caption {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-strong, #fff8ec);
+  margin: 6px 0 0;
+}
+
+/* Economy gap fix (Vista 13) */
+.economy-slide .doctoral-grid,
+.economy-slide .doctoral-grid-tight {
+  gap: 22px !important;
+}
+.economy-slide .economy-side-panel,
+.economy-slide .chart-panel {
+  margin: 0;
+}
+
+/* History trend chart (Vista 14) */
+.history-raster-panel {
+  overflow: hidden;
+}
+.history-raster-panel .field-raster,
+.history-raster-panel img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.history-trend {
+  margin-top: auto;
+  padding: 10px 12px;
+  border: 1px solid rgba(244, 200, 122, 0.18);
+  border-radius: 16px;
+  background: linear-gradient(140deg, rgba(244, 200, 122, 0.06), rgba(224, 122, 70, 0.04));
+}
+.history-trend-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+.history-trend-svg {
+  width: 100%;
+  height: 90px;
+  display: block;
+}
+

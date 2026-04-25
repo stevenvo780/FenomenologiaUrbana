@@ -79,6 +79,38 @@ export function CrowdDynamicsSlide({
             ))}
           </PanelFrame>
         </SlideGrid>
+
+        <PanelFrame
+          eyebrow="Lectura biopolítica"
+          title="El día no respira igual en cada hora"
+          className="crowd-bottom-panel"
+          bodyClassName="crowd-bottom-body"
+        >
+          <p className="crowd-bottom-copy">
+            Entre las {valley.hour}:00 y las {peakHour.hour}:00 la calle multiplica por
+            <strong> {peakHour.agents > 0 ? Math.max(1, Math.round(peakHour.agents / Math.max(valley.agents, 1))) : 1}×</strong>
+            su demanda peatonal. La modulación no es un detalle logístico: es la forma en que el corredor disciplina cuerpos.
+          </p>
+          <div className="crowd-bottom-strip" aria-hidden="true">
+            {hourly.map((h) => {
+              const intensity = peakHour.max_load ? h.max_load / peakHour.max_load : 0
+              return (
+                <span
+                  key={h.hour}
+                  className="crowd-bottom-tick"
+                  style={{
+                    height: `${10 + intensity * 36}px`,
+                    background: `hsl(${60 - intensity * 50} ${70 + intensity * 20}% ${50 + intensity * 8}%)`,
+                  }}
+                  title={`${h.hour}:00 · ${compactNumber(h.agents)} agentes`}
+                />
+              )
+            })}
+          </div>
+          <div className="crowd-bottom-axis">
+            <span>00h</span><span>06h</span><span>12h</span><span>18h</span><span>24h</span>
+          </div>
+        </PanelFrame>
       </div>
       <p className="slide-citation">Simmel, 1903/1986</p>
     </SlideShell>

@@ -77,6 +77,7 @@ export function HeterotopiasSlide({
                 >
                   <p className="heterotopia-tagline">{group.tagline}</p>
                   {lead ? <LeadNode node={lead} /> : <p className="analysis-note-copy">Sin nodos en esta categoría.</p>}
+                  <HeterotopiaPulse tone={group.tone} />
                   {others.length ? (
                     <div className="heterotopia-chip-row">
                       {others.map((node) => (
@@ -116,9 +117,24 @@ function LeadNode({ node }: { node: CaseNode }) {
       </header>
       <p>{node.phenomenology}</p>
       <div className="heterotopia-bars" aria-hidden="true">
-        <i style={{ width: `${node.security * 100}%` }} />
-        <i style={{ width: `${node.comfort * 100}%` }} />
-        <i style={{ width: `${node.memory * 100}%` }} />
+        <motion.i
+          style={{ background: 'linear-gradient(90deg, #e07a46, #f4c87a)' }}
+          initial={{ width: 0 }}
+          animate={{ width: `${node.security * 100}%` }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        />
+        <motion.i
+          style={{ background: 'linear-gradient(90deg, #1f7f79, #4cd6c5)' }}
+          initial={{ width: 0 }}
+          animate={{ width: `${node.comfort * 100}%` }}
+          transition={{ duration: 1.4, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        />
+        <motion.i
+          style={{ background: 'linear-gradient(90deg, #f4c87a, #fff8ec)' }}
+          initial={{ width: 0 }}
+          animate={{ width: `${node.memory * 100}%` }}
+          transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        />
       </div>
       <div className="heterotopia-bar-legend">
         <span>seguridad</span>
@@ -126,5 +142,30 @@ function LeadNode({ node }: { node: CaseNode }) {
         <span>memoria</span>
       </div>
     </article>
+  )
+}
+
+function HeterotopiaPulse({ tone }: { tone: 'danger' | 'amber' | 'teal' }) {
+  const color = tone === 'danger' ? '#e07a46' : tone === 'amber' ? '#f4c87a' : '#1f7f79'
+  return (
+    <svg viewBox="0 0 240 36" className="heterotopia-pulse" aria-hidden="true">
+      <motion.path
+        d="M0 18 L40 18 L52 6 L64 30 L76 12 L88 24 L100 18 L240 18"
+        fill="none"
+        stroke={color}
+        strokeWidth={1.4}
+        strokeOpacity={0.7}
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: 1 }}
+        transition={{ duration: 2.4, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
+      />
+      <motion.circle
+        r={3}
+        fill={color}
+        animate={{ cx: [0, 240], opacity: [0, 1, 1, 0] }}
+        cy={18}
+        transition={{ duration: 3.2, repeat: Infinity, ease: 'linear' }}
+      />
+    </svg>
   )
 }

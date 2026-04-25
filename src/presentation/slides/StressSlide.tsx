@@ -1,4 +1,4 @@
-import { CartesianGrid, ComposedChart, Line, ReferenceLine, Tooltip, XAxis, YAxis } from 'recharts'
+import { Area, AreaChart, CartesianGrid, ComposedChart, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import type { Payload } from '../../types'
 import { FieldRaster } from '../components/visuals/FieldRaster'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
@@ -82,6 +82,29 @@ export function StressSlide({
                 <p className="analysis-note-copy">{chaos?.conclusion ?? stress?.conclusion}</p>
               </PanelFrame>
             </motion.div>
+
+            <PanelFrame eyebrow="Presión sistémica" title="Curva de carga" tone="amber" className="stress-pressure-panel panel-frame-compact">
+              <div className="stress-pressure-chart">
+                <ResponsiveContainer width="100%" height={120}>
+                  <AreaChart data={stress?.full_curve ?? []} margin={{ top: 4, right: 4, left: 0, bottom: 0 }}>
+                    <defs>
+                      <linearGradient id="stressPressureFill" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" stopColor="#f4c87a" stopOpacity={0.7} />
+                        <stop offset="100%" stopColor="#f4c87a" stopOpacity={0.05} />
+                      </linearGradient>
+                    </defs>
+                    <Tooltip
+                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px', borderRadius: 12 }}
+                      labelFormatter={(v) => `${Number(v).toLocaleString('es-CO')} agentes`}
+                      formatter={(value: unknown) => [Number(value).toFixed(2), 'Presión']}
+                    />
+                    <Area type="monotone" dataKey="pressure_index" stroke="#f4c87a" strokeWidth={2} fill="url(#stressPressureFill)" />
+                    {tipping ? <ReferenceLine x={tipping.agents} stroke="var(--danger)" strokeDasharray="3 3" /> : null}
+                  </AreaChart>
+                </ResponsiveContainer>
+              </div>
+              <p className="stress-pressure-caption">Presión sistémica vs. agentes simultáneos. La línea punteada marca el punto de colapso.</p>
+            </PanelFrame>
           </div>
         </SlideGrid>
       </div>
