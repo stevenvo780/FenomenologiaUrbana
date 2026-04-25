@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
-import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
+import { KpiPill, PanelFrame, SlideGrid, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, formatRatio } from '../utils'
 
 export function VisibilitySlide({
@@ -25,45 +25,54 @@ export function VisibilitySlide({
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Modelo perceptual</button>}
       />
 
-      <div className="doctoral-grid doctoral-grid-tight">
-        <article className="deck-panel visibility-hero-panel">
-          <div className="visibility-meter">
-            <div className="visibility-meter-core" style={{ '--pct': `${opennessPct}%` } as CSSProperties}>
-              <Eye size={30} aria-hidden="true" />
-              <strong>{opennessPct.toFixed(2)}%</strong>
-              <span>openness medio</span>
+      <div className="slide-content">
+        <SlideGrid className="slide-grid-analysis visibility-layout">
+          <PanelFrame
+            eyebrow="Campo perceptual"
+            title="Apertura, exposición y legibilidad"
+            className="visibility-hero-panel"
+            bodyClassName="visibility-hero-stage"
+          >
+            <div className="visibility-meter">
+              <div className="visibility-meter-core" style={{ '--pct': `${opennessPct}%` } as CSSProperties}>
+                <Eye size={30} aria-hidden="true" />
+                <strong>{opennessPct.toFixed(2)}%</strong>
+                <span>openness medio</span>
+              </div>
             </div>
-          </div>
-          <div className="status-strip">
-            <KpiPill label="Puntos muestreados" value={compactNumber(visibility?.points_sampled ?? 0)} status="documented" />
-            <KpiPill label="Rayos" value={compactNumber(visibility?.ray_count ?? 0)} status="documented" />
-            <KpiPill label="Resolución" value={visibility?.resolution ?? '2048×2048'} status="proxy" />
-          </div>
-        </article>
+            <div className="surface-pill-grid">
+              <KpiPill label="Puntos muestreados" value={compactNumber(visibility?.points_sampled ?? 0)} status="documented" compact />
+              <KpiPill label="Rayos" value={compactNumber(visibility?.ray_count ?? 0)} status="documented" compact />
+              <KpiPill label="Resolución" value={visibility?.resolution ?? '2048×2048'} status="proxy" compact />
+            </div>
+          </PanelFrame>
 
-        <aside className="deck-panel visibility-side-panel">
-          <div className="spotlight-grid spotlight-grid-compact">
-            <article className="spotlight-card highlight">
-              <span>Exposición máxima</span>
-              <strong>{compactNumber(visibility?.max_panoptic_exposure ?? 0)}</strong>
-              <p>Máxima acumulación de líneas de vista registradas por el análisis isovístico.</p>
-            </article>
-            <article className="spotlight-card">
-              <span>Lectura del régimen visual</span>
-              <strong><Radar size={18} aria-hidden="true" /> Panoptismo computable</strong>
-              <p>La exposición ya no es una intuición interpretativa: queda cuantificada.</p>
-            </article>
-          </div>
+          <div className="slide-grid-side visibility-aside">
+            <div className="visibility-insight-grid">
+              <PanelFrame eyebrow="Exposición máxima" tone="amber" className="panel-frame-compact">
+                <strong className="insight-number">{compactNumber(visibility?.max_panoptic_exposure ?? 0)}</strong>
+                <p className="analysis-note-copy">Máxima acumulación de líneas de vista registradas por el análisis isovístico.</p>
+              </PanelFrame>
 
-          <div className="visibility-note">
-            <p className="deck-eyebrow">Clave fenomenológica</p>
-            <h3>Ver, ser visto y anticipar el riesgo</h3>
-            <p>
-              La apertura del corredor roza el {formatRatio(visibility?.mean_openness ?? 0)}. Eso significa que orientación, vigilancia y
-              vulnerabilidad comparten infraestructura perceptiva.
-            </p>
+              <PanelFrame eyebrow="Lectura del régimen visual" className="panel-frame-compact">
+                <strong className="insight-heading"><Radar size={18} aria-hidden="true" /> Panoptismo computable</strong>
+                <p className="analysis-note-copy">La exposición ya no es una intuición interpretativa: queda cuantificada.</p>
+              </PanelFrame>
+            </div>
+
+            <PanelFrame
+              eyebrow="Clave fenomenológica"
+              title="Ver, ser visto y anticipar el riesgo"
+              tone="teal"
+              className="analysis-note-panel visibility-note-panel"
+            >
+              <p className="analysis-note-copy">
+                La apertura del corredor roza el {formatRatio(visibility?.mean_openness ?? 0)}. Eso significa que orientación, vigilancia y
+                vulnerabilidad comparten infraestructura perceptiva.
+              </p>
+            </PanelFrame>
           </div>
-        </aside>
+        </SlideGrid>
       </div>
     </SlideShell>
   )

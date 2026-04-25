@@ -8,6 +8,8 @@ type SlideShellProps = {
   children: ReactNode
 }
 
+type PanelTone = 'default' | 'danger' | 'teal' | 'amber'
+
 export function SlideShell({ id, className = '', children }: SlideShellProps) {
   return (
     <motion.section
@@ -54,17 +56,76 @@ export function KpiPill({
   label,
   value,
   status,
+  compact = false,
 }: {
   label: string
   value: string | number
   status: EpistemicStatus
+  compact?: boolean
 }) {
   return (
-    <div className="kpi-pill">
+    <div className={`kpi-pill${compact ? ' kpi-compact' : ''}`}>
       <span>{label}</span>
       <strong>{value}</strong>
       <EpistemicBadge status={status} compact />
     </div>
+  )
+}
+
+export function SlideGrid({ children, className = '' }: { children: ReactNode; className?: string }) {
+  return <div className={`slide-grid ${className}`}>{children}</div>
+}
+
+export function PanelFrame({
+  eyebrow,
+  title,
+  children,
+  className = '',
+  bodyClassName = '',
+  tone = 'default',
+}: {
+  eyebrow?: string
+  title?: ReactNode
+  children: ReactNode
+  className?: string
+  bodyClassName?: string
+  tone?: PanelTone
+}) {
+  return (
+    <article className={`deck-panel panel-frame panel-tone-${tone}${className ? ` ${className}` : ''}`}>
+      {eyebrow || title ? (
+        <div className="panel-frame-header">
+          {eyebrow ? <p className="deck-eyebrow">{eyebrow}</p> : null}
+          {title ? <div className="panel-frame-title">{title}</div> : null}
+        </div>
+      ) : null}
+      <div className={`panel-frame-body${bodyClassName ? ` ${bodyClassName}` : ''}`}>{children}</div>
+    </article>
+  )
+}
+
+export function ChartPanel({
+  eyebrow,
+  title,
+  children,
+  className = '',
+  bodyClassName = '',
+}: {
+  eyebrow?: string
+  title?: ReactNode
+  children: ReactNode
+  className?: string
+  bodyClassName?: string
+}) {
+  return (
+    <PanelFrame
+      eyebrow={eyebrow}
+      title={title}
+      className={`chart-panel-frame${className ? ` ${className}` : ''}`}
+      bodyClassName={`chart-panel-body${bodyClassName ? ` ${bodyClassName}` : ''}`}
+    >
+      {children}
+    </PanelFrame>
   )
 }
 
