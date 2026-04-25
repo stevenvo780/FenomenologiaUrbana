@@ -1,3 +1,4 @@
+import { Info, Volume2, Wind } from 'lucide-react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useMemo } from 'react'
 
@@ -52,6 +53,11 @@ const GRADIENTS: Record<'pm25' | 'noise', string> = {
   noise: 'linear-gradient(90deg, #2a4d6e 0%, #5b8fb9 35%, #f4c87a 65%, #e07a46 85%, #c33a3a 100%)',
 }
 
+const HELP_COPY: Record<'pm25' | 'noise', string> = {
+  pm25: 'Cada barra = un tramo del corredor. Las altas y rojas son zonas donde el aire pesa: el cuerpo desvía la ruta hacia las verdes.',
+  noise: 'Cada barra = un tramo del corredor. Las altas y rojas son focos sonoros que saturan: el cuerpo busca corredores acústicos más bajos.',
+}
+
 export function EnvironmentMeter({
   kind,
   title,
@@ -80,21 +86,27 @@ export function EnvironmentMeter({
 
   const peakPct = Math.min(100, (peak / scaleMax) * 100)
   const avgPct = Math.min(100, (average / scaleMax) * 100)
+  const helpText = HELP_COPY[kind]
 
   return (
     <figure className={`env-meter env-meter-${kind}`}>
       <header className="env-meter-head">
-        <span className="env-meter-icon" aria-hidden>
-          {kind === 'pm25' ? '🫁' : '🔊'}
-        </span>
-        <div className="env-meter-titles">
-          <strong>{title}</strong>
-          <span className="env-meter-sub">
-            {kind === 'pm25'
-              ? 'Lo que respira el cuerpo a lo largo del corredor'
-              : 'Lo que escucha el cuerpo a lo largo del corredor'}
+        <div className="env-meter-title-main">
+          <span className="env-meter-icon" aria-hidden>
+            {kind === 'pm25' ? <Wind size={20} /> : <Volume2 size={20} />}
           </span>
+          <div className="env-meter-titles">
+            <strong>{title}</strong>
+            <span className="env-meter-sub">
+              {kind === 'pm25'
+                ? 'Lo que respira el cuerpo a lo largo del corredor'
+                : 'Lo que escucha el cuerpo a lo largo del corredor'}
+            </span>
+          </div>
         </div>
+        <span className="env-meter-help" title={helpText} aria-label={`Más información sobre ${title}`}>
+          <Info size={14} aria-hidden="true" />
+        </span>
       </header>
 
       {/* Corridor strip — 28 vertical bars representing west→east samples */}
@@ -155,12 +167,6 @@ export function EnvironmentMeter({
         <span>0 {unit}</span>
         <span>{scaleMax.toFixed(0)} {unit}</span>
       </div>
-
-      <figcaption className="env-meter-caption">
-        {kind === 'pm25'
-          ? 'Cada barra = un tramo del corredor. Las altas y rojas son zonas donde el aire pesa: el cuerpo desvía la ruta hacia las verdes.'
-          : 'Cada barra = un tramo del corredor. Las altas y rojas son focos sonoros que saturan: el cuerpo busca corredores acústicos más bajos.'}
-      </figcaption>
     </figure>
   )
 }

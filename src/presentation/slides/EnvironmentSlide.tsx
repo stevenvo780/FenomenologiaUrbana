@@ -1,7 +1,8 @@
+import { Info } from 'lucide-react'
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
 import { EnvironmentMeter } from '../components/visuals/EnvironmentMeter'
-import { KpiPill, MetricLine, PanelFrame, SlideHeader, SlideShell } from '../components/ui'
+import { MetricLine, PanelFrame, SlideHeader, SlideShell } from '../components/ui'
 
 export function EnvironmentSlide({
   data,
@@ -30,13 +31,6 @@ export function EnvironmentSlide({
 
       <div className="environment-raster-grid">
         <article className="deck-panel environment-raster-panel">
-          <div className="status-strip">
-            <KpiPill label="Malla" value={report?.resolution?.split(' ')[0] ?? '4096×4096'} status="documented" tooltip="Resolución de la malla de simulación: cuántas celdas se calculan para reproducir ruido y contaminación. Más celdas = más detalle espacial." />
-            <KpiPill label="Estación PM2.5" value={data.empirical.environmental_context.air.pm25.nearest_station?.short_name ?? 's/d'} status="documented" tooltip="Estación oficial más cercana que mide PM2.5: partículas finas en el aire (humo, polvo) que afectan la salud respiratoria." />
-          </div>
-          <p className="environment-poetic">
-            Antes de la decisión hay un campo: aire que pesa, ruido que ocupa. La ruta libre se inclina hacia donde el cuerpo respira.
-          </p>
           <div className="environment-field-split">
             <EnvironmentMeter
               kind="pm25"
@@ -72,21 +66,32 @@ export function EnvironmentSlide({
         </article>
 
         <PanelFrame eyebrow="Lectura derecha" title="Estadísticas del campo" tone="teal" className="environment-side-panel">
+          <p className="environment-poetic environment-poetic-side">
+            Antes de la decisión hay un campo: aire que pesa, ruido que ocupa. La ruta libre se inclina hacia donde el cuerpo respira.
+          </p>
           <div className="environment-stat-row">
             <MetricLine label="PM2.5 pico" value={`${(report?.pm25.peak ?? 0).toFixed(2)} µg/m³`} tooltip="Concentración máxima de partículas finas (PM2.5) en el corredor. La OMS recomienda no superar 15 µg/m³ en promedio diario." />
-            <span className="environment-stat-hint" title="Concentración máxima alcanzada en cualquier celda durante la jornada">i</span>
+            <span className="environment-stat-hint" title="Concentración máxima alcanzada en cualquier celda durante la jornada">
+              <Info size={12} aria-hidden="true" />
+            </span>
           </div>
           <div className="environment-stat-row">
             <MetricLine label="PM2.5 medio" value={`${(report?.pm25.ambient_avg ?? 0).toFixed(2)} µg/m³`} tooltip="Promedio de PM2.5 en todo el corredor: lo que respira un peatón típico durante el día." />
-            <span className="environment-stat-hint" title="Promedio espacial sobre la malla 4096×4096">i</span>
+            <span className="environment-stat-hint" title="Promedio espacial sobre la malla 4096×4096">
+              <Info size={12} aria-hidden="true" />
+            </span>
           </div>
           <div className="environment-stat-row">
             <MetricLine label="Ruido pico" value={`${(report?.noise.peak_db ?? 0).toFixed(1)} dB`} tooltip="Nivel sonoro máximo en decibelios. Por encima de 70 dB el ruído causa estrés; sobre 85 dB sostenido daña la audición." />
-            <span className="environment-stat-hint" title="Decibeles máximos. Por encima de 70 dB inicia disconfort sostenido">i</span>
+            <span className="environment-stat-hint" title="Decibeles máximos. Por encima de 70 dB inicia disconfort sostenido">
+              <Info size={12} aria-hidden="true" />
+            </span>
           </div>
           <div className="environment-stat-row">
             <MetricLine label="Ruido varianza espacial" value={(report?.noise.spatial_variance ?? 0).toFixed(2)} tooltip="Qué tanto cambia el ruido entre un punto y otro del corredor. Alto = paisaje sonoro contrastado (zonas calmas y muy ruidosas alternan)." />
-            <span className="environment-stat-hint" title="Mide qué tan heterogénea es la presión acústica entre nodos">i</span>
+            <span className="environment-stat-hint" title="Mide qué tan heterogénea es la presión acústica entre nodos">
+              <Info size={12} aria-hidden="true" />
+            </span>
           </div>
 
           <div className="environment-flow-card">
@@ -110,6 +115,22 @@ export function EnvironmentSlide({
               </circle>
             </svg>
             <p className="environment-flow-caption">El cuerpo no decide en abstracto: lee el aire. Las partículas y los decibeles actúan como señales que repelen rutas.</p>
+            <div className="environment-flow-meta" aria-label="Metadatos del campo ambiental">
+              <div
+                className="environment-flow-meta-row"
+                title="Resolución de la malla de simulación: cuántas celdas se calculan para reproducir ruido y contaminación. Más celdas = más detalle espacial."
+              >
+                <span>Malla</span>
+                <strong>{report?.resolution?.split(' ')[0] ?? '4096×4096'}</strong>
+              </div>
+              <div
+                className="environment-flow-meta-row"
+                title="Estación oficial más cercana que mide PM2.5: partículas finas en el aire (humo, polvo) que afectan la salud respiratoria."
+              >
+                <span>Estación PM2.5</span>
+                <strong>{data.empirical.environmental_context.air.pm25.nearest_station?.short_name ?? 's/d'}</strong>
+              </div>
+            </div>
           </div>
         </PanelFrame>
       </div>

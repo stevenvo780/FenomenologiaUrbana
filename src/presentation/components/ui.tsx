@@ -70,7 +70,7 @@ export function KpiPill({
     >
       <span className="kpi-pill-label">
         {label}
-        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+       
       </span>
       <strong className="kpi-pill-value">{value}</strong>
       <EpistemicBadge status={status} compact />
@@ -168,7 +168,7 @@ export function MetricLine({
     >
       <span className="metric-line-label">
         {label}
-        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+       
       </span>
       <strong className="metric-line-value">{value}</strong>
     </div>
@@ -201,7 +201,7 @@ export function DeltaTile({
     >
       <span className="delta-tile-label">
         {label}
-        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+       
       </span>
       <strong className="delta-tile-value">{value}</strong>
     </div>
@@ -231,7 +231,7 @@ export function StatTile({
     >
       <span className="stat-tile-label">
         {label}
-        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+       
       </span>
       <strong className="stat-tile-value">{value}</strong>
       {note ? <p className="stat-tile-note">{note}</p> : null}

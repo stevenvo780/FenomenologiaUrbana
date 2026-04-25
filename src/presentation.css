@@ -3863,10 +3863,17 @@ body {
 .environment-raster-panel,
 .history-raster-panel {
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr);
   gap: 12px;
   padding: 16px;
   min-height: 0;
+}
+
+.environment-raster-panel {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.history-raster-panel {
+  grid-template-rows: auto auto minmax(0, 1fr);
 }
 
 .environment-poetic {
@@ -3878,6 +3885,13 @@ body {
   letter-spacing: -0.005em;
   border-left: 2px solid rgba(244, 200, 122, 0.5);
   padding-left: 12px;
+}
+
+.environment-poetic-side {
+  padding: 10px 12px;
+  border-left-width: 3px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .environment-field-split {
@@ -4456,6 +4470,12 @@ body {
   cursor: help;
   border: 1px solid rgba(244, 200, 122, 0.3);
 }
+
+.environment-stat-hint svg {
+  width: 12px;
+  height: 12px;
+  stroke-width: 2.2;
+}
 .environment-flow-card {
   margin-top: 14px;
   padding: 12px;
@@ -4481,6 +4501,33 @@ body {
   line-height: 1.5;
   color: var(--text-strong, #fff8ec);
   margin: 6px 0 0;
+}
+.environment-flow-meta {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.environment-flow-meta-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.environment-flow-meta-row span {
+  color: rgba(255, 248, 236, 0.58);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.environment-flow-meta-row strong {
+  color: #fff8ec;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-align: right;
 }
 
 /* Economy gap fix (Vista 13) */
@@ -5050,18 +5097,41 @@ body {
 
 .env-meter-head {
   display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.env-meter-title-main {
+  min-width: 0;
+  flex: 1;
+  display: flex;
   align-items: center;
   gap: 14px;
 }
 
 .env-meter-icon {
-  font-size: 1.8rem;
-  filter: grayscale(0.1);
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #f4c87a;
+  background: rgba(244, 200, 122, 0.12);
+  border: 1px solid rgba(244, 200, 122, 0.22);
+}
+
+.env-meter-icon svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  stroke-width: 2.1;
 }
 
 .env-meter-titles {
   display: grid;
   gap: 2px;
+  min-width: 0;
 }
 
 .env-meter-titles strong {
@@ -5069,6 +5139,31 @@ body {
   letter-spacing: 0.02em;
   color: var(--text-strong, #fff8ec);
   text-transform: uppercase;
+}
+
+.env-meter-help {
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #f4c87a;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: help;
+}
+
+.env-meter-help svg {
+  width: 0.82rem;
+  height: 0.82rem;
+  stroke-width: 2.2;
+}
+
+.env-meter-help:hover {
+  background: rgba(244, 200, 122, 0.12);
+  border-color: rgba(244, 200, 122, 0.24);
 }
 
 .env-meter-sub {
@@ -5223,9 +5318,3 @@ body {
   letter-spacing: 0.06em;
 }
 
-.env-meter-caption {
-  margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--text-dim, rgba(255, 255, 255, 0.7));
-}
