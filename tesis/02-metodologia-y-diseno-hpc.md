@@ -32,7 +32,7 @@ Estos nodos no agotan la complejidad del centro; son una discretización mínima
 
 ## 2.3. Fuentes de datos, trazabilidad y estado de captura
 
-El pipeline integra fuentes públicas descargadas y transformadas: MEData, SIATA/AMVA, DANE, Medellín Cómo Vamos, Metro de Medellín y geometría base de OpenStreetMap/Overpass (Alcaldía de Medellín, s. f.; Área Metropolitana del Valle de Aburrá, s. f.; Departamento Administrativo Nacional de Estadística, 2018; Haklay & Weber, 2008; Medellín Cómo Vamos, 2025; Metro de Medellín, s. f.; OpenStreetMap contributors, 2026).
+El pipeline integra fuentes públicas descargadas y transformadas: MEData, SIATA/AMVA, DANE, Medellín Cómo Vamos, Metro de Medellín y geometría base de OpenStreetMap/Overpass (Alcaldía de Medellín, s. f.; Área Metropolitana del Valle de Aburrá, s. f.; Departamento Administrativo Nacional de Estadística, 2018; Haklay & Weber, 2008; Medellín Cómo Vamos & Invamer, 2024; Metro de Medellín, s. f.; OpenStreetMap contributors, 2026).
 
 El archivo `source_status.json` reporta 19 fuentes intentadas, 15 descargadas y 4 fallidas. Las fallas registradas incluyen páginas de MEData con tiempo de espera y acceso 403 al geovisor DANE. Esta información no debe ocultarse: forma parte de la trazabilidad de la investigación y permite diferenciar datos efectivamente incorporados de datos no disponibles.
 
@@ -149,6 +149,8 @@ El modelo debe someterse a tres tipos de prueba:
 3. **Validación empírica:** comparar salidas con conteos, permanencias, mediciones y encuestas de campo.
 
 La validación interna y parte de la sensibilidad pueden hacerse ya en PC. La validación empírica no. Por tanto, el modelo debe ser falsable: si los conteos reales muestran flujos distintos, si la percepción de seguridad contradice los proxies o si el ruido puntual no corresponde a los campos simulados, el modelo debe recalibrarse.
+
+Esta validación no debe entenderse como simple confirmación numérica. En términos epistemológicos, la fase de campo debe producir conocimiento situado: cada conteo, medición o encuesta depende de hora, posición, instrumento, observador y protocolo. Esta cautela sigue la advertencia de Haraway (1995): no existe una mirada neutral “desde ninguna parte”; hay perspectivas parciales que deben declararse para ser discutibles.
 
 ## 2.12. Consideraciones éticas
 

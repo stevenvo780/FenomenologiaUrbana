@@ -23,7 +23,7 @@ Estas tareas pueden hacerse entre usuario y asistente en el computador, sin sali
 | Media | Crear anexo ético | consentimiento, anonimización, fotografía, datos sensibles | `investigacion/docs/etica-campo.md` |
 | Media | Tabla de trazabilidad | afirmación → fuente/script/output/pendiente | `investigacion/docs/trazabilidad-tesis.md` |
 | Media | Ampliar bibliografía empírica reciente | literatura 2020–2025 sobre Medellín, movilidad peatonal, seguridad, ruido y espacio público | `bibliografia/referencias-academicas.md` |
-| Media | Revisar consistencia APA | DOI, URLs, fechas de consulta, edición y traducción | capítulo 4 + bibliografía |
+| Media | Revisar consistencia APA restante | DOI, URLs, ediciones completas y reemplazo de extractos locales por fuentes verificables | capítulo 4 + bibliografía |
 | Media | Generar tablas listas para tesis | fuentes, variables, límites, resultados defendibles/no defendibles | capítulos 2 y 3 |
 | Baja | Preparar preguntas de defensa | respuestas a objeciones previsibles del jurado | `tesis/pendientes/preguntas-defensa.md` |
 

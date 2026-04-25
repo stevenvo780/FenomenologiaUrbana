@@ -4,7 +4,7 @@ Este documento registra la evolución técnica, conceptual y documental del proy
 
 ## Hitos de Desarrollo Documental y Técnico
 
-### Fase I: Cimentación Ontológica (Abril 2026)
+### Fase I: Cimentación conceptual (Abril 2026)
 - Definición del corredor Junín-San Antonio como laboratorio fenomenológico.
 - Establecimiento del marco filosófico inicial (Husserl, Merleau-Ponty).
 - Creación de la infraestructura de grafos base y descarga de fuentes públicas.
@@ -28,6 +28,7 @@ Este documento registra la evolución técnica, conceptual y documental del proy
 - **2026-04-24:** Escalado a simulaciones de alta fidelidad (HPC) y entrenamiento de agentes DRL.
 - **2026-04-24:** Consolidación inicial de la tesis en 4 capítulos con referencias en formato APA 7.
 - **2026-04-25:** Revisión de tono académico, explicitación de límites `baseline_proxy` y creación de bibliografía académica separada.
+- **2026-04-25:** Auditoría bibliográfica con lectura de PDFs locales; corrección de Badiou, Medellín Cómo Vamos/Invamer y Haraway.
 
 ## Evolución del Aparataje Conceptual
 1. **v1.0 (Poética):** Descripción estética de atmósferas urbanas.
@@ -36,4 +37,4 @@ Este documento registra la evolución técnica, conceptual y documental del proy
 
 ## Bibliografía académica
 
-La bibliografía formal del proyecto se consolida en `bibliografia/referencias-academicas.md` y en la sección 4.4 de `tesis/04-conclusiones-y-referencias-bibliograficas.md`.
+La bibliografía formal del proyecto se consolida en `bibliografia/referencias-academicas.md` y en la sección 4.12 de `tesis/04-conclusiones-y-referencias-bibliograficas.md`.

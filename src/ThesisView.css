@@ -170,6 +170,45 @@ html, body {
   color: rgba(255, 248, 236, 0.9);
 }
 
+/* Table Styles */
+.thesis-content table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 3rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+}
+
+.thesis-content th {
+  background: rgba(224, 122, 70, 0.1);
+  color: var(--accent);
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.thesis-content td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: rgba(255, 248, 236, 0.8);
+}
+
+.thesis-content tr:last-child td {
+  border-bottom: none;
+}
+
+.thesis-content tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff8ec;
+}
+
 .mermaid-container {
   display: flex;
   justify-content: center;
