@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T03:26:38+00:00",
+  "generated_at": "2026-04-25T03:46:00+00:00",
   "engine": "Historical M-MASS Longitudinal Series",
   "years_analyzed": [
     "2012",
@@ -15,9 +15,9 @@
         "casos_crimen": 2370
       },
       "agents_simulated": 94604,
-      "max_density": 131.38333129882812,
-      "entropy_spatial": 186441.0625,
-      "turbulence": 0.14495106041431427
+      "max_density": 126.46333312988281,
+      "entropy_spatial": 186780.5,
+      "turbulence": 0.14689941704273224
     },
     {
       "year": "2018",
@@ -27,9 +27,9 @@
         "casos_crimen": 13387
       },
       "agents_simulated": 93846,
-      "max_density": 504.9000244140625,
-      "entropy_spatial": 195433.875,
-      "turbulence": 0.5669907927513123
+      "max_density": 479.0066833496094,
+      "entropy_spatial": 195556.09375,
+      "turbulence": 0.5620443224906921
     },
     {
       "year": "2024",
@@ -39,9 +39,9 @@
         "casos_crimen": 5000
       },
       "agents_simulated": 533,
-      "max_density": 1.415000081062317,
-      "entropy_spatial": 1672.77978515625,
-      "turbulence": 0.2212131917476654
+      "max_density": 1.4033334255218506,
+      "entropy_spatial": 1688.898681640625,
+      "turbulence": 0.5620443224906921
     }
   ]
 }

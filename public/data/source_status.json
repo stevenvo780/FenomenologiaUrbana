@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-25T03:19:32+00:00",
+  "generated_at": "2026-04-25T03:39:35+00:00",
   "source_count": 19,
-  "downloaded_count": 16,
-  "failed_count": 3,
+  "downloaded_count": 15,
+  "failed_count": 4,
   "sources": [
     {
       "id": "movilidad_observatorio",
@@ -101,25 +101,25 @@
       "url": "https://medata.gov.co/node/41535",
       "kind": "medata_page",
       "status": "failed",
-      "http_status": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "http_status": null,
+      "content_type": null,
       "bytes": 0,
       "local_path": null,
       "resolved_url": "https://medata.gov.co/node/41535",
-      "note": "http_403"
+      "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=10)\"))"
     },
     {
       "id": "medata_pasajeros_mov_page",
       "label": "MEData pasajeros movilizados",
       "url": "https://medata.gov.co/node/16624",
       "kind": "html",
-      "status": "downloaded",
-      "http_status": 200,
-      "content_type": "text/html; charset=UTF-8",
-      "bytes": 19871,
-      "local_path": "raw/medata_pasajeros_mov_page.html",
+      "status": "failed",
+      "http_status": null,
+      "content_type": null,
+      "bytes": 0,
+      "local_path": null,
       "resolved_url": "https://medata.gov.co/node/16624",
-      "note": "captured"
+      "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=20)\"))"
     },
     {
       "id": "medata_pasajeros_mov_csv",

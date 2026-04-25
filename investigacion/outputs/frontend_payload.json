@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-25T03:26:54+00:00",
+    "generated_at": "2026-04-25T03:46:08+00:00",
     "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
     "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
@@ -1473,7 +1473,7 @@
       }
     },
     "historical_evolution": {
-      "generated_at": "2026-04-25T03:26:38+00:00",
+      "generated_at": "2026-04-25T03:46:00+00:00",
       "engine": "Historical M-MASS Longitudinal Series",
       "years_analyzed": [
         "2012",
@@ -1489,9 +1489,9 @@
             "casos_crimen": 2370
           },
           "agents_simulated": 94604,
-          "max_density": 131.38333129882812,
-          "entropy_spatial": 186441.0625,
-          "turbulence": 0.14495106041431427
+          "max_density": 126.46333312988281,
+          "entropy_spatial": 186780.5,
+          "turbulence": 0.14689941704273224
         },
         {
           "year": "2018",
@@ -1501,9 +1501,9 @@
             "casos_crimen": 13387
           },
           "agents_simulated": 93846,
-          "max_density": 504.9000244140625,
-          "entropy_spatial": 195433.875,
-          "turbulence": 0.5669907927513123
+          "max_density": 479.0066833496094,
+          "entropy_spatial": 195556.09375,
+          "turbulence": 0.5620443224906921
         },
         {
           "year": "2024",
@@ -1513,9 +1513,9 @@
             "casos_crimen": 5000
           },
           "agents_simulated": 533,
-          "max_density": 1.415000081062317,
-          "entropy_spatial": 1672.77978515625,
-          "turbulence": 0.2212131917476654
+          "max_density": 1.4033334255218506,
+          "entropy_spatial": 1688.898681640625,
+          "turbulence": 0.5620443224906921
         }
       ]
     },
@@ -1537,7 +1537,7 @@
   },
   "advanced_reports": {
     "urban_inequality": {
-      "generated_at": "2026-04-25T03:26:00+00:00",
+      "generated_at": "2026-04-25T03:45:59+00:00",
       "key_findings": "An\u00e1lisis de desigualdad fenomenol\u00f3gica basado en M-MASS x100.",
       "scenarios": [
         {
@@ -1576,157 +1576,157 @@
       "conclusion": "La desigualdad en la libertad de ruta (entrop\u00eda) es un indicador de la calidad democr\u00e1tica del espacio urbano."
     },
     "hpc_24h": {
-      "generated_at": "2026-04-25T03:25:50+00:00",
+      "generated_at": "2026-04-25T03:45:49+00:00",
       "total_simulated_agents_day": 640000,
       "hourly_metrics": [
         {
           "hour": 0,
           "agents": 2500,
-          "max_load": 5.460000038146973,
-          "mean_energy": 0.8326683640480042
+          "max_load": 6.636666774749756,
+          "mean_energy": 0.8291079998016357
         },
         {
           "hour": 1,
           "agents": 2500,
-          "max_load": 6.380000114440918,
-          "mean_energy": 0.8311171531677246
+          "max_load": 6.423333644866943,
+          "mean_energy": 0.8308109045028687
         },
         {
           "hour": 2,
           "agents": 5000,
-          "max_load": 11.610000610351562,
-          "mean_energy": 0.831846296787262
+          "max_load": 12.820000648498535,
+          "mean_energy": 0.8297468423843384
         },
         {
           "hour": 3,
           "agents": 10000,
-          "max_load": 19.97333335876465,
-          "mean_energy": 0.8315748572349548
+          "max_load": 21.996667861938477,
+          "mean_energy": 0.8302921652793884
         },
         {
           "hour": 4,
           "agents": 25000,
-          "max_load": 53.03333282470703,
-          "mean_energy": 0.8303059339523315
+          "max_load": 58.85000228881836,
+          "mean_energy": 0.8301973342895508
         },
         {
           "hour": 5,
           "agents": 45000,
-          "max_load": 95.36333465576172,
-          "mean_energy": 0.830856442451477
+          "max_load": 0.8301973342895508,
+          "mean_energy": 0.8308229446411133
         },
         {
           "hour": 6,
           "agents": 50000,
-          "max_load": 112.24666595458984,
-          "mean_energy": 0.8299482464790344
+          "max_load": 105.01000213623047,
+          "mean_energy": 0.8304717540740967
         },
         {
           "hour": 7,
           "agents": 47500,
-          "max_load": 0.8299482464790344,
-          "mean_energy": 0.8302743434906006
+          "max_load": 114.08000183105469,
+          "mean_energy": 0.8301440477371216
         },
         {
           "hour": 8,
           "agents": 35000,
-          "max_load": 74.4800033569336,
-          "mean_energy": 0.8305464386940002
+          "max_load": 76.3566665649414,
+          "mean_energy": 0.8306592106819153
         },
         {
           "hour": 9,
           "agents": 25000,
-          "max_load": 54.42000198364258,
-          "mean_energy": 0.8296539783477783
+          "max_load": 54.573333740234375,
+          "mean_energy": 0.8310102820396423
         },
         {
           "hour": 10,
           "agents": 22500,
-          "max_load": 48.91666793823242,
-          "mean_energy": 0.8300031423568726
+          "max_load": 53.47999954223633,
+          "mean_energy": 0.8304858803749084
         },
         {
           "hour": 11,
           "agents": 25000,
-          "max_load": 59.49666976928711,
-          "mean_energy": 0.8297485709190369
+          "max_load": 48.423336029052734,
+          "mean_energy": 0.8309029340744019
         },
         {
           "hour": 12,
           "agents": 30000,
-          "max_load": 61.323333740234375,
-          "mean_energy": 0.830671489238739
+          "max_load": 60.21000289916992,
+          "mean_energy": 0.8306115865707397
         },
         {
           "hour": 13,
           "agents": 32500,
-          "max_load": 62.31333541870117,
-          "mean_energy": 0.8314545750617981
+          "max_load": 70.43333435058594,
+          "mean_energy": 0.8303802013397217
         },
         {
           "hour": 14,
           "agents": 30000,
-          "max_load": 70.95999908447266,
-          "mean_energy": 0.8301476836204529
+          "max_load": 69.58333587646484,
+          "mean_energy": 0.8303096294403076
         },
         {
           "hour": 15,
           "agents": 27500,
-          "max_load": 57.673336029052734,
-          "mean_energy": 0.8311470150947571
+          "max_load": 63.366668701171875,
+          "mean_energy": 0.8309473991394043
         },
         {
           "hour": 16,
           "agents": 35000,
-          "max_load": 74.63999938964844,
-          "mean_energy": 0.8304862976074219
+          "max_load": 0.8309473991394043,
+          "mean_energy": 0.8307244181632996
         },
         {
           "hour": 17,
           "agents": 47500,
-          "max_load": 96.12667083740234,
-          "mean_energy": 0.8314771056175232
+          "max_load": 101.38999938964844,
+          "mean_energy": 0.8303635120391846
         },
         {
           "hour": 18,
           "agents": 50000,
-          "max_load": 0.8314771056175232,
-          "mean_energy": 0.8313978910446167
+          "max_load": 105.91667175292969,
+          "mean_energy": 0.8305563926696777
         },
         {
           "hour": 19,
           "agents": 40000,
-          "max_load": 76.70000457763672,
-          "mean_energy": 0.8315492272377014
+          "max_load": 95.08333587646484,
+          "mean_energy": 0.8301205635070801
         },
         {
           "hour": 20,
           "agents": 25000,
-          "max_load": 54.393333435058594,
-          "mean_energy": 0.8310729265213013
+          "max_load": 57.08000183105469,
+          "mean_energy": 0.8306162357330322
         },
         {
           "hour": 21,
           "agents": 15000,
-          "max_load": 37.44333267211914,
-          "mean_energy": 0.8300246000289917
+          "max_load": 37.31666946411133,
+          "mean_energy": 0.8303484320640564
         },
         {
           "hour": 22,
           "agents": 7500,
-          "max_load": 0.8300246000289917,
-          "mean_energy": 0.8321978449821472
+          "max_load": 18.47333335876465,
+          "mean_energy": 0.8301689028739929
         },
         {
           "hour": 23,
           "agents": 5000,
-          "max_load": 10.15000057220459,
-          "mean_energy": 0.8330851197242737
+          "max_load": 13.036666870117188,
+          "mean_energy": 0.828775942325592
         }
       ]
     },
     "hpc_environmental": {
-      "generated_at": "2026-04-25T03:26:00+00:00",
+      "generated_at": "2026-04-25T03:45:59+00:00",
       "resolution": "4096x4096 (16.7M cells)",
       "pm25": {
         "peak": 563.6560668945312,
@@ -1952,15 +1952,15 @@
       "src": "/data/fields/density_24h.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 1271.06005859375,
-      "clip_min": 0.07333333790302277,
-      "clip_max": 0.8933333158493042,
+      "max": 1348.376708984375,
+      "clip_min": 0.07000000774860382,
+      "clip_max": 0.8900001645088196,
       "units": "agents",
       "scale": "linear",
       "size": 896,
       "colors": 16,
       "source": "hpc_24h_density_atlas.npy",
-      "bytes": 332313
+      "bytes": 332486
     },
     "density_peak_am": {
       "src": "/data/fields/density_peak_am.png",
@@ -2036,7 +2036,7 @@
       "src": "/data/fields/hist_2012.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 131.38333129882812,
+      "max": 126.46333312988281,
       "clip_min": 0.0,
       "clip_max": 0.3199999928474426,
       "units": "density",
@@ -2044,13 +2044,13 @@
       "size": 896,
       "colors": 16,
       "source": "historical_density_2012.npy",
-      "bytes": 395022
+      "bytes": 394606
     },
     "hist_2018": {
       "src": "/data/fields/hist_2018.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 504.9000244140625,
+      "max": 479.0066833496094,
       "clip_min": 0.0,
       "clip_max": 0.24833333492279053,
       "units": "density",
@@ -2058,13 +2058,13 @@
       "size": 896,
       "colors": 16,
       "source": "historical_density_2018.npy",
-      "bytes": 386927
+      "bytes": 387429
     },
     "hist_2024": {
       "src": "/data/fields/hist_2024.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 1.415000081062317,
+      "max": 1.4033334255218506,
       "clip_min": 0.0,
       "clip_max": 0.0033333334140479565,
       "units": "density",
@@ -2072,7 +2072,7 @@
       "size": 1024,
       "colors": 128,
       "source": "historical_density_2024.npy",
-      "bytes": 25076
+      "bytes": 25810
     },
     "pm25_thumb": {
       "src": "/data/fields/pm25_thumb.png",
@@ -2686,25 +2686,25 @@
       "url": "https://medata.gov.co/node/41535",
       "kind": "medata_page",
       "status": "failed",
-      "http_status": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "http_status": null,
+      "content_type": null,
       "bytes": 0,
       "local_path": null,
       "resolved_url": "https://medata.gov.co/node/41535",
-      "note": "http_403"
+      "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=10)\"))"
     },
     {
       "id": "medata_pasajeros_mov_page",
       "label": "MEData pasajeros movilizados",
       "url": "https://medata.gov.co/node/16624",
       "kind": "html",
-      "status": "downloaded",
-      "http_status": 200,
-      "content_type": "text/html; charset=UTF-8",
-      "bytes": 19871,
-      "local_path": "raw/medata_pasajeros_mov_page.html",
+      "status": "failed",
+      "http_status": null,
+      "content_type": null,
+      "bytes": 0,
+      "local_path": null,
       "resolved_url": "https://medata.gov.co/node/16624",
-      "note": "captured"
+      "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=20)\"))"
     },
     {
       "id": "medata_pasajeros_mov_csv",
@@ -2838,8 +2838,8 @@
     }
   ],
   "source_summary": {
-    "downloaded": 16,
-    "failed": 3,
+    "downloaded": 15,
+    "failed": 4,
     "total": 19
   },
   "fieldwork": {
@@ -2895,8 +2895,8 @@
       {
         "id": "datos_publicos",
         "label": "Datos publicos",
-        "status": "complete_with_limits",
-        "evidence": "16/19 fuentes descargadas; los fallos quedan trazados."
+        "status": "partial",
+        "evidence": "15/19 fuentes descargadas; los fallos quedan trazados."
       },
       {
         "id": "campo",
@@ -2921,8 +2921,14 @@
       {
         "id": "medata_equipamientos_page",
         "label": "MEData inventario de equipamientos",
-        "note": "http_403",
+        "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=10)\"))",
         "url": "https://medata.gov.co/node/41535"
+      },
+      {
+        "id": "medata_pasajeros_mov_page",
+        "label": "MEData pasajeros movilizados",
+        "note": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='medata.gov.co', port=443): Read timed out. (read timeout=20)\"))",
+        "url": "https://medata.gov.co/node/16624"
       },
       {
         "id": "dane_cnpv",
@@ -3015,7 +3021,7 @@
     ]
   },
   "empirical": {
-    "generated_at": "2026-04-25T03:19:33+00:00",
+    "generated_at": "2026-04-25T03:39:35+00:00",
     "center_perception": {
       "source": "Medellin Como Vamos EPC 2024",
       "image_favorable_pct": 53.3,

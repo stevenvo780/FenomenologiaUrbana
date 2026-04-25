@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T03:26:46+00:00",
+  "generated_at": "2026-04-25T03:46:00+00:00",
   "engine": "numpy+pillow-raster-exporter",
   "fields": {
     "pm25": {
@@ -48,15 +48,15 @@
       "src": "/data/fields/density_24h.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 1271.06005859375,
-      "clip_min": 0.07333333790302277,
-      "clip_max": 0.8933333158493042,
+      "max": 1348.376708984375,
+      "clip_min": 0.07000000774860382,
+      "clip_max": 0.8900001645088196,
       "units": "agents",
       "scale": "linear",
       "size": 896,
       "colors": 16,
       "source": "hpc_24h_density_atlas.npy",
-      "bytes": 332313
+      "bytes": 332486
     },
     "density_peak_am": {
       "src": "/data/fields/density_peak_am.png",
@@ -132,7 +132,7 @@
       "src": "/data/fields/hist_2012.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 131.38333129882812,
+      "max": 126.46333312988281,
       "clip_min": 0.0,
       "clip_max": 0.3199999928474426,
       "units": "density",
@@ -140,13 +140,13 @@
       "size": 896,
       "colors": 16,
       "source": "historical_density_2012.npy",
-      "bytes": 395022
+      "bytes": 394606
     },
     "hist_2018": {
       "src": "/data/fields/hist_2018.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 504.9000244140625,
+      "max": 479.0066833496094,
       "clip_min": 0.0,
       "clip_max": 0.24833333492279053,
       "units": "density",
@@ -154,13 +154,13 @@
       "size": 896,
       "colors": 16,
       "source": "historical_density_2018.npy",
-      "bytes": 386927
+      "bytes": 387429
     },
     "hist_2024": {
       "src": "/data/fields/hist_2024.png",
       "cmap": "inferno",
       "min": 0.0,
-      "max": 1.415000081062317,
+      "max": 1.4033334255218506,
       "clip_min": 0.0,
       "clip_max": 0.0033333334140479565,
       "units": "density",
@@ -168,7 +168,7 @@
       "size": 1024,
       "colors": 128,
       "source": "historical_density_2024.npy",
-      "bytes": 25076
+      "bytes": 25810
     },
     "pm25_thumb": {
       "src": "/data/fields/pm25_thumb.png",
