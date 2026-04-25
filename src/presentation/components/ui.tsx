@@ -54,15 +54,24 @@ export function KpiPill({
   value,
   status,
   compact = false,
+  tooltip,
 }: {
   label: string
   value: string | number
   status: EpistemicStatus
   compact?: boolean
+  tooltip?: string
 }) {
   return (
-    <div className={`kpi-pill${compact ? ' kpi-compact' : ''}`}>
-      <span className="kpi-pill-label">{label}</span>
+    <div
+      className={`kpi-pill${compact ? ' kpi-compact' : ''}${tooltip ? ' has-tooltip' : ''}`}
+      title={tooltip}
+      data-has-tooltip={tooltip ? 'true' : undefined}
+    >
+      <span className="kpi-pill-label">
+        {label}
+        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+      </span>
       <strong className="kpi-pill-value">{value}</strong>
       <EpistemicBadge status={status} compact />
     </div>
@@ -144,14 +153,23 @@ export function MetricLine({
   label,
   value,
   compact = false,
+  tooltip,
 }: {
   label: string
   value: ReactNode
   compact?: boolean
+  tooltip?: string
 }) {
   return (
-    <div className={`metric-line${compact ? ' compact' : ''}`}>
-      <span className="metric-line-label">{label}</span>
+    <div
+      className={`metric-line${compact ? ' compact' : ''}${tooltip ? ' has-tooltip' : ''}`}
+      title={tooltip}
+      data-has-tooltip={tooltip ? 'true' : undefined}
+    >
+      <span className="metric-line-label">
+        {label}
+        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+      </span>
       <strong className="metric-line-value">{value}</strong>
     </div>
   )
@@ -166,10 +184,25 @@ export function ModalCard({ title, children }: { title: string; children: ReactN
   )
 }
 
-export function DeltaTile({ label, value }: { label: string; value: ReactNode }) {
+export function DeltaTile({
+  label,
+  value,
+  tooltip,
+}: {
+  label: string
+  value: ReactNode
+  tooltip?: string
+}) {
   return (
-    <div className="delta-tile">
-      <span className="delta-tile-label">{label}</span>
+    <div
+      className={`delta-tile${tooltip ? ' has-tooltip' : ''}`}
+      title={tooltip}
+      data-has-tooltip={tooltip ? 'true' : undefined}
+    >
+      <span className="delta-tile-label">
+        {label}
+        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+      </span>
       <strong className="delta-tile-value">{value}</strong>
     </div>
   )
@@ -181,16 +214,25 @@ export function StatTile({
   note,
   tone = 'default',
   className = '',
+  tooltip,
 }: {
   label: string
   value: ReactNode
   note?: ReactNode
   tone?: PanelTone
   className?: string
+  tooltip?: string
 }) {
   return (
-    <article className={`stat-tile stat-tone-${tone}${className ? ` ${className}` : ''}`}>
-      <span className="stat-tile-label">{label}</span>
+    <article
+      className={`stat-tile stat-tone-${tone}${className ? ` ${className}` : ''}${tooltip ? ' has-tooltip' : ''}`}
+      title={tooltip}
+      data-has-tooltip={tooltip ? 'true' : undefined}
+    >
+      <span className="stat-tile-label">
+        {label}
+        {tooltip ? <span className="info-dot" aria-hidden>ⓘ</span> : null}
+      </span>
       <strong className="stat-tile-value">{value}</strong>
       {note ? <p className="stat-tile-note">{note}</p> : null}
     </article>

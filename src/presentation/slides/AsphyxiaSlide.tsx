@@ -56,8 +56,8 @@ export function AsphyxiaSlide({
       <div className="asphyxia-grid">
         <PanelFrame eyebrow="σ relativa" title={<motion.strong className="hero-number">{sigmaText}</motion.strong>} tone="danger" className="asphyxia-hero">
           <p className="asphyxia-hero-copy">incertidumbre relativa · la libertad de andar comprimida a una escala microscópica.</p>
-          <MetricLine label="Precisión espacial" value={(multipoint?.spatial_accuracy_score ?? 0).toFixed(4)} />
-          <MetricLine label="Error residual" value={(multipoint?.residual_error ?? 0).toFixed(4)} />
+          <MetricLine label="Precisión espacial" value={(multipoint?.spatial_accuracy_score ?? 0).toFixed(4)} tooltip="Qué tan bien predice el modelo la densidad real, punto por punto. Más cerca de 1 = mejor calce con lo medido en campo." />
+          <MetricLine label="Error residual" value={(multipoint?.residual_error ?? 0).toFixed(4)} tooltip="Diferencia promedio que queda entre la simulación y los datos reales tras calibrar. Más pequeño = simulación más fiel." />
         </PanelFrame>
 
         <PanelFrame eyebrow="Gini por escenario" title="Desigualdad fenomenológica" tone="amber" className="asphyxia-gini-panel">

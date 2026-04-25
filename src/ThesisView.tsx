@@ -40,7 +40,7 @@ const MermaidRenderer = ({ chart }: { chart: string }) => {
   return <div className="mermaid-container" ref={ref} dangerouslySetInnerHTML={{ __html: svg }} />
 }
 
-export function ThesisView({ onClose }: { onClose?: () => void }) {
+export function ThesisView({ onClose: _onClose }: { onClose?: () => void }) {
   const [content, setContent] = useState('')
 
   useEffect(() => {

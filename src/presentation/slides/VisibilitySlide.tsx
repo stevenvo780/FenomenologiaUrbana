@@ -64,8 +64,8 @@ export function VisibilitySlide({
               ) : null}
             </div>
             <div className="surface-pill-grid">
-              <KpiPill label="Puntos muestreados" value={compactNumber(visibility?.points_sampled ?? 0)} status="documented" compact />
-              <KpiPill label="Rayos" value={compactNumber(visibility?.ray_count ?? 0)} status="documented" compact />
+              <KpiPill label="Puntos muestreados" value={compactNumber(visibility?.points_sampled ?? 0)} status="documented" compact tooltip="Cantidad de puntos del corredor desde donde se calculó qué se ve y qué queda oculto. Más puntos = mapa de visibilidad más fino." />
+              <KpiPill label="Rayos" value={compactNumber(visibility?.ray_count ?? 0)} status="documented" compact tooltip="Número total de rayos de visión trazados (como linternas virtuales) para reconstruir qué ve un peatón en cada punto." />
             </div>
           </PanelFrame>
 

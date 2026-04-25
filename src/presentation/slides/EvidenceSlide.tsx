@@ -107,8 +107,8 @@ function EvidenceGallery({
         <p className="deck-eyebrow">La Candelaria 2021</p>
         <h3>{barrio.highlights.population_density.toFixed(0)} hab/ha</h3>
         <div className="barrio-kpis">
-          <KpiPill compact label="Empresas" value={compactNumber(barrio.highlights.business_density)} status="documented" />
-          <KpiPill compact label="Espacio público" value={`${barrio.highlights.public_space_per_capita.toFixed(1)} m²/hab`} status="documented" />
+          <KpiPill compact label="Empresas" value={compactNumber(barrio.highlights.business_density)} status="documented" tooltip="Densidad de empresas registradas en el barrio: cuántos negocios formales conviven por unidad de área." />
+          <KpiPill compact label="Espacio público" value={`${barrio.highlights.public_space_per_capita.toFixed(1)} m²/hab`} status="documented" tooltip="Metros cuadrados de espacio público (parques, plazas, andenes amplios) disponibles por habitante." />
         </div>
       </article>
 

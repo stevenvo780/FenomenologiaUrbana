@@ -1,44 +1,66 @@
-# Capítulo 4. Conclusiones: La Tesis del Fracaso Sistémico y el Guion de Defensa Doctoral
+# Capítulo 4. Conclusiones y agenda de validación
 
-La presente investigación no pretendió, en ningún momento, ofrecer soluciones urbanísticas paliativas para el corredor Junín-San Antonio. Su propósito fundamental fue construir una máquina de reducción eidética —el modelo de supercómputo M-MASS— capaz de desnudar la estructura ontológica del centro de la ciudad de Medellín. Las conclusiones que aquí se presentan asumen el fracaso del modelo predictivo no como un error técnico, sino como el hallazgo filosófico central de esta tesis doctoral.
+Esta investigación construyó un marco de análisis para estudiar el corredor Junín-San Antonio desde la fenomenología urbana, la teoría crítica y la modelación computacional. El resultado principal no es una prueba cerrada sobre la “verdad” del centro de Medellín, sino un aparato metodológico que permite formular hipótesis defendibles sobre fricción, habitabilidad, presión ambiental y restricción decisional.
 
-## 4.1. La Aporía de la Habitabilidad y el "Fracaso como Verdad"
+La contribución del modelo M-MASS consiste en integrar datos públicos, agentes simulados, campos ambientales y métricas de trayectorias en una representación trazable. Su límite principal también queda claro: mientras el estado de campo continúe como `pending_no_capture`, los resultados deben presentarse como baseline proxy y no como validación empírica completa.
 
-El despliegue del modelo evidenció una imposibilidad matemática de conciliar la libertad de movimiento de los agentes (la emergencia sistémica, en términos de Johnson y Aguilar) con las presiones de los campos estigmérgicos (ruido y PM2.5). Al rebasar el umbral de los 500,000 agentes, el sistema no optimizó el flujo, sino que colapsó en un estado de turbulencia entrópica. 
+## 4.1. Habitabilidad, presión urbana y alcance de la inferencia
 
-Este colapso valida la hipótesis central de la investigación: el urbanismo contemporáneo, en su pretensión de gestionar la masividad, ha abolido el *Lebenswelt* (Husserl, 1936/1991). La imposibilidad del modelo de predecir o gestionar la crisis sin recurrir a la asfixia de las trayectorias de sus agentes (reduciéndolos a la "dividualidad" descrita por Deleuze) demuestra empíricamente que el espacio estudiado es, en su raíz material, inhabitable. El fracaso de la simulación para encontrar un equilibrio armónico es la verdad ontológica de la ciudad: una symploké (Bueno, 1972) estructurada en torno a la expulsión y el control biopolítico (Foucault, 1975/2002).
+Los experimentos muestran que, bajo los supuestos del modelo, el aumento de densidad y fricción ambiental tiende a concentrar rutas, elevar entropía y reducir gradualmente la fluidez del sistema. Esta observación es compatible con una lectura emergentista de la ciudad (Aguilar, 2014; Johnson, 2001), pero no autoriza por sí sola una conclusión absoluta sobre la inhabitabilidad del corredor.
 
-## 4.2. El Acontecimiento y la Defensa de la Irregularidad
+La hipótesis más defendible es la siguiente: la eficiencia funcional del espacio puede coexistir con costos fenomenológicos significativos. Dicho de otro modo, un corredor puede mover muchos cuerpos y, al mismo tiempo, producir saturación sensorial, restricciones de pausa, presión de seguridad y reducción práctica de alternativas. Esta tensión permite releer el *Lebenswelt* husserliano (Husserl, 1936/1991) en clave urbana sin convertir la simulación en autoridad final.
 
-El vacío detectado entre los datos empíricos informales y la recolección oficial (`field_calibration_delta.json` en estado `pending_no_capture`) funciona como el "miembro fantasma" de Merleau-Ponty (1945/1993): la ciudad siente una vida y un movimiento que sus órganos formales de registro no logran captar. Esta fricción incomputable es lo que Badiou (1988/1999) denomina el Acontecimiento.
+## 4.2. La brecha empírica como criterio de rigor
 
-Frente al tribunal doctoral, esta tesis defiende que la resistencia de la fenomenología urbana a ser parametrizada por el supercómputo es, precisamente, la última línea de defensa de la subjetividad humana ante el Panóptico de Flujo. La actitud blasé metropolitana (Simmel, 1903/1986) —aquí modelada mediante capas de filtrado neuronal (*Dropout* y *LayerNorm*)— no es una patología, sino una táctica de supervivencia ontológica de los transeúntes.
+El estado `pending_no_capture` de `field_calibration_delta.json` debe asumirse como una advertencia metodológica, no como un defecto que haya que ocultar. Señala que la tesis todavía requiere observación situada para contrastar conteos peatonales, permanencia, ruido, iluminación, obstáculos temporales y seguridad percibida.
 
-## 4.3. Guion de Defensa Doctoral: Postulados Finales
+Esta brecha también tiene valor filosófico: recuerda que la experiencia urbana no se deja reducir completamente a datos disponibles. La metáfora merleau-pontiana del cuerpo vivido ayuda a sostener que el espacio se comprende desde trayectorias, hábitos, incomodidades, pausas y orientaciones corporales (Merleau-Ponty, 1945/1993). Sin embargo, esa lectura debe ir acompañada de evidencia empírica y no reemplazarla.
 
-1. **Contra el instrumentalismo:** La simulación HPC no debe ser usada para el diseño de políticas públicas que "mejoren" el flujo de capital o de cuerpos, sino como una herramienta de crítica materialista que exponga la asfixia estructural del espacio.
-2. **Soberanía fenomenológica:** El derecho a la ciudad no es sólo el derecho al acceso material, sino el derecho a un entorno que no obligue al sujeto a cercenar su intencionalidad perceptual (qualia) para poder transitarlo.
-3. **El colapso como denuncia:** Todo modelo que logre "resolver" algorítmicamente el centro de Medellín sin mostrar un colapso es un modelo falso. La fidelidad a la verdad del ser urbano exige que la simulación refleje su violencia intrínseca.
+## 4.3. Postulados defendibles para sustentación académica
+
+1. **La simulación como instrumento crítico, no como demostración autosuficiente.** El modelo permite organizar escenarios y detectar tensiones, pero sus resultados deben contrastarse con campo y fuentes públicas.
+2. **La habitabilidad como problema multidimensional.** El derecho a la ciudad no se limita al acceso físico; incluye condiciones de orientación, pausa, percepción de seguridad, exposición ambiental y agencia cotidiana (Lefebvre, 1968/2017; Harvey, 2008).
+3. **La formalización debe conservar sus límites.** Un modelo que optimiza flujos sin mostrar costos sensoriales, desigualdades o restricciones prácticas queda incompleto. La tesis defiende una formalización crítica, capaz de mostrar tanto patrones como ausencias.
+4. **La agenda de campo es parte del resultado.** La fase siguiente debe priorizar observaciones por nodo y franja horaria para transformar el baseline proxy en un modelo calibrado con evidencia situada.
 
 ```mermaid
 graph TD
-    A[Condiciones Materiales M1] -->|Campos Estigmérgicos| B(Reducción Eidética Computacional)
-    C[Intencionalidad Sintética M2] -->|Actitud Blasé| B
-    B --> D{Stress Test: 500k Agentes}
-    D -->|Asfixia| E[Colapso del Flujo]
-    D -->|Fricción| F[Incomputabilidad de lo Informal]
-    E & F --> G[El Fracaso del Modelo como Verdad Ontológica]
-    G --> H((Conclusión: Denuncia del<br>Panóptico Biopolítico M3))
+    A[Condiciones materiales M1] -->|Ruido, PM2.5 y densidad| B(Modelo M-MASS)
+    C[Agentes decisionales M2] -->|Costos y preferencias| B
+    D[Condiciones normativas M3] -->|Reglas e infraestructura| B
+    B --> E{Escenarios de estrés}
+    E --> F[Patrones de fricción]
+    E --> G[Brechas de validación]
+    F & G --> H((Conclusión: hipótesis<br>trazables y contrastables))
 ```
 
 ## 4.4. Referencias Bibliográficas
 
 - Aguilar, J. (2014). *Sistemas Emergentes y Control Inteligente*. Universidad de Los Andes.
+- Alcaldía de Medellín. (s. f.). *MEData: Datos Abiertos de Medellín*. https://medata.gov.co/
+- Área Metropolitana del Valle de Aburrá. (s. f.). *Datos abiertos ambientales del Valle de Aburrá / SIATA*. https://datosabiertos.metropol.gov.co/
 - Badiou, A. (1999). *El ser y el acontecimiento* (R. Cerdeiras, Trad.). Manantial. (Obra original publicada en 1988).
+- Batty, M. (2013). *The new science of cities*. MIT Press.
+- Bellman, R. (1957). *Dynamic programming*. Princeton University Press.
+- Bonabeau, E. (2002). Agent-based modeling: Methods and techniques for simulating human systems. *Proceedings of the National Academy of Sciences, 99*(suppl. 3), 7280–7287. https://doi.org/10.1073/pnas.082080899
 - Bueno, G. (1972). *Ensayos materialistas*. Taurus.
+- Departamento Administrativo Nacional de Estadística. (2018). *Censo Nacional de Población y Vivienda 2018*. https://www.dane.gov.co/
 - Deleuze, G. (1990). Post-scriptum sobre las sociedades de control. *L'Autre Journal*, 1.
+- Epstein, J. M. (2006). *Generative social science: Studies in agent-based computational modeling*. Princeton University Press.
 - Foucault, M. (2002). *Vigilar y castigar: nacimiento de la prisión* (A. Garzón del Camino, Trad.). Siglo XXI Editores. (Obra original publicada en 1975).
+- Haklay, M., & Weber, P. (2008). OpenStreetMap: User-generated street maps. *IEEE Pervasive Computing, 7*(4), 12–18. https://doi.org/10.1109/MPRV.2008.80
+- Harvey, D. (2008). The right to the city. *New Left Review, 53*, 23–40.
+- Helbing, D., & Molnár, P. (1995). Social force model for pedestrian dynamics. *Physical Review E, 51*(5), 4282–4286. https://doi.org/10.1103/PhysRevE.51.4282
 - Husserl, E. (1991). *La crisis de las ciencias europeas y la fenomenología trascendental* (J. Muñoz y S. Mas, Trads.). Crítica. (Obra original publicada en 1936).
 - Johnson, S. (2001). *Emergence: The Connected Lives of Ants, Brains, Cities, and Software*. Scribner.
+- Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics, 22*(1), 79–86. https://doi.org/10.1214/aoms/1177729694
+- Lefebvre, H. (2017). *El derecho a la ciudad*. Capitán Swing. (Obra original publicada en 1968).
+- Medellín Cómo Vamos. (2025). *Encuesta de Percepción Ciudadana 2024: Informe metodológico*. https://www.medellincomovamos.org/
 - Merleau-Ponty, M. (1993). *Fenomenología de la percepción* (J. Cabanes, Trad.). Planeta-Agostini. (Obra original publicada en 1945).
+- Metro de Medellín. (s. f.). *Challenge: Mobility in San Antonio B*. https://www.metrodemedellin.gov.co/en/challenge-mobility-in-san-antonio-b
+- Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., & Hassabis, D. (2015). Human-level control through deep reinforcement learning. *Nature, 518*, 529–533. https://doi.org/10.1038/nature14236
+- OpenStreetMap contributors. (2026). *OpenStreetMap*. https://www.openstreetmap.org/copyright
+- Sassen, S. (2014). *Expulsions: Brutality and complexity in the global economy*. Harvard University Press.
+- Shannon, C. E. (1948). A mathematical theory of communication. *The Bell System Technical Journal, 27*(3), 379–423; *27*(4), 623–656. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
 - Simmel, G. (1986). *El individuo y la libertad. Ensayos de crítica de la cultura* (S. Masó, Trad.). Península. (Obra original publicada en 1903).
+- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement learning: An introduction* (2nd ed.). MIT Press.

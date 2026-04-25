@@ -3623,6 +3623,16 @@ body {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.profile-entropy-bar span.profile-entropy-chip,
+.profile-slide .profile-entropy-bar span.profile-entropy-chip {
+  font-size: clamp(1.18rem, 0.32vw + 1.08rem, 1.4rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.01em !important;
+  padding: 14px 18px !important;
+  color: var(--text-strong, #fff8ec) !important;
+}
+
 .simulation-counter {
   display: none;
 }
@@ -4944,8 +4954,7 @@ body {
   .symploke-copy,
   .symploke-card p,
   .history-slide .deck-panel p,
-  .economy-pulse-caption,
-  .profile-entropy-bar span
+  .economy-pulse-caption
 ) {
   font-size: clamp(1rem, 0.18vw + 0.96rem, 1.12rem) !important;
   line-height: 1.52;
@@ -5000,4 +5009,26 @@ body {
   .radar-label
 ) {
   font-size: 14px !important;
+}
+
+/* Tooltip affordance: any UI primitive with `tooltip` prop renders an info dot
+   and shows a help cursor. The native `title` attribute provides the text. */
+.info-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  font-size: 0.85em;
+  color: rgba(244, 200, 122, 0.85);
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+  vertical-align: baseline;
+}
+
+.has-tooltip {
+  cursor: help;
+}
+
+.has-tooltip:hover .info-dot {
+  opacity: 1;
 }

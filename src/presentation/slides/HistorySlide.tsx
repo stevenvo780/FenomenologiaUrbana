@@ -58,8 +58,8 @@ export function HistorySlide({
       <div className="history-raster-grid">
         <article className="deck-panel history-raster-panel">
           <div className="status-strip">
-            <KpiPill label="Años" value={`${history.length}`} status="documented" />
-            <KpiPill label="Motor" value={data.advanced_models?.historical_evolution?.engine?.split(' ').slice(0, 2).join(' ') ?? 'HPC'} status="proxy" />
+            <KpiPill label="Años" value={`${history.length}`} status="documented" tooltip="Cantidad de cortes históricos analizados para reconstruir cómo cambió la densidad del corredor en el tiempo." />
+            <KpiPill label="Motor" value={data.advanced_models?.historical_evolution?.engine?.split(' ').slice(0, 2).join(' ') ?? 'HPC'} status="proxy" tooltip="Motor de cálculo usado: simulación de alto rendimiento (HPC) que reproduce la evolución histórica con datos oficiales." />
           </div>
           <AnimatePresence mode="wait">
             {field && active ? (

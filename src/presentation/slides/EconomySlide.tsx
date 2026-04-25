@@ -37,7 +37,7 @@ export function EconomySlide({
           <div className="panel-topline">
             <p className="deck-eyebrow">Top nodos por intensidad comercial</p>
             <div className="status-strip">
-              <KpiPill label="Gini" value={formatRatio(gravity?.spatial_concentration_gini ?? 0)} status="documented" />
+              <KpiPill label="Gini" value={formatRatio(gravity?.spatial_concentration_gini ?? 0)} status="documented" tooltip="Índice de Gini espacial: mide qué tan concentrada está la actividad económica. 0 = repartida por igual, 1 = todo en pocas manzanas." />
             </div>
           </div>
           <div className="chart-shell chart-shell-tall">

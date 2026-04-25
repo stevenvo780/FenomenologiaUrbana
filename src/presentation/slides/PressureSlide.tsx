@@ -75,8 +75,8 @@ function ScenarioPressureStage({
             </div>
             <span className="systemic-pressure-chip">systemic_pressure</span>
             <div className="pressure-lines">
-              <MetricLine label="Concentración" value={formatRatio(scenario.metrics.concentration_index)} />
-              <MetricLine label="Entropía" value={scenario.metrics.route_entropy.toFixed(2)} />
+              <MetricLine label="Concentración" value={formatRatio(scenario.metrics.concentration_index)} tooltip="Qué tan apretada está la gente en pocos puntos. 0 = repartida; 1 = todos amontonados en el mismo lugar." />
+              <MetricLine label="Entropía" value={scenario.metrics.route_entropy.toFixed(2)} tooltip="Diversidad de rutas usadas: más alta = la gente toma muchos caminos distintos; baja = todos siguen el mismo trayecto." />
             </div>
           </motion.button>
         )

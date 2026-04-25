@@ -62,12 +62,14 @@ export function CrowdDynamicsSlide({
               value={`${valley.hour}:00`}
               note={`${compactNumber(valley.agents)} agentes · carga ${valley.max_load.toFixed(1)}`}
               tone="teal"
+              tooltip="Hora del día con menos gente en el corredor: cuándo respira la calle. La 'carga' es densidad pico relativa."
             />
             <StatTile
               label="Pico PM"
               value={`${peakHour.hour}:00`}
               note={`${compactNumber(peakHour.agents)} agentes · carga ${peakHour.max_load.toFixed(1)}`}
               tone="amber"
+              tooltip="Hora más congestionada de la tarde: cuándo el corredor llega a su máxima presión peatonal."
             />
             {micro.slice(0, 2).map((entry) => (
               <StatTile
@@ -75,6 +77,7 @@ export function CrowdDynamicsSlide({
                 label={entry.scenario_id}
                 value={entry.max_density.toFixed(2)}
                 note={`${compactNumber(entry.agents_simulated)} agentes · turbulencia ${entry.turbulence_index.toFixed(3)}`}
+                tooltip="Escenario micro-simulado: densidad pico (personas por m²) e índice de turbulencia (qué tan caótico es el flujo de gente)."
               />
             ))}
           </PanelFrame>

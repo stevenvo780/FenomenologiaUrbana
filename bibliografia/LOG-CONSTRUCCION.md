@@ -1,6 +1,6 @@
-# LOG-CONSTRUCCION.md: Registro Histórico del Proyecto Fenomenología Urbana HPC
+# LOG-CONSTRUCCION.md: Registro histórico del proyecto Fenomenología Urbana
 
-Este documento registra la evolución técnica, conceptual y documental del proyecto, sirviendo como traza de auditoría para la validez del proceso de investigación doctoral.
+Este documento registra la evolución técnica, conceptual y documental del proyecto. Funciona como bitácora de trazabilidad, no como bibliografía académica ni como prueba de validez por sí misma.
 
 ## Hitos de Desarrollo Documental y Técnico
 
@@ -9,14 +9,14 @@ Este documento registra la evolución técnica, conceptual y documental del proy
 - Establecimiento del marco filosófico inicial (Husserl, Merleau-Ponty).
 - Creación de la infraestructura de grafos base y descarga de fuentes públicas.
 
-### Fase II: El Giro del Supercómputo (HPC)
-- Implementación de simulaciones masivas (M-MASS) con 100,000 agentes.
-- Integración de **Deep Reinforcement Learning (DRL)** para modelar la intencionalidad.
-- Resolución de **Ecuaciones Diferenciales Parciales (PDE)** para campos ambientales (PM2.5/Ruido).
-- Desarrollo del motor de **Ray-Tracing en GPU** para isovistas dinámicas.
+### Fase II: Formalización computacional y simulación
+- Implementación de simulaciones M-MASS con escenarios de alta carga.
+- Integración de **Deep Reinforcement Learning (DRL)** para explorar decisiones de ruta bajo costos simplificados.
+- Resolución de **Ecuaciones Diferenciales Parciales (PDE)** para campos ambientales aproximados (PM2.5/Ruido).
+- Desarrollo de rutinas aceleradas por GPU para mapas de densidad, campos ambientales e isovistas dinámicas.
 
-### Fase III: Auditoría Crítica y Blindaje (Fase Actual)
-- Ejecución de Auditorías Críticas Doctorales para identificar debilidades metodológicas.
+### Fase III: Auditoría crítica y trazabilidad (fase actual)
+- Revisión crítica de debilidades metodológicas y límites de inferencia.
 - Sustitución de geometrías abstractas por **geometría real de OpenStreetMap**.
 - Cuantificación de la incertidumbre mediante **Simulaciones de Monte Carlo**.
 - Implementación del **Gini de Libertad Decisional** como métrica de desigualdad materialista.
@@ -26,9 +26,14 @@ Este documento registra la evolución técnica, conceptual y documental del proy
 - **2026-04-24:** Implementación de auditorías críticas, análisis de geometría real y cuantificación de incertidumbre.
 - **2026-04-24:** Inyección de caos cotidiano e informalidad; actualización de protocolos de campo.
 - **2026-04-24:** Escalado a simulaciones de alta fidelidad (HPC) y entrenamiento de agentes DRL.
-- **2026-04-24:** Consolidación de la tesis en 4 capítulos doctorales bajo normativa UdeA y APA 7.
+- **2026-04-24:** Consolidación inicial de la tesis en 4 capítulos con referencias en formato APA 7.
+- **2026-04-25:** Revisión de tono académico, explicitación de límites `baseline_proxy` y creación de bibliografía académica separada.
 
 ## Evolución del Aparataje Conceptual
 1. **v1.0 (Poética):** Descripción estética de atmósferas urbanas.
 2. **v2.0 (Analítica):** Modelado de flujos y agentes estocásticos.
-3. **v3.0 (Materialismo Operacional):** El HPC como instrumento de la reducción fenomenológica científica. Integración de la Symploké de Gustavo Bueno y la Ontología Matemática de Badiou.
+3. **v3.0 (Materialismo operacional):** Integración de simulación computacional, *symploké* de Gustavo Bueno y lectura matemática de Badiou como marco interpretativo, con límites empíricos explícitos.
+
+## Bibliografía académica
+
+La bibliografía formal del proyecto se consolida en `bibliografia/referencias-academicas.md` y en la sección 4.4 de `tesis/04-conclusiones-y-referencias-bibliograficas.md`.
