@@ -14,6 +14,9 @@ const rasterByYear: Record<string, string> = {
   '2024': 'hist_2024',
 }
 
+const HISTORY_FRAME_MS = 6500
+const HISTORY_IMAGE_TRANSITION = { duration: 1.35, ease: [0.22, 1, 0.36, 1] as const }
+
 export function HistorySlide({
   data,
   activeYearIndex,
@@ -41,7 +44,7 @@ export function HistorySlide({
 
     const interval = window.setInterval(() => {
       onYearIndexChange((safeIndex + 1) % history.length)
-    }, 2500)
+    }, HISTORY_FRAME_MS)
 
     return () => window.clearInterval(interval)
   }, [history.length, onYearIndexChange, paused, safeIndex])
@@ -61,27 +64,29 @@ export function HistorySlide({
             <KpiPill label="Años" value={`${history.length}`} status="documented" tooltip="Cantidad de cortes históricos analizados para reconstruir cómo cambió la densidad del corredor en el tiempo." />
             <KpiPill label="Motor" value={data.advanced_models?.historical_evolution?.engine?.split(' ').slice(0, 2).join(' ') ?? 'HPC'} status="proxy" tooltip="Motor de cálculo usado: simulación de alto rendimiento (HPC) que reproduce la evolución histórica con datos oficiales." />
           </div>
-          <AnimatePresence mode="wait">
-            {field && active ? (
-              <motion.div
-                key={active.year}
-                className="history-raster-motion"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                <FieldRaster
-                  src={field.src}
-                  alt={`Densidad histórica ${active.year}`}
-                  colormap={field.cmap}
-                  legend={{ min: field.min, max: field.max, unit: field.units }}
-                  motionMode="reveal"
-                  className="history-raster"
-                />
-              </motion.div>
-            ) : null}
-          </AnimatePresence>
+          <div className="history-raster-viewport">
+            <AnimatePresence initial={false}>
+              {field && active ? (
+                <motion.div
+                  key={active.year}
+                  className="history-raster-motion"
+                  initial={{ opacity: 0, filter: 'blur(8px)', scale: 0.992 }}
+                  animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
+                  exit={{ opacity: 0, filter: 'blur(8px)', scale: 1.008 }}
+                  transition={HISTORY_IMAGE_TRANSITION}
+                >
+                  <FieldRaster
+                    src={field.src}
+                    alt={`Densidad histórica ${active.year}`}
+                    colormap={field.cmap}
+                    legend={{ min: field.min, max: field.max, unit: field.units }}
+                    motionMode="static"
+                    className="history-raster"
+                  />
+                </motion.div>
+              ) : null}
+            </AnimatePresence>
+          </div>
         </article>
 
         <aside className="deck-panel history-side-panel">

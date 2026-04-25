@@ -4030,6 +4030,21 @@ body {
   min-height: 0;
 }
 
+.history-raster-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.history-raster-viewport .history-raster-motion {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  will-change: opacity, filter, transform;
+}
+
 .history-side-panel {
   min-height: 0;
 }
@@ -4910,6 +4925,10 @@ body {
   flex: 1;
   min-height: 0;
   height: 100%;
+}
+.history-raster-panel .history-raster-viewport {
+  flex: 1;
+  min-height: 0;
 }
 .history-raster-panel > div[style*="opacity"],
 .history-raster-panel .history-raster-motion {
