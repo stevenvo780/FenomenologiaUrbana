@@ -2462,9 +2462,10 @@ body {
 
 .visibility-hero-stage {
   display: grid;
-  grid-template-columns: minmax(220px, 0.62fr) minmax(0, 0.38fr);
-  gap: 18px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: stretch;
   min-height: 0;
   height: 100%;
 }
@@ -2484,6 +2485,16 @@ body {
 }
 
 .visibility-note-panel {
+  height: 100%;
+}
+
+.visibility-hero-stage > .surface-pill-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: stretch;
+}
+
+.visibility-hero-stage > .surface-pill-grid .kpi-pill {
+  min-width: 0;
   height: 100%;
 }
 
@@ -3907,6 +3918,7 @@ body {
 
 .visibility-map-overlay {
   position: relative;
+  width: 100%;
   min-height: 0;
   height: 100%;
   border-radius: 22px;
@@ -3915,7 +3927,7 @@ body {
 
 .visibility-map-overlay .corridor-map {
   height: 100%;
-  min-height: 420px;
+  min-height: 470px;
 }
 
 .visibility-isovist-overlay {
