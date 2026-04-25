@@ -3,23 +3,22 @@ from __future__ import annotations
 from pathlib import Path
 
 from _shared import ensure_dirs
-from aggregate_fieldwork import main as aggregate_fieldwork
-from build_case_graph import main as build_case_graph
-from calibrate_case_model import main as calibrate_case_model
-from derive_empirical_data import main as derive_empirical_data
-from download_sources import main as download_sources
-from ingest_fieldwork import main as ingest_fieldwork
-from run_simulation import main as run_simulation
-from run_advanced_simulation import main as run_advanced_sim
-from train_drl_agents import main as train_drl
-from simulate_crowd_dynamics import main as run_sfm
-from simulate_environmental_pde import main as run_pde
-from analyze_urban_inequality import main as run_inequality_analysis
-from render_advanced_clips import main as render_clips
-from publish_visual_payload import main as publish_payload
+from data.aggregate_fieldwork import main as aggregate_fieldwork
+from models.build_case_graph import main as build_case_graph
+from models.calibrate_case_model import main as calibrate_case_model
+from data.derive_empirical_data import main as derive_empirical_data
+from data.download_sources import main as download_sources
+from data.ingest_fieldwork import main as ingest_fieldwork
+from simulations.run_simulation import main as run_simulation
+from simulations.run_advanced_simulation import main as run_advanced_sim
+from simulations.train_drl_agents import main as train_drl
+from simulations.simulate_crowd_dynamics import main as run_sfm
+from simulations.simulate_environmental_pde import main as run_pde
+from analysis.analyze_urban_inequality import main as run_inequality_analysis
+from simulations.simulate_historical_evolution import main as run_historical
+from visualization.publish_visual_payload import main as publish_payload
+from visualization.render_advanced_clips import main as render_clips
 
-
-from simulate_historical_evolution import main as run_historical
 
 def main() -> Path:
     ensure_dirs()
