@@ -22,7 +22,7 @@ export function PressureSlide({
   return (
     <SlideShell id="presion" className="pressure-slide">
       <SlideHeader
-        eyebrow="Slide 05 · presión temporal"
+        eyebrow="Capítulo 6 · régimen horario"
         title="La hora modifica el campo de posibilidades"
         text="La ciudad cambia de régimen: hora pico, mediodía y noche no son fondos neutros, sino configuraciones distintas de carga, concentración y libertad de trayecto."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Abrir escenarios</button>}
@@ -36,6 +36,7 @@ export function PressureSlide({
         />
         <BottleneckPodium scenario={scenario} onSelectNode={onSelectNode} />
       </div>
+      <p className="slide-citation">Foucault, 1975/2002</p>
     </SlideShell>
   )
 }
@@ -72,10 +73,10 @@ function ScenarioPressureStage({
             <div className="pressure-orb">
               <em>{scenario.metrics.mean_pressure.toFixed(0)}</em>
             </div>
+            <span className="systemic-pressure-chip">systemic_pressure</span>
             <div className="pressure-lines">
               <MetricLine label="Concentración" value={formatRatio(scenario.metrics.concentration_index)} />
               <MetricLine label="Entropía" value={scenario.metrics.route_entropy.toFixed(2)} />
-              <MetricLine label="Carga" value={scenario.metrics.mean_pressure.toFixed(0)} />
             </div>
           </motion.button>
         )

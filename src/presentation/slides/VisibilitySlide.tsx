@@ -1,27 +1,36 @@
 import { Eye, Radar } from 'lucide-react'
 import type { CSSProperties } from 'react'
 
-import type { Payload } from '../../types'
+import type { CaseNode, Payload, ScenarioSummary } from '../../types'
 import type { ModalKind } from '../deckTypes'
+import { CorridorMap } from '../components/visuals/CorridorMap'
+import { FieldRaster } from '../components/visuals/FieldRaster'
 import { KpiPill, PanelFrame, SlideGrid, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, formatRatio } from '../utils'
 
 export function VisibilitySlide({
   data,
+  scenario,
+  selectedNode,
+  onSelectNode,
   onOpenModal,
 }: {
   data: Payload
+  scenario: ScenarioSummary
+  selectedNode: CaseNode
+  onSelectNode: (value: string) => void
   onOpenModal: (kind: ModalKind) => void
 }) {
   const visibility = data.advanced_models?.perceptual_visibility
   const opennessPct = Math.min(100, (visibility?.mean_openness ?? 0) * 100)
+  const isovist = data.fields_manifest?.isovist
 
   return (
     <SlideShell id="visibilidad" className="visibility-slide">
       <SlideHeader
-        eyebrow="Slide 12 · panóptico urbano"
-        title="La ciudad también se reparte como visibilidad y exposición"
-        text="Con miles de puntos de observación y millones de rayos trazados, el corredor puede leerse como un régimen panóptico: zonas abiertas, zonas expuestas y zonas menos legibles."
+        eyebrow="Capítulo 12 · M3 · Panóptico de flujo"
+        title="Ver, ser visto, no poder no ser visto"
+        text="Con miles de puntos de observación y millones de rayos trazados, el corredor se revela como régimen panóptico."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Modelo perceptual</button>}
       />
 
@@ -33,17 +42,30 @@ export function VisibilitySlide({
             className="visibility-hero-panel"
             bodyClassName="visibility-hero-stage"
           >
-            <div className="visibility-meter">
-              <div className="visibility-meter-core" style={{ '--pct': `${opennessPct}%` } as CSSProperties}>
-                <Eye size={30} aria-hidden="true" />
-                <strong>{opennessPct.toFixed(2)}%</strong>
-                <span>openness medio</span>
-              </div>
+            <div className="visibility-map-overlay">
+              <CorridorMap
+                nodes={data.nodes}
+                edges={data.edges}
+                scenario={scenario}
+                selectedNodeId={selectedNode.id}
+                onSelectNode={onSelectNode}
+                primaryHighlightedPath={scenario.top_routes[0]?.path ?? []}
+                secondaryHighlightedPath={[]}
+              />
+              {isovist ? (
+                <FieldRaster
+                  src={isovist.src}
+                  alt="Campo isovístico logarítmico"
+                  colormap={isovist.cmap}
+                  legend={{ min: isovist.min, max: isovist.max, unit: isovist.units, scale: 'log' }}
+                  motionMode="breathing"
+                  className="visibility-isovist-overlay"
+                />
+              ) : null}
             </div>
             <div className="surface-pill-grid">
               <KpiPill label="Puntos muestreados" value={compactNumber(visibility?.points_sampled ?? 0)} status="documented" compact />
               <KpiPill label="Rayos" value={compactNumber(visibility?.ray_count ?? 0)} status="documented" compact />
-              <KpiPill label="Resolución" value={visibility?.resolution ?? '2048×2048'} status="proxy" compact />
             </div>
           </PanelFrame>
 
@@ -70,10 +92,18 @@ export function VisibilitySlide({
                 La apertura del corredor roza el {formatRatio(visibility?.mean_openness ?? 0)}. Eso significa que orientación, vigilancia y
                 vulnerabilidad comparten infraestructura perceptiva.
               </p>
+              <div className="visibility-meter">
+                <div className="visibility-meter-core" style={{ '--pct': `${opennessPct}%` } as CSSProperties}>
+                  <Eye size={30} aria-hidden="true" />
+                  <strong>{opennessPct.toFixed(2)}%</strong>
+                  <span>openness medio</span>
+                </div>
+              </div>
             </PanelFrame>
           </div>
         </SlideGrid>
       </div>
+      <p className="slide-citation">Foucault, 1975/2002</p>
     </SlideShell>
   )
 }

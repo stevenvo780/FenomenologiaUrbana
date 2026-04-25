@@ -250,6 +250,94 @@ function ModalContent({
     )
   }
 
+  if (kind === 'calibration-detail') {
+    const calibration = data.advanced_reports?.hpc_multipoint_calibration
+    const uncertainty = data.advanced_reports?.hpc_uncertainty
+    const inequality = data.advanced_reports?.urban_inequality
+
+    return (
+      <div className="modal-grid wide">
+        <ModalCard title="Calibración multipunto">
+          <MetricLine label="Método" value={calibration?.method ?? 's/d'} />
+          <MetricLine label="Spatial accuracy" value={(calibration?.spatial_accuracy_score ?? 0).toFixed(4)} />
+          <MetricLine label="Residual error" value={(calibration?.residual_error ?? 0).toFixed(4)} />
+          {Object.entries(calibration?.optimized_parameters ?? {}).map(([key, value]) => (
+            <MetricLine key={key} label={key} value={Number(value).toFixed(4)} />
+          ))}
+        </ModalCard>
+
+        <ModalCard title="Nodos de validación">
+          {Object.entries(calibration?.validation_nodes ?? {}).map(([nodeId, value]) => (
+            <MetricLine key={nodeId} label={resolveNodeLabel(data, nodeId)} value={Number(value).toFixed(4)} />
+          ))}
+        </ModalCard>
+
+        <ModalCard title="Incertidumbre Monte Carlo">
+          <MetricLine label="Iteraciones" value={`${uncertainty?.iterations_per_sample ?? 0}`} />
+          {Object.entries(uncertainty?.results ?? {}).map(([hour, entry]) => (
+            <MetricLine
+              key={hour}
+              label={hour.replace('_', ' ')}
+              value={`σrel ${entry.relative_uncertainty.toFixed(5)} · v ${entry.mean_velocity.toFixed(3)}`}
+            />
+          ))}
+          <p className="modal-note">{uncertainty?.note}</p>
+        </ModalCard>
+
+        <ModalCard title="Desigualdad fenomenológica">
+          {inequality?.scenarios.map((entry) => (
+            <div key={entry.scenario_id} className="modal-row">
+              <strong>{entry.label}</strong>
+              <p>
+                Gini {entry.entropy_gini.toFixed(4)} · ratio {entry.inequity_ratio.toFixed(2)}x ·
+                restringido: {entry.most_restricted_profile} · libre: {entry.most_free_profile}
+              </p>
+            </div>
+          ))}
+          <p className="modal-note">{inequality?.conclusion}</p>
+        </ModalCard>
+      </div>
+    )
+  }
+
+  if (kind === 'stress-detail') {
+    const stress = data.advanced_reports?.hpc_stress
+    const chaos = data.advanced_reports?.hpc_chaos
+    const advanced = data.raw_reports?.advanced_scenarios ?? []
+
+    return (
+      <div className="modal-grid wide">
+        <ModalCard title="Curva completa del stress test">
+          {stress?.full_curve.map((entry) => (
+            <MetricLine
+              key={entry.agents}
+              label={compactNumber(entry.agents)}
+              value={`H ${entry.system_entropy.toFixed(2)} · presión ${entry.pressure_index.toFixed(2)}`}
+            />
+          ))}
+          <p className="modal-note">{stress?.conclusion}</p>
+        </ModalCard>
+
+        <ModalCard title="Caos cotidiano">
+          <MetricLine label="Obstrucción informal" value={`${((chaos?.informality_obstruction_ratio ?? 0) * 100).toFixed(1)}%`} />
+          <MetricLine label="Ratio flâneur" value={`${((chaos?.flaneur_ratio ?? 0) * 100).toFixed(1)}%`} />
+          <MetricLine label="Turbulencia media" value={(chaos?.mean_turbulence_index ?? 0).toFixed(4)} />
+          <p className="modal-note">{chaos?.conclusion}</p>
+        </ModalCard>
+
+        <ModalCard title="Presión sistémica por escenario">
+          {advanced.map((entry) => (
+            <MetricLine
+              key={entry.id}
+              label={entry.label}
+              value={`${entry.metrics.systemic_pressure.toFixed(2)} · H ${entry.metrics.m_mass_entropy.toFixed(3)}`}
+            />
+          ))}
+        </ModalCard>
+      </div>
+    )
+  }
+
   return (
     <div className="modal-grid wide">
       <ModalCard title="Escenario activo">

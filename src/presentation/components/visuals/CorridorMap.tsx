@@ -121,9 +121,20 @@ export function CorridorMap({
       const active = node.id === selectedNodeId
       const highlightedPrimary = primaryHighlightedNodes.has(node.id)
       const highlightedSecondary = secondaryHighlightedNodes.has(node.id)
+      const radius = active ? 13 : highlightedPrimary || highlightedSecondary ? 10 : 7 + load / 48
+
+      L.circleMarker([node.lat, node.lon], {
+        radius: radius * 1.35,
+        color: '#e07a46',
+        fillColor: '#e07a46',
+        fillOpacity: Math.min(0.22, 0.06 + load / 3600),
+        opacity: 0.18,
+        weight: 1,
+        className: 'leaflet-node-pulse',
+      }).addTo(layerGroup)
 
       const marker = L.circleMarker([node.lat, node.lon], {
-        radius: active ? 13 : highlightedPrimary || highlightedSecondary ? 10 : 7 + load / 48,
+        radius,
         color: active ? '#fff7d6' : highlightedPrimary ? '#e07a46' : highlightedSecondary ? '#1f7f79' : '#171311',
         fillColor: active ? '#e07a46' : highlightedPrimary ? '#e07a46' : highlightedSecondary ? '#1f7f79' : getNodeColor(node),
         fillOpacity: 0.94,

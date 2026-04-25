@@ -5,7 +5,7 @@ import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
-import { compactNumber, formatRatio } from '../utils'
+import { formatRatio } from '../utils'
 
 export function EconomySlide({
   data,
@@ -24,8 +24,8 @@ export function EconomySlide({
   return (
     <SlideShell id="economia" className="economy-slide">
       <SlideHeader
-        eyebrow="Slide 13 · gravedad económica"
-        title="El comercio también curva el espacio vivido"
+        eyebrow="Capítulo 13 · gravitación comercial"
+        title="El comercio curva el espacio"
         text="La concentración económica no solo atrae compradores: organiza trayectorias, fija centros de gravedad y refuerza asimetrías entre nodos del corredor."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Cruzar con barrio y comercio</button>}
       />
@@ -35,8 +35,7 @@ export function EconomySlide({
           <div className="panel-topline">
             <p className="deck-eyebrow">Top nodos por intensidad comercial</p>
             <div className="status-strip">
-              <KpiPill label="Hubs" value={`${gravity?.hubs_analyzed ?? 0}`} status="documented" />
-              <KpiPill label="Pull total" value={compactNumber(gravity?.total_commercial_pull ?? 0)} status="proxy" />
+              <KpiPill label="Gini" value={formatRatio(gravity?.spatial_concentration_gini ?? 0)} status="documented" />
             </div>
           </div>
           <div className="chart-shell chart-shell-tall">
@@ -71,6 +70,7 @@ export function EconomySlide({
           </div>
         </aside>
       </div>
+      <p className="slide-citation">Sassen, 2014</p>
     </SlideShell>
   )
 }

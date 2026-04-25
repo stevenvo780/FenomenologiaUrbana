@@ -17,9 +17,9 @@ export function EvidenceSlide({
   return (
     <SlideShell id="evidencia" className="evidence-slide">
       <SlideHeader
-        eyebrow="Slide 15 · evidencia y fuentes"
-        title="Lo denso va a modales; lo visible queda gráfico"
-        text="La capa empírica aparece como indicadores grandes, nubes semánticas, barras temporales y tarjetas accionables. Quien quiera tablas completas abre el data room."
+        eyebrow="Capítulo 15 · el miembro fantasma"
+        title="El dato que la ciudad no se deja capturar"
+        text="La simulación es Simulacro de Denuncia: muestra tanto lo medido como lo que resiste captura."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Data room empírico</button>}
       />
       <EvidenceGallery
@@ -27,6 +27,7 @@ export function EvidenceSlide({
         onOpenEvidence={() => onOpenModal('evidence')}
         onOpenSources={() => onOpenModal('sources')}
       />
+      <p className="slide-citation">Merleau-Ponty, 1945/1993</p>
     </SlideShell>
   )
 }
@@ -45,6 +46,7 @@ function EvidenceGallery({
   const barrio = data.empirical.barrio_la_candelaria
   const environment = data.empirical.environmental_context
   const peak = findPeakPeriod(crime.monthly_2023)
+  const dane = data.empirical.dane_cnpv_fallback
 
   return (
     <div className="evidence-gallery">
@@ -118,6 +120,18 @@ function EvidenceGallery({
         </p>
         <button type="button" className="ghost-action" onClick={onOpenSources}>
           Ver fuentes
+        </button>
+      </article>
+
+      <article className="deck-panel ghost-member-card panel-alert-pulse">
+        <p className="deck-eyebrow">Miembro fantasma</p>
+        <h3>{data.fieldwork.status}</h3>
+        <p>
+          DANE: {dane.status} · geovisor directo {dane.direct_geoportal_downloaded ? 'descargado' : 'bloqueado'} ·
+          fuentes fallidas {data.source_summary.failed}.
+        </p>
+        <button type="button" className="ghost-action" onClick={onOpenSources}>
+          Ver trazabilidad
         </button>
       </article>
     </div>

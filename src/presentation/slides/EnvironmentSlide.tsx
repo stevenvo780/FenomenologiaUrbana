@@ -1,6 +1,7 @@
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
-import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
+import { FieldRaster } from '../components/visuals/FieldRaster'
+import { KpiPill, MetricLine, PanelFrame, SlideHeader, SlideShell, TexBlock } from '../components/ui'
 
 export function EnvironmentSlide({
   data,
@@ -9,86 +10,60 @@ export function EnvironmentSlide({
   data: Payload
   onOpenModal: (kind: ModalKind) => void
 }) {
-  const pde = data.advanced_models?.environmental_pde?.fields
   const report = data.advanced_reports?.hpc_environmental
-  const metrics = [
-    {
-      label: 'PM2.5 pico',
-      value: report?.pm25.peak ?? pde?.pm25.max_concentration ?? 0,
-      unit: 'µg/m³ proxy',
-      tone: 'amber',
-      helper: 'Máximo del campo de difusión-reacción.',
-    },
-    {
-      label: 'PM2.5 promedio',
-      value: report?.pm25.ambient_avg ?? pde?.pm25.mean_concentration ?? 0,
-      unit: 'µg/m³ proxy',
-      tone: 'teal',
-      helper: 'Promedio ambiental base del corredor.',
-    },
-    {
-      label: 'Ruido pico',
-      value: report?.noise.peak_db ?? pde?.noise.max_intensity ?? 0,
-      unit: 'dB proxy',
-      tone: 'ember',
-      helper: 'Pico máximo en el campo acústico.',
-    },
-    {
-      label: 'Varianza espacial',
-      value: report?.noise.spatial_variance ?? pde?.noise.mean_intensity ?? 0,
-      unit: 'σ²',
-      tone: 'sand',
-      helper: 'Heterogeneidad del campo de ruido.',
-    },
-  ]
-  const maxValue = Math.max(...metrics.map((entry) => entry.value), 1)
+  const pm25 = data.fields_manifest?.pm25
+  const noise = data.fields_manifest?.noise
 
   return (
     <SlideShell id="ambiente" className="environment-slide">
       <SlideHeader
-        eyebrow="Slide 11 · PDE ambiental"
-        title="El ambiente deja de ser fondo: se modela como campo continuo"
-        text="Ruido y material particulado ya no aparecen como anotaciones sueltas; ahora se resuelven sobre una malla 4K para mostrar gradientes, picos y heterogeneidad espacial."
+        eyebrow="Capítulo 11 · M1 · campos estigmérgicos"
+        title="El aire también decide la ruta"
+        text="Señales estigmérgicas negativas: el campo ambiental organiza la experiencia antes de que el sujeto elija."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Cruzar con evidencia</button>}
       />
 
-      <div className="doctoral-grid doctoral-grid-tight">
-        <article className="deck-panel field-panel">
+      <div className="environment-raster-grid">
+        <article className="deck-panel environment-raster-panel">
           <div className="status-strip">
             <KpiPill label="Malla" value={report?.resolution?.split(' ')[0] ?? '4096×4096'} status="documented" />
             <KpiPill label="Estación PM2.5" value={data.empirical.environmental_context.air.pm25.nearest_station?.short_name ?? 's/d'} status="documented" />
-            <KpiPill label="Muestras ruido" value={`${data.empirical.environmental_context.noise.valid_samples ?? 0}`} status="proxy" />
           </div>
-
-          <div className="field-grid">
-            {metrics.map((entry) => (
-              <article key={entry.label} className={`field-card tone-${entry.tone}`}>
-                <div className="field-meter">
-                  <i style={{ height: `${Math.max(10, (entry.value / maxValue) * 100)}%` }} />
-                </div>
-                <div>
-                  <span>{entry.label}</span>
-                  <strong>{entry.value.toFixed(2)}</strong>
-                  <p>{entry.unit}</p>
-                </div>
-                <small>{entry.helper}</small>
-              </article>
-            ))}
+          <TexBlock tex="\\frac{\\partial u}{\\partial t}=D\\nabla^2u-\\kappa u+S(x,t)" />
+          <div className="environment-field-split">
+            {pm25 ? (
+              <FieldRaster
+                src={pm25.src}
+                alt="Campo PM2.5 4K"
+                colormap={pm25.cmap}
+                legend={{ min: pm25.min, max: pm25.max, unit: pm25.units }}
+                motionMode="breathing"
+              />
+            ) : null}
+            {noise ? (
+              <FieldRaster
+                src={noise.src}
+                alt="Campo de ruido 4K"
+                colormap={noise.cmap}
+                legend={{ min: noise.min, max: noise.max, unit: noise.units }}
+                motionMode="breathing"
+              />
+            ) : null}
           </div>
         </article>
 
-        <aside className="deck-panel environment-side-panel">
-          <div className="spotlight-card highlight full-height">
-            <span>Lectura interpretativa</span>
-            <strong>La atmósfera urbana también organiza la experiencia</strong>
-            <p>
-              La malla ambiental muestra que la fenomenología del recorrido está atravesada por acumulaciones locales de ruido
-              y contaminación: no es solo por dónde se puede pasar, sino bajo qué condiciones sensibles se atraviesa el centro.
-            </p>
-            <em>Campo continuo · 16.7 millones de celdas</em>
-          </div>
-        </aside>
+        <PanelFrame eyebrow="Lectura derecha" title="Estadísticas del campo" tone="teal" className="environment-side-panel">
+          <MetricLine label="PM2.5 peak" value={(report?.pm25.peak ?? 0).toFixed(2)} />
+          <MetricLine label="PM2.5 ambient_avg" value={(report?.pm25.ambient_avg ?? 0).toFixed(2)} />
+          <MetricLine label="noise peak_db" value={(report?.noise.peak_db ?? 0).toFixed(2)} />
+          <MetricLine label="noise spatial_variance" value={(report?.noise.spatial_variance ?? 0).toFixed(2)} />
+          <p className="analysis-note-copy">
+            La atmósfera urbana no acompaña el recorrido: lo filtra. Ruido y material particulado son condiciones de aparición.
+          </p>
+        </PanelFrame>
       </div>
+
+      <p className="slide-citation">Johnson, 2001 · Aguilar, 2014</p>
     </SlideShell>
   )
 }

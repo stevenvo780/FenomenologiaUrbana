@@ -1,23 +1,41 @@
-import type { ScenarioSummary } from '../../types'
-import { motion } from 'framer-motion'
+import { animate, motion, useMotionValue, useTransform } from 'framer-motion'
+import { useEffect } from 'react'
+
+import type { Payload, ScenarioSummary } from '../../types'
 import { RecordedSimulationClip } from '../components/visuals/RecordedSimulationClip'
 import { SlideHeader, SlideShell, MetricLine } from '../components/ui'
+import { compactNumber } from '../utils'
 
 export function SimulationSlide({
+  data,
   scenario,
 }: {
+  data: Payload
   scenario: ScenarioSummary
 }) {
+  const totalAgents = data.advanced_reports?.hpc_24h.total_simulated_agents_day ?? 640000
+  const count = useMotionValue(0)
+  const formatted = useTransform(count, (value) => Math.round(value).toLocaleString('es-CO'))
+
+  useEffect(() => {
+    const controls = animate(count, totalAgents, { duration: 2 })
+    return controls.stop
+  }, [count, totalAgents])
+
   return (
     <SlideShell id="simulacion" className="simulation-slide">
       <SlideHeader
-        eyebrow="Cine Fenomenológico 06 · M-MASS Animation"
-        title="Simulación Dinámica de Agentes"
-        text="100,000 agentes ejecutan trayectorias estocásticas sobre el corredor San Antonio - Junín."
+        eyebrow="Capítulo 7 · Presentación de lo múltiple"
+        title="Cien mil cuerpos, seis horas, un corredor"
+        text="La simulación no representa: presenta lo múltiple como aparición computable."
       />
 
       <div className="simulation-grid">
         <article className="deck-panel simulation-theater">
+          <div className="simulation-counter">
+            <motion.strong className="hero-number">{formatted}</motion.strong>
+            <span>agentes simulados en el día · actitud blasé computacional</span>
+          </div>
           <RecordedSimulationClip scenario={scenario} />
         </article>
 
@@ -28,7 +46,7 @@ export function SimulationSlide({
                 <h3>Parámetros de Renderizado</h3>
                 <MetricLine compact label="Motor" value="M-MASS v0.2" />
                 <MetricLine compact label="Física" value="Social Force Model" />
-                <MetricLine compact label="Sampling" value="100k agentes" />
+                <MetricLine compact label="Sampling" value={compactNumber(totalAgents)} />
               </article>
 
               <article className="simulation-meta-section">
@@ -39,7 +57,6 @@ export function SimulationSlide({
                   value={scenario.metrics.mean_pressure.toLocaleString('es-CO', { maximumFractionDigits: 0 })}
                 />
                 <MetricLine compact label="Entropía de ruta" value={scenario.metrics.route_entropy.toFixed(3)} />
-                <MetricLine compact label="Diversidad" value={scenario.metrics.concentration_index.toFixed(3)} />
               </article>
             </div>
           </section>
@@ -55,12 +72,7 @@ export function SimulationSlide({
           </motion.article>
         </aside>
       </div>
-
-      <div className="metrics-bar">
-        <div className="metric-item">Renderer: <b>FFmpeg x GPU</b></div>
-        <div className="metric-item">Frame Rate: <b>60 FPS</b></div>
-        <div className="metric-item">Status: <b>Pre-rendered Output</b></div>
-      </div>
+      <p className="slide-citation">Badiou, 1988/1999</p>
     </SlideShell>
   )
 }
