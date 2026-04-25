@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useRef } from 'react'
+import { useState } from 'react'
 
 import './presentation.css'
 import { AmbientField } from './presentation/components/AmbientField'
+import { SLIDES } from './presentation/constants'
 import { DataModal } from './presentation/components/DataModal'
 import { DeckNav } from './presentation/components/DeckNav'
 import { useDeckController } from './presentation/hooks/useDeckController'
@@ -22,16 +23,31 @@ import { ProfilesSlide } from './presentation/slides/ProfilesSlide'
 import { SimulationSlide } from './presentation/slides/SimulationSlide'
 import { StressSlide } from './presentation/slides/StressSlide'
 import { VisibilitySlide } from './presentation/slides/VisibilitySlide'
+import type { SlideId } from './presentation/deckTypes'
 import type { Payload } from './types'
 
 export function PresentationDeck({ data }: { data: Payload }) {
   const deck = useDeckController(data)
-  const dirRef = useRef(1)
-  const previousIndexRef = useRef(deck.activeIndex)
+  const [direction, setDirection] = useState(1)
 
-  if (previousIndexRef.current !== deck.activeIndex) {
-    dirRef.current = deck.activeIndex > previousIndexRef.current ? 1 : -1
-    previousIndexRef.current = deck.activeIndex
+  function handleGoToSlide(id: SlideId) {
+    const nextIndex = SLIDES.findIndex((slide) => slide.id === id)
+
+    if (nextIndex !== -1 && nextIndex !== deck.activeIndex) {
+      setDirection(nextIndex > deck.activeIndex ? 1 : -1)
+    }
+
+    deck.goToSlide(id)
+  }
+
+  function handleGoToNextSlide() {
+    setDirection(1)
+    deck.goToNextSlide()
+  }
+
+  function handleGoToPreviousSlide() {
+    setDirection(-1)
+    deck.goToPreviousSlide()
   }
 
   const activeSlide = (() => {
@@ -44,7 +60,7 @@ export function PresentationDeck({ data }: { data: Payload }) {
             selectedNode={deck.selectedNode}
             downloadedRatio={deck.downloadedRatio}
             fieldworkBadge={deck.fieldworkBadge}
-            onGoToSlide={deck.goToSlide}
+            onGoToSlide={handleGoToSlide}
             onOpenModal={deck.openModal}
             onSelectNode={deck.setSelectedNodeId}
           />
@@ -133,9 +149,9 @@ export function PresentationDeck({ data }: { data: Payload }) {
         activeSlide={deck.activeSlide}
         activeIndex={deck.activeIndex}
         progress={deck.progress}
-        onGoToSlide={deck.goToSlide}
-        onNext={deck.goToNextSlide}
-        onPrevious={deck.goToPreviousSlide}
+        onGoToSlide={handleGoToSlide}
+        onNext={handleGoToNextSlide}
+        onPrevious={handleGoToPreviousSlide}
         onOpenData={() => deck.openModal('status')}
       />
       <AmbientField />
@@ -145,9 +161,9 @@ export function PresentationDeck({ data }: { data: Payload }) {
           <motion.div
             key={deck.activeSlide}
             className="deck-stage-slide"
-            initial={{ opacity: 0, x: dirRef.current * 60, filter: 'blur(10px)', scale: 0.97 }}
+            initial={{ opacity: 0, x: direction * 60, filter: 'blur(10px)', scale: 0.97 }}
             animate={{ opacity: 1, x: 0, filter: 'blur(0px)', scale: 1 }}
-            exit={{ opacity: 0, x: dirRef.current * -40, filter: 'blur(8px)', scale: 0.98 }}
+            exit={{ opacity: 0, x: direction * -40, filter: 'blur(8px)', scale: 0.98 }}
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
             {activeSlide}

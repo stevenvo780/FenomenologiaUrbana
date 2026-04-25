@@ -39,13 +39,9 @@ export function SlideHeader({
   return (
     <header className="slide-header">
       <div className="slide-header-copy">
-        <p className="deck-eyebrow" style={{ color: 'var(--accent)', fontSize: '0.7rem', opacity: 0.7 }}>
-          {eyebrow}
-        </p>
+        <p className="deck-eyebrow slide-header-eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
-        <p style={{ color: 'var(--text-dim)', fontSize: '0.9rem', lineHeight: 1.42 }}>
-          {text}
-        </p>
+        <p className="slide-header-text">{text}</p>
       </div>
       {action ? <div className="slide-action">{action}</div> : null}
     </header>
@@ -175,5 +171,27 @@ export function DeltaTile({ label, value }: { label: string; value: ReactNode })
       <span>{label}</span>
       <strong>{value}</strong>
     </div>
+  )
+}
+
+export function StatTile({
+  label,
+  value,
+  note,
+  tone = 'default',
+  className = '',
+}: {
+  label: string
+  value: ReactNode
+  note?: ReactNode
+  tone?: PanelTone
+  className?: string
+}) {
+  return (
+    <article className={`stat-tile stat-tone-${tone}${className ? ` ${className}` : ''}`}>
+      <span className="stat-tile-label">{label}</span>
+      <strong className="stat-tile-value">{value}</strong>
+      {note ? <p className="stat-tile-note">{note}</p> : null}
+    </article>
   )
 }
