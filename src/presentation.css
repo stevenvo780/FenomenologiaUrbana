@@ -5032,3 +5032,200 @@ body {
 .has-tooltip:hover .info-dot {
   opacity: 1;
 }
+
+/* === Environment meter (PM2.5 / Ruido) === */
+.env-meter {
+  display: grid;
+  gap: 14px;
+  padding: 18px 20px 20px;
+  border-radius: 18px;
+  background: rgba(20, 22, 28, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
+}
+
+.env-meter + .env-meter {
+  margin-top: 14px;
+}
+
+.env-meter-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.env-meter-icon {
+  font-size: 1.8rem;
+  filter: grayscale(0.1);
+}
+
+.env-meter-titles {
+  display: grid;
+  gap: 2px;
+}
+
+.env-meter-titles strong {
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--text-strong, #fff8ec);
+  text-transform: uppercase;
+}
+
+.env-meter-sub {
+  font-size: 0.92rem;
+  color: var(--text-dim, rgba(255, 255, 255, 0.62));
+  font-style: italic;
+}
+
+.env-meter-strip {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 110px;
+  padding: 4px 2px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.18));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.env-meter-bar {
+  flex: 1 1 0;
+  min-width: 6px;
+  border-radius: 3px 3px 1px 1px;
+  transform-origin: bottom;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3) inset;
+}
+
+.env-meter-corridor-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim, rgba(255, 255, 255, 0.55));
+}
+
+.env-meter-corridor-mid {
+  opacity: 0.5;
+}
+
+.env-meter-scale {
+  position: relative;
+  height: 22px;
+  border-radius: 11px;
+  margin-top: 22px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.env-meter-threshold {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  cursor: help;
+}
+
+.env-meter-threshold-tick {
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 1px;
+}
+
+.env-meter-threshold-safe .env-meter-threshold-tick {
+  background: #6dd9c4;
+}
+.env-meter-threshold-warn .env-meter-threshold-tick {
+  background: #f4c87a;
+}
+.env-meter-threshold-danger .env-meter-threshold-tick {
+  background: #ff8a6c;
+}
+
+.env-meter-threshold-label {
+  position: absolute;
+  bottom: -22px;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim, rgba(255, 255, 255, 0.7));
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+  transform: translateX(-50%);
+  left: 0;
+}
+
+.env-meter-marker {
+  position: absolute;
+  top: -28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  cursor: help;
+}
+
+.env-meter-marker-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85), 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.env-meter-marker-peak .env-meter-marker-dot {
+  background: #ff8a6c;
+}
+.env-meter-marker-avg .env-meter-marker-dot {
+  background: #6dd9c4;
+}
+
+.env-meter-marker-label {
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: var(--text-strong, #fff8ec);
+}
+
+.env-meter-marker-peak {
+  top: auto;
+  bottom: -30px;
+}
+
+.env-meter-marker-peak .env-meter-marker-label {
+  margin-top: 0;
+  margin-bottom: 4px;
+  order: -1;
+}
+
+.env-meter-scale-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-dim, rgba(255, 255, 255, 0.55));
+  letter-spacing: 0.06em;
+}
+
+.env-meter-caption {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-dim, rgba(255, 255, 255, 0.7));
+}

@@ -1,6 +1,6 @@
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
-import { FieldRaster } from '../components/visuals/FieldRaster'
+import { EnvironmentMeter } from '../components/visuals/EnvironmentMeter'
 import { KpiPill, MetricLine, PanelFrame, SlideHeader, SlideShell } from '../components/ui'
 
 export function EnvironmentSlide({
@@ -11,8 +11,13 @@ export function EnvironmentSlide({
   onOpenModal: (kind: ModalKind) => void
 }) {
   const report = data.advanced_reports?.hpc_environmental
-  const pm25 = data.fields_manifest?.pm25
-  const noise = data.fields_manifest?.noise
+  const pm25Peak = report?.pm25.peak ?? 0
+  const pm25Avg = report?.pm25.ambient_avg ?? 0
+  const noisePeak = report?.noise.peak_db ?? 0
+  const noiseAvg = Math.max(0, noisePeak - (report?.noise.spatial_variance ?? 0) * 1.5)
+  // Cap PM2.5 scale to a meaningful upper band (peak can be an extreme outlier)
+  const pm25Scale = Math.max(50, Math.min(pm25Peak * 1.05, 600))
+  const noiseScale = Math.max(100, noisePeak * 1.05)
 
   return (
     <SlideShell id="ambiente" className="environment-slide">
@@ -33,40 +38,36 @@ export function EnvironmentSlide({
             Antes de la decisión hay un campo: aire que pesa, ruido que ocupa. La ruta libre se inclina hacia donde el cuerpo respira.
           </p>
           <div className="environment-field-split">
-            {pm25 ? (
-              <figure className="environment-field-figure">
-                <div className="environment-field-canvas">
-                  <FieldRaster
-                    src={pm25.src}
-                    alt="Campo PM2.5 4K"
-                    colormap={pm25.cmap}
-                    legend={{ min: pm25.min, max: pm25.max, unit: pm25.units }}
-                    motionMode="breathing"
-                  />
-                </div>
-                <figcaption>
-                  <strong>PM2.5 — material particulado</strong>
-                  <span>Manchas oscuras = aire denso. Las rutas peatonales se desvían hacia las zonas claras.</span>
-                </figcaption>
-              </figure>
-            ) : null}
-            {noise ? (
-              <figure className="environment-field-figure">
-                <div className="environment-field-canvas">
-                  <FieldRaster
-                    src={noise.src}
-                    alt="Campo de ruido 4K"
-                    colormap={noise.cmap}
-                    legend={{ min: noise.min, max: noise.max, unit: noise.units }}
-                    motionMode="breathing"
-                  />
-                </div>
-                <figcaption>
-                  <strong>Ruido — presión acústica</strong>
-                  <span>Los focos brillantes saturan la audición; el cuerpo busca corredores de baja intensidad.</span>
-                </figcaption>
-              </figure>
-            ) : null}
+            <EnvironmentMeter
+              kind="pm25"
+              title="PM2.5 — material particulado"
+              unit="µg/m³"
+              peak={pm25Peak}
+              average={pm25Avg}
+              scaleMax={pm25Scale}
+              seed={11}
+              thresholds={[
+                { value: 15, label: 'OMS · seguro', tone: 'safe' },
+                { value: 35, label: 'Riesgo', tone: 'warn' },
+                { value: 75, label: 'Crítico', tone: 'danger' },
+              ]}
+            />
+            <EnvironmentMeter
+              kind="noise"
+              title="Ruido — presión acústica"
+              unit="dB"
+              peak={noisePeak}
+              average={noiseAvg}
+              scaleMax={noiseScale}
+              seed={29}
+              contrast={1.6}
+              fillStrip
+              thresholds={[
+                { value: 50, label: 'Calma', tone: 'safe' },
+                { value: 70, label: 'Estrés', tone: 'warn' },
+                { value: 85, label: 'Daño', tone: 'danger' },
+              ]}
+            />
           </div>
         </article>
 
