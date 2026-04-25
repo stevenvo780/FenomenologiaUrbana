@@ -104,19 +104,13 @@ export function MethodSlide({
               <strong>{environmental?.resolution?.split(' ')[0] ?? '4096×4096'}</strong>
               <p>PM2.5 y ruido difundidos en campo continuo.</p>
             </article>
-            <article className="artifact-card">
-              <span>Artefactos DRL</span>
-              <strong>{compactNumber(drlInventory?.total_bytes ?? 0)}</strong>
-              <p>{drlInventory?.trained_models ?? 0} modelos entrenados en `peak_pm`.</p>
-            </article>
           </div>
 
           <div className="method-note">
             <p className="deck-eyebrow">Narrativa de la deck</p>
-            <h3>De la topología a la desigualdad, del estrés a la historia</h3>
+            <h3>Topología · desigualdad · estrés · memoria urbana</h3>
             <p>
-              Cada slide a partir de aquí abre un bloque especializado del pipeline y lo traduce a una visualización concreta,
-              sin amontonar más de dos focos analíticos por pantalla.
+              Cada bloque abre un motor del pipeline y lo traduce a una sola lectura visual dominante.
             </p>
           </div>
         </aside>

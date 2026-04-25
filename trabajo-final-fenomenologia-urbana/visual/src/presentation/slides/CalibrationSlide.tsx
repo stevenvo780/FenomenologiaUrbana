@@ -30,6 +30,7 @@ export function CalibrationSlide({
     hour: key.replace('hour_', ''),
     ...value,
   }))
+  const sampledConfidenceCards = confidenceCards.slice(0, 3)
 
   return (
     <SlideShell id="calibracion" className="calibration-slide">
@@ -90,13 +91,13 @@ export function CalibrationSlide({
 
         <aside className="deck-panel uncertainty-panel">
           <p className="deck-eyebrow">Monte Carlo · 95% CI</p>
-          <div className="status-strip">
+          <div className="status-strip compact-strip">
             <KpiPill label="Iteraciones" value={`${uncertainty?.iterations_per_sample ?? 0}`} status="documented" />
             <KpiPill label="Rango medio" value={confidenceCards[0]?.mean_velocity.toFixed(3) ?? 's/d'} status="proxy" />
             <KpiPill label="Status" value={calibration?.status ?? 's/d'} status="documented" />
           </div>
           <div className="confidence-grid">
-            {confidenceCards.map((entry) => (
+            {sampledConfidenceCards.map((entry) => (
               <article key={entry.key} className="confidence-card">
                 <span>Hora {entry.hour}</span>
                 <strong>{entry.mean_velocity.toFixed(4)}</strong>
@@ -107,7 +108,7 @@ export function CalibrationSlide({
               </article>
             ))}
           </div>
-          <p className="modal-note">{uncertainty?.note}</p>
+          <p className="modal-note">Resumen visual de ventanas críticas; la serie completa queda disponible en el modal de validación.</p>
         </aside>
       </div>
     </SlideShell>

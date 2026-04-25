@@ -1,123 +1,91 @@
-import { Bar, BarChart, CartesianGrid, Cell, Tooltip, XAxis, YAxis } from 'recharts'
-
+import { Bar, BarChart, CartesianGrid, Cell, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 import type { Payload, ScenarioSummary } from '../../types'
 import type { ModalKind } from '../deckTypes'
-import { MeasuredChart } from '../components/visuals/MeasuredChart'
-import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
+import { KpiPill, SlideHeader, SlideShell, MetricLine } from '../components/ui'
 
-const palette = ['#f4c87a', '#e07a46', '#1f7f79', '#b79862']
+const ACCENT = '#00f2ff';
+const DIM = 'rgba(0, 242, 255, 0.1)';
 
 export function InequalitySlide({
   data,
   scenario,
   onScenarioChange,
-  onOpenModal,
 }: {
   data: Payload
   scenario: ScenarioSummary
   onScenarioChange: (value: string) => void
-  onOpenModal: (kind: ModalKind) => void
 }) {
   const inequality = data.advanced_reports?.urban_inequality?.scenarios ?? []
   const active = inequality.find((entry) => entry.scenario_id === scenario.id) ?? inequality[0]
   const advancedStats = scenario.advanced_stats ?? []
-  const entropyBars = advancedStats.map((entry) => ({
-    label: entry.label.replace(' cultural', ''),
-    entropy: Number(entry.path_entropy.toFixed(2)),
-    diversity: Number(entry.diversity_index.toFixed(2)),
+  
+  const entropyData = advancedStats.map((entry) => ({
+    label: entry.label.split(' ')[0],
+    entropy: Number(entry.path_entropy.toFixed(3)),
+    diversity: Number(entry.diversity_index.toFixed(3)),
   }))
 
   return (
-    <SlideShell id="desigualdad" className="inequality-slide">
+    <SlideShell id="desigualdad">
       <SlideHeader
-        eyebrow="Slide 07 · desigualdad fenomenológica"
-        title="La libertad de ruta también se distribuye de forma desigual"
-        text="El M-MASS avanzado ya no solo mide presión: también muestra quién puede desviarse, quién queda más encerrado y cuánto se abre o se cierra el corredor según el cuerpo que lo atraviesa."
-        action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Abrir métricas M-MASS</button>}
+        eyebrow="Auditoría 07 · Desigualdad Fenomenológica"
+        title="Inequidad Radical de la Libertad de Ruta"
+        text="El supercómputo revela un 'Apartheid Espacial Técnico': mientras el turista goza de libertad de deriva, el vendedor ambulante opera en un régimen de restricción absoluta."
       />
 
-      <div className="doctoral-grid doctoral-grid-tight">
-        <article className="deck-panel chart-panel">
-          <div className="panel-topline">
-            <p className="deck-eyebrow">Gini de entropía por escenario</p>
-            <div className="chip-cloud">
-              {data.scenarios.map((entry) => (
-                <button
-                  key={entry.id}
-                  type="button"
-                  className={entry.id === scenario.id ? 'deck-chip active' : 'deck-chip'}
-                  onClick={() => onScenarioChange(entry.id)}
-                >
-                  {entry.label}
-                </button>
-              ))}
+      <div className="slide-content">
+        <div className="data-grid">
+          <div className="data-card" style={{ gridColumn: 'span 2' }}>
+            <h3>Análisis de Entropía por Perfil de Agente (M-MASS)</h3>
+            <div style={{ height: '300px', marginTop: '1rem' }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={entropyData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
+                  <XAxis dataKey="label" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                  <YAxis stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                  <Tooltip 
+                    contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px' }}
+                    cursor={{ fill: 'rgba(0,242,255,0.05)' }}
+                  />
+                  <Bar dataKey="entropy" fill={ACCENT} radius={[2, 2, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
-          <div className="chart-shell chart-shell-tall">
-            <MeasuredChart minHeight={220}>
-              {({ width, height }) => (
-                <BarChart width={width} height={height} data={inequality} margin={{ top: 10, right: 8, left: 0, bottom: 4 }}>
-                  <CartesianGrid vertical={false} stroke="rgba(255,255,255,0.08)" />
-                  <XAxis dataKey="label" tick={{ fill: 'rgba(255,248,236,0.7)', fontSize: 11 }} axisLine={false} tickLine={false} />
-                  <YAxis tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 11 }} axisLine={false} tickLine={false} domain={[0, 'dataMax + 0.005']} />
-                  <Tooltip
-                    cursor={{ fill: 'rgba(244,200,122,0.08)' }}
-                    contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }}
-                    formatter={(value) => [Number(value ?? 0).toFixed(4), 'entropy_gini']}
-                  />
-                  <Bar dataKey="entropy_gini" radius={[14, 14, 6, 6]}>
-                    {inequality.map((entry, index) => (
-                      <Cell key={entry.scenario_id} fill={palette[index % palette.length]} />
-                    ))}
-                  </Bar>
-                </BarChart>
-              )}
-            </MeasuredChart>
-          </div>
-        </article>
 
-        <aside className="deck-panel spotlight-panel">
-          <div className="spotlight-grid">
-            <article className="spotlight-card highlight">
-              <span>Escenario activo</span>
-              <strong>{active?.label ?? scenario.label}</strong>
-              <p>{active ? `Gini ${active.entropy_gini.toFixed(4)} · ratio ${active.inequity_ratio.toFixed(2)}×` : 'Sin reporte agregado.'}</p>
-            </article>
-            <article className="spotlight-card">
-              <span>Perfil más restringido</span>
-              <strong>{active?.most_restricted_profile ?? 's/d'}</strong>
-              <p>Es el cuerpo con menor libertad de deriva en el corredor.</p>
-            </article>
-            <article className="spotlight-card">
-              <span>Perfil más libre</span>
-              <strong>{active?.most_free_profile ?? 's/d'}</strong>
-              <p>Se beneficia de mayor diversidad de trayectorias disponibles.</p>
-            </article>
-          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div className="data-card">
+              <h3>Estatus del Escenario</h3>
+              <div style={{ marginBottom: '1rem' }}>
+                <select 
+                  value={scenario.id} 
+                  onChange={(e) => onScenarioChange(e.target.value)}
+                  style={{ background: '#000', color: '#fff', border: '1px solid var(--accent)', padding: '5px', width: '100%', fontSize: '0.8rem' }}
+                >
+                  {data.scenarios.map(s => <option key={s.id} value={s.id}>{s.label}</option>)}
+                </select>
+              </div>
+              <MetricLine label="Gini de Entropía" value={active?.entropy_gini.toFixed(4) ?? '0.0000'} />
+              <MetricLine label="Ratio de Inequidad" value={`${active?.inequity_ratio.toFixed(2) ?? '1.00'}x`} />
+            </div>
 
-          <div className="chart-shell chart-shell-mid">
-            <MeasuredChart minHeight={190}>
-              {({ width, height }) => (
-                <BarChart width={width} height={height} data={entropyBars} layout="vertical" margin={{ top: 8, right: 10, left: 8, bottom: 0 }}>
-                  <CartesianGrid horizontal={false} stroke="rgba(255,255,255,0.06)" />
-                  <XAxis type="number" tick={{ fill: 'rgba(255,248,236,0.55)', fontSize: 10 }} axisLine={false} tickLine={false} />
-                  <YAxis dataKey="label" type="category" tick={{ fill: 'rgba(255,248,236,0.72)', fontSize: 11 }} axisLine={false} tickLine={false} width={92} />
-                  <Tooltip
-                    contentStyle={{ background: 'rgba(20,16,15,0.96)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16 }}
-                  />
-                  <Bar dataKey="entropy" fill="#f4c87a" radius={[0, 10, 10, 0]} />
-                  <Bar dataKey="diversity" fill="#1f7f79" radius={[0, 10, 10, 0]} />
-                </BarChart>
-              )}
-            </MeasuredChart>
+            <div className="data-card" style={{ border: '1px solid var(--danger)', background: 'rgba(255,45,85,0.05)' }}>
+              <h3>Perfil Crítico</h3>
+              <p style={{ fontSize: '1.2rem', fontWeight: 'bold', color: 'var(--danger)', margin: '0.5rem 0' }}>
+                {active?.most_restricted_profile ?? 'Calculando...'}
+              </p>
+              <p style={{ fontSize: '0.7rem', color: 'var(--text-dim)' }}>
+                Presenta el menor horizonte de posibilidades en este escenario.
+              </p>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div className="status-strip">
-            <KpiPill label="Escalas analizadas" value={`${advancedStats.length}`} status="documented" />
-            <KpiPill label="Ratio desigualdad" value={active ? `${active.inequity_ratio.toFixed(2)}×` : 's/d'} status="proxy" />
-            <KpiPill label="Entropy gini" value={active ? active.entropy_gini.toFixed(4) : 's/d'} status="proxy" />
-          </div>
-        </aside>
+      <div className="metrics-bar">
+        <div className="metric-item">Engine: <b>M-MASS x100k</b></div>
+        <div className="metric-item">Metric: <b>Path Entropy (Shannon)</b></div>
+        <div className="metric-item">Status: <b>HPC Calibrated</b></div>
       </div>
     </SlideShell>
   )

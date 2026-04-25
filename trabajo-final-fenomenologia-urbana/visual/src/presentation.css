@@ -296,11 +296,12 @@ body {
   height: 100dvh;
   max-height: 100dvh;
   display: grid;
-  align-content: center;
-  gap: 24px;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-content: start;
+  gap: 16px;
   overflow: hidden;
   transform-style: preserve-3d;
-  padding: 104px clamp(18px, 3.4vw, 58px) 34px;
+  padding: 88px clamp(16px, 3vw, 46px) 20px;
 }
 
 .deck-panel {
@@ -332,6 +333,8 @@ body {
 .closing-grid {
   display: grid;
   gap: 24px;
+  min-height: 0;
+  height: 100%;
 }
 
 .hero-grid {
@@ -377,7 +380,7 @@ body {
 .hero-lead,
 .slide-header p {
   max-width: 76ch;
-  font-size: clamp(1rem, 1.45vw, 1.28rem);
+  font-size: clamp(0.96rem, 1.05vw, 1.08rem);
 }
 
 .hero-actions,
@@ -391,7 +394,7 @@ body {
 }
 
 .hero-actions {
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 .primary-action,
@@ -413,14 +416,23 @@ body {
 }
 
 .status-strip {
-  margin-top: 36px;
+  margin-top: 22px;
+}
+
+.deck-panel > .status-strip:first-child,
+.deck-panel > .compact-strip:first-child {
+  margin-top: 0;
+}
+
+.compact-strip {
+  margin-top: 12px;
 }
 
 .kpi-pill {
   min-width: 136px;
   display: grid;
   gap: 8px;
-  padding: 14px 16px;
+  padding: 12px 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.06);
@@ -482,22 +494,22 @@ body {
 }
 
 .constellation-panel {
-  min-height: min(620px, calc(100dvh - 152px));
+  min-height: min(540px, calc(100dvh - 156px));
   display: grid;
   grid-template-rows: 1fr auto;
-  padding: 24px;
+  padding: 18px;
   overflow: hidden;
 }
 
 .constellation-core {
   position: relative;
-  min-height: min(480px, calc(100dvh - 288px));
+  min-height: min(390px, calc(100dvh - 310px));
 }
 
 .core-ring {
   position: absolute;
   inset: 50%;
-  width: 220px;
+  width: 188px;
   aspect-ratio: 1;
   translate: -50% -50%;
   border: 1px solid rgba(244, 200, 122, 0.22);
@@ -506,14 +518,14 @@ body {
 }
 
 .ring-two {
-  width: 340px;
+  width: 292px;
   border-style: dashed;
   animation-duration: 38s;
   animation-direction: reverse;
 }
 
 .ring-three {
-  width: 470px;
+  width: 396px;
   border-color: rgba(31, 127, 121, 0.25);
   animation-duration: 58s;
 }
@@ -581,7 +593,7 @@ body {
 .slide-header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
+  gap: 14px;
   align-items: end;
 }
 
@@ -592,8 +604,8 @@ body {
 .control-theatre {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(220px, 0.55fr);
-  gap: 18px;
-  padding: 18px;
+  gap: 14px;
+  padding: 14px;
 }
 
 .control-title,
@@ -653,12 +665,21 @@ body {
 .podium-panel,
 .closing-thesis,
 .closure-panel {
-  padding: 20px;
+  padding: 16px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.map-panel,
+.node-panel {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
 }
 
 .corridor-map {
   width: 100%;
-  min-height: min(52vh, 470px);
+  height: 100%;
+  min-height: min(40vh, 350px);
   border-radius: 28px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -696,7 +717,7 @@ body {
 .route-marquee {
   display: grid;
   gap: 10px;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 .route-marquee div {
@@ -704,7 +725,7 @@ body {
   grid-template-columns: 20px minmax(0, 1fr);
   gap: 10px;
   align-items: center;
-  padding: 12px 14px;
+  padding: 10px 12px;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.06);
 }
@@ -1054,6 +1075,8 @@ body {
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: 22px;
   align-items: stretch;
+  min-height: 0;
+  height: 100%;
 }
 
 .doctoral-grid-tight {
@@ -1078,6 +1101,7 @@ body {
   gap: 18px;
   align-content: start;
   min-height: 0;
+  overflow: hidden;
 }
 
 .panel-topline {
@@ -1091,7 +1115,7 @@ body {
 .engine-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 8px;
 }
 
 .engine-card,
@@ -1110,7 +1134,7 @@ body {
 .engine-card {
   display: grid;
   gap: 10px;
-  padding: 16px;
+  padding: 10px;
 }
 
 .engine-card svg {
@@ -1152,7 +1176,7 @@ body {
 .confidence-card {
   display: grid;
   gap: 8px;
-  padding: 16px;
+  padding: 10px;
 }
 
 .artifact-card span,
@@ -1172,7 +1196,7 @@ body {
 .method-note,
 .visibility-note,
 .stress-callout {
-  padding: 18px;
+  padding: 14px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1191,11 +1215,11 @@ body {
 }
 
 .chart-shell-tall {
-  height: min(33vh, 300px);
+  height: min(23vh, 200px);
 }
 
 .chart-shell-mid {
-  height: min(27vh, 230px);
+  height: min(18vh, 160px);
 }
 
 .chart-measure {
@@ -1227,7 +1251,7 @@ body {
 .spotlight-card {
   display: grid;
   gap: 8px;
-  padding: 16px;
+  padding: 10px;
 }
 
 .spotlight-card.highlight,
@@ -1262,7 +1286,7 @@ body {
 .validation-chip {
   display: grid;
   gap: 6px;
-  padding: 12px 14px;
+  padding: 10px 12px;
 }
 
 .confidence-card em,
@@ -1288,7 +1312,7 @@ body {
   grid-template-columns: 44px minmax(0, 1fr);
   gap: 12px;
   align-items: center;
-  padding: 16px;
+  padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
 }
@@ -1306,7 +1330,7 @@ body {
 .field-meter {
   position: relative;
   width: 18px;
-  height: 112px;
+  height: 72px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 999px;
@@ -1660,23 +1684,25 @@ body {
 .evidence-gallery {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr 1fr;
-  grid-auto-rows: minmax(220px, auto);
-  gap: 20px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-height: 0;
+  height: 100%;
 }
 
 .evidence-gallery .deck-panel {
-  padding: 22px;
+  padding: 16px;
+  overflow: hidden;
 }
 
 .evidence-hero-card {
-  grid-row: span 2;
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 22px;
+  gap: 16px;
 }
 
 .donut {
-  width: min(100%, 360px);
+  width: min(100%, 240px);
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -1715,7 +1741,7 @@ body {
 .donut strong {
   color: #fff8ec;
   font-family: var(--heading);
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
   line-height: 0.9;
 }
 
@@ -1727,16 +1753,16 @@ body {
 }
 
 .word-cloud {
-  min-height: 260px;
+  min-height: 170px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  align-content: center;
+  gap: 8px;
+  align-content: flex-start;
 }
 
 .word-cloud span {
   display: inline-flex;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-radius: 999px;
   color: #fff8ec;
   background: rgba(244, 200, 122, 0.1);
@@ -1746,12 +1772,12 @@ body {
 }
 
 .month-sparkline {
-  height: 170px;
+  height: 132px;
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   gap: 8px;
   align-items: end;
-  margin: 20px 0;
+  margin: 12px 0;
 }
 
 .month-sparkline span {
@@ -1763,18 +1789,18 @@ body {
 }
 
 .crime-chart {
-  height: 190px;
-  margin: 18px 0 8px;
+  height: 150px;
+  margin: 12px 0 4px;
 }
 
 .barrio-kpis {
   display: grid;
   grid-template-columns: 1fr;
-  margin-top: 18px;
+  margin-top: 12px;
 }
 
 .source-card {
-  grid-column: span 2;
+  grid-column: auto;
 }
 
 .closing-grid {
@@ -1784,8 +1810,8 @@ body {
 .closing-thesis {
   display: grid;
   align-content: center;
-  gap: 20px;
-  padding: clamp(28px, 5vw, 60px);
+  gap: 16px;
+  padding: clamp(22px, 4vw, 38px);
 }
 
 .closure-panel {
