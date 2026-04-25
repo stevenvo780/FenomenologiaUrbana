@@ -13,9 +13,7 @@ export function NodeSpotlight({
 }) {
   const load = scenario.node_loads[node.id] ?? 0
   const bottleneck = scenario.top_bottlenecks.find((entry) => entry.node_id === node.id)
-  const summary = compact
-    ? node.phenomenology.split(',').slice(0, 2).join(', ').trim()
-    : node.phenomenology
+  const summary = compact ? '' : node.phenomenology
   const spotlightMessage = bottleneck
     ? compact
       ? `Cuello de botella · ${bottleneck.load} trayectorias.`
@@ -28,7 +26,7 @@ export function NodeSpotlight({
     <div className={`node-spotlight${compact ? ' compact' : ''}`}>
       <p className="deck-eyebrow">Inspector de nodo</p>
       <h3>{node.label}</h3>
-      <p>{summary}</p>
+      {summary ? <p>{summary}</p> : null}
       <div className="node-metric-grid">
         <MetricLine compact={compact} label="Carga" value={`${load}`} />
         <MetricLine compact={compact} label="Seguridad" value={formatRatio(node.security)} />

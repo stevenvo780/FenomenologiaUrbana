@@ -7,7 +7,7 @@ import { SlideHeader, SlideShell } from '../components/ui'
 import { motion } from 'framer-motion'
 
 const controlLabelStyle = {
-  fontSize: '0.6rem',
+  fontSize: '0.56rem',
   color: 'var(--text-dim)',
 } as const
 
@@ -16,8 +16,8 @@ const selectStyle = {
   color: '#fff8ec',
   border: '1px solid rgba(224, 122, 70, 0.35)',
   borderRadius: '12px',
-  padding: '0.55rem 0.7rem',
-  fontSize: '0.78rem',
+  padding: '0.5rem 0.62rem',
+  fontSize: '0.74rem',
 } as const
 
 export function MapSlide({
@@ -88,25 +88,31 @@ export function MapSlide({
                 {data.scenarios.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
               </select>
 
-              <label style={{ ...controlLabelStyle, marginTop: '0.5rem' }}>PERFIL FENOMENOLÓGICO</label>
-              <select
-                value={agent.id}
-                onChange={(e) => onAgentChange(e.target.value)}
-                style={{ ...selectStyle, width: '100%' }}
-              >
-                {data.agents.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
-              </select>
+              <div className="map-select-pair">
+                <div>
+                  <label style={controlLabelStyle}>PERFIL FENOMENOLÓGICO</label>
+                  <select
+                    value={agent.id}
+                    onChange={(e) => onAgentChange(e.target.value)}
+                    style={{ ...selectStyle, width: '100%' }}
+                  >
+                    {data.agents.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
+                  </select>
+                </div>
 
-              <label style={{ ...controlLabelStyle, marginTop: '0.5rem' }}>PERFIL DE CONTRASTE</label>
-              <select
-                value={compareAgent.id}
-                onChange={(e) => onCompareAgentChange(e.target.value)}
-                style={{ ...selectStyle, width: '100%' }}
-              >
-                {data.agents.filter((entry) => entry.id !== agent.id).map((entry) => (
-                  <option key={entry.id} value={entry.id}>{entry.label}</option>
-                ))}
-              </select>
+                <div>
+                  <label style={controlLabelStyle}>PERFIL DE CONTRASTE</label>
+                  <select
+                    value={compareAgent.id}
+                    onChange={(e) => onCompareAgentChange(e.target.value)}
+                    style={{ ...selectStyle, width: '100%' }}
+                  >
+                    {data.agents.filter((entry) => entry.id !== agent.id).map((entry) => (
+                      <option key={entry.id} value={entry.id}>{entry.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
             </div>
 
             <div className="map-live-grid">
