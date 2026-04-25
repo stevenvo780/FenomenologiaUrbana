@@ -42,7 +42,7 @@ export function SymplokeSlide({ data }: { data: Payload }) {
           <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.15 }}>
             <PanelFrame eyebrow="M1 · Materialidad física" title="Reacción-difusión" tone="teal" className="symploke-card">
               <p>PDE ambiental sobre malla {pdeResolution}; el aire y el ruido dejan de ser fondo.</p>
-              <TexBlock tex="\\frac{\\partial u}{\\partial t}=D\\nabla^2u-\\kappa u+S(x,t)" />
+              <TexBlock tex={'\\frac{\\partial u}{\\partial t}=D\\nabla^2u-\\kappa u+S(x,t)'} />
               {pm25Thumb ? (
                 <FieldRaster
                   src={pm25Thumb.src}
@@ -59,7 +59,7 @@ export function SymplokeSlide({ data }: { data: Payload }) {
           <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.35 }}>
             <PanelFrame eyebrow="M2 · Intencionalidad sintética" title="DRL situado" tone="amber" className="symploke-card">
               <p>{data.agents.length} perfiles fenomenológicos filtran pesos de tiempo, riesgo, ruido, obstáculo y atracción.</p>
-              <TexBlock tex="Q^*(s,a)=E[R+\\gamma\\max_a Q^*(s',a')]" />
+              <TexBlock tex={"Q^*(s,a)=E[R+\\gamma\\max_a Q^*(s',a')]"} />
               <div className="symploke-metric">
                 <span>Perfiles</span>
                 <strong>{data.agents.length}</strong>
@@ -70,7 +70,7 @@ export function SymplokeSlide({ data }: { data: Payload }) {
           <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.55 }}>
             <PanelFrame eyebrow="M3 · Panóptico de flujo" title="Divergencia de posibilidad" tone="danger" className="symploke-card">
               <p>La libertad se mide como distancia entre trayectoria abierta y trayectoria coaccionada.</p>
-              <TexBlock tex="D_{KL}(P\\Vert Q)=\\sum_x P(x)\\log\\frac{P(x)}{Q(x)}" />
+              <TexBlock tex={'D_{KL}(P\\Vert Q)=\\sum_x P(x)\\log\\frac{P(x)}{Q(x)}'} />
               <div className="symploke-metric">
                 <span>Rayos</span>
                 <strong>{compactNumber(rayCount)}</strong>

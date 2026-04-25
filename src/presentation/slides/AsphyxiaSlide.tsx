@@ -67,7 +67,7 @@ export function AsphyxiaSlide({
         <PanelFrame eyebrow="σ relativa" title={<motion.strong className="hero-number">{sigmaText}</motion.strong>} tone="danger" className="asphyxia-hero">
           <p>incertidumbre relativa · asfixia de la emergencia</p>
           <p className="formula-line">
-            Divergencia <TexInline tex="D_{KL}(P\\Vert Q)" /> como distancia entre libertad y coacción.
+            Divergencia <TexInline tex={'D_{KL}(P\\Vert Q)'} /> como distancia entre libertad y coacción.
           </p>
           <MetricLine label="spatial_accuracy_score" value={(multipoint?.spatial_accuracy_score ?? 0).toFixed(4)} />
           <MetricLine label="residual_error" value={(multipoint?.residual_error ?? 0).toFixed(4)} />

@@ -1,0 +1,47 @@
+- main [ref=e3]:
+  - navigation "Navegación de slides" [ref=e4]:
+    - generic [ref=e6]:
+      - img [ref=e7]
+      - generic [ref=e12]: HPC
+    - button "Slide anterior" [disabled] [ref=e13]:
+      - img [ref=e14]
+    - button "Abrir selector de slides" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+      - generic [ref=e20]: Apertura
+      - generic [ref=e21]: 1/16
+      - img [ref=e22]
+    - button "Slide siguiente" [ref=e27] [cursor=pointer]:
+      - img [ref=e28]
+    - button "Abrir Data Room" [ref=e30] [cursor=pointer]:
+      - img [ref=e31]
+      - generic [ref=e35]: Data
+  - generic [ref=e38]:
+    - generic [ref=e39]:
+      - article [ref=e40]:
+        - paragraph [ref=e41]: Apertura · Capítulo 1
+        - heading "Volver a la calle misma" [level=1] [ref=e42]
+        - paragraph [ref=e43]: "Husserl, 1936: la matematización amputa el Lebenswelt. El HPC aquí invierte su signo: se vuelve Reducción Eidética Computacional."
+        - generic [ref=e44]:
+          - generic [ref=e45]: phainómenon
+          - generic [ref=e46]: lógos
+          - generic [ref=e47]: Lebenswelt
+        - button "INICIAR REDUCCIÓN" [ref=e48] [cursor=pointer]
+      - complementary "Constelación fenomenológica" [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e54]:
+            - generic [ref=e55]: San Antonio Metro
+            - strong [ref=e56]: Hora pico AM
+          - 'button "San Antonio Metro: 0.5057 trayectorias" [ref=e57] [cursor=pointer]'
+          - 'button "Parque San Antonio: 0.0254 trayectorias" [ref=e58] [cursor=pointer]'
+          - 'button "Palacio Nacional: 0.5841 trayectorias" [ref=e59] [cursor=pointer]'
+          - 'button "Junin Peatonal: 0.6657 trayectorias" [ref=e60] [cursor=pointer]'
+          - 'button "Cruce Oriental: 0.3402 trayectorias" [ref=e61] [cursor=pointer]'
+          - 'button "Parque Berrio: 1 trayectorias" [ref=e62] [cursor=pointer]'
+          - 'button "Carabobo Cultural: 0.3314 trayectorias" [ref=e63] [cursor=pointer]'
+          - 'button "Plaza Botero: 0.2771 trayectorias" [ref=e64] [cursor=pointer]'
+          - 'button "Museo de Antioquia: 0.0661 trayectorias" [ref=e65] [cursor=pointer]'
+        - generic [ref=e66]:
+          - paragraph [ref=e67]: Lectura escénica
+          - paragraph [ref=e68]: "Cada punto es un nodo del corredor. El tamaño orbital responde a cargas simuladas; el centro mantiene viva la tesis: la experiencia está estructurada."
+    - generic [ref=e69]: San Antonio - Junin - Parque Berrio - Plaza Botero · Comuna 10 - La Candelaria, Medellin · 9 nodos / 13 ejes
+    - paragraph [ref=e70]: Husserl, 1936/1991

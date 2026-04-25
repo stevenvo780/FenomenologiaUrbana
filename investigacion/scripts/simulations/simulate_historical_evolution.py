@@ -1,13 +1,10 @@
 import csv
-import json
-from pathlib import Path
 import numpy as np
 import torch
 from tqdm import tqdm
 
-from _shared import read_json, write_json, OUTPUTS_DIR, now_iso
+from _shared import RAW_DIR, write_json, OUTPUTS_DIR, now_iso
 
-RAW_DIR = Path("trabajo-final-fenomenologia-urbana/investigacion/data/raw")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 GRID_SIZE = 512.0
 DT = 0.1

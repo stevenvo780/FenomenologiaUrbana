@@ -29,7 +29,7 @@ export function EnvironmentSlide({
             <KpiPill label="Malla" value={report?.resolution?.split(' ')[0] ?? '4096×4096'} status="documented" />
             <KpiPill label="Estación PM2.5" value={data.empirical.environmental_context.air.pm25.nearest_station?.short_name ?? 's/d'} status="documented" />
           </div>
-          <TexBlock tex="\\frac{\\partial u}{\\partial t}=D\\nabla^2u-\\kappa u+S(x,t)" />
+          <TexBlock tex={'\\frac{\\partial u}{\\partial t}=D\\nabla^2u-\\kappa u+S(x,t)'} />
           <div className="environment-field-split">
             {pm25 ? (
               <FieldRaster
