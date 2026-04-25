@@ -47,17 +47,17 @@ export function AsphyxiaSlide({
       <div className="asphyxia-aura" aria-hidden="true" />
 
       <SlideHeader
-        eyebrow="Capítulo 10 · asfixia de la emergencia"
-        title="La precisión del modelo es la asfixia de la libertad"
-        text="Cuando la incertidumbre relativa cae a escala microscópica, la ciudad revela un régimen de trayectorias estrechamente coaccionadas."
+        eyebrow="Capítulo 10 · límites del modelo"
+        title="Precisión interna no es validación de campo"
+        text="La baja incertidumbre muestra estabilidad computacional bajo supuestos. Para hablar de experiencia real faltan conteos, percepción y observación situada."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('calibration-detail')}>Abrir detalle</button>}
       />
 
       <div className="asphyxia-grid">
         <PanelFrame eyebrow="σ relativa" title={<motion.strong className="hero-number">{sigmaText}</motion.strong>} tone="danger" className="asphyxia-hero">
-          <p className="asphyxia-hero-copy">incertidumbre relativa · la libertad de andar comprimida a una escala microscópica.</p>
-          <MetricLine label="Precisión espacial" value={(multipoint?.spatial_accuracy_score ?? 0).toFixed(4)} tooltip="Qué tan bien predice el modelo la densidad real, punto por punto. Más cerca de 1 = mejor calce con lo medido en campo." />
-          <MetricLine label="Error residual" value={(multipoint?.residual_error ?? 0).toFixed(4)} tooltip="Diferencia promedio que queda entre la simulación y los datos reales tras calibrar. Más pequeño = simulación más fiel." />
+          <p className="asphyxia-hero-copy">incertidumbre relativa · estabilidad del baseline proxy, no prueba empírica final.</p>
+          <MetricLine label="Precisión espacial" value={(multipoint?.spatial_accuracy_score ?? 0).toFixed(4)} tooltip="Indicador interno de ajuste del modelo bajo los datos disponibles. No sustituye mediciones de campo por nodo." />
+          <MetricLine label="Error residual" value={(multipoint?.residual_error ?? 0).toFixed(4)} tooltip="Diferencia restante dentro del escenario computacional. Debe revisarse cuando existan capturas reales." />
         </PanelFrame>
 
         <PanelFrame eyebrow="Gini por escenario" title="Desigualdad fenomenológica" tone="amber" className="asphyxia-gini-panel">
@@ -103,8 +103,8 @@ export function AsphyxiaSlide({
           ))}
         </PanelFrame>
 
-        <PanelFrame eyebrow="Compresión de trayectorias" title="Cono de libertad" tone="teal" className="asphyxia-compression">
-          <p className="asphyxia-compression-copy">Cinco perfiles entran al corredor con divergencia máxima; salen con trayectorias casi indistinguibles.</p>
+        <PanelFrame eyebrow="Comparación de trayectorias" title="Cono de alternativas" tone="teal" className="asphyxia-compression">
+          <p className="asphyxia-compression-copy">Cinco perfiles permiten comparar cómo se estrecha o amplía el repertorio de rutas bajo supuestos controlados.</p>
           <svg viewBox="0 0 320 140" className="asphyxia-compression-svg" aria-hidden="true">
             <defs>
               <linearGradient id="asphyxiaConvergence" x1="0" x2="1">

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ComponentPropsWithoutRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkMath from 'remark-math'
 import remarkGfm from 'remark-gfm'
@@ -18,6 +18,17 @@ mermaid.initialize({
   securityLevel: 'loose',
   fontFamily: 'Space Grotesk'
 })
+
+const thesisModules = import.meta.glob('../tesis/0*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
+const thesisContent = Object.keys(thesisModules)
+  .sort()
+  .map((key) => thesisModules[key])
+  .join('\n\n---\n\n')
+
+type MarkdownCodeProps = ComponentPropsWithoutRef<'code'> & {
+  inline?: boolean
+  node?: unknown
+}
 
 const MermaidRenderer = ({ chart }: { chart: string }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -41,17 +52,7 @@ const MermaidRenderer = ({ chart }: { chart: string }) => {
   return <div className="mermaid-container" ref={ref} dangerouslySetInnerHTML={{ __html: svg }} />
 }
 
-export function ThesisView({ onClose: _onClose }: { onClose?: () => void }) {
-  const [content, setContent] = useState('')
-
-  useEffect(() => {
-    // Vite specific way to load multiple files as raw strings
-    const thesisModules = import.meta.glob('../tesis/0*.md', { query: '?raw', import: 'default', eager: true })
-    const sortedKeys = Object.keys(thesisModules).sort()
-    const allContent = sortedKeys.map(key => (thesisModules[key] as unknown as string)).join('\n\n---\n\n')
-    setContent(allContent)
-  }, [])
-
+export function ThesisView() {
   return (
     <div className="thesis-page-wrapper">
       <AmbientField />
@@ -87,7 +88,9 @@ export function ThesisView({ onClose: _onClose }: { onClose?: () => void }) {
               remarkPlugins={[remarkMath, remarkGfm]}
               rehypePlugins={[rehypeKatex]}
               components={{
-                code({ node, inline, className, children, ...props }: any) {
+                code({ inline, className, children, ...props }: MarkdownCodeProps) {
+                  const { node, ...codeProps } = props
+                  void node
                   const match = /language-(\w+)/.exec(className || '')
                   const isMermaid = match && match[1] === 'mermaid'
 
@@ -96,14 +99,14 @@ export function ThesisView({ onClose: _onClose }: { onClose?: () => void }) {
                   }
 
                   return (
-                    <code className={className} {...props}>
+                    <code className={className} {...codeProps}>
                       {children}
                     </code>
                   )
                 }
               }}
             >
-              {content}
+              {thesisContent}
             </ReactMarkdown>
           </article>
         </motion.div>

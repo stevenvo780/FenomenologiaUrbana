@@ -105,16 +105,16 @@ function ModalContent({
           <p>{data.case_study.epistemic_note}</p>
         </ModalCard>
         {data.calibration && (
-          <ModalCard title="Validación Bayesiana HPC">
-            <MetricLine label="Ground Truth (Metro)" value={compactNumber(data.calibration.ground_truth_target)} />
+          <ModalCard title="Calibración proxy y pesos del modelo">
+            <MetricLine label="Referencia agregada Metro" value={compactNumber(data.calibration.ground_truth_target)} />
             <MetricLine label="Status" value={data.calibration.status} />
             <div className="calibration-weights">
-              <p>Pesos Optimizados:</p>
+              <p>Pesos usados por el baseline:</p>
               <MetricLine label="Tiempo" value={data.calibration.optimized_weights.time.toFixed(3)} />
               <MetricLine label="Riesgo" value={data.calibration.optimized_weights.risk.toFixed(3)} />
               <MetricLine label="Congestión" value={data.calibration.optimized_weights.crowding.toFixed(3)} />
             </div>
-            <p className="modal-note">Validación contra ~100k pax/día en San Antonio.</p>
+            <p className="modal-note">Referencia agregada contra ~100k pax/día en San Antonio; no sustituye conteos por nodo ni percepción situada.</p>
           </ModalCard>
         )}
         {data.advanced_models?.historical_evolution && (
@@ -127,7 +127,7 @@ function ModalContent({
                 </p>
               </div>
             ))}
-            <p className="modal-note">Simulación basada en evolución censal y de criminalidad real.</p>
+            <p className="modal-note">Aproximación basada en fuentes públicas agregadas; requiere archivo urbano y campo para lectura histórica completa.</p>
           </ModalCard>
         )}
         {data.advanced_reports?.urban_inequality && (
@@ -141,10 +141,11 @@ function ModalContent({
           </ModalCard>
         )}
         {data.advanced_reports?.hpc_stress && (
-          <ModalCard title="Stress test HPC">
-            <MetricLine label="Tipping point" value={compactNumber(data.advanced_reports.hpc_stress.tipping_point_detected.agents)} />
+          <ModalCard title="Prueba de estrés computacional">
+            <MetricLine label="Umbral simulado" value={compactNumber(data.advanced_reports.hpc_stress.tipping_point_detected.agents)} />
             <MetricLine label="Presión crítica" value={data.advanced_reports.hpc_stress.tipping_point_detected.pressure_index.toFixed(2)} />
             <MetricLine label="Entropía crítica" value={data.advanced_reports.hpc_stress.tipping_point_detected.system_entropy.toFixed(2)} />
+            <p className="modal-note">Escenario interno para probar estabilidad; no representa capacidad real del corredor.</p>
             <p className="modal-note">{data.advanced_reports.hpc_stress.conclusion}</p>
           </ModalCard>
         )}
@@ -241,10 +242,12 @@ function ModalContent({
             </div>
           ))}
         </ModalCard>
-        <ModalCard title="Plantillas listas">
+        <ModalCard title="Plantillas e instrumentos listos">
           <p><code>investigacion/data/interim/templates/field_counts_template.csv</code></p>
           <p><code>investigacion/data/interim/templates/field_notes_template.md</code></p>
           <p><code>investigacion/data/interim/templates/field_points_template.geojson</code></p>
+          <p><code>investigacion/docs/instrumentos-campo.md</code></p>
+          <p><code>investigacion/docs/etica-campo.md</code></p>
         </ModalCard>
       </div>
     )

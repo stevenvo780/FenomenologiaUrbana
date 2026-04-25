@@ -16,7 +16,7 @@ export function SymplokeSlide({ data }: { data: Payload }) {
       title: 'El aire que decide',
       tone: 'teal' as const,
       Icon: Atom,
-      copy: 'Ruido y partículas no son fondo: son señales que el cuerpo lee antes de que el sujeto elija.',
+      copy: 'Ruido y partículas no son simple fondo: se modelan como fricciones que pueden cambiar la comodidad de caminar.',
       metric: { label: 'Malla ambiental', value: pdeResolution },
       delay: 0.15,
     },
@@ -26,17 +26,17 @@ export function SymplokeSlide({ data }: { data: Payload }) {
       title: 'Cinco maneras de caminar',
       tone: 'amber' as const,
       Icon: Brain,
-      copy: 'Cada perfil filtra la ciudad con pesos distintos: tiempo, riesgo, ruido, obstáculo, atracción.',
+      copy: 'Los perfiles no son personas reales: son tipos analíticos para comparar tiempo, riesgo, ruido, obstáculo y atracción.',
       metric: { label: 'Perfiles', value: data.agents.length },
       delay: 0.32,
     },
     {
       key: 'm3',
-      eyebrow: 'M3 · panóptico de flujo',
-      title: 'La distancia entre libertad y coacción',
+      eyebrow: 'M3 · visibilidad y control',
+      title: 'La distancia entre opción y restricción',
       tone: 'danger' as const,
       Icon: Eye,
-      copy: 'La trayectoria libre y la coaccionada se separan: esa distancia es la medida de la asfixia.',
+      copy: 'El modelo compara rutas posibles con rutas costosas para hablar de restricción sin afirmar todavía causalidad real.',
       metric: { label: 'Rayos visuales', value: compactNumber(rayCount) },
       delay: 0.5,
     },
@@ -47,7 +47,7 @@ export function SymplokeSlide({ data }: { data: Payload }) {
       <SlideHeader
         eyebrow="Capítulo 2 · Symploké urbana"
         title="Tres materialidades, un solo entrelazamiento"
-        text="La calle se compone de tres planos que operan a la vez: el aire que filtra, el cuerpo que decide y la mirada que mide la libertad."
+        text="Para explicar el caso sin jerga innecesaria: ambiente, decisión y visibilidad se leen juntos. El resultado es una hipótesis organizada, no una verdad cerrada."
       />
 
       <div className="slide-content symploke-content">
@@ -115,6 +115,7 @@ function SymplokeDecoration({ kind }: { kind: string }) {
               cy={cy}
               r={1.6}
               fill="#1f7f79"
+              initial={{ opacity: 0.2, r: 1.2 }}
               animate={{ opacity: [0.2, 0.9, 0.2], r: [1.2, 2.4, 1.2] }}
               transition={{ duration: 2.4 + (idx % 5) * 0.3, repeat: Infinity, delay: (idx % 6) * 0.18 }}
             />
@@ -148,7 +149,7 @@ function SymplokeDecoration({ kind }: { kind: string }) {
           />
         ))}
         {paths.map((d, idx) => (
-          <circle key={`c-${idx}`} r={2.2} fill="#e07a46">
+          <circle key={`c-${idx}`} cx={0} cy={0} r={2.2} fill="#e07a46">
             <animateMotion dur={`${3 + idx * 0.3}s`} repeatCount="indefinite" path={d} />
           </circle>
         ))}

@@ -20,9 +20,9 @@ export function StressSlide({
   return (
     <SlideShell id="estres" className="stress-slide">
       <SlideHeader
-        eyebrow="Capítulo 9 · El Acontecimiento"
-        title="500.000"
-        text="En este umbral la cuenta-por-uno fracasa. La ciudad revela su vacío del ser."
+        eyebrow="Capítulo 9 · prueba de estrés"
+        title="500.000 como escenario límite"
+        text="No es capacidad real del corredor. Es una prueba interna para observar cuándo el sistema simulado se vuelve inestable."
       />
 
       <div className="slide-content">
@@ -49,7 +49,7 @@ export function StressSlide({
                         x={tipping.agents}
                         stroke="var(--danger)"
                         strokeDasharray="3 3"
-                        label={{ value: 'COLAPSO', position: 'top', fill: 'var(--danger)', fontSize: DECK_CHART_TEXT.annotation }}
+                        label={{ value: 'UMBRAL SIMULADO', position: 'top', fill: 'var(--danger)', fontSize: DECK_CHART_TEXT.annotation }}
                       />
                     ) : null}
                   </ComposedChart>
@@ -79,13 +79,13 @@ export function StressSlide({
                   </AreaChart>
                 </ResponsiveContainer>
               </div>
-              <p className="stress-pressure-caption">Presión sistémica vs. agentes simultáneos. La línea punteada marca el punto de colapso.</p>
+              <p className="stress-pressure-caption">Presión sistémica vs. agentes simultáneos. La línea punteada marca un umbral interno de simulación, no una medición urbana real.</p>
             </PanelFrame>
           </div>
 
           <div className="slide-grid-side stress-aside">
             <PanelFrame
-              eyebrow="Estado del sistema"
+              eyebrow="Estado simulado"
               title={`H: ${first?.system_entropy.toFixed(2) ?? '0.00'} → ${tipping?.system_entropy.toFixed(2) ?? '0.00'}`}
               tone="danger"
               className="stress-alert-panel panel-alert-pulse panel-frame-compact"
@@ -113,7 +113,7 @@ export function StressSlide({
           </div>
         </SlideGrid>
       </div>
-      <p className="slide-citation">Badiou, 1988/1999</p>
+      <p className="slide-citation">Badiou, 1998 · análisis de sensibilidad pendiente</p>
     </SlideShell>
   )
 }

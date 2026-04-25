@@ -34,9 +34,9 @@ export function ProfilesSlide({
   return (
     <SlideShell id="perfiles" className="profile-slide">
       <SlideHeader
-        eyebrow="Capítulo 5 · dividuales"
-        title="Dividuales, no individuos"
-        text="Deleuze fragmenta el sujeto en modulaciones estadísticas; LayerNorm y Dropout formalizan una actitud blasé computacional."
+        eyebrow="Capítulo 5 · perfiles de caminante"
+        title="No son personas: son lentes de comparación"
+        text="Cada perfil pesa distinto tiempo, riesgo, ruido y obstáculos. Sirven para preguntar quién gana o pierde libertad relativa en el mismo corredor."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Ver pesos</button>}
       />
 

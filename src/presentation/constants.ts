@@ -2,31 +2,31 @@ import type { ModalKind, SlideId } from './deckTypes'
 
 export const SLIDES: Array<{ id: SlideId; label: string; shortLabel: string }> = [
   { id: 'apertura', label: 'Apertura', shortLabel: 'Calle' },
-  { id: 'symploke', label: 'Symploké', shortLabel: 'M1/M2/M3' },
-  { id: 'mapa', label: 'Campo', shortLabel: 'Campo' },
-  { id: 'heterotopias', label: 'Heterotopías', shortLabel: 'Hetero' },
-  { id: 'perfiles', label: 'Dividuales', shortLabel: 'Divid' },
-  { id: 'presion', label: 'Régimen horario', shortLabel: 'Horas' },
+  { id: 'symploke', label: 'Método en 3 capas', shortLabel: 'Método' },
+  { id: 'mapa', label: 'Mapa del caso', shortLabel: 'Mapa' },
+  { id: 'heterotopias', label: 'Lugares y tensiones', shortLabel: 'Lugares' },
+  { id: 'perfiles', label: 'Perfiles de caminante', shortLabel: 'Perfiles' },
+  { id: 'presion', label: 'Horas y presión', shortLabel: 'Horas' },
   { id: 'simulacion', label: 'Simulación', shortLabel: '100k' },
-  { id: 'multitudes', label: 'Pulso 24h', shortLabel: 'Pulso' },
-  { id: 'estres', label: 'Acontecimiento', shortLabel: 'Evento' },
-  { id: 'asfixia', label: 'Asfixia', shortLabel: 'Asfixia' },
-  { id: 'ambiente', label: 'Ambiente', shortLabel: 'M1' },
+  { id: 'multitudes', label: 'Pulso de 24 horas', shortLabel: '24h' },
+  { id: 'estres', label: 'Prueba de estrés', shortLabel: 'Estrés' },
+  { id: 'asfixia', label: 'Límites del modelo', shortLabel: 'Límites' },
+  { id: 'ambiente', label: 'Ambiente urbano', shortLabel: 'Aire' },
   { id: 'visibilidad', label: 'Visibilidad', shortLabel: 'M3' },
-  { id: 'economia', label: 'Economía', shortLabel: 'Gravedad' },
+  { id: 'economia', label: 'Comercio y atracción', shortLabel: 'Comercio' },
   { id: 'historia', label: 'Historia', shortLabel: 'Hist' },
-  { id: 'evidencia', label: 'Evidencia', shortLabel: 'Fantasma' },
-  { id: 'cierre', label: 'Cierre', shortLabel: 'Tesis' },
+  { id: 'evidencia', label: 'Evidencia y faltantes', shortLabel: 'Evidencia' },
+  { id: 'cierre', label: 'Cierre crítico', shortLabel: 'Cierre' },
 ]
 
 export const MODAL_TITLES: Record<ModalKind, string> = {
   status: 'Estado general del proyecto',
   evidence: 'Evidencia empírica documentada',
   sources: 'Trazabilidad completa de fuentes',
-  fieldwork: 'Campo pendiente y protocolo mínimo',
+  fieldwork: 'Campo pendiente, ética e instrumentos',
   model: 'Modelo, nodos, rutas y escenarios',
-  'calibration-detail': 'Calibración, incertidumbre y desigualdad',
-  'stress-detail': 'Stress test, caos y presión sistémica',
+  'calibration-detail': 'Incertidumbre, sensibilidad y desigualdad simulada',
+  'stress-detail': 'Prueba de estrés y presión sistémica',
 }
 
 export const DECK_CHART_TEXT = {

@@ -24,8 +24,8 @@ export function EnvironmentSlide({
     <SlideShell id="ambiente" className="environment-slide">
       <SlideHeader
         eyebrow="Capítulo 11 · M1 · campos estigmérgicos"
-        title="El aire también decide la ruta"
-        text="Señales estigmérgicas negativas: el campo ambiental organiza la experiencia antes de que el sujeto elija."
+        title="El ambiente también pesa al caminar"
+        text="Ruido y aire se modelan como fricciones corporales. Sus magnitudes absolutas requieren medición situada antes de hacer afirmaciones fuertes."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Cruzar con evidencia</button>}
       />
 
@@ -67,7 +67,7 @@ export function EnvironmentSlide({
 
         <PanelFrame eyebrow="Lectura derecha" title="Estadísticas del campo" tone="teal" className="environment-side-panel">
           <p className="environment-poetic environment-poetic-side">
-            Antes de la decisión hay un campo: aire que pesa, ruido que ocupa. La ruta libre se inclina hacia donde el cuerpo respira.
+            Antes de elegir una ruta hay condiciones sensibles: aire, ruido, sombra y congestión. Aquí se muestran como hipótesis espaciales.
           </p>
           <div className="environment-stat-row">
             <MetricLine label="PM2.5 pico" value={`${(report?.pm25.peak ?? 0).toFixed(2)} µg/m³`} tooltip="Concentración máxima de partículas finas (PM2.5) en el corredor. La OMS recomienda no superar 15 µg/m³ en promedio diario." />
@@ -114,7 +114,7 @@ export function EnvironmentSlide({
                 <animateMotion dur="5s" begin="2s" repeatCount="indefinite" rotate="auto" path="M10 60 Q70 20 140 60 T270 60" />
               </circle>
             </svg>
-            <p className="environment-flow-caption">El cuerpo no decide en abstracto: lee el aire. Las partículas y los decibeles actúan como señales que repelen rutas.</p>
+            <p className="environment-flow-caption">El cuerpo no decide en abstracto: lee el aire. En esta fase, partículas y decibeles son capas modeladas que deben calibrarse con mediciones reales.</p>
             <div className="environment-flow-meta" aria-label="Metadatos del campo ambiental">
               <div
                 className="environment-flow-meta-row"

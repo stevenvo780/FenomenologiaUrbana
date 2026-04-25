@@ -84,7 +84,7 @@ export function DeckNav({
         {/* Brand */}
         <div className="nav-bar-brand">
           <Network size={14} />
-          <span>HPC</span>
+          <span>Tesis</span>
         </div>
 
         {/* Prev */}
@@ -167,7 +167,7 @@ export function DeckNav({
               <div className="nav-modal-header">
                 <span>
                   <Network size={14} />
-                  &nbsp;Fenomenología Urbana · 16 Slides
+                  &nbsp;Fenomenología Urbana · tesis en 16 slides
                 </span>
                 <button
                   type="button"

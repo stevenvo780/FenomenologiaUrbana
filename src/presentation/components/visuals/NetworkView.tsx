@@ -18,6 +18,7 @@ export function NetworkView({
 }) {
   const bounds = getBounds(nodes)
   const maxLoad = maxObjectValue(scenario.node_loads)
+  const safeMaxLoad = maxLoad || 1
 
   return (
     <svg className="network-svg" viewBox="0 0 880 560" role="img" aria-label="Grafo del corredor">
@@ -62,7 +63,7 @@ export function NetworkView({
       {nodes.map((node) => {
         const point = projectNode(node, bounds)
         const load = scenario.node_loads[node.id] ?? 0
-        const radius = 11 + (load / maxLoad) * 28
+        const radius = 11 + (load / safeMaxLoad) * 28
         const active = node.id === selectedNodeId
 
         return (

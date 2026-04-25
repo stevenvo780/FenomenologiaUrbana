@@ -28,7 +28,7 @@ export function EconomySlide({
       <SlideHeader
         eyebrow="Capítulo 13 · gravitación comercial"
         title="El comercio curva el espacio"
-        text="La concentración económica no solo atrae compradores: organiza trayectorias, fija centros de gravedad y refuerza asimetrías entre nodos del corredor."
+        text="La actividad comercial se usa como capa de atracción. El modelo pregunta cómo esa concentración puede orientar flujos y permanencias."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Cruzar con barrio y comercio</button>}
       />
 
@@ -64,10 +64,10 @@ export function EconomySlide({
           </div>
           <div className="spotlight-card highlight">
             <span>Lectura del hallazgo</span>
-            <strong>Concentración extrema de atracción</strong>
+            <strong>Concentración de atracción</strong>
             <p>
               Un gini de {formatRatio(gravity?.spatial_concentration_gini ?? 0)} indica que la gravitación comercial se concentra
-              en pocos nodos, intensificando la convergencia peatonal y la desigualdad de trayectorias.
+              en pocos nodos del modelo, lo que puede intensificar convergencia peatonal y desigualdad de trayectorias.
             </p>
           </div>
           <div className="economy-pulse-card">

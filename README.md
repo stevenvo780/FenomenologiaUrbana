@@ -57,18 +57,13 @@ trabajo-final-fenomenologia-urbana/
     └── src/
 ```
 
-## Cómo leer el proyecto
+## Cómo leer y presentar el proyecto
 
-1. Empieza por [`00-documento-principal.md`](./00-documento-principal.md).
-2. Usa [`01-fundamentos/01-marco-filosofico.md`](./01-fundamentos/01-marco-filosofico.md) para sostener la capa filosófica.
-3. Usa [`02-caso-estudio/02-espacio-urbano.md`](./02-caso-estudio/02-espacio-urbano.md) y [`03-datos/03-fuentes-de-datos.md`](./03-datos/03-fuentes-de-datos.md) para cerrar el caso empírico.
-4. Usa [`04-modelado/`](./04-modelado/) para la capa formal: grafo, hipergrafo, métricas y simulación.
-5. Usa [`05-web/08-web-react.md`](./05-web/08-web-react.md) para implementar la interfaz.
-6. Usa [`06-gestion/09-trazabilidad-y-pendientes.md`](./06-gestion/09-trazabilidad-y-pendientes.md) para repartir trabajo real.
-7. Usa [`06-gestion/10-guion-exposicion.md`](./06-gestion/10-guion-exposicion.md) para la exposición final.
-8. Usa [`investigacion/README.md`](./investigacion/README.md) para correr el pipeline empírico.
-9. Usa [`visual/README.md`](./visual/README.md) para levantar el dashboard.
-10. Usa [`06-gestion/14-cierre-final-repo.md`](./06-gestion/14-cierre-final-repo.md) como checklist de cierre.
+1. Lee la tesis en orden: [`tesis/01-introduccion-y-marco-teorico.md`](./tesis/01-introduccion-y-marco-teorico.md), [`tesis/02-metodologia-y-diseno-hpc.md`](./tesis/02-metodologia-y-diseno-hpc.md), [`tesis/03-resultados-y-analisis-de-turbulencia.md`](./tesis/03-resultados-y-analisis-de-turbulencia.md) y [`tesis/04-conclusiones-y-referencias-bibliograficas.md`](./tesis/04-conclusiones-y-referencias-bibliograficas.md).
+2. Para exponer a público general, usa [`tesis/guion-presentacion-publico.md`](./tesis/guion-presentacion-publico.md) junto con el deck React.
+3. Para saber qué está validado y qué sigue pendiente, revisa [`tesis/pendientes/tareas-campo.md`](./tesis/pendientes/tareas-campo.md) y [`investigacion/docs/trazabilidad-tesis.md`](./investigacion/docs/trazabilidad-tesis.md).
+4. Para reproducir o revisar el pipeline, usa [`investigacion/README.md`](./investigacion/README.md) y [`investigacion/docs/reproducibilidad.md`](./investigacion/docs/reproducibilidad.md).
+5. Para revisar la evolución crítica de la escritura, consulta [`tesis/historico/`](./tesis/historico/).
 
 ## Enfoque filosófico
 

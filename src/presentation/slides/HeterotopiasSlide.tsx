@@ -41,9 +41,9 @@ export function HeterotopiasSlide({
   return (
     <SlideShell id="heterotopias" className="heterotopias-slide">
       <SlideHeader
-        eyebrow="Capítulo 4 · heterotopías"
-        title="Cada nodo es un contra-sitio"
-        text="El corredor no es una calle homogénea: en cada punto la ciudad funciona con otra lógica. Apertura y cierre, memoria y vigilancia, ilusión y compensación."
+        eyebrow="Capítulo 4 · lugares y tensiones"
+        title="Cada nodo cuenta una tensión distinta"
+        text="El corredor no es una calle homogénea: estación, comercio, patrimonio, vigilancia y pausa se mezclan de forma distinta en cada punto."
         action={(
           <button type="button" className="ghost-action" onClick={() => onOpenModal('fieldwork')}>
             Abrir protocolo de campo
@@ -99,8 +99,8 @@ export function HeterotopiasSlide({
           animate={{ opacity: 1 }}
           transition={{ delay: 0.85 }}
         >
-          <strong>Estructura de expulsión.</strong> El sistema registra
-          {` ${data.source_summary.failed} `}fuentes oficiales fallidas: lo que la ciudad no se deja capturar también es parte del fenómeno.
+          <strong>Lectura crítica.</strong> El sistema registra
+          {` ${data.source_summary.failed} `}fuentes fallidas: la presentación muestra tanto lo disponible como lo que exige verificación externa.
         </motion.p>
 
         <p className="slide-citation">Foucault, 1975/2002 · Sassen, 2014</p>
@@ -160,8 +160,10 @@ function HeterotopiaPulse({ tone }: { tone: 'danger' | 'amber' | 'teal' }) {
         transition={{ duration: 2.4, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
       />
       <motion.circle
+        cx={0}
         r={3}
         fill={color}
+        initial={{ cx: 0, opacity: 0 }}
         animate={{ cx: [0, 240], opacity: [0, 1, 1, 0] }}
         cy={18}
         transition={{ duration: 3.2, repeat: Infinity, ease: 'linear' }}

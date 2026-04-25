@@ -53,8 +53,8 @@ export function HistorySlide({
     <SlideShell id="historia" className="history-slide">
       <SlideHeader
         eyebrow="Capítulo 14 · mutación longitudinal"
-        title="2012 → 2024: la mutación es computable"
-        text="La comparación longitudinal muestra que densidad, criminalidad, turbulencia y entropía espacial no permanecen estables."
+        title="2012 → 2024: el corredor no permanece igual"
+        text="La serie histórica se presenta como aproximación comparativa: ayuda a mirar cambios, pero no reemplaza archivo urbano ni trabajo de campo."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>Abrir serie longitudinal</button>}
       />
 
@@ -62,7 +62,7 @@ export function HistorySlide({
         <article className="deck-panel history-raster-panel">
           <div className="status-strip">
             <KpiPill label="Años" value={`${history.length}`} status="documented" tooltip="Cantidad de cortes históricos analizados para reconstruir cómo cambió la densidad del corredor en el tiempo." />
-            <KpiPill label="Motor" value={data.advanced_models?.historical_evolution?.engine?.split(' ').slice(0, 2).join(' ') ?? 'HPC'} status="proxy" tooltip="Motor de cálculo usado: simulación de alto rendimiento (HPC) que reproduce la evolución histórica con datos oficiales." />
+            <KpiPill label="Motor" value={data.advanced_models?.historical_evolution?.engine?.split(' ').slice(0, 2).join(' ') ?? 'HPC'} status="proxy" tooltip="Motor de cálculo usado para aproximar evolución histórica con fuentes públicas; no equivale a reconstrucción histórica completa." />
           </div>
           <div className="history-raster-viewport">
             <AnimatePresence initial={false}>

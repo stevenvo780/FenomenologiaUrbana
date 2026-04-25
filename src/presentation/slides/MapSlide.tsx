@@ -40,7 +40,7 @@ export function MapSlide({
       <SlideHeader
         eyebrow="Capítulo 3 · El corredor como campo"
         title="El campo donde aparece la ciudad"
-        text="No es un grafo de transporte: es un campo de aparición donde cada nodo condensa memoria, presión y posibilidad."
+        text="Este mapa traduce el corredor San Antonio–Junín–Parque Berrío–Plaza Botero a 9 nodos y 13 ejes para discutir dónde se concentra la presión peatonal."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Abrir modelo</button>}
       />
 
@@ -94,7 +94,7 @@ export function MapSlide({
           <div className="hud-overlay" style={{ top: '20px', left: '20px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <div className="node-pulse" style={{ position: 'static', width: '8px', height: '8px' }} />
-              <span>SISTEMA VIVO · JUNÍN CORRIDOR</span>
+              <span>BASELINE PROXY · CORREDOR JUNÍN</span>
             </div>
           </div>
 

@@ -17,8 +17,8 @@ export function ClosingSlide({
     <SlideShell id="cierre" className="closing-slide">
       <div className="closing-grid">
         <article className="deck-panel closing-thesis">
-          <p className="deck-eyebrow">Capítulo 16 · Fracaso como Verdad</p>
-          <h2>El fracaso del modelo es la verdad del lugar</h2>
+          <p className="deck-eyebrow">Capítulo 16 · cierre crítico</p>
+          <h2>Lo que sabemos, lo que falta y lo que queda abierto</h2>
           <div className="closing-postulates">
             {postulates.map((postulate, index) => (
               <motion.div
@@ -60,21 +60,21 @@ const postulates = [
   {
     title: 'Contra el instrumentalismo',
     tone: 'danger' as const,
-    text: 'La simulación HPC expone la asfixia estructural del espacio; no debe reducirse a optimizar flujo de capital o de cuerpos.',
+    text: 'La simulación no sirve para vender una certeza total: sirve para hacer visibles supuestos, fricciones y preguntas de campo.',
   },
   {
     title: 'Soberanía fenomenológica',
     tone: 'amber' as const,
-    text: 'El derecho a la ciudad incluye un entorno que no obligue al sujeto a cercenar su intencionalidad perceptual para transitarlo.',
+    text: 'La ciudad se evalúa también por cómo permite orientarse, detenerse, respirar, sentirse seguro y escoger rutas cotidianas.',
   },
   {
-    title: 'El colapso como denuncia',
+    title: 'Validación pendiente como honestidad',
     tone: 'teal' as const,
-    text: 'Un modelo que resuelve el centro sin mostrar colapso es falso: la fidelidad exige reflejar su violencia intrínseca.',
+    text: 'El estado pending_no_capture no debilita la tesis si se declara: separa lo ya trazable de lo que exige observación situada.',
   },
 ]
 
-const finalQuote = 'El fracaso del modelo es la verdad ontológica de la ciudad.'
+const finalQuote = 'La tesis no cierra el centro: deja claro cómo seguir midiéndolo sin inventarlo.'
 
 function ClosureGates({
   data,

@@ -14,6 +14,7 @@ export function AnimatedSimulationStage({
 }) {
   const bounds = getBounds(data.nodes)
   const maxLoad = maxObjectValue(scenario.node_loads)
+  const safeMaxLoad = maxLoad || 1
   const routes = scenario.top_routes.slice(0, 7)
 
   return (
@@ -82,7 +83,7 @@ export function AnimatedSimulationStage({
                 transition={{ duration: 1.2, delay: routeIndex * 0.08 }}
               />
               {Array.from({ length: particles }).map((_, particleIndex) => (
-                <circle key={`${pathId}-${particleIndex}`} r={4 + route.share * 10} className="flow-particle">
+                <circle key={`${pathId}-${particleIndex}`} cx={0} cy={0} r={4 + route.share * 10} className="flow-particle">
                   <animateMotion
                     dur={`${9 + route.path.length * 1.2}s`}
                     begin={`${particleIndex * 0.75 + routeIndex * 0.18}s`}
@@ -100,7 +101,7 @@ export function AnimatedSimulationStage({
         {data.nodes.map((node) => {
           const point = projectNode(node, bounds, 880, 520, 70, 70)
           const load = scenario.node_loads[node.id] ?? 0
-          const radius = 10 + (load / maxLoad) * 34
+          const radius = 10 + (load / safeMaxLoad) * 34
           const active = node.id === selectedNodeId
 
           return (

@@ -18,9 +18,9 @@ export function EvidenceSlide({
   return (
     <SlideShell id="evidencia" className="evidence-slide">
       <SlideHeader
-        eyebrow="Capítulo 15 · el miembro fantasma"
-        title="El dato que la ciudad no se deja capturar"
-        text="La simulación es Simulacro de Denuncia: muestra tanto lo medido como lo que resiste captura."
+        eyebrow="Capítulo 15 · evidencia y faltantes"
+        title="Qué tenemos, qué falta y qué no se debe fingir"
+        text="El deck distingue evidencia pública, salidas computacionales y trabajo de campo pendiente. Esa separación es parte del rigor."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Data room empírico</button>}
       />
       <EvidenceGallery
@@ -125,7 +125,7 @@ function EvidenceGallery({
       </article>
 
       <article className="deck-panel ghost-member-card panel-alert-pulse">
-        <p className="deck-eyebrow">Miembro fantasma</p>
+        <p className="deck-eyebrow">Campo pendiente</p>
         <h3>{data.fieldwork.status}</h3>
         <p>
           DANE: {dane.status} · geovisor directo {dane.direct_geoportal_downloaded ? 'descargado' : 'bloqueado'} ·

@@ -32,8 +32,8 @@ export function OpenSlide({
           <motion.p variants={openChild} className="deck-eyebrow">Apertura · Capítulo 1</motion.p>
           <motion.h1 variants={openChild}>Volver a la calle misma</motion.h1>
           <motion.p variants={openChild} className="open-subtitle">
-            Husserl, 1936: la matematización amputa el Lebenswelt. El HPC aquí invierte su signo:
-            se vuelve Reducción Eidética Computacional.
+            Esta tesis pregunta cómo se vive caminar el centro de Medellín: qué facilita el paso,
+            qué lo presiona y qué todavía falta medir con trabajo de campo.
           </motion.p>
           <motion.div variants={openChild} className="open-terms">
             <span>phainómenon</span>
@@ -46,7 +46,7 @@ export function OpenSlide({
             className="primary-action"
             onClick={() => onGoToSlide('symploke')}
           >
-            INICIAR REDUCCIÓN
+            VER RECORRIDO
           </motion.button>
         </motion.article>
 

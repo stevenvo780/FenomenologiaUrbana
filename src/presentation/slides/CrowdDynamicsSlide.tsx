@@ -32,11 +32,11 @@ export function CrowdDynamicsSlide({
       <SlideHeader
         eyebrow="Capítulo 8 · el pulso de la ciudad"
         title="24 horas son un latido, no una serie de barras"
-        text="El pulso diario evidencia la modulación biopolítica: demanda, intensidad ambiental y densidad acumulada se sincronizan."
+        text="El pulso diario ayuda a explicar cuándo el corredor se relaja y cuándo se comprime. La lectura es simulada y debe contrastarse con conteos reales."
         action={(
           <div className="slide-action-pair">
             <button type="button" className="ghost-action" onClick={onTogglePaused}>{paused ? 'Reanudar 24h' : 'Pausar 24h'}</button>
-            <button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>Resumen HPC</button>
+            <button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>Resumen técnico</button>
           </div>
         )}
       />
@@ -52,7 +52,7 @@ export function CrowdDynamicsSlide({
           </PanelFrame>
 
           <PanelFrame
-            eyebrow="Lecturas HPC"
+            eyebrow="Lecturas del modelo"
             title={`${compactNumber(report?.total_simulated_agents_day ?? 0)} agentes / día`}
             className="crowd-side-panel"
             bodyClassName="stat-tile-grid crowd-side-grid"
@@ -92,7 +92,7 @@ export function CrowdDynamicsSlide({
           <p className="crowd-bottom-copy">
             Entre las {valley.hour}:00 y las {peakHour.hour}:00 la calle multiplica por
             <strong> {peakHour.agents > 0 ? Math.max(1, Math.round(peakHour.agents / Math.max(valley.agents, 1))) : 1}×</strong>
-            su demanda peatonal. La modulación no es un detalle logístico: es la forma en que el corredor disciplina cuerpos.
+            su demanda peatonal simulada. Esta diferencia orienta dónde conviene medir conteos, permanencia y percepción en campo.
           </p>
           <div className="crowd-bottom-strip" aria-hidden="true">
             {hourly.map((h) => {

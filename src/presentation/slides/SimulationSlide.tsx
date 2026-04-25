@@ -25,9 +25,9 @@ export function SimulationSlide({
   return (
     <SlideShell id="simulacion" className="simulation-slide">
       <SlideHeader
-        eyebrow="Capítulo 7 · Presentación de lo múltiple"
-        title="Cien mil cuerpos, seis horas, un corredor"
-        text="La simulación no representa: presenta lo múltiple como aparición computable."
+        eyebrow="Capítulo 7 · simulación exploratoria"
+        title="Muchos recorridos posibles, un corredor concreto"
+        text="La simulación permite ensayar hipótesis de flujo y restricción. No reemplaza conteos de campo: ayuda a decidir qué medir mejor."
       />
 
       <motion.div
@@ -39,7 +39,7 @@ export function SimulationSlide({
         <motion.strong className="hero-number">{formatted}</motion.strong>
         <div>
           <p className="deck-eyebrow">cuerpos simulados / día</p>
-          <p className="simulation-counter-caption">actitud blasé computacional · seis horas de corredor</p>
+          <p className="simulation-counter-caption">escenario computacional · baseline proxy</p>
         </div>
       </motion.div>
 
@@ -80,18 +80,18 @@ export function SimulationSlide({
             animate={{ y: 0, opacity: 1 }}
           >
             <p className="deck-eyebrow">Lectura situada · tesis central</p>
-            <h3>Análisis fenomenológico</h3>
+            <h3>Qué permite ver la simulación</h3>
             <p className="simulation-note-copy">
-              <strong>La simulación no representa: presenta lo múltiple.</strong> Siguiendo a Badiou, los {compactNumber(totalAgents)} cuerpos no son una metáfora estadística de Medellín: son la inscripción computacional de la <em>multiplicidad del ser</em>. Cada agente es una decisión local sobre tiempo, riesgo, ruido y atracción; la suma no es agregación, es <em>Symploké</em> &mdash; el entrelazamiento de tres materialidades (campo físico M₁, sujeto situado M₂, panóptico de flujo M₃) que el HPC vuelve auditable.
+              <strong>La simulación ordena preguntas.</strong> Los {compactNumber(totalAgents)} recorridos no son peatones observados: son ensayos controlados para ver cómo cambian rutas cuando varían tiempo, riesgo, ruido y atracción.
             </p>
             <p className="simulation-note-copy simulation-note-copy-second">
-              En este escenario {scenario.metrics.route_entropy.toFixed(2)} bits de entropía de ruta y presión media de {scenario.metrics.mean_pressure.toLocaleString('es-CO', { maximumFractionDigits: 0 })} unidades muestran cómo la calle, lejos de “fluir libre”, opera como <em>estructura de expulsión</em> (Sassen): la eficiencia técnica produce regresión fenomenológica. La ciudad no se vive: se atraviesa.
+              En este escenario, la entropía de ruta ({scenario.metrics.route_entropy.toFixed(2)}) y la presión media ({scenario.metrics.mean_pressure.toLocaleString('es-CO', { maximumFractionDigits: 0 })}) ayudan a explicar dónde el corredor ofrece alternativas y dónde las estrecha. El siguiente paso es contrastarlo con conteos y percepción real.
             </p>
             <p className="simulation-note-extra">“{scenario.note}”</p>
           </motion.article>
         </aside>
       </div>
-      <p className="slide-citation">Badiou, 1988/1999</p>
+      <p className="slide-citation">Badiou, 1998 · Sutton & Barto, 2018</p>
     </SlideShell>
   )
 }

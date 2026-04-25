@@ -24,7 +24,7 @@ export function PressureSlide({
       <SlideHeader
         eyebrow="Capítulo 6 · régimen horario"
         title="La hora modifica el campo de posibilidades"
-        text="La ciudad cambia de régimen: hora pico, mediodía y noche no son fondos neutros, sino configuraciones distintas de carga, concentración y libertad de trayecto."
+        text="Hora pico, mediodía y noche no se caminan igual. El deck muestra cómo cambia la carga del modelo y dónde aparecen cuellos de botella."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Abrir escenarios</button>}
       />
 

@@ -28,9 +28,9 @@ export function VisibilitySlide({
   return (
     <SlideShell id="visibilidad" className="visibility-slide">
       <SlideHeader
-        eyebrow="Capítulo 12 · M3 · Panóptico de flujo"
-        title="Ver, ser visto, no poder no ser visto"
-        text="Con miles de puntos de observación y millones de rayos trazados, el corredor se revela como régimen panóptico."
+        eyebrow="Capítulo 12 · visibilidad y exposición"
+        title="Ver, orientarse y sentirse expuesto"
+        text="El análisis de visibilidad aproxima qué zonas orientan, exponen u ocultan. Es una lectura espacial que debe cruzarse con percepción de campo."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Modelo perceptual</button>}
       />
 
@@ -78,7 +78,7 @@ export function VisibilitySlide({
 
               <PanelFrame eyebrow="Lectura del régimen visual" className="panel-frame-compact">
                 <strong className="insight-heading"><Radar size={18} aria-hidden="true" /> Panoptismo computable</strong>
-                <p className="analysis-note-copy">La exposición ya no es una intuición interpretativa: queda cuantificada.</p>
+                <p className="analysis-note-copy">La exposición deja de ser solo intuición: se vuelve una hipótesis espacial cuantificable.</p>
               </PanelFrame>
             </div>
 
@@ -90,7 +90,7 @@ export function VisibilitySlide({
             >
               <p className="analysis-note-copy">
                 La apertura del corredor roza el {formatRatio(visibility?.mean_openness ?? 0)}. Eso significa que orientación, vigilancia y
-                vulnerabilidad comparten infraestructura perceptiva.
+                vulnerabilidad comparten infraestructura perceptiva. Falta preguntar en campo cómo se vive esa exposición.
               </p>
               <div className="visibility-meter">
                 <div className="visibility-meter-core" style={{ '--pct': `${opennessPct}%` } as CSSProperties}>
