@@ -156,6 +156,33 @@ export type StressCurvePoint = {
   pressure_index: number
 }
 
+export type FieldColormap = 'viridis' | 'magma' | 'plasma' | 'inferno' | 'turbo'
+
+export type FieldRasterManifestEntry = {
+  src: string
+  cmap: FieldColormap
+  min: number
+  max: number
+  clip_min: number
+  clip_max: number
+  units: string
+  scale: 'linear' | 'log'
+  size: number
+  colors: number
+  source: string
+  bytes: number
+}
+
+export type FieldsManifest = Record<string, FieldRasterManifestEntry>
+
+export type Temporal24h = {
+  hours: number[]
+  demand_multiplier: number[]
+  environmental_intensity: number[]
+  peak_am_hour: number
+  peak_pm_hour: number
+}
+
 export type HpcConfidenceWindow = {
   mean_velocity: number
   std_dev: number
@@ -163,11 +190,67 @@ export type HpcConfidenceWindow = {
   relative_uncertainty: number
 }
 
+export type HpcUncertaintyReport = {
+  generated_at: string
+  iterations_per_sample: number
+  results: Record<string, HpcConfidenceWindow>
+  note: string
+}
+
+export type HpcMultipointCalibrationReport = {
+  generated_at: string
+  method: string
+  optimized_parameters: {
+    time_weight: number
+    risk_weight: number
+    visibility_comfort_weight: number
+  }
+  spatial_accuracy_score: number
+  residual_error: number
+  validation_nodes: Record<string, number>
+}
+
 export type DrlInventoryEntry = {
   file: string
   profile_id: string
   scenario_id: string
   bytes: number
+}
+
+export type AdvancedScenarioReport = {
+  id: string
+  label: string
+  metrics: {
+    m_mass_entropy: number
+    systemic_pressure: number
+  }
+  node_loads: Record<string, number>
+  edge_loads: Record<string, number>
+  profile_stats: Array<{
+    agent_id: string
+    label: string
+    total_trips: number
+    path_entropy: number
+    diversity_index: number
+  }>
+}
+
+export type RawReports = {
+  chaos: {
+    generated_at: string
+    engine: string
+    informality_obstruction_ratio: number
+    flaneur_ratio: number
+    mean_turbulence_index: number
+    conclusion: string
+  }
+  multipoint_calibration: HpcMultipointCalibrationReport
+  uncertainty: HpcUncertaintyReport
+  micro: {
+    generated_at: string
+    scenarios: Array<Record<string, unknown>>
+  }
+  advanced_scenarios: AdvancedScenarioReport[]
 }
 
 export type Payload = {
@@ -261,24 +344,8 @@ export type Payload = {
       full_curve: StressCurvePoint[]
       conclusion: string
     }
-    hpc_uncertainty: {
-      generated_at: string
-      iterations_per_sample: number
-      results: Record<string, HpcConfidenceWindow>
-      note: string
-    }
-    hpc_multipoint_calibration: {
-      generated_at: string
-      method: string
-      optimized_parameters: {
-        time_weight: number
-        risk_weight: number
-        visibility_comfort_weight: number
-      }
-      spatial_accuracy_score: number
-      residual_error: number
-      validation_nodes: Record<string, number>
-    }
+    hpc_uncertainty: HpcUncertaintyReport
+    hpc_multipoint_calibration: HpcMultipointCalibrationReport
     hpc_chaos: {
       generated_at: string
       engine: string
@@ -293,6 +360,9 @@ export type Payload = {
       profiles: DrlInventoryEntry[]
     }
   }
+  fields_manifest?: FieldsManifest
+  temporal_24h?: Temporal24h
+  raw_reports?: RawReports
   sources: SourceEntry[]
   source_summary: {
     downloaded: number

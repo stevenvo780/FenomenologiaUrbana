@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { BlockMath, InlineMath } from 'react-katex'
 import type { EpistemicStatus, SlideId } from '../deckTypes'
 
 type SlideShellProps = {
@@ -194,4 +195,12 @@ export function StatTile({
       {note ? <p className="stat-tile-note">{note}</p> : null}
     </article>
   )
+}
+
+export function TexInline({ tex }: { tex: string }) {
+  return <InlineMath math={tex} />
+}
+
+export function TexBlock({ tex }: { tex: string }) {
+  return <BlockMath math={tex} />
 }

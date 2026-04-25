@@ -15,7 +15,7 @@ RAW_DIR = DATA_DIR / "raw"
 INTERIM_DIR = DATA_DIR / "interim"
 PROCESSED_DIR = DATA_DIR / "processed"
 OUTPUTS_DIR = ROOT / "outputs"
-VISUAL_DIR = ROOT.parent / "visual"
+VISUAL_DIR = ROOT.parent if (ROOT.parent / "package.json").exists() else ROOT.parent / "visual"
 VISUAL_DATA_DIR = VISUAL_DIR / "public" / "data"
 
 

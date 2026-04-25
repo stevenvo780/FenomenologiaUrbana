@@ -14,6 +14,8 @@ export function useDeckController(data: Payload): DeckController {
   const [selectedNodeId, setSelectedNodeId] = useState(data.nodes[0]?.id ?? 'parque_berrio')
   const [activeSlide, setActiveSlide] = useState<SlideId>('apertura')
   const [modal, setModal] = useState<ModalKind | null>(null)
+  const [isHeatlinePaused, setIsHeatlinePaused] = useState(false)
+  const [historyYearIndex, setHistoryYearIndex] = useState(0)
   const deferredScenarioId = useDeferredValue(scenarioId)
 
   const scenario = data.scenarios.find((entry) => entry.id === deferredScenarioId) ?? data.scenarios[0]
@@ -54,6 +56,30 @@ export function useDeckController(data: Payload): DeckController {
         return
       }
 
+      if (event.key.toLowerCase() === 'd') {
+        event.preventDefault()
+        setModal(getTechnicalModal(activeSlide))
+        return
+      }
+
+      if (activeSlide === 'multitudes' && event.key === ' ') {
+        event.preventDefault()
+        setIsHeatlinePaused((value) => !value)
+        return
+      }
+
+      if (activeSlide === 'historia' && event.key === 'ArrowRight') {
+        event.preventDefault()
+        setHistoryYearIndex((value) => Math.min(value + 1, 2))
+        return
+      }
+
+      if (activeSlide === 'historia' && event.key === 'ArrowLeft') {
+        event.preventDefault()
+        setHistoryYearIndex((value) => Math.max(value - 1, 0))
+        return
+      }
+
       if (['ArrowRight', 'PageDown', ' ', 'Enter'].includes(event.key)) {
         event.preventDefault()
         setActiveSlide(SLIDES[Math.min(activeIndex + 1, SLIDES.length - 1)].id)
@@ -77,7 +103,7 @@ export function useDeckController(data: Payload): DeckController {
 
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [activeIndex, modal])
+  }, [activeIndex, activeSlide, modal])
 
   function goToSlide(id: SlideId) {
     setActiveSlide(id)
@@ -112,14 +138,42 @@ export function useDeckController(data: Payload): DeckController {
     activeIndex,
     progress,
     modal,
+    isHeatlinePaused,
+    historyYearIndex,
     setScenarioId,
     setAgentId,
     setCompareAgentId,
     setSelectedNodeId,
+    setHistoryYearIndex,
+    toggleHeatlinePaused: () => setIsHeatlinePaused((value) => !value),
     goToSlide,
     goToNextSlide,
     goToPreviousSlide,
     openModal: setModal,
     closeModal: () => setModal(null),
   }
+}
+
+function getTechnicalModal(slide: SlideId): ModalKind {
+  if (slide === 'asfixia') {
+    return 'calibration-detail'
+  }
+
+  if (slide === 'estres') {
+    return 'stress-detail'
+  }
+
+  if (slide === 'evidencia') {
+    return 'evidence'
+  }
+
+  if (slide === 'mapa') {
+    return 'model'
+  }
+
+  if (slide === 'heterotopias') {
+    return 'fieldwork'
+  }
+
+  return 'status'
 }

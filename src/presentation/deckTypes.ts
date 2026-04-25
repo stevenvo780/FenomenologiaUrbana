@@ -2,19 +2,26 @@ import type { AgentProfile, CaseNode, Payload, ScenarioSummary } from '../types'
 
 export type EpistemicStatus = 'documented' | 'proxy' | 'pending'
 
-export type ModalKind = 'status' | 'evidence' | 'sources' | 'fieldwork' | 'model'
+export type ModalKind =
+  | 'status'
+  | 'evidence'
+  | 'sources'
+  | 'fieldwork'
+  | 'model'
+  | 'calibration-detail'
+  | 'stress-detail'
 
 export type SlideId =
   | 'apertura'
-  | 'metodo'
+  | 'symploke'
   | 'mapa'
+  | 'heterotopias'
   | 'perfiles'
   | 'presion'
   | 'simulacion'
-  | 'desigualdad'
-  | 'calibracion'
   | 'multitudes'
   | 'estres'
+  | 'asfixia'
   | 'ambiente'
   | 'visibilidad'
   | 'economia'
@@ -51,10 +58,14 @@ export type DeckController = {
   activeIndex: number
   progress: number
   modal: ModalKind | null
+  isHeatlinePaused: boolean
+  historyYearIndex: number
   setScenarioId: (value: string) => void
   setAgentId: (value: string) => void
   setCompareAgentId: (value: string) => void
   setSelectedNodeId: (value: string) => void
+  setHistoryYearIndex: (value: number) => void
+  toggleHeatlinePaused: () => void
   goToSlide: (id: SlideId) => void
   goToNextSlide: () => void
   goToPreviousSlide: () => void

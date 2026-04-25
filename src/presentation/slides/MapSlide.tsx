@@ -27,10 +27,7 @@ export function MapSlide({
   compareAgent,
   selectedNode,
   leadRoute,
-  compareLeadRoute,
   onScenarioChange,
-  onAgentChange,
-  onCompareAgentChange,
   onSelectNode,
   onOpenModal,
 }: {
@@ -40,33 +37,24 @@ export function MapSlide({
   compareAgent: AgentProfile
   selectedNode: CaseNode
   leadRoute?: DeckRoute
-  compareLeadRoute?: DeckRoute
   onScenarioChange: (value: string) => void
-  onAgentChange: (value: string) => void
-  onCompareAgentChange: (value: string) => void
   onSelectNode: (value: string) => void
   onOpenModal: (kind: ModalKind) => void
 }) {
-  const activeStats = scenario.advanced_stats?.find((entry) => entry.agent_id === agent.id)
   const liveMetrics = [
     { label: 'Nodos activos', value: data.nodes.length.toString() },
-    { label: 'Aristas', value: data.edges.length.toString() },
     {
       label: 'Presión media',
       value: scenario.metrics.mean_pressure.toLocaleString('es-CO', { maximumFractionDigits: 0 }),
-    },
-    {
-      label: `${agent.label} · entropía`,
-      value: activeStats ? activeStats.path_entropy.toFixed(3) : 'n/d',
     },
   ]
 
   return (
     <SlideShell id="mapa" className="map-slide">
       <SlideHeader
-        eyebrow="Auditoría 03 · Topología"
-        title="Grafo Operativo"
-        text="La ciudad como red situada de trayectorias, nodos de presión y umbrales de decisión."
+        eyebrow="Capítulo 3 · El corredor como campo"
+        title="El campo donde aparece la ciudad"
+        text="No es un grafo de transporte: es un campo de aparición donde cada nodo condensa memoria, presión y posibilidad."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('model')}>Abrir modelo</button>}
       />
 
@@ -88,31 +76,6 @@ export function MapSlide({
                 {data.scenarios.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
               </select>
 
-              <div className="map-select-pair">
-                <div>
-                  <label style={controlLabelStyle}>PERFIL FENOMENOLÓGICO</label>
-                  <select
-                    value={agent.id}
-                    onChange={(e) => onAgentChange(e.target.value)}
-                    style={{ ...selectStyle, width: '100%' }}
-                  >
-                    {data.agents.map((entry) => <option key={entry.id} value={entry.id}>{entry.label}</option>)}
-                  </select>
-                </div>
-
-                <div>
-                  <label style={controlLabelStyle}>PERFIL DE CONTRASTE</label>
-                  <select
-                    value={compareAgent.id}
-                    onChange={(e) => onCompareAgentChange(e.target.value)}
-                    style={{ ...selectStyle, width: '100%' }}
-                  >
-                    {data.agents.filter((entry) => entry.id !== agent.id).map((entry) => (
-                      <option key={entry.id} value={entry.id}>{entry.label}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
             </div>
 
             <div className="map-live-grid">
@@ -136,7 +99,7 @@ export function MapSlide({
             selectedNodeId={selectedNode.id}
             onSelectNode={onSelectNode}
             primaryHighlightedPath={leadRoute?.path ?? []}
-            secondaryHighlightedPath={compareLeadRoute?.path ?? []}
+            secondaryHighlightedPath={[]}
           />
 
           {/* HUD Overlay Elements */}
@@ -145,11 +108,6 @@ export function MapSlide({
               <div className="node-pulse" style={{ position: 'static', width: '8px', height: '8px' }} />
               <span>SISTEMA VIVO · JUNÍN CORRIDOR</span>
             </div>
-          </div>
-
-          <div className="hud-overlay" style={{ top: '20px', right: '20px', textAlign: 'right' }}>
-            <div>{agent.label} · sólido</div>
-            <div style={{ color: 'var(--accent-2)' }}>{compareAgent.label} · punteado</div>
           </div>
 
           <div className="hud-overlay" style={{ bottom: '20px', right: '20px', textAlign: 'right' }}>
@@ -167,11 +125,12 @@ export function MapSlide({
               agent={agent}
               compareAgent={compareAgent}
               route={leadRoute}
-              compareRoute={compareLeadRoute}
+              compareRoute={undefined}
             />
           </motion.div>
         </div>
       </div>
+      <p className="slide-citation">Bueno, 1972</p>
     </SlideShell>
   )
 }

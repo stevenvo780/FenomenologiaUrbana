@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T23:32:06+00:00",
+    "generated_at": "2026-04-25T03:04:30+00:00",
     "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
     "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
@@ -1904,6 +1904,689 @@
         }
       ]
     }
+  },
+  "fields_manifest": {
+    "pm25": {
+      "src": "/data/fields/pm25.png",
+      "cmap": "viridis",
+      "min": 0.0,
+      "max": 563.6560668945312,
+      "clip_min": 0.0,
+      "clip_max": 0.0,
+      "units": "ug/m3",
+      "scale": "linear",
+      "size": 1024,
+      "colors": 128,
+      "source": "hpc_4k_pm25.npy",
+      "bytes": 3510
+    },
+    "noise": {
+      "src": "/data/fields/noise.png",
+      "cmap": "magma",
+      "min": 0.0,
+      "max": 648.52978515625,
+      "clip_min": 0.0,
+      "clip_max": 0.0,
+      "units": "dB-unit",
+      "scale": "linear",
+      "size": 1024,
+      "colors": 128,
+      "source": "hpc_4k_noise.npy",
+      "bytes": 3295
+    },
+    "isovist": {
+      "src": "/data/fields/isovist.png",
+      "cmap": "plasma",
+      "min": 6.0,
+      "max": 198506.0,
+      "clip_min": 3.6888794898986816,
+      "clip_max": 4.795790672302246,
+      "units": "exposure",
+      "scale": "log",
+      "size": 1024,
+      "colors": 16,
+      "source": "hpc_isovist_exposure_real.npy",
+      "bytes": 335290
+    },
+    "density_24h": {
+      "src": "/data/fields/density_24h.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 1282.0933837890625,
+      "clip_min": 0.07333333045244217,
+      "clip_max": 0.8900001049041748,
+      "units": "agents",
+      "scale": "linear",
+      "size": 896,
+      "colors": 16,
+      "source": "hpc_24h_density_atlas.npy",
+      "bytes": 333280
+    },
+    "density_peak_am": {
+      "src": "/data/fields/density_peak_am.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 252.81417846679688,
+      "clip_min": 0.0,
+      "clip_max": 0.2683333456516266,
+      "units": "agents",
+      "scale": "linear",
+      "size": 896,
+      "colors": 16,
+      "source": "hpc_density_peak_am.npy",
+      "bytes": 391569
+    },
+    "density_peak_pm": {
+      "src": "/data/fields/density_peak_pm.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 260.6983337402344,
+      "clip_min": 0.0,
+      "clip_max": 0.2683333456516266,
+      "units": "agents",
+      "scale": "linear",
+      "size": 896,
+      "colors": 16,
+      "source": "hpc_density_peak_pm.npy",
+      "bytes": 391679
+    },
+    "density_valle": {
+      "src": "/data/fields/density_valle.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 252.52084350585938,
+      "clip_min": 0.0,
+      "clip_max": 0.2683333456516266,
+      "units": "agents",
+      "scale": "linear",
+      "size": 896,
+      "colors": 16,
+      "source": "hpc_density_valle.npy",
+      "bytes": 391832
+    },
+    "density_night": {
+      "src": "/data/fields/density_night.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 259.822509765625,
+      "clip_min": 0.0,
+      "clip_max": 0.2683333456516266,
+      "units": "agents",
+      "scale": "linear",
+      "size": 896,
+      "colors": 16,
+      "source": "hpc_density_night.npy",
+      "bytes": 391593
+    },
+    "chaos": {
+      "src": "/data/fields/chaos.png",
+      "cmap": "turbo",
+      "min": 0.0,
+      "max": 6.75499963760376,
+      "clip_min": 0.0,
+      "clip_max": 1.2574999332427979,
+      "units": "turbulence",
+      "scale": "linear",
+      "size": 1024,
+      "colors": 16,
+      "source": "hpc_everyday_chaos_map.npy",
+      "bytes": 357714
+    },
+    "hist_2012": {
+      "src": "/data/fields/hist_2012.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 122.6550064086914,
+      "clip_min": 0.0,
+      "clip_max": 0.3199999928474426,
+      "units": "density",
+      "scale": "linear",
+      "size": 896,
+      "colors": 16,
+      "source": "historical_density_2012.npy",
+      "bytes": 394718
+    },
+    "hist_2018": {
+      "src": "/data/fields/hist_2018.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 482.5783386230469,
+      "clip_min": 0.0,
+      "clip_max": 0.24833333492279053,
+      "units": "density",
+      "scale": "linear",
+      "size": 896,
+      "colors": 16,
+      "source": "historical_density_2018.npy",
+      "bytes": 387202
+    },
+    "hist_2024": {
+      "src": "/data/fields/hist_2024.png",
+      "cmap": "inferno",
+      "min": 0.0,
+      "max": 2.4800000190734863,
+      "clip_min": 0.0,
+      "clip_max": 0.0033333334140479565,
+      "units": "density",
+      "scale": "linear",
+      "size": 1024,
+      "colors": 128,
+      "source": "historical_density_2024.npy",
+      "bytes": 24230
+    },
+    "pm25_thumb": {
+      "src": "/data/fields/pm25_thumb.png",
+      "cmap": "viridis",
+      "min": 0.0,
+      "max": 419.1219177246094,
+      "clip_min": 0.0,
+      "clip_max": 8.179043931022534e-08,
+      "units": "ug/m3",
+      "scale": "linear",
+      "size": 512,
+      "colors": 128,
+      "source": "pde_field_pm25.npy",
+      "bytes": 2593
+    },
+    "noise_thumb": {
+      "src": "/data/fields/noise_thumb.png",
+      "cmap": "magma",
+      "min": 0.0,
+      "max": 595.9021606445312,
+      "clip_min": 0.0,
+      "clip_max": 1.634294352841111e-16,
+      "units": "dB-unit",
+      "scale": "linear",
+      "size": 512,
+      "colors": 128,
+      "source": "pde_field_noise.npy",
+      "bytes": 1980
+    },
+    "micro_peak_pm": {
+      "src": "/data/fields/micro_peak_pm.png",
+      "cmap": "turbo",
+      "min": 0.0,
+      "max": 3.6000001430511475,
+      "clip_min": 0.0,
+      "clip_max": 0.36500000953674316,
+      "units": "agents/m2",
+      "scale": "linear",
+      "size": 512,
+      "colors": 128,
+      "source": "crowd_density_peak_pm.npy",
+      "bytes": 211494
+    },
+    "micro_valle": {
+      "src": "/data/fields/micro_valle.png",
+      "cmap": "turbo",
+      "min": 0.0,
+      "max": 6.548333644866943,
+      "clip_min": 0.0,
+      "clip_max": 0.35333335399627686,
+      "units": "agents/m2",
+      "scale": "linear",
+      "size": 512,
+      "colors": 128,
+      "source": "crowd_density_valle.npy",
+      "bytes": 211655
+    }
+  },
+  "temporal_24h": {
+    "hours": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "demand_multiplier": [
+      0.05,
+      0.05,
+      0.1,
+      0.2,
+      0.5,
+      0.9,
+      1.0,
+      0.95,
+      0.7,
+      0.5,
+      0.45,
+      0.5,
+      0.6,
+      0.65,
+      0.6,
+      0.55,
+      0.7,
+      0.95,
+      1.0,
+      0.8,
+      0.5,
+      0.3,
+      0.15,
+      0.1
+    ],
+    "environmental_intensity": [
+      0.2,
+      0.15,
+      0.15,
+      0.2,
+      0.4,
+      0.7,
+      0.85,
+      0.9,
+      0.95,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.95,
+      0.9,
+      0.85,
+      0.7,
+      0.6,
+      0.5,
+      0.4,
+      0.3
+    ],
+    "peak_am_hour": 6,
+    "peak_pm_hour": 18
+  },
+  "raw_reports": {
+    "chaos": {
+      "generated_at": "2026-04-24T23:16:00+00:00",
+      "engine": "HPC Everyday Chaos & Informality",
+      "informality_obstruction_ratio": 0.3,
+      "flaneur_ratio": 0.3,
+      "mean_turbulence_index": 0.010700348764657974,
+      "conclusion": "El caos cotidiano reduce la eficiencia de red en un 62% respecto al modelo ideal, forzando la emergencia de la 'deriva' como estrategia de supervivencia."
+    },
+    "multipoint_calibration": {
+      "generated_at": "2026-04-24T23:08:10+00:00",
+      "method": "Multi-point Spatial RMSE Minimization",
+      "optimized_parameters": {
+        "time_weight": 2.77777777827146,
+        "risk_weight": -2.222222219983758,
+        "visibility_comfort_weight": 1.1111111120513435
+      },
+      "spatial_accuracy_score": 0.9999999999870244,
+      "residual_error": 1.297565167859007e-06,
+      "validation_nodes": {
+        "san_antonio_metro": 100000,
+        "parque_berrio": 75000,
+        "junin_paseo": 45000
+      }
+    },
+    "uncertainty": {
+      "generated_at": "2026-04-24T23:13:11+00:00",
+      "iterations_per_sample": 50,
+      "results": {
+        "hour_6": {
+          "mean_velocity": 1.2719316792488098,
+          "std_dev": 0.00029533677147165955,
+          "confidence_interval_95": [
+            1.271849816072344,
+            1.2720135424252756
+          ],
+          "relative_uncertainty": 0.0002321954679563312
+        },
+        "hour_12": {
+          "mean_velocity": 1.2719721913337707,
+          "std_dev": 0.00035462721297015653,
+          "confidence_interval_95": [
+            1.2718738936853935,
+            1.272070488982148
+          ],
+          "relative_uncertainty": 0.0002788010739435269
+        },
+        "hour_18": {
+          "mean_velocity": 1.2719988226890564,
+          "std_dev": 0.00033403474042533203,
+          "confidence_interval_95": [
+            1.2719062329828545,
+            1.2720914123952582
+          ],
+          "relative_uncertainty": 0.00026260617106482005
+        }
+      },
+      "note": "Intervalos de confianza calculados mediante Monte Carlo para blindar la tesis contra cr\u00edticas de variabilidad."
+    },
+    "micro": {
+      "generated_at": "2026-04-24T22:42:26+00:00",
+      "scenarios": [
+        {
+          "scenario_id": "valle",
+          "max_density": 252.52084350585938,
+          "total_energy": 16974.31640625,
+          "entropy_spatial": 203659.609375
+        },
+        {
+          "scenario_id": "peak_am",
+          "max_density": 252.81417846679688,
+          "total_energy": 16974.31640625,
+          "entropy_spatial": 203203.828125
+        },
+        {
+          "scenario_id": "peak_pm",
+          "max_density": 260.6983337402344,
+          "total_energy": 17504.21484375,
+          "entropy_spatial": 203323.296875
+        },
+        {
+          "scenario_id": "night",
+          "max_density": 259.822509765625,
+          "total_energy": 17267.697265625,
+          "entropy_spatial": 203399.4375
+        }
+      ]
+    },
+    "advanced_scenarios": [
+      {
+        "id": "peak_am",
+        "label": "Hora pico AM",
+        "metrics": {
+          "m_mass_entropy": 2.4746,
+          "systemic_pressure": 7194.78
+        },
+        "node_loads": {
+          "palacio_nacional": 0.5841,
+          "parque_berrio": 1.0,
+          "junin_paseo": 0.6657,
+          "san_antonio_metro": 0.5057,
+          "carabobo_cultural": 0.3314,
+          "oriental_cruce": 0.3402,
+          "parque_san_antonio": 0.0254,
+          "plaza_botero": 0.2771,
+          "museo_antioquia": 0.0661
+        },
+        "edge_loads": {
+          "palacio_nacional__parque_berrio": 6750,
+          "palacio_nacional__junin_paseo": 2611,
+          "san_antonio_metro__junin_paseo": 5317,
+          "junin_paseo__parque_berrio": 4871,
+          "parque_berrio__carabobo_cultural": 5653,
+          "oriental_cruce__parque_berrio": 3543,
+          "junin_paseo__oriental_cruce": 2261,
+          "san_antonio_metro__palacio_nacional": 3156,
+          "san_antonio_metro__parque_san_antonio": 276,
+          "parque_san_antonio__junin_paseo": 160,
+          "parque_berrio__plaza_botero": 4624,
+          "carabobo_cultural__plaza_botero": 104,
+          "plaza_botero__museo_antioquia": 1127
+        },
+        "profile_stats": [
+          {
+            "agent_id": "commuter_fast",
+            "label": "Trabajador en transito",
+            "total_trips": 12000,
+            "path_entropy": 2.3819,
+            "diversity_index": 0.0015
+          },
+          {
+            "agent_id": "buyer",
+            "label": "Comprador",
+            "total_trips": 5500,
+            "path_entropy": 2.5546,
+            "diversity_index": 0.004
+          },
+          {
+            "agent_id": "tourist",
+            "label": "Turista cultural",
+            "total_trips": 2000,
+            "path_entropy": 2.2,
+            "diversity_index": 0.0075
+          },
+          {
+            "agent_id": "street_vendor",
+            "label": "Vendedor ambulante",
+            "total_trips": 3000,
+            "path_entropy": 2.5012,
+            "diversity_index": 0.006
+          },
+          {
+            "agent_id": "reduced_mobility",
+            "label": "Movilidad reducida",
+            "total_trips": 1800,
+            "path_entropy": 2.7353,
+            "diversity_index": 0.015
+          }
+        ]
+      },
+      {
+        "id": "midday",
+        "label": "Franja media",
+        "metrics": {
+          "m_mass_entropy": 2.4812,
+          "systemic_pressure": 9312.11
+        },
+        "node_loads": {
+          "palacio_nacional": 0.5249,
+          "parque_berrio": 1.0,
+          "carabobo_cultural": 0.2727,
+          "junin_paseo": 0.6041,
+          "oriental_cruce": 0.2538,
+          "san_antonio_metro": 0.5028,
+          "parque_san_antonio": 0.0249,
+          "plaza_botero": 0.4235,
+          "museo_antioquia": 0.1193
+        },
+        "edge_loads": {
+          "palacio_nacional__parque_berrio": 7836,
+          "parque_berrio__carabobo_cultural": 6133,
+          "palacio_nacional__junin_paseo": 3052,
+          "junin_paseo__oriental_cruce": 2492,
+          "oriental_cruce__parque_berrio": 3216,
+          "san_antonio_metro__junin_paseo": 6564,
+          "junin_paseo__parque_berrio": 6891,
+          "san_antonio_metro__palacio_nacional": 4552,
+          "san_antonio_metro__parque_san_antonio": 343,
+          "parque_san_antonio__junin_paseo": 220,
+          "parque_berrio__plaza_botero": 9323,
+          "carabobo_cultural__plaza_botero": 203,
+          "plaza_botero__museo_antioquia": 2684
+        },
+        "profile_stats": [
+          {
+            "agent_id": "commuter_fast",
+            "label": "Trabajador en transito",
+            "total_trips": 7200,
+            "path_entropy": 2.3837,
+            "diversity_index": 0.0024
+          },
+          {
+            "agent_id": "buyer",
+            "label": "Comprador",
+            "total_trips": 10000,
+            "path_entropy": 2.56,
+            "diversity_index": 0.0024
+          },
+          {
+            "agent_id": "tourist",
+            "label": "Turista cultural",
+            "total_trips": 6400,
+            "path_entropy": 2.1769,
+            "diversity_index": 0.0023
+          },
+          {
+            "agent_id": "street_vendor",
+            "label": "Vendedor ambulante",
+            "total_trips": 4500,
+            "path_entropy": 2.5222,
+            "diversity_index": 0.0042
+          },
+          {
+            "agent_id": "reduced_mobility",
+            "label": "Movilidad reducida",
+            "total_trips": 2200,
+            "path_entropy": 2.7634,
+            "diversity_index": 0.0123
+          }
+        ]
+      },
+      {
+        "id": "peak_pm",
+        "label": "Hora pico PM",
+        "metrics": {
+          "m_mass_entropy": 2.4682,
+          "systemic_pressure": 8512.33
+        },
+        "node_loads": {
+          "san_antonio_metro": 0.5017,
+          "palacio_nacional": 0.5887,
+          "parque_berrio": 1.0,
+          "oriental_cruce": 0.3494,
+          "carabobo_cultural": 0.3268,
+          "junin_paseo": 0.6625,
+          "parque_san_antonio": 0.0198,
+          "plaza_botero": 0.2797,
+          "museo_antioquia": 0.0609
+        },
+        "edge_loads": {
+          "san_antonio_metro__palacio_nacional": 3837,
+          "palacio_nacional__parque_berrio": 8041,
+          "oriental_cruce__parque_berrio": 4301,
+          "parque_berrio__carabobo_cultural": 6607,
+          "junin_paseo__oriental_cruce": 2762,
+          "san_antonio_metro__junin_paseo": 6184,
+          "junin_paseo__parque_berrio": 5625,
+          "palacio_nacional__junin_paseo": 3160,
+          "san_antonio_metro__parque_san_antonio": 259,
+          "parque_san_antonio__junin_paseo": 148,
+          "parque_berrio__plaza_botero": 5555,
+          "carabobo_cultural__plaza_botero": 100,
+          "plaza_botero__museo_antioquia": 1232
+        },
+        "profile_stats": [
+          {
+            "agent_id": "commuter_fast",
+            "label": "Trabajador en transito",
+            "total_trips": 13800,
+            "path_entropy": 2.3755,
+            "diversity_index": 0.0014
+          },
+          {
+            "agent_id": "buyer",
+            "label": "Comprador",
+            "total_trips": 7200,
+            "path_entropy": 2.5487,
+            "diversity_index": 0.0032
+          },
+          {
+            "agent_id": "tourist",
+            "label": "Turista cultural",
+            "total_trips": 2600,
+            "path_entropy": 2.181,
+            "diversity_index": 0.0058
+          },
+          {
+            "agent_id": "street_vendor",
+            "label": "Vendedor ambulante",
+            "total_trips": 3600,
+            "path_entropy": 2.5062,
+            "diversity_index": 0.005
+          },
+          {
+            "agent_id": "reduced_mobility",
+            "label": "Movilidad reducida",
+            "total_trips": 1600,
+            "path_entropy": 2.7298,
+            "diversity_index": 0.0163
+          }
+        ]
+      },
+      {
+        "id": "night",
+        "label": "Noche",
+        "metrics": {
+          "m_mass_entropy": 2.4739,
+          "systemic_pressure": 3233.33
+        },
+        "node_loads": {
+          "oriental_cruce": 0.2762,
+          "parque_berrio": 1.0,
+          "palacio_nacional": 0.5201,
+          "carabobo_cultural": 0.3105,
+          "junin_paseo": 0.6352,
+          "san_antonio_metro": 0.5095,
+          "plaza_botero": 0.3701,
+          "museo_antioquia": 0.1103,
+          "parque_san_antonio": 0.0395
+        },
+        "edge_loads": {
+          "oriental_cruce__parque_berrio": 1237,
+          "palacio_nacional__parque_berrio": 2680,
+          "parque_berrio__carabobo_cultural": 2396,
+          "palacio_nacional__junin_paseo": 1041,
+          "san_antonio_metro__palacio_nacional": 1436,
+          "san_antonio_metro__junin_paseo": 2392,
+          "junin_paseo__parque_berrio": 2411,
+          "junin_paseo__oriental_cruce": 894,
+          "parque_berrio__plaza_botero": 2785,
+          "carabobo_cultural__plaza_botero": 71,
+          "plaza_botero__museo_antioquia": 851,
+          "san_antonio_metro__parque_san_antonio": 190,
+          "parque_san_antonio__junin_paseo": 116
+        },
+        "profile_stats": [
+          {
+            "agent_id": "commuter_fast",
+            "label": "Trabajador en transito",
+            "total_trips": 3800,
+            "path_entropy": 2.378,
+            "diversity_index": 0.0042
+          },
+          {
+            "agent_id": "buyer",
+            "label": "Comprador",
+            "total_trips": 2400,
+            "path_entropy": 2.565,
+            "diversity_index": 0.0088
+          },
+          {
+            "agent_id": "tourist",
+            "label": "Turista cultural",
+            "total_trips": 1800,
+            "path_entropy": 2.165,
+            "diversity_index": 0.0083
+          },
+          {
+            "agent_id": "street_vendor",
+            "label": "Vendedor ambulante",
+            "total_trips": 1400,
+            "path_entropy": 2.5206,
+            "diversity_index": 0.0129
+          },
+          {
+            "agent_id": "reduced_mobility",
+            "label": "Movilidad reducida",
+            "total_trips": 1200,
+            "path_entropy": 2.7409,
+            "diversity_index": 0.0208
+          }
+        ]
+      }
+    ]
   },
   "sources": [
     {

@@ -1,7 +1,12 @@
 from __future__ import annotations
 
 import shutil
+import sys
 from pathlib import Path
+
+SCRIPT_ROOT = Path(__file__).resolve().parents[1]
+if str(SCRIPT_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_ROOT))
 
 from _shared import OUTPUTS_DIR, VISUAL_DATA_DIR, now_iso, read_json, write_json
 
@@ -183,6 +188,16 @@ def build_drl_inventory() -> dict[str, object]:
     }
 
 
+def load_fields_manifest() -> dict[str, object]:
+    manifest_path = VISUAL_DATA_DIR / "fields" / "manifest.json"
+
+    if not manifest_path.exists():
+        return {}
+
+    manifest = read_json(manifest_path)
+    return manifest.get("fields", {})
+
+
 def main() -> Path:
     case_model = read_json(OUTPUTS_DIR / "case_model.json")
     simulation = read_json(OUTPUTS_DIR / "simulation_results.json")
@@ -193,15 +208,18 @@ def main() -> Path:
     isovist_sim = read_json(OUTPUTS_DIR / "perceptual_visibility_results.json")
     economic_sim = read_json(OUTPUTS_DIR / "economic_gravity_results.json")
     urban_inequality = read_json(OUTPUTS_DIR / "urban_inequality_analysis.json")
+    temporal_24h = read_json(OUTPUTS_DIR / "temporal_24h_profile.json")
     hpc_day_report = read_json(OUTPUTS_DIR / "hpc_24h_simulation_report.json")
     hpc_environmental_report = read_json(OUTPUTS_DIR / "hpc_environmental_report.json")
     hpc_stress_test = read_json(OUTPUTS_DIR / "hpc_urban_stress_test.json")
     hpc_uncertainty = read_json(OUTPUTS_DIR / "hpc_uncertainty_quantification.json")
     hpc_multipoint_calibration = read_json(OUTPUTS_DIR / "hpc_multipoint_calibration.json")
     hpc_chaos_report = read_json(OUTPUTS_DIR / "hpc_chaos_simulation_report.json")
+    hpc_micro_report = read_json(OUTPUTS_DIR / "hpc_micro_results.json")
     calibration_report = read_json(OUTPUTS_DIR / "hpc_calibration_report.json")
     sources = read_json(OUTPUTS_DIR / "source_status.json")
     empirical = read_json(OUTPUTS_DIR / "empirical_summary.json")
+    fields_manifest = load_fields_manifest()
     fieldwork_state = load_fieldwork_state()
     drl_inventory = build_drl_inventory()
     closure_state = build_closure_state(
@@ -254,6 +272,15 @@ def main() -> Path:
             "hpc_multipoint_calibration": hpc_multipoint_calibration,
             "hpc_chaos": hpc_chaos_report,
             "drl_inventory": drl_inventory,
+        },
+        "fields_manifest": fields_manifest,
+        "temporal_24h": temporal_24h,
+        "raw_reports": {
+            "chaos": hpc_chaos_report,
+            "multipoint_calibration": hpc_multipoint_calibration,
+            "uncertainty": hpc_uncertainty,
+            "micro": hpc_micro_report,
+            "advanced_scenarios": advanced_sim["scenarios"],
         },
         "sources": sources["sources"],
         "source_summary": {

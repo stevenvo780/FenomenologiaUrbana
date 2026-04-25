@@ -1,22 +1,22 @@
 import type { ModalKind, SlideId } from './deckTypes'
 
 export const SLIDES: Array<{ id: SlideId; label: string; shortLabel: string }> = [
-  { id: 'apertura', label: 'Apertura', shortLabel: '01' },
-  { id: 'metodo', label: 'Stack', shortLabel: '02' },
-  { id: 'mapa', label: 'Mapa', shortLabel: '03' },
-  { id: 'perfiles', label: 'Perfiles', shortLabel: '04' },
-  { id: 'presion', label: 'Horas', shortLabel: '05' },
-  { id: 'simulacion', label: 'Clip', shortLabel: '06' },
-  { id: 'desigualdad', label: 'Ineq', shortLabel: '07' },
-  { id: 'calibracion', label: 'Calib', shortLabel: '08' },
-  { id: 'multitudes', label: '24h', shortLabel: '09' },
-  { id: 'estres', label: 'Estrés', shortLabel: '10' },
-  { id: 'ambiente', label: 'PDE', shortLabel: '11' },
-  { id: 'visibilidad', label: 'Vista', shortLabel: '12' },
-  { id: 'economia', label: 'Gravedad', shortLabel: '13' },
-  { id: 'historia', label: 'Historia', shortLabel: '14' },
-  { id: 'evidencia', label: 'Empiria', shortLabel: '15' },
-  { id: 'cierre', label: 'Cierre', shortLabel: '16' },
+  { id: 'apertura', label: 'Apertura', shortLabel: 'Calle' },
+  { id: 'symploke', label: 'Symploké', shortLabel: 'M1/M2/M3' },
+  { id: 'mapa', label: 'Campo', shortLabel: 'Campo' },
+  { id: 'heterotopias', label: 'Heterotopías', shortLabel: 'Hetero' },
+  { id: 'perfiles', label: 'Dividuales', shortLabel: 'Divid' },
+  { id: 'presion', label: 'Régimen horario', shortLabel: 'Horas' },
+  { id: 'simulacion', label: 'Simulación', shortLabel: '100k' },
+  { id: 'multitudes', label: 'Pulso 24h', shortLabel: 'Pulso' },
+  { id: 'estres', label: 'Acontecimiento', shortLabel: 'Evento' },
+  { id: 'asfixia', label: 'Asfixia', shortLabel: 'Asfixia' },
+  { id: 'ambiente', label: 'Ambiente', shortLabel: 'M1' },
+  { id: 'visibilidad', label: 'Visibilidad', shortLabel: 'M3' },
+  { id: 'economia', label: 'Economía', shortLabel: 'Gravedad' },
+  { id: 'historia', label: 'Historia', shortLabel: 'Hist' },
+  { id: 'evidencia', label: 'Evidencia', shortLabel: 'Fantasma' },
+  { id: 'cierre', label: 'Cierre', shortLabel: 'Tesis' },
 ]
 
 export const MODAL_TITLES: Record<ModalKind, string> = {
@@ -25,4 +25,6 @@ export const MODAL_TITLES: Record<ModalKind, string> = {
   sources: 'Trazabilidad completa de fuentes',
   fieldwork: 'Campo pendiente y protocolo mínimo',
   model: 'Modelo, nodos, rutas y escenarios',
+  'calibration-detail': 'Calibración, incertidumbre y desigualdad',
+  'stress-detail': 'Stress test, caos y presión sistémica',
 }

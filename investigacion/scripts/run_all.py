@@ -16,6 +16,7 @@ from simulations.simulate_crowd_dynamics import main as run_sfm
 from simulations.simulate_environmental_pde import main as run_pde
 from analysis.analyze_urban_inequality import main as run_inequality_analysis
 from simulations.simulate_historical_evolution import main as run_historical
+from visualization.export_raster_fields import main as export_raster_fields
 from visualization.publish_visual_payload import main as publish_payload
 from visualization.render_advanced_clips import main as render_clips
 
@@ -48,7 +49,9 @@ def main() -> Path:
     run_inequality_analysis()
     print("13/14 simulando evolución histórica longitudinal...")
     run_historical()
-    print("14/14 publicando payload para visual...")
+    print("14/15 exportando rasters .npy como campos PNG...")
+    export_raster_fields()
+    print("15/15 publicando payload para visual...")
     final_output = publish_payload()
     print("Bonus: renderizando clips avanzados 1080p (Hyper-Parallel)...")
     render_clips()

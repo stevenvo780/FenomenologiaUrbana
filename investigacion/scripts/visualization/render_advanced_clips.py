@@ -5,18 +5,21 @@ import math
 import shutil
 import subprocess
 import multiprocessing
-from datetime import datetime, timezone
+import sys
 from pathlib import Path
-from typing import Any
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
-from _shared import now_iso, read_json, write_json
+
+SCRIPT_ROOT = Path(__file__).resolve().parents[1]
+if str(SCRIPT_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_ROOT))
+
+from _shared import OUTPUTS_DIR, VISUAL_DATA_DIR, now_iso
 
 # Path configuration
-ROOT = Path(__file__).resolve().parents[2]
-VISUAL_DATA = ROOT / "visual" / "public" / "data"
+VISUAL_DATA = VISUAL_DATA_DIR
 PAYLOAD_PATH = VISUAL_DATA / "frontend_payload.json"
-ADVANCED_RESULTS_PATH = ROOT / "investigacion" / "outputs" / "advanced_simulation_results.json"
+ADVANCED_RESULTS_PATH = OUTPUTS_DIR / "advanced_simulation_results.json"
 OUTPUT_DIR = VISUAL_DATA / "simulations"
 
 # Video configuration
