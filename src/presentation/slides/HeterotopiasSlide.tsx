@@ -1,24 +1,33 @@
 import { motion } from 'framer-motion'
+import { DoorOpen, Eye, Sparkles } from 'lucide-react'
 
 import type { CaseNode, Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
 import { PanelFrame, SlideGrid, SlideHeader, SlideShell } from '../components/ui'
 
-const groups = [
+type GroupId = 'apertura_cierre' | 'memoria_y_exposicion' | 'ilusion_compensacion'
+
+const groups: { id: GroupId; label: string; tone: 'danger' | 'amber' | 'teal'; Icon: typeof DoorOpen; tagline: string }[] = [
   {
     id: 'apertura_cierre',
-    label: 'Apertura/cierre',
-    tone: 'danger' as const,
+    label: 'Apertura / cierre',
+    tone: 'danger',
+    Icon: DoorOpen,
+    tagline: 'Umbrales donde la calle se acelera o se detiene.',
   },
   {
     id: 'memoria_y_exposicion',
-    label: 'Memoria y exposición',
-    tone: 'amber' as const,
+    label: 'Memoria · exposición',
+    tone: 'amber',
+    Icon: Eye,
+    tagline: 'Vacíos cargados de pasado y vigilancia difusa.',
   },
   {
     id: 'ilusion_compensacion',
-    label: 'Ilusión/compensación',
-    tone: 'teal' as const,
+    label: 'Ilusión · compensación',
+    tone: 'teal',
+    Icon: Sparkles,
+    tagline: 'Interiores que prometen otro orden, más ordenado.',
   },
 ]
 
@@ -34,50 +43,64 @@ export function HeterotopiasSlide({
       <SlideHeader
         eyebrow="Capítulo 4 · heterotopías"
         title="Cada nodo es un contra-sitio"
-        text="El tag heterotópico ya estaba en el modelo. El refactor lo vuelve visible para leer apertura, memoria, exposición y expulsión documental."
-        action={<button type="button" className="ghost-action" onClick={() => onOpenModal('fieldwork')}>Abrir protocolo de campo</button>}
+        text="El corredor no es una calle homogénea: en cada punto la ciudad funciona con otra lógica. Apertura y cierre, memoria y vigilancia, ilusión y compensación."
+        action={(
+          <button type="button" className="ghost-action" onClick={() => onOpenModal('fieldwork')}>
+            Abrir protocolo de campo
+          </button>
+        )}
       />
 
       <div className="slide-content">
         <SlideGrid className="heterotopia-grid">
-          {groups.map((group, index) => (
-            <motion.div
-              key={group.id}
-              initial={{ opacity: 0, y: 28 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ scale: 1.03 }}
-            >
-              <PanelFrame
-                eyebrow="Foucault · contra-sitio"
-                title={group.label}
-                tone={group.tone}
-                className="heterotopia-panel"
+          {groups.map((group, index) => {
+            const nodes = data.nodes.filter((node) => node.heterotopia === group.id)
+            const lead = nodes[0]
+            const others = nodes.slice(1)
+            return (
+              <motion.div
+                key={group.id}
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.12 + index * 0.18, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               >
-                <NodeList nodes={data.nodes.filter((node) => node.heterotopia === group.id)} />
-              </PanelFrame>
-            </motion.div>
-          ))}
-
-          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.68 }}>
-            <PanelFrame eyebrow="Sassen · estructura de expulsión" title="Expulsión documental" tone="danger" className="heterotopia-panel heterotopia-wide">
-              <p>
-                Los fallos de captura no son ruido técnico: forman parte del fenómeno. El sistema registra
-                {` ${data.source_summary.failed} `}fuentes fallidas y mantiene visible el campo pendiente.
-              </p>
-              <div className="mini-stat-grid">
-                <div className="mini-stat-card">
-                  <span>Fuentes fallidas</span>
-                  <strong>{data.source_summary.failed}</strong>
-                </div>
-                <div className="mini-stat-card">
-                  <span>Campo</span>
-                  <strong>{data.fieldwork.status}</strong>
-                </div>
-              </div>
-            </PanelFrame>
-          </motion.div>
+                <PanelFrame
+                  eyebrow={`${nodes.length} ${nodes.length === 1 ? 'nodo' : 'nodos'}`}
+                  title={(
+                    <span className="heterotopia-title">
+                      <group.Icon size={20} strokeWidth={1.5} />
+                      {group.label}
+                    </span>
+                  )}
+                  tone={group.tone}
+                  className="heterotopia-panel"
+                >
+                  <p className="heterotopia-tagline">{group.tagline}</p>
+                  {lead ? <LeadNode node={lead} /> : <p className="analysis-note-copy">Sin nodos en esta categoría.</p>}
+                  {others.length ? (
+                    <div className="heterotopia-chip-row">
+                      {others.map((node) => (
+                        <span key={node.id} className="heterotopia-chip" title={node.phenomenology}>
+                          {node.label}
+                        </span>
+                      ))}
+                    </div>
+                  ) : null}
+                </PanelFrame>
+              </motion.div>
+            )
+          })}
         </SlideGrid>
+
+        <motion.p
+          className="heterotopia-footnote"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.85 }}
+        >
+          <strong>Estructura de expulsión.</strong> El sistema registra
+          {` ${data.source_summary.failed} `}fuentes oficiales fallidas: lo que la ciudad no se deja capturar también es parte del fenómeno.
+        </motion.p>
 
         <p className="slide-citation">Foucault, 1975/2002 · Sassen, 2014</p>
       </div>
@@ -85,24 +108,23 @@ export function HeterotopiasSlide({
   )
 }
 
-function NodeList({ nodes }: { nodes: CaseNode[] }) {
-  if (!nodes.length) {
-    return <p className="analysis-note-copy">Sin nodos etiquetados en esta categoría.</p>
-  }
-
+function LeadNode({ node }: { node: CaseNode }) {
   return (
-    <div className="heterotopia-node-list">
-      {nodes.map((node) => (
-        <article key={node.id}>
-          <strong>{node.label}</strong>
-          <p>{node.phenomenology}</p>
-          <div className="heterotopia-bars">
-            <i style={{ width: `${node.security * 100}%` }} />
-            <i style={{ width: `${node.comfort * 100}%` }} />
-            <i style={{ width: `${node.memory * 100}%` }} />
-          </div>
-        </article>
-      ))}
-    </div>
+    <article className="heterotopia-lead">
+      <header>
+        <strong>{node.label}</strong>
+      </header>
+      <p>{node.phenomenology}</p>
+      <div className="heterotopia-bars" aria-hidden="true">
+        <i style={{ width: `${node.security * 100}%` }} />
+        <i style={{ width: `${node.comfort * 100}%` }} />
+        <i style={{ width: `${node.memory * 100}%` }} />
+      </div>
+      <div className="heterotopia-bar-legend">
+        <span>seguridad</span>
+        <span>confort</span>
+        <span>memoria</span>
+      </div>
+    </article>
   )
 }

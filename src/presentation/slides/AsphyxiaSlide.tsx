@@ -3,8 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 
 import type { Payload } from '../../types'
 import type { ModalKind } from '../deckTypes'
-import { FieldRaster } from '../components/visuals/FieldRaster'
-import { MetricLine, PanelFrame, SlideHeader, SlideShell, TexInline } from '../components/ui'
+import { MetricLine, PanelFrame, SlideHeader, SlideShell } from '../components/ui'
 
 export function AsphyxiaSlide({
   data,
@@ -20,7 +19,6 @@ export function AsphyxiaSlide({
   const sigma = Object.values(uncertainty).at(-1)?.relative_uncertainty ?? 0.00026
   const multipoint = data.advanced_reports?.hpc_multipoint_calibration
   const inequality = data.advanced_reports?.urban_inequality.scenarios ?? []
-  const density = data.fields_manifest?.density_peak_pm
   const [activeIndex, setActiveIndex] = useState(0)
   const sigmaValue = useMotionValue(0)
   const sigmaText = useTransform(sigmaValue, (value) => value.toFixed(5))
@@ -46,15 +44,7 @@ export function AsphyxiaSlide({
 
   return (
     <SlideShell id="asfixia" className="asphyxia-slide">
-      {density ? (
-        <FieldRaster
-          src={density.src}
-          alt="Densidad de hora pico PM"
-          colormap={density.cmap}
-          motionMode="breathing"
-          className="asphyxia-backdrop"
-        />
-      ) : null}
+      <div className="asphyxia-aura" aria-hidden="true" />
 
       <SlideHeader
         eyebrow="Capítulo 10 · asfixia de la emergencia"
@@ -65,12 +55,9 @@ export function AsphyxiaSlide({
 
       <div className="asphyxia-grid">
         <PanelFrame eyebrow="σ relativa" title={<motion.strong className="hero-number">{sigmaText}</motion.strong>} tone="danger" className="asphyxia-hero">
-          <p>incertidumbre relativa · asfixia de la emergencia</p>
-          <p className="formula-line">
-            Divergencia <TexInline tex={'D_{KL}(P\\Vert Q)'} /> como distancia entre libertad y coacción.
-          </p>
-          <MetricLine label="spatial_accuracy_score" value={(multipoint?.spatial_accuracy_score ?? 0).toFixed(4)} />
-          <MetricLine label="residual_error" value={(multipoint?.residual_error ?? 0).toFixed(4)} />
+          <p className="asphyxia-hero-copy">incertidumbre relativa · la libertad de andar comprimida a una escala microscópica.</p>
+          <MetricLine label="Precisión espacial" value={(multipoint?.spatial_accuracy_score ?? 0).toFixed(4)} />
+          <MetricLine label="Error residual" value={(multipoint?.residual_error ?? 0).toFixed(4)} />
         </PanelFrame>
 
         <PanelFrame eyebrow="Gini por escenario" title="Desigualdad fenomenológica" tone="amber" className="asphyxia-gini-panel">

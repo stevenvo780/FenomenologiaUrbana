@@ -104,10 +104,10 @@ function EvidenceGallery({
 
       <article className="deck-panel barrio-card">
         <p className="deck-eyebrow">La Candelaria 2021</p>
+        <h3>{barrio.highlights.population_density.toFixed(0)} hab/ha</h3>
         <div className="barrio-kpis">
-          <KpiPill label="Densidad" value={`${barrio.highlights.population_density.toFixed(0)} hab/ha`} status="documented" />
-          <KpiPill label="Empresas" value={compactNumber(barrio.highlights.business_density)} status="documented" />
-          <KpiPill label="Espacio público" value={`${barrio.highlights.public_space_per_capita.toFixed(1)} m²/hab`} status="documented" />
+          <KpiPill compact label="Empresas" value={compactNumber(barrio.highlights.business_density)} status="documented" />
+          <KpiPill compact label="Espacio público" value={`${barrio.highlights.public_space_per_capita.toFixed(1)} m²/hab`} status="documented" />
         </div>
       </article>
 

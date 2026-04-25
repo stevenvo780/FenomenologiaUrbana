@@ -7,7 +7,6 @@ import { compactNumber } from '../../utils'
 type Heatline24hProps = {
   hourly: Hpc24hMetric[]
   temporal?: Temporal24h
-  densityBackdrop?: string
   loopMs?: number
   paused?: boolean
 }
@@ -15,7 +14,6 @@ type Heatline24hProps = {
 export function Heatline24h({
   hourly,
   temporal,
-  densityBackdrop,
   loopMs = 30000,
   paused = false,
 }: Heatline24hProps) {
@@ -66,21 +64,23 @@ export function Heatline24h({
         </div>
       </article>
 
-      <article
-        className="heatline-surface"
-        style={densityBackdrop ? { backgroundImage: `linear-gradient(rgba(20,16,15,.48), rgba(20,16,15,.76)), url(${densityBackdrop})` } : undefined}
-      >
+      <article className="heatline-surface">
         <div className="heatline-strip" role="img" aria-label="Heatmap de 24 horas">
           {safeHourly.map((entry, index) => {
             const intensity = entry.agents / maxAgents
             const activeHour = index === hourIndex
+            const hue = 60 - intensity * 50
+            const sat = 70 + intensity * 20
 
             return (
               <motion.div
                 key={entry.hour}
                 className={activeHour ? 'active' : ''}
-                style={{ opacity: 0.28 + intensity * 0.72 }}
-                animate={{ scaleY: activeHour ? 1.12 : 1 }}
+                style={{
+                  background: `linear-gradient(180deg, hsl(${hue} ${sat}% 65%), hsl(${hue - 10} ${sat}% ${42 + intensity * 8}%))`,
+                  opacity: 0.35 + intensity * 0.65,
+                }}
+                animate={{ scaleY: activeHour ? 1.14 : 1 }}
               >
                 <span>{entry.hour}</span>
               </motion.div>

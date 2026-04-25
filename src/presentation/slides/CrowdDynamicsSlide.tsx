@@ -26,7 +26,6 @@ export function CrowdDynamicsSlide({
     (low, current) => (current.agents < low.agents ? current : low),
     hourly[0] ?? { hour: 0, agents: 0, max_load: 0, mean_energy: 0 },
   )
-  const density = data.fields_manifest?.density_24h
 
   return (
     <SlideShell id="multitudes" className="crowd-slide">
@@ -48,7 +47,6 @@ export function CrowdDynamicsSlide({
             <Heatline24h
               hourly={hourly}
               temporal={data.temporal_24h}
-              densityBackdrop={density?.src}
               paused={paused}
             />
           </PanelFrame>

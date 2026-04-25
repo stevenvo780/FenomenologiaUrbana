@@ -30,12 +30,21 @@ export function SimulationSlide({
         text="La simulación no representa: presenta lo múltiple como aparición computable."
       />
 
+      <motion.div
+        className="simulation-counter-banner"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.strong className="hero-number">{formatted}</motion.strong>
+        <div>
+          <p className="deck-eyebrow">cuerpos simulados / día</p>
+          <p className="simulation-counter-caption">actitud blasé computacional · seis horas de corredor</p>
+        </div>
+      </motion.div>
+
       <div className="simulation-grid">
         <article className="deck-panel simulation-theater">
-          <div className="simulation-counter">
-            <motion.strong className="hero-number">{formatted}</motion.strong>
-            <span>agentes simulados en el día · actitud blasé computacional</span>
-          </div>
           <RecordedSimulationClip scenario={scenario} />
         </article>
 

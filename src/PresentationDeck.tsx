@@ -120,7 +120,7 @@ export function PresentationDeck({ data }: { data: Payload }) {
           />
         )
       case 'estres':
-        return <StressSlide data={data} scenario={deck.scenario} selectedNodeId={deck.selectedNode.id} />
+        return <StressSlide data={data} />
       case 'asfixia':
         return <AsphyxiaSlide data={data} onOpenModal={deck.openModal} />
       case 'ambiente':

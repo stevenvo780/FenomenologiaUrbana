@@ -2809,16 +2809,26 @@ body {
 
 .evidence-gallery {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr 1fr;
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
   min-height: 0;
   height: 100%;
 }
 
 .evidence-gallery .deck-panel {
-  padding: 16px;
+  padding: 14px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.barrio-card .barrio-kpis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: auto;
 }
 
 .evidence-hero-card {
@@ -3358,18 +3368,124 @@ body {
 .symploke-card,
 .heterotopia-panel {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.symploke-card .panel-frame-body,
+.heterotopia-panel .panel-frame-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
 }
 
 .symploke-card p,
 .heterotopia-panel p {
   margin: 0;
   color: var(--text-main);
-  line-height: 1.38;
+  line-height: 1.4;
+}
+
+.symploke-glyph {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--accent);
+}
+
+.symploke-card.panel-tone-teal .symploke-glyph { color: #1f7f79; box-shadow: 0 0 32px rgba(31, 127, 121, 0.22); }
+.symploke-card.panel-tone-amber .symploke-glyph { color: #f4c87a; box-shadow: 0 0 32px rgba(244, 200, 122, 0.22); }
+.symploke-card.panel-tone-danger .symploke-glyph { color: #e07a46; box-shadow: 0 0 32px rgba(224, 122, 70, 0.26); }
+
+.symploke-copy {
+  font-size: 1.02rem;
+  letter-spacing: -0.005em;
 }
 
 .symploke-thumb {
-  min-height: 150px;
-  max-height: 180px;
+  display: none;
+}
+
+.heterotopia-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heterotopia-tagline {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.heterotopia-lead {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.heterotopia-lead header strong {
+  color: #fff8ec;
+  font-family: var(--heading);
+  font-size: 1.15rem;
+}
+
+.heterotopia-lead p {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.heterotopia-bar-legend {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.heterotopia-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.heterotopia-chip {
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 248, 236, 0.78);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+}
+
+.heterotopia-footnote {
+  margin: 14px 0 0;
+  color: var(--text-dim);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.heterotopia-footnote strong {
+  color: #fff8ec;
+  font-weight: 600;
 }
 
 .symploke-metric {
@@ -3392,27 +3508,19 @@ body {
 }
 
 .heterotopia-wide {
-  grid-column: 1 / -1;
+  display: none;
 }
 
 .heterotopia-node-list {
-  display: grid;
-  gap: 10px;
-  min-height: 0;
-  overflow: hidden;
+  display: none;
 }
 
 .heterotopia-node-list article {
-  display: grid;
-  gap: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.04);
+  display: none;
 }
 
 .heterotopia-node-list strong {
-  color: #fff8ec;
+  display: none;
 }
 
 .heterotopia-bars {
@@ -3463,25 +3571,35 @@ body {
 }
 
 .simulation-counter {
-  position: absolute;
-  z-index: 3;
-  top: 18px;
-  left: 18px;
-  display: grid;
-  gap: 2px;
-  max-width: 360px;
-  padding: 12px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  background: rgba(20, 16, 15, 0.7);
-  backdrop-filter: blur(12px);
+  display: none;
 }
 
-.simulation-counter span {
+.simulation-counter-banner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 22px;
+  margin: 6px 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  background: linear-gradient(120deg, rgba(244, 200, 122, 0.06), rgba(31, 127, 121, 0.04));
+  backdrop-filter: blur(8px);
+}
+
+.simulation-counter-banner .hero-number {
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  line-height: 1;
+}
+
+.simulation-counter-banner p {
+  margin: 0;
+}
+
+.simulation-counter-caption {
   color: var(--text-dim);
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  text-transform: uppercase;
+  font-size: 0.86rem;
+  line-height: 1.4;
 }
 
 .field-raster {
@@ -3557,6 +3675,9 @@ body {
   align-content: center;
   gap: 12px;
   padding: 16px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(244, 200, 122, 0.08), transparent 65%),
+    rgba(20, 16, 15, 0.72);
 }
 
 .heatline-clock-card strong {
@@ -3578,8 +3699,8 @@ body {
   gap: 14px;
   min-height: 0;
   padding: 16px;
-  background-size: cover;
-  background-position: center;
+  background:
+    linear-gradient(160deg, rgba(31, 127, 121, 0.06), rgba(20, 16, 15, 0.6) 60%);
 }
 
 .clock {
@@ -3618,21 +3739,23 @@ body {
 .heatline-strip div {
   position: relative;
   border-radius: 8px;
-  background: linear-gradient(180deg, #f4c87a, #e07a46);
   transform-origin: bottom;
+  transition: transform 0.3s ease;
 }
 
 .heatline-strip div.active {
   outline: 2px solid #fff8ec;
+  box-shadow: 0 0 24px rgba(244, 200, 122, 0.55);
 }
 
 .heatline-strip span {
   position: absolute;
   inset: auto 0 4px;
-  color: rgba(20, 16, 15, 0.72);
+  color: rgba(255, 248, 236, 0.92);
   font-family: var(--mono);
   font-size: 0.52rem;
   text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
 }
 
 .heatline-chart {
@@ -3683,6 +3806,17 @@ body {
   min-height: 0;
 }
 
+.environment-poetic {
+  margin: 0;
+  color: var(--text-main);
+  font-size: 0.96rem;
+  line-height: 1.45;
+  font-style: italic;
+  letter-spacing: -0.005em;
+  border-left: 2px solid rgba(244, 200, 122, 0.5);
+  padding-left: 12px;
+}
+
 .environment-field-split {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -3725,16 +3859,36 @@ body {
 }
 
 .asphyxia-slide {
+  position: relative;
+  isolation: isolate;
+}
+
+.asphyxia-aura {
   position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 18% 22%, rgba(224, 122, 70, 0.22), transparent 55%),
+    radial-gradient(ellipse at 82% 78%, rgba(31, 127, 121, 0.18), transparent 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(244, 200, 122, 0.06), transparent 70%);
+  filter: blur(0.5px);
+  animation: asphyxiaBreathe 14s ease-in-out infinite;
+}
+
+@keyframes asphyxiaBreathe {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
 }
 
 .asphyxia-backdrop {
-  position: absolute;
-  inset: 86px 44px 76px;
-  z-index: -1;
-  min-height: 0;
-  opacity: 0.35;
-  filter: saturate(1.1) contrast(1.06);
+  display: none;
+}
+
+.asphyxia-hero-copy {
+  color: var(--text-main);
+  line-height: 1.4;
+  margin: 0 0 6px;
 }
 
 .asphyxia-hero,
@@ -3821,17 +3975,7 @@ body {
 }
 
 .stress-simulation-wash {
-  height: 150px;
-  opacity: 0.25;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.stress-simulation-wash .simulation-canvas {
-  height: 240px;
-  min-height: 0;
-  padding: 0;
-  transform: translateY(-42px);
+  display: none;
 }
 
 .stress-chaos-raster {

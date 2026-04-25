@@ -1,6 +1,5 @@
 import { CartesianGrid, ComposedChart, Line, ReferenceLine, Tooltip, XAxis, YAxis } from 'recharts'
-import type { Payload, ScenarioSummary } from '../../types'
-import { AnimatedSimulationStage } from '../components/visuals/AnimatedSimulationStage'
+import type { Payload } from '../../types'
 import { FieldRaster } from '../components/visuals/FieldRaster'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { ChartPanel, PanelFrame, SlideGrid, SlideHeader, SlideShell } from '../components/ui'
@@ -8,12 +7,8 @@ import { motion } from 'framer-motion'
 
 export function StressSlide({
   data,
-  scenario,
-  selectedNodeId,
 }: {
   data: Payload
-  scenario: ScenarioSummary
-  selectedNodeId: string
 }) {
   const stress = data.advanced_reports?.hpc_stress
   const chaos = data.advanced_reports?.hpc_chaos
@@ -58,9 +53,6 @@ export function StressSlide({
                 </ComposedChart>
               )}
             </MeasuredChart>
-            <div className="stress-simulation-wash">
-              <AnimatedSimulationStage data={data} scenario={scenario} selectedNodeId={selectedNodeId} />
-            </div>
           </ChartPanel>
 
           <div className="slide-grid-side stress-aside">
