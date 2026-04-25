@@ -3,3 +3,23 @@
 [  992052ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=759c70c4:14337
 [ 3189059ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=759c70c4:14337
 [ 3789237ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=759c70c4:14337
+[ 4013422ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/App.tsx?t=1777083377166:0
+[ 4013423ms] [ERROR] [vite] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013427ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/index.css?t=1777083377167:0
+[ 4013428ms] [ERROR] [vite] Failed to reload /src/index.css. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013433ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/PresentationDeck.tsx?t=1777083377170:0
+[ 4013434ms] [ERROR] [vite] Failed to reload /src/PresentationDeck.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013438ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/presentation/slides/ClosingSlide.tsx?t=1777083377177:0
+[ 4013438ms] [ERROR] [vite] Failed to reload /src/presentation/slides/ClosingSlide.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013442ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/presentation/slides/CalibrationSlide.tsx?t=1777083377178:0
+[ 4013442ms] [ERROR] [vite] Failed to reload /src/presentation/slides/CalibrationSlide.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013444ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/presentation/slides/CrowdDynamicsSlide.tsx?t=1777083377179:0
+[ 4013444ms] [ERROR] [vite] Failed to reload /src/presentation/slides/CrowdDynamicsSlide.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013454ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/presentation/slides/EnvironmentSlide.tsx?t=1777083377180:0
+[ 4013455ms] [ERROR] [vite] Failed to reload /src/presentation/slides/EnvironmentSlide.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013460ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/presentation/slides/EconomySlide.tsx?t=1777083377181:0
+[ 4013460ms] [ERROR] [vite] Failed to reload /src/presentation/slides/EconomySlide.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013464ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/presentation/slides/EvidenceSlide.tsx?t=1777083377182:0
+[ 4013464ms] [ERROR] [vite] Failed to reload /src/presentation/slides/EvidenceSlide.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:904
+[ 4013477ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/main.tsx?t=1777083377168:0
+[ 4018505ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ chrome-error://chromewebdata/:0
