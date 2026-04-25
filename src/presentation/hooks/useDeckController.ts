@@ -15,6 +15,7 @@ export function useDeckController(data: Payload): DeckController {
   const [activeSlide, setActiveSlide] = useState<SlideId>('apertura')
   const [modal, setModal] = useState<ModalKind | null>(null)
   const [isHeatlinePaused, setIsHeatlinePaused] = useState(false)
+  const [isHistoryPaused, setIsHistoryPaused] = useState(false)
   const [historyYearIndex, setHistoryYearIndex] = useState(0)
   const deferredScenarioId = useDeferredValue(scenarioId)
 
@@ -70,12 +71,14 @@ export function useDeckController(data: Payload): DeckController {
 
       if (activeSlide === 'historia' && event.key === 'ArrowRight') {
         event.preventDefault()
+        setIsHistoryPaused(true)
         setHistoryYearIndex((value) => Math.min(value + 1, 2))
         return
       }
 
       if (activeSlide === 'historia' && event.key === 'ArrowLeft') {
         event.preventDefault()
+        setIsHistoryPaused(true)
         setHistoryYearIndex((value) => Math.max(value - 1, 0))
         return
       }
@@ -139,12 +142,14 @@ export function useDeckController(data: Payload): DeckController {
     progress,
     modal,
     isHeatlinePaused,
+    isHistoryPaused,
     historyYearIndex,
     setScenarioId,
     setAgentId,
     setCompareAgentId,
     setSelectedNodeId,
     setHistoryYearIndex,
+    pauseHistory: () => setIsHistoryPaused(true),
     toggleHeatlinePaused: () => setIsHeatlinePaused((value) => !value),
     goToSlide,
     goToNextSlide,

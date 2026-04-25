@@ -83,6 +83,11 @@ def simulate_hpc_24h():
     }
     write_json(OUTPUTS_DIR / "hpc_24h_simulation_report.json", report)
     print("Simulación de 24 horas completada.")
+    return OUTPUTS_DIR / "hpc_24h_simulation_report.json"
+
+
+def main():
+    return simulate_hpc_24h()
 
 if __name__ == "__main__":
-    simulate_hpc_24h()
+    main()

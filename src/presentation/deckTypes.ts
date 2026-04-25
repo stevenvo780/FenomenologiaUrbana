@@ -59,12 +59,14 @@ export type DeckController = {
   progress: number
   modal: ModalKind | null
   isHeatlinePaused: boolean
+  isHistoryPaused: boolean
   historyYearIndex: number
   setScenarioId: (value: string) => void
   setAgentId: (value: string) => void
   setCompareAgentId: (value: string) => void
   setSelectedNodeId: (value: string) => void
   setHistoryYearIndex: (value: number) => void
+  pauseHistory: () => void
   toggleHeatlinePaused: () => void
   goToSlide: (id: SlideId) => void
   goToNextSlide: () => void

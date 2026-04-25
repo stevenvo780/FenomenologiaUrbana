@@ -16,12 +16,16 @@ const rasterByYear: Record<string, string> = {
 export function HistorySlide({
   data,
   activeYearIndex,
+  paused,
   onYearIndexChange,
+  onPause,
   onOpenModal,
 }: {
   data: Payload
   activeYearIndex: number
+  paused: boolean
   onYearIndexChange: (value: number) => void
+  onPause: () => void
   onOpenModal: (kind: ModalKind) => void
 }) {
   const history = data.advanced_models?.historical_evolution?.evolution ?? []
@@ -30,7 +34,7 @@ export function HistorySlide({
   const field = active ? data.fields_manifest?.[rasterByYear[active.year]] : undefined
 
   useEffect(() => {
-    if (!history.length) {
+    if (!history.length || paused) {
       return undefined
     }
 
@@ -39,7 +43,7 @@ export function HistorySlide({
     }, 2500)
 
     return () => window.clearInterval(interval)
-  }, [history.length, onYearIndexChange, safeIndex])
+  }, [history.length, onYearIndexChange, paused, safeIndex])
 
   return (
     <SlideShell id="historia" className="history-slide">
@@ -85,7 +89,10 @@ export function HistorySlide({
                 key={entry.year}
                 type="button"
                 className={index === safeIndex ? 'year-card active' : 'year-card'}
-                onClick={() => onYearIndexChange(index)}
+                onClick={() => {
+                  onPause()
+                  onYearIndexChange(index)
+                }}
               >
                 <span>{entry.year}</span>
                 <strong>{compactNumber(entry.agents_simulated)} agentes</strong>

@@ -30,15 +30,15 @@ import type { SlideId } from '../deckTypes'
 
 const slideIcons: Record<SlideId, LucideIcon> = {
   apertura: Sparkles,
-  metodo: Cpu,
+  symploke: Cpu,
   mapa: MapPinned,
+  heterotopias: Crosshair,
   perfiles: UsersRound,
   presion: Clock3,
   simulacion: Film,
-  desigualdad: Scale,
-  calibracion: Crosshair,
   multitudes: Orbit,
   estres: TriangleAlert,
+  asfixia: Scale,
   ambiente: Wind,
   visibilidad: Eye,
   economia: ShoppingBag,

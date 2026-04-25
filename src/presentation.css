@@ -3238,9 +3238,648 @@ body {
   }
 }
 
+.hero-number {
+  display: block;
+  font-size: clamp(3.4rem, 8vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.slide-citation {
+  margin: auto 0 0;
+  color: rgba(255, 248, 236, 0.48);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.formula-line,
+.katex-display {
+  color: rgba(255, 248, 236, 0.88);
+}
+
+.open-grid,
+.history-raster-grid,
+.environment-raster-grid,
+.asphyxia-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+  gap: 18px;
+  min-height: 0;
+  height: 100%;
+  align-items: stretch;
+}
+
+.open-copy {
+  display: grid;
+  align-content: center;
+  gap: 20px;
+  min-height: 0;
+}
+
+.open-copy h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(4rem, 8vw, 7.4rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.open-subtitle {
+  max-width: 720px;
+  margin: 0;
+  color: var(--text-main);
+  font-size: clamp(1rem, 1.45vw, 1.34rem);
+  line-height: 1.42;
+}
+
+.open-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.open-terms span,
+.systemic-pressure-chip,
+.heatline-legend span,
+.heatline-legend em {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 7px 10px;
+  color: rgba(255, 248, 236, 0.72);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.open-footer {
+  color: rgba(255, 248, 236, 0.6);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.slide-action-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.symploke-content {
+  position: relative;
+}
+
+.symploke-connector {
+  position: absolute;
+  inset: 3% 4% auto;
+  height: 120px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.symploke-grid,
+.heterotopia-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  min-height: 0;
+}
+
+.symploke-card,
+.heterotopia-panel {
+  height: 100%;
+}
+
+.symploke-card p,
+.heterotopia-panel p {
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.38;
+}
+
+.symploke-thumb {
+  min-height: 150px;
+  max-height: 180px;
+}
+
+.symploke-metric {
+  display: grid;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.symploke-metric span {
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+}
+
+.symploke-metric strong {
+  color: #fff8ec;
+  font-family: var(--mono);
+  font-size: 1.7rem;
+}
+
+.heterotopia-wide {
+  grid-column: 1 / -1;
+}
+
+.heterotopia-node-list {
+  display: grid;
+  gap: 10px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.heterotopia-node-list article {
+  display: grid;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.heterotopia-node-list strong {
+  color: #fff8ec;
+}
+
+.heterotopia-bars {
+  display: grid;
+  gap: 3px;
+}
+
+.heterotopia-bars i {
+  display: block;
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+.profile-select-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-select-grid label {
+  display: grid;
+  gap: 6px;
+}
+
+.profile-select-grid span,
+.profile-entropy-bar span {
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.profile-entropy-bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.profile-entropy-bar span {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.simulation-counter {
+  position: absolute;
+  z-index: 3;
+  top: 18px;
+  left: 18px;
+  display: grid;
+  gap: 2px;
+  max-width: 360px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(20, 16, 15, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.simulation-counter span {
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.field-raster {
+  position: relative;
+  min-height: 220px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  isolation: isolate;
+}
+
+.field-raster img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  display: block;
+}
+
+.field-raster-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.field-raster .legend {
+  position: absolute;
+  z-index: 3;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  grid-template-columns: auto minmax(70px, 1fr) auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(12, 14, 20, 0.72);
+  backdrop-filter: blur(8px);
+  color: rgba(255, 248, 236, 0.78);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+}
+
+.field-raster .legend i {
+  height: 8px;
+  border-radius: 999px;
+}
+
+.field-raster .legend em {
+  font-style: normal;
+}
+
+.heatline-24h {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 16px;
+  min-height: 0;
+  height: 100%;
+}
+
+.heatline-clock-card,
+.heatline-surface {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.heatline-clock-card {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.heatline-clock-card strong {
+  display: block;
+  color: #fff8ec;
+  font-family: var(--mono);
+  font-size: 2rem;
+}
+
+.heatline-clock-card p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+
+.heatline-surface {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  min-height: 0;
+  padding: 16px;
+  background-size: cover;
+  background-position: center;
+}
+
+.clock {
+  aspect-ratio: 1;
+}
+
+.clock line {
+  stroke: rgba(255, 248, 236, 0.28);
+  stroke-width: 2;
+}
+
+.clock line.active,
+.heatline-hand {
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.heatline-clock-ring {
+  fill: rgba(255, 255, 255, 0.03);
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 2;
+}
+
+.heatline-hand-core {
+  fill: #fff8ec;
+}
+
+.heatline-strip {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  gap: 3px;
+  height: 64px;
+}
+
+.heatline-strip div {
+  position: relative;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #f4c87a, #e07a46);
+  transform-origin: bottom;
+}
+
+.heatline-strip div.active {
+  outline: 2px solid #fff8ec;
+}
+
+.heatline-strip span {
+  position: absolute;
+  inset: auto 0 4px;
+  color: rgba(20, 16, 15, 0.72);
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  text-align: center;
+}
+
+.heatline-chart {
+  min-height: 190px;
+  width: 100%;
+  height: 100%;
+}
+
+.heatline-grid-line {
+  stroke: rgba(255, 255, 255, 0.09);
+  stroke-width: 1;
+}
+
+.heatline-demand,
+.heatline-environmental {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.heatline-demand {
+  stroke: #f4c87a;
+}
+
+.heatline-environmental {
+  stroke: #1f7f79;
+}
+
+.heatline-marker {
+  stroke: #fff8ec;
+  stroke-width: 2;
+  stroke-dasharray: 4 5;
+}
+
+.heatline-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.environment-raster-panel,
+.history-raster-panel {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px;
+  min-height: 0;
+}
+
+.environment-field-split {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  min-height: 0;
+}
+
+.environment-field-split .field-raster {
+  min-height: 0;
+}
+
+.visibility-map-overlay {
+  position: relative;
+  min-height: 0;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.visibility-map-overlay .corridor-map {
+  height: 100%;
+  min-height: 420px;
+}
+
+.visibility-isovist-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 500;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+}
+
+.visibility-isovist-overlay .legend {
+  left: 16px;
+  right: 16px;
+}
+
+.asphyxia-slide {
+  position: absolute;
+}
+
+.asphyxia-backdrop {
+  position: absolute;
+  inset: 86px 44px 76px;
+  z-index: -1;
+  min-height: 0;
+  opacity: 0.35;
+  filter: saturate(1.1) contrast(1.06);
+}
+
+.asphyxia-hero,
+.asphyxia-gini-panel,
+.asphyxia-uncertainty {
+  min-height: 0;
+}
+
+.asphyxia-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.asphyxia-tile-grid button,
+.year-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  text-align: left;
+}
+
+.asphyxia-tile-grid button {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+}
+
+.asphyxia-tile-grid button.active,
+.year-card.active {
+  border-color: rgba(244, 200, 122, 0.65);
+  box-shadow: 0 0 0 1px rgba(244, 200, 122, 0.16), 0 18px 44px rgba(224, 122, 70, 0.18);
+}
+
+.asphyxia-gini-active {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.asphyxia-gini-active strong {
+  color: #fff8ec;
+  font-family: var(--mono);
+  font-size: 2.2rem;
+}
+
+.history-raster-panel .history-raster {
+  height: 100%;
+  min-height: 0;
+}
+
+.history-side-panel {
+  min-height: 0;
+}
+
+.year-card-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.year-card {
+  display: grid;
+  gap: 5px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.year-card span,
+.year-card em,
+.asphyxia-tile-grid span,
+.asphyxia-tile-grid em {
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.year-card strong,
+.asphyxia-tile-grid strong {
+  color: #fff8ec;
+  font-family: var(--mono);
+}
+
+.stress-simulation-wash {
+  height: 150px;
+  opacity: 0.25;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stress-simulation-wash .simulation-canvas {
+  height: 240px;
+  min-height: 0;
+  padding: 0;
+  transform: translateY(-42px);
+}
+
+.stress-chaos-raster {
+  min-height: 190px;
+}
+
+.ghost-member-card {
+  border-color: rgba(255, 59, 85, 0.38);
+  background: linear-gradient(145deg, rgba(255, 59, 85, 0.16), rgba(255, 255, 255, 0.05)), rgba(19, 15, 14, 0.58);
+}
+
+.closing-postulates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.closing-postulates .panel-frame {
+  height: 100%;
+  border-radius: 22px;
+  padding: 12px;
+}
+
+.closing-postulates p,
+.closing-typewriter {
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.closing-typewriter {
+  font-family: var(--mono);
+  color: #f4c87a;
+}
+
+.leaflet-node-pulse {
+  animation: pulseNode 2.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
 @media (max-width: 1180px) {
   .hero-grid,
   .doctoral-grid,
+  .open-grid,
+  .history-raster-grid,
+  .environment-raster-grid,
+  .asphyxia-grid,
   .map-stage-grid,
   .simulation-grid,
   .profile-stage-grid,
@@ -3263,10 +3902,17 @@ body {
   }
 
   .engine-grid,
+  .symploke-grid,
+  .heterotopia-grid,
+  .closing-postulates,
   .spotlight-grid,
   .validation-node-grid,
   .confidence-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .heterotopia-wide {
+    grid-column: auto;
   }
 
   .live-network-inset {
@@ -3360,6 +4006,17 @@ body {
 
   .delta-grid,
   .engine-grid,
+  .symploke-grid,
+  .heterotopia-grid,
+  .closing-postulates,
+  .heatline-24h,
+  .profile-select-grid,
+  .profile-entropy-bar,
+  .asphyxia-tile-grid,
+  .open-grid,
+  .history-raster-grid,
+  .environment-raster-grid,
+  .asphyxia-grid,
   .artifact-grid,
   .stat-tile-grid,
   .spotlight-grid,

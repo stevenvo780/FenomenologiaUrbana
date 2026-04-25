@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 
 from _shared import INTERIM_DIR, PROCESSED_DIR, ensure_dirs, now_iso, read_json, write_json
-from validate_fieldwork import (
+from data.validate_fieldwork import (
     infer_scenario_id,
     load_case_entities,
     obstacle_flag,

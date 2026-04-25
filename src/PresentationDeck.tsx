@@ -142,7 +142,9 @@ export function PresentationDeck({ data }: { data: Payload }) {
           <HistorySlide
             data={data}
             activeYearIndex={deck.historyYearIndex}
+            paused={deck.isHistoryPaused}
             onYearIndexChange={deck.setHistoryYearIndex}
+            onPause={deck.pauseHistory}
             onOpenModal={deck.openModal}
           />
         )

@@ -13,7 +13,10 @@ export function AsphyxiaSlide({
   data: Payload
   onOpenModal: (kind: ModalKind) => void
 }) {
-  const uncertainty = data.advanced_reports?.hpc_uncertainty.results ?? {}
+  const uncertainty = useMemo(
+    () => data.advanced_reports?.hpc_uncertainty.results ?? {},
+    [data.advanced_reports?.hpc_uncertainty.results],
+  )
   const sigma = Object.values(uncertainty).at(-1)?.relative_uncertainty ?? 0.00026
   const multipoint = data.advanced_reports?.hpc_multipoint_calibration
   const inequality = data.advanced_reports?.urban_inequality.scenarios ?? []

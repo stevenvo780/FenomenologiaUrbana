@@ -34,7 +34,12 @@ export function CrowdDynamicsSlide({
         eyebrow="Capítulo 8 · el pulso de la ciudad"
         title="24 horas son un latido, no una serie de barras"
         text="El pulso diario evidencia la modulación biopolítica: demanda, intensidad ambiental y densidad acumulada se sincronizan."
-        action={<button type="button" className="ghost-action" onClick={onTogglePaused}>{paused ? 'Reanudar 24h' : 'Pausar 24h'}</button>}
+        action={(
+          <div className="slide-action-pair">
+            <button type="button" className="ghost-action" onClick={onTogglePaused}>{paused ? 'Reanudar 24h' : 'Pausar 24h'}</button>
+            <button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>Resumen HPC</button>
+          </div>
+        )}
       />
 
       <div className="slide-content">

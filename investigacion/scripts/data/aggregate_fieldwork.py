@@ -15,7 +15,7 @@ from _shared import (
     write_csv_rows,
     write_json,
 )
-from validate_fieldwork import (
+from data.validate_fieldwork import (
     load_case_entities,
     normalize_crowding_ratio,
     normalize_lighting_ratio,

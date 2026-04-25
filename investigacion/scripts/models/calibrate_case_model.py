@@ -5,7 +5,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from _shared import OUTPUTS_DIR, PROCESSED_DIR, now_iso, read_json, write_json
-from validate_fieldwork import (
+from data.validate_fieldwork import (
     clamp,
     normalize_dwell_ratio,
     normalize_lighting_ratio,
