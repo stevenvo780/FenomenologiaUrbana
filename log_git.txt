@@ -1,0 +1,15 @@
+- 2026-04-24: Enhance presentation styles and components for improved UI/UX
+- 2026-04-24: Refactor MapSlide, MethodSlide, SimulationSlide, and StressSlide components for improved UI and functionality
+- 2026-04-24: feat: mejorar diseño y adaptabilidad de las diapositivas, actualizando estilos CSS y componentes para una mejor visualización y usabilidad
+- 2026-04-24: feat: añadir componente MeasuredChart para mejorar la adaptabilidad de gráficos en las diapositivas, actualizando múltiples slides para utilizar este nuevo componente
+- 2026-04-24: feat: actualizar contenido de la diapositiva de apertura para la defensa doctoral, mejorando la descripción y el enfoque de la presentación escénica
+- 2026-04-24: feat: add new slides for environmental analysis, historical evolution, inequality, stress, and visibility
+- 2026-04-24: feat: Añadir protocolo de captura de datos de campo para la operación "Junín Real-Time", incluyendo validación de flujos, morfología y análisis acústico.
+- 2026-04-24: feat: Añadir simulación de caos cotidiano e informalidad, incluyendo inyección de obstáculos y agentes diversos. Actualizar reportes y payloads frontend.
+- 2026-04-24: Implementación de auditorías críticas para la tesis doctoral sobre Fenomenología Urbana, incluyendo análisis de geometría real, validación espacial y cuantificación de incertidumbre. Se añadieron scripts para calibración multipunto, descarga de geometría real, simulaciones de Monte Carlo y pruebas de estrés urbano. Se actualizaron los resultados de visibilidad perceptual y se mejoró la precisión de los análisis mediante el uso de datos reales de OpenStreetMap. Se generaron nuevos archivos de salida para reflejar estos cambios y se ajustaron los payloads frontend.
+- 2026-04-24: feat: Enhance longitudinal analysis and economic simulations
+- 2026-04-24: Refactor computational model and simulation framework for HPC
+- 2026-04-24: feat: Add high-fidelity environmental PDE simulation and DRL agent training scripts
+- 2026-04-24: feat: update simulation results and add new simulation clips
+- 2026-04-24: feat: ajustar propiedades de ResponsiveContainer en ProfileRadar y EvidenceSlide
+- 2026-04-24: feat: add route visuals and slides for urban phenomenology project
