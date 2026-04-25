@@ -58,44 +58,29 @@ export function KpiPill({
   status: EpistemicStatus
 }) {
   return (
-    <div className="data-card" style={{ padding: '1rem' }}>
-      <h3>{label}</h3>
-      <div style={{ display: 'flex', alignItems: 'baseline' }}>
-        <span className="data-value">{value}</span>
-        <span style={{ 
-          marginLeft: 'auto', 
-          fontSize: '0.6rem', 
-          textTransform: 'uppercase',
-          padding: '2px 6px',
-          background: `var(--accent-dim)`,
-          color: 'var(--accent)',
-          borderRadius: '2px'
-        }}>
-          {status}
-        </span>
-      </div>
+    <div className="kpi-pill">
+      <span>{label}</span>
+      <strong>{value}</strong>
+      <EpistemicBadge status={status} compact />
     </div>
   )
 }
 
 export function EpistemicBadge({
   status,
+  compact = false,
 }: {
   status: EpistemicStatus
+  compact?: boolean
 }) {
   return (
-    <span className={`epistemic-badge epistemic-${status}`} style={{
-      fontSize: '0.6rem',
-      padding: '2px 6px',
-      border: '1px solid currentColor',
-      opacity: 0.8
-    }}>
+    <span className={`epistemic-badge epistemic-${status}${compact ? ' badge-compact' : ''}`}>
       {status}
     </span>
   )
 }
 
-export function MetricLine({ label, value }: { label: string; value: string }) {
+export function MetricLine({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div style={{ 
       display: 'flex', 
@@ -106,6 +91,24 @@ export function MetricLine({ label, value }: { label: string; value: string }) {
     }}>
       <span style={{ color: 'var(--text-dim)' }}>{label}</span>
       <strong style={{ color: 'var(--accent)' }}>{value}</strong>
+    </div>
+  )
+}
+
+export function ModalCard({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <article className="modal-card">
+      <h3>{title}</h3>
+      {children}
+    </article>
+  )
+}
+
+export function DeltaTile({ label, value }: { label: string; value: ReactNode }) {
+  return (
+    <div className="delta-tile">
+      <span>{label}</span>
+      <strong>{value}</strong>
     </div>
   )
 }

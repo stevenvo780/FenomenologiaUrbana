@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
+import { useRef } from 'react'
 
 import './presentation.css'
 import { AmbientField } from './presentation/components/AmbientField'
@@ -25,6 +26,14 @@ import type { Payload } from './types'
 
 export function PresentationDeck({ data }: { data: Payload }) {
   const deck = useDeckController(data)
+  const dirRef = useRef(1)
+  const previousIndexRef = useRef(deck.activeIndex)
+
+  if (previousIndexRef.current !== deck.activeIndex) {
+    dirRef.current = deck.activeIndex > previousIndexRef.current ? 1 : -1
+    previousIndexRef.current = deck.activeIndex
+  }
+
   const activeSlide = (() => {
     switch (deck.activeSlide) {
       case 'apertura':
@@ -41,7 +50,7 @@ export function PresentationDeck({ data }: { data: Payload }) {
           />
         )
       case 'metodo':
-        return <MethodSlide data={data} onOpenModal={deck.openModal} />
+        return <MethodSlide data={data} />
       case 'mapa':
         return (
           <MapSlide
@@ -82,21 +91,13 @@ export function PresentationDeck({ data }: { data: Payload }) {
           />
         )
       case 'simulacion':
-        return (
-          <SimulationSlide
-            data={data}
-            scenario={deck.scenario}
-            selectedNode={deck.selectedNode}
-            onOpenModal={deck.openModal}
-          />
-        )
+        return <SimulationSlide scenario={deck.scenario} />
       case 'desigualdad':
         return (
           <InequalitySlide
             data={data}
             scenario={deck.scenario}
             onScenarioChange={deck.setScenarioId}
-            onOpenModal={deck.openModal}
           />
         )
       case 'calibracion':
@@ -104,7 +105,7 @@ export function PresentationDeck({ data }: { data: Payload }) {
       case 'multitudes':
         return <CrowdDynamicsSlide data={data} onOpenModal={deck.openModal} />
       case 'estres':
-        return <StressSlide data={data} onOpenModal={deck.openModal} />
+        return <StressSlide data={data} />
       case 'ambiente':
         return <EnvironmentSlide data={data} onOpenModal={deck.openModal} />
       case 'visibilidad':
@@ -144,10 +145,10 @@ export function PresentationDeck({ data }: { data: Payload }) {
           <motion.div
             key={deck.activeSlide}
             className="deck-stage-slide"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0, x: dirRef.current * 60, filter: 'blur(10px)', scale: 0.97 }}
+            animate={{ opacity: 1, x: 0, filter: 'blur(0px)', scale: 1 }}
+            exit={{ opacity: 0, x: dirRef.current * -40, filter: 'blur(8px)', scale: 0.98 }}
+            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
             {activeSlide}
           </motion.div>

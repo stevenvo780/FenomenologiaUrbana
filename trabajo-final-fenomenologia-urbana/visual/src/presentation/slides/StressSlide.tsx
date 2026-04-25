@@ -1,5 +1,6 @@
-import { CartesianGrid, ComposedChart, Line, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer, ReferenceLine } from 'recharts'
+import { Bar, CartesianGrid, ComposedChart, Line, ReferenceLine, Tooltip, XAxis, YAxis } from 'recharts'
 import type { Payload } from '../../types'
+import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { SlideHeader, SlideShell, MetricLine } from '../components/ui'
 import { motion } from 'framer-motion'
 
@@ -27,20 +28,30 @@ export function StressSlide({
           <div className="data-card" style={{ gridColumn: 'span 8', height: '400px' }}>
             <h3>Curva de Presión vs Entropía (Tipping Point Analysis)</h3>
             <div style={{ height: '320px', marginTop: '1rem' }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <ComposedChart data={stress?.full_curve ?? []}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                  <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
-                  <YAxis yAxisId="left" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
-                  <YAxis yAxisId="right" orientation="right" stroke="var(--accent)" fontSize={10} tickLine={false} axisLine={false} />
-                  <Tooltip 
-                    contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px' }}
-                  />
-                  <Bar yAxisId="left" dataKey="pressure_index" fill="rgba(255, 45, 85, 0.3)" radius={[2, 2, 0, 0]} />
-                  <Line yAxisId="right" type="monotone" dataKey="system_entropy" stroke="var(--accent)" strokeWidth={2} dot={false} />
-                  {tipping && <ReferenceLine x={tipping.agents} yAxisId="left" stroke="var(--danger)" strokeDasharray="3 3" label={{ value: 'COLLAPSE', position: 'top', fill: 'var(--danger)', fontSize: 10 }} />}
-                </ComposedChart>
-              </ResponsiveContainer>
+              <MeasuredChart minHeight={320}>
+                {({ width, height }) => (
+                  <ComposedChart width={width} height={height} data={stress?.full_curve ?? []}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
+                    <XAxis dataKey="agents" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                    <YAxis yAxisId="left" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                    <YAxis yAxisId="right" orientation="right" stroke="var(--accent)" fontSize={10} tickLine={false} axisLine={false} />
+                    <Tooltip
+                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px' }}
+                    />
+                    <Bar yAxisId="left" dataKey="pressure_index" fill="rgba(255, 45, 85, 0.3)" radius={[2, 2, 0, 0]} />
+                    <Line yAxisId="right" type="monotone" dataKey="system_entropy" stroke="var(--accent)" strokeWidth={2} dot={false} />
+                    {tipping ? (
+                      <ReferenceLine
+                        x={tipping.agents}
+                        yAxisId="left"
+                        stroke="var(--danger)"
+                        strokeDasharray="3 3"
+                        label={{ value: 'COLLAPSE', position: 'top', fill: 'var(--danger)', fontSize: 10 }}
+                      />
+                    ) : null}
+                  </ComposedChart>
+                )}
+              </MeasuredChart>
             </div>
           </div>
 

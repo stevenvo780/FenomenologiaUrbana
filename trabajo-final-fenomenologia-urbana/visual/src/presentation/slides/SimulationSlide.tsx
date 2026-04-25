@@ -1,4 +1,4 @@
-import type { Payload, ScenarioSummary } from '../../types'
+import type { ScenarioSummary } from '../../types'
 import { motion } from 'framer-motion'
 import { RecordedSimulationClip } from '../components/visuals/RecordedSimulationClip'
 import { SlideHeader, SlideShell, MetricLine } from '../components/ui'
@@ -6,9 +6,7 @@ import { SlideHeader, SlideShell, MetricLine } from '../components/ui'
 export function SimulationSlide({
   scenario,
 }: {
-  data: Payload
   scenario: ScenarioSummary
-  onOpenModal: (kind: any) => void
 }) {
   return (
     <SlideShell id="simulacion">

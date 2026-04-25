@@ -16,7 +16,6 @@ export function MethodSlide({
   data,
 }: {
   data: Payload
-  onOpenModal: (kind: any) => void
 }) {
   return (
     <SlideShell id="metodo">

@@ -1,10 +1,9 @@
-import { Bar, BarChart, CartesianGrid, Cell, Tooltip, XAxis, YAxis, ResponsiveContainer } from 'recharts'
+import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from 'recharts'
 import type { Payload, ScenarioSummary } from '../../types'
-import type { ModalKind } from '../deckTypes'
-import { KpiPill, SlideHeader, SlideShell, MetricLine } from '../components/ui'
+import { MeasuredChart } from '../components/visuals/MeasuredChart'
+import { MetricLine, SlideHeader, SlideShell } from '../components/ui'
 
-const ACCENT = '#00f2ff';
-const DIM = 'rgba(0, 242, 255, 0.1)';
+const ACCENT = '#00f2ff'
 
 export function InequalitySlide({
   data,
@@ -38,18 +37,20 @@ export function InequalitySlide({
           <div className="data-card" style={{ gridColumn: 'span 2' }}>
             <h3>Análisis de Entropía por Perfil de Agente (M-MASS)</h3>
             <div style={{ height: '300px', marginTop: '1rem' }}>
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={entropyData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
-                  <XAxis dataKey="label" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
-                  <YAxis stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
-                  <Tooltip 
-                    contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px' }}
-                    cursor={{ fill: 'rgba(0,242,255,0.05)' }}
-                  />
-                  <Bar dataKey="entropy" fill={ACCENT} radius={[2, 2, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
+              <MeasuredChart minHeight={300}>
+                {({ width, height }) => (
+                  <BarChart width={width} height={height} data={entropyData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
+                    <XAxis dataKey="label" stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                    <YAxis stroke="var(--text-dim)" fontSize={10} tickLine={false} axisLine={false} />
+                    <Tooltip
+                      contentStyle={{ background: '#141417', border: '1px solid var(--accent)', fontSize: '10px' }}
+                      cursor={{ fill: 'rgba(0,242,255,0.05)' }}
+                    />
+                    <Bar dataKey="entropy" fill={ACCENT} radius={[2, 2, 0, 0]} />
+                  </BarChart>
+                )}
+              </MeasuredChart>
             </div>
           </div>
 

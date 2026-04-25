@@ -1,5 +1,29 @@
-import { ChevronLeft, ChevronRight, Clock3, Cpu, Crosshair, Database, Eye, Film, Flag, LineChart, MapPinned, Network, Orbit, Scale, ShoppingBag, Sparkles, TriangleAlert, UsersRound, Wind, type LucideIcon } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
+import {
+  ChevronLeft,
+  ChevronRight,
+  Clock3,
+  Cpu,
+  Crosshair,
+  Database,
+  Eye,
+  Film,
+  Flag,
+  LayoutGrid,
+  LineChart,
+  MapPinned,
+  Network,
+  Orbit,
+  Scale,
+  ShoppingBag,
+  Sparkles,
+  TriangleAlert,
+  UsersRound,
+  Wind,
+  X,
+  type LucideIcon,
+} from 'lucide-react'
+import { useState } from 'react'
 
 import { SLIDES } from '../constants'
 import type { SlideId } from '../deckTypes'
@@ -40,76 +64,134 @@ export function DeckNav({
   onPrevious: () => void
   onOpenData: () => void
 }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const ActiveIcon = slideIcons[activeSlide]
+
+  function handleGoTo(id: SlideId) {
+    onGoToSlide(id)
+    setMenuOpen(false)
+  }
+
   return (
-    <header className="deck-nav">
-      <div className="nav-progress" style={{ width: `${progress}%` }} />
-      
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginRight: '2rem' }}>
-        <Network size={20} color="var(--accent)" />
-        <span style={{ fontWeight: 800, fontSize: '0.8rem', letterSpacing: '2px' }}>HPC-FENOM</span>
-      </div>
+    <>
+      {/* ─── Floating bottom bar ─── */}
+      <nav className="deck-nav-bar" aria-label="Navegación de slides">
+        {/* Animated progress line at top of bar */}
+        <div className="deck-nav-progress" style={{ width: `${progress}%` }} aria-hidden="true" />
 
-      <div style={{ display: 'flex', gap: '0.5rem', flex: 1, overflowX: 'auto', paddingBottom: '4px' }}>
-        {SLIDES.map((slide) => {
-          const Icon = slideIcons[slide.id]
-          const isActive = slide.id === activeSlide
-
-          return (
-            <button
-              key={slide.id}
-              type="button"
-              onClick={() => onGoToSlide(slide.id)}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color: isActive ? 'var(--accent)' : 'var(--text-dim)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                cursor: 'pointer',
-                padding: '4px 8px',
-                whiteSpace: 'nowrap',
-                transition: 'all 0.2s',
-                opacity: isActive ? 1 : 0.6
-              }}
-            >
-              <Icon size={14} />
-              <span style={{ fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{slide.shortLabel}</span>
-            </button>
-          )
-        })}
-      </div>
-
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginLeft: '2rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-dim)', fontSize: '0.7rem' }}>
-          <button onClick={onPrevious} style={{ background: 'transparent', border: 'none', color: 'inherit', cursor: 'pointer' }}>
-            <ChevronLeft size={16} />
-          </button>
-          <span style={{ fontVariantNumeric: 'tabular-nums' }}>{activeIndex + 1} / {SLIDES.length}</span>
-          <button onClick={onNext} style={{ background: 'transparent', border: 'none', color: 'inherit', cursor: 'pointer' }}>
-            <ChevronRight size={16} />
-          </button>
+        {/* Brand */}
+        <div className="nav-bar-brand">
+          <Network size={14} />
+          <span>HPC</span>
         </div>
 
-        <button 
-          onClick={onOpenData}
-          style={{
-            background: 'var(--accent-dim)',
-            border: '1px solid var(--accent)',
-            color: 'var(--accent)',
-            fontSize: '0.6rem',
-            padding: '4px 8px',
-            borderRadius: '2px',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem'
-          }}
+        {/* Prev */}
+        <button
+          type="button"
+          className="nav-bar-arrow"
+          onClick={onPrevious}
+          disabled={activeIndex === 0}
+          aria-label="Slide anterior"
         >
-          <Database size={12} />
-          DATA ROOM
+          <ChevronLeft size={18} />
         </button>
-      </div>
-    </header>
+
+        {/* Centre pill — opens slide picker */}
+        <button
+          type="button"
+          className="nav-bar-pill"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Abrir selector de slides"
+        >
+          <ActiveIcon size={13} />
+          <span className="nav-bar-label">{SLIDES[activeIndex].label}</span>
+          <span className="nav-bar-counter">{activeIndex + 1}/{SLIDES.length}</span>
+          <LayoutGrid size={12} className="nav-bar-grid-icon" />
+        </button>
+
+        {/* Next */}
+        <button
+          type="button"
+          className="nav-bar-arrow"
+          onClick={onNext}
+          disabled={activeIndex === SLIDES.length - 1}
+          aria-label="Slide siguiente"
+        >
+          <ChevronRight size={18} />
+        </button>
+
+        {/* Data room */}
+        <button
+          type="button"
+          className="nav-bar-data"
+          onClick={onOpenData}
+          aria-label="Abrir Data Room"
+        >
+          <Database size={13} />
+          <span>Data</span>
+        </button>
+      </nav>
+
+      {/* ─── Slide-picker modal ─── */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className="nav-modal-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
+            onClick={() => setMenuOpen(false)}
+          >
+            <motion.div
+              className="nav-modal"
+              initial={{ opacity: 0, y: 40, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 30, scale: 0.97 }}
+              transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="nav-modal-header">
+                <span>
+                  <Network size={14} />
+                  &nbsp;Fenomenología Urbana · 16 Slides
+                </span>
+                <button
+                  type="button"
+                  className="nav-modal-close"
+                  onClick={() => setMenuOpen(false)}
+                  aria-label="Cerrar"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+
+              <div className="nav-modal-grid">
+                {SLIDES.map((slide, idx) => {
+                  const Icon = slideIcons[slide.id]
+                  const isActive = slide.id === activeSlide
+                  return (
+                    <motion.button
+                      key={slide.id}
+                      type="button"
+                      className={`nav-modal-item${isActive ? ' active' : ''}`}
+                      onClick={() => handleGoTo(slide.id)}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: idx * 0.025, duration: 0.2 }}
+                    >
+                      <span className="nav-modal-num">{String(idx + 1).padStart(2, '0')}</span>
+                      <Icon size={16} />
+                      <span className="nav-modal-name">{slide.label}</span>
+                      {isActive && <span className="nav-modal-dot" aria-hidden="true" />}
+                    </motion.button>
+                  )
+                })}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

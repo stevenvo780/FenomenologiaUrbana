@@ -38,6 +38,16 @@ body {
   overflow: hidden;
   color: #efe5d5;
   perspective: 1400px;
+
+  /* ── Deck design tokens (dark theme) ── */
+  --accent:     #e07a46;
+  --accent-2:   #1f7f79;
+  --accent-dim: rgba(224, 122, 70, 0.14);
+  --danger:     #ff3b55;
+  --text-dim:   rgba(255, 248, 236, 0.55);
+  --text-main:  rgba(255, 248, 236, 0.9);
+  --card-bg:    rgba(255, 255, 255, 0.06);
+  --border:     rgba(255, 255, 255, 0.12);
 }
 
 .deck-stage {
@@ -51,6 +61,160 @@ body {
   position: absolute;
   inset: 0;
   overflow: hidden;
+}
+
+/* ══════════════════════════════════════════
+   SLIDE BASE — every SlideShell renders this
+   ══════════════════════════════════════════ */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem clamp(2rem, 4vw, 4rem) 5.5rem;
+  overflow: hidden;
+}
+
+/* Make main content areas fill remaining space */
+.slide > .doctoral-grid,
+.slide > .slide-content,
+.slide > [class*="grid"] {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+}
+
+/* slide-header stays natural height */
+.slide > header.slide-header,
+.slide > .slide-header {
+  flex: 0 0 auto;
+}
+
+/* ══════════════════════════════════════════
+   UTILITY CLASSES (data-card, data-grid…)
+   ══════════════════════════════════════════ */
+
+/* 12-col auto grid */
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  min-height: 0;
+}
+
+/* Frosted glass card */
+.data-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--card-bg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  backdrop-filter: blur(8px);
+}
+
+.data-card h3 {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 248, 236, 0.58);
+}
+
+/* Large numeric value */
+.data-value {
+  font-family: var(--mono);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  color: #fff8ec;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Flex container that fills remaining slide space */
+.slide-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Status bar pinned to bottom of slide */
+.metrics-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.metric-item {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.metric-item b {
+  color: rgba(255, 248, 236, 0.82);
+  font-weight: 600;
+}
+
+/* Absolute-positioned HUD overlay for maps/cinema */
+.hud-overlay {
+  position: absolute;
+  z-index: 4;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(12, 9, 8, 0.72);
+  backdrop-filter: blur(12px);
+  color: rgba(255, 248, 236, 0.78);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+/* Pulsing live indicator dot */
+.node-pulse {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--danger);
+  box-shadow: 0 0 0 0 rgba(255, 59, 85, 0.6);
+  animation: nodePulse 1.4s ease-out infinite;
+}
+
+@keyframes nodePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 59, 85, 0.7); }
+  70%  { box-shadow: 0 0 0 8px rgba(255, 59, 85, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 59, 85, 0); }
+}
+
+/* Nav progress bar inside deck-nav */
+.nav-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e07a46, #f4c87a, #1f7f79);
+  box-shadow: 0 0 12px rgba(244, 200, 122, 0.5);
+  transition: width 320ms ease;
 }
 
 .ambient-field {
@@ -110,22 +274,241 @@ body {
   opacity: 0.46;
 }
 
-.deck-nav {
+/* ── Bottom nav bar ──────────────────────────────────────────── */
+.deck-nav-bar {
   position: fixed;
-  inset: 18px 18px auto;
-  z-index: 20;
-  min-height: 62px;
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  gap: 18px;
+  bottom: 1.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+  display: flex;
   align-items: center;
-  padding: 12px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 999px;
-  background: rgba(20, 16, 15, 0.72);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255,255,255,0.13);
+  background: rgba(14,12,11,0.82);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(224,122,70,0.08);
+  overflow: hidden;
 }
+
+.deck-nav-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-bar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0 0.4rem;
+  opacity: 0.8;
+}
+
+.nav-bar-arrow {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: background 0.18s, color 0.18s;
+}
+.nav-bar-arrow:hover:not(:disabled) {
+  background: rgba(255,255,255,0.09);
+  color: var(--text-main);
+}
+.nav-bar-arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.nav-bar-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  color: var(--text-main);
+  transition: background 0.18s;
+  font: inherit;
+}
+.nav-bar-pill:hover {
+  background: rgba(255,255,255,0.13);
+}
+
+.nav-bar-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nav-bar-counter {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+}
+
+.nav-bar-grid-icon {
+  color: var(--text-dim);
+  opacity: 0.7;
+}
+
+.nav-bar-data {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.nav-bar-data:hover {
+  background: rgba(224,122,70,0.22);
+}
+
+/* ── Slide picker modal ───────────────────────────────────────── */
+.nav-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5.5rem;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+}
+
+.nav-modal {
+  width: min(860px, calc(100vw - 2rem));
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(16,13,12,0.94);
+  backdrop-filter: blur(28px);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+.nav-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+.nav-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-modal-close:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-main);
+}
+
+.nav-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  padding: 0.6rem;
+}
+
+.nav-modal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: background 0.16s, color 0.16s;
+  position: relative;
+  font: inherit;
+}
+.nav-modal-item:hover {
+  background: rgba(255,255,255,0.07);
+  color: var(--text-main);
+}
+.nav-modal-item.active {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.nav-modal-num {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  opacity: 0.7;
+  align-self: flex-start;
+  margin-left: 0.1rem;
+}
+
+.nav-modal-name {
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 90px;
+}
+
+.nav-modal-dot {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+/* Legacy .deck-nav kept for breakpoint overrides, now empty */
+.deck-nav { display: none; }
 
 .deck-brand,
 .data-room-button,
@@ -1069,6 +1452,13 @@ body {
 .route-card-mini {
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+}
 
 .doctoral-grid {
   display: grid;
@@ -1412,13 +1802,6 @@ body {
 .year-card-stack {
   display: grid;
   gap: 10px;
-}
-  gap: 12px;
-  align-items: center;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.06);
 }
 
 .route-card-mini strong,
