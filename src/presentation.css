@@ -5349,3 +5349,386 @@ body {
   letter-spacing: 0.06em;
 }
 
+/* Compact pass for 16:9 projector captures (1280 × 720). Keeps the
+   established visual language but prevents bottom clipping after the
+   public-facing copy pass. */
+@media (max-height: 760px) and (min-width: 761px) {
+  html {
+    font-size: 15.5px;
+  }
+
+  .deck-slide {
+    gap: 10px;
+    padding-top: 72px;
+    padding-bottom: 14px;
+  }
+
+  .slide-header-copy {
+    gap: 0.32rem;
+  }
+
+  .deck-shell h1 {
+    font-size: clamp(2rem, 3.7vw, 4.35rem);
+  }
+
+  .deck-shell h2 {
+    font-size: clamp(1.56rem, 2.65vw, 3.05rem);
+  }
+
+  .slide-header p,
+  .slide :where(
+    .spotlight-card p,
+    .analysis-note-copy,
+    .simulation-note-copy,
+    .simulation-note-copy-second,
+    .simulation-note-extra,
+    .environment-flow-caption,
+    .environment-poetic,
+    .environment-field-figure figcaption,
+    .field-card small,
+    .heatline-clock-card p,
+    .top-routes li,
+    .route-list li,
+    .route-rail p,
+    .map-slide .route-marquee p,
+    .node-spotlight.compact > p:not(.deck-eyebrow):not(.spotlight-note),
+    .node-spotlight.compact .spotlight-note,
+    .crowd-bottom-axis,
+    .crowd-bottom-copy,
+    .stress-pressure-caption,
+    .simulation-counter-caption,
+    .heterotopia-footnote,
+    .heterotopia-lead p,
+    .symploke-copy,
+    .symploke-card p,
+    .history-slide .deck-panel p,
+    .economy-pulse-caption
+  ) {
+    font-size: 0.88rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .panel-frame,
+  .deck-panel {
+    border-radius: 24px;
+  }
+
+  .panel-frame {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .panel-frame-body {
+    gap: 8px;
+  }
+
+  .panel-frame-title,
+  .simulation-slide .simulation-meta-section h3,
+  .simulation-slide .simulation-note-card h3 {
+    font-size: 1.02rem;
+  }
+
+  .slide-citation,
+  .deck-eyebrow {
+    font-size: 0.72rem !important;
+  }
+
+  .slide-citation {
+    display: none;
+  }
+
+  .symploke-grid,
+  .heterotopia-grid,
+  .closing-postulates {
+    gap: 10px;
+  }
+
+  .symploke-decoration {
+    height: 88px !important;
+    margin: 4px 0 6px !important;
+  }
+
+  .symploke-glyph {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .symploke-glyph svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .symploke-metric strong {
+    font-size: 1.16rem;
+  }
+
+  .heterotopia-pulse {
+    height: 34px !important;
+    margin-top: 6px !important;
+  }
+
+  .heterotopia-bars i {
+    height: 6px !important;
+    margin: 3px 0 !important;
+  }
+
+  .heterotopia-lead,
+  .heterotopia-chip-row {
+    display: none;
+  }
+
+  .pressure-card {
+    min-height: 0;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .pressure-card strong {
+    font-size: 1.22rem;
+  }
+
+  .pressure-orb {
+    width: 92px;
+  }
+
+  .pressure-orb em {
+    font-size: 1.4rem;
+  }
+
+  .simulation-slide .simulation-grid,
+  .stress-layout,
+  .environment-raster-grid,
+  .history-raster-grid,
+  .asphyxia-grid,
+  .economy-slide .doctoral-grid,
+  .closing-grid {
+    gap: 12px !important;
+  }
+
+  .simulation-slide .recorded-sim {
+    min-height: 280px;
+  }
+
+  .simulation-slide .simulation-meta-section,
+  .simulation-slide .simulation-meta-card,
+  .simulation-slide .simulation-note-card {
+    padding: 10px;
+  }
+
+  .simulation-note-extra {
+    display: none;
+  }
+
+  .stress-left-column {
+    grid-template-rows: minmax(220px, 1.2fr) minmax(135px, 0.8fr);
+    gap: 10px;
+  }
+
+  .stress-chaos-raster {
+    min-height: 120px;
+  }
+
+  .stress-aside {
+    gap: 8px;
+  }
+
+  .asphyxia-grid {
+    grid-template-rows: minmax(0, 1fr) minmax(0, 0.9fr);
+  }
+
+  .asphyxia-grid .metric-line {
+    padding: 4px 0;
+  }
+
+  .asphyxia-uncertainty .panel-frame-body {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .asphyxia-uncertainty .metric-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  .asphyxia-uncertainty .metric-line span {
+    font-size: 0.62rem !important;
+  }
+
+  .asphyxia-uncertainty .metric-line strong {
+    font-size: 0.78rem !important;
+    line-height: 1.15;
+  }
+
+  .asphyxia-hero-copy,
+  .asphyxia-gini-active p {
+    margin-bottom: 0;
+  }
+
+  .asphyxia-tile-grid {
+    gap: 6px;
+  }
+
+  .asphyxia-tile-grid button {
+    gap: 3px;
+    padding: 7px;
+  }
+
+  .asphyxia-gini-active strong {
+    font-size: 1.55rem;
+  }
+
+  .asphyxia-compression-copy {
+    display: none;
+  }
+
+  .asphyxia-compression-svg {
+    height: 88px;
+  }
+
+  .asphyxia-compression-legend {
+    display: none;
+  }
+
+  .environment-raster-panel,
+  .economy-slide .chart-panel,
+  .economy-slide .economy-side-panel {
+    padding: 12px !important;
+  }
+
+  .environment-field-split {
+    gap: 8px;
+  }
+
+  .env-meter {
+    gap: 8px;
+    padding: 10px 12px 12px;
+    margin: 0;
+  }
+
+  .env-meter + .env-meter {
+    margin-top: 0;
+  }
+
+  .env-meter-head {
+    gap: 8px;
+  }
+
+  .env-meter-title-main {
+    gap: 8px;
+  }
+
+  .env-meter-icon {
+    width: 1.55rem;
+    height: 1.55rem;
+  }
+
+  .env-meter-titles strong {
+    font-size: 0.82rem;
+  }
+
+  .env-meter-sub,
+  .env-meter-corridor-labels,
+  .env-meter-marker-label,
+  .env-meter-scale-axis {
+    display: none;
+  }
+
+  .environment-flow-svg {
+    height: 82px !important;
+  }
+
+  .env-meter-strip {
+    height: 54px;
+  }
+
+  .env-meter-scale {
+    height: 16px;
+    margin-top: 8px;
+  }
+
+  .environment-flow-card {
+    margin-top: 6px;
+    padding: 8px;
+  }
+
+  .environment-flow-caption,
+  .environment-flow-meta {
+    display: none;
+  }
+
+  .visibility-hero-stage {
+    gap: 8px;
+  }
+
+  .visibility-hero-panel .visibility-meter-core {
+    width: min(220px, 100%);
+  }
+
+  .economy-slide .chart-shell-tall {
+    min-height: 280px;
+  }
+
+  .economy-slide .economy-side-panel {
+    gap: 10px;
+  }
+
+  .economy-slide .economy-gauge-ring {
+    width: 148px;
+    height: 148px;
+  }
+
+  .economy-pulse-svg {
+    height: 58px;
+  }
+
+  .history-trend-svg {
+    height: 78px !important;
+  }
+
+  .closing-postulates .panel-frame {
+    padding: 10px;
+  }
+
+  .closing-thesis {
+    align-content: start;
+    gap: 10px;
+    padding: 18px;
+  }
+
+  .closure-panel {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .gate-stack {
+    gap: 8px;
+  }
+
+  .gate-card,
+  .fieldwork-warning {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .gate-card p,
+  .fieldwork-warning p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .hero-actions {
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .closing-postulates p,
+  .closing-typewriter {
+    line-height: 1.26 !important;
+  }
+}
+
