@@ -66,7 +66,13 @@ Esta tabla cumple una función de control: impide presentar todas las variables 
 
 ## 2.5. Modelo M-MASS y arquitectura de capas
 
-La combinación de agentes, dinámica peatonal, redes y ciudad computacional se apoya en literatura de modelos basados en agentes, ciencia urbana y dinámica social de peatones (Batty, 2013; Bonabeau, 2002; Epstein, 2006; Helbing & Molnár, 1995). Estas referencias orientan la arquitectura del prototipo, pero no eliminan la necesidad de validación situada.
+La combinación de agentes, dinámica peatonal, redes y ciudad computacional se apoya en el modelo **M-MASS**, nomenclatura que designa una **Simulación Espacial Multi-Agente de Capas Múltiples** (*Multi-layer Multi-Agent Spatial Simulation*). Este acrónimo describe la integración de tres niveles de complejidad:
+
+1.  **Multi-layer (Multi-capa):** Refiere a la superposición de los campos materiales ($M_1$), decisionales ($M_2$) y normativos ($M_3$). El modelo no solo calcula trayectorias físicas, sino que las hace circular a través de "mallas" de ruido, contaminación y visibilidad.
+2.  **Multi-Agent (Multi-agente):** El uso de agentes autónomos con diferentes perfiles (comprador, turista, trabajador) que compiten y colaboran por el espacio, permitiendo que emerjan patrones de congestión no lineales.
+3.  **Spatial Simulation (Simulación Espacial):** La ejecución del modelo sobre una topología real georreferenciada (grafo Junín-San Antonio), garantizando que las métricas resultantes tengan una base métrica y geográfica concreta.
+
+La arquitectura M-MASS se apoya en literatura de modelos basados en agentes, ciencia urbana y dinámica social de peatones (Batty, 2013; Bonabeau, 2002; Epstein, 2006; Helbing & Molnár, 1995). Estas referencias orientan la arquitectura del prototipo, pero no eliminan la necesidad de validación situada.
 
 El modelo se organiza según tres planos de la *symploké*:
 
