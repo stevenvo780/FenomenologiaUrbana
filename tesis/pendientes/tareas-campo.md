@@ -1,68 +1,54 @@
-# Guía de Campo: Tareas Pendientes para Validación Empírica
+# Estrategia de Campo: Labor Fenomenológica y Recalibración HPC
 
-Este documento contiene las tareas críticas que el equipo de campo debe ejecutar para que la tesis pase de un **baseline proxy** a una investigación **calibrada empíricamente**.
-
-## 1. Nodos de Observación (9 Puntos)
-
-Se debe recolectar información en los 9 nodos definidos en el modelo. Cada nodo requiere registro de conteo, permanencia y ruido.
-
-1.  `san_antonio_metro` (Umbral de transferencia)
-2.  `parque_san_antonio` (Espacio de pausa/exposición)
-3.  `palacio_nacional` (Punto comercial denso)
-4.  `junin_paseo` (Corredor peatonal principal)
-5.  `oriental_cruce` (Intersección de alta fricción)
-6.  `parque_berrio` (Nodo central de flujo)
-7.  `carabobo_cultural` (Eje patrimonial)
-8.  `plaza_botero` (Saturación turística/local)
-9.  `museo_antioquia` (Cierre del corredor)
-
-## 2. Mediciones en Subtramos (Flujo Direccional)
-
-Priorizar la medición de personas por sentido en las siguientes aristas críticas:
-
-*   `san_antonio_metro <-> junin_paseo`
-*   `junin_paseo <-> parque_berrio`
-*   `parque_berrio <-> plaza_botero`
-*   `parque_berrio <-> carabobo_cultural`
-*   `plaza_botero <-> museo_antioquia`
-
-## 3. Franjas Horarias Obligatorias
-
-Para que los datos sean comparables con el modelo, las mediciones deben ocurrir en estas ventanas:
-
-*   **Pico Mañana:** 07:00 – 09:00
-*   **Valle/Mediodía:** 12:00 – 14:00
-*   **Pico Tarde:** 17:00 – 19:00
-*   **Nocturno:** 20:00 – 22:00 (Incluir medición de lux/iluminación)
-
-## 4. Protocolo de Captura por Nodo/Franja
-
-El equipo debe asegurar la siguiente muestra mínima para cada sesión:
-
-| Tarea | Muestra Mínima | Herramienta | Propósito |
-| :--- | :--- | :--- | :--- |
-| **Conteo Peatonal** | 4 ventanas de 15 min | App de conteo / Manual | Recalibrar `crowding` |
-| **Permanencia** | 15 a 20 casos | Cronómetro | Recalibrar `base_dwell` |
-| **Ruido Puntual** | 1 medición (dB) | Sonómetro / App calibrada | Validar campo acústico |
-| **Iluminación** | 1 medición (lux) | Luxómetro / App | Solo franja Nocturna |
-| **Seguridad Percibida** | 20 a 30 encuestas | Formulario breve (1-5) | Contrastar proxy de riesgo |
-| **Notas Fenomenológicas** | 1 registro escrito | Diario de campo | Capturar el "aparecer" del nodo |
-| **Mapeo de Obstáculos** | Registro GeoJSON/Foto | Celular con GPS | Identificar fricciones reales |
-
-## 5. Instrucciones de Entrega de Datos
-
-Para que el sistema procese los datos automáticamente, el equipo debe:
-
-1.  **Respetar IDs:** Usar exactamente los nombres de los nodos (ej. `parque_berrio`, no "P. Berrío").
-2.  **Formato CSV:** Llenar la plantilla en `investigacion/data/interim/templates/field_counts_template.csv`.
-3.  **Registro Geográfico:** Guardar puntos de obstáculos o desvíos en un GeoJSON siguiendo `field_points_template.geojson`.
-4.  **Notas:** Guardar reflexiones en Markdown usando `field_notes_template.md`.
-5.  **Ubicación:** Depositar todos los archivos finales en `investigacion/data/interim/` (crear una carpeta por fecha, ej. `jornada_2026_05_10/`).
-
-## 6. Siguiente Paso Post-Campo
-
-Una vez entregados los archivos, se debe correr el pipeline de recalibración:
-`python investigacion/scripts/run_all.py`
+Este documento integra la **dimensión humana (vivida)** con la **dimensión técnica (simulada)**. El objetivo no es solo recolectar datos para la máquina, sino reconstruir fenomenológicamente la experiencia del corredor.
 
 ---
-*Nota: Mientras no se completen estas tareas, la tesis mantendrá el estado `baseline_proxy`.*
+
+## 1. Fase de Campo: El Equipo como Sujeto Situado
+
+El celular es un apoyo, pero la labor fenomenológica la realiza el equipo mediante la observación participante y el registro de la subjetividad.
+
+### A. Labor Cualitativa (Cuerpo y Palabra)
+| Tarea | Método | Propósito |
+| :--- | :--- | :--- |
+| **Epoché Pre-Campo** | Registro de prejuicios antes de cada franja (ej. "creo que Junín será ruidoso"). | Suspender el juicio para permitir que el lugar *aparezca*. |
+| **Entrevistas Breves** | Encuesta de seguridad y orientación (2 min). Sin datos personales. | Capturar la *noesis* (el acto de temer, desear, cruzar) de los transeúntes. |
+| **Notas de Atmósfera** | Diario de campo usando códigos (ej. `PASO_RAPIDO`, `RIESGO_PERCIBIDO`). | Describir el *Leib* (cuerpo vivido): ¿se tensa el cuerpo?, ¿se acelera?. |
+| **Mapeo de Heterotopías** | Identificar "contra-sitios" (Foucault): espacios de crisis, ilusión o cierre. | Revelar relaciones de poder que la simulación ignora. |
+
+### B. Captura Material ($M_1$ - Soporte para la Torre)
+*   **Video 1080p (15-20 min):** Registro continuo del flujo para conteo automático.
+*   **Time-lapse de Permanencia:** En nodos de pausa (Plaza Botero, San Antonio) para ver el "mundo de la vida" suceder.
+*   **POV Recorrido:** Grabar el trayecto caminando para registrar la escala, luz y sombra desde el ojo humano.
+
+---
+
+## 2. Fase de Procesamiento: Dialéctica entre Datos y Experiencia
+
+La Torre HPC no solo cuenta peatones, ayuda a contrastar la **ciudad medida** con la **ciudad vivida**.
+
+### A. Refuerzo de la Simulación (HPC)
+*   **Contraste de Trayectorias:** Comparar las "líneas de deseo" extraídas por visión artificial con las notas fenomenológicas de "desvíos" y "obstáculos".
+*   **Recalibración de Riesgo:** Ajustar los pesos de los agentes DRL basándose en las encuestas de seguridad percibida reales.
+*   **Visualización Narrativa:** Los clips renderizados deben incluir leyendas con citas de las notas de campo para no perder el rastro humano.
+
+---
+
+## 3. Plan de Acción: Jornada Fenomenológica Completa
+
+Para cada nodo (`san_antonio`, `junin`, `botero`, etc.):
+
+1.  **Llegada:** Realizar **Epoché** (anotar expectativas).
+2.  **Permanencia (20 min):** Grabar video de flujo + Tomar notas sensoriales (ruido, temperatura, olores).
+3.  **Interacción:** Realizar 5-10 **encuestas breves** a transeúntes situados.
+4.  **Cierre:** Identificar si el nodo funciona como **Heterotopía** (¿Quién queda fuera? ¿Quién controla?).
+
+---
+
+## 4. Entregables para el Sistema
+*   `field_notes_YYYY_MM_DD.md`: Reflexiones, epoché y análisis noesis-noema.
+*   `field_counts_YYYY_MM_DD.csv`: Datos numéricos extraídos de los videos por la Torre.
+*   `field_points_YYYY_MM_DD.geojson`: Ubicación de fricciones y heterotopías.
+
+---
+*La fenomenología no está en el sensor; está en el encuentro entre el sensor, el dato masivo de la torre y la conciencia del investigador que camina la calle.*
