@@ -71,7 +71,7 @@ export function ThesisView() {
             </Link>
           </div>
           <div className="thesis-title-block">
-            <p className="deck-eyebrow">Tesis de Grado</p>
+            <p className="deck-eyebrow">Tesis de campo</p>
             <h1>Fenomenología Urbana Operacional</h1>
             <p className="thesis-subtitle">Corredor San Antonio - Junín · Medellín</p>
           </div>
