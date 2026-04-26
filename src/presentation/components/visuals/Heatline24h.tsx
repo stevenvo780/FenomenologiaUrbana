@@ -1,4 +1,4 @@
-import { motion, useAnimationFrame, useReducedMotion } from 'framer-motion'
+import { motion, useAnimationFrame, useMotionValue, useReducedMotion, useTransform } from 'framer-motion'
 import { useMemo, useState } from 'react'
 
 import type { Hpc24hMetric, Temporal24h } from '../../../types'
@@ -18,17 +18,20 @@ export function Heatline24h({
   paused = false,
 }: Heatline24hProps) {
   const reducedMotion = useReducedMotion()
-  const [hourProgress, setHourProgress] = useState(0)
-  const safeHourly = hourly.length ? hourly : Array.from({ length: 24 }, (_, hour) => ({ hour, agents: 0, max_load: 0, mean_energy: 0 }))
-  const hourIndex = Math.round(hourProgress) % safeHourly.length
+  const [hourIndex, setHourIndex] = useState(0)
+  
+  const hourProgressValue = useMotionValue(0)
+  const handX = useTransform(hourProgressValue, (v) => 72 + Math.cos((v / 24) * Math.PI * 2 - Math.PI / 2) * 48)
+  const handY = useTransform(hourProgressValue, (v) => 72 + Math.sin((v / 24) * Math.PI * 2 - Math.PI / 2) * 48)
+  const markerX = useTransform(hourProgressValue, (v) => (v / 24) * 420)
+
+  const safeHourly = useMemo(() => hourly.length ? hourly : Array.from({ length: 24 }, (_, hour) => ({ hour, agents: 0, max_load: 0, mean_energy: 0 })), [hourly])
   const active = safeHourly[hourIndex] ?? safeHourly[0]
-  const maxAgents = Math.max(...safeHourly.map((entry) => entry.agents), 1)
-  const maxLoad = Math.max(...safeHourly.map((entry) => entry.max_load), 1)
-  const clockAngle = (hourProgress / 24) * Math.PI * 2 - Math.PI / 2
-  const handX = 72 + Math.cos(clockAngle) * 48
-  const handY = 72 + Math.sin(clockAngle) * 48
-  const demand = temporal?.demand_multiplier ?? safeHourly.map((entry) => entry.agents / maxAgents)
-  const environmental = temporal?.environmental_intensity ?? safeHourly.map((entry) => entry.max_load / maxLoad)
+  const maxAgents = useMemo(() => Math.max(...safeHourly.map((entry) => entry.agents), 1), [safeHourly])
+  const maxLoad = useMemo(() => Math.max(...safeHourly.map((entry) => entry.max_load), 1), [safeHourly])
+  
+  const demand = useMemo(() => temporal?.demand_multiplier ?? safeHourly.map((entry) => entry.agents / maxAgents), [temporal, safeHourly, maxAgents])
+  const environmental = useMemo(() => temporal?.environmental_intensity ?? safeHourly.map((entry) => entry.max_load / maxLoad), [temporal, safeHourly, maxLoad])
   const demandPath = useMemo(() => buildLinePath(demand, 420, 130), [demand])
   const environmentalPath = useMemo(() => buildLinePath(environmental, 420, 130), [environmental])
 
@@ -37,7 +40,13 @@ export function Heatline24h({
       return
     }
 
-    setHourProgress(((time % loopMs) / loopMs) * 24)
+    const currentProgress = ((time % loopMs) / loopMs) * 24
+    hourProgressValue.set(currentProgress)
+    
+    const nextHourIndex = Math.round(currentProgress) % 24
+    if (nextHourIndex !== hourIndex) {
+      setHourIndex(nextHourIndex)
+    }
   })
 
   return (
@@ -94,8 +103,8 @@ export function Heatline24h({
           <path className="heatline-environmental" d={environmentalPath} />
           <motion.line
             className="heatline-marker"
-            x1={(hourIndex / 23) * 420}
-            x2={(hourIndex / 23) * 420}
+            x1={markerX}
+            x2={markerX}
             y1="0"
             y2="130"
           />

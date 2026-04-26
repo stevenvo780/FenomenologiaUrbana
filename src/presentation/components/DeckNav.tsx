@@ -25,7 +25,7 @@ import {
   X,
   type LucideIcon,
 } from 'lucide-react'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 
 import { SLIDES } from '../constants'
 import type { SlideId } from '../deckTypes'
@@ -49,7 +49,7 @@ const slideIcons: Record<SlideId, LucideIcon> = {
   cierre: Flag,
 }
 
-export function DeckNav({
+export const DeckNav = memo(function DeckNav({
   activeSlide,
   activeIndex,
   progress,
@@ -207,4 +207,4 @@ export function DeckNav({
       </AnimatePresence>
     </>
   )
-}
+})

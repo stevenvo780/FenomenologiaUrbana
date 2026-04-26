@@ -50,6 +50,10 @@ export function CorridorMap({
     layerGroupRef.current = L.layerGroup().addTo(mapInstance)
     mapRef.current = mapInstance
 
+    // Initial view set
+    const bounds = L.latLngBounds(nodes.map((node) => [node.lat, node.lon] as [number, number]))
+    mapInstance.fitBounds(bounds.pad(0.16))
+
     return () => {
       layerGroupRef.current?.clearLayers()
       layerGroupRef.current?.remove()
@@ -57,7 +61,7 @@ export function CorridorMap({
       mapRef.current = null
       layerGroupRef.current = null
     }
-  }, [])
+  }, [nodes]) // Initialize only once or if nodes change significantly
 
   useEffect(() => {
     if (!mapRef.current || !layerGroupRef.current) {
@@ -66,10 +70,8 @@ export function CorridorMap({
 
     const mapInstance = mapRef.current
     const layerGroup = layerGroupRef.current
-    const bounds = L.latLngBounds(nodes.map((node) => [node.lat, node.lon] as [number, number]))
 
     layerGroup.clearLayers()
-    mapInstance.fitBounds(bounds.pad(0.16))
     mapInstance.invalidateSize()
 
     for (const edge of edges) {

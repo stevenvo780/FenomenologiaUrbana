@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { memo } from 'react'
 
 const orbs = [
   { className: 'orb orb-one', x: [0, 72, 20], y: [0, 28, -12], duration: 18 },
@@ -6,7 +7,7 @@ const orbs = [
   { className: 'orb orb-three', x: [0, 36, 76], y: [0, -46, 18], duration: 28 },
 ]
 
-export function AmbientField() {
+export const AmbientField = memo(function AmbientField() {
   const reduceMotion = useReducedMotion()
 
   return (
@@ -22,4 +23,4 @@ export function AmbientField() {
       <span className="grid-noise" />
     </div>
   )
-}
+})

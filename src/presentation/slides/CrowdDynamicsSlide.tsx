@@ -4,7 +4,9 @@ import { Heatline24h } from '../components/visuals/Heatline24h'
 import { PanelFrame, SlideGrid, SlideHeader, SlideShell, StatTile } from '../components/ui'
 import { compactNumber } from '../utils'
 
-export function CrowdDynamicsSlide({
+import { memo } from 'react'
+
+export const CrowdDynamicsSlide = memo(function CrowdDynamicsSlide({
   data,
   paused,
   onTogglePaused,
@@ -118,4 +120,4 @@ export function CrowdDynamicsSlide({
       <p className="slide-citation">Simmel, 1903/1986</p>
     </SlideShell>
   )
-}
+})

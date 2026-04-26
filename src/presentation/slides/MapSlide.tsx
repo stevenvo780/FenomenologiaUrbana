@@ -6,7 +6,9 @@ import { RouteMarquee } from '../components/visuals/RouteVisuals'
 import { SlideHeader, SlideShell } from '../components/ui'
 import { motion } from 'framer-motion'
 
-export function MapSlide({
+import { memo } from 'react'
+
+export const MapSlide = memo(function MapSlide({
   data,
   scenario,
   agent,
@@ -121,4 +123,4 @@ export function MapSlide({
       <p className="slide-citation">Bueno, 1972</p>
     </SlideShell>
   )
-}
+})

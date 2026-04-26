@@ -5,7 +5,9 @@ import type { Payload } from '../../types'
 import { PanelFrame, SlideGrid, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber } from '../utils'
 
-export function SymplokeSlide({ data }: { data: Payload }) {
+import { memo } from 'react'
+
+export const SymplokeSlide = memo(function SymplokeSlide({ data }: { data: Payload }) {
   const pdeResolution = data.advanced_models?.environmental_pde?.resolution ?? '4096 × 4096'
   const rayCount = data.advanced_models?.perceptual_visibility?.ray_count ?? 0
 
@@ -97,7 +99,7 @@ export function SymplokeSlide({ data }: { data: Payload }) {
       </div>
     </SlideShell>
   )
-}
+})
 
 function SymplokeDecoration({ kind }: { kind: string }) {
   if (kind === 'm1') {

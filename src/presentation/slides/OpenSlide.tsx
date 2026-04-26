@@ -4,7 +4,9 @@ import { motion } from 'framer-motion'
 import { HeroConstellation } from '../components/visuals/HeroConstellation'
 import { SlideShell } from '../components/ui'
 
-export function OpenSlide({
+import { memo } from 'react'
+
+export const OpenSlide = memo(function OpenSlide({
   data,
   scenario,
   selectedNode,
@@ -64,7 +66,7 @@ export function OpenSlide({
       <p className="slide-citation">Husserl, 1936/1991</p>
     </SlideShell>
   )
-}
+})
 
 const openChild = {
   hidden: { opacity: 0, y: 24 },

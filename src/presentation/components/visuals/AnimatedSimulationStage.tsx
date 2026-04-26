@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
+import { memo, useMemo } from 'react'
 
 import type { Payload, ScenarioSummary } from '../../../types'
 import { buildSvgPath, getBounds, maxObjectValue, projectNode } from '../../utils'
 
-export function AnimatedSimulationStage({
+export const AnimatedSimulationStage = memo(function AnimatedSimulationStage({
   data,
   scenario,
   selectedNodeId,
@@ -12,10 +13,37 @@ export function AnimatedSimulationStage({
   scenario: ScenarioSummary
   selectedNodeId: string
 }) {
-  const bounds = getBounds(data.nodes)
-  const maxLoad = maxObjectValue(scenario.node_loads)
+  const bounds = useMemo(() => getBounds(data.nodes), [data.nodes])
+  const maxLoad = useMemo(() => maxObjectValue(scenario.node_loads), [scenario.node_loads])
   const safeMaxLoad = maxLoad || 1
-  const routes = scenario.top_routes.slice(0, 7)
+  const routes = useMemo(() => scenario.top_routes.slice(0, 7), [scenario.top_routes])
+
+  const renderedEdges = useMemo(() => data.edges.map((edge) => {
+    const source = data.nodes.find((node) => node.id === edge.source)
+    const target = data.nodes.find((node) => node.id === edge.target)
+
+    if (!source || !target) {
+      return null
+    }
+
+    const sourcePoint = projectNode(source, bounds, 880, 520, 70, 70)
+    const targetPoint = projectNode(target, bounds, 880, 520, 70, 70)
+    const edgeKey = `${edge.source}__${edge.target}`
+    const reverseKey = `${edge.target}__${edge.source}`
+    const load = scenario.edge_loads[edgeKey] ?? scenario.edge_loads[reverseKey] ?? 0
+
+    return (
+      <line
+        key={edgeKey}
+        x1={sourcePoint.x}
+        y1={sourcePoint.y}
+        x2={targetPoint.x}
+        y2={targetPoint.y}
+        className="sim-edge"
+        strokeWidth={1 + load / 28}
+      />
+    )
+  }), [data.edges, data.nodes, bounds, scenario.edge_loads])
 
   return (
     <motion.article
@@ -40,32 +68,7 @@ export function AnimatedSimulationStage({
         </defs>
         <rect x="0" y="0" width="980" height="660" rx="46" className="sim-bg" />
 
-        {data.edges.map((edge) => {
-          const source = data.nodes.find((node) => node.id === edge.source)
-          const target = data.nodes.find((node) => node.id === edge.target)
-
-          if (!source || !target) {
-            return null
-          }
-
-          const sourcePoint = projectNode(source, bounds, 880, 520, 70, 70)
-          const targetPoint = projectNode(target, bounds, 880, 520, 70, 70)
-          const edgeKey = `${edge.source}__${edge.target}`
-          const reverseKey = `${edge.target}__${edge.source}`
-          const load = scenario.edge_loads[edgeKey] ?? scenario.edge_loads[reverseKey] ?? 0
-
-          return (
-            <line
-              key={edgeKey}
-              x1={sourcePoint.x}
-              y1={sourcePoint.y}
-              x2={targetPoint.x}
-              y2={targetPoint.y}
-              className="sim-edge"
-              strokeWidth={1 + load / 28}
-            />
-          )
-        })}
+        {renderedEdges}
 
         {routes.map((route, routeIndex) => {
           const pathId = `flow-${scenario.id}-${routeIndex}`
@@ -124,4 +127,4 @@ export function AnimatedSimulationStage({
       </svg>
     </motion.article>
   )
-}
+})

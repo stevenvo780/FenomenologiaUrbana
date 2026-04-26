@@ -1,4 +1,4 @@
-import { useDeferredValue, useEffect, useState } from 'react'
+import { useDeferredValue, useEffect, useMemo, useState, useCallback } from 'react'
 
 import type { Payload } from '../../types'
 import { SLIDES } from '../constants'
@@ -19,31 +19,36 @@ export function useDeckController(data: Payload): DeckController {
   const [historyYearIndex, setHistoryYearIndex] = useState(0)
   const deferredScenarioId = useDeferredValue(scenarioId)
 
-  const scenario = data.scenarios.find((entry) => entry.id === deferredScenarioId) ?? data.scenarios[0]
-  const agent = data.agents.find((entry) => entry.id === agentId) ?? data.agents[0]
-  const compareAgent =
+  const scenario = useMemo(() => data.scenarios.find((entry) => entry.id === deferredScenarioId) ?? data.scenarios[0], [data.scenarios, deferredScenarioId])
+  const agent = useMemo(() => data.agents.find((entry) => entry.id === agentId) ?? data.agents[0], [data.agents, agentId])
+  const compareAgent = useMemo(() => 
     data.agents.find((entry) => entry.id === compareAgentId && entry.id !== agent.id) ??
     data.agents.find((entry) => entry.id !== agent.id) ??
-    data.agents[0]
-  const selectedNode =
+    data.agents[0], [data.agents, compareAgentId, agent.id])
+
+  const selectedNode = useMemo(() => 
     data.nodes.find((entry) => entry.id === selectedNodeId) ??
     data.nodes.find((entry) => entry.id === scenario.top_bottlenecks[0]?.node_id) ??
-    data.nodes[0]
-  const selectedProfile =
-    scenario.profile_stats.find((entry) => entry.agent_id === agent.id) ?? scenario.profile_stats[0]
-  const compareProfile =
-    scenario.profile_stats.find((entry) => entry.agent_id === compareAgent.id) ?? scenario.profile_stats[0]
-  const topRoutes = scenario.top_routes.filter((entry) => entry.agent_id === agent.id).slice(0, 4)
-  const compareTopRoutes = scenario.top_routes
+    data.nodes[0], [data.nodes, selectedNodeId, scenario.top_bottlenecks])
+
+  const selectedProfile = useMemo(() => 
+    scenario.profile_stats.find((entry) => entry.agent_id === agent.id) ?? scenario.profile_stats[0], [scenario.profile_stats, agent.id])
+  const compareProfile = useMemo(() => 
+    scenario.profile_stats.find((entry) => entry.agent_id === compareAgent.id) ?? scenario.profile_stats[0], [scenario.profile_stats, compareAgent.id])
+
+  const topRoutes = useMemo(() => scenario.top_routes.filter((entry) => entry.agent_id === agent.id).slice(0, 4), [scenario.top_routes, agent.id])
+  const compareTopRoutes = useMemo(() => scenario.top_routes
     .filter((entry) => entry.agent_id === compareAgent.id)
-    .slice(0, 4)
+    .slice(0, 4), [scenario.top_routes, compareAgent.id])
+
   const leadRoute = topRoutes[0]
   const compareLeadRoute = compareTopRoutes[0]
-  const downloadedRatio = `${data.source_summary.downloaded}/${data.source_summary.total}`
-  const profileComparison = compareProfiles(selectedProfile, compareProfile)
-  const fieldworkBadge = data.fieldwork.summary.external_dependency ? 'pending' : 'documented'
-  const activeIndex = Math.max(0, SLIDES.findIndex((slide) => slide.id === activeSlide))
-  const progress = ((activeIndex + 1) / SLIDES.length) * 100
+  const downloadedRatio = useMemo(() => `${data.source_summary.downloaded}/${data.source_summary.total}`, [data.source_summary])
+  const profileComparison = useMemo(() => compareProfiles(selectedProfile, compareProfile), [selectedProfile, compareProfile])
+  const fieldworkBadge = useMemo(() => data.fieldwork.summary.external_dependency ? 'pending' : 'documented', [data.fieldwork.summary.external_dependency])
+  
+  const activeIndex = useMemo(() => Math.max(0, SLIDES.findIndex((slide) => slide.id === activeSlide)), [activeSlide])
+  const progress = useMemo(() => ((activeIndex + 1) / SLIDES.length) * 100, [activeIndex])
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -108,21 +113,30 @@ export function useDeckController(data: Payload): DeckController {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [activeIndex, activeSlide, modal])
 
-  function goToSlide(id: SlideId) {
+  const goToSlide = useCallback((id: SlideId) => {
     setActiveSlide(id)
-  }
+  }, [])
 
-  function goToNextSlide() {
-    const next = SLIDES[Math.min(activeIndex + 1, SLIDES.length - 1)]
-    setActiveSlide(next.id)
-  }
+  const goToNextSlide = useCallback(() => {
+    setActiveSlide((curr) => {
+      const idx = SLIDES.findIndex((s) => s.id === curr)
+      return SLIDES[Math.min(idx + 1, SLIDES.length - 1)].id
+    })
+  }, [])
 
-  function goToPreviousSlide() {
-    const previous = SLIDES[Math.max(activeIndex - 1, 0)]
-    setActiveSlide(previous.id)
-  }
+  const goToPreviousSlide = useCallback(() => {
+    setActiveSlide((curr) => {
+      const idx = SLIDES.findIndex((s) => s.id === curr)
+      return SLIDES[Math.max(idx - 1, 0)].id
+    })
+  }, [])
 
-  return {
+  const toggleHeatlinePaused = useCallback(() => setIsHeatlinePaused((value) => !value), [])
+  const pauseHistory = useCallback(() => setIsHistoryPaused(true), [])
+  const openModal = useCallback((kind: ModalKind) => setModal(kind), [])
+  const closeModal = useCallback(() => setModal(null), [])
+
+  return useMemo(() => ({
     data,
     scenario,
     agent,
@@ -149,14 +163,21 @@ export function useDeckController(data: Payload): DeckController {
     setCompareAgentId,
     setSelectedNodeId,
     setHistoryYearIndex,
-    pauseHistory: () => setIsHistoryPaused(true),
-    toggleHeatlinePaused: () => setIsHeatlinePaused((value) => !value),
+    pauseHistory,
+    toggleHeatlinePaused,
     goToSlide,
     goToNextSlide,
     goToPreviousSlide,
-    openModal: setModal,
-    closeModal: () => setModal(null),
-  }
+    openModal,
+    closeModal,
+  }), [
+    data, scenario, agent, compareAgent, selectedNode, selectedProfile, 
+    compareProfile, topRoutes, compareTopRoutes, leadRoute, compareLeadRoute, 
+    downloadedRatio, profileComparison, fieldworkBadge, activeSlide, 
+    activeIndex, progress, modal, isHeatlinePaused, isHistoryPaused, 
+    historyYearIndex, pauseHistory, toggleHeatlinePaused, goToSlide, 
+    goToNextSlide, goToPreviousSlide, openModal, closeModal
+  ])
 }
 
 function getTechnicalModal(slide: SlideId): ModalKind {
