@@ -16,7 +16,9 @@ El archivo `empirical_summary.json` permite establecer un primer punto no especu
 
 Estas cifras no prueban por sí mismas una tesis fenomenológica, pero sí justifican el caso: el centro aparece como un espacio de alta funcionalidad y alta fricción percibida. En términos teóricos, esto permite discutir la diferencia entre centralidad urbana y habitabilidad. Un lugar puede ser muy usado, muy necesario y al mismo tiempo experimentado como agotador, inseguro o difícil de habitar.
 
-La criminalidad agregada de comuna 10 muestra que en 2023 la conducta dominante fue hurto a persona, con 5,888 casos registrados. Esta cifra debe manejarse con cuidado: no se traduce automáticamente en percepción individual de miedo ni permite etiquetar todo el corredor como inseguro. Sirve, más bien, para sostener que la seguridad no puede quedar fuera del modelo de experiencia urbana.
+La criminalidad agregada de comuna 10 muestra que en 2023 la conducta dominante fue hurto a persona, con 5,888 casos registrados; le siguen, a distancia considerable, hurto de moto (593), extorsión (94), hurto a residencia (86) y hurto de carro (76). Esta cifra debe manejarse con cuidado: no se traduce automáticamente en percepción individual de miedo ni permite etiquetar todo el corredor como inseguro. Sirve, más bien, para sostener que la seguridad no puede quedar fuera del modelo de experiencia urbana, y para fijar uno de los cuatro ejes (C1) sobre los que se construye la categoría de **colapso fenomenológico** introducida en el capítulo 2.
+
+La serie mensual de comuna 10 también ofrece una estructura útil para la triangulación: entre 2016 y 2019 los casos crecieron de 7,511 a 15,429, con caída en 2020 (9,306) y un nuevo ciclo entre 2022 (11,260) y 2023 (6,737). Dentro de 2023 el pico mensual disponible es mayo (811 casos) y el valle hacia el cierre de la serie pública es noviembre (213 casos). Esta variación —en órdenes de magnitud por mes— es la base sobre la que el campo intentará proyectar una distribución por franja horaria, dado que MEData no publica la hora del hecho. La proyección horaria es un supuesto documentado, no una medición; cualquier afirmación de colapso en un horario específico exige que las otras tres condiciones (C2 encuesta, C3 entrevista, C4 saturación) lo respalden de manera independiente.
 
 Los indicadores barriales de La Candelaria también muestran tensiones estructurales: densidad empresarial alta, concentración de suelo múltiple y bajo espacio público efectivo por habitante. De nuevo, la lectura debe ser prudente: estos datos son de escala barrial y no reemplazan mediciones finas en los nodos del corredor.
 
@@ -87,32 +89,65 @@ Los reportes `hpc_calibration_report.json` y `hpc_multipoint_calibration.json` m
 
 Por tanto, estos reportes deben usarse como evidencia de que el sistema puede optimizar parámetros, no como prueba de que la ciudad real fue calibrada. El paso crítico será contrastar esos parámetros con datos de campo independientes.
 
-## 3.12. Validación de campo pendiente
+## 3.12. Estado de campo: campo realizado, triangulación en curso
 
-La calibración de campo (`field_calibration_delta.json`) aparece en estado `pending_no_capture`. Este resultado no debe dramatizarse ni minimizarse. Significa que el pipeline está preparado para recibir observaciones situadas, pero aún no dispone de una jornada suficiente para recalibrar nodos, aristas y escenarios.
+La calibración de campo (`field_calibration_delta.json`) salió del estado `pending_no_capture` con la jornada efectivamente ejecutada antes del 6 de mayo de 2026. El estado actual del archivo, sin embargo, no es aún `field_calibrated` sino **`field_ingest_in_progress`**: los conteos, fotos y notas aguardan ingesta a `investigacion/data/interim/YYYY_MM_DD/`; las entrevistas semiestructuradas se encuentran en transcripción a cargo de un colaborador externo bajo acuerdo de confidencialidad; los videos POV y de saturación están en cola para procesamiento en torre HPC con GPU del autor.
 
-La consecuencia académica es clara: la tesis puede defender una fase de diseño, baseline y simulación exploratoria; no puede defender todavía una validación empírica completa. Para avanzar, deben capturarse como mínimo:
+Esta distinción importa para la lectura del capítulo: lo que sigue **no son resultados de campo**. Son los andamiajes de las cuatro líneas analíticas que la tesis se propone reportar cuando termine la triangulación, junto con las salvaguardas que cada una requerirá. El compromiso académico es no escribir nada en estas subsecciones que no esté respaldado por la matriz `collapse_matrix.json` cuando exista.
 
-- conteos peatonales por nodo cada 15 minutos;
-- flujos direccionales por subtramo;
-- tiempos de permanencia;
-- ruido puntual;
-- iluminación nocturna;
-- seguridad percibida;
-- obstáculos temporales y puntos de decisión.
+### 3.12.1. C1 — Criminalidad como eje temporal
+
+La línea de criminalidad ya está cargada desde MEData y discutida en 3.2 a escala de comuna 10 y mes. Lo que falta es proyectar esa serie hacia la malla nodo × franja del modelo y declarar el supuesto distribucional que se use (uniforme por franja, ponderado por horario público típico de hurto, o derivado de literatura). Cualquiera de estas opciones se asume como hipótesis, no como medición horaria. La salida final entregará, por cada celda, si supera o no el umbral de su percentil 75.
+
+**Estado:** datos disponibles, proyección horaria pendiente.
+
+### 3.12.2. C2 — Seguridad percibida en encuesta breve
+
+La encuesta breve recogida en campo (escala 1–5 más códigos de incomodidad) alimentará la columna `security_score` de `field_counts_*.csv` por nodo y franja. El reporte debe incluir tamaño muestral por celda, distribución de respuestas y advertencia explícita sobre la imposibilidad de leer una franja-nodo con menos de un mínimo de respuestas (sugerido: 10).
+
+**Estado:** datos en cuaderno y formularios; ingesta a CSV pendiente.
+
+### 3.12.3. C3 — Habitabilidad declarada en entrevistas
+
+Las entrevistas semiestructuradas formulan dos preguntas eje: cuándo el corredor se vuelve **difícil de vivir** y cuándo es **deseable** estar en él. Las transcripciones se codificarán con el esquema `HABITABLE / DESEABLE / EVITABLE / NO_DESEABLE / DIFICIL_DE_VIVIR / AMBIVALENTE` y se ubicarán por nodo y franja cuando la persona entrevistada lo haya nombrado explícitamente. El reporte distinguirá entre ubicaciones nombradas por las personas y atribuciones del investigador, para no forzar la espacialización de testimonios genéricos.
+
+**Estado:** transcripciones en proceso (colaborador externo).
+
+### 3.12.4. C4 — Saturación material en video
+
+Los videos POV y los recorridos por sectores se procesarán en torre HPC con GPU. El producto esperado es `investigacion/data/processed/video_saturation_*.json` con métricas de densidad por frame, conteo automático y un indicador agregado de saturación por celda. Esta línea reemplazará, allí donde el video lo permita, el `crowding` proxy del modelo. La cobertura no será simétrica: habrá celdas con video y celdas sin él; la matriz de colapso lo reportará explícitamente.
+
+**Estado:** videos crudos archivados; pipeline GPU en preparación.
+
+### 3.12.5. Matriz de colapso fenomenológico
+
+La síntesis de C1–C4 se reportará en `collapse_matrix.json`, con 36 celdas (9 nodos × 4 franjas) y, por celda, los siguientes campos: el valor o estado de cada condición, el conteo de condiciones cumplidas, la decisión final (`flujo_ordinario`, `friccion_acumulada`, `colapso_fenomenologico`) y la cobertura de evidencia (cuántas fuentes aportaron datos a esa celda). Las celdas con cobertura insuficiente se reportarán como `inconcluyente`, no como `flujo_ordinario`.
+
+Esta matriz es el resultado cuantitativo central de la fase empírica. Si al construirla se encuentra que ninguna celda alcanza la convergencia mínima de tres condiciones, el capítulo deberá reportarlo así; el rigor exige aceptar esa posibilidad y no forzar la categoría.
+
+**Estado:** no construida.
+
+### 3.12.6. Lectura cualitativa complementaria
+
+Más allá de la matriz, el conjunto de notas fenomenológicas, fotos y recorridos POV se usará para una lectura cualitativa de las celdas en colapso o fricción acumulada. El propósito de esta lectura no es ilustrar la matriz, sino exponer lo que la matriz no captura: trayectorias acortadas, pausas evitadas, miradas desviadas, atmósferas y discursos. Esta capa se reporta sin pretensión de generalización.
+
+**Estado:** insumos en archivo; redacción tras matriz.
 
 ## 3.13. Resultados que sí pueden sostenerse y resultados que no
 
 | Afirmación | Estado | Justificación |
 | --- | --- | --- |
 | El centro tiene percepción ambivalente | Sostenible | EPC 2024 integrada en `empirical_summary.json` |
+| La criminalidad de comuna 10 tiene estructura mensual marcada | Sostenible | serie MEData 2016–2023 |
 | El pipeline integra fuentes públicas trazables | Sostenible | `source_status.json` documenta fuentes y fallas |
 | El modelo produce escenarios de presión y fricción | Sostenible | salidas M-MASS y scripts del repositorio |
 | La simulación muestra estabilidad numérica | Sostenible bajo supuestos | Monte Carlo con baja incertidumbre relativa |
 | El corredor real colapsa a 500,000 agentes | No sostenible | es umbral interno de escenario simulado |
-| La experiencia real está calibrada | No sostenible todavía | `pending_no_capture` |
+| El campo se realizó con cobertura mínima | Sostenible | jornada ejecutada antes del 2026-05-06 |
+| La experiencia real está calibrada | Pendiente de matriz | `field_ingest_in_progress`; falta `collapse_matrix.json` |
+| Existen franjas-nodo en colapso fenomenológico | Pendiente de matriz | requiere convergencia de C1–C4 verificada |
 | Los perfiles simulados equivalen a sujetos reales | No sostenible | son tipos analíticos simplificados |
-| La desigualdad de ruta está demostrada empíricamente | Parcial | métrica simulada, falta campo |
+| La desigualdad de ruta está demostrada empíricamente | Parcial | métrica simulada, falta cruce con campo |
 
 ## 3.14. Discusión filosófica de los resultados
 
@@ -141,6 +176,6 @@ graph LR
 
 ## 3.16. Balance del capítulo
 
-El capítulo muestra avances reales: datos públicos integrados, pipeline trazable, modelo de caso, simulaciones, incertidumbre, estrés, ciclo horario y desigualdad relativa entre perfiles. También muestra límites importantes: falta campo, falta sensibilidad sistemática, falta validación externa y algunas salidas requieren revisión crítica.
+El capítulo muestra avances reales: datos públicos integrados, pipeline trazable, modelo de caso, simulaciones, incertidumbre, estrés, ciclo horario, desigualdad relativa entre perfiles y un campo ya realizado con un protocolo multimodal (criminalidad, encuesta, entrevista, video). También muestra límites importantes: la triangulación de campo aún no se ha sintetizado en `collapse_matrix.json`, falta sensibilidad sistemática, falta validación externa y algunas salidas requieren revisión crítica.
 
-La tesis gana fuerza cuando evita declarar verdades cerradas y, en cambio, muestra con precisión qué patrones emergen del modelo, qué supuestos los producen y qué observaciones faltan para confirmarlos, corregirlos o refutarlos.
+La tesis gana fuerza cuando evita declarar verdades cerradas y, en cambio, muestra con precisión qué patrones emergen del modelo, qué supuestos los producen, qué condiciones empíricas se reportarán franja por franja y qué observaciones faltan por procesar para confirmarlos, corregirlos o refutarlos. La defensa académica del concepto de colapso fenomenológico depende, sin atajo, de que esa matriz exista y se sostenga; mientras tanto, el concepto queda definido y operacionalizado, pero sin reporte aún.

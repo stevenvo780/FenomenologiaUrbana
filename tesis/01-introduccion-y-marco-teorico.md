@@ -12,14 +12,15 @@ Esta tesis se ubica en esa tensión. Propone un marco de fenomenología urbana a
 
 La pregunta general de investigación es:
 
-**¿Cómo puede analizarse la habitabilidad fenomenológica del corredor Junín-San Antonio mediante un modelo computacional crítico que integre fricción ambiental, presión peatonal, percepción de riesgo, accesibilidad y restricciones de trayectoria, sin reducir la experiencia urbana a una métrica puramente funcional?**
+**¿Cómo puede analizarse la habitabilidad fenomenológica del corredor Junín-San Antonio mediante un modelo computacional crítico que integre fricción ambiental, presión peatonal, percepción de riesgo, accesibilidad y restricciones de trayectoria, sin reducir la experiencia urbana a una métrica puramente funcional, y bajo qué condiciones esa habitabilidad colapsa localmente en franjas horarias específicas?**
 
-De esta pregunta se derivan cuatro preguntas específicas:
+De esta pregunta se derivan cinco preguntas específicas:
 
 1. **Pregunta teórica:** ¿qué conceptos permiten articular fenomenología, materialidad urbana y modelación computacional sin convertir la simulación en una explicación total de la ciudad?
 2. **Pregunta metodológica:** ¿qué variables observables o aproximables pueden representar, de manera limitada pero trazable, dimensiones como fricción ambiental, riesgo percibido, densidad, visibilidad, pausa y libertad de ruta?
 3. **Pregunta analítica:** ¿qué patrones emergen en las simulaciones cuando se modifican densidad, escenarios horarios, perfiles de agentes y costos ambientales?
 4. **Pregunta de validación:** ¿qué datos de campo son indispensables para pasar de un modelo `baseline_proxy` a una versión calibrada con observación situada?
+5. **Pregunta sobre el colapso:** ¿bajo qué combinación de criminalidad registrada, seguridad percibida, habitabilidad declarada y saturación material se puede sostener, en una franja horaria y un nodo concretos, una situación de **colapso fenomenológico** —entendida como suspensión local de la habitabilidad, no como inhabitabilidad absoluta?
 
 Estas preguntas evitan una promesa excesiva. La tesis no pretende capturar “la esencia” del centro de Medellín; busca construir un aparato crítico que haga discutibles sus condiciones de experiencia.
 
@@ -42,13 +43,14 @@ Construir y evaluar un marco de análisis fenomenológico-computacional para el 
 
 La hipótesis central se formula en términos prudentes:
 
-**La eficiencia funcional de un corredor urbano no garantiza por sí misma su habitabilidad fenomenológica; bajo determinadas combinaciones de densidad, ruido, riesgo percibido y presión comercial, la experiencia de tránsito puede volverse más restringida aunque el sistema siga moviendo personas.**
+**La eficiencia funcional de un corredor urbano no garantiza por sí misma su habitabilidad fenomenológica; bajo determinadas combinaciones de densidad, ruido, riesgo percibido y presión comercial, la experiencia de tránsito puede volverse más restringida aunque el sistema siga moviendo personas. En franjas horarias específicas, esa restricción puede intensificarse hasta producir lo que esta tesis llamará *colapso fenomenológico*: una suspensión local de la habitabilidad detectable por la convergencia de criminalidad registrada, seguridad percibida deprimida, habitabilidad declarada negativa y saturación material observable.**
 
 Esta hipótesis se descompone en proposiciones evaluables:
 
 - Si los costos de riesgo, ruido y congestión aumentan, las trayectorias simuladas tenderán a concentrarse en menos alternativas.
 - Si los agentes tienen perfiles diferenciados —transeúnte rápido, comprador, turista, vendedor o persona con movilidad reducida—, la restricción de ruta no será homogénea.
 - Si los campos ambientales se tratan como fricciones y no como fondo neutral, la interpretación de la movilidad cambia: deja de ser solo tiempo de desplazamiento y pasa a incluir exposición corporal.
+- Si la criminalidad registrada por mes en comuna 10, la seguridad percibida en encuesta situada, la habitabilidad declarada en entrevistas y la saturación material en videos POV convergen en una misma franja-nodo, esa franja-nodo puede reportarse como colapso fenomenológico; si solo una o dos condiciones se cumplen, la lectura debe permanecer como fricción acumulada.
 - Si no se incorporan datos de campo, el modelo debe permanecer como exploratorio y no como diagnóstico concluyente.
 
 ## 1.5. Estado del arte mínimo y ubicación del aporte
@@ -77,6 +79,8 @@ Para evitar que la noción de atmósfera quede en una impresión vaga, se adopta
 
 La tesis no afirma que estos planos existan separados en la realidad. La división es analítica: permite ordenar variables y reconocer que la experiencia urbana emerge de sus relaciones.
 
+El colapso fenomenológico, en este esquema, no es un cuarto plano: es un **acoplamiento crítico** de los tres planos en una franja-evento. Sucede cuando la materialidad física se vuelve hostil ($M_1$ saturada), la materialidad fenomenológica se contrae ($M_2$ leída como riesgo y evitación) y la materialidad normativa deja de compensarlo ($M_3$ no orienta, no vigila o vigila demasiado). Por eso la tesis lo trata como una conjunción local y temporal, no como una propiedad del corredor en general; y por eso su detección exige que las cuatro fuentes empíricas —criminalidad, encuesta, entrevista y video— se lean en cruzamiento, no por separado.
+
 ## 1.8. Alcance, delimitaciones y riesgos de sobreinterpretación
 
 El caso se delimita al corredor San Antonio–Junín–Parque Berrío–Plaza Botero y a sus nodos operativos definidos en el modelo. No se pretende representar toda Medellín ni toda la comuna 10. Tampoco se pretende que las simulaciones actuales describan trayectorias reales persona por persona. El modelo permite explorar escenarios con datos públicos y supuestos explícitos; la validación fina queda pendiente.
@@ -87,6 +91,7 @@ Los principales riesgos de sobreinterpretación son:
 2. **Confundir proxies con observaciones.** La percepción de seguridad, la permanencia o el ruido puntual requieren campo.
 3. **Reificar poblaciones vulnerables.** Categorías como “habitantes de calle”, informalidad o inseguridad deben tratarse con cuidado para no convertir condiciones sociales complejas en etiquetas estigmatizantes.
 4. **Sobredimensionar la técnica.** La aceleración por GPU y las mallas de alta resolución son medios, no argumentos.
+5. **Generalizar el colapso.** Una franja-nodo en colapso no autoriza afirmar que el corredor entero sea inhabitable, ni que esa misma franja-nodo lo sea siempre. El colapso es una observación situada, no una propiedad estructural permanente.
 
 Esta autocrítica no debilita el proyecto; define sus condiciones de evaluación.
 

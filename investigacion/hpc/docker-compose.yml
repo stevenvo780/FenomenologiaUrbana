@@ -1,0 +1,81 @@
+# Despliegue dual-GPU para procesamiento de videos POV / saturación.
+#
+# Servicio 5070ti: GPU 0 (RTX 5070 Ti, Blackwell). Asignar lote "principal".
+# Servicio 2060:   GPU 1 (RTX 2060, Turing). Asignar lote "secundario".
+#
+# Lanzamiento desde investigacion/hpc/ en la torre:
+#   docker compose --profile build build
+#   docker compose up -d
+#   docker compose logs -f
+#
+# Los videos crudos deben colocarse antes en ../data/raw/video/
+# La salida se escribe a ../data/processed/video_saturation_*.json
+#
+# IMPORTANTE: ajustar las variables GPU_INDEX si el orden lo decide nvidia-smi.
+
+services:
+  proc-5070ti:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenomurb/video-proc:cuda128
+    container_name: fenomurb_proc_5070ti
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - WORKER_NAME=worker_5070ti
+      - WORKER_LOT=primary
+      - YOLO_MODEL=yolo11x.pt
+      - CONF_THRESH=0.35
+    volumes:
+      - ../data/raw/video:/data/raw/video:ro
+      - ../data/processed:/data/processed
+      - ./jobs:/jobs
+      - ./logs:/logs
+    command:
+      - --jobs-dir=/jobs
+      - --raw-dir=/data/raw/video
+      - --out-dir=/data/processed
+      - --worker-name=worker_5070ti
+      - --lot=primary
+    restart: unless-stopped
+
+  proc-2060:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenomurb/video-proc:cuda128
+    container_name: fenomurb_proc_2060
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["1"]
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - WORKER_NAME=worker_2060
+      - WORKER_LOT=secondary
+      - YOLO_MODEL=yolo11s.pt
+      - CONF_THRESH=0.35
+    volumes:
+      - ../data/raw/video:/data/raw/video:ro
+      - ../data/processed:/data/processed
+      - ./jobs:/jobs
+      - ./logs:/logs
+    command:
+      - --jobs-dir=/jobs
+      - --raw-dir=/data/raw/video
+      - --out-dir=/data/processed
+      - --worker-name=worker_2060
+      - --lot=secondary
+    restart: unless-stopped

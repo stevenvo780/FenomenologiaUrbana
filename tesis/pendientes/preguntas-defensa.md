@@ -4,7 +4,7 @@ Fecha: 25 de abril de 2026.
 
 ## 1. ¿La tesis ya está validada en campo?
 
-No. La tesis está en fase `baseline_proxy` y el archivo `field_calibration_delta.json` mantiene `pending_no_capture`. La contribución actual es un marco y pipeline exploratorio con datos públicos y simulación, no una validación empírica completa.
+El campo se realizó antes del 6 de mayo de 2026. La tesis está en fase **`field_ingest_in_progress`**: hay conteos, encuestas, entrevistas, fotos, recorridos POV y videos de saturación, pero la triangulación todavía no produce `collapse_matrix.json`. La contribución actual son: un marco y pipeline exploratorio, un baseline con datos públicos y simulación, y un campo multimodal capturado bajo protocolo. La validación empírica completa depende de que la matriz quede construida y auditada.
 
 ## 2. ¿Por qué usar simulación si falta campo?
 
@@ -44,4 +44,13 @@ La estabilidad interna del pipeline y la capacidad de comparar escenarios bajo s
 - que 500k agentes es capacidad real;
 - que los perfiles simulados son sujetos reales;
 - que ruido/PM2.5 simulados son mediciones normativas;
-- que la tesis agotó literatura empírica reciente.
+- que la tesis agotó literatura empírica reciente;
+- que existen franjas-nodo en colapso fenomenológico antes de tener `collapse_matrix.json` construida.
+
+## 11. ¿Qué es exactamente el colapso fenomenológico y cómo se mide?
+
+Es una franja-evento (nodo × hora) donde convergen al menos tres de cuatro condiciones independientes: criminalidad MEData por encima del percentil 75 mensual de su serie, seguridad percibida ≤ 2/5 en encuesta breve situada, codificación dominante de habitabilidad declarada negativa en entrevistas (`EVITABLE` / `NO_DESEABLE` / `DIFICIL_DE_VIVIR`) y saturación material por encima del percentil 75 en videos POV procesados en GPU. La regla 3-de-4 es deliberadamente exigente; impide que un dato suelto se vuelva diagnóstico. La definición completa vive en `tesis/pendientes/colapso-fenomenologico.md`.
+
+## 12. ¿Qué pasa si la matriz de colapso sale vacía?
+
+Si ninguna celda alcanza la convergencia mínima, la tesis lo reporta así. La categoría queda definida y operacionalizada pero sin instancias confirmadas; eso fortalece el rigor metodológico aunque debilite la afirmación sustantiva. El colapso fenomenológico es una hipótesis falsable y el campo puede falsarla.
