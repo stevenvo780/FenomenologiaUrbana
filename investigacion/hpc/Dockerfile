@@ -39,6 +39,8 @@ RUN pip install -r /tmp/requirements.txt
 
 COPY process_video.py /workspace/process_video.py
 COPY process_photos.py /workspace/process_photos.py
+COPY transcribe_audio.py /workspace/transcribe_audio.py
+COPY build_collapse_matrix.py /workspace/build_collapse_matrix.py
 
 ENTRYPOINT ["/usr/bin/tini", "--", "python"]
 CMD ["/workspace/process_video.py"]

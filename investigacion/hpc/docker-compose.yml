@@ -103,3 +103,27 @@ services:
       - --out-dir=/data/processed
       - --worker-name=worker_photos
     restart: unless-stopped
+
+  proc-transcribe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenomurb/proc:cuda128
+    container_name: fenomurb_proc_transcribe
+    profiles: ["transcribe"]
+    network_mode: host
+    environment:
+      - WHISPER_URL=http://localhost:8007
+      - WHISPER_LANG=es
+      - WHISPER_TASK=transcribe
+    volumes:
+      - ../data/raw/video:/data/raw/video:ro
+      - ../data/processed:/data/processed
+      - ./jobs:/jobs
+      - ./logs:/logs
+    command:
+      - /workspace/transcribe_audio.py
+      - --jobs-dir=/jobs
+      - --raw-dir=/data/raw/video
+      - --out-dir=/data/processed
+    restart: unless-stopped
