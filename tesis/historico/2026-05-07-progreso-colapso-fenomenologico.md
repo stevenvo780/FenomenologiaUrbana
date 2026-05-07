@@ -49,19 +49,26 @@ NODE__WINDOW__YYYY-MM-DD__libre.ext
 - `WINDOW` ∈ {`peak_am`, `midday`, `peak_pm`, `night`}
 - Alternativa: sidecar `<video>.meta.json`.
 
-## 4. Estado de la torre HPC
+## 4. Estado de la torre HPC (verificado 2026-05-07 17:35)
 
-**Bloqueado por routing, NO por auth** — ningún intento de password gastado, fail2ban intacto.
+Acceso SSH funcional con clave `id_ed25519` (stev@fedora) ya autorizada en la torre. **Reglas operativas:** no usar sshpass; no iterar credenciales (fail2ban activo); no ejecutar destructivos sin confirmación.
 
-- Cliente del autor solo tiene NetBird (`wt0`, `100.98.0.0/16`); las dos LANs (`192.168.1.0/24`, `192.168.80.0/24`) son inalcanzables desde ahí.
-- `100.98.81.177` → "no route to host" = peer NetBird de la torre offline.
-- Acción pendiente del usuario: prender la torre, verificar `sudo systemctl status netbird` y `netbird status`, confirmar que esté `Connected`.
-- Cuando esté arriba, próxima sesión:
-  1. Reconocimiento en una sola conexión (driver, GPUs, docker, NVIDIA Container Toolkit, espacio).
-  2. `rsync -avz investigacion/hpc/ stev@100.98.81.177:~/FenomenologiaUrbana/investigacion/hpc/`.
-  3. `rsync` de `investigacion/data/raw/video/` con los videos crudos.
-  4. `docker compose build && docker compose up -d`.
-  5. Recoger `video_saturation_*.json` cuando terminen.
+**Inventario `ubuntu-raid` (Ubuntu 25.10, kernel 6.17.0-23-generic):**
+- GPU 0: **RTX 5070 Ti** 16 GB · driver 580.142 · sm_120 (Blackwell ✓)
+- GPU 1: **RTX 2060** 6 GB · sm_75 (Turing ✓)
+- Docker 29.1.3 · runtime `nvidia` como default · NVIDIA Container Toolkit 1.19.0
+- CDI auto-generado en `/var/run/cdi/nvidia.yaml`
+- 32 cores · 123 GiB RAM · `/` 189 GiB libres · `/home` 388 GiB libres
+- GitHub SSH funcional (autenticada como `stevenvo780`)
+
+**Bug encontrado y resuelto:** `docker run --gpus all` y `runtime: nvidia` legacy fallan con `nvidia-container-cli: failed to add device rules: load program: invalid argument` (bug eBPF device-filter en kernel 6.17 + docker 29). **Solución aplicada:** el `docker-compose.yml` migrado a CDI (`devices: ["nvidia.com/gpu=0"]` y `["nvidia.com/gpu=1"]`). Aislamiento per-GPU verificado: cada contenedor ve su GPU como índice 0.
+
+**Próximos pasos (orden):**
+1. Clonar repo en la torre: `git clone git@github.com:stevenvo780/FenomenologiaUrbana.git ~/FenomenologiaUrbana`.
+2. Subir videos crudos: `rsync -avz <local_videos>/ stev@100.98.81.177:~/FenomenologiaUrbana/investigacion/data/raw/video/`.
+3. `cd ~/FenomenologiaUrbana/investigacion/hpc && docker compose build && docker compose up -d`.
+4. Monitorear con `docker compose logs -f`.
+5. Recoger `video_saturation_*.json` desde `investigacion/data/processed/`.
 
 ## 5. Memoria del agente
 

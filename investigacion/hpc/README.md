@@ -4,19 +4,27 @@ Pipeline para procesar los videos POV / saturación de campo en la torre HPC del
 
 ## 1. Requisitos en la torre
 
-- Driver NVIDIA reciente con soporte Blackwell (≥ 570.x).
-- Docker Engine (≥ 24).
-- NVIDIA Container Toolkit (`nvidia-ctk` configurado).
-- Python solo si se quiere correr fuera de Docker; el flujo recomendado es Docker.
+Estado verificado en `ubuntu-raid` (2026-05-07):
 
-Verificación rápida (correr una vez en la torre, **no aquí**):
+- Driver NVIDIA **580.142** (soporte Blackwell ✓).
+- Docker Engine **29.1.3**, runtime `nvidia` como default.
+- NVIDIA Container Toolkit **1.19.0**.
+- CDI specs auto-generadas en `/var/run/cdi/nvidia.yaml`.
+- GPU 0 = RTX 5070 Ti (sm_120), GPU 1 = RTX 2060 (sm_75).
+
+Verificación rápida (correr en la torre):
 
 ```bash
 nvidia-smi --query-gpu=index,name,driver_version,compute_cap --format=csv
-docker info | grep -E 'Runtimes|Default Runtime'
-docker run --rm --gpus all nvcr.io/nvidia/pytorch:25.02-py3 \
-  python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.cuda.device_count())"
+nvidia-ctk cdi list
+docker run --rm --device=nvidia.com/gpu=all nvidia/cuda:12.6.0-base-ubuntu22.04 nvidia-smi -L
 ```
+
+⚠️ **No usar `--gpus all`** en kernel 6.17 + docker 29: tropieza con un bug de eBPF
+device-filter en `nvidia-container-cli` (`failed to add device rules: load program:
+invalid argument`). El compose ya usa CDI (`devices: ["nvidia.com/gpu=N"]`) para
+evitar ese path. Aislamiento per-GPU verificado: cada contenedor ve su GPU como
+índice 0 internamente.
 
 Si la torre no tiene `nvidia-container-toolkit`:
 
@@ -111,5 +119,8 @@ La primera ejecución descargará los pesos automáticamente desde Ultralytics. 
 
 ## 8. Estado actual
 
-- 2026-05-07: artefactos creados localmente; pendiente que la torre vuelva a estar conectada en NetBird (`100.98.81.177` actualmente con "no route to host" desde el cliente del autor).
-- Próximo paso: confirmar conectividad → subir con `rsync` → `docker compose up`.
+- 2026-05-07 — torre `ubuntu-raid` confirmada vía NetBird (`100.98.81.177`, modo Relayed ~200ms RTT).
+- Inventario validado: 2× GPUs detectadas, driver 580.142, Docker 29.1.3, NVIDIA Container Toolkit 1.19.0, default runtime `nvidia`, CDI specs publicadas. CPU 32 cores, RAM 123 GiB, `/home` con 388 GiB libres.
+- GitHub SSH funciona desde la torre (autenticada como `stevenvo780`); el repo se puede clonar con `git clone git@github.com:stevenvo780/FenomenologiaUrbana.git`.
+- Bug detectado: `--gpus all` falla con eBPF device-filter en este kernel; resuelto migrando el compose a CDI.
+- Próximo paso: clonar repo en la torre → subir videos crudos a `investigacion/data/raw/video/` → `docker compose build` → `docker compose up -d`.
