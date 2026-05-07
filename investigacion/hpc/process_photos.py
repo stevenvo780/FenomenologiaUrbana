@@ -27,6 +27,21 @@ from ultralytics import YOLO
 
 PHOTO_EXTS = (".jpg", ".jpeg", ".png", ".webp", ".heic")
 
+
+class NpEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, np.integer):
+            return int(o)
+        if isinstance(o, np.floating):
+            return float(o)
+        if isinstance(o, np.ndarray):
+            return o.tolist()
+        return super().default(o)
+
+
+def dumps(obj) -> str:
+    return json.dumps(obj, ensure_ascii=False, indent=2, cls=NpEncoder)
+
 TRACK_CLASSES = {
     0: "person",
     1: "bicycle",
@@ -149,7 +164,8 @@ def claim_job(jobs_dir: Path, photo: Path, worker: str) -> bool:
     jobs_dir.mkdir(parents=True, exist_ok=True)
     lock = jobs_dir / f"{photo.name}.lock"
     done = jobs_dir / f"{photo.name}.done"
-    if done.exists():
+    err = jobs_dir / f"{photo.name}.error"
+    if done.exists() or err.exists():
         return False
     try:
         fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
@@ -163,7 +179,7 @@ def claim_job(jobs_dir: Path, photo: Path, worker: str) -> bool:
 def mark_done(jobs_dir: Path, photo: Path, summary: PhotoSummary) -> None:
     (jobs_dir / f"{photo.name}.lock").unlink(missing_ok=True)
     (jobs_dir / f"{photo.name}.done").write_text(
-        json.dumps({"summary": asdict(summary)}, ensure_ascii=False, indent=2),
+        dumps({"summary": asdict(summary)}),
         encoding="utf-8",
     )
 
@@ -249,7 +265,7 @@ def process_one(
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"photo_summary_{photo.stem}.json"
     out_path.write_text(
-        json.dumps({"summary": asdict(summary)}, ensure_ascii=False, indent=2),
+        dumps({"summary": asdict(summary)}),
         encoding="utf-8",
     )
     return summary

@@ -34,6 +34,26 @@ from tqdm import tqdm
 from ultralytics import YOLO
 
 VIDEO_EXTS = (".mp4", ".mov", ".mkv", ".avi", ".m4v")
+MIN_FRAMES = 30
+
+
+class SkipVideo(Exception):
+    pass
+
+
+class NpEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, np.integer):
+            return int(o)
+        if isinstance(o, np.floating):
+            return float(o)
+        if isinstance(o, np.ndarray):
+            return o.tolist()
+        return super().default(o)
+
+
+def dumps(obj) -> str:
+    return json.dumps(obj, ensure_ascii=False, indent=2, cls=NpEncoder)
 
 # Subset relevante de clases COCO para análisis urbano del corredor.
 TRACK_CLASSES = {
@@ -143,7 +163,8 @@ def claim_job(jobs_dir: Path, video: Path, worker: str) -> bool:
     jobs_dir.mkdir(parents=True, exist_ok=True)
     lock = jobs_dir / f"{video.name}.lock"
     done = jobs_dir / f"{video.name}.done"
-    if done.exists():
+    err = jobs_dir / f"{video.name}.error"
+    if done.exists() or err.exists():
         return False
     try:
         fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
@@ -157,7 +178,15 @@ def claim_job(jobs_dir: Path, video: Path, worker: str) -> bool:
 def mark_done(jobs_dir: Path, video: Path, summary: VideoSummary) -> None:
     (jobs_dir / f"{video.name}.lock").unlink(missing_ok=True)
     (jobs_dir / f"{video.name}.done").write_text(
-        json.dumps({"summary": asdict(summary)}, ensure_ascii=False, indent=2),
+        dumps({"summary": asdict(summary)}),
+        encoding="utf-8",
+    )
+
+
+def mark_skipped(jobs_dir: Path, video: Path, reason: str) -> None:
+    (jobs_dir / f"{video.name}.lock").unlink(missing_ok=True)
+    (jobs_dir / f"{video.name}.done").write_text(
+        dumps({"skipped": True, "reason": reason}),
         encoding="utf-8",
     )
 
@@ -236,6 +265,9 @@ def process_one(
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) or 0)
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) or 0)
     duration = (total / fps) if fps else 0.0
+    if total < MIN_FRAMES:
+        cap.release()
+        raise SkipVideo(f"video con {total} frames (< {MIN_FRAMES}), se omite")
 
     frames_stats: list[FrameStat] = []
     track_history: dict[int, dict] = {}
@@ -409,11 +441,11 @@ def process_one(
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"video_saturation_{video.stem}.json"
     out_path.write_text(
-        json.dumps({
+        dumps({
             "summary": asdict(summary),
             "frames": [asdict(s) for s in frames_stats],
             "tracks": [asdict(t) for t in tracks],
-        }, ensure_ascii=False, indent=2),
+        }),
         encoding="utf-8",
     )
     return summary
@@ -464,10 +496,15 @@ def main() -> int:
                     f"t={summary.duration_processing_s:.1f}s",
                     flush=True,
                 )
+            except SkipVideo as exc:
+                print(f"[{args.worker_name}] SKIP {video.name}: {exc}", flush=True)
+                mark_skipped(args.jobs_dir, video, str(exc))
             except Exception as exc:
+                import traceback
+                tb = traceback.format_exc()
                 print(f"[{args.worker_name}] FAIL {video.name}: {exc}", file=sys.stderr, flush=True)
                 (args.jobs_dir / f"{video.name}.lock").unlink(missing_ok=True)
-                (args.jobs_dir / f"{video.name}.error").write_text(str(exc), encoding="utf-8")
+                (args.jobs_dir / f"{video.name}.error").write_text(f"{exc}\n\n{tb}", encoding="utf-8")
         if not any_claimed:
             time.sleep(args.poll_seconds)
 
