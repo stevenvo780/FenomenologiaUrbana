@@ -111,8 +111,10 @@ services:
     image: fenomurb/proc:cuda128
     container_name: fenomurb_proc_transcribe
     profiles: ["transcribe"]
+    runtime: runc
     network_mode: host
     environment:
+      - NVIDIA_VISIBLE_DEVICES=void
       - WHISPER_URL=http://localhost:8007
       - WHISPER_LANG=es
       - WHISPER_TASK=transcribe
