@@ -176,12 +176,27 @@ El servicio Whisper ASR local produjo transcripciones para los videos con audio 
 
 Aunque hay datos automáticos sólidos por foto y por video, **no se puede declarar todavía una sola celda en colapso fenomenológico**. Las razones son explícitas:
 
-1. **C1 sin proyección horaria.** La serie mensual de criminalidad en comuna 10 está cargada (capítulo 3.2) pero falta documentar el supuesto distribucional que la lleve a franjas horarias. La matriz lo reporta como `false` por defecto hasta que ese supuesto exista, lo cual hace efectivamente imposible alcanzar 3-de-4 sin C1.
-2. **C3 sin codificación.** Las entrevistas no han llegado codificadas; sin esquema `HABITABLE/EVITABLE/...` aplicado, C3 también es `false`.
-3. **C2 sin ingesta.** Los `field_counts_*.csv` con `security_score` por nodo y franja todavía no están en `data/interim/YYYY_MM_DD/`.
-4. **Cobertura desigual de C4.** Solo seis videos procesados, con asignación de nodo pendiente para la mayoría.
+1. **C3 sin codificación.** Las entrevistas no han llegado codificadas; sin esquema `HABITABLE/EVITABLE/...` aplicado, C3 es `false` para todas las celdas.
+2. **C2 sin ingesta.** Los `field_counts_*.csv` con `security_score` por nodo y franja todavía no están en `data/interim/YYYY_MM_DD/`.
+3. **Cobertura asimétrica.** Solo nueve videos procesados con asignación de nodo (seis con confianza `medium` o `high`), y solo cuatro nodos del corredor cubiertos por C4: `san_antonio_metro`, `junin_paseo`, `parque_berrio` y, por proximidad, `carabobo_cultural`.
 
-Aplicar la regla 3-de-4 a este estado parcial daría falsos negativos en todas las celdas. Por eso el reporte se limita a describir el corpus procesado y deja la regla suspendida hasta que las cuatro condiciones tengan al menos una pasada de ingesta.
+Aplicar la regla 3-de-4 a este estado parcial daría falsos negativos en todas las celdas. Por eso el reporte se limita a describir el corpus procesado y deja la regla suspendida en sus celdas en `inconcluyente` hasta que las cuatro condiciones tengan al menos una pasada de ingesta.
+
+### Primera matriz de colapso construida
+
+A pesar de los faltantes, la matriz `data/processed/collapse_matrix.json` ya se computa con C1 (proyección horaria documentada) y C4 (saturación de video por nodo). El reparto inicial de las 36 celdas es:
+
+| Decisión | Celdas |
+| --- | ---: |
+| `inconcluyente` | 33 |
+| `flujo_ordinario` | 2 |
+| `friccion_acumulada` | **1** |
+
+La única celda con fricción acumulada en esta primera pasada es **`parque_berrio | midday`**, que cumple C4 (`saturation_p75` por encima del p75 global) sin convergencia con las otras condiciones. Las dos celdas en `flujo_ordinario` son `san_antonio_metro | peak_am` y `junin_paseo | peak_am`, donde C1, C4 y la cobertura disponible no superan ningún umbral. El estado `friccion_acumulada` es importante por sí mismo: dice que hay una franja-evento donde la materialidad (saturación visible y sonora en video) ya alerta, aunque el resto de fuentes todavía no esté disponible para confirmar o descartar colapso.
+
+El supuesto distribucional de C1 (peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15, derivado de Cohen & Felson 1979 y Brantingham & Brantingham, ver `data/processed/c1_hourly_projection.json`) hace que el percentil 75 por franja sea más alto en `peak_pm` (62.5 hurtos/hora proyectados) que en las otras tres franjas. La mediana mensual histórica produce tasas por debajo de ese percentil, lo cual implica que en el "mes típico" C1_high es `false` para todas las franjas. Solo los meses pico de la serie (mayo y julio de varios años) lo activarían — pero la celda no se evalúa contra una franja específica de un mes, sino contra el supuesto de tasa típica.
+
+Este reporte parcial cumple su función académica: muestra que el pipeline produce decisiones legibles con cobertura declarada y que la regla 3-de-4 se respeta sin atajos. La matriz se reconstruirá automáticamente cada vez que entren más datos a cualquiera de las cuatro condiciones.
 
 ## 3.13. Resultados que sí pueden sostenerse y resultados que no
 
