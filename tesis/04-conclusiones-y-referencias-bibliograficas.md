@@ -148,11 +148,18 @@ La tesis debe defenderse como una investigación ambiciosa pero no autosatisfech
 - Aguilar, J. (2014). *Sistemas Emergentes y Control Inteligente*. Universidad de Los Andes.
 - Alcaldía de Medellín. (s. f.). *MEData: Datos Abiertos de Medellín*. https://medata.gov.co/
 - Área Metropolitana del Valle de Aburrá. (s. f.). *Datos abiertos ambientales del Valle de Aburrá / SIATA*. https://datosabiertos.metropol.gov.co/
+- Aristóteles. (1978). *Acerca de la memoria y la reminiscencia*. En *Acerca del alma* (T. Calvo, Trad.). Gredos.
+- Atkinson, R. C., & Shiffrin, R. M. (1968). Human memory: A proposed system and its control processes. En K. W. Spence & J. T. Spence (Eds.), *The psychology of learning and motivation* (Vol. 2, pp. 89–195). Academic Press.
+- Baddeley, A. D., & Hitch, G. (1974). Working memory. En G. H. Bower (Ed.), *The psychology of learning and motivation* (Vol. 8, pp. 47–89). Academic Press.
 - Badiou, A. (1998). Introducción a *El ser y el acontecimiento*. *Acontecimiento, 16*. (Texto introductorio a la obra original publicada en 1988).
+- Bartlett, F. C. (1932). *Remembering: A study in experimental and social psychology*. Cambridge University Press.
 - Batty, M. (2013). *The new science of cities*. MIT Press.
 - Bellman, R. (1957). *Dynamic programming*. Princeton University Press.
 - Bonabeau, E. (2002). Agent-based modeling: Methods and techniques for simulating human systems. *Proceedings of the National Academy of Sciences, 99*(suppl. 3), 7280–7287. https://doi.org/10.1073/pnas.082080899
 - Bueno, G. (1972). *Ensayos materialistas*. Taurus.
+- Cabeza, R., Rao, S. M., Wagner, A. D., Mayer, A. R., & Schacter, D. L. (2001). Can medial temporal lobe regions distinguish true from false? An event-related functional MRI study of veridical and illusory recognition memory. *Proceedings of the National Academy of Sciences, 98*(8), 4805–4810. https://doi.org/10.1073/pnas.081082698
+- Craik, F. I. M., & Lockhart, R. S. (1972). Levels of processing: A framework for memory research. *Journal of Verbal Learning and Verbal Behavior, 11*(6), 671–684.
+- Crombag, H. F. M., Wagenaar, W. A., & van Koppen, P. J. (1996). Crashing memories and the problem of "source monitoring". *Applied Cognitive Psychology, 10*(2), 95–104.
 - Departamento Administrativo Nacional de Estadística. (2018). *Censo Nacional de Población y Vivienda 2018*. https://www.dane.gov.co/
 - Deleuze, G. (1990). Post-scriptum sobre las sociedades de control. *L'Autre Journal*, 1.
 - Epstein, J. M. (2006). *Generative social science: Studies in agent-based computational modeling*. Princeton University Press.
@@ -165,12 +172,33 @@ La tesis debe defenderse como una investigación ambiciosa pero no autosatisfech
 - Johnson, S. (2001). *Sistemas emergentes: O qué tienen en común hormigas, neuronas, ciudades y software*. Fondo de Cultura Económica.
 - Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics, 22*(1), 79–86. https://doi.org/10.1214/aoms/1177729694
 - Lefebvre, H. (2017). *El derecho a la ciudad*. Capitán Swing. (Obra original publicada en 1968).
+- Liu, X., Ramirez, S., Pang, P. T., Puryear, C. B., Govindarajan, A., Deisseroth, K., & Tonegawa, S. (2012). Optogenetic stimulation of a hippocampal engram activates fear memory recall. *Nature, 484*, 381–385. https://doi.org/10.1038/nature11028
+- Locke, J. (1956). *Ensayo sobre el entendimiento humano* (E. O'Gorman, Trad.). Fondo de Cultura Económica. (Obra original publicada en 1689).
+- Loftus, E. F. (1993). The reality of repressed memories. *American Psychologist, 48*(5), 518–537.
+- Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile destruction: An example of the interaction between language and memory. *Journal of Verbal Learning and Verbal Behavior, 13*(5), 585–589.
+- Martin, C. B., & Deutscher, M. (1966). Remembering. *The Philosophical Review, 75*(2), 161–196.
+- Matthen, M. (2010). Is memory preservation? *Philosophical Studies, 148*(1), 3–14. https://doi.org/10.1007/s11098-010-9501-8
 - Medellín Cómo Vamos & Invamer. (2024). *Percepción ciudadana 2024: Medellín*. Medellín Cómo Vamos. https://www.medellincomovamos.org/
 - Merleau-Ponty, M. (1993). *Fenomenología de la percepción* (J. Cabanes, Trad.). Planeta-Agostini. (Obra original publicada en 1945).
 - Metro de Medellín. (s. f.). *Challenge: Mobility in San Antonio B*. https://www.metrodemedellin.gov.co/en/challenge-mobility-in-san-antonio-b
+- Michaelian, K. (2016). *Mental time travel: Episodic memory and our knowledge of the personal past*. MIT Press.
+- Milner, B. (1962). Les troubles de la mémoire accompagnant des lésions hippocampiques bilatérales. En *Physiologie de l'hippocampe* (pp. 257–272). CNRS.
 - Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., & Hassabis, D. (2015). Human-level control through deep reinforcement learning. *Nature, 518*, 529–533. https://doi.org/10.1038/nature14236
+- Nadel, L., & Moscovitch, M. (1997). Memory consolidation, retrograde amnesia and the hippocampal complex. *Current Opinion in Neurobiology, 7*(2), 217–227.
+- Nader, K., Schafe, G. E., & LeDoux, J. E. (2000). Fear memories require protein synthesis in the amygdala for reconsolidation after retrieval. *Nature, 406*, 722–726. https://doi.org/10.1038/35021052
 - OpenStreetMap contributors. (2026). *OpenStreetMap*. https://www.openstreetmap.org/copyright
+- Platón. (1988). *Teeteto*. En *Diálogos V* (M. I. Santa Cruz, Á. Vallejo Campos & N. Cordero, Trads.). Gredos.
+- Ramirez, S., Liu, X., Lin, P. A., Suh, J., Pignatelli, M., Redondo, R. L., Ryan, T. J., & Tonegawa, S. (2013). Creating a false memory in the hippocampus. *Science, 341*(6144), 387–391. https://doi.org/10.1126/science.1239073
+- Ribot, T. (1881). *Les maladies de la mémoire*. Germer Baillière.
+- Roediger, H. L., & McDermott, K. B. (1995). Creating false memories: Remembering words not presented in lists. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 21*(4), 803–814.
 - Sassen, S. (2014). *Expulsions: Brutality and complexity in the global economy*. Harvard University Press.
+- Schacter, D. L., Reiman, E., Curran, T., Yun, L. S., Bandy, D., McDermott, K. B., & Roediger, H. L. (1996). Neuroanatomical correlates of veridical and illusory recognition memory: Evidence from positron emission tomography. *Neuron, 17*(2), 267–274.
+- Schacter, D. L., Addis, D. R., & Buckner, R. L. (2007). Remembering the past to imagine the future: The prospective brain. *Nature Reviews Neuroscience, 8*(9), 657–661. https://doi.org/10.1038/nrn2213
+- Semon, R. (1904). *Die Mneme als erhaltendes Prinzip im Wechsel des organischen Geschehens*. Wilhelm Engelmann.
+- Shallice, T., & Warrington, E. K. (1970). Independent functioning of verbal memory stores: A neuropsychological study. *The Quarterly Journal of Experimental Psychology, 22*(2), 261–273.
 - Shannon, C. E. (1948). A mathematical theory of communication. *The Bell System Technical Journal, 27*(3), 379–423; *27*(4), 623–656. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
 - Simmel, G. (1986). *El individuo y la libertad. Ensayos de crítica de la cultura* (S. Masó, Trad.). Península. (Obra original publicada en 1903).
+- Squire, L. R., & Alvarez, P. (1995). Retrograde amnesia and memory consolidation: A neurobiological perspective. *Current Opinion in Neurobiology, 5*(2), 169–177.
 - Sutton, R. S., & Barto, A. G. (2018). *Reinforcement learning: An introduction* (2nd ed.). MIT Press.
+- Teuber, H.-L. (1955). Physiological psychology. *Annual Review of Psychology, 6*, 267–296.
+- Tulving, E. (1972). Episodic and semantic memory. En E. Tulving & W. Donaldson (Eds.), *Organization of memory* (pp. 381–403). Academic Press.
