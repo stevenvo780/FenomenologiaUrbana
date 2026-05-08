@@ -3684,8 +3684,8 @@
     "collapse_matrix": {
       "rule": "3-de-4 entre C1 (crimen) / C2 (seguridad) / C3 (habitabilidad) / C4 (saturación)",
       "decisions": {
-        "flujo_ordinario": 2,
-        "inconcluyente": 33,
+        "flujo_ordinario": 3,
+        "inconcluyente": 32,
         "friccion_acumulada": 1
       },
       "cells": [
@@ -3837,6 +3837,18 @@
           "key": "junin_paseo|peak_am",
           "node": "junin_paseo",
           "window": "peak_am",
+          "decision": "friccion_acumulada",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": true,
+          "conditions_met": 1,
+          "coverage": 2
+        },
+        {
+          "key": "junin_paseo|midday",
+          "node": "junin_paseo",
+          "window": "midday",
           "decision": "flujo_ordinario",
           "C1": false,
           "C2": false,
@@ -3844,18 +3856,6 @@
           "C4": false,
           "conditions_met": 0,
           "coverage": 2
-        },
-        {
-          "key": "junin_paseo|midday",
-          "node": "junin_paseo",
-          "window": "midday",
-          "decision": "inconcluyente",
-          "C1": false,
-          "C2": false,
-          "C3": false,
-          "C4": false,
-          "conditions_met": 0,
-          "coverage": 1
         },
         {
           "key": "junin_paseo|peak_pm",
@@ -3945,12 +3945,12 @@
           "key": "parque_berrio|midday",
           "node": "parque_berrio",
           "window": "midday",
-          "decision": "friccion_acumulada",
+          "decision": "flujo_ordinario",
           "C1": false,
           "C2": false,
           "C3": false,
-          "C4": true,
-          "conditions_met": 1,
+          "C4": false,
+          "conditions_met": 0,
           "coverage": 2
         },
         {
@@ -4202,13 +4202,13 @@
       }
     },
     "video_assignments": {
-      "n_videos": 9,
-      "n_with_node": 9,
+      "n_videos": 17,
+      "n_with_node": 17,
       "by_confidence": {
-        "high": 2,
-        "medium": 4,
+        "high": 5,
+        "medium": 7,
         "low": 2,
-        "very_low": 1
+        "very_low": 3
       },
       "assignments": [
         {
@@ -4252,12 +4252,60 @@
           "delta_seconds": 224.0
         },
         {
+          "video": "VID_20260505_094243902_02.compressed.mp4",
+          "ts": "2026-05-05T09:42:43",
+          "window": "peak_am",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 224.0
+        },
+        {
+          "video": "VID_20260505_095806.compressed.mp4",
+          "ts": "2026-05-05T09:58:06",
+          "window": "peak_am",
+          "node": "junin_paseo",
+          "confidence": "medium",
+          "delta_seconds": 825.0
+        },
+        {
+          "video": "VID_20260505_100656.compressed.mp4",
+          "ts": "2026-05-05T10:06:56",
+          "window": "midday",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 295.0
+        },
+        {
+          "video": "VID_20260505_101033.compressed.mp4",
+          "ts": "2026-05-05T10:10:33",
+          "window": "midday",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 78.0
+        },
+        {
+          "video": "VID_20260505_104808.compressed.mp4",
+          "ts": "2026-05-05T10:48:08",
+          "window": "midday",
+          "node": "parque_berrio",
+          "confidence": "medium",
+          "delta_seconds": 385.0
+        },
+        {
           "video": "VID_20260505_110910.mp4",
           "ts": "2026-05-05T11:09:10",
           "window": "midday",
           "node": "parque_berrio",
           "confidence": "medium",
           "delta_seconds": 810.0
+        },
+        {
+          "video": "VID_20260505_112136.compressed.mp4",
+          "ts": "2026-05-05T11:21:36",
+          "window": "midday",
+          "node": "parque_berrio",
+          "confidence": "medium",
+          "delta_seconds": 1556.0
         },
         {
           "video": "VID_20260505_113217.compressed.mp4",
@@ -4274,6 +4322,22 @@
           "node": "parque_berrio",
           "confidence": "low",
           "delta_seconds": 3007.0
+        },
+        {
+          "video": "VID_20260505_154051.compressed.mp4",
+          "ts": "2026-05-05T15:40:51",
+          "window": "peak_pm",
+          "node": "parque_berrio",
+          "confidence": "very_low",
+          "delta_seconds": 17111.0
+        },
+        {
+          "video": "VID_20260505_155144.compressed.mp4",
+          "ts": "2026-05-05T15:51:44",
+          "window": "peak_pm",
+          "node": "parque_berrio",
+          "confidence": "very_low",
+          "delta_seconds": 17764.0
         },
         {
           "video": "VID_20260505_213002.mp4",
