@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_213002.mp4",
+  "duration_s": 16.94,
+  "spectral": {
+    "duration_s": 16.94,
+    "rms": 0.0489,
+    "rms_db": -26.21,
+    "spectral_centroid_hz": 1363.6,
+    "spectral_bandwidth_hz": 1158.0,
+    "zero_crossing_rate": 0.1195,
+    "tempo_bpm": 110.3,
+    "sub_bass_ratio": 0.0066
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.865585207939148
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.5312572121620178
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.15273337066173553
+    },
+    {
+      "idx": 392,
+      "label": "Telephone dialing, DTMF",
+      "score": 0.07124155759811401
+    },
+    {
+      "idx": 389,
+      "label": "Telephone",
+      "score": 0.03312041610479355
+    },
+    {
+      "idx": 525,
+      "label": "Radio",
+      "score": 0.02862539142370224
+    },
+    {
+      "idx": 416,
+      "label": "Camera",
+      "score": 0.028290510177612305
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.026188693940639496
+    },
+    {
+      "idx": 481,
+      "label": "Beep, bleep",
+      "score": 0.022005397826433182
+    },
+    {
+      "idx": 440,
+      "label": "Crack",
+      "score": 0.021802669391036034
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.865585207939148,
+    "siren": 0.0009801371488720179,
+    "vehicle": 0.0034585881512612104,
+    "wind": 2.7818554372061044e-05,
+    "music": 0.5312572121620178,
+    "music_latin_am": 8.750941924517974e-05,
+    "salsa": 4.583645204547793e-05,
+    "reggae": 7.345672202063724e-05,
+    "hip_hop": 0.0008290213881991804,
+    "rapping": 0.0003285256971139461,
+    "pop": 0.0002097018586937338,
+    "rock": 0.00011652389366645366,
+    "electronic": 0.001224163337610662
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.2
+}

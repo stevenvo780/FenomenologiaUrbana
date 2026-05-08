@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_100656.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.04039,
+    "rms_db": -27.87,
+    "spectral_centroid_hz": 558.3,
+    "spectral_bandwidth_hz": 578.5,
+    "zero_crossing_rate": 0.0589,
+    "tempo_bpm": 117.2,
+    "sub_bass_ratio": 0.0304
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.6801910996437073
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.6695956587791443
+    },
+    {
+      "idx": 524,
+      "label": "Television",
+      "score": 0.19620954990386963
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.121639184653759
+    },
+    {
+      "idx": 65,
+      "label": "Heart murmur",
+      "score": 0.12027022987604141
+    },
+    {
+      "idx": 522,
+      "label": "Throbbing",
+      "score": 0.10993796586990356
+    },
+    {
+      "idx": 64,
+      "label": "Heart sounds, heartbeat",
+      "score": 0.1008734330534935
+    },
+    {
+      "idx": 496,
+      "label": "Hum",
+      "score": 0.07015181332826614
+    },
+    {
+      "idx": 111,
+      "label": "Bird",
+      "score": 0.055236004292964935
+    },
+    {
+      "idx": 115,
+      "label": "Pigeon, dove",
+      "score": 0.027071237564086914
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.6801910996437073,
+    "siren": 0.0010449517285451293,
+    "vehicle": 0.013039425946772099,
+    "wind": 0.002110040280967951,
+    "music": 0.6695956587791443,
+    "music_latin_am": 0.001507501001469791,
+    "salsa": 0.0006509734666906297,
+    "reggae": 0.0009716307977214456,
+    "hip_hop": 0.005274199414998293,
+    "rapping": 0.0021496866829693317,
+    "pop": 0.0008475483627989888,
+    "rock": 0.0005445887218229473,
+    "electronic": 0.013284689746797085
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.6
+}

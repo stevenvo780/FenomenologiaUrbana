@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_094143350.mp4",
+  "duration_s": 19.84,
+  "spectral": {
+    "duration_s": 19.84,
+    "rms": 0.03149,
+    "rms_db": -30.04,
+    "spectral_centroid_hz": 1949.3,
+    "spectral_bandwidth_hz": 1915.9,
+    "zero_crossing_rate": 0.1532,
+    "tempo_bpm": 110.3,
+    "sub_bass_ratio": 0.0683
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7892805337905884
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.769325315952301
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.17418305575847626
+    },
+    {
+      "idx": 329,
+      "label": "Train",
+      "score": 0.09542956203222275
+    },
+    {
+      "idx": 509,
+      "label": "Outside, urban or manmade",
+      "score": 0.0795108824968338
+    },
+    {
+      "idx": 328,
+      "label": "Rail transport",
+      "score": 0.06807553023099899
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.05807369202375412
+    },
+    {
+      "idx": 508,
+      "label": "Inside, public space",
+      "score": 0.04995172470808029
+    },
+    {
+      "idx": 332,
+      "label": "Railroad car, train wagon",
+      "score": 0.04926160350441933
+    },
+    {
+      "idx": 70,
+      "label": "Hubbub, speech noise, speech babble",
+      "score": 0.04797971621155739
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7892805337905884,
+    "siren": 0.0019184137927368283,
+    "vehicle": 0.17418305575847626,
+    "wind": 0.014963776804506779,
+    "music": 0.769325315952301,
+    "music_latin_am": 0.0015122382901608944,
+    "salsa": 0.0009462436428293586,
+    "reggae": 0.00037570533459074795,
+    "hip_hop": 0.000898609112482518,
+    "rapping": 0.0006819457048550248,
+    "pop": 0.0022342826705425978,
+    "rock": 0.0006170477718114853,
+    "electronic": 0.002949317218735814
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.4
+}

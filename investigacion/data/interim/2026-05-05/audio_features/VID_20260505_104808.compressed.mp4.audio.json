@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_104808.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.03187,
+    "rms_db": -29.93,
+    "spectral_centroid_hz": 679.7,
+    "spectral_bandwidth_hz": 693.2,
+    "zero_crossing_rate": 0.0675,
+    "tempo_bpm": 133.9,
+    "sub_bass_ratio": 0.0567
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7174310088157654
+    },
+    {
+      "idx": 111,
+      "label": "Bird",
+      "score": 0.4197952449321747
+    },
+    {
+      "idx": 115,
+      "label": "Pigeon, dove",
+      "score": 0.38908255100250244
+    },
+    {
+      "idx": 116,
+      "label": "Coo",
+      "score": 0.3386932909488678
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.16405871510505676
+    },
+    {
+      "idx": 112,
+      "label": "Bird vocalization, bird call, bird song",
+      "score": 0.1499510407447815
+    },
+    {
+      "idx": 136,
+      "label": "Whale vocalization",
+      "score": 0.10605069994926453
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.09724188596010208
+    },
+    {
+      "idx": 110,
+      "label": "Roar",
+      "score": 0.0862479880452156
+    },
+    {
+      "idx": 109,
+      "label": "Roaring cats (lions, tigers)",
+      "score": 0.08523637801408768
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7174310088157654,
+    "siren": 0.00028650477179326117,
+    "vehicle": 0.049125876277685165,
+    "wind": 0.0038837718311697245,
+    "music": 0.09724188596010208,
+    "music_latin_am": 0.0002480297116562724,
+    "salsa": 0.00015077630814630538,
+    "reggae": 4.316732520237565e-05,
+    "hip_hop": 0.0002808429708238691,
+    "rapping": 0.00020936044165864587,
+    "pop": 9.847730689216405e-05,
+    "rock": 0.00015938734577503055,
+    "electronic": 0.0008571717771701515
+  },
+  "detected_genre": "no_music",
+  "elapsed_s": 0.5
+}

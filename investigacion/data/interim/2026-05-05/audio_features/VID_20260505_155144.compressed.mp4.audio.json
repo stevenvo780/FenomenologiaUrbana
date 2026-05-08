@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_155144.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.02248,
+    "rms_db": -32.96,
+    "spectral_centroid_hz": 830.5,
+    "spectral_bandwidth_hz": 839.7,
+    "zero_crossing_rate": 0.0769,
+    "tempo_bpm": 133.9,
+    "sub_bass_ratio": 0.0333
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7537432909011841
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.20880940556526184
+    },
+    {
+      "idx": 136,
+      "label": "Whale vocalization",
+      "score": 0.08712397515773773
+    },
+    {
+      "idx": 57,
+      "label": "Stomach rumble",
+      "score": 0.07384691387414932
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.05340900644659996
+    },
+    {
+      "idx": 65,
+      "label": "Heart murmur",
+      "score": 0.04812803119421005
+    },
+    {
+      "idx": 111,
+      "label": "Bird",
+      "score": 0.045535702258348465
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.041914645582437515
+    },
+    {
+      "idx": 524,
+      "label": "Television",
+      "score": 0.039833713322877884
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.038152094930410385
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7537432909011841,
+    "siren": 0.0012772566406056285,
+    "vehicle": 0.05340900644659996,
+    "wind": 0.005826253443956375,
+    "music": 0.20880940556526184,
+    "music_latin_am": 0.0006536606815643609,
+    "salsa": 0.00021600110630970448,
+    "reggae": 0.0001352801191387698,
+    "hip_hop": 0.0010151152964681387,
+    "rapping": 0.00043304922292008996,
+    "pop": 0.0003949013480450958,
+    "rock": 0.0004909357521682978,
+    "electronic": 0.0031618026550859213
+  },
+  "detected_genre": "ambiguous",
+  "elapsed_s": 0.5
+}

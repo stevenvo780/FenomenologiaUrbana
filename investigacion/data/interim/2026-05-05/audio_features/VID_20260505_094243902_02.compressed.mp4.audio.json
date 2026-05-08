@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_094243902_02.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.02213,
+    "rms_db": -33.1,
+    "spectral_centroid_hz": 1577.3,
+    "spectral_bandwidth_hz": 1904.2,
+    "zero_crossing_rate": 0.0916,
+    "tempo_bpm": 93.8,
+    "sub_bass_ratio": 0.1039
+  },
+  "panns_top10": [
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.8578534126281738
+    },
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.8257739543914795
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.22127825021743774
+    },
+    {
+      "idx": 307,
+      "label": "Car",
+      "score": 0.11133642494678497
+    },
+    {
+      "idx": 509,
+      "label": "Outside, urban or manmade",
+      "score": 0.08220358192920685
+    },
+    {
+      "idx": 70,
+      "label": "Hubbub, speech noise, speech babble",
+      "score": 0.07532856613397598
+    },
+    {
+      "idx": 453,
+      "label": "Spray",
+      "score": 0.0606866218149662
+    },
+    {
+      "idx": 130,
+      "label": "Buzz",
+      "score": 0.04334237426519394
+    },
+    {
+      "idx": 508,
+      "label": "Inside, public space",
+      "score": 0.037236034870147705
+    },
+    {
+      "idx": 68,
+      "label": "Chatter",
+      "score": 0.033676277846097946
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.8257739543914795,
+    "siren": 0.0019281343556940556,
+    "vehicle": 0.22127825021743774,
+    "wind": 0.006715084426105022,
+    "music": 0.8578534126281738,
+    "music_latin_am": 0.002818567678332329,
+    "salsa": 0.0030720618087798357,
+    "reggae": 0.0003141311462968588,
+    "hip_hop": 0.001383981085382402,
+    "rapping": 0.001264056540094316,
+    "pop": 0.004625656642019749,
+    "rock": 0.0008116137469187379,
+    "electronic": 0.0022352118976414204
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.5
+}

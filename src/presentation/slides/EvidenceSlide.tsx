@@ -6,6 +6,10 @@ import { DECK_CHART_TEXT } from '../constants'
 import type { ModalKind } from '../deckTypes'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
 import { CollapseMatrixPanel } from '../components/visuals/CollapseMatrixPanel'
+import { InterRaterPanel } from '../components/visuals/InterRaterPanel'
+import { SensitivityPanel } from '../components/visuals/SensitivityPanel'
+import { CrossValidationPanel } from '../components/visuals/CrossValidationPanel'
+import { SubZonesPanel } from '../components/visuals/SubZonesPanel'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, findPeakPeriod } from '../utils'
 
@@ -139,6 +143,21 @@ function EvidenceGallery({
 
       {data.field_calibration?.collapse_matrix && (
         <CollapseMatrixPanel field={data.field_calibration} />
+      )}
+      {data.field_calibration?.inter_rater_reliability && (
+        <InterRaterPanel data={data.field_calibration.inter_rater_reliability} />
+      )}
+      {data.field_calibration?.collapse_matrix_sensitivity && (
+        <SensitivityPanel data={data.field_calibration.collapse_matrix_sensitivity} />
+      )}
+      {data.field_calibration?.cross_validation && (
+        <CrossValidationPanel data={data.field_calibration.cross_validation} />
+      )}
+      {(data.field_calibration?.node_geometry_v2 || data.field_calibration?.signage_ocr) && (
+        <SubZonesPanel
+          geometry={data.field_calibration?.node_geometry_v2}
+          signage={data.field_calibration?.signage_ocr}
+        />
       )}
     </div>
   )

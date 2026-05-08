@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_112136.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.02584,
+    "rms_db": -31.75,
+    "spectral_centroid_hz": 802.1,
+    "spectral_bandwidth_hz": 932.6,
+    "zero_crossing_rate": 0.0744,
+    "tempo_bpm": 208.3,
+    "sub_bass_ratio": 0.0346
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7480353713035583
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.22058236598968506
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.19041134417057037
+    },
+    {
+      "idx": 73,
+      "label": "Domestic animals, pets",
+      "score": 0.04640502855181694
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.04125966876745224
+    },
+    {
+      "idx": 108,
+      "label": "Wild animals",
+      "score": 0.037961196154356
+    },
+    {
+      "idx": 510,
+      "label": "Outside, rural or natural",
+      "score": 0.03772851079702377
+    },
+    {
+      "idx": 94,
+      "label": "Oink",
+      "score": 0.03495844453573227
+    },
+    {
+      "idx": 524,
+      "label": "Television",
+      "score": 0.03466121479868889
+    },
+    {
+      "idx": 60,
+      "label": "Fart",
+      "score": 0.03464724123477936
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7480353713035583,
+    "siren": 0.0009270695736631751,
+    "vehicle": 0.015969183295965195,
+    "wind": 0.0017025407869368792,
+    "music": 0.22058236598968506,
+    "music_latin_am": 0.00014281400945037603,
+    "salsa": 4.0147606341633946e-05,
+    "reggae": 8.215651905629784e-05,
+    "hip_hop": 0.000660198274999857,
+    "rapping": 0.00042545527685433626,
+    "pop": 0.00013868517999071628,
+    "rock": 0.00013704196317121387,
+    "electronic": 0.0014528455212712288
+  },
+  "detected_genre": "ambiguous",
+  "elapsed_s": 0.5
+}

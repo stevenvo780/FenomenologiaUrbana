@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_094243902.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.01969,
+    "rms_db": -34.11,
+    "spectral_centroid_hz": 1534.0,
+    "spectral_bandwidth_hz": 1850.2,
+    "zero_crossing_rate": 0.0922,
+    "tempo_bpm": 110.3,
+    "sub_bass_ratio": 0.1176
+  },
+  "panns_top10": [
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.8330286741256714
+    },
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7730432748794556
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.11682040989398956
+    },
+    {
+      "idx": 307,
+      "label": "Car",
+      "score": 0.08989118784666061
+    },
+    {
+      "idx": 70,
+      "label": "Hubbub, speech noise, speech babble",
+      "score": 0.0655859112739563
+    },
+    {
+      "idx": 509,
+      "label": "Outside, urban or manmade",
+      "score": 0.05101371556520462
+    },
+    {
+      "idx": 508,
+      "label": "Inside, public space",
+      "score": 0.04667521268129349
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.02999761886894703
+    },
+    {
+      "idx": 507,
+      "label": "Inside, large room or hall",
+      "score": 0.024018926545977592
+    },
+    {
+      "idx": 458,
+      "label": "Arrow",
+      "score": 0.02380443923175335
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7730432748794556,
+    "siren": 0.001229476067237556,
+    "vehicle": 0.11682040989398956,
+    "wind": 0.004597026389092207,
+    "music": 0.8330286741256714,
+    "music_latin_am": 0.0021420216653496027,
+    "salsa": 0.0010919548803940415,
+    "reggae": 0.0002815622719936073,
+    "hip_hop": 0.001565195620059967,
+    "rapping": 0.0010320855071768165,
+    "pop": 0.007131645455956459,
+    "rock": 0.0003555392613634467,
+    "electronic": 0.0028442346956580877
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.5
+}

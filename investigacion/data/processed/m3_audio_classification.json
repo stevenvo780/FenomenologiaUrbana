@@ -1,0 +1,1245 @@
+{
+  "schema": "m3_audio_classification.v1",
+  "generated_at": "2026-05-08T05:11:59",
+  "method": {
+    "audio_extraction": "ffmpeg -ac 1 -ar 16000 wav (clasificación PANNs interna 32kHz)",
+    "classifier": "PANNs CNN14 (AudioSet 527 classes)",
+    "genre_heuristic": "PANNs categories + tempo (librosa beat_track) + sub-bass ratio (40-120Hz STFT)",
+    "thresholds": {
+      "event_score": 0.2,
+      "music_floor": 0.15
+    },
+    "notes": "AudioSet no separa reggaeton/vallenato. Detecciones marcadas '_likely'."
+  },
+  "n_videos_processed": 17,
+  "n_videos_total": 17,
+  "per_video": [
+    {
+      "video": "VID_20260505_082652114.mp4",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "detected_genre": "no_music",
+      "duration_s": 40.66,
+      "spectral": {
+        "duration_s": 40.66,
+        "rms": 0.03392,
+        "rms_db": -29.39,
+        "spectral_centroid_hz": 2182.0,
+        "spectral_bandwidth_hz": 2316.5,
+        "zero_crossing_rate": 0.1377,
+        "tempo_bpm": 110.3,
+        "sub_bass_ratio": 0.0936
+      },
+      "panns_categories": {
+        "speech": 0.7715283632278442,
+        "siren": 0.004178008064627647,
+        "vehicle": 0.5512954592704773,
+        "wind": 0.0034926030784845352,
+        "music": 0.027263766154646873,
+        "music_latin_am": 8.511372288921848e-05,
+        "salsa": 3.365319571457803e-05,
+        "reggae": 3.526422005961649e-05,
+        "hip_hop": 0.00010148301953449845,
+        "rapping": 0.0001049100756063126,
+        "pop": 7.962713425513357e-05,
+        "rock": 0.00014179671416059136,
+        "electronic": 9.84174112090841e-05
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7715283632278442
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.5512954592704773
+        },
+        {
+          "idx": 307,
+          "label": "Car",
+          "score": 0.24285826086997986
+        },
+        {
+          "idx": 327,
+          "label": "Traffic noise, roadway noise",
+          "score": 0.17541274428367615
+        },
+        {
+          "idx": 317,
+          "label": "Air brake",
+          "score": 0.15832990407943726
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_082857885.mp4",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "detected_genre": "no_music",
+      "duration_s": 51.82,
+      "spectral": {
+        "duration_s": 51.82,
+        "rms": 0.03016,
+        "rms_db": -30.41,
+        "spectral_centroid_hz": 1727.7,
+        "spectral_bandwidth_hz": 2034.1,
+        "zero_crossing_rate": 0.0995,
+        "tempo_bpm": 133.9,
+        "sub_bass_ratio": 0.1092
+      },
+      "panns_categories": {
+        "speech": 0.6711204051971436,
+        "siren": 0.01395706832408905,
+        "vehicle": 0.43613529205322266,
+        "wind": 0.0037914556451141834,
+        "music": 0.12989871203899384,
+        "music_latin_am": 0.00028380868025124073,
+        "salsa": 9.848218905972317e-05,
+        "reggae": 6.476225098595023e-05,
+        "hip_hop": 0.0002841246023308486,
+        "rapping": 0.0002141771255992353,
+        "pop": 0.00022288275067694485,
+        "rock": 0.0002750632120296359,
+        "electronic": 0.0004940804210491478
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.6711204051971436
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.43613529205322266
+        },
+        {
+          "idx": 329,
+          "label": "Train",
+          "score": 0.3838249444961548
+        },
+        {
+          "idx": 328,
+          "label": "Rail transport",
+          "score": 0.2991742491722107
+        },
+        {
+          "idx": 332,
+          "label": "Railroad car, train wagon",
+          "score": 0.24834752082824707
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_083042543.compressed.mp4",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "detected_genre": "music_other",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.03197,
+        "rms_db": -29.9,
+        "spectral_centroid_hz": 1877.0,
+        "spectral_bandwidth_hz": 2082.5,
+        "zero_crossing_rate": 0.1232,
+        "tempo_bpm": 117.2,
+        "sub_bass_ratio": 0.0932
+      },
+      "panns_categories": {
+        "speech": 0.833168089389801,
+        "siren": 0.0033315953332930803,
+        "vehicle": 0.3456195592880249,
+        "wind": 0.0027197939343750477,
+        "music": 0.49817147850990295,
+        "music_latin_am": 0.0007065614336170256,
+        "salsa": 0.00025752055807970464,
+        "reggae": 9.1953894298058e-05,
+        "hip_hop": 0.0001670535420998931,
+        "rapping": 0.0001320224691880867,
+        "pop": 0.0004584284615702927,
+        "rock": 0.00013685300655197352,
+        "electronic": 0.00036245494266040623
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.833168089389801
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.49817147850990295
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.3456195592880249
+        },
+        {
+          "idx": 329,
+          "label": "Train",
+          "score": 0.1434905081987381
+        },
+        {
+          "idx": 317,
+          "label": "Air brake",
+          "score": 0.10638795793056488
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_094143350.mp4",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "detected_genre": "music_other",
+      "duration_s": 19.84,
+      "spectral": {
+        "duration_s": 19.84,
+        "rms": 0.03149,
+        "rms_db": -30.04,
+        "spectral_centroid_hz": 1949.3,
+        "spectral_bandwidth_hz": 1915.9,
+        "zero_crossing_rate": 0.1532,
+        "tempo_bpm": 110.3,
+        "sub_bass_ratio": 0.0683
+      },
+      "panns_categories": {
+        "speech": 0.7892805337905884,
+        "siren": 0.0019184137927368283,
+        "vehicle": 0.17418305575847626,
+        "wind": 0.014963776804506779,
+        "music": 0.769325315952301,
+        "music_latin_am": 0.0015122382901608944,
+        "salsa": 0.0009462436428293586,
+        "reggae": 0.00037570533459074795,
+        "hip_hop": 0.000898609112482518,
+        "rapping": 0.0006819457048550248,
+        "pop": 0.0022342826705425978,
+        "rock": 0.0006170477718114853,
+        "electronic": 0.002949317218735814
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7892805337905884
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.769325315952301
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.17418305575847626
+        },
+        {
+          "idx": 329,
+          "label": "Train",
+          "score": 0.09542956203222275
+        },
+        {
+          "idx": 509,
+          "label": "Outside, urban or manmade",
+          "score": 0.0795108824968338
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_094243902.compressed.mp4",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "detected_genre": "music_other",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.01969,
+        "rms_db": -34.11,
+        "spectral_centroid_hz": 1534.0,
+        "spectral_bandwidth_hz": 1850.2,
+        "zero_crossing_rate": 0.0922,
+        "tempo_bpm": 110.3,
+        "sub_bass_ratio": 0.1176
+      },
+      "panns_categories": {
+        "speech": 0.7730432748794556,
+        "siren": 0.001229476067237556,
+        "vehicle": 0.11682040989398956,
+        "wind": 0.004597026389092207,
+        "music": 0.8330286741256714,
+        "music_latin_am": 0.0021420216653496027,
+        "salsa": 0.0010919548803940415,
+        "reggae": 0.0002815622719936073,
+        "hip_hop": 0.001565195620059967,
+        "rapping": 0.0010320855071768165,
+        "pop": 0.007131645455956459,
+        "rock": 0.0003555392613634467,
+        "electronic": 0.0028442346956580877
+      },
+      "panns_top5": [
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.8330286741256714
+        },
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7730432748794556
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.11682040989398956
+        },
+        {
+          "idx": 307,
+          "label": "Car",
+          "score": 0.08989118784666061
+        },
+        {
+          "idx": 70,
+          "label": "Hubbub, speech noise, speech babble",
+          "score": 0.0655859112739563
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_094243902_02.compressed.mp4",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "detected_genre": "music_other",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.02213,
+        "rms_db": -33.1,
+        "spectral_centroid_hz": 1577.3,
+        "spectral_bandwidth_hz": 1904.2,
+        "zero_crossing_rate": 0.0916,
+        "tempo_bpm": 93.8,
+        "sub_bass_ratio": 0.1039
+      },
+      "panns_categories": {
+        "speech": 0.8257739543914795,
+        "siren": 0.0019281343556940556,
+        "vehicle": 0.22127825021743774,
+        "wind": 0.006715084426105022,
+        "music": 0.8578534126281738,
+        "music_latin_am": 0.002818567678332329,
+        "salsa": 0.0030720618087798357,
+        "reggae": 0.0003141311462968588,
+        "hip_hop": 0.001383981085382402,
+        "rapping": 0.001264056540094316,
+        "pop": 0.004625656642019749,
+        "rock": 0.0008116137469187379,
+        "electronic": 0.0022352118976414204
+      },
+      "panns_top5": [
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.8578534126281738
+        },
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.8257739543914795
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.22127825021743774
+        },
+        {
+          "idx": 307,
+          "label": "Car",
+          "score": 0.11133642494678497
+        },
+        {
+          "idx": 509,
+          "label": "Outside, urban or manmade",
+          "score": 0.08220358192920685
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_095806.compressed.mp4",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "detected_genre": "music_other",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.03409,
+        "rms_db": -29.35,
+        "spectral_centroid_hz": 600.9,
+        "spectral_bandwidth_hz": 654.5,
+        "zero_crossing_rate": 0.0626,
+        "tempo_bpm": 187.5,
+        "sub_bass_ratio": 0.027
+      },
+      "panns_categories": {
+        "speech": 0.7166435718536377,
+        "siren": 0.0012343092821538448,
+        "vehicle": 0.01495214831084013,
+        "wind": 0.0014098286628723145,
+        "music": 0.5942161083221436,
+        "music_latin_am": 0.00108045875094831,
+        "salsa": 0.0003063748008571565,
+        "reggae": 0.0002623460895847529,
+        "hip_hop": 0.0015862603904679418,
+        "rapping": 0.0008410743903368711,
+        "pop": 0.0007593166665174067,
+        "rock": 0.0006148445536382496,
+        "electronic": 0.005553320981562138
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7166435718536377
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.5942161083221436
+        },
+        {
+          "idx": 524,
+          "label": "Television",
+          "score": 0.219351664185524
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.12151119858026505
+        },
+        {
+          "idx": 111,
+          "label": "Bird",
+          "score": 0.09255765378475189
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_100656.compressed.mp4",
+      "node": "junin_paseo",
+      "window": "midday",
+      "detected_genre": "music_other",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.04039,
+        "rms_db": -27.87,
+        "spectral_centroid_hz": 558.3,
+        "spectral_bandwidth_hz": 578.5,
+        "zero_crossing_rate": 0.0589,
+        "tempo_bpm": 117.2,
+        "sub_bass_ratio": 0.0304
+      },
+      "panns_categories": {
+        "speech": 0.6801910996437073,
+        "siren": 0.0010449517285451293,
+        "vehicle": 0.013039425946772099,
+        "wind": 0.002110040280967951,
+        "music": 0.6695956587791443,
+        "music_latin_am": 0.001507501001469791,
+        "salsa": 0.0006509734666906297,
+        "reggae": 0.0009716307977214456,
+        "hip_hop": 0.005274199414998293,
+        "rapping": 0.0021496866829693317,
+        "pop": 0.0008475483627989888,
+        "rock": 0.0005445887218229473,
+        "electronic": 0.013284689746797085
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.6801910996437073
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.6695956587791443
+        },
+        {
+          "idx": 524,
+          "label": "Television",
+          "score": 0.19620954990386963
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.121639184653759
+        },
+        {
+          "idx": 65,
+          "label": "Heart murmur",
+          "score": 0.12027022987604141
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_101033.compressed.mp4",
+      "node": "junin_paseo",
+      "window": "midday",
+      "detected_genre": "music_other",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.03793,
+        "rms_db": -28.42,
+        "spectral_centroid_hz": 611.8,
+        "spectral_bandwidth_hz": 632.4,
+        "zero_crossing_rate": 0.0657,
+        "tempo_bpm": 110.3,
+        "sub_bass_ratio": 0.0214
+      },
+      "panns_categories": {
+        "speech": 0.7812330722808838,
+        "siren": 0.00047619850374758244,
+        "vehicle": 0.012061526998877525,
+        "wind": 0.0005196051788516343,
+        "music": 0.8040841817855835,
+        "music_latin_am": 0.0028022006154060364,
+        "salsa": 0.0009766420116648078,
+        "reggae": 0.00043117807945236564,
+        "hip_hop": 0.001203252119012177,
+        "rapping": 0.0008703118655830622,
+        "pop": 0.0005084583535790443,
+        "rock": 0.0005201309104450047,
+        "electronic": 0.006669436581432819
+      },
+      "panns_top5": [
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.8040841817855835
+        },
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7812330722808838
+        },
+        {
+          "idx": 524,
+          "label": "Television",
+          "score": 0.34762653708457947
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.2645271122455597
+        },
+        {
+          "idx": 138,
+          "label": "Musical instrument",
+          "score": 0.1281391680240631
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_104808.compressed.mp4",
+      "node": "parque_berrio",
+      "window": "midday",
+      "detected_genre": "no_music",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.03187,
+        "rms_db": -29.93,
+        "spectral_centroid_hz": 679.7,
+        "spectral_bandwidth_hz": 693.2,
+        "zero_crossing_rate": 0.0675,
+        "tempo_bpm": 133.9,
+        "sub_bass_ratio": 0.0567
+      },
+      "panns_categories": {
+        "speech": 0.7174310088157654,
+        "siren": 0.00028650477179326117,
+        "vehicle": 0.049125876277685165,
+        "wind": 0.0038837718311697245,
+        "music": 0.09724188596010208,
+        "music_latin_am": 0.0002480297116562724,
+        "salsa": 0.00015077630814630538,
+        "reggae": 4.316732520237565e-05,
+        "hip_hop": 0.0002808429708238691,
+        "rapping": 0.00020936044165864587,
+        "pop": 9.847730689216405e-05,
+        "rock": 0.00015938734577503055,
+        "electronic": 0.0008571717771701515
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7174310088157654
+        },
+        {
+          "idx": 111,
+          "label": "Bird",
+          "score": 0.4197952449321747
+        },
+        {
+          "idx": 115,
+          "label": "Pigeon, dove",
+          "score": 0.38908255100250244
+        },
+        {
+          "idx": 116,
+          "label": "Coo",
+          "score": 0.3386932909488678
+        },
+        {
+          "idx": 72,
+          "label": "Animal",
+          "score": 0.16405871510505676
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_110910.mp4",
+      "node": "parque_berrio",
+      "window": "midday",
+      "detected_genre": "ambiguous",
+      "duration_s": 48.62,
+      "spectral": {
+        "duration_s": 48.62,
+        "rms": 0.02203,
+        "rms_db": -33.14,
+        "spectral_centroid_hz": 881.4,
+        "spectral_bandwidth_hz": 985.1,
+        "zero_crossing_rate": 0.0824,
+        "tempo_bpm": 104.2,
+        "sub_bass_ratio": 0.0307
+      },
+      "panns_categories": {
+        "speech": 0.775601863861084,
+        "siren": 0.0008916707010939717,
+        "vehicle": 0.05416922643780708,
+        "wind": 0.004051791504025459,
+        "music": 0.15475882589817047,
+        "music_latin_am": 0.00028861884493380785,
+        "salsa": 9.216818580171093e-05,
+        "reggae": 6.334434874588624e-05,
+        "hip_hop": 0.00010490268323337659,
+        "rapping": 8.637740393169224e-05,
+        "pop": 8.912086195778102e-05,
+        "rock": 0.00018808395543601364,
+        "electronic": 0.00033218596945516765
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.775601863861084
+        },
+        {
+          "idx": 72,
+          "label": "Animal",
+          "score": 0.3367358446121216
+        },
+        {
+          "idx": 108,
+          "label": "Wild animals",
+          "score": 0.28198936581611633
+        },
+        {
+          "idx": 109,
+          "label": "Roaring cats (lions, tigers)",
+          "score": 0.19087950885295868
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.15475882589817047
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_112136.compressed.mp4",
+      "node": "parque_berrio",
+      "window": "midday",
+      "detected_genre": "ambiguous",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.02584,
+        "rms_db": -31.75,
+        "spectral_centroid_hz": 802.1,
+        "spectral_bandwidth_hz": 932.6,
+        "zero_crossing_rate": 0.0744,
+        "tempo_bpm": 208.3,
+        "sub_bass_ratio": 0.0346
+      },
+      "panns_categories": {
+        "speech": 0.7480353713035583,
+        "siren": 0.0009270695736631751,
+        "vehicle": 0.015969183295965195,
+        "wind": 0.0017025407869368792,
+        "music": 0.22058236598968506,
+        "music_latin_am": 0.00014281400945037603,
+        "salsa": 4.0147606341633946e-05,
+        "reggae": 8.215651905629784e-05,
+        "hip_hop": 0.000660198274999857,
+        "rapping": 0.00042545527685433626,
+        "pop": 0.00013868517999071628,
+        "rock": 0.00013704196317121387,
+        "electronic": 0.0014528455212712288
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7480353713035583
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.22058236598968506
+        },
+        {
+          "idx": 72,
+          "label": "Animal",
+          "score": 0.19041134417057037
+        },
+        {
+          "idx": 73,
+          "label": "Domestic animals, pets",
+          "score": 0.04640502855181694
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.04125966876745224
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_113217.compressed.mp4",
+      "node": "parque_berrio",
+      "window": "midday",
+      "detected_genre": "no_music",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.03974,
+        "rms_db": -28.02,
+        "spectral_centroid_hz": 673.6,
+        "spectral_bandwidth_hz": 720.5,
+        "zero_crossing_rate": 0.067,
+        "tempo_bpm": 170.5,
+        "sub_bass_ratio": 0.0363
+      },
+      "panns_categories": {
+        "speech": 0.9203624725341797,
+        "siren": 0.0003710713644977659,
+        "vehicle": 0.07376253604888916,
+        "wind": 0.007694674655795097,
+        "music": 0.07842688262462616,
+        "music_latin_am": 0.0001236082025570795,
+        "salsa": 4.132467438466847e-05,
+        "reggae": 4.042132422910072e-05,
+        "hip_hop": 0.00013559730723500252,
+        "rapping": 0.00020933349151164293,
+        "pop": 5.8897523558698595e-05,
+        "rock": 7.80555565143004e-05,
+        "electronic": 0.0007840291364118457
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.9203624725341797
+        },
+        {
+          "idx": 72,
+          "label": "Animal",
+          "score": 0.21897459030151367
+        },
+        {
+          "idx": 108,
+          "label": "Wild animals",
+          "score": 0.1167406290769577
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.09065624326467514
+        },
+        {
+          "idx": 525,
+          "label": "Radio",
+          "score": 0.07994207739830017
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_114547.mp4",
+      "node": "parque_berrio",
+      "window": "midday",
+      "detected_genre": "no_music",
+      "duration_s": 0.34,
+      "spectral": {
+        "duration_s": 0.34,
+        "rms": 0.06092,
+        "rms_db": -24.3,
+        "spectral_centroid_hz": 748.2,
+        "spectral_bandwidth_hz": 555.0,
+        "zero_crossing_rate": 0.0316,
+        "tempo_bpm": 144.2,
+        "sub_bass_ratio": 0.003
+      },
+      "panns_categories": {
+        "speech": 0.05156136304140091,
+        "siren": 0.0010432492708787322,
+        "vehicle": 0.03356146067380905,
+        "wind": 0.0028517392929643393,
+        "music": 0.11533009260892868,
+        "music_latin_am": 0.00018597095913719386,
+        "salsa": 7.114724576240405e-05,
+        "reggae": 6.478887371486053e-05,
+        "hip_hop": 0.00042711931746453047,
+        "rapping": 0.00018172990530729294,
+        "pop": 0.0007433624123223126,
+        "rock": 0.0005289059481583536,
+        "electronic": 0.00278517440892756
+      },
+      "panns_top5": [
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.11533009260892868
+        },
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.05156136304140091
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.03356146067380905
+        },
+        {
+          "idx": 72,
+          "label": "Animal",
+          "score": 0.01572025567293167
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.01331685483455658
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_154051.compressed.mp4",
+      "node": "parque_berrio",
+      "window": "peak_pm",
+      "detected_genre": "no_music",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.01435,
+        "rms_db": -36.86,
+        "spectral_centroid_hz": 815.9,
+        "spectral_bandwidth_hz": 849.0,
+        "zero_crossing_rate": 0.0774,
+        "tempo_bpm": 117.2,
+        "sub_bass_ratio": 0.0322
+      },
+      "panns_categories": {
+        "speech": 0.7507491111755371,
+        "siren": 0.0004446447710506618,
+        "vehicle": 0.023559333756566048,
+        "wind": 0.004572234116494656,
+        "music": 0.033001046627759933,
+        "music_latin_am": 0.00011623169848462567,
+        "salsa": 5.39997527084779e-05,
+        "reggae": 3.440854561631568e-05,
+        "hip_hop": 0.00020341960771474987,
+        "rapping": 0.00014520285185426474,
+        "pop": 0.00012668495764955878,
+        "rock": 0.0001531205343781039,
+        "electronic": 0.00026803629589267075
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7507491111755371
+        },
+        {
+          "idx": 57,
+          "label": "Stomach rumble",
+          "score": 0.13156303763389587
+        },
+        {
+          "idx": 111,
+          "label": "Bird",
+          "score": 0.11627025902271271
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.11073467880487442
+        },
+        {
+          "idx": 524,
+          "label": "Television",
+          "score": 0.07832704484462738
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_155144.compressed.mp4",
+      "node": "parque_berrio",
+      "window": "peak_pm",
+      "detected_genre": "ambiguous",
+      "duration_s": 60.0,
+      "spectral": {
+        "duration_s": 60.0,
+        "rms": 0.02248,
+        "rms_db": -32.96,
+        "spectral_centroid_hz": 830.5,
+        "spectral_bandwidth_hz": 839.7,
+        "zero_crossing_rate": 0.0769,
+        "tempo_bpm": 133.9,
+        "sub_bass_ratio": 0.0333
+      },
+      "panns_categories": {
+        "speech": 0.7537432909011841,
+        "siren": 0.0012772566406056285,
+        "vehicle": 0.05340900644659996,
+        "wind": 0.005826253443956375,
+        "music": 0.20880940556526184,
+        "music_latin_am": 0.0006536606815643609,
+        "salsa": 0.00021600110630970448,
+        "reggae": 0.0001352801191387698,
+        "hip_hop": 0.0010151152964681387,
+        "rapping": 0.00043304922292008996,
+        "pop": 0.0003949013480450958,
+        "rock": 0.0004909357521682978,
+        "electronic": 0.0031618026550859213
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.7537432909011841
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.20880940556526184
+        },
+        {
+          "idx": 136,
+          "label": "Whale vocalization",
+          "score": 0.08712397515773773
+        },
+        {
+          "idx": 57,
+          "label": "Stomach rumble",
+          "score": 0.07384691387414932
+        },
+        {
+          "idx": 300,
+          "label": "Vehicle",
+          "score": 0.05340900644659996
+        }
+      ]
+    },
+    {
+      "video": "VID_20260505_213002.mp4",
+      "node": "parque_berrio",
+      "window": "night",
+      "detected_genre": "music_other",
+      "duration_s": 16.94,
+      "spectral": {
+        "duration_s": 16.94,
+        "rms": 0.0489,
+        "rms_db": -26.21,
+        "spectral_centroid_hz": 1363.6,
+        "spectral_bandwidth_hz": 1158.0,
+        "zero_crossing_rate": 0.1195,
+        "tempo_bpm": 110.3,
+        "sub_bass_ratio": 0.0066
+      },
+      "panns_categories": {
+        "speech": 0.865585207939148,
+        "siren": 0.0009801371488720179,
+        "vehicle": 0.0034585881512612104,
+        "wind": 2.7818554372061044e-05,
+        "music": 0.5312572121620178,
+        "music_latin_am": 8.750941924517974e-05,
+        "salsa": 4.583645204547793e-05,
+        "reggae": 7.345672202063724e-05,
+        "hip_hop": 0.0008290213881991804,
+        "rapping": 0.0003285256971139461,
+        "pop": 0.0002097018586937338,
+        "rock": 0.00011652389366645366,
+        "electronic": 0.001224163337610662
+      },
+      "panns_top5": [
+        {
+          "idx": 0,
+          "label": "Speech",
+          "score": 0.865585207939148
+        },
+        {
+          "idx": 137,
+          "label": "Music",
+          "score": 0.5312572121620178
+        },
+        {
+          "idx": 506,
+          "label": "Inside, small room",
+          "score": 0.15273337066173553
+        },
+        {
+          "idx": 392,
+          "label": "Telephone dialing, DTMF",
+          "score": 0.07124155759811401
+        },
+        {
+          "idx": 389,
+          "label": "Telephone",
+          "score": 0.03312041610479355
+        }
+      ]
+    }
+  ],
+  "per_node": {
+    "san_antonio_metro": {
+      "n_videos": 3,
+      "dominant_genre": "no_music",
+      "genre_counts": {
+        "no_music": 2,
+        "music_other": 1
+      },
+      "noise_level_db_proxy": -29.9,
+      "noise_level_db_max": -29.39,
+      "spectral_centroid_mean_hz": 1928.9,
+      "voice_activity_ratio": 1.0,
+      "music_activity_ratio": 0.333,
+      "siren_events": 0,
+      "traffic_intensity": 0.444,
+      "mean_speech_score": 0.759,
+      "mean_siren_score": 0.007,
+      "mean_vehicle_score": 0.444,
+      "mean_music_score": 0.218,
+      "videos": [
+        "VID_20260505_082652114.mp4",
+        "VID_20260505_082857885.mp4",
+        "VID_20260505_083042543.compressed.mp4"
+      ]
+    },
+    "junin_paseo": {
+      "n_videos": 6,
+      "dominant_genre": "music_other",
+      "genre_counts": {
+        "music_other": 6
+      },
+      "noise_level_db_proxy": -30.48,
+      "noise_level_db_max": -27.87,
+      "spectral_centroid_mean_hz": 1138.6,
+      "voice_activity_ratio": 1.0,
+      "music_activity_ratio": 1.0,
+      "siren_events": 0,
+      "traffic_intensity": 0.092,
+      "mean_speech_score": 0.761,
+      "mean_siren_score": 0.001,
+      "mean_vehicle_score": 0.092,
+      "mean_music_score": 0.755,
+      "videos": [
+        "VID_20260505_094143350.mp4",
+        "VID_20260505_094243902.compressed.mp4",
+        "VID_20260505_094243902_02.compressed.mp4",
+        "VID_20260505_095806.compressed.mp4",
+        "VID_20260505_100656.compressed.mp4",
+        "VID_20260505_101033.compressed.mp4"
+      ]
+    },
+    "parque_berrio": {
+      "n_videos": 8,
+      "dominant_genre": "no_music",
+      "genre_counts": {
+        "no_music": 4,
+        "ambiguous": 3,
+        "music_other": 1
+      },
+      "noise_level_db_proxy": -30.4,
+      "noise_level_db_max": -24.3,
+      "spectral_centroid_mean_hz": 849.4,
+      "voice_activity_ratio": 0.875,
+      "music_activity_ratio": 0.375,
+      "siren_events": 0,
+      "traffic_intensity": 0.038,
+      "mean_speech_score": 0.698,
+      "mean_siren_score": 0.001,
+      "mean_vehicle_score": 0.038,
+      "mean_music_score": 0.18,
+      "videos": [
+        "VID_20260505_104808.compressed.mp4",
+        "VID_20260505_110910.mp4",
+        "VID_20260505_112136.compressed.mp4",
+        "VID_20260505_113217.compressed.mp4",
+        "VID_20260505_114547.mp4",
+        "VID_20260505_154051.compressed.mp4",
+        "VID_20260505_155144.compressed.mp4",
+        "VID_20260505_213002.mp4"
+      ]
+    }
+  },
+  "per_node_window": {
+    "san_antonio_metro|peak_am": {
+      "n_videos": 3,
+      "dominant_genre": "no_music",
+      "genre_counts": {
+        "no_music": 2,
+        "music_other": 1
+      },
+      "noise_level_db_proxy": -29.9,
+      "noise_level_db_max": -29.39,
+      "spectral_centroid_mean_hz": 1928.9,
+      "voice_activity_ratio": 1.0,
+      "music_activity_ratio": 0.333,
+      "siren_events": 0,
+      "traffic_intensity": 0.444,
+      "mean_speech_score": 0.759,
+      "mean_siren_score": 0.007,
+      "mean_vehicle_score": 0.444,
+      "mean_music_score": 0.218,
+      "videos": [
+        "VID_20260505_082652114.mp4",
+        "VID_20260505_082857885.mp4",
+        "VID_20260505_083042543.compressed.mp4"
+      ]
+    },
+    "junin_paseo|peak_am": {
+      "n_videos": 4,
+      "dominant_genre": "music_other",
+      "genre_counts": {
+        "music_other": 4
+      },
+      "noise_level_db_proxy": -31.65,
+      "noise_level_db_max": -29.35,
+      "spectral_centroid_mean_hz": 1415.4,
+      "voice_activity_ratio": 1.0,
+      "music_activity_ratio": 1.0,
+      "siren_events": 0,
+      "traffic_intensity": 0.132,
+      "mean_speech_score": 0.776,
+      "mean_siren_score": 0.002,
+      "mean_vehicle_score": 0.132,
+      "mean_music_score": 0.764,
+      "videos": [
+        "VID_20260505_094143350.mp4",
+        "VID_20260505_094243902.compressed.mp4",
+        "VID_20260505_094243902_02.compressed.mp4",
+        "VID_20260505_095806.compressed.mp4"
+      ]
+    },
+    "junin_paseo|midday": {
+      "n_videos": 2,
+      "dominant_genre": "music_other",
+      "genre_counts": {
+        "music_other": 2
+      },
+      "noise_level_db_proxy": -28.15,
+      "noise_level_db_max": -27.87,
+      "spectral_centroid_mean_hz": 585.0,
+      "voice_activity_ratio": 1.0,
+      "music_activity_ratio": 1.0,
+      "siren_events": 0,
+      "traffic_intensity": 0.013,
+      "mean_speech_score": 0.731,
+      "mean_siren_score": 0.001,
+      "mean_vehicle_score": 0.013,
+      "mean_music_score": 0.737,
+      "videos": [
+        "VID_20260505_100656.compressed.mp4",
+        "VID_20260505_101033.compressed.mp4"
+      ]
+    },
+    "parque_berrio|midday": {
+      "n_videos": 5,
+      "dominant_genre": "no_music",
+      "genre_counts": {
+        "no_music": 3,
+        "ambiguous": 2
+      },
+      "noise_level_db_proxy": -29.43,
+      "noise_level_db_max": -24.3,
+      "spectral_centroid_mean_hz": 757.0,
+      "voice_activity_ratio": 0.8,
+      "music_activity_ratio": 0.2,
+      "siren_events": 0,
+      "traffic_intensity": 0.045,
+      "mean_speech_score": 0.643,
+      "mean_siren_score": 0.001,
+      "mean_vehicle_score": 0.045,
+      "mean_music_score": 0.133,
+      "videos": [
+        "VID_20260505_104808.compressed.mp4",
+        "VID_20260505_110910.mp4",
+        "VID_20260505_112136.compressed.mp4",
+        "VID_20260505_113217.compressed.mp4",
+        "VID_20260505_114547.mp4"
+      ]
+    },
+    "parque_berrio|peak_pm": {
+      "n_videos": 2,
+      "dominant_genre": "no_music",
+      "genre_counts": {
+        "no_music": 1,
+        "ambiguous": 1
+      },
+      "noise_level_db_proxy": -34.91,
+      "noise_level_db_max": -32.96,
+      "spectral_centroid_mean_hz": 823.2,
+      "voice_activity_ratio": 1.0,
+      "music_activity_ratio": 0.5,
+      "siren_events": 0,
+      "traffic_intensity": 0.038,
+      "mean_speech_score": 0.752,
+      "mean_siren_score": 0.001,
+      "mean_vehicle_score": 0.038,
+      "mean_music_score": 0.121,
+      "videos": [
+        "VID_20260505_154051.compressed.mp4",
+        "VID_20260505_155144.compressed.mp4"
+      ]
+    },
+    "parque_berrio|night": {
+      "n_videos": 1,
+      "dominant_genre": "music_other",
+      "genre_counts": {
+        "music_other": 1
+      },
+      "noise_level_db_proxy": -26.21,
+      "noise_level_db_max": -26.21,
+      "spectral_centroid_mean_hz": 1363.6,
+      "voice_activity_ratio": 1.0,
+      "music_activity_ratio": 1.0,
+      "siren_events": 0,
+      "traffic_intensity": 0.003,
+      "mean_speech_score": 0.866,
+      "mean_siren_score": 0.001,
+      "mean_vehicle_score": 0.003,
+      "mean_music_score": 0.531,
+      "videos": [
+        "VID_20260505_213002.mp4"
+      ]
+    }
+  }
+}

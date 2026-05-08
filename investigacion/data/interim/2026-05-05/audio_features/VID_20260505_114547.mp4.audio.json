@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_114547.mp4",
+  "duration_s": 0.34,
+  "spectral": {
+    "duration_s": 0.34,
+    "rms": 0.06092,
+    "rms_db": -24.3,
+    "spectral_centroid_hz": 748.2,
+    "spectral_bandwidth_hz": 555.0,
+    "zero_crossing_rate": 0.0316,
+    "tempo_bpm": 144.2,
+    "sub_bass_ratio": 0.003
+  },
+  "panns_top10": [
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.11533009260892868
+    },
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.05156136304140091
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.03356146067380905
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.01572025567293167
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.01331685483455658
+    },
+    {
+      "idx": 138,
+      "label": "Musical instrument",
+      "score": 0.012226552702486515
+    },
+    {
+      "idx": 520,
+      "label": "White noise",
+      "score": 0.011186234652996063
+    },
+    {
+      "idx": 500,
+      "label": "Silence",
+      "score": 0.00897141918540001
+    },
+    {
+      "idx": 408,
+      "label": "Tick-tock",
+      "score": 0.007654725573956966
+    },
+    {
+      "idx": 407,
+      "label": "Tick",
+      "score": 0.007653740234673023
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.05156136304140091,
+    "siren": 0.0010432492708787322,
+    "vehicle": 0.03356146067380905,
+    "wind": 0.0028517392929643393,
+    "music": 0.11533009260892868,
+    "music_latin_am": 0.00018597095913719386,
+    "salsa": 7.114724576240405e-05,
+    "reggae": 6.478887371486053e-05,
+    "hip_hop": 0.00042711931746453047,
+    "rapping": 0.00018172990530729294,
+    "pop": 0.0007433624123223126,
+    "rock": 0.0005289059481583536,
+    "electronic": 0.00278517440892756
+  },
+  "detected_genre": "no_music",
+  "elapsed_s": 0.2
+}

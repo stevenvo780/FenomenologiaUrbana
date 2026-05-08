@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_095806.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.03409,
+    "rms_db": -29.35,
+    "spectral_centroid_hz": 600.9,
+    "spectral_bandwidth_hz": 654.5,
+    "zero_crossing_rate": 0.0626,
+    "tempo_bpm": 187.5,
+    "sub_bass_ratio": 0.027
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7166435718536377
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.5942161083221436
+    },
+    {
+      "idx": 524,
+      "label": "Television",
+      "score": 0.219351664185524
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.12151119858026505
+    },
+    {
+      "idx": 111,
+      "label": "Bird",
+      "score": 0.09255765378475189
+    },
+    {
+      "idx": 136,
+      "label": "Whale vocalization",
+      "score": 0.08487213402986526
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.05959559977054596
+    },
+    {
+      "idx": 138,
+      "label": "Musical instrument",
+      "score": 0.03301909193396568
+    },
+    {
+      "idx": 525,
+      "label": "Radio",
+      "score": 0.03294162452220917
+    },
+    {
+      "idx": 57,
+      "label": "Stomach rumble",
+      "score": 0.032620616257190704
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7166435718536377,
+    "siren": 0.0012343092821538448,
+    "vehicle": 0.01495214831084013,
+    "wind": 0.0014098286628723145,
+    "music": 0.5942161083221436,
+    "music_latin_am": 0.00108045875094831,
+    "salsa": 0.0003063748008571565,
+    "reggae": 0.0002623460895847529,
+    "hip_hop": 0.0015862603904679418,
+    "rapping": 0.0008410743903368711,
+    "pop": 0.0007593166665174067,
+    "rock": 0.0006148445536382496,
+    "electronic": 0.005553320981562138
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.5
+}

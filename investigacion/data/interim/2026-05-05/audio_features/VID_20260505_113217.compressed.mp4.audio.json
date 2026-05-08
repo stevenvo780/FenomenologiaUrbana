@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_113217.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.03974,
+    "rms_db": -28.02,
+    "spectral_centroid_hz": 673.6,
+    "spectral_bandwidth_hz": 720.5,
+    "zero_crossing_rate": 0.067,
+    "tempo_bpm": 170.5,
+    "sub_bass_ratio": 0.0363
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.9203624725341797
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.21897459030151367
+    },
+    {
+      "idx": 108,
+      "label": "Wild animals",
+      "score": 0.1167406290769577
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.09065624326467514
+    },
+    {
+      "idx": 525,
+      "label": "Radio",
+      "score": 0.07994207739830017
+    },
+    {
+      "idx": 111,
+      "label": "Bird",
+      "score": 0.07905292510986328
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.07842688262462616
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.07376253604888916
+    },
+    {
+      "idx": 510,
+      "label": "Outside, rural or natural",
+      "score": 0.07281672209501266
+    },
+    {
+      "idx": 109,
+      "label": "Roaring cats (lions, tigers)",
+      "score": 0.06935179978609085
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.9203624725341797,
+    "siren": 0.0003710713644977659,
+    "vehicle": 0.07376253604888916,
+    "wind": 0.007694674655795097,
+    "music": 0.07842688262462616,
+    "music_latin_am": 0.0001236082025570795,
+    "salsa": 4.132467438466847e-05,
+    "reggae": 4.042132422910072e-05,
+    "hip_hop": 0.00013559730723500252,
+    "rapping": 0.00020933349151164293,
+    "pop": 5.8897523558698595e-05,
+    "rock": 7.80555565143004e-05,
+    "electronic": 0.0007840291364118457
+  },
+  "detected_genre": "no_music",
+  "elapsed_s": 0.6
+}

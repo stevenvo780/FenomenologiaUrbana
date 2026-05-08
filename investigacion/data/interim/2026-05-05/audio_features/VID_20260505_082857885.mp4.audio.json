@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_082857885.mp4",
+  "duration_s": 51.82,
+  "spectral": {
+    "duration_s": 51.82,
+    "rms": 0.03016,
+    "rms_db": -30.41,
+    "spectral_centroid_hz": 1727.7,
+    "spectral_bandwidth_hz": 2034.1,
+    "zero_crossing_rate": 0.0995,
+    "tempo_bpm": 133.9,
+    "sub_bass_ratio": 0.1092
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.6711204051971436
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.43613529205322266
+    },
+    {
+      "idx": 329,
+      "label": "Train",
+      "score": 0.3838249444961548
+    },
+    {
+      "idx": 328,
+      "label": "Rail transport",
+      "score": 0.2991742491722107
+    },
+    {
+      "idx": 332,
+      "label": "Railroad car, train wagon",
+      "score": 0.24834752082824707
+    },
+    {
+      "idx": 334,
+      "label": "Subway, metro, underground",
+      "score": 0.1752971112728119
+    },
+    {
+      "idx": 307,
+      "label": "Car",
+      "score": 0.1432100534439087
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.12989871203899384
+    },
+    {
+      "idx": 331,
+      "label": "Train horn",
+      "score": 0.09351132065057755
+    },
+    {
+      "idx": 509,
+      "label": "Outside, urban or manmade",
+      "score": 0.08792935311794281
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.6711204051971436,
+    "siren": 0.01395706832408905,
+    "vehicle": 0.43613529205322266,
+    "wind": 0.0037914556451141834,
+    "music": 0.12989871203899384,
+    "music_latin_am": 0.00028380868025124073,
+    "salsa": 9.848218905972317e-05,
+    "reggae": 6.476225098595023e-05,
+    "hip_hop": 0.0002841246023308486,
+    "rapping": 0.0002141771255992353,
+    "pop": 0.00022288275067694485,
+    "rock": 0.0002750632120296359,
+    "electronic": 0.0004940804210491478
+  },
+  "detected_genre": "no_music",
+  "elapsed_s": 0.5
+}

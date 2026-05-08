@@ -101,6 +101,38 @@ def main() -> int:
             "p75_per_window_cases_per_hour": (c1_proj.get("projection") or {}).get("p75_per_window_cases_per_hour"),
         }
 
+    irr = load_json(inv / "data" / "interim" / "2026-05-05" / "inter_rater_reliability.json")
+    if irr:
+        field["inter_rater_reliability"] = irr
+
+    sens = load_json(inv / "data" / "processed" / "collapse_matrix_sensitivity.json")
+    if sens:
+        field["collapse_matrix_sensitivity"] = sens
+
+    xval = load_json(inv / "data" / "interim" / "2026-05-05" / "cross_validation.json")
+    if xval:
+        field["cross_validation"] = xval
+
+    signage = load_json(inv / "data" / "processed" / "m3_signage_ocr.json")
+    if signage:
+        field["signage_ocr"] = signage
+
+    geom_v2 = load_json(inv / "data" / "processed" / "node_geometry_v2.json")
+    if geom_v2:
+        field["node_geometry_v2"] = geom_v2
+
+    audio = load_json(inv / "data" / "processed" / "m3_audio_classification.json")
+    if audio:
+        field["audio_classification"] = audio
+
+    m1_visual = load_json(inv / "data" / "processed" / "m1_visual_aggregate.json")
+    if m1_visual:
+        field["m1_visual_aggregate"] = m1_visual
+
+    m3_visual = load_json(inv / "data" / "processed" / "m3_visual_aggregate.json")
+    if m3_visual:
+        field["m3_visual_aggregate"] = m3_visual
+
     payload["field_calibration"] = field
     payload.setdefault("meta", {})["field_published_at"] = (
         matrix.get("generated_at") if matrix else None

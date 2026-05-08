@@ -624,4 +624,167 @@ export type FieldCalibration = {
     weights?: Record<string, number>
     p75_per_window_cases_per_hour?: Record<string, number>
   }
+  inter_rater_reliability?: InterRaterReliability
+  collapse_matrix_sensitivity?: CollapseMatrixSensitivity
+  cross_validation?: CrossValidationReport
+  signage_ocr?: SignageOcrReport
+  node_geometry_v2?: NodeGeometryV2
+}
+
+export type InterRaterObserverEntry = {
+  perceived_safety_1_5: number
+  binary: 'alto' | 'bajo' | string
+  atmosphere_keywords?: string[]
+  fear?: string[]
+  blase?: string[]
+}
+
+export type InterRaterReliability = {
+  schema?: string
+  date?: string
+  raters: string[]
+  shared_nodes: string[]
+  binarization_rule?: string
+  scoring_per_observer_per_node: Record<string, Record<string, InterRaterObserverEntry>>
+  cohens_kappa: {
+    variable: string
+    n_items: number
+    stev_labels?: string[]
+    jacob_labels?: string[]
+    p_observed: number
+    p_expected: number
+    kappa: number
+    interpretation: string
+    defensive_reading?: string
+  }
+  qualitative_thematic_concordance?: Record<string, {
+    stev?: string
+    jacob?: string
+    concordance: string
+    notes?: string
+  }>
+  summary?: {
+    kappa_quantitative?: number
+    convergencias?: string[]
+    divergencias?: string[]
+    aportes_unicos_jacob?: string[]
+  }
+}
+
+export type SensitivityCellShare = {
+  colapso_fenomenologico: number
+  friccion_acumulada: number
+  flujo_ordinario: number
+  inconcluyente: number
+}
+
+export type SensitivityRobustness = {
+  baseline_decision: CollapseDecision | string
+  v1_share_baseline: number
+  v2_share_baseline: number
+  robust: boolean
+  fragile: boolean
+  min_share: number
+}
+
+export type CollapseMatrixSensitivity = {
+  meta?: {
+    n_iter_bootstrap?: number
+    seed?: number
+    n_threshold_scenarios?: number
+    n_interviews_loo?: number
+    rule?: string
+  }
+  baseline_decisions?: Record<string, string>
+  variant1_bootstrap?: Record<string, SensitivityCellShare & { _n_iter?: number }>
+  variant2_thresholds?: {
+    per_cell?: Record<string, SensitivityCellShare & { _n_scenarios?: number }>
+    n_scenarios?: number
+  }
+  variant3_loo_c3?: {
+    per_cell?: Record<string, SensitivityCellShare & { _n_loo?: number }>
+    n_interviews?: number
+    cells_with_c3?: string[]
+  }
+  robustness?: Record<string, SensitivityRobustness>
+}
+
+export type CrossValidationConvergence = 'alta' | 'media' | 'baja' | 'no_evaluable' | string
+
+export type CrossValidationClaim = {
+  claim_id: string
+  node: string
+  window: string
+  field_observer: string
+  field_value: string
+  visual_metric: string
+  visual_value: string
+  convergence: CrossValidationConvergence
+  note?: string
+}
+
+export type CrossValidationReport = {
+  _meta?: {
+    generator?: string
+    date?: string
+    purpose?: string
+    convergence_levels?: string[]
+    caveats?: string[]
+  }
+  claims: CrossValidationClaim[]
+  summary?: {
+    alta_convergencia?: string[]
+    media_convergencia?: string[]
+    baja_convergencia?: string[]
+    no_evaluable?: string[]
+    inter_rater_resolution?: Record<string, string>
+  }
+}
+
+export type SignageOcrNode = {
+  n_photos: number
+  n_text_strings: number
+  n_tags: number
+  n_unique_tags: number
+  tag_repetition_score: number
+  tag_repetition_volume: number
+  top_repeated_tags: Array<{ tag: string; count: number }>
+  n_commerce: number
+  commerce_density: number
+  n_marcas: number
+  n_direcciones: number
+  language_diversity: Record<string, number>
+}
+
+export type SignageOcrReport = {
+  engine?: string
+  engine_gpu?: boolean
+  languages?: string[]
+  min_chars?: number
+  min_confidence?: number
+  n_photos_processed: number
+  n_strings_total: number
+  n_tags_total: number
+  n_unique_tags_global: number
+  global_top_repeated_tags?: Array<{ tag: string; count: number }>
+  by_node: Record<string, SignageOcrNode>
+  elapsed_seconds?: number
+}
+
+export type NodeGeometryV2Entry = {
+  id: string
+  lat: number
+  lon: number
+  kind: 'canonical' | 'subzone' | string
+  parent_hint: string | null
+  max_radius_m: number | null
+  source: string
+}
+
+export type NodeGeometryV2 = {
+  version?: string
+  rationale?: string
+  subzone_max_radius_m?: number
+  global_max_radius_m?: number
+  nodes: NodeGeometryV2Entry[]
 }

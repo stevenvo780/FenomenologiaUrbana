@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_154051.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.01435,
+    "rms_db": -36.86,
+    "spectral_centroid_hz": 815.9,
+    "spectral_bandwidth_hz": 849.0,
+    "zero_crossing_rate": 0.0774,
+    "tempo_bpm": 117.2,
+    "sub_bass_ratio": 0.0322
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7507491111755371
+    },
+    {
+      "idx": 57,
+      "label": "Stomach rumble",
+      "score": 0.13156303763389587
+    },
+    {
+      "idx": 111,
+      "label": "Bird",
+      "score": 0.11627025902271271
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.11073467880487442
+    },
+    {
+      "idx": 524,
+      "label": "Television",
+      "score": 0.07832704484462738
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.07323179394006729
+    },
+    {
+      "idx": 116,
+      "label": "Coo",
+      "score": 0.07311209291219711
+    },
+    {
+      "idx": 115,
+      "label": "Pigeon, dove",
+      "score": 0.06020646542310715
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.033001046627759933
+    },
+    {
+      "idx": 3,
+      "label": "Child speech, kid speaking",
+      "score": 0.02879597432911396
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7507491111755371,
+    "siren": 0.0004446447710506618,
+    "vehicle": 0.023559333756566048,
+    "wind": 0.004572234116494656,
+    "music": 0.033001046627759933,
+    "music_latin_am": 0.00011623169848462567,
+    "salsa": 5.39997527084779e-05,
+    "reggae": 3.440854561631568e-05,
+    "hip_hop": 0.00020341960771474987,
+    "rapping": 0.00014520285185426474,
+    "pop": 0.00012668495764955878,
+    "rock": 0.0001531205343781039,
+    "electronic": 0.00026803629589267075
+  },
+  "detected_genre": "no_music",
+  "elapsed_s": 0.5
+}

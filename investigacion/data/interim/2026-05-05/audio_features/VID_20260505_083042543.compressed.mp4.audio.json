@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_083042543.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.03197,
+    "rms_db": -29.9,
+    "spectral_centroid_hz": 1877.0,
+    "spectral_bandwidth_hz": 2082.5,
+    "zero_crossing_rate": 0.1232,
+    "tempo_bpm": 117.2,
+    "sub_bass_ratio": 0.0932
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.833168089389801
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.49817147850990295
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.3456195592880249
+    },
+    {
+      "idx": 329,
+      "label": "Train",
+      "score": 0.1434905081987381
+    },
+    {
+      "idx": 317,
+      "label": "Air brake",
+      "score": 0.10638795793056488
+    },
+    {
+      "idx": 328,
+      "label": "Rail transport",
+      "score": 0.09160661697387695
+    },
+    {
+      "idx": 334,
+      "label": "Subway, metro, underground",
+      "score": 0.08865330368280411
+    },
+    {
+      "idx": 321,
+      "label": "Bus",
+      "score": 0.07150524854660034
+    },
+    {
+      "idx": 332,
+      "label": "Railroad car, train wagon",
+      "score": 0.055689673870801926
+    },
+    {
+      "idx": 509,
+      "label": "Outside, urban or manmade",
+      "score": 0.05538110435009003
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.833168089389801,
+    "siren": 0.0033315953332930803,
+    "vehicle": 0.3456195592880249,
+    "wind": 0.0027197939343750477,
+    "music": 0.49817147850990295,
+    "music_latin_am": 0.0007065614336170256,
+    "salsa": 0.00025752055807970464,
+    "reggae": 9.1953894298058e-05,
+    "hip_hop": 0.0001670535420998931,
+    "rapping": 0.0001320224691880867,
+    "pop": 0.0004584284615702927,
+    "rock": 0.00013685300655197352,
+    "electronic": 0.00036245494266040623
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.5
+}

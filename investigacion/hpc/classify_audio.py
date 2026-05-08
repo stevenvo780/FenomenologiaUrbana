@@ -32,16 +32,32 @@ from pathlib import Path
 
 import numpy as np
 
-# Rutas (montadas en el contenedor en /workspace si se invoca dentro)
+# Rutas — el contenedor monta /data/raw/video y /data/processed por separado.
+# Si REPO_ROOT está definido (host directo) usamos esa raíz. Si no, intentamos
+# rutas del contenedor /data y caemos a /datos/repos/FenomenologiaUrbana.
 REPO_ROOT_HOST = Path("/datos/repos/FenomenologiaUrbana")
-REPO_ROOT = Path(os.environ.get("REPO_ROOT", "/workspace"))
-if not REPO_ROOT.exists():
+_env_root = os.environ.get("REPO_ROOT")
+if _env_root and Path(_env_root).exists():
+    REPO_ROOT = Path(_env_root)
+    VIDEO_DIR = REPO_ROOT / "investigacion/data/raw/video"
+    ASSIGN_JSON = REPO_ROOT / "investigacion/data/processed/video_node_assignments.json"
+    INTERIM_DIR = REPO_ROOT / "investigacion/data/interim/2026-05-05/audio_features"
+    OUT_JSON = REPO_ROOT / "investigacion/data/processed/m3_audio_classification.json"
+elif Path("/data/raw/video").exists() and Path("/data/processed").exists():
+    # Dentro del contenedor fenomurb_proc_transcribe
+    VIDEO_DIR = Path("/data/raw/video")
+    ASSIGN_JSON = Path("/data/processed/video_node_assignments.json")
+    INTERIM_DIR = Path("/data/processed/_interim_audio_features")
+    OUT_JSON = Path("/data/processed/m3_audio_classification.json")
+else:
     REPO_ROOT = REPO_ROOT_HOST
+    VIDEO_DIR = REPO_ROOT / "investigacion/data/raw/video"
+    ASSIGN_JSON = REPO_ROOT / "investigacion/data/processed/video_node_assignments.json"
+    INTERIM_DIR = REPO_ROOT / "investigacion/data/interim/2026-05-05/audio_features"
+    OUT_JSON = REPO_ROOT / "investigacion/data/processed/m3_audio_classification.json"
 
-VIDEO_DIR = REPO_ROOT / "investigacion/data/raw/video"
-ASSIGN_JSON = REPO_ROOT / "investigacion/data/processed/video_node_assignments.json"
-INTERIM_DIR = REPO_ROOT / "investigacion/data/interim/2026-05-05/audio_features"
-OUT_JSON = REPO_ROOT / "investigacion/data/processed/m3_audio_classification.json"
+# Ventana de audio analizada por video (segundos). 60s del medio es buen tradeoff.
+AUDIO_WINDOW_S = float(os.environ.get("AUDIO_WINDOW_S", "60"))
 
 INTERIM_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -67,16 +83,36 @@ def have_ffmpeg() -> bool:
     return subprocess.run(["which", "ffmpeg"], capture_output=True).returncode == 0
 
 
+def probe_duration(video: Path) -> float:
+    try:
+        res = subprocess.run(
+            ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+             "-of", "default=noprint_wrappers=1:nokey=1", str(video)],
+            capture_output=True, text=True, timeout=20,
+        )
+        return float(res.stdout.strip() or 0.0)
+    except Exception:
+        return 0.0
+
+
 def extract_audio(video: Path, out_wav: Path) -> bool:
     if out_wav.exists() and out_wav.stat().st_size > 1024:
         return True
+    dur = probe_duration(video)
+    win = AUDIO_WINDOW_S
+    if dur > win + 1.0:
+        ss = max(0.0, (dur - win) / 2.0)
+        seek = ["-ss", f"{ss:.2f}", "-t", f"{win:.2f}"]
+    else:
+        seek = []
     cmd = [
         "ffmpeg", "-y", "-loglevel", "error",
+        *seek,
         "-i", str(video),
         "-vn", "-ac", "1", "-ar", "16000",
         "-f", "wav", str(out_wav),
     ]
-    res = subprocess.run(cmd, capture_output=True)
+    res = subprocess.run(cmd, capture_output=True, timeout=180)
     if res.returncode != 0:
         sys.stderr.write(f"[ffmpeg fail] {video.name}: {res.stderr.decode()[:200]}\n")
         return False

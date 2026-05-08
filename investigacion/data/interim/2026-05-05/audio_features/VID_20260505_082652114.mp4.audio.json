@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_082652114.mp4",
+  "duration_s": 40.66,
+  "spectral": {
+    "duration_s": 40.66,
+    "rms": 0.03392,
+    "rms_db": -29.39,
+    "spectral_centroid_hz": 2182.0,
+    "spectral_bandwidth_hz": 2316.5,
+    "zero_crossing_rate": 0.1377,
+    "tempo_bpm": 110.3,
+    "sub_bass_ratio": 0.0936
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7715283632278442
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.5512954592704773
+    },
+    {
+      "idx": 307,
+      "label": "Car",
+      "score": 0.24285826086997986
+    },
+    {
+      "idx": 327,
+      "label": "Traffic noise, roadway noise",
+      "score": 0.17541274428367615
+    },
+    {
+      "idx": 317,
+      "label": "Air brake",
+      "score": 0.15832990407943726
+    },
+    {
+      "idx": 509,
+      "label": "Outside, urban or manmade",
+      "score": 0.13790617883205414
+    },
+    {
+      "idx": 321,
+      "label": "Bus",
+      "score": 0.11836071312427521
+    },
+    {
+      "idx": 306,
+      "label": "Motor vehicle (road)",
+      "score": 0.0858413502573967
+    },
+    {
+      "idx": 316,
+      "label": "Truck",
+      "score": 0.07885701954364777
+    },
+    {
+      "idx": 315,
+      "label": "Race car, auto racing",
+      "score": 0.07530216127634048
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7715283632278442,
+    "siren": 0.004178008064627647,
+    "vehicle": 0.5512954592704773,
+    "wind": 0.0034926030784845352,
+    "music": 0.027263766154646873,
+    "music_latin_am": 8.511372288921848e-05,
+    "salsa": 3.365319571457803e-05,
+    "reggae": 3.526422005961649e-05,
+    "hip_hop": 0.00010148301953449845,
+    "rapping": 0.0001049100756063126,
+    "pop": 7.962713425513357e-05,
+    "rock": 0.00014179671416059136,
+    "electronic": 9.84174112090841e-05
+  },
+  "detected_genre": "no_music",
+  "elapsed_s": 3.4
+}

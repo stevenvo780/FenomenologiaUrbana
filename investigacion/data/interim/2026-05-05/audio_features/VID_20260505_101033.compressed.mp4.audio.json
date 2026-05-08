@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_101033.compressed.mp4",
+  "duration_s": 60.0,
+  "spectral": {
+    "duration_s": 60.0,
+    "rms": 0.03793,
+    "rms_db": -28.42,
+    "spectral_centroid_hz": 611.8,
+    "spectral_bandwidth_hz": 632.4,
+    "zero_crossing_rate": 0.0657,
+    "tempo_bpm": 110.3,
+    "sub_bass_ratio": 0.0214
+  },
+  "panns_top10": [
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.8040841817855835
+    },
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.7812330722808838
+    },
+    {
+      "idx": 524,
+      "label": "Television",
+      "score": 0.34762653708457947
+    },
+    {
+      "idx": 506,
+      "label": "Inside, small room",
+      "score": 0.2645271122455597
+    },
+    {
+      "idx": 138,
+      "label": "Musical instrument",
+      "score": 0.1281391680240631
+    },
+    {
+      "idx": 140,
+      "label": "Guitar",
+      "score": 0.06705068051815033
+    },
+    {
+      "idx": 111,
+      "label": "Bird",
+      "score": 0.06208787113428116
+    },
+    {
+      "idx": 139,
+      "label": "Plucked string instrument",
+      "score": 0.06113559752702713
+    },
+    {
+      "idx": 525,
+      "label": "Radio",
+      "score": 0.039320845156908035
+    },
+    {
+      "idx": 115,
+      "label": "Pigeon, dove",
+      "score": 0.037376727908849716
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.7812330722808838,
+    "siren": 0.00047619850374758244,
+    "vehicle": 0.012061526998877525,
+    "wind": 0.0005196051788516343,
+    "music": 0.8040841817855835,
+    "music_latin_am": 0.0028022006154060364,
+    "salsa": 0.0009766420116648078,
+    "reggae": 0.00043117807945236564,
+    "hip_hop": 0.001203252119012177,
+    "rapping": 0.0008703118655830622,
+    "pop": 0.0005084583535790443,
+    "rock": 0.0005201309104450047,
+    "electronic": 0.006669436581432819
+  },
+  "detected_genre": "music_other",
+  "elapsed_s": 0.5
+}

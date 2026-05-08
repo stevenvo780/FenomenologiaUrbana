@@ -1,0 +1,83 @@
+{
+  "video": "VID_20260505_110910.mp4",
+  "duration_s": 48.62,
+  "spectral": {
+    "duration_s": 48.62,
+    "rms": 0.02203,
+    "rms_db": -33.14,
+    "spectral_centroid_hz": 881.4,
+    "spectral_bandwidth_hz": 985.1,
+    "zero_crossing_rate": 0.0824,
+    "tempo_bpm": 104.2,
+    "sub_bass_ratio": 0.0307
+  },
+  "panns_top10": [
+    {
+      "idx": 0,
+      "label": "Speech",
+      "score": 0.775601863861084
+    },
+    {
+      "idx": 72,
+      "label": "Animal",
+      "score": 0.3367358446121216
+    },
+    {
+      "idx": 108,
+      "label": "Wild animals",
+      "score": 0.28198936581611633
+    },
+    {
+      "idx": 109,
+      "label": "Roaring cats (lions, tigers)",
+      "score": 0.19087950885295868
+    },
+    {
+      "idx": 137,
+      "label": "Music",
+      "score": 0.15475882589817047
+    },
+    {
+      "idx": 136,
+      "label": "Whale vocalization",
+      "score": 0.0900794118642807
+    },
+    {
+      "idx": 510,
+      "label": "Outside, rural or natural",
+      "score": 0.06442102789878845
+    },
+    {
+      "idx": 86,
+      "label": "Livestock, farm animals, working animals",
+      "score": 0.06163269281387329
+    },
+    {
+      "idx": 300,
+      "label": "Vehicle",
+      "score": 0.05416922643780708
+    },
+    {
+      "idx": 110,
+      "label": "Roar",
+      "score": 0.03333749994635582
+    }
+  ],
+  "panns_categories": {
+    "speech": 0.775601863861084,
+    "siren": 0.0008916707010939717,
+    "vehicle": 0.05416922643780708,
+    "wind": 0.004051791504025459,
+    "music": 0.15475882589817047,
+    "music_latin_am": 0.00028861884493380785,
+    "salsa": 9.216818580171093e-05,
+    "reggae": 6.334434874588624e-05,
+    "hip_hop": 0.00010490268323337659,
+    "rapping": 8.637740393169224e-05,
+    "pop": 8.912086195778102e-05,
+    "rock": 0.00018808395543601364,
+    "electronic": 0.00033218596945516765
+  },
+  "detected_genre": "ambiguous",
+  "elapsed_s": 0.4
+}

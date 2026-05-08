@@ -119,19 +119,24 @@ El pipeline GPU procesó 16 archivos `video_saturation_*.json` y 34 fotografías
 
 **Estado:** 4/36 celdas con dato; 1/36 celda con C4 cumplido.
 
-### 3.12.5. Matriz de colapso fenomenológico (post-fix C1, 2026-05-07)
+### 3.12.5. Matriz de colapso fenomenológico (post-Jacob, 2026-05-08)
 
-Los números de esta sección reflejan el estado de la matriz `collapse_matrix.json` regenerada el 7 de mayo de 2026 con C1 y C4 únicamente; las 14 entrevistas codificadas en la jornada del 5 de mayo aún no están propagadas al script `build_collapse_matrix.py`. Tras integrar esas entrevistas en una próxima pasada (§3.12.8), la celda `plaza_botero|midday` emerge como candidata adicional a `friccion_acumulada` por convergencia de C3 negativo (3/3 entrevistas EVITABLE/AMBIVALENTE/NO_DESEABLE, sin HABITABLE) con la franja midday del corredor; podría aproximarse a 3/4 si C1 horario y C4 con video específico de Botero confirman.
+Los números de esta sección reflejan el estado de la matriz `collapse_matrix.json` tras la incorporación de las 15 entrevistas codificadas (14 de Stev del 5 de mayo + 1 entrevista de Jacob a *Andrés* en la sub-zona Coltejer-Ayacucho) y la propagación de C3 al pipeline `build_collapse_matrix.py`. Frente a la pasada del 7 de mayo (sólo C1+C4), la pasada post-Jacob amplía la cobertura C3 a las cuatro celdas con entrevistas y reordena conteos.
 
-La matriz `investigacion/data/processed/collapse_matrix.json`, regenerada el 7 de mayo de 2026 tras el fix de C1, distribuye las 36 celdas (9 nodos × 4 franjas) como sigue:
+La matriz `investigacion/data/processed/collapse_matrix.json` (post-Jacob, n=15 entrevistas) distribuye las 36 celdas (9 nodos × 4 franjas) como sigue:
 
 | Decisión | Celdas | Criterio |
 | --- | ---: | --- |
 | `colapso_fenomenologico` (≥ 3/4) | **0** | regla 3-de-4 sin instanciar |
-| zona gris (2/4) | **0** como categoría; `junin_paseo|peak_am` cumple 2/4 dentro de `friccion_acumulada` | C1+C4 |
-| `friccion_acumulada` (≥ 1/4 con cov ≥ 2) | **4** | C1 activo + cobertura ≥ 2 |
+| `friccion_acumulada` (≥ 1/4 con cov ≥ 2) | **6** | C1 activo + cobertura ≥ 2 |
 | `flujo_ordinario` (0/4 con cov ≥ 2) | **0** | desaparece tras el fix |
-| `inconcluyente` (cov < 2) | **32** | falta C2/C3/C4 |
+| `inconcluyente` (cov < 2) | **30** | falta C2/C4/C3 |
+
+La matriz post-Jacob añade dos celdas a `friccion_acumulada` respecto al baseline del 7 de mayo: `parque_san_antonio|midday` y `plaza_botero|midday` (ambas con C3 codificado convergente en negativo o disenso). Ninguna celda alcanza 3-de-4: 0 colapso, 6 fricción acumulada, 30 inconcluyente.
+
+#### Junín al mediodía: matiz, no flip
+
+La celda `junin_paseo|midday` (n=7 entrevistas, la más densa del corpus) muestra una distribución de códigos C3 más matizada que la lectura previa: **HABITABLE 6, DESEABLE 2, AMBIVALENTE 5, EVITABLE 3, NO_DESEABLE 2, DIFICIL_DE_VIVIR 2** (codificación no excluyente, una entrevista admite múltiples códigos). El predominio sigue siendo positivo (HABITABLE+DESEABLE = 8 ítems acumulados sobre 7 entrevistas), pero la presencia de 3 EVITABLE y 2 NO_DESEABLE introduce una capa que la versión Stev-sólo no registraba. La sub-zona Coltejer-Ayacucho narrada por Jacob, con la entrevista a Andrés (`HABITABLE + DIFICIL_DE_VIVIR`), produce el primer caso explícito de **gradiente intra-nodo**: Junín no se experimenta uniformemente como mono-uso comercial limpio. La lectura corregida es que la habitabilidad de Junín-midday **se matiza por perfil y sub-tramo**, no que se invierte: en términos del propio Jacob, "para vendedor seguro, transeúnte no". La celda permanece en `friccion_acumulada` (no escala a colapso por ausencia de C2 y por C4 sub-umbral) y se reporta como **frágil bajo bootstrap** (§3.12.9).
 
 El detalle franja por franja se conserva en el reporte de validación `tesis/pendientes/colapso-validacion-2026-05-07.md` §3 y §Anexo, del cual se reproduce a continuación la lectura sintética por celda con dato relevante:
 
@@ -155,9 +160,20 @@ El detalle franja por franja se conserva en el reporte de validación `tesis/pen
 
 - **`parque_berrio|midday`.** C1 activo, C4 por debajo del umbral (n=3, max 0.399). Lectura: nodo de tradición comercial-religiosa con peso criminal estructural pero sin saturación material crítica en la jornada procesada. Coherente con el patrón típico de Berrío al mediodía: alto tránsito sin pico de aglomeración por frame.
 
-#### 3.12.5.2. Hallazgo único defendible: `junin_paseo|peak_am`
+#### 3.12.5.2. Pilares defendibles bajo análisis de sensibilidad
 
-La única celda que la tesis puede defender como **convergencia parcial sustantiva** es `junin_paseo|peak_am`, con 2/4 condiciones cumplidas (C1 criminalidad p75 + C4 saturación visual p75 = 0.465 sobre 0.413, n=4 videos). La narrativa correcta para defensa pública es: **fricción material matinal documentada en Junín; convergencia con C2/C3 pendiente para hablar de colapso fenomenológico en sentido estricto**. No es colapso confirmado. Es la candidata natural a ser la primera celda en cruzar la regla 3-de-4 cuando se ingeste C2 (encuesta de seguridad) o se codifique C3 (entrevistas) con referencia explícita al nodo y franja.
+El análisis de sensibilidad reportado en `investigacion/data/interim/2026-05-05/sensitivity_report.md` (1000 iteraciones bootstrap V1, 25 escenarios de umbrales C1×C4 V2, 15 entrevistas leave-one-out V3) identifica **dos celdas robustas** que sobreviven simultáneamente al re-muestreo bootstrap y al barrido de umbrales p70..p90. Estas son los pilares defendibles de la tesis:
+
+| Celda | Decisión | V1 (bootstrap) | V2 (umbrales) | V3 (LOO C3) | Conjunto activo |
+| --- | --- | ---: | ---: | ---: | --- |
+| `junin_paseo|peak_am` | friccion_acumulada | **0.956** | **0.880** | 1.000 | C1 + C4 |
+| `plaza_botero|midday` | friccion_acumulada | **0.970** | **1.000** | 1.000 | C1 + C3 |
+
+- **`junin_paseo|peak_am`** sostiene la decisión `friccion_acumulada` en 95.6% del bootstrap V1 y en 88.0% de las 25 combinaciones de umbrales V2. Es la única celda donde la materialidad de la jornada (C4: saturación p75 = 0.465 > p75 global 0.413, n=4 videos) coincide con el peso histórico de criminalidad de la franja (C1). Lectura defendible: **fricción material matinal documentada en Junín**, robusta bajo deformaciones moderadas del umbral.
+
+- **`plaza_botero|midday`** sostiene la decisión en 97.0% del bootstrap V1 y en el 100% de los escenarios de umbrales V2. Es **el único caso del corpus con C3 confirmatorio**: las tres entrevistas externas codifican EVITABLE/AMBIVALENTE/NO_DESEABLE sin un solo HABITABLE, y la convergencia se mantiene cuando se elimina cualquiera de las tres en el leave-one-out V3. Lectura defendible: **convergencia C1+C3 sobre Botero al mediodía**, con el añadido auto-etnográfico de la verbalización espontánea de "colapsa" por parte del observador del marco (§3.12.8.3) y la convergencia visual alta documentada en §3.12.11.
+
+Ninguna de las dos celdas cumple la regla 3-de-4 (ambas en 2/4). La narrativa correcta para defensa pública es: **dos celdas con fricción acumulada robusta —una material-matinal en Junín, otra testimonial-meridiana en Botero—; ninguna en colapso fenomenológico estricto hasta ingestar C2**.
 
 #### 3.12.5.3. Huecos honestos
 
@@ -229,6 +245,74 @@ Las 14 entrevistas codificadas permiten anticipar dos efectos sobre `collapse_ma
 1. **`junin_paseo|midday` no escala a colapso por C3.** Las 7/7 entrevistas en HABITABLE/DESEABLE (sin EVITABLE/NO_DESEABLE) inhabilitan la propagación del hallazgo `junin_paseo|peak_am` (2/4 con C1+C4) hacia midday vía C3. La fricción material matinal de Junín no debe extrapolarse a otras franjas sin nueva evidencia de campo en peak_am específicamente.
 2. **`plaza_botero|midday` se aproxima a 3/4.** Con 3/3 entrevistas en C3 negativo, esta celda alcanzaría C3 cumplido en la próxima regeneración. Sumado a C1 (activo en midday a nivel global, §3.12.1), la celda quedaría en 2/4 con C3+C1; si una jornada futura aporta video de Botero con saturación sobre el p75 global, cruzaría 3/4 (colapso fenomenológico en sentido estricto). La prioridad de captura de campo, en consecuencia, se desplaza hacia Botero midday.
 
+### 3.12.9. Fragilidad de celdas en `friccion_acumulada` bajo sensibilidad de umbrales
+
+Cuatro de las seis celdas baseline en `friccion_acumulada` se reportan como **frágiles** en el análisis de sensibilidad: la decisión depende del corte exacto de p75 sobre C1 y se desvanece cuando los umbrales se barren entre p70 y p90.
+
+| Celda | V1 fricción | V2 fricción | V2 mínimo | Sensibilidad |
+| --- | ---: | ---: | ---: | --- |
+| `parque_san_antonio|midday` | 0.668 | 0.400 | 0.400 | frágil |
+| `san_antonio_metro|peak_am` | 0.477 | 0.400 | 0.400 | frágil |
+| `junin_paseo|midday` | 0.499 | 0.400 | 0.400 | frágil |
+| `parque_berrio|midday` | 0.497 | 0.400 | 0.400 | frágil |
+
+La condición operacional de fragilidad es la siguiente: cuando el umbral del corte C1 se mueve a p≥80, las cuatro celdas caen por debajo del 0.40 de share en la decisión `friccion_acumulada` (la versión bootstrap V1 ya las reporta en torno a 0.5, y el barrido V2 las desploma). En términos defensivos, esto significa que **la calificación de fricción acumulada en estas cuatro celdas es real pero dependiente del umbral elegido**: con un criterio C1 más exigente (p80, p85, p90) las celdas migran a `inconcluyente`. La tesis no debe presentar estas cuatro celdas con el mismo grado de confianza que los pilares de §3.12.5.2; son señales que dependen de la operacionalización exacta del p75 sobre la serie histórica MEData.
+
+La defensa metodológica honesta es declarar la asimetría: **dos pilares robustos (junin_paseo|peak_am, plaza_botero|midday) y cuatro celdas frágiles que la tesis reporta sin sobreafirmar**.
+
+### 3.12.10. Confiabilidad inter-observador (Stev ↔ Jacob)
+
+La jornada del 5 de mayo de 2026 incluyó dos observadores independientes recorriendo el mismo trayecto el mismo día. El reporte `investigacion/data/interim/2026-05-05/inter_rater_reliability.md` cuantifica la concordancia sobre la variable `perceived_safety_score_1_5` binarizada (≥3 → alto; <3 → bajo) en cuatro nodos compartidos:
+
+| Nodo | Stev (1–5) | Jacob (1–5) | Acuerdo |
+| --- | ---: | ---: | :-: |
+| san_antonio_metro | 2 (bajo) | 3 (alto) | NO |
+| parque_san_antonio | 4 (alto) | 2 (bajo) | NO |
+| junin_paseo | 4 (alto) | 3 (alto) | SÍ |
+| parque_botero | 2 (bajo) | 2 (bajo) | SÍ |
+
+El acuerdo bruto es 2/4 = 0.50; la concordancia esperada por azar es también 0.50 (ambos observadores reparten 50/50 alto/bajo), por lo que **Cohen's kappa = 0.0**, en el rango de *poor agreement* según Landis & Koch (1977) y muy por debajo del 0.4 habitual.
+
+La divergencia paradigmática es `parque_san_antonio`: Stev lo califica safety = 4 (alto, "tranquilidad en medio del ruido", "no está rota la ventana") mientras Jacob lo califica safety = 2 (bajo, "violencia", "paso histórico del terror", "vandalismo religioso"). Es el "mismo lugar" leído desde sensibilidades cultivadas distintas.
+
+**Lectura defensiva del kappa = 0.0.** Este resultado no invalida el estudio; **confirma su tesis nuclear**: la atmósfera urbana es ineliminablemente subjetiva y depende del observador. Cuatro implicaciones metodológicas:
+
+1. Justifica la **triangulación multi-observador y multi-fuente** como necesidad estructural, no opcional.
+2. Justifica **C3 (testimonios in-situ)** como tercer eje independiente: cuando dos AF divergen, el testimonio de quien habita el nodo desempata.
+3. Justifica **C1, C2, C4** como anclajes objetivables (registros oficiales, encuesta cuantitativa, saturación visual) que no dependen de la AF.
+4. Convierte la divergencia en **dato fenomenológico positivo**: el caso parque_san_antonio opera como evidencia empírica de que el "mismo lugar" no existe sin observador.
+
+Decisión metodológica adoptada: todo nodo con divergencia binaria entre observadores se etiqueta como **fenomenológicamente disputado** y exige al menos una entrevista C3 in-situ para resolución. La entrevista de Jacob a *Andrés* en la sub-zona Coltejer-Ayacucho (códigos `[HABITABLE, DIFICIL_DE_VIVIR]`) ingresa al corpus C3 vía `c3_field_interviews_jacob_2026-05-05.json` y aporta el primer caso explícito de gradiente intra-nodo.
+
+### 3.12.11. Validación cruzada texto ↔ imagen
+
+El reporte `tesis/pendientes/cross-validation-text-image-2026-05-07.md` y su JSON estructurado (`investigacion/data/interim/2026-05-05/cross_validation.json`) trianguló diez reclamos cuantificables del trabajo de campo (notas Stev + entrevistas Jacob) contra los agregados visuales YOLO (`m1_visual_aggregate.json`, `m3_visual_aggregate.json`). El veredicto resumido: 2 reclamos de convergencia alta, 2 de convergencia media, 0 baja, 6 no evaluables por límites del pipeline.
+
+**Convergencias altas:**
+
+1. **Riesgo vial en `san_antonio_metro|peak_am`.** El reclamo de Stev ("riesgo vial alto", safety = 2/5, "debo tener mucho cuidado") se sostiene contra la métrica visual `vehicle_intensity = 0.378`, **el máximo del corpus** (vs ≤0.17 en otros buckets), con vehicle_total = 14 sobre la zona peatonal de transferencia. La triangulación texto ↔ imagen es directa.
+2. **"Sofocante / colapsa" en Botero (proxy `parque_berrio|midday`).** El reclamo fenomenológico de Stev en plaza_botero se sostiene contra `human_density_max = 30` personas/frame (junto con `san_antonio_metro|midday = 26`, los dos máximos del corpus) y `saturation_max = 71.2`. Es **la convergencia texto ↔ imagen más fuerte del estudio** y respalda la tesis defendible de que `plaza_botero|midday` opera como zona de fricción material-meridiana (§3.12.5.2).
+
+**Convergencias medias:**
+
+3. **Turistas en Botero (≈5%).** El proxy de berrio adyacente reporta `tourist_proxy_ratio = 0.0365` (3.6%), mismo orden de magnitud que el 5% de Stev.
+4. **Comercio informal en Junín (Stev "casi nulo" vs Jacob "heterotópico").** El visual entrega un veredicto fino: la divergencia inter-rater **se disuelve porque ambos describen facetas reales y complementarias del mismo nodo**. A favor de Stev: `commerce_proxy` alimentario (apple, banana, donut, hot dog, pizza, sandwich, orange, cake) registra **0 hits** en Junín — confirma ausencia de venta callejera de comida, indicador clásico de informalidad ambulante latinoamericana. A favor de Jacob: el corpus muestra **240 maletas + 102 bolsos en peak_am** y 9 clases distintas de objetos portables — es un palimpsesto comercial-portátil sustancial. Veredicto: Junín es mono-uso comercial formal (Stev) **con flujo portátil heterogéneo** (Jacob); el M3 score 2/5 puede ajustarse a 3/5 sin contradecir a ninguno.
+
+**Reclamos no evaluables por límites del pipeline (ni a favor ni en contra):** vandalismo/grafiti, indigencia, consumo de sustancias, presencia policial, obstáculos ambulantes en `parque_san_antonio` y tono general del nodo. Las razones son técnicas: YOLO COCO no detecta uniformes, ni población en situación de calle, ni consumo de sustancias; el OCR de tags y la segmentación de grafiti aún no están integrados al pipeline; y `parque_san_antonio` no tiene bucket visual asignado por reclasificación pendiente. Estos límites se documentan como TODO de pipeline, no como debilidad del reclamo de campo.
+
+El mensaje metodológico para defensa: **donde el pipeline visual tiene capacidad (densidad humana, intensidad vehicular, saturación, ratio turista-proxy), la convergencia con el campo es alta**. Donde no la hay es por límites de YOLO COCO, no por contradicción entre observador y datos.
+
+### 3.12.12. Refinamiento geométrico (`node_geometry_v2.json`)
+
+La asignación foto → nodo evolucionó del archivo `case_model.json` (v1, sólo nodos canónicos) a `investigacion/data/processed/node_geometry_v2.json` (v2). La v2 introduce dos cambios:
+
+1. **Rescate de `pasaje_la_bastilla` como sub-zona de `junin_paseo`.** Con centroide propio (lat 6.2497, lon -75.5680, radio máx. 80 m) y geocodificación manual sobre Cra. 49 (Junín) entre Cl. 51 y Cl. 52. La v2 atribuye **12 fotografías** a la sub-zona, antes diluidas en el bucket genérico de Junín. La Bastilla queda así operacionalizada como objeto independiente del corpus y sostiene la lectura M3 = 5/5 (máxima diversidad comercial / heterotopía) de §3.12.8.4.
+2. **Modelado de dos sub-zonas narradas en campo:** `junin_coltejer_ayacucho` (centroide del tramo Junín entre Cl. 49 y Cl. 52, referencia entrevista Andrés-Jacob) y `botero_calle_consumo` (Cra. 55 con Cl. 54-55, una cuadra al occidente de Plaza Botero, referencia "calle del consumo" de Jacob y "movieron el Bronx solo una calle" de Stev). Cada una con `max_radius_m = 80.0`.
+
+**Limitación honesta:** las dos sub-zonas adicionales (`junin_coltejer_ayacucho`, `botero_calle_consumo`) **quedan vacías de fotografías y videos asignados** en la pasada actual del pipeline. Su existencia geométrica es real (centroides geocodificados, narrativa de campo documentada), pero el muestreo material de la jornada no las cubre. La v2 modela el espacio narrativo correcto; el corpus visual aún no lo instrumenta. La tesis reporta el rescate de La Bastilla como ganancia efectiva y las dos sub-zonas vacías como **limitación de muestreo, no de modelo**.
+
+Adicionalmente, el procesamiento OCR (`investigacion/data/processed/m3_signage_ocr.json`, motor EasyOCR es+en) sobre las **34 fotografías** del corpus produce 68 strings de texto y 23 tags clasificables, con **dominancia de signage comercial en `junin_paseo`** (12 fotos, 62 strings, `commerce_density = 0.917`, 11 etiquetas comerciales) frente a `parque_berrio` (9 fotos, 0 strings) y `san_antonio_metro` (11 fotos, 6 strings, 1 tag). El tag más repetido globalmente es "relojeria" (×4), reflejo del eje comercial Junín. **Limitación de método:** la lectura del OCR exige deduplicación intra-secuencia, ya que múltiples fotos consecutivas de una misma fachada generan tags repetidos artificialmente; el `tag_repetition_score` de Junín (=5) y `tag_repetition_volume` (=13) reportan repeticiones que no representan diversidad real de signage sino sobre-muestreo del mismo punto. La próxima pasada incluirá deduplicación por hash de string + ventana espacial.
+
 ## 3.12bis. Insumos de la jornada del 5 de mayo de 2026
 
 Esta sección reporta el corpus técnico que alimentó la matriz post-fix. Es el sustrato material de §3.12.5; los conteos de personas y los índices de saturación que se citan abajo son los insumos crudos de C4.
@@ -272,8 +356,14 @@ El supuesto distribucional de C1 (`peak_am 0.20, midday 0.20, peak_pm 0.45, nigh
 | La matriz de colapso está construida con C1 y C4 | Sostenible | `collapse_matrix.json` regenerada 2026-05-07 post-fix |
 | Existen franjas-nodo en colapso fenomenológico | No sostenible hoy | 0/36 celdas alcanzan 3-de-4; C2 y C3 vacíos |
 | Existe una celda con fricción material y criminal convergente | Sostenible | `junin_paseo|peak_am` con 2/4 (C1+C4, n=4 videos, p75=0.465) |
-| Existe evidencia C3 codificada de la jornada de campo | Sostenible | 14 entrevistas codificadas en `interviews_2026-05-05.json` cubriendo 4 celdas; ingesta a la matriz pendiente (§3.12.8) |
-| `plaza_botero|midday` es candidata fuerte a colapso por C3 | Sostenible como hipótesis | 3/3 entrevistas EVITABLE/AMBIVALENTE/NO_DESEABLE + verbalización auto-etnográfica de "colapsa"; falta C4 con video de Botero |
+| Existe evidencia C3 codificada de la jornada de campo | Sostenible | 15 entrevistas (14 Stev + 1 Jacob) cubriendo 4 celdas; ya propagadas a la matriz post-Jacob (§3.12.5, §3.12.8) |
+| **Pilar defendible 1: `junin_paseo|peak_am` es robusta bajo sensibilidad** | **Sostenible** | bootstrap V1 = 0.956; barrido umbrales V2 = 0.880; LOO C3 = 1.000 (§3.12.5.2) |
+| **Pilar defendible 2: `plaza_botero|midday` es robusta y único caso C3-confirmatorio** | **Sostenible** | bootstrap V1 = 0.970; barrido umbrales V2 = 1.000; 3/3 entrevistas C3 negativo + verbalización auto-etnográfica "colapsa" + convergencia visual alta (§3.12.5.2, §3.12.11) |
+| **Las cuatro celdas restantes en fricción acumulada son frágiles** | **Sostenible como matiz** | parque_san_antonio\|midday, san_antonio_metro\|peak_am, junin_paseo\|midday, parque_berrio\|midday caen <0.40 con p≥80 (§3.12.9) |
+| **Inter-rater kappa Stev↔Jacob = 0.0** sobre safety binarizado | Sostenible y deseable | n=4 nodos, divergencia paradigmática parque_san_antonio; confirma fenomenología subjetiva (§3.12.10) |
+| **Cross-validation texto↔imagen alta en riesgo vial y "colapsa" Botero** | Sostenible | vehicle_intensity san_antonio_metro=0.378 máx. corpus; berrio human_density_max=30, saturation_max=71 (§3.12.11) |
+| **Geometría v2 rescata `pasaje_la_bastilla` con 12 fotos** | Sostenible | sub-zona modelada con geocodificación manual; Coltejer-Ayacucho y calle_consumo modeladas pero vacías de muestreo (§3.12.12) |
+| Junín al mediodía cambia de signo con la entrevista de Jacob | No sostenible | el conjunto post-Jacob matiza pero no flipea (HABITABLE 6 + DESEABLE 2 dominan; "para vendedor seguro, transeúnte no") |
 | Los perfiles simulados equivalen a sujetos reales | No sostenible | son tipos analíticos simplificados |
 | La desigualdad de ruta está demostrada empíricamente | Parcial | métrica simulada, falta cruce con campo |
 
