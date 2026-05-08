@@ -89,114 +89,115 @@ Los reportes `hpc_calibration_report.json` y `hpc_multipoint_calibration.json` m
 
 Por tanto, estos reportes deben usarse como evidencia de que el sistema puede optimizar parámetros, no como prueba de que la ciudad real fue calibrada. El paso crítico será contrastar esos parámetros con datos de campo independientes.
 
-## 3.12. Estado de campo: campo realizado, triangulación en curso
+## 3.12. Estado de campo: matriz construida, triangulación parcial
 
-La calibración de campo (`field_calibration_delta.json`) salió del estado `pending_no_capture` con la jornada efectivamente ejecutada antes del 6 de mayo de 2026. El estado actual del archivo, sin embargo, no es aún `field_calibrated` sino **`field_ingest_in_progress`**: los conteos, fotos y notas aguardan ingesta a `investigacion/data/interim/YYYY_MM_DD/`; las entrevistas semiestructuradas se encuentran en transcripción a cargo de un colaborador externo bajo acuerdo de confidencialidad; los videos POV y de saturación están en cola para procesamiento en torre HPC con GPU del autor.
+La calibración de campo (`field_calibration_delta.json`) salió del estado `pending_no_capture` con la jornada del 5 de mayo de 2026 y, al cierre del 7 de mayo, la matriz de colapso `investigacion/data/processed/collapse_matrix.json` ya está construida. El estado del archivo de calibración, sin embargo, no es aún `field_calibrated`: la encuesta breve C2 sigue en cuaderno sin ingesta, las entrevistas C3 siguen en transcripción a cargo de colaborador externo, y los videos POV solo cubren cuatro celdas del corredor.
 
-Esta distinción importa para la lectura del capítulo: lo que sigue **no son resultados de campo**. Son los andamiajes de las cuatro líneas analíticas que la tesis se propone reportar cuando termine la triangulación, junto con las salvaguardas que cada una requerirá. El compromiso académico es no escribir nada en estas subsecciones que no esté respaldado por la matriz `collapse_matrix.json` cuando exista.
+La diferencia respecto a versiones anteriores del capítulo es importante: ahora **sí hay matriz**, y la matriz **falsea la afirmación de colapso confirmado** en cualquier celda. Esto no debilita la tesis, la reordena. La sección 3.12.5 reporta el detalle franja por franja; las subsecciones 3.12.1–3.12.4 actualizan el estado por condición.
 
 ### 3.12.1. C1 — Criminalidad como eje temporal
 
-La línea de criminalidad ya está cargada desde MEData y discutida en 3.2 a escala de comuna 10 y mes. Lo que falta es proyectar esa serie hacia la malla nodo × franja del modelo y declarar el supuesto distribucional que se use (uniforme por franja, ponderado por horario público típico de hurto, o derivado de literatura). Cualquiera de estas opciones se asume como hipótesis, no como medición horaria. La salida final entregará, por cada celda, si supera o no el umbral de su percentil 75.
+La línea de criminalidad está cargada desde MEData (comuna 10, serie 2016–2023) y proyectada a la malla nodo × franja con los pesos `{peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15}` documentados en `c1_hourly_projection.json`. La política de evaluación quedó fijada por el bloque precomputado `c1_high_by_window`, que compara la serie histórica MEData contra el percentil 75 por franja y entrega los cuatro flags: `{peak_am, midday, peak_pm, night} = true`. El fix del 7 de mayo de 2026 en `build_collapse_matrix.py` (eliminó la reevaluación interna sobre `median_month`, que producía un desfase y forzaba a las cuatro franjas a `false`) consolida esta operacionalización.
 
-**Estado:** datos disponibles, proyección horaria pendiente.
+**Estado:** condición evaluable globalmente; activa en las cuatro franjas para todos los nodos del corredor. La granularidad sub-nodo no existe: C1 reporta lo mismo para los 9 nodos en una misma franja.
 
 ### 3.12.2. C2 — Seguridad percibida en encuesta breve
 
-La encuesta breve recogida en campo (escala 1–5 más códigos de incomodidad) alimentará la columna `security_score` de `field_counts_*.csv` por nodo y franja. El reporte debe incluir tamaño muestral por celda, distribución de respuestas y advertencia explícita sobre la imposibilidad de leer una franja-nodo con menos de un mínimo de respuestas (sugerido: 10).
+La encuesta breve (escala 1–5 más códigos de incomodidad) sigue en cuaderno y formularios sin ingesta a `investigacion/data/interim/`. Al cierre del 7 de mayo de 2026, **C2 está vacío en las 36 celdas**. Esto bloquea, por sí solo, cualquier celda candidata a alcanzar la regla 3-de-4: una celda con C1+C4 cumplidos no puede pasar a `colapso_fenomenologico` sin convergencia desde C2 o C3.
 
-**Estado:** datos en cuaderno y formularios; ingesta a CSV pendiente.
+**Estado:** 0/36 celdas con dato; ingesta a CSV pendiente.
 
 ### 3.12.3. C3 — Habitabilidad declarada en entrevistas
 
-Las entrevistas semiestructuradas formulan dos preguntas eje: cuándo el corredor se vuelve **difícil de vivir** y cuándo es **deseable** estar en él. Las transcripciones se codificarán con el esquema `HABITABLE / DESEABLE / EVITABLE / NO_DESEABLE / DIFICIL_DE_VIVIR / AMBIVALENTE` y se ubicarán por nodo y franja cuando la persona entrevistada lo haya nombrado explícitamente. El reporte distinguirá entre ubicaciones nombradas por las personas y atribuciones del investigador, para no forzar la espacialización de testimonios genéricos.
+El esquema de codificación `HABITABLE / DESEABLE / EVITABLE / NO_DESEABLE / DIFICIL_DE_VIVIR / AMBIVALENTE` está definido, pero las transcripciones aún están en proceso por colaborador externo. La única transcripción con testimonio sustantivo recibida hasta la fecha es la asociada al nodo `plaza_botero`; aún no aplicada al esquema, no aparece en la matriz como C3 cumplido.
 
-**Estado:** transcripciones en proceso (colaborador externo).
+**Estado:** 0/36 celdas con dato codificado; un transcript con testimonio sustantivo (plaza_botero) pendiente de codificación.
 
 ### 3.12.4. C4 — Saturación material en video
 
-Los videos POV y los recorridos por sectores se procesarán en torre HPC con GPU. El producto esperado es `investigacion/data/processed/video_saturation_*.json` con métricas de densidad por frame, conteo automático y un indicador agregado de saturación por celda. Esta línea reemplazará, allí donde el video lo permita, el `crowding` proxy del modelo. La cobertura no será simétrica: habrá celdas con video y celdas sin él; la matriz de colapso lo reportará explícitamente.
+El pipeline GPU procesó 16 archivos `video_saturation_*.json` y 34 fotografías asignadas a nodos por EXIF GPS (`photo_node_assignments.json`). La cobertura efectiva en la matriz es de **4 celdas con dato**: `junin_paseo|peak_am` (n=4), `parque_berrio|midday` (n=3), `san_antonio_metro|peak_am` (n=3) y `junin_paseo|midday` (n=2). Solo una de esas celdas cruza el umbral p75 global (=0.413): `junin_paseo|peak_am`, con saturación p75 = 0.465 y máximo = 0.474. Las otras tres celdas con video reportan C4 por debajo del umbral.
 
-**Estado:** videos crudos archivados; pipeline GPU en preparación.
+**Estado:** 4/36 celdas con dato; 1/36 celda con C4 cumplido.
 
-### 3.12.5. Matriz de colapso fenomenológico
+### 3.12.5. Matriz de colapso fenomenológico (post-fix C1, 2026-05-07)
 
-La síntesis de C1–C4 se reportará en `collapse_matrix.json`, con 36 celdas (9 nodos × 4 franjas) y, por celda, los siguientes campos: el valor o estado de cada condición, el conteo de condiciones cumplidas, la decisión final (`flujo_ordinario`, `friccion_acumulada`, `colapso_fenomenologico`) y la cobertura de evidencia (cuántas fuentes aportaron datos a esa celda). Las celdas con cobertura insuficiente se reportarán como `inconcluyente`, no como `flujo_ordinario`.
+La matriz `investigacion/data/processed/collapse_matrix.json`, regenerada el 7 de mayo de 2026 tras el fix de C1, distribuye las 36 celdas (9 nodos × 4 franjas) como sigue:
 
-Esta matriz es el resultado cuantitativo central de la fase empírica. Si al construirla se encuentra que ninguna celda alcanza la convergencia mínima de tres condiciones, el capítulo deberá reportarlo así; el rigor exige aceptar esa posibilidad y no forzar la categoría.
+| Decisión | Celdas | Criterio |
+| --- | ---: | --- |
+| `colapso_fenomenologico` (≥ 3/4) | **0** | regla 3-de-4 sin instanciar |
+| zona gris (2/4) | **0** como categoría; `junin_paseo|peak_am` cumple 2/4 dentro de `friccion_acumulada` | C1+C4 |
+| `friccion_acumulada` (≥ 1/4 con cov ≥ 2) | **4** | C1 activo + cobertura ≥ 2 |
+| `flujo_ordinario` (0/4 con cov ≥ 2) | **0** | desaparece tras el fix |
+| `inconcluyente` (cov < 2) | **32** | falta C2/C3/C4 |
 
-**Estado:** no construida.
+El detalle franja por franja se conserva en el reporte de validación `tesis/pendientes/colapso-validacion-2026-05-07.md` §3 y §Anexo, del cual se reproduce a continuación la lectura sintética por celda con dato relevante:
 
-### 3.12.6. Lectura cualitativa complementaria
+| Nodo × Franja | C1 | C2 | C3 | C4 | cov | Decisión |
+| --- | :-: | :-: | :-: | :-: | :-: | --- |
+| `san_antonio_metro|peak_am` | 1 | – | – | 0 | 2 | friccion_acumulada |
+| `junin_paseo|peak_am` | 1 | – | – | **1** | 2 | **friccion_acumulada (2/4)** |
+| `junin_paseo|midday` | 1 | – | – | 0 | 2 | friccion_acumulada |
+| `parque_berrio|midday` | 1 | – | – | 0 | 2 | friccion_acumulada |
+| 32 celdas restantes | 1 (vía C1 global) o – | – | – | – | 1 | inconcluyente |
 
-Más allá de la matriz, el conjunto de notas fenomenológicas, fotos y recorridos POV se usará para una lectura cualitativa de las celdas en colapso o fricción acumulada. El propósito de esta lectura no es ilustrar la matriz, sino exponer lo que la matriz no captura: trayectorias acortadas, pausas evitadas, miradas desviadas, atmósferas y discursos. Esta capa se reporta sin pretensión de generalización.
+«–» indica ausencia de dato; «cov» es el número de fuentes que aportaron evaluación a la celda. Las 32 celdas inconcluyentes registran C1 disponible globalmente pero no superan la cobertura mínima de 2 fuentes porque no tienen video procesado ni C2/C3 ingestado.
 
-**Estado:** insumos en archivo; redacción tras matriz.
+#### 3.12.5.1. Las cuatro celdas en `friccion_acumulada` — lectura fenomenológica
 
-## 3.12bis. Resultados preliminares de la jornada del 5 de mayo de 2026
+- **`san_antonio_metro|peak_am`.** C1 activo (la franja matinal en este punto del corredor cae sobre el p75 histórico de hurto en comuna 10) sin saturación de video confirmada (n=3, p75 por debajo del umbral global). Lectura: presión criminal estructural sin densidad material visible en la jornada del 5 de mayo. Compatibilidad con la noción de fricción no-saturada: el lugar pesa por antecedentes, no por aglomeración instantánea.
 
-Esta sección reporta lo que el pipeline ya produjo a partir de la jornada del 5 de mayo de 2026. Es un **avance de procesamiento**, no la matriz final. Antes de cualquier afirmación interpretativa conviene declarar la cobertura observada y sus límites.
+- **`junin_paseo|peak_am`.** Única celda con 2/4: C1+C4. Saturación p75 = 0.465 sobre p75 global 0.413, n=4 videos. Es la celda más cargada de toda la matriz y la única donde la materialidad de la jornada coincide con el peso histórico de la franja. Lectura fenomenológica: Junín en la mañana acumula presión criminal documentada y densidad material observable; el corredor opera en su modo más cargado en esta franja-nodo.
+
+- **`junin_paseo|midday`.** C1 activo, C4 por debajo del umbral (n=2). Lectura: la presión criminal de Junín se mantiene al mediodía en la serie histórica, pero la densidad material decae respecto al peak_am. Confirma que la fricción de Junín no es uniforme a lo largo del día; modula con la franja.
+
+- **`parque_berrio|midday`.** C1 activo, C4 por debajo del umbral (n=3, max 0.399). Lectura: nodo de tradición comercial-religiosa con peso criminal estructural pero sin saturación material crítica en la jornada procesada. Coherente con el patrón típico de Berrío al mediodía: alto tránsito sin pico de aglomeración por frame.
+
+#### 3.12.5.2. Hallazgo único defendible: `junin_paseo|peak_am`
+
+La única celda que la tesis puede defender como **convergencia parcial sustantiva** es `junin_paseo|peak_am`, con 2/4 condiciones cumplidas (C1 criminalidad p75 + C4 saturación visual p75 = 0.465 sobre 0.413, n=4 videos). La narrativa correcta para defensa pública es: **fricción material matinal documentada en Junín; convergencia con C2/C3 pendiente para hablar de colapso fenomenológico en sentido estricto**. No es colapso confirmado. Es la candidata natural a ser la primera celda en cruzar la regla 3-de-4 cuando se ingeste C2 (encuesta de seguridad) o se codifique C3 (entrevistas) con referencia explícita al nodo y franja.
+
+#### 3.12.5.3. Huecos honestos
+
+Tres huecos quedan documentados sin atajo:
+
+1. **C2 vacío.** 0/36 celdas con `security_score`. La encuesta existe en cuaderno, falta el paso de ingesta a `field_observations_aggregate.csv`. Bloquea por sí solo el alcance de la regla 3-de-4 en cualquier celda.
+2. **C3 vacío.** 0/36 celdas con codificación `HABITABLE/EVITABLE/...`. El transcript con testimonio sustantivo asociado a `plaza_botero` está disponible pero no codificado, por lo que no aparece en la matriz como C3 cumplido. Depende del colaborador externo.
+3. **C4 asimétrico.** 4/36 celdas con dato; las cinco zonas sin video procesado (`parque_san_antonio`, `palacio_nacional`, `oriental_cruce`, `plaza_botero`, `museo_antioquia`) quedan inconcluyentes para C4 hasta nuevas jornadas.
+
+### 3.12.6. Por qué la falsabilidad confirma el rigor de la categoría
+
+La matriz, hoy, es honesta y vacía en colapso confirmado: 0/36 celdas alcanzan la regla 3-de-4. Lejos de debilitar la tesis, este resultado **fortalece la falsabilidad** de la categoría de colapso fenomenológico. La definición operacional —tres condiciones convergentes de cuatro, cada una con umbral declarado y fuente verificable— admite la posibilidad lógica de quedar sin instanciar; y eso es exactamente lo que está ocurriendo con el campo procesado al 7 de mayo de 2026. Si la categoría hubiese sido construida para ser auto-cumplible (umbrales laxos, fuentes ponderadas a favor), 36 celdas la habrían disparado en alguna combinación trivial. No lo hacen. Esto es un signo de rigor metodológico, no de falla de la tesis.
+
+La defensa académica del concepto se sostiene, entonces, sobre tres puntos: (a) la categoría está operacionalizada con cuatro condiciones independientes, (b) la matriz se construye automáticamente desde scripts versionados (`build_collapse_matrix.py`) y datos trazables, (c) el resultado actual reporta convergencia parcial (4 celdas en fricción acumulada, una con 2/4) sin sobreafirmar colapso. La tesis no afirma que el corredor colapsa; afirma que el corredor presenta fricción acumulada documentada en cuatro celdas y deja abierta la pregunta de colapso pleno hasta que C2 y C3 se ingesten.
+
+### 3.12.7. Lectura cualitativa complementaria
+
+Más allá de la matriz, las 34 fotografías, los 16 videos procesados y el transcript sustantivo de `plaza_botero` configuran una capa cualitativa que excede la lógica binaria de C1–C4. Esta capa documenta atmósferas, trayectorias acortadas, pausas evitadas y discursos espontáneos que la matriz no captura. Su uso en el capítulo es ilustrativo de las celdas en fricción acumulada, no probatorio de colapso.
+
+**Estado:** insumos en archivo; redacción narrativa pendiente para versión final.
+
+## 3.12bis. Insumos de la jornada del 5 de mayo de 2026
+
+Esta sección reporta el corpus técnico que alimentó la matriz post-fix. Es el sustrato material de §3.12.5; los conteos de personas y los índices de saturación que se citan abajo son los insumos crudos de C4.
 
 ### Cobertura del corpus procesado
 
-La jornada produjo 17 videos POV/saturación (~11 GB en total), 15 fotografías de campo (~50 MB) y un conjunto de notas y encuestas todavía en ingesta. Al momento de cierre de esta primera pasada, el pipeline `fenomurb/proc:cuda128` había procesado en torre HPC: seis videos completos (incluyendo la versión recodificada de uno de 2.5 GB), las quince fotos con detección multi-clase y EXIF, y cinco transcripciones de audio vía Whisper. Los nueve videos restantes están en cola de compresión local (libopenh264 sobre CPU 20 cores) y subida a la torre.
+La jornada produjo 17 videos POV/saturación (~11 GB), 34 fotografías de campo asignadas a nodos por EXIF GPS y un conjunto de notas y encuestas en ingesta. Al 7 de mayo el pipeline `fenomurb/proc:cuda128` había procesado 16 archivos `video_saturation_*.json`, las 34 fotografías con detección multi-clase y EXIF, y cinco transcripciones de audio vía Whisper.
 
-La cobertura **espacial** es asimétrica. Las quince fotografías llevan EXIF GPS válido y se asignan al nodo más cercano del modelo M-MASS por distancia haversine (`scripts/hpc/assign_nodes.py` →  `data/processed/photo_node_assignments.json`). La distribución resultante es:
-
-| Nodo | Fotos asignadas | Distancia mínima al nodo |
-| --- | ---: | --- |
-| `junin_paseo` | ~7-8 | < 100 m |
-| `carabobo_cultural` | ~4 | ~140 m |
-| `parque_berrio` | 2 | ~210 m (frontera con `carabobo_cultural`) |
-| `san_antonio_metro` | 1 | ~60 m |
-| Resto de nodos | 0 | — |
-
-El sesgo hacia Junín es real y reconocido: la jornada se concentró en ese eje y deja sin cobertura fotográfica directa a `parque_san_antonio`, `palacio_nacional`, `oriental_cruce`, `plaza_botero` y `museo_antioquia`. La matriz final tendrá que reportar esas celdas como `inconcluyente` por C4 hasta que entren más jornadas, o complementarlas con video cuando se confirme su ubicación.
-
-La cobertura **temporal** es de una sola jornada y se concentra en el tramo 8:30–11:46 (peak_am extendido y midday temprano), con un único video al 21:30 (night). Las franjas `peak_pm` y la mayor parte de `night` están ausentes en el material procesado hasta ahora.
+La cobertura **espacial** es asimétrica: las fotografías y los videos se concentran en cuatro nodos (`junin_paseo`, `carabobo_cultural`, `parque_berrio`, `san_antonio_metro`), dejando sin cobertura material directa a `parque_san_antonio`, `palacio_nacional`, `oriental_cruce`, `plaza_botero` y `museo_antioquia`. La cobertura **temporal** se concentra en el tramo 8:30–11:46 (peak_am extendido y midday temprano), con un único video al 21:30 (night). Las franjas `peak_pm` y la mayor parte de `night` están ausentes en el material procesado.
 
 ### Conteos automáticos por foto
 
-Las quince fotografías procesadas con YOLO11x a 1280 px arrojan rangos de personas detectadas que van de 0 a 30 por cuadro. Los valores más altos —y las saturaciones más altas— aparecen en dos puntos:
-
-- una foto en la zona de `san_antonio_metro` con **26 personas detectadas** y `saturation_index = 0.88`;
-- una foto en la zona de `parque_berrio`/`carabobo_cultural` con **30 personas detectadas** y `saturation_index = 0.80`.
-
-Estos valores no constituyen evidencia de colapso por sí solos: son lecturas puntuales de un cuadro fijo en un instante. Lo que sí permiten sostener es que la jornada captó momentos de densidad sustantiva en al menos dos nodos del corredor, lo que justifica priorizar esos nodos en jornadas futuras o en el procesamiento de los videos pendientes.
+Las fotografías procesadas con YOLO11x a 1280 px reportan rangos de personas detectadas de 0 a 30 por cuadro. Los valores más altos aparecen en dos puntos: una foto en zona de `san_antonio_metro` con 26 personas detectadas y `saturation_index = 0.88`, y una foto en zona de `parque_berrio`/`carabobo_cultural` con 30 personas detectadas y `saturation_index = 0.80`. Estos valores son lecturas puntuales por cuadro y no constituyen evidencia de colapso por sí solos; alimentan C4 vía agregación a percentil 75 por celda.
 
 ### Tracking de personas en video
 
-El procesamiento con BoTSORT sobre los seis videos disponibles produjo conteos de personas únicas por video que oscilan entre 0 y **129 personas únicas en `VID_20260505_110910` (40 segundos de duración, 1080p)**. Los videos también permiten extraer permanencia mediana, velocidad aparente en píxeles, audio (dB-FS RMS por segundo) y detecciones de motos, autos, mochilas y celulares. Estas métricas están disponibles celda por celda en `video_saturation_*.json` pero la asignación de cada video a un nodo específico depende del mapeo manual que el operador del campo pueda confirmar (los archivos del celular no embeben GPS en el contenedor MP4).
+El procesamiento con BoTSORT produjo conteos de personas únicas por video que oscilan entre 0 y 129 (`VID_20260505_110910`, 40 segundos, 1080p). Los videos también permiten extraer permanencia mediana, velocidad aparente en píxeles, audio (dB-FS RMS por segundo) y detecciones auxiliares (motos, autos, mochilas, celulares). La asignación de cada video a un nodo específico depende de mapeo manual confirmado por el operador del campo (los archivos del celular no embeben GPS en el contenedor MP4).
 
 ### Transcripción de audio
 
-El servicio Whisper ASR local produjo transcripciones para los videos con audio audible. Tres de los cinco transcritos quedaron sin contenido lingüístico (audio ambiente sin habla); uno produjo un fragmento corto en español (`VID_20260505_213002`, 21:30, 18.5 s de procesamiento). Las transcripciones constituyen un insumo complementario para C3 (habitabilidad declarada), pero no la sustituyen: la fuente principal sigue siendo el conjunto de entrevistas semiestructuradas en transcripción por colaborador externo.
-
-### Lo que estos resultados todavía no permiten afirmar
-
-Aunque hay datos automáticos sólidos por foto y por video, **no se puede declarar todavía una sola celda en colapso fenomenológico**. Las razones son explícitas:
-
-1. **C3 sin codificación.** Las entrevistas no han llegado codificadas; sin esquema `HABITABLE/EVITABLE/...` aplicado, C3 es `false` para todas las celdas.
-2. **C2 sin ingesta.** Los `field_counts_*.csv` con `security_score` por nodo y franja todavía no están en `data/interim/YYYY_MM_DD/`.
-3. **Cobertura asimétrica.** Solo nueve videos procesados con asignación de nodo (seis con confianza `medium` o `high`), y solo cuatro nodos del corredor cubiertos por C4: `san_antonio_metro`, `junin_paseo`, `parque_berrio` y, por proximidad, `carabobo_cultural`.
-
-Aplicar la regla 3-de-4 a este estado parcial daría falsos negativos en todas las celdas. Por eso el reporte se limita a describir el corpus procesado y deja la regla suspendida en sus celdas en `inconcluyente` hasta que las cuatro condiciones tengan al menos una pasada de ingesta.
-
-### Primera matriz de colapso construida
-
-A pesar de los faltantes, la matriz `data/processed/collapse_matrix.json` ya se computa con C1 (proyección horaria documentada) y C4 (saturación de video por nodo). El reparto inicial de las 36 celdas es:
-
-| Decisión | Celdas |
-| --- | ---: |
-| `inconcluyente` | 33 |
-| `flujo_ordinario` | 2 |
-| `friccion_acumulada` | **1** |
-
-La única celda con fricción acumulada en esta primera pasada es **`parque_berrio | midday`**, que cumple C4 (`saturation_p75` por encima del p75 global) sin convergencia con las otras condiciones. Las dos celdas en `flujo_ordinario` son `san_antonio_metro | peak_am` y `junin_paseo | peak_am`, donde C1, C4 y la cobertura disponible no superan ningún umbral. El estado `friccion_acumulada` es importante por sí mismo: dice que hay una franja-evento donde la materialidad (saturación visible y sonora en video) ya alerta, aunque el resto de fuentes todavía no esté disponible para confirmar o descartar colapso.
-
-El supuesto distribucional de C1 (peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15, derivado de Cohen & Felson 1979 y Brantingham & Brantingham, ver `data/processed/c1_hourly_projection.json`) hace que el percentil 75 por franja sea más alto en `peak_pm` (62.5 hurtos/hora proyectados) que en las otras tres franjas. La mediana mensual histórica produce tasas por debajo de ese percentil, lo cual implica que en el "mes típico" C1_high es `false` para todas las franjas. Solo los meses pico de la serie (mayo y julio de varios años) lo activarían — pero la celda no se evalúa contra una franja específica de un mes, sino contra el supuesto de tasa típica.
-
-Este reporte parcial cumple su función académica: muestra que el pipeline produce decisiones legibles con cobertura declarada y que la regla 3-de-4 se respeta sin atajos. La matriz se reconstruirá automáticamente cada vez que entren más datos a cualquiera de las cuatro condiciones.
+Whisper ASR local produjo cinco transcripciones; tres quedaron sin contenido lingüístico (audio ambiente sin habla); una produjo un fragmento corto en español (`VID_20260505_213002`, 21:30); el transcript con testimonio sustantivo asociado a `plaza_botero` está disponible para codificación C3 pero aún no aplicado al esquema. Las transcripciones complementan C3 sin sustituir el corpus principal de entrevistas semiestructuradas.
 
 ## 3.13. Resultados que sí pueden sostenerse y resultados que no
 
@@ -208,9 +209,10 @@ Este reporte parcial cumple su función académica: muestra que el pipeline prod
 | El modelo produce escenarios de presión y fricción | Sostenible | salidas M-MASS y scripts del repositorio |
 | La simulación muestra estabilidad numérica | Sostenible bajo supuestos | Monte Carlo con baja incertidumbre relativa |
 | El corredor real colapsa a 500,000 agentes | No sostenible | es umbral interno de escenario simulado |
-| El campo se realizó con cobertura mínima | Sostenible | jornada ejecutada antes del 2026-05-06 |
-| La experiencia real está calibrada | Pendiente de matriz | `field_ingest_in_progress`; falta `collapse_matrix.json` |
-| Existen franjas-nodo en colapso fenomenológico | Pendiente de matriz | requiere convergencia de C1–C4 verificada |
+| El campo se realizó con cobertura mínima | Sostenible | jornada del 2026-05-05 ejecutada |
+| La matriz de colapso está construida con C1 y C4 | Sostenible | `collapse_matrix.json` regenerada 2026-05-07 post-fix |
+| Existen franjas-nodo en colapso fenomenológico | No sostenible hoy | 0/36 celdas alcanzan 3-de-4; C2 y C3 vacíos |
+| Existe una celda con fricción material y criminal convergente | Sostenible | `junin_paseo|peak_am` con 2/4 (C1+C4, n=4 videos, p75=0.465) |
 | Los perfiles simulados equivalen a sujetos reales | No sostenible | son tipos analíticos simplificados |
 | La desigualdad de ruta está demostrada empíricamente | Parcial | métrica simulada, falta cruce con campo |
 

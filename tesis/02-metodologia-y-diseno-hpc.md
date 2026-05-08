@@ -64,10 +64,10 @@ La traducción entre teoría y modelo requiere declarar variables, unidades y l�
 | Iluminación | lux nocturno | no capturado | `pending_field` | falta medición por nodo |
 | Accesibilidad | nodos/aristas | grafo del caso | funcional | requiere validación de obstáculos reales |
 | Libertad de ruta | entropía/divergencia | simulación | exploratorio | depende de supuestos de agentes |
-| Criminalidad objetiva (C1) | hurtos por mes en comuna 10 | MEData criminalidad | público y trazable | desfase temporal, escala comuna, no por nodo |
-| Seguridad percibida situada (C2) | `security_score` 1–5 | encuesta breve en campo | en ingesta | dependiente de hora, observador y muestreo |
-| Habitabilidad declarada (C3) | códigos `HABITABLE/EVITABLE/...` | entrevistas semiestructuradas | en transcripción (colaborador) | autoselección, deseabilidad social |
-| Saturación material (C4) | densidad por frame, conteo automático | videos POV / time-lapse | en cola para torre HPC | encuadre, recorte, ausencia de afecto |
+| Criminalidad objetiva (C1) | bandera `c1_high` por franja, derivada de proyección horaria de hurto a persona | MEData criminalidad (serie histórica comuna 10) | precomputado en `c1_hourly_projection.json` | desfase temporal, escala comuna, no por nodo |
+| Seguridad percibida situada (C2) | `security_score` 1–5 | encuesta breve en campo | pendiente de encuesta | dependiente de hora, observador y muestreo |
+| Habitabilidad declarada (C3) | códigos `HABITABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR` | entrevistas escritas en `data/interim/` | pendiente de codificación | autoselección, deseabilidad social |
+| Saturación material (C4) | densidad por frame y conteo YOLO11; umbral global p75 = 0.413 | videos POV / time-lapse procesados en torre HPC dual-GPU | procesado | encuadre, recorte, ausencia de afecto |
 
 Esta tabla cumple una función de control: impide presentar todas las variables con el mismo grado de evidencia. Las cuatro últimas filas (C1–C4) son los insumos del cruce que produce la matriz de colapso fenomenológico discutida más abajo.
 
@@ -140,16 +140,60 @@ Las métricas anteriores describen comportamiento simulado. El colapso fenomenol
 
 Para cada celda $(n, w)$ —donde $n$ es uno de los nueve nodos del modelo y $w$ una de las cuatro franjas (`peak_am`, `midday`, `peak_pm`, `night`)— se evalúan cuatro condiciones binarias:
 
-- **C1 — Carga objetiva de criminalidad.** Se cumple si la tasa estimada de hurto a persona en comuna 10, distribuida hacia la franja $w$ mediante un supuesto distribucional documentado, supera el percentil 75 de la serie pública 2016–2023 (`investigacion/data/raw/medata_criminalidad_csv.csv`).
-- **C2 — Seguridad percibida deprimida.** Se cumple si el promedio del `security_score` recogido en `field_counts_*.csv` para esa celda es ≤ 2/5 o si las notas de campo registran `RIESGO_PERCIBIDO` como código dominante.
-- **C3 — Habitabilidad declarada negativa.** Se cumple si las transcripciones de entrevistas codifican mayoritariamente `EVITABLE`, `NO_DESEABLE` o `DIFICIL_DE_VIVIR` por encima de `HABITABLE`/`DESEABLE` en esa franja. Las salvaguardas para el manejo de testimonios —protocolo de entrevista con preguntas neutras antes de términos cargados, registro literal de la formulación, código `AMBIVALENTE` reservado para no forzar respuestas binarias, no tratar la convicción subjetiva como prueba— derivan de la teoría reconstructiva de la memoria desarrollada en el anexo A (especialmente §A.13.2 sobre el *misinformation effect* de Loftus 1993 y §A.17.2).
-- **C4 — Saturación material.** Se cumple si los videos POV / time-lapse procesados en la torre HPC reportan densidad por frame y conteo automático por encima del percentil 75 de la celda.
+- **C1 — Carga objetiva de criminalidad.** Se cumple si la franja $w$ aparece marcada como `c1_high` en `c1_hourly_projection.json`. El cálculo se hace una sola vez sobre la **serie histórica completa** de hurto a persona de la comuna 10 publicada en MEData: el script `c1_project_hourly.py` proyecta los registros mensuales a las cuatro franjas mediante un supuesto distribucional documentado, calcula el corte por **percentil 75 de la serie histórica** y emite un mapa `c1_high_by_window` con un booleano por franja. El ensamblador `build_collapse_matrix.py` consulta ese mapa en lugar de recalcular la condición celda por celda. Esta decisión metodológica (documentada el 2026-05-07 en `tesis/pendientes/colapso-validacion-2026-05-07.md`) evita que el corte se desplace con cada subconjunto de datos y mantiene C1 como una propiedad estable del corredor en su escala disponible (comuna 10), reconociendo explícitamente que MEData no resuelve el detalle por nodo.
+- **C2 — Seguridad percibida deprimida.** Se cumple si el promedio del `security_score` recogido en `field_counts_*.csv` para esa celda es ≤ 2/5 o si las notas de campo registran `RIESGO_PERCIBIDO` como código dominante. Esta condición está **pendiente** al cierre de redacción: depende del levantamiento de la encuesta breve situada por nodo y franja.
+- **C3 — Habitabilidad declarada negativa.** Se cumple si las **entrevistas escritas** archivadas en `investigacion/data/interim/YYYY_MM_DD/interviews/` codifican mayoritariamente `EVITABLE`, `NO_DESEABLE` o `DIFICIL_DE_VIVIR` por encima de `HABITABLE`/`DESEABLE` en esa franja, según el esquema procesado por `code_interviews.py`. Se descartan deliberadamente las transcripciones automáticas de los videos POV: dichas transcripciones recogen ruido ambiente y comentarios del observador, no constituyen testimonio elicitado y no pueden tratarse como entrevista. Las salvaguardas para el manejo de testimonios —protocolo de entrevista con preguntas neutras antes de términos cargados, registro literal de la formulación, código `AMBIVALENTE` reservado para no forzar respuestas binarias, no tratar la convicción subjetiva como prueba— derivan de la teoría reconstructiva de la memoria desarrollada en el anexo A (especialmente §A.13.2 sobre el *misinformation effect* de Loftus 1993 y §A.17.2).
+- **C4 — Saturación material.** Se cumple si los videos POV / time-lapse procesados en la torre HPC reportan un `saturation_index` por encima del **umbral global p75 = 0.413**, calculado sobre el conjunto total de videos procesados con YOLO11 en las dos GPUs disponibles (RTX 5070 Ti y RTX 2060). El umbral se fija de forma global, no por celda, para que la condición sea comparable entre nodos.
 
 La regla de decisión es deliberadamente exigente: la celda se reporta como **colapso fenomenológico** solo si **al menos tres de las cuatro condiciones** se cumplen simultáneamente. Si se cumplen una o dos, se reporta como **fricción acumulada**. Si no se cumple ninguna, se reporta como **flujo ordinario**. Esta regla impide que un dato suelto se convierta en diagnóstico y obliga a la triangulación.
 
-La salida de este cruce es la matriz `collapse_matrix.json` con 36 celdas (9 nodos × 4 franjas) y un campo de estado por celda. Esta matriz no existe al cierre de redacción de este capítulo; se construirá cuando termine la ingesta de transcripciones y el procesamiento de video.
+La salida de este cruce es la matriz `collapse_matrix.json` con 36 celdas (9 nodos × 4 franjas) y un campo de estado por celda. La regla **3-de-4** opera sobre esa malla y se evalúa por celda, lo que implica que basta con que una sola condición no se cumpla para que la franja-nodo deje de reportarse como colapso. La matriz se reconstruye al cierre de la fase de ingesta, conservando los `.bak.<timestamp>` de versiones previas para auditoría.
 
+## 2.9.2. Tabla de fuentes de datos por criterio
 
+| Criterio | Fuente primaria | Script de ingesta/derivación | Salida procesada | Estado |
+| --- | --- | --- | --- | --- |
+| C1 — Criminalidad | MEData (serie histórica hurto a persona, comuna 10) | `c1_project_hourly.py` | `investigacion/data/processed/c1_hourly_projection.json` (mapa `c1_high_by_window`) | precomputado, corte p75 fijo |
+| C2 — Seguridad percibida | encuesta breve `security_score` 1–5 en campo | (pendiente, ingreso manual a `field_counts_*.csv`) | `investigacion/data/processed/field_observations_aggregate.csv` | pendiente de encuesta |
+| C3 — Habitabilidad declarada | entrevistas **escritas** en `investigacion/data/interim/YYYY_MM_DD/interviews/` | `code_interviews.py` (esquema `HABITABLE/DESEABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR/AMBIVALENTE`) | códigos agregados por celda en `data/processed/` | pendiente de codificación; transcripciones de video no se usan como testimonio |
+| C4 — Saturación material | videos POV / time-lapse en `data/raw/video/` | `process_video.py` (YOLO11 dual-GPU) → `assign_videos_by_time.py` | `video_saturation_*.json` (umbral global p75 = 0.413) | procesado |
+| Asignación espacial | EXIF de fotos + GPS + timestamps de video | `process_photos.py`, `assign_nodes.py` (haversine), `assign_videos_by_time.py` | `photo_node_assignments.json`, `photo_summary_*.json` | procesado |
+| Audio (no usado como C3) | pista de audio de videos POV | `transcribe_audio.py` | transcripciones marcadas como ruido ambiente | descartado para C3 |
+| Ensamblaje final | salidas C1–C4 anteriores | `build_collapse_matrix.py`, `inspect_matrix.py` | `collapse_matrix.json` | en construcción |
+
+## 2.10. Pipeline HPC real ejecutado
+
+La sección 2.7 describe el modelo M-MASS de simulación. Este apartado documenta el **pipeline HPC real** que produce los insumos C1–C4 de la matriz de colapso, distinto y previo a la simulación: opera sobre datos de campo reales (fotos EXIF-georreferenciadas, videos POV y entrevistas escritas) y se ejecuta en la torre `ubuntu-raid` del autor con dos GPUs en paralelo.
+
+### 2.10.1. Hardware y orquestación
+
+- **GPU 0:** NVIDIA RTX 5070 Ti (Blackwell, sm_120), modelo primario YOLO11x.
+- **GPU 1:** NVIDIA RTX 2060 (Turing, sm_75), modelo secundario YOLO11s.
+- **CPU/RAM:** 32 cores, 123 GiB.
+- **Stack:** Docker Engine 29.1.3 con runtime `nvidia` por defecto, NVIDIA Container Toolkit 1.19.0, CDI specs en `/var/run/cdi/nvidia.yaml`. La asignación per-GPU se hace mediante `devices: ["nvidia.com/gpu=N"]` en `docker-compose.yml` para evitar el bug de eBPF device-filter detectado con `--gpus all` en kernel 6.17.
+- **Cooperación entre workers:** cada video crea un lock en `investigacion/hpc/jobs/`; ambas GPUs leen de la misma cola sin solapamiento. Las fotos se distribuyen análogamente a través de `jobs_photos/`.
+
+### 2.10.2. Scripts del pipeline
+
+El directorio `investigacion/hpc/` contiene nueve scripts que cubren la cadena completa de ingesta-derivación-ensamblaje:
+
+1. **`process_photos.py`** — extrae EXIF (timestamp, GPS) de cada foto, calcula descriptores agregados y emite `photo_summary_<basename>.json` por imagen.
+2. **`process_video.py`** — muestrea frames de cada video, corre YOLO11 sobre la GPU asignada, calcula `saturation_index`, p50/p75/p90 de personas por frame y emite `video_saturation_<basename>.json`. La convención de nombres `NODE__WINDOW__YYYY-MM-DD__libre.mp4` permite ubicar la celda sin sidecar.
+3. **`transcribe_audio.py`** — transcribe la pista de audio de los videos POV. Las transcripciones se conservan como ruido ambiente y **no** alimentan C3 (ver §2.9.1).
+4. **`code_interviews.py`** — codifica entrevistas **escritas** (no transcripciones de video) según el esquema `HABITABLE/DESEABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR/AMBIVALENTE` y agrega por celda nodo × franja para C3.
+5. **`assign_nodes.py`** — asigna cada foto al nodo más cercano por distancia haversine sobre el GPS EXIF, y genera `photo_node_assignments.json`.
+6. **`assign_videos_by_time.py`** — asigna videos a celdas (nodo × franja) cuando la convención de nombre o el sidecar no son suficientes, usando timestamp y proximidad espacial.
+7. **`c1_project_hourly.py`** — proyecta la serie histórica MEData de hurto a persona de comuna 10 a las cuatro franjas horarias mediante un supuesto distribucional documentado, calcula el corte p75 sobre la serie completa y emite `c1_hourly_projection.json` con el mapa `c1_high_by_window`. Este es el script que materializa la decisión metodológica de C1: el corte se calcula una vez sobre la serie histórica, no celda a celda.
+8. **`build_collapse_matrix.py`** — consume las salidas C1 (`c1_hourly_projection.json`), C2 (encuesta), C3 (entrevistas codificadas) y C4 (`video_saturation_*.json`), aplica la regla 3-de-4 por celda y emite `collapse_matrix.json`. Conserva la versión previa como `collapse_matrix.json.bak.<timestamp>` para auditoría diacrónica.
+9. **`inspect_matrix.py`** — utilidad de revisión que imprime por consola el estado de cada celda, los criterios cumplidos y los archivos que alimentaron cada condición. Se usa para verificación manual antes de exponer la matriz a la visualización.
+
+Scripts auxiliares no contados en los nueve principales pero presentes en el directorio: `make_sidecars.py` (genera `*.meta.json` para videos sin convención de nombre) y `update_video_metadata.py` (corrige metadatos en lote).
+
+### 2.10.3. Diferencia respecto a M-MASS
+
+El pipeline HPC y M-MASS no comparten datos en una sola dirección: el pipeline HPC produce la matriz empírica que **contrasta** la simulación M-MASS, no la alimenta. M-MASS (secciones 2.5–2.7) genera trayectorias y campos sintéticos; el pipeline HPC genera una malla de evidencia situada. Su cruce se discute en el capítulo 3.
+
+## 2.11. Reproducibilidad y trazabilidad técnica
 
 La reproducibilidad se apoya en tres elementos ya presentes en el repositorio:
 
@@ -168,7 +212,7 @@ Sin embargo, una tesis evaluable debe documentar todavía con más precisión:
 
 Estos elementos pueden resolverse en el computador antes del trabajo de campo y deberían quedar como anexo técnico. Sin esa documentación, el pipeline puede funcionar, pero no ser suficientemente auditable por terceros.
 
-## 2.11. Validación, sensibilidad y falsabilidad
+## 2.12. Validación, sensibilidad y falsabilidad
 
 El modelo debe someterse a cuatro tipos de prueba:
 
@@ -181,7 +225,7 @@ La validación interna y parte de la sensibilidad pueden hacerse ya en PC. La va
 
 Esta validación no debe entenderse como simple confirmación numérica. En términos epistemológicos, la fase de campo debe producir conocimiento situado: cada conteo, medición o encuesta depende de hora, posición, instrumento, observador y protocolo. Esta cautela sigue la advertencia de Haraway (1995): no existe una mirada neutral “desde ninguna parte”; hay perspectivas parciales que deben declararse para ser discutibles.
 
-## 2.12. Consideraciones éticas
+## 2.13. Consideraciones éticas
 
 La fase de campo y la fase de ingesta multimedia introducen obligaciones éticas adicionales. Las encuestas de seguridad percibida y las entrevistas sobre habitabilidad declarada deben evitar recoger datos personales identificables. Las fotografías y los videos POV deben centrarse en obstáculos, flujos agregados, geometría y condiciones espaciales, no en rostros ni en exposición de individuos vulnerables. Cualquier mención a habitantes de calle, informalidad o inseguridad debe tratarse como categoría urbana agregada, no como estigma de grupos.
 
@@ -196,7 +240,7 @@ El protocolo de campo y de procesamiento debe incluir:
 - transcripción anonimizada por colaborador externo, bajo acuerdo de confidencialidad;
 - procesamiento de video en torre HPC local del autor, sin envío a servicios de terceros.
 
-## 2.13. Diagrama del método
+## 2.14. Diagrama del método
 
 ```mermaid
 graph TD
@@ -221,6 +265,6 @@ graph TD
     O --> P[Modelo recalibrado y discusión final]
 ```
 
-## 2.14. Balance metodológico
+## 2.15. Balance metodológico
 
 El método es suficientemente robusto para una fase exploratoria: integra fuentes públicas, variables urbanas, simulación, lectura filosófica y un protocolo de campo cumplido. Lo que aún no puede sostenerse es la afirmación empírica fuerte sobre el corredor, porque el cruce de las cuatro fuentes del colapso (criminalidad, encuesta, entrevista, video) está en fase de ingesta. La fortaleza del trabajo está en declarar esta diferencia y convertirla en plan: primero baseline trazable, después campo realizado, ahora ingesta y triangulación, y solo entonces discusión final con la matriz de colapso a la vista.
