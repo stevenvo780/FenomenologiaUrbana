@@ -1,148 +1,198 @@
-# Guion de presentación — 20 minutos · Steven Vallejo + Jacob Agudelo
+# Guion de presentación — Steven Vallejo + Jacob Agudelo
 
 **Repositorio público:** <https://github.com/stevenvo780/FenomenologiaUrbana>
 
 **Contexto**: tarea de campo de la profesora ("vayan al centro y hagan fenomenología"). Salimos los dos al centro de Medellín el 2026-05-05. Stev decidió escalarlo a un sistema computacional. Esta presentación cuenta lo hecho con honestidad sobre el sobre-esfuerzo y rigor donde lo hubo.
 
-**Formato**: dos presentadores alternando. ~10 min cada uno. ~9 momentos. Apoyo: deck web + caps de tesis como respaldo.
+**Formato**: 17 slides · alternamos Stev y Jacob · 1 a 3 min por slide · ~26-28 min + Q&A → **~30 min total**.
 
-**Tono**: directo, autocrítico con humor seco, provocador en la tesis. No leer el guion — son apuntes para hablar mirando lo que el slide ya muestra.
+**Tono**: directo, autocrítico con humor seco. Leemos ágiles. Cada bloque "El slide muestra:" es lo que hay en pantalla — los bullets son lo que decimos.
 
 ---
 
-## 1 — Apertura · Stev (1 min) · 🖥️ slide **`apertura`**
+## 1 — `apertura` · Stev (1 min)
 
-> *El slide muestra:* título grande **"La fenomenología sola no basta"**, subtítulo con κ=0.0 sobre 4 nodos compartidos, términos `phainómenon · lógos · Lebenswelt`, autores, citas Husserl/Merleau-Ponty/Kinkaid.
+> *Slide:* título grande **"La fenomenología sola no basta"**, subtítulo κ=0.0, términos `phainómenon · lógos · Lebenswelt`, autores, citas Husserl/Merleau-Ponty/Kinkaid, botón Repositorio.
 
-Lo que dice Stev al frente del slide:
-- Leer la tesis del título: **"La fenomenología sola no basta para abordar la ciudad."**
+- Leer la tesis del título. **"La fenomenología sola no basta para abordar la ciudad."**
 - "Nos mandaron a la ciudad a hacer fenomenología. Yo me obsesioné un poco."
-- Lo que se pidió: salir, observar, escribir.
-- Lo que hicimos los dos: salimos, observamos, escribimos — **y además** corrimos un pipeline HPC con 2 GPUs sobre fotos, videos, transcripciones y 15 entrevistas, construimos una matriz falsable, y montamos esta web.
-- "Hoy contamos las dos cosas: la experiencia de campo y lo que el sistema dijo de ella."
+- Lo que se pidió: salir, observar, escribir. Lo que hicimos: salimos los dos, observamos, **y además** corrimos un pipeline HPC, construimos una matriz falsable, y montamos esta web.
 
----
+## 2 — `symploke` · Jacob (2 min)
 
-## 2 — Las 3 capas + matriz · Jacob (2 min) · 🖥️ slide **`symploke`**
+> *Slide:* título **"Triangulación M1 + M2 + M3 + matriz falsable"**. 3 cards: **M1 "El aire que decide"**, **M2 "Cinco maneras de caminar"**, **M3 "La distancia entre opción y restricción"**.
 
-> *El slide muestra:* título **"Triangulación M1 + M2 + M3 + matriz falsable"** y 3 cards: **M1 "El aire que decide"** (campo físico), **M2 "Cinco maneras de caminar"** (sujeto situado), **M3 "La distancia entre opción y restricción"** (visibilidad y control).
+- "El método tiene **3 capas + matriz**. Cada capa sola se queda corta."
+- **M1 — el aire que decide**: lo físico-ambiental. Ruido, PM2.5, densidad, saturación visual.
+- **M2 — cinco maneras de caminar**: el sujeto situado. Quién carga miedo, quién vende, quién es turista.
+- **M3 — opción vs restricción**: capa social. Quién mira, quién es mirado, quién decide quedarse.
+- "La **matriz 3-de-4** declara colapso solo si tres condiciones convergen. Falsable."
 
-Lo que dice Jacob señalando cada card:
-- "La ciudad no se deja agarrar con un solo tipo de mirada. Por eso el método es **3 capas + matriz**."
-- **M1 — el aire que decide**: lo físico-ambiental. Ruido, PM2.5, densidad humana, saturación visual.
-- **M2 — cinco maneras de caminar**: el sujeto situado. Quién carga miedo, quién viene a vender, quién es turista, quién vive ahí.
-- **M3 — opción vs restricción**: la capa social. Quién puede mirar, quién es mirado, quién decide quedarse.
-- "Cada capa sola se queda corta. La **matriz 3-de-4** declara colapso solo si tres condiciones convergen. Falsable."
+## 3 — `mapa` · Stev (1.5 min)
 
----
+> *Slide:* título **"El campo donde aparece la ciudad"**, mapa interactivo del corredor, badge **"BASELINE PROXY · CORREDOR JUNÍN"**, GPS del nodo seleccionado.
 
-## 3 — El corredor y los 5 nodos · Stev (2 min) · 🖥️ slide **`mapa`**
+- "Esta es la geografía: estación San Antonio → parque San Antonio → Bastilla → Junín → parque Botero. **Cinco nodos**."
+- 8 a.m. a noche. Cada uno con cuaderno, cámara, audio.
+- 34 fotos georreferenciadas, 17 videos, 15 entrevistas.
+- "El badge dice **baseline_proxy**: no decimos que esto explique toda la ciudad."
 
-> *El slide muestra:* título **"El campo donde aparece la ciudad"**, mapa interactivo del corredor Junín, badge **"BASELINE PROXY · CORREDOR JUNÍN"**, filtros de simulación, GPS del nodo seleccionado.
+## 4 — `heterotopias` · Jacob (2 min)
 
-Lo que dice Stev navegando el mapa:
-- "Esta es la geografía que recorrimos: estación San Antonio, parque San Antonio, pasaje La Bastilla, pasaje Junín, parque Botero. **Cinco nodos** del centro."
-- 8 a.m. a noche. Cada uno con cuaderno, cámara y audio.
-- 34 fotos georreferenciadas, 17 videos, 15 entrevistas a transeúntes y vendedores.
-- "El badge dice **baseline_proxy**: no decimos que esto explique toda la ciudad. Es el corredor donde fuimos."
-- (clickear un nodo y mostrar el GPS) "Cada foto cae en su nodo por GPS, sin ambigüedad."
+> *Slide:* título **"Cada nodo cuenta una tensión distinta"**, chips por nodo con su fenomenología. Cita Foucault/Sassen.
 
----
-
-## 4 — Cada nodo, una tensión + el choque · Jacob (2 min) · 🖥️ slide **`heterotopias`**
-
-> *El slide muestra:* título **"Cada nodo cuenta una tensión distinta"**, chips de heterotopía por nodo con la fenomenología asociada, cita **Foucault, 1975/2002 · Sassen, 2014**.
-
-Lo que dice Jacob recorriendo los chips:
-- "Cada plaza tiene su tensión. **Foucault** lo llamaría heterotopía: lugares con reglas distintas dentro de la misma ciudad."
+- "**Foucault** lo llamaría heterotopía: lugares con reglas distintas dentro de la misma ciudad."
 - Junín: comercio formal denso, modernidad sobre lo antiguo.
 - Bastilla: comercio diverso, máxima heterogeneidad.
 - Botero: turismo, vigilancia, prostitución y consumo conviven.
 - Parque San Antonio: arte, vandalismo, congregación de subalternos.
-- "Pero acá viene lo importante: yo y Stev escribimos cosas distintas del mismo nodo. **En parque San Antonio, Stev anotó *'tranquilidad en medio del ruido'*; yo escribí *'paso histórico del terror, vandalismo apela a Dios'*.**"
-- "Misma plaza, mismo día. Eso es el dato fenomenológico, no el ruido a corregir."
+- "**En parque San Antonio Stev anotó *'tranquilidad en medio del ruido'*; yo escribí *'paso histórico del terror, vandalismo apela a Dios'*.** Misma plaza, mismo día."
 
----
+## 5 — `perfiles` · Stev (1.5 min)
 
-## 5 — Datos públicos integrados · Stev (3 min) · 🖥️ slide **`evidencia`**
+> *Slide:* título **"No son personas: son lentes de comparación"**. Radar de 5 perfiles + entropía de Shannon por perfil.
 
-> *El slide muestra:* título **"Qué tenemos del centro · evidencia pública"**, donut **50%+ imagen favorable**, nube semántica de palabras asociadas, gráfico **criminalidad comuna 10 · 2023**, KPIs **La Candelaria 2021** (densidad, espacios, empresas), tarjeta de **trazabilidad de fuentes**, card **campo pendiente**.
+- "Cinco perfiles de caminante. **No son personas reales**: son lentes para comparar."
+- Trabajador rápido, comprador, turista, vendedor ambulante, persona con movilidad reducida.
+- "El radar muestra cómo cada perfil distribuye sus rutas. Más entropía = más diversidad de caminos."
+- "Esto sirve para preguntar *¿quién paga el costo de qué franja?*"
 
-Lo que dice Stev recorriendo cada panel:
-- (donut) "Medellín Cómo Vamos 2024: la imagen del centro es **ambivalente**. La gente lo quiere y le tiene miedo a la vez."
-- (nube semántica) "Las palabras asociadas son comercio, congestión, inseguridad, informalidad — todo a la vez."
-- (gráfico crimen) "Criminalidad oficial de la comuna 10 desde MEData. Picos por mes. Esto alimenta el criterio C1 de la matriz."
-- (KPI La Candelaria) "El barrio: alta densidad poblacional, presencia comercial, espacio público escaso por habitante."
-- (trazabilidad) "Cada fuente con su URL y estado. No pegamos nada que no podamos enseñar."
-- "Sobre esto montamos los 4 criterios cuantitativos: criminalidad histórica (C1), seguridad percibida (C2 · pendiente), habitabilidad declarada (C3), saturación visual (C4)."
+## 6 — `presion` · Jacob (1.5 min)
 
----
+> *Slide:* título **"La hora modifica el campo de posibilidades"**. Etiqueta del escenario activo (ej. peak_pm), métricas por franja.
 
-## 6 — Lo que sobrevive: matriz, pilares, κ=0 · Jacob (3 min) · 🖥️ slide **`triangulacion`**
+- "La ciudad **no es la misma a las 7 a.m. que a las 6 p.m.** Eso suena obvio, pero el modelo lo separa."
+- 4 franjas: peak_am, midday, peak_pm, night. Cada una con su régimen.
+- "Junín a peak_am tiene mucha gente pero ordenada. Botero a midday se siente sofocante. La hora cambia el campo."
 
-> *El slide muestra:* título **"Lo que sobrevive a la triangulación · qué falta · qué no se debe fingir"**, los 7 paneles: **CollapseMatrix** (36 celdas), **InterRater** (κ=0), **Sensitivity** (robusto/frágil), **CrossValidation**, **SubZones**, **Audio**, **VisualAggregates**. Cita **Husserl · Haraway**.
+## 7 — `simulacion` · Stev (2 min)
 
-Lo que dice Jacob recorriendo paneles:
-- (matriz 9×4) "**Resultado**: 0 colapsos confirmados, 6 fricciones acumuladas, 30 inconcluyentes. **Cero colapsos no es fracaso** — la regla 3-de-4 podía fallar y no la activamos sin evidencia."
-- (celdas con borde dorado) "Dos pilares se sostienen bajo bootstrap de 1000 iteraciones: **Junín peak_am** (C1+C4, robusta al 95.6%) y **Botero midday** (C1+C3, robusta al 97%)."
-- (panel inter-rater) "**Cohen's kappa = 0.0** entre Stev y yo. Misma plaza, lecturas opuestas. Eso es la fenomenología sola fallando — no es ruido a corregir."
-- (panel cross-validation) "El dato visual confirma lo narrado: *'sofocante en Botero'* → densidad humana máxima 30 personas/frame. *'Miedo de cruzar San Antonio'* → vehicle_intensity 0.378 (tope del corpus)."
-- (panel audio) "Junín tiene música constante (1.0 ratio). Berrío registra el pico de ruido del corpus (-24.3 dB). El POV se confirma."
+> *Slide:* título **"Muchos recorridos posibles, un corredor concreto"**. Parámetros de renderizado, métricas del escenario, panel "Qué permite ver la simulación".
 
----
+- "Aquí está la capa M-MASS. **Simulación multi-agente sobre el corredor real.**"
+- Cada agente tiene perfil, posición, decisión. Caminan por la red de nodos y ejes.
+- "No es realismo: es exploración. Pregunta *¿qué pasa si esto se aprieta así?*"
+- "Lo que ves en pantalla son trayectorias agregadas, densidades, conflictos."
 
-## 7 — Lo que no se debe fingir · Stev (2 min) · 🖥️ slide **`triangulacion`** (panel **SubZones**) → abrir **modal "Campo y ética"**
+## 8 — `multitudes` · Jacob (1.5 min)
 
-> *El slide muestra:* el panel **SubZones** con `pasaje_la_bastilla` rescatado (12 fotos) y **sub-zonas Coltejer-Ayacucho y "calle del consumo" vacías**. Botón "Campo y ética" abre el modal con 5 cards de pendientes.
+> *Slide:* título **"24 horas son un latido, no una serie de barras"**. Reloj sincronizado · heatmap · curva. Lectura "X agentes / día".
 
-Lo que dice Stev:
-- (panel sub-zonas) "**Lo honesto**: definimos sub-zonas porque salieron en el campo — Coltejer-Ayacucho, calle del consumo —, pero no las muestreamos. No fuimos. Eso es sesgo de itinerario, no se finge."
-- "**C2 está vacío**: no alcanzamos a hacer encuesta cuantitativa de seguridad. Eso sesga el sistema hacia 'fricción' antes que 'colapso'."
-- "**Solo somos dos observadores**. κ con n=2 es estadísticamente débil. Lo enmarcamos como **piloto**, no medición poblacional."
-- (clic en "Campo y ética") "Aquí está el detalle: ejercicio cerrado, lo que se sostiene, lo que no se finge, marco para replicar. **El entregable está completo — lo que falta es ampliación opcional.**"
+- "Cuando agregás todos los recorridos en 24 horas, **emerge un latido**."
+- 640.000 agentes / día simulados. No es la población real, es el cuenta-rutas.
+- "El reloj y el heatmap están sincronizados. Veé el pulso del corredor."
 
----
+## 9 — `estres` · Stev (1.5 min)
 
-## 8 — La tesis cierra el círculo · Jacob (2 min) · 🖥️ slide **`cierre`**
+> *Slide:* título **"500.000 como escenario límite"**. Curva de presión vs entropía, tipping point, panel presión sistémica.
 
-> *El slide muestra:* título **"Dos pilares defendibles, κ = 0 como fortaleza, agenda explícita"** y **3 postulados** con frame: **"Dos pilares se sostienen"**, **"κ = 0 como fortaleza, no defecto"**, **"Matriz 3-de-4 falla limpia"**.
+- "Pregunta de estrés: **¿qué pasa si metemos 500 mil al corredor?**"
+- La curva muestra cómo presión y entropía se desacoplan al límite.
+- "Hay un *tipping point*: hasta cierto punto el sistema absorbe; después, colapsa estructuralmente."
+- "Esto es exploración computacional, no predicción."
 
-Lo que dice Jacob leyendo postulados:
-- (postulado 1) "Dos celdas sobreviven a bootstrap, sensibilidad y leave-one-out. Eso es un hallazgo, no un anuncio."
-- (postulado 2) "**Kappa = 0 es la prueba**: dos miradas formadas no se ponen de acuerdo. La fenomenología pura no falsea, solo describe."
-- (postulado 3) "30 inconcluyentes no es vacío: es la regla diciendo *'aquí no tengo evidencia para afirmar'*. Eso es ciencia urbana operando."
-- "**La fenomenología no se rinde ante los datos: pide más que ella misma.** Triangulada con HPC y matriz falsable, sí discrimina."
+## 10 — `asfixia` · Jacob (1.5 min)
 
----
+> *Slide:* título **"Precisión interna no es validación de campo"**. σ relativa Monte Carlo, Gini de desigualdad, "Horas medidas".
 
-## 9 — Cierre · Stev (1 min) · 🖥️ slide **`cierre`** (mismo · botón **Repositorio ↗**)
+- "Acá la autocrítica del modelo: **el modelo es preciso consigo mismo, no con la calle**."
+- Incertidumbre Monte Carlo: σ relativa por escenario.
+- Gini de desigualdad fenomenológica: no todos los perfiles cargan el mismo peso.
+- "Esto NO es validación con datos reales. Es coherencia interna. La triangulación es lo que sigue."
 
-> *El slide muestra:* gates de cierre, autores, botones "Pendientes de campo", "Estatus completo", **"Repositorio ↗"**.
+## 11 — `ambiente` · Stev (1.5 min)
 
-Lo que dice Stev:
-- "Lo que nos llevamos: la fenomenología no basta sola, pero **sobre-elaborarla sirvió para descubrir su límite**."
-- "Lo que falta: encuesta de seguridad (C2), volver a Coltejer-Ayacucho, sumar más observadores, audio profesional. **Ninguno bloquea el entregable de la tarea.**"
+> *Slide:* título **"El ambiente también pesa al caminar"**. PM2.5 con estación cercana, ruido con muestras válidas.
+
+- "Capa M1 con datos reales del SIATA: **PM2.5 y ruido**."
+- Estación más cercana al corredor + número de muestras válidas.
+- "Esto entra al modelo como campo estigmérgico — el aire deja huella en el cuerpo."
+
+## 12 — `visibilidad` · Jacob (1.5 min)
+
+> *Slide:* título **"Ver, orientarse y sentirse expuesto"**. Campo perceptual, exposición máxima, legibilidad.
+
+- "Capa M3: **isovistas**. ¿Cuánto se puede ver desde donde uno está?"
+- Apertura, exposición y legibilidad por nodo.
+- "Botero tiene alta exposición — uno se siente mirado. Junín tiene cobertura visual de árboles. La vigilancia es geometría."
+
+## 13 — `economia` · Stev (1 min)
+
+> *Slide:* título **"El comercio curva el espacio"**.
+
+- "El comercio funciona como **gravedad**: atrae trayectorias."
+- Junín: gravitación intensa, mono-uso comercial.
+- Botero: gravitación con turismo + microtráfico vecino.
+- "El espacio no es neutro: lo curva la economía que lo ocupa."
+
+## 14 — `historia` · Jacob (1 min)
+
+> *Slide:* título **"2012 → 2024: el corredor no permanece igual"**.
+
+- "Doce años. **El corredor no es estable.**"
+- Densidad histórica 2012, 2018, 2024 superpuestas.
+- "Donde estaba el Bronx, ahora hay turismo. *'Movieron el Bronx una calle'* — eso lo dijo un entrevistado."
+
+## 15 — `evidencia` · Stev (2.5 min)
+
+> *Slide:* título **"Qué tenemos del centro · evidencia pública"**. Donut **50%+ imagen favorable**, nube semántica, gráfico crimen 2023, KPI La Candelaria, trazabilidad de fuentes, card campo pendiente.
+
+- (donut) "**Medellín Cómo Vamos 2024**: el centro es **ambivalente**. Lo quieren y le tienen miedo a la vez."
+- (nube) "Las palabras asociadas: comercio, congestión, inseguridad, informalidad — todo a la vez."
+- (gráfico crimen) "Criminalidad oficial comuna 10 desde MEData. Esto alimenta el criterio C1 de la matriz."
+- (KPI La Candelaria) "Alta densidad poblacional, espacio público escaso por habitante."
+- (trazabilidad) "Cada fuente con URL y estado. No pegamos nada sin enseñar."
+- "Sobre esto montamos los **4 criterios**: criminalidad histórica (C1), seguridad percibida (C2 · pendiente), habitabilidad declarada (C3), saturación visual (C4)."
+
+## 16 — `triangulacion` · Jacob (3 min)
+
+> *Slide:* título **"Lo que sobrevive a la triangulación · qué falta · qué no se debe fingir"**. 7 paneles: matriz, kappa, sensibilidad, cross-validation, sub-zonas, audio, agregados visuales. Cita Husserl/Haraway.
+
+- (matriz 9×4) "**Resultado**: 0 colapsos confirmados, 6 fricciones, 30 inconcluyentes. **Cero colapsos no es fracaso** — la regla 3-de-4 podía fallar."
+- (celdas con borde dorado) "Dos pilares se sostienen bajo bootstrap de 1000 iteraciones: **Junín peak_am** (C1+C4, 95.6%) y **Botero midday** (C1+C3, 97%)."
+- (panel inter-rater) "**Cohen's kappa = 0.0** entre Stev y yo. Lecturas opuestas. Eso es la fenomenología sola fallando."
+- (panel cross-validation) "El dato visual confirma lo narrado: *'sofocante en Botero'* → densidad humana max 30 personas/frame. *'Miedo de cruzar San Antonio'* → vehicle_intensity 0.378."
+- (panel audio) "Junín tiene música constante (ratio 1.0). Berrío registra el pico de ruido del corpus (-24.3 dB). El POV se confirma."
+- (sub-zonas) "**Lo honesto**: definimos Coltejer-Ayacucho y 'calle del consumo' porque salieron en el campo, pero no las muestreamos. **Sesgo de itinerario, no se finge.**"
+
+## 17 — `cierre` · Stev (2 min)
+
+> *Slide:* título **"Dos pilares defendibles, κ = 0 como fortaleza, agenda explícita"**. 3 postulados, gates de cierre, autores, botones "Pendientes de campo", "Estatus completo", **"Repositorio ↗"**.
+
+- (postulado 1) "**Dos pilares se sostienen** bajo bootstrap, sensibilidad y leave-one-out."
+- (postulado 2) "**Kappa = 0 es la prueba**: dos miradas formadas no concuerdan. La fenomenología pura no falsea, solo describe."
+- (postulado 3) "**Matriz 3-de-4 falla limpia**: 30 inconcluyentes no es vacío, es la regla diciendo *'aquí no tengo evidencia'*."
+- "**La fenomenología no se rinde ante los datos: pide más que ella misma.**"
+- "Lo que falta: encuesta C2, sub-zonas, más observadores. **Ninguno bloquea el entregable.**"
 - (señala botón Repositorio) "Todo está aquí. Cada script, cada decisión, la bitácora completa."
-- "Una frase: *Caminar la ciudad sigue siendo el primer dato. No es el único.*"
+- *"Caminar la ciudad sigue siendo el primer dato. No es el único."*
 
 ---
 
-## Reparto rápido
+## Reparto
 
-| # | Min | Quien | Slide | Lo que el slide muestra | Lo que se dice |
-|---|---|---|---|---|---|
-| 1 | 0–1 | Stev | `apertura` | "La fenomenología sola no basta" + κ=0 | Tesis + over-engineering |
-| 2 | 1–3 | Jacob | `symploke` | 3 cards M1/M2/M3 + matriz falsable | Las 3 capas explicadas |
-| 3 | 3–5 | Stev | `mapa` | Mapa corredor Junín · GPS nodos | El recorrido y los 5 nodos |
-| 4 | 5–7 | Jacob | `heterotopias` | Tensión por nodo · Foucault/Sassen | Choque inter-observador (caso parque San Antonio) |
-| 5 | 7–10 | Stev | `evidencia` | Ambivalencia 50% · crimen · La Candelaria · fuentes | Datos públicos integrados (alimentan C1-C4) |
-| 6 | 10–13 | Jacob | `triangulacion` | Matriz · κ=0 · sensitivity · cross-val · audio | Pilares, robustez, validación cruzada |
-| 7 | 13–15 | Stev | `triangulacion` (SubZones) + modal | Sub-zonas vacías + 5 cards pendientes | Limitaciones honestas + ejercicio cerrado |
-| 8 | 15–17 | Jacob | `cierre` | 3 postulados | Tesis cierra el círculo |
-| 9 | 17–18 | Stev | `cierre` | Botón Repositorio | Cierre + agenda + repo |
-| Q&A | 18–20 | ambos | libre | Modal "Estado" si necesario | Preguntas |
+| # | Min | Quien | Slide | Lo que se dice |
+|---|---|---|---|---|
+| 1 | 0–1 | Stev | `apertura` | Tesis + over-engineering |
+| 2 | 1–3 | Jacob | `symploke` | 3 capas M1/M2/M3 + matriz |
+| 3 | 3–4.5 | Stev | `mapa` | Corredor y 5 nodos |
+| 4 | 4.5–6.5 | Jacob | `heterotopias` | Heterotopías + caso parque San Antonio |
+| 5 | 6.5–8 | Stev | `perfiles` | 5 lentes de comparación |
+| 6 | 8–9.5 | Jacob | `presion` | La hora cambia el campo |
+| 7 | 9.5–11.5 | Stev | `simulacion` | M-MASS multi-agente |
+| 8 | 11.5–13 | Jacob | `multitudes` | 24h como latido + 640k agentes |
+| 9 | 13–14.5 | Stev | `estres` | 500k tipping point |
+| 10 | 14.5–16 | Jacob | `asfixia` | Precisión ≠ validación |
+| 11 | 16–17.5 | Stev | `ambiente` | PM2.5 + ruido SIATA |
+| 12 | 17.5–19 | Jacob | `visibilidad` | Isovistas, exposición |
+| 13 | 19–20 | Stev | `economia` | Comercio curva el espacio |
+| 14 | 20–21 | Jacob | `historia` | 2012→2024, "movieron el Bronx" |
+| 15 | 21–23.5 | Stev | `evidencia` | Datos públicos para C1-C4 |
+| 16 | 23.5–26.5 | Jacob | `triangulacion` | Matriz + 2 pilares + kappa + cross-val |
+| 17 | 26.5–28.5 | Stev | `cierre` | 3 postulados + repo |
+| Q&A | 28.5–32 | ambos | libre | Preguntas |
 
-**Slides del deck que NO se usan en el guion** (15 min insuficientes para abarcar todo): `perfiles`, `presion`, `simulacion`, `multitudes`, `estres`, `asfixia`, `ambiente`, `visibilidad`, `economia`, `historia`. Quedan como **respaldo si una pregunta los activa** (ej. simulación 640k agentes si el jurado pregunta por la capa M-MASS computacional).
+**Total estimado**: ~28 min + Q&A → ~30 min en total.
 
 ---
 
@@ -150,6 +200,8 @@ Lo que dice Stev:
 
 - **"¿Por qué tanto cómputo para una salida de campo?"** → No nos lo pidieron; sobre-elaboramos. Pero el ejercicio mostró el límite del método clásico: si dos observadores no concuerdan, ¿qué se reporta?
 - **"¿0/36 colapsos no es fracaso?"** → No: es la regla 3-de-4 funcionando. Una regla que nunca falsea no es regla.
-- **"¿κ=0 con n=2 no es estadísticamente débil?"** → Sí. Por eso lo enmarcamos como piloto y como evidencia cualitativa de divergencia, no como medición poblacional.
-- **"¿No están sobre-interpretando los videos con YOLO?"** → YOLO detecta lo que está entrenado a detectar. Por eso declaramos 6 reclamos *no evaluables* (vandalismo, indigencia, consumo, policía).
-- **"¿Por qué creen que la fenomenología no basta?"** → Porque vivimos la divergencia. La triangulación no la *resuelve*, la *opera*: distingue lo que se sostiene de lo que no.
+- **"¿κ=0 con n=2 no es estadísticamente débil?"** → Sí. Por eso lo enmarcamos como piloto y como evidencia cualitativa de divergencia.
+- **"¿No están sobre-interpretando los videos con YOLO?"** → YOLO detecta lo que está entrenado a detectar. Por eso declaramos 6 reclamos *no evaluables*.
+- **"¿Por qué creen que la fenomenología no basta?"** → Porque vivimos la divergencia. La triangulación no la resuelve, la opera: distingue lo que se sostiene de lo que no.
+- **"¿La simulación de 640k agentes refleja la realidad?"** → No es predicción, es exploración. Pregunta *¿qué pasaría si...?*. Validación pendiente con campo.
+- **"¿Qué proponen para política pública?"** → Las 6 fricciones señalan dónde mirar primero. Pero la tesis no recomienda intervenciones — recomienda método.
