@@ -268,11 +268,24 @@ def main() -> int:
     interim = args.root / "data" / "interim"
     processed = args.root / "data" / "processed"
 
+    skip_patterns = ("template", "example", "synthetic", "readme")
+    def _skip(path: Path) -> bool:
+        n = path.name.lower()
+        if any(p in n for p in skip_patterns):
+            return True
+        # también si está dentro de carpeta templates/ o examples/
+        for part in path.parts:
+            if part.lower() in ("templates", "examples"):
+                return True
+        return False
+
     todo: list[tuple[str, Path]] = []
     for txt in interim.rglob("*.txt"):
+        if _skip(txt):
+            continue
         todo.append(("text", txt))
     for md in interim.rglob("*.md"):
-        if md.name.lower().startswith("readme"):
+        if _skip(md):
             continue
         todo.append(("text", md))
     if args.include_whisper:
