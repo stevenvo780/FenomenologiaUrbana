@@ -46,6 +46,7 @@ const slideIcons: Record<SlideId, LucideIcon> = {
   economia: ShoppingBag,
   historia: LineChart,
   evidencia: Database,
+  triangulacion: Network,
   cierre: Flag,
 }
 

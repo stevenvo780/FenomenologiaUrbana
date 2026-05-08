@@ -2864,6 +2864,24 @@ body {
   height: 100%;
 }
 
+.triangulation-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 16px;
+  min-height: 0;
+  height: 100%;
+  overflow-y: auto;
+  align-content: start;
+}
+
+.triangulation-gallery .deck-panel {
+  padding: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .evidence-gallery .deck-panel {
   padding: 14px;
   overflow: hidden;
