@@ -52,8 +52,13 @@ def percentile(xs: list[float], q: float) -> float:
     return cuts[idx]
 
 
-def load_c1_crime(csv_path: Path) -> dict:
-    """C1: tasa mensual de hurto a persona en comuna 10. Calcula percentil 75 de la serie."""
+def load_c1_crime(csv_path: Path, projection_path: Path | None = None) -> dict:
+    """C1: tasa mensual de hurto a persona en comuna 10 + proyección horaria si existe.
+
+    Si `projection_path` apunta a un `c1_hourly_projection.json` válido (producido
+    por `c1_project_hourly.py`), se usa para evaluar C1_high por franja con la
+    regla `tasa_por_hora >= p75_por_franja`. Si no, se usa el umbral mensual p75.
+    """
     if not csv_path.exists():
         return {"available": False, "reason": f"{csv_path} no existe"}
     monthly = defaultdict(int)
@@ -77,16 +82,39 @@ def load_c1_crime(csv_path: Path) -> dict:
     if not values:
         return {"available": False, "reason": "sin filas hurto a persona en comuna 10"}
     p75 = percentile(values, 75)
-    high = {k: v for k, v in monthly.items() if v >= p75}
-    return {
+    high_months = {k for k, v in monthly.items() if v >= p75}
+
+    out = {
         "available": True,
         "series_months": len(series),
         "p75_month": p75,
         "median_month": median(values),
         "max_month": max(values),
-        "months_above_p75": sorted(high.keys()),
-        "note": "C1 se proyecta a franjas mediante supuesto distribucional; aquí solo se reporta a nivel mes.",
+        "months_above_p75": sorted(high_months),
+        "high_months_set": list(high_months),
+        "hourly_projection": None,
     }
+
+    if projection_path and projection_path.exists():
+        try:
+            proj = json.loads(projection_path.read_text(encoding="utf-8"))
+            out["hourly_projection"] = {
+                "supuesto": proj.get("supuesto"),
+                "weights": proj.get("weights"),
+                "hours_per_window": proj.get("hours_per_window"),
+                "p75_per_window_cases_per_hour": (proj.get("projection") or {}).get("p75_per_window_cases_per_hour"),
+                "p75_global_cases_per_hour": (proj.get("projection") or {}).get("p75_global_cases_per_hour"),
+            }
+            out["c1_high_by_window"] = {
+                w: True for w in (out["hourly_projection"]["p75_per_window_cases_per_hour"] or {})
+            }
+        except Exception as exc:
+            out["hourly_projection_error"] = str(exc)
+    out["note"] = (
+        "C1_high por celda usa la proyección horaria si existe. "
+        "El supuesto distribucional se documenta en data/processed/c1_hourly_projection.json."
+    )
+    return out
 
 
 def load_c2_field(csv_path: Path) -> dict:
@@ -221,6 +249,24 @@ def build_matrix(case_model_path: Path, c1: dict, c2: dict, c3: dict, c4: dict) 
         except Exception:
             pass
 
+    # C1 evaluado por franja con la proyección horaria documentada.
+    # Para cada franja: comparamos su tasa por hora del último mes disponible
+    # (o el promedio reciente) contra el p75 propio de la franja.
+    c1_high_by_window: dict[str, bool] = {}
+    proj = c1.get("hourly_projection") or {}
+    weights = proj.get("weights") or {}
+    p75_window = proj.get("p75_per_window_cases_per_hour") or {}
+    if proj and weights and p75_window:
+        # Elegimos el promedio mensual de los últimos 12 meses como referencia.
+        series = c1.get("monthly_series_total") or {}
+        # Si no llega series_total embebido, tomamos el max_month como conservador.
+        recent_avg = c1.get("median_month") or 0
+        for w, weight in weights.items():
+            hours = (proj.get("hours_per_window") or {}).get(w, 1) or 1
+            cases_w = recent_avg * weight
+            rate = cases_w / hours
+            c1_high_by_window[w] = rate >= (p75_window.get(w) or 1e9)
+
     cells = {}
     for n in nodes:
         for w in windows:
@@ -231,10 +277,7 @@ def build_matrix(case_model_path: Path, c1: dict, c2: dict, c3: dict, c4: dict) 
             c2_low = bool(c2_cell and c2_cell.get("mean_security_score", 5.0) <= 2.0)
             c3_neg = bool(c3_cell and c3_cell.get("dominant_negative"))
             c4_sat = bool(c4_cell and c4_cell.get("saturation_p75", 0.0) >= (c4.get("p75_global") or 1e9))
-            # C1 sin proyección horaria todavía: se marca activa si la franja se asocia a meses pico vía supuesto.
-            # Por ahora: si C1 está disponible, lo dejamos en `False` por celda y solo reportamos a nivel mes
-            # (esto se debe ajustar cuando exista la proyección horaria documentada).
-            c1_high = False
+            c1_high = bool(c1_high_by_window.get(w, False))
             coverage = sum([c2_cell is not None, c3_cell is not None, c4_cell is not None])
             decision = decide_cell(c1_high, c2_low, c3_neg, c4_sat, coverage)
             cells[key] = {
@@ -276,7 +319,10 @@ def main() -> int:
     args = ap.parse_args()
 
     root = args.root
-    c1 = load_c1_crime(root / "data" / "raw" / "medata_criminalidad_csv.csv")
+    c1 = load_c1_crime(
+        root / "data" / "raw" / "medata_criminalidad_csv.csv",
+        projection_path=root / "data" / "processed" / "c1_hourly_projection.json",
+    )
     c2 = load_c2_field(root / "data" / "processed" / "field_observations_aggregate.csv")
     c3 = load_c3_interviews(root / "data" / "interim")
     c4 = load_c4_video(root / "data" / "processed")
