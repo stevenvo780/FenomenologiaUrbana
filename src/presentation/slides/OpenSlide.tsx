@@ -31,11 +31,12 @@ export const OpenSlide = memo(function OpenSlide({
           animate="show"
           variants={{ show: { transition: { staggerChildren: 0.18 } }, hidden: {} }}
         >
-          <motion.p variants={openChild} className="deck-eyebrow">Apertura · Capítulo 1</motion.p>
-          <motion.h1 variants={openChild}>Volver a la calle misma</motion.h1>
+          <motion.p variants={openChild} className="deck-eyebrow">Apertura · Capítulo 1 · tesis central</motion.p>
+          <motion.h1 variants={openChild}>La fenomenología sola no basta</motion.h1>
           <motion.p variants={openChild} className="open-subtitle">
-            Esta tesis pregunta cómo se vive caminar el centro de Medellín: qué facilita el paso,
-            qué lo presiona y qué todavía falta medir con trabajo de campo.
+            Dos observadores formados, mismo corredor, mismo día: κ = 0.0 sobre 4 nodos compartidos.
+            La atmósfera urbana es ineliminablemente subjetiva, y por eso esta tesis triangula
+            fenomenología (M2) + simulación M-MASS + datos cuantitativos HPC + matriz falsable 3-de-4.
           </motion.p>
           <motion.div variants={openChild} className="open-terms">
             <span>phainómenon</span>
@@ -63,7 +64,7 @@ export const OpenSlide = memo(function OpenSlide({
       <div className="open-footer">
         {data.case_study.focus} · {data.case_study.area} · {data.nodes.length} nodos / {data.edges.length} ejes
       </div>
-      <p className="slide-citation">Husserl, 1936/1991</p>
+      <p className="slide-citation">Husserl, 1936/1991 · Merleau-Ponty, 1945/1993 · Kinkaid, 2020</p>
     </SlideShell>
   )
 })

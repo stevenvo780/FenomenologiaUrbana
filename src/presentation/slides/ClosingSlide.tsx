@@ -18,7 +18,7 @@ export function ClosingSlide({
       <div className="closing-grid">
         <article className="deck-panel closing-thesis">
           <p className="deck-eyebrow">Capítulo 16 · cierre crítico</p>
-          <h2>Lo que sabemos, lo que falta y lo que queda abierto</h2>
+          <h2>Dos pilares defendibles, κ = 0 como fortaleza, agenda explícita</h2>
           <div className="closing-postulates">
             {postulates.map((postulate, index) => (
               <motion.div
@@ -58,23 +58,23 @@ export function ClosingSlide({
 
 const postulates = [
   {
-    title: 'Contra el instrumentalismo',
-    tone: 'danger' as const,
-    text: 'La simulación no sirve para vender una certeza total: sirve para hacer visibles supuestos, fricciones y preguntas de campo.',
-  },
-  {
-    title: 'Soberanía fenomenológica',
-    tone: 'amber' as const,
-    text: 'La ciudad se evalúa también por cómo permite orientarse, detenerse, respirar, sentirse seguro y escoger rutas cotidianas.',
-  },
-  {
-    title: 'Validación pendiente como honestidad',
+    title: 'Dos pilares se sostienen',
     tone: 'teal' as const,
-    text: 'El estado pending_no_capture no debilita la tesis si se declara: separa lo ya trazable de lo que exige observación situada.',
+    text: 'junin_paseo | peak_am (C1+C4, bootstrap 95.6%) y plaza_botero | midday (C1+C3, bootstrap 97%): fricción acumulada documentada con triangulación, no colapso confirmado.',
+  },
+  {
+    title: 'κ = 0 como fortaleza, no defecto',
+    tone: 'amber' as const,
+    text: 'Que dos observadores formados diverjan (Stev↔Jacob, n=4 nodos) confirma que la atmósfera urbana no preexiste a la mirada. Justifica triangular en lugar de promediar.',
+  },
+  {
+    title: 'Matriz 3-de-4 falla limpia',
+    tone: 'danger' as const,
+    text: '0/36 colapsos confirmados, 6/36 fricciones, 30/36 inconcluyentes. La regla podía fallar y falló donde debía: eso es ciencia urbana, no fracaso.',
   },
 ]
 
-const finalQuote = 'La tesis no cierra el centro: deja claro cómo seguir midiéndolo sin inventarlo.'
+const finalQuote = 'La tesis no cierra el centro: lo deja abierto con celdas, pilares y umbrales explícitos. Lo siguiente es cerrar C2 y completar C3.'
 
 function ClosureGates({
   data,

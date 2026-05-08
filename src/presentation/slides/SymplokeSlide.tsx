@@ -47,9 +47,9 @@ export const SymplokeSlide = memo(function SymplokeSlide({ data }: { data: Paylo
   return (
     <SlideShell id="symploke" className="symploke-slide">
       <SlideHeader
-        eyebrow="Capítulo 2 · Symploké urbana"
-        title="Tres materialidades, un solo entrelazamiento"
-        text="Para explicar el caso sin jerga innecesaria: ambiente, decisión y visibilidad se leen juntos. El resultado es una hipótesis organizada, no una verdad cerrada."
+        eyebrow="Capítulo 2 · Symploké urbana · M-MASS"
+        title="Triangulación M1 + M2 + M3 + matriz falsable"
+        text="Ambiente físico, sujeto situado y visibilidad se leen juntos sobre 9 nodos × 4 franjas, y la matriz 3-de-4 los obliga a coincidir con anclajes independientes. No es verdad cerrada: es hipótesis que podía fallar."
       />
 
       <div className="slide-content symploke-content">
@@ -95,7 +95,7 @@ export const SymplokeSlide = memo(function SymplokeSlide({ data }: { data: Paylo
           ))}
         </SlideGrid>
 
-        <p className="slide-citation">Bueno, 1972 · Husserl, 1936/1991</p>
+        <p className="slide-citation">Bueno, 1972 · Husserl, 1936/1991 · Haraway, 1988</p>
       </div>
     </SlideShell>
   )
