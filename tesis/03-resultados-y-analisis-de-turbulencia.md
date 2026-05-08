@@ -199,6 +199,13 @@ El procesamiento con BoTSORT produjo conteos de personas únicas por video que o
 
 Whisper ASR local produjo cinco transcripciones; tres quedaron sin contenido lingüístico (audio ambiente sin habla); una produjo un fragmento corto en español (`VID_20260505_213002`, 21:30); el transcript con testimonio sustantivo asociado a `plaza_botero` está disponible para codificación C3 pero aún no aplicado al esquema. Las transcripciones complementan C3 sin sustituir el corpus principal de entrevistas semiestructuradas.
 
+### Estabilidad del método ante nueva evidencia
+
+La matriz `data/processed/collapse_matrix.json` se recomputa cada vez que entran datos. En una pasada anterior con seis videos, la celda en fricción material era `parque_berrio | midday`. Al ingresar los videos comprimidos restantes y aplicar el fix de C1 del 7 de mayo, la celda con C4 cumplido se desplazó a `junin_paseo | peak_am` y `parque_berrio | midday` quedó como C1-only dentro de `friccion_acumulada`. Este desplazamiento no es contradicción: indica que la primera celda fue señalada por una muestra pequeña que se diluyó al ampliar la cobertura, mientras que la nueva celda emergió por concentrar videos matinales con densidad alta. Una evaluación rigurosa de la categoría exige que las celdas reportadas como `friccion_acumulada` o `colapso_fenomenologico` permanezcan bajo distintos cortes muestrales; este criterio se documentará en futuras pasadas como "estabilidad bajo bootstrap".
+
+El supuesto distribucional de C1 (`peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15`, derivado de Cohen & Felson 1979 y Brantingham & Brantingham, registrado en `data/processed/c1_hourly_projection.json`) y el corte por percentil 75 sobre la serie histórica completa son los que materializan el `c1_high_by_window` precomputado consultado por `build_collapse_matrix.py` post-fix.
+
+
 ## 3.13. Resultados que sí pueden sostenerse y resultados que no
 
 | Afirmación | Estado | Justificación |

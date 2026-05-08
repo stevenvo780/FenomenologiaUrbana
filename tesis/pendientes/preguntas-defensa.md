@@ -4,15 +4,15 @@ Fecha: 25 de abril de 2026. Última actualización: 7 de mayo de 2026 (post-olea
 
 ## 1. ¿La tesis ya está validada en campo?
 
-El campo se realizó antes del 6 de mayo de 2026 y la primera oleada de ingesta ya corrió. La tesis está en fase **`field_ingest_in_progress`** con números concretos sobre la mesa:
+El campo se realizó antes del 6 de mayo de 2026 y la primera oleada de ingesta ya corrió. La tesis está en fase **`field_ingest_in_progress`** con números concretos sobre la mesa (post-fix C1, 2026-05-07):
 
-- **C1 (criminalidad)**: serie mensual disponible globalmente; proyectada a franjas horarias bajo supuesto declarado (mediana mensual = 186 casos/mes).
+- **C1 (criminalidad)**: serie histórica MEData proyectada a franjas; `c1_high_by_window` precomputado con corte p75 por franja en `c1_hourly_projection.json`. `build_collapse_matrix.py` post-fix respeta ese bloque sin reevaluar contra la mediana mensual.
 - **C2 (encuesta de seguridad percibida)**: 0 / 36 celdas con dato volcado; la captura existe en campo pero no está agregada a `field_observations_aggregate.csv`.
 - **C3 (entrevistas codificadas)**: 0 / 36 celdas con dato. Solo **1 transcript con testimonio sustantivo** (plaza_botero); los demás archivos de audio/video son ruido ambiental, no entrevistas.
 - **C4 (saturación de video)**: **16 video_saturation procesados** en HPC, 4 celdas con n≥2; **34 fotos asignadas** a nodo×franja.
-- **Matriz `collapse_matrix.json` corriendo**: 0 colapsos 3-de-4, 0 zona gris 2/4, **1 fricción acumulada (`junin_paseo|peak_am` por C4)**, 3 flujos ordinarios y 32 inconcluyentes por cobertura < 2.
+- **Matriz `collapse_matrix.json` post-fix**: 0/36 colapsos 3-de-4, **4/36 fricción acumulada** (`san_antonio_metro|peak_am`, `junin_paseo|peak_am` única 2/4 con C1+C4 (p75=0.465), `junin_paseo|midday`, `parque_berrio|midday`), 0/36 flujo ordinario y **32/36 inconcluyentes** por cobertura < 2.
 
-La validación empírica completa depende de cerrar C2 (volcado de encuesta), C3 (codificación externa) y formalizar el supuesto de C1.
+La validación empírica completa depende de cerrar C2 (volcado de encuesta) y C3 (codificación de entrevistas escritas).
 
 ## 2. ¿Por qué usar simulación si falta campo?
 
@@ -53,7 +53,7 @@ La estabilidad interna del pipeline y la capacidad de comparar escenarios bajo s
 - que los perfiles simulados son sujetos reales;
 - que ruido/PM2.5 simulados son mediciones normativas;
 - que la tesis agotó literatura empírica reciente;
-- que existe alguna franja-nodo en colapso fenomenológico confirmado a fecha de hoy (la matriz reporta 0 / 36).
+- que existe alguna franja-nodo en colapso fenomenológico confirmado a fecha de hoy (la matriz post-fix reporta 0/36 colapso, 4/36 fricción, 32/36 inconcluyente).
 
 ## 11. ¿Qué es exactamente el colapso fenomenológico y cómo se mide?
 
@@ -61,7 +61,7 @@ Es una franja-evento (nodo × hora) donde convergen al menos tres de cuatro cond
 
 ## 12. ¿Qué pasa si la matriz de colapso sale vacía?
 
-Es exactamente lo que ocurre hoy: 0 / 36 celdas en 3-de-4. La tesis lo reporta así. La categoría queda definida y operacionalizada pero sin instancias confirmadas; eso fortalece el rigor metodológico aunque debilite la afirmación sustantiva. El colapso fenomenológico es una hipótesis falsable y, en su primera evaluación empírica, no se confirmó. Esa es justamente la propiedad que distingue ciencia de retórica.
+Es exactamente lo que ocurre hoy (post-fix C1): 0/36 celdas en 3-de-4, 4/36 en fricción acumulada, 32/36 inconcluyente. La tesis lo reporta así. La categoría queda definida y operacionalizada pero sin instancias de colapso confirmadas; eso fortalece el rigor metodológico aunque debilite la afirmación sustantiva. El colapso fenomenológico es una hipótesis falsable y, en su primera evaluación empírica, no se confirmó. Esa es justamente la propiedad que distingue ciencia de retórica.
 
 ## 13. ¿No encontrar colapso entonces equivale a que la tesis falla?
 
@@ -69,7 +69,7 @@ No. Falla la **afirmación fuerte** ("hay colapso en X celda"), no la tesis. La 
 
 ## 14. Hubo una inconsistencia detectada en C1 entre `c1_high_by_window` y `C1_crime_high` por celda. ¿Cómo se resolvió?
 
-Sí, se detectó en la validación del 7 de mayo de 2026. El bloque global de C1 reportaba `{peak_am, midday, peak_pm, night} = true` pero ninguna celda de la matriz terminaba con `C1_crime_high: true`. La causa, documentada en `tesis/pendientes/colapso-validacion-2026-05-07.md` §2, es que `build_collapse_matrix.py` (líneas 252-268) reevalúa C1 por franja usando `recent_avg = c1.median_month` (186 casos/mes) y compara contra el p75 horario por franja: con la mediana ningún mes "promedio" cruza el umbral. Si se usara `max_month` (1707) o el promedio de meses ya marcados sobre p75 (62 meses), las cuatro franjas saltarían a `true`. Decisión documentada antes de la defensa: declarar explícitamente el supuesto "C1 evaluado sobre la mediana mensual" como escenario conservador, o presentar dos lecturas etiquetadas (mediana vs. mes pico) y discutir cuál es defendible para el corredor estudiado. Anticiparse al jurado en este punto evita que la inconsistencia parezca un descuido.
+Sí, se detectó en la validación del 7 de mayo de 2026 y se corrigió ese mismo día. El bloque global de C1 reportaba `{peak_am, midday, peak_pm, night} = true` pero ninguna celda de la matriz terminaba con `C1_crime_high: true`. La causa, documentada en `tesis/pendientes/colapso-validacion-2026-05-07.md` §2, era que `build_collapse_matrix.py` reevaluaba C1 por franja usando `recent_avg = c1.median_month` (186 casos/mes) y comparaba contra el p75 horario por franja: con la mediana ningún mes "promedio" cruzaba el umbral. **Decisión metodológica fix C1 del 2026-05-07:** `build_collapse_matrix.py` ahora **respeta el bloque precomputado `c1_high_by_window`** generado por `c1_project_hourly.py` (corte p75 por franja sobre la serie histórica completa) en lugar de reevaluar celda a celda contra la mediana mensual. Tras el fix, C1 queda activo en las cuatro franjas para todos los nodos del corredor; la matriz pasa de 1/36 fricción a 4/36 fricción y mantiene 0/36 colapso confirmado.
 
 ## 15. ¿Por qué los videos no aportan testimonio verbal? ¿No deberían incluir entrevistas grabadas?
 
@@ -77,12 +77,12 @@ Los videos POV se diseñaron para capturar **saturación material** (densidad vi
 
 ## 16. ¿Qué hallazgo material defendible hay hoy?
 
-Exactamente uno, y se nombra en voz alta: `junin_paseo|peak_am` cumple C4 con n=4 registros de video, saturación p75=0.465 y max=0.474, sobre un p75 global de 0.413. Eso es **fricción acumulada matinal** (1/4 con cobertura ≥ 2), no colapso fenomenológico. La narrativa correcta para el jurado: "Junín en la mañana muestra fricción material documentada en video; pendiente convergencia con C2 (encuesta) y C3 (entrevistas) para hablar de colapso". Es modesto y trazable.
+Exactamente uno, y se nombra en voz alta: `junin_paseo|peak_am` cumple **2/4 condiciones** (C1 + C4), con C4 sostenido por n=4 registros de video, saturación p75=0.465 y max=0.474 sobre un p75 global de 0.413, y C1 activo por el corte histórico precomputado `c1_high_by_window`. Es la única celda 2/4 de la matriz post-fix; el resto de las 4 celdas en `friccion_acumulada` quedan en 1/4 (solo C1). La narrativa correcta para el jurado: "Junín en la mañana muestra convergencia parcial sustantiva entre presión criminal histórica y densidad material observada; pendiente C2 (encuesta) y C3 (entrevistas) para hablar de colapso". Es modesto y trazable.
 
 ## 17. ¿Qué pasa con las 32 celdas "inconcluyente"? ¿Son zonas tranquilas?
 
-No. "Inconcluyente" significa cobertura < 2 fuentes con dato; no es un veredicto sobre la celda, es un veredicto sobre la base de evidencia. Confundir "sin dato suficiente" con "sin colapso" sería un error metodológico simétrico al de afirmar colapso sin evidencia. De forma análoga, las 3 celdas en `flujo_ordinario` (san_antonio_metro|peak_am, junin_paseo|midday, parque_berrio|midday) tienen exactamente dos fuentes (C1 proyectado y C4 video) marcando 0; son contraste empírico útil, no certificado de tranquilidad.
+No. "Inconcluyente" significa cobertura < 2 fuentes con dato; no es un veredicto sobre la celda, es un veredicto sobre la base de evidencia. Confundir "sin dato suficiente" con "sin colapso" o con "tranquilo" sería un error metodológico simétrico al de afirmar colapso sin evidencia. Tras el fix C1, ya no hay celdas en `flujo_ordinario` (la categoría desaparece): las celdas con C1 activo y video por debajo del umbral pasan a `friccion_acumulada` (1/4) y las celdas sin video procesado quedan en `inconcluyente`. Que una celda esté inconcluyente refleja límite de cobertura del campo, no ausencia de fenómeno.
 
 ---
 
-**Nota condicional (2026-05-07):** un flujo paralelo está corrigiendo la inconsistencia C1 descrita en Q14. Si tras el fix la matriz post-corrección muestra **X celdas en colapso 3-de-4** o en zona gris 2/4, las preguntas 1, 12, 13, 16 y 17 deben re-actualizarse antes de la defensa con los nuevos conteos, y la respuesta de Q14 debe pasar de "inconsistencia identificada y declarada" a "inconsistencia corregida; supuesto vigente: <el que quede>".
+**Nota (2026-05-07, post-fix C1):** la inconsistencia descrita en Q14 quedó resuelta el mismo día. `build_collapse_matrix.py` respeta ahora `c1_high_by_window` precomputado. Las preguntas 1, 12, 13, 16 y 17 reflejan los conteos post-fix (0/36 colapso, 4/36 fricción, 32/36 inconcluyente, 0/36 flujo ordinario). El hallazgo único defendible es `junin_paseo|peak_am` con 2/4 (C1+C4).

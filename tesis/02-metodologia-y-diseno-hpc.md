@@ -66,7 +66,7 @@ La traducción entre teoría y modelo requiere declarar variables, unidades y l�
 | Libertad de ruta | entropía/divergencia | simulación | exploratorio | depende de supuestos de agentes |
 | Criminalidad objetiva (C1) | bandera `c1_high` por franja, derivada de proyección horaria de hurto a persona | MEData criminalidad (serie histórica comuna 10) | precomputado en `c1_hourly_projection.json` | desfase temporal, escala comuna, no por nodo |
 | Seguridad percibida situada (C2) | `security_score` 1–5 | encuesta breve en campo | pendiente de encuesta | dependiente de hora, observador y muestreo |
-| Habitabilidad declarada (C3) | códigos `HABITABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR` | entrevistas escritas en `data/interim/` | pendiente de codificación | autoselección, deseabilidad social |
+| Habitabilidad declarada (C3) | códigos `HABITABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR` | entrevistas escritas en `data/interim/` | pendiente de codificación (Ollama qwen3:14b en torre HPC) | autoselección, deseabilidad social |
 | Saturación material (C4) | densidad por frame y conteo YOLO11; umbral global p75 = 0.413 | videos POV / time-lapse procesados en torre HPC dual-GPU | procesado | encuadre, recorte, ausencia de afecto |
 
 Esta tabla cumple una función de control: impide presentar todas las variables con el mismo grado de evidencia. Las cuatro últimas filas (C1–C4) son los insumos del cruce que produce la matriz de colapso fenomenológico discutida más abajo.

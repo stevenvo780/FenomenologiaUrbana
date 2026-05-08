@@ -249,7 +249,7 @@ def build_matrix(case_model_path: Path, c1: dict, c2: dict, c3: dict, c4: dict) 
         except Exception:
             pass
 
-    # C1 por franja: leemos directamente c1_high_by_window precomputado en load_c1_crime,
+    # fix C1 2026-05-07: respeta c1_high_by_window precomputado en load_c1_crime,
     # que evalúa el corte p75 por franja sobre la serie histórica MEData (no sobre la mediana).
     proj = c1.get("hourly_projection") or {}
     c1_high_by_window: dict[str, bool] = dict(c1.get("c1_high_by_window") or {})

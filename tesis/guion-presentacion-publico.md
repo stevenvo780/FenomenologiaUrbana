@@ -109,12 +109,12 @@ Esta tesis estudia cómo se vive caminar un tramo del centro de Medellín. Usa d
 
 > Esta es una de las slides más importantes y la actualizamos contra el JSON real. Hoy:
 >
-> - **C1 (criminalidad horaria)**: serie mensual disponible globalmente; bajo el supuesto conservador (mediana mensual), ninguna franja cruza el p75 horario por nodo. El supuesto se declara en voz alta.
+> - **C1 (criminalidad horaria)**: post-fix C1 del 2026-05-07, `build_collapse_matrix.py` respeta el bloque precomputado `c1_high_by_window` (corte p75 por franja sobre la serie histórica MEData). Las cuatro franjas quedan activas para el corredor.
 > - **C2 (seguridad percibida)**: 0 / 36 celdas con dato. La encuesta fue capturada en campo pero todavía no está ingerida en `field_observations_aggregate.csv`. Es el cuello de botella número uno.
-> - **C3 (entrevistas codificadas)**: 0 / 36 celdas con dato. Solo un transcript tiene testimonio sustantivo (plaza_botero); los demás videos son ruido ambiental, no entrevistas. La codificación `*.coded.json` está pendiente del colega externo.
+> - **C3 (entrevistas codificadas)**: 0 / 36 celdas con dato. Solo un transcript tiene testimonio sustantivo (plaza_botero); los demás audios de video son ruido ambiental, no entrevistas. La codificación `*.coded.json` de las entrevistas escritas está pendiente del colega externo.
 > - **C4 (saturación de video)**: 16 registros procesados, 4 celdas con n≥2. Único hallazgo material defendible: `junin_paseo|peak_am` con saturación p75=0.465 sobre p75 global de 0.413.
 >
-> Resultado de la regla 3-de-4 hoy: 0 colapsos confirmados, 1 fricción acumulada (Junín, mañana), 3 flujos ordinarios y 32 celdas inconcluyentes por cobertura. La tesis gana rigor declarando estos números, no escondiéndolos.
+> Resultado de la regla 3-de-4 hoy (post-fix C1): 0/36 colapsos confirmados, 4/36 fricción acumulada (`san_antonio_metro|peak_am`, `junin_paseo|peak_am`, `junin_paseo|midday`, `parque_berrio|midday`) y 32/36 inconcluyentes por cobertura. La tesis gana rigor declarando estos números, no escondiéndolos.
 
 ## 16. Cierre crítico
 
@@ -126,7 +126,7 @@ Esta tesis estudia cómo se vive caminar un tramo del centro de Medellín. Usa d
 
 ### ¿Entonces la tesis está incompleta?
 
-No incompleta: está honestamente delimitada. Tiene marco, pipeline corriendo, simulación, campo realizado e ingerido parcialmente, anexos y trazabilidad. La triangulación final está bloqueada por dos huecos identificados (encuesta C2 sin volcar a CSV, transcripciones C3 sin codificar) y por un supuesto declarado en C1 (mediana mensual). Cualquier afirmación de colapso depende de cerrar al menos esos tres frentes.
+No incompleta: está honestamente delimitada. Tiene marco, pipeline corriendo, simulación, campo realizado e ingerido parcialmente, anexos y trazabilidad. La triangulación final está bloqueada por dos huecos identificados (encuesta C2 sin volcar a CSV, transcripciones escritas C3 sin codificar). C1 ya fue resuelto el 2026-05-07 con el fix que respeta `c1_high_by_window` precomputado. Cualquier afirmación de colapso depende de cerrar C2 y C3.
 
 ### ¿Qué es exactamente el colapso fenomenológico?
 
@@ -156,8 +156,8 @@ Uno solo, sobrio: `junin_paseo|peak_am` cumple C4 (saturación de video sobre p7
 
 1. **C2**: volcar la encuesta capturada en campo a `field_observations_aggregate.csv` con `security_score` por nodo×franja. Bloqueante. Sin esto, ninguna celda puede pasar de 1/4 a 3/4.
 2. **C3**: recibir las transcripciones codificadas (`*.coded.json`) del colega externo y agregarlas. Mínimo prioritario: `junin_paseo|peak_am` y nodos vecinos.
-3. **C1**: decidir y documentar la política definitiva (mediana vs. mes pico) antes de re-correr la matriz para la defensa.
-4. **Re-correr** `build_collapse_matrix.py` y rehacer la slide 15 con los conteos finales.
+3. **C1**: ya resuelto el 2026-05-07; `build_collapse_matrix.py` respeta el bloque precomputado `c1_high_by_window`.
+4. **Re-correr** `build_collapse_matrix.py` cuando entren C2/C3 y rehacer la slide 15 con los conteos finales.
 
 ## Cierre oral recomendado
 
@@ -165,4 +165,4 @@ Uno solo, sobrio: `junin_paseo|peak_am` cumple C4 (saturación de video sobre p7
 
 ---
 
-**Nota condicional (2026-05-07):** mientras se redacta este guion, otro flujo de trabajo está revisando la inconsistencia de C1 (la matriz dice `c1_high_by_window: all true` pero ninguna celda termina con `C1_crime_high: true` porque el motor recalcula sobre la mediana mensual). Si tras el fix la matriz post-corrección muestra X celdas en colapso o en zona gris 2/4, las secciones 10, 15, 16 y las "Preguntas difíciles" deben re-actualizarse antes de la defensa con los conteos nuevos y reemplazar el hallazgo único de Junín por la lista actualizada.
+**Nota (2026-05-07, post-fix C1):** la inconsistencia previa de C1 quedó resuelta. `build_collapse_matrix.py` ahora respeta `c1_high_by_window` precomputado en `c1_hourly_projection.json` en lugar de reevaluar contra la mediana mensual. La matriz post-fix muestra 0/36 colapso, 4/36 fricción acumulada y 32/36 inconcluyente; el hallazgo único defendible sigue siendo `junin_paseo|peak_am` con 2/4 (C1+C4). Las secciones 10, 15, 16 y las "Preguntas difíciles" reflejan estos conteos.
