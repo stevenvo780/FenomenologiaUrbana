@@ -278,7 +278,10 @@ def build_matrix(case_model_path: Path, c1: dict, c2: dict, c3: dict, c4: dict) 
             c3_neg = bool(c3_cell and c3_cell.get("dominant_negative"))
             c4_sat = bool(c4_cell and c4_cell.get("saturation_p75", 0.0) >= (c4.get("p75_global") or 1e9))
             c1_high = bool(c1_high_by_window.get(w, False))
-            coverage = sum([c2_cell is not None, c3_cell is not None, c4_cell is not None])
+            # Cobertura: C1 disponible cuenta si hay proyección horaria;
+            # C2/C3/C4 cuentan si hay celda específica nodo×franja.
+            c1_available = bool(proj)
+            coverage = sum([c1_available, c2_cell is not None, c3_cell is not None, c4_cell is not None])
             decision = decide_cell(c1_high, c2_low, c3_neg, c4_sat, coverage)
             cells[key] = {
                 "node": n,
