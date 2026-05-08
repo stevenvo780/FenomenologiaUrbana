@@ -629,6 +629,100 @@ export type FieldCalibration = {
   cross_validation?: CrossValidationReport
   signage_ocr?: SignageOcrReport
   node_geometry_v2?: NodeGeometryV2
+  audio_classification?: AudioClassification
+  m1_visual_aggregate?: M1VisualAggregate
+  m3_visual_aggregate?: M3VisualAggregate
+}
+
+export type AudioPerNode = {
+  n_videos: number
+  dominant_genre?: string
+  genre_counts?: Record<string, number>
+  noise_level_db_proxy?: number
+  noise_level_db_max?: number
+  spectral_centroid_mean_hz?: number
+  voice_activity_ratio?: number
+  music_activity_ratio?: number
+  siren_events?: number
+  traffic_intensity?: number
+  mean_speech_score?: number
+  mean_siren_score?: number
+  mean_vehicle_score?: number
+  mean_music_score?: number
+  videos?: string[]
+}
+
+export type AudioPerVideo = {
+  video: string
+  node?: string | null
+  window?: string | null
+  detected_genre?: string
+  duration_s?: number
+  spectral?: {
+    rms?: number
+    rms_db?: number
+    spectral_centroid_hz?: number
+    tempo_bpm?: number
+    sub_bass_ratio?: number
+  }
+  panns_top5?: Array<{ idx: number; label: string; score: number }>
+}
+
+export type AudioClassification = {
+  schema?: string
+  generated_at?: string
+  method?: Record<string, unknown>
+  n_videos_processed?: number
+  n_videos_total?: number
+  per_video?: AudioPerVideo[]
+  per_node?: Record<string, AudioPerNode>
+  per_node_window?: Record<string, AudioPerNode>
+}
+
+export type M1VisualBucket = {
+  node: string
+  window: string
+  n_photos: number
+  n_videos: number
+  n_frames?: number
+  human_density_p50: number
+  human_density_p75: number
+  human_density_max: number
+  human_density_mean?: number
+  obstacle_proxy_count: number
+  vehicle_intensity: number
+  vehicle_total?: number
+  person_total?: number
+  material_diversity?: number
+  saturation_p75?: number
+  saturation_max?: number
+}
+
+export type M1VisualAggregate = {
+  _meta?: Record<string, unknown>
+  by_node_window: Record<string, M1VisualBucket>
+}
+
+export type M3VisualBucket = {
+  node: string
+  window: string
+  n_photos: number
+  n_videos: number
+  tourist_proxy_ratio: number
+  tourist_proxy_hits?: number
+  commerce_proxy: number
+  commerce_proxy_hits?: number
+  heterogeneity_index_visual: number
+  heterogeneity_index_visual_norm?: number
+  n_distinct_classes?: number
+  class_distribution?: Record<string, number>
+  police_proxy?: number | null
+  police_proxy_note?: string
+}
+
+export type M3VisualAggregate = {
+  _meta?: Record<string, unknown>
+  by_node_window: Record<string, M3VisualBucket>
 }
 
 export type InterRaterObserverEntry = {

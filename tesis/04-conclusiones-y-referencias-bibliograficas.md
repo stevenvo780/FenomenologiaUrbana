@@ -1,220 +1,115 @@
-# Capítulo 4. Conclusiones, limitaciones y plan de cierre
+# Capítulo 4. Conclusiones, limitaciones y referencias
 
-## 4.1. Conclusión general
+## 4.1. Tesis y alcance
 
-Esta investigación construyó un marco de análisis para estudiar el corredor Junín-San Antonio desde la fenomenología urbana, la teoría crítica y la modelación computacional. El resultado principal no es una prueba cerrada sobre la “verdad” del centro de Medellín, sino un aparato metodológico que permite formular hipótesis defendibles sobre fricción, habitabilidad, presión ambiental, experiencia corporal y restricción decisional.
+La fenomenología urbana, entendida como descripción cultivada de la experiencia situada, **no es suficiente para abordar la ciudad**. Esta tesis lo demuestra empíricamente: dos observadores entrenados (Stev y Jacob) recorriendo los mismos cuatro nodos del corredor Junín–San Antonio producen lecturas divergentes con kappa inter-rater = 0.0 (n=4 nodos compartidos). El caso paradigmático `parque_san_antonio` (Stev = 4 alto / Jacob = 2 bajo) no es ruido de medición: es el límite intrínseco de la primera persona como instancia única de validación. La fenomenología pura, por sí sola, **no falsa nada**.
 
-La conclusión general es deliberadamente moderada: **la eficiencia funcional de un corredor urbano puede coexistir con costos fenomenológicos significativos, y esos costos pueden hacerse visibles mediante una combinación crítica de datos públicos, simulación, métricas de trayectoria y un trabajo de campo multimodal en triangulación**. La tesis introduce, como categoría operacional, el **colapso fenomenológico**: una franja-evento (nodo × hora) en la que convergen criminalidad registrada, seguridad percibida deprimida, habitabilidad declarada negativa y saturación material observable. Esta formulación evita dos errores: negar la utilidad de la infraestructura urbana o afirmar que el modelo ya capturó la experiencia real.
-
-La matriz `collapse_matrix.json` ya está construida y auditada (post-fix C1 + ingesta C3 con n=15 entrevistas Stev+Jacob, 2026-05-07): de las 36 celdas (9 nodos × 4 franjas), **0 alcanzan el umbral 3-de-4** que define colapso confirmado, **6 quedan en `friccion_acumulada`** (`san_antonio_metro|peak_am`, `parque_san_antonio|midday`, `junin_paseo|peak_am`, `junin_paseo|midday`, `parque_berrio|midday`, `plaza_botero|midday`) y **30 quedan `inconcluyente`** por cobertura insuficiente. El análisis de sensibilidad (1000 iteraciones bootstrap V1, 25 escenarios de umbrales V2 sobre p70–p90, leave-one-out V3 sobre las 15 entrevistas) identifica **dos pilares robustos**: `junin_paseo|peak_am` (V1 share=0.956, V2 share=0.880, LOO=1.000) y `plaza_botero|midday` (V1=0.970, V2=1.000, LOO=1.000). Las otras cuatro celdas en fricción son frágiles (V2 share≤0.40) y dependen del corte p75. La cross-validación texto-imagen (2026-05-07) respalda cuantitativamente dos reclamos del campo con alta convergencia: el riesgo vial en `san_antonio_metro|peak_am` (`vehicle_intensity=0.378`, máximo del corpus) y la sensación de "colapso" en `plaza_botero/parque_berrio|midday` (`human_density_max=30`, `saturation_max=71`). Que la regla 3-de-4 hoy no produzca colapsos confirmados no es una falla: es la confirmación de que la categoría es **falsable** y que el aparato no se autoconfirma. La afirmación sustantiva queda subordinada al cierre de C2 (encuesta de seguridad percibida).
+La tesis sostenida aquí es que la fenomenología urbana se vuelve **operativa** únicamente al triangularse con instrumentos heterogéneos: criminalidad horaria (C1, MEData), seguridad percibida agregada (C2, encuesta), habitabilidad declarada en entrevistas codificadas (C3) y saturación material en video POV procesado por HPC dual-GPU con M-MASS multicapa (C4), bajo una regla falsable 3-de-4 sobre 36 celdas (9 nodos × 4 franjas). El resultado del baseline auditado al 2026-05-08 lo confirma: **2 pilares se sostienen** bajo bootstrap, barrido de umbrales y leave-one-out (`junin_paseo|peak_am`, `plaza_botero|midday`); **4 celdas en fricción son frágiles** y dependen del corte p75; **30 quedan inconcluyentes** por cobertura insuficiente; **0/36 alcanzan colapso confirmado** porque C2 sigue vacío. Eso no es fracaso: es ciencia urbana operando, una regla que no se autoconfirma y discrimina lo defendible de lo frágil.
 
 ## 4.2. Respuestas a las preguntas de investigación
 
-**Pregunta teórica.** La articulación entre fenomenología y modelación es posible si se entiende la formalización como mediación crítica y no como reemplazo del mundo vivido. Husserl y Merleau-Ponty permiten sostener la centralidad del cuerpo y la experiencia; Simmel, Foucault, Deleuze, Lefebvre, Harvey y Sassen permiten situar esa experiencia en condiciones metropolitanas, políticas y materiales. Lecturas recientes como la fenomenología crítica del espacio social (Kinkaid, 2020) y los estudios sobre regulación de geografías de la memoria en Medellín (Velásquez Ocampo & Tamayo Arboleda, 2025) muestran que esta articulación tiene tracción contemporánea. El ejercicio inter-rater Stev–Jacob (2026-05-05, kappa = 0.0 sobre cuatro nodos compartidos) confirma empíricamente esta tesis: la atmósfera urbana es ineliminablemente subjetiva, y la divergencia entre observadores cultivados —caso paradigmático `parque_san_antonio` (Stev=4 alto / Jacob=2 bajo)— no es ruido de medición sino dato fenomenológico positivo que justifica la triangulación multi-observador como necesidad metodológica, no como adorno.
+**P1 — Articulación teórica.** La fenomenología (Husserl, 1936/1991; Merleau-Ponty, 1945/1993) sostiene la primacía del cuerpo y del *Lebenswelt*, pero la ciudad excede a un sujeto. La tradición crítica (Lefebvre, 1968/2017; Harvey, 2008; Sassen, 2014) sitúa esa experiencia en condiciones materiales y políticas. La actualización contemporánea (Kinkaid, 2020) re-encuentra a Lefebvre como fenomenología crítica del espacio social; los estudios sobre regulación de las geografías de la memoria en Medellín (Velásquez Ocampo & Tamayo Arboleda, 2025) muestran que esa articulación es viable hoy. El kappa = 0.0 entre Stev y Jacob confirma que ningún observador agota la atmósfera: la triangulación no es ornamento, es necesidad metodológica.
 
-**Pregunta metodológica.** Las variables operacionalizadas —densidad, riesgo, ruido, PM2.5, visibilidad, tiempo, rutas y entropía— son suficientes para un baseline exploratorio y, junto con C1 (criminalidad horaria proyectada con p75 por franja), C3 (n=15 entrevistas Stev+Jacob codificadas) y C4 (saturación de video), permiten poblar parcialmente la matriz de colapso. La oleada 5 incorpora además bootstrap V1 (1000 iteraciones), barrido V2 sobre umbrales p70–p90 y leave-one-out V3 sobre las 15 entrevistas, lo cual permite separar celdas robustas de celdas frágiles. No son suficientes para una validación cerrada porque C2 (encuesta de seguridad percibida) sigue en 0/36 celdas pobladas; este es el límite material, no retórico, del baseline, y el reporte de sensibilidad lo declara explícitamente: con C2=False de facto, la regla 3-de-4 opera como 3-de-3 y sesga decisiones hacia fricción antes que hacia colapso.
+**P2 — Operacionalización.** Las cuatro condiciones C1–C4 son suficientes para un baseline falsable y trazable, no para una validación cerrada. C1 cubre 36/36 celdas (proyección horaria con `c1_high_by_window` precomputado, p75 por franja sobre serie histórica MEData); C4 cubre 4/36 con saturación derivada de pipeline dual-GPU (YOLOv8 + DeepSort + segmentación) y métricas POV (`vehicle_intensity`, `human_density`, `saturation_max`); C3 cubre 15 entrevistas codificadas Stev+Jacob; **C2 cubre 0/36**. Mientras C2 = ∅, la regla 3-de-4 opera de facto como 3-de-3 con C2 = False, y todo "no colapso" es condicional. El reporte lo declara explícitamente; no se oculta tras prosa.
 
-**Pregunta analítica.** Las simulaciones muestran estabilidad numérica, aumento de entropía bajo escenarios de presión, diferencias relativas entre perfiles y capacidad del pipeline para generar escenarios comparables. Cruzadas con la matriz, los resultados sostienen una lectura honesta: el corredor no exhibe colapso confirmado en ninguna celda, pero sí concentra fricción material matinal en `junin_paseo|peak_am` (C4 p75 = 0.465, max = 0.474, n = 4 frente a un p75 global de 0.413; V1=0.956, V2=0.880) y fricción robusta meridiana en `plaza_botero|midday` (V1=0.970, V2=1.000), las dos celdas que sobreviven al barrido de umbrales y al leave-one-out. La cross-validación texto-imagen (2026-05-07) refuerza esta lectura: el reclamo de "colapso" en Botero/Berrio se respalda visualmente con `human_density_max=30` y `saturation_max=71` (los máximos del corpus), y el riesgo vial en `san_antonio_metro|peak_am` con `vehicle_intensity=0.378`. Las otras cuatro celdas en fricción (V2 share≤0.40) son artefactos del corte p75 y deben reportarse como tales.
+**P3 — Análisis empírico.** Las simulaciones M-MASS multicapa muestran estabilidad numérica, aumento monótono de entropía bajo presión y diferenciación entre perfiles. Cruzadas con la matriz auditada, sostienen una lectura nítida: el corredor concentra fricción material matinal en `junin_paseo|peak_am` (C4 p75 = 0.465, max = 0.474, n = 4; p75 global = 0.413; bootstrap V1 share = 0.956, barrido V2 share = 0.880, leave-one-out = 1.000) y fricción meridiana robusta en `plaza_botero|midday` (V1 = 0.970, V2 = 1.000, LOO = 1.000). Las otras cuatro celdas en fricción presentan V2 share ≤ 0.40 y son artefactos del corte p75: se reportan como frágiles, no como hallazgo.
 
-**Pregunta de validación.** La captura de datos situados en los nueve nodos y las cuatro franjas se ejecutó antes del 6 de mayo de 2026. Tras el fix C1 del 7 de mayo de 2026 (`build_collapse_matrix.py` respeta el bloque precomputado `c1_high_by_window` con p75 por franja sobre la serie histórica MEData) y la ingesta C3 con las 15 entrevistas Stev+Jacob (incluida `c3_field_interviews_jacob_2026-05-05.json` con el primer caso de gradiente intra-nodo Coltejer-Ayacucho), la matriz triangula C1, C3 y C4 sobre 6/36 celdas y declara como `inconcluyente` las 30 celdas con cobertura < 2 fuentes. El análisis de sensibilidad reduce esas 6 a **dos pilares defendibles bajo bootstrap y deformaciones moderadas del umbral**: `junin_paseo|peak_am` y `plaza_botero|midday`. La validación queda parcialmente abierta: depende del cierre de C2 (encuesta de seguridad percibida poblando `field_observations_aggregate.csv`).
+**P4 — Validación cruzada.** La cross-validación texto↔imagen converge cuantitativamente con la narración POV en dos reclamos: riesgo vial en `san_antonio_metro|peak_am` (`vehicle_intensity = 0.378`, máximo del corpus) y "sofocación" en Botero/Berrio meridiano (`human_density_max = 30`, `saturation_max = 71`, máximos del corpus). La triangulación discrimina; la subjetividad queda anclada en agregados independientes. Estudios recientes sobre estrés peatonal (Rodriguez-Valencia et al., 2022), accesibilidad de aceras en plazas latinoamericanas (Garcia et al., 2024) y mortalidad vial SALURBAL (Quistberg et al., 2022) son consistentes con esta lectura.
 
-**Pregunta sobre el colapso.** El colapso fenomenológico se define como la convergencia, en una misma celda nodo × franja, de al menos tres de cuatro condiciones: C1 (criminalidad por encima del p75 por franja en la serie histórica MEData), C2 (seguridad percibida ≤ 2/5), C3 (habitabilidad declarada negativa en entrevistas codificadas) y C4 (saturación material superior al p75 global en video). La matriz auditada al 2026-05-07 reporta **0/36 celdas en colapso confirmado**, **6/36 en fricción acumulada** (de las cuales 2 robustas y 4 frágiles bajo V2) y **30/36 en inconcluyente**. Este vacío de colapsos no es una derrota empírica: es la respuesta —y demuestra que la regla es operativamente falsable. Las celdas más cargadas del corredor son `junin_paseo|peak_am` y `plaza_botero|midday`, candidatas naturales a confirmar o refutar el colapso una vez se cierre C2.
+**P5 — Definición de colapso.** El colapso fenomenológico se opera como convergencia de ≥3 de 4 condiciones (C1 > p75 por franja; C2 ≤ 2/5; C3 negativa; C4 > p75 global) en una misma celda. La matriz al 2026-05-08 reporta **0/36 colapsos confirmados**, **6/36 en `friccion_acumulada`** (2 robustas + 4 frágiles) y **30/36 inconcluyentes**. Que la matriz hoy no produzca colapsos es la prueba de que la categoría es **falsable**: si tras cerrar C2 sobre `junin_paseo|peak_am` y `plaza_botero|midday` la regla siguiera dando 0/36, sería evidencia sustantiva contra la hipótesis de colapso; si diera ≥3/4, sería evidencia a favor. La regla no se autoconfirma.
 
-## 4.3. Aportes reales de la investigación
+## 4.3. Aportes defendibles
 
-Los aportes que sí pueden defenderse son:
+1. **Marco teórico** que articula fenomenología clásica (Husserl, Merleau-Ponty), crítica urbana (Lefebvre, Harvey, Sassen, Foucault, Deleuze, Simmel) y triangulación contemporánea (Kinkaid, 2020; Velásquez Ocampo & Tamayo Arboleda, 2025), con la subjetividad fenomenológica reconocida como dato positivo, no como ruido.
+2. **Pipeline HPC reproducible**: arquitectura M-MASS multicapa, ejecución dual-GPU sobre video POV, 9 scripts versionados (`build_collapse_matrix.py`, `inspect_matrix.py`, `bootstrap_v1.py`, `threshold_sweep_v2.py`, `loo_v3.py`, ingesta C1/C3/C4 y cross-validation texto-imagen), JSON auditables y trazabilidad celda por celda.
+3. **Regla 3-de-4 falsable**, validada por bootstrap (1000 iteraciones V1), barrido de umbrales p70–p90 (25 escenarios V2) y leave-one-out sobre las 15 entrevistas C3 (V3). La regla discrimina robustez de fragilidad y no se autoconfirma.
+4. **Dos pilares empíricamente defendibles**: `junin_paseo|peak_am` (V1 = 0.956, V2 = 0.880, LOO = 1.000) y `plaza_botero|midday` (V1 = 0.970, V2 = 1.000, LOO = 1.000) como franjas-nodo de fricción acumulada robusta bajo deformaciones de la operacionalización.
+5. **Metodología inter-rater explícita** con kappa = 0.0 publicado (Stev vs Jacob, n = 4, dos observadores entrenados sobre nodos compartidos). La divergencia se reporta como evidencia de subjetividad ineliminable que justifica la triangulación, no como debilidad oculta.
+6. **Validación cruzada texto↔imagen**: convergencia cuantitativa entre narrativa POV y agregados YOLO/segmentación en `vehicle_intensity` y `human_density` para los dos pilares y para `san_antonio_metro|peak_am`.
+7. **Refinamiento geométrico y declaración explícita de limitaciones de muestreo**: malla ambiental tratada como campo relativo, sub-zonas declaradas, cobertura por celda reportada, y `inconcluyente` distinguido de "ausencia de fenómeno".
 
-1. **Aporte conceptual:** una lectura de la habitabilidad como relación entre cuerpo vivido, presión ambiental, movilidad, percepción y normatividad urbana.
-2. **Aporte metodológico:** una traducción explícita entre categorías fenomenológicas y variables computacionales (C1–C4), con la regla 3-de-4 como criterio falsable y los umbrales p75 por franja como operacionalización auditable.
-3. **Aporte técnico:** un pipeline reproducible que integra fuentes públicas, modelo de caso, simulaciones, salidas JSON, visualización y un generador `build_collapse_matrix.py` que produce la matriz celda por celda con trazabilidad de cobertura.
-4. **Aporte crítico:** una forma de usar simulación sin convertirla en fetiche técnico ni en prueba totalizante; el resultado de 0/36 colapsos confirmados es, paradójicamente, el aval epistémico más fuerte del aparato porque demuestra que la regla no se autoconfirma.
-5. **Aporte empírico parcial:** la identificación de `junin_paseo|peak_am` y `plaza_botero|midday` como las dos franjas-nodo con convergencia 2/4 que **sobreviven a bootstrap (1000 iteraciones), barrido de umbrales p70–p90 y leave-one-out sobre las 15 entrevistas** (V1≥0.956, V2≥0.880, LOO=1.000 en ambas). Defendibles como fricción material documentada y candidatas a colapso pendiente de C2.
-6. **Aporte de robustez:** matriz robusta bajo bootstrap y sensibilidad de umbrales para los dos pilares; las cuatro celdas frágiles restantes (V2 share≤0.40) se declaran explícitamente como dependientes del corte y no se elevan a hallazgo defendible. La cross-validación texto-imagen (2026-05-07) respalda cuantitativamente el riesgo vial en `san_antonio_metro|peak_am` (`vehicle_intensity=0.378`) y la "sofocación" en Botero/Berrio (`human_density_max=30`, `saturation_max=71`), convergencias entre narración POV y agregados YOLO que apoyan dos reclamos clave del campo.
-7. **Aporte de transparencia inter-rater:** metodología inter-rater explícita con kappa = 0.0 publicado (Stev vs Jacob, n=4 nodos compartidos, 2026-05-05). El reporte cuantifica el desacuerdo en lugar de ocultarlo y lo convierte en justificación explícita de la triangulación C1–C4.
+## 4.4. Limitaciones honestas
 
-Los aportes que todavía no pueden defenderse son:
+| Limitación | Implicación |
+| --- | --- |
+| **C2 ausente (0/36 celdas)** | la regla 3-de-4 opera como 3-de-3; el resultado "0/36 colapsos" es condicional y sesga decisiones hacia fricción antes que hacia colapso confirmado |
+| **Sub-zonas Coltejer-Ayacucho y "calle del consumo" no muestreadas sistemáticamente** | gradiente intra-nodo invisible al baseline; el caso Andrés (2026-05-05) opera como signo aislado, no como cobertura |
+| **OCR sesgado a signage comercial diurno** | sub-representación de grafiti, marcas nocturnas, micro-territorios, vandalismo, indigencia, consumo y presencia policial; dominios no falsables por imagen al estado actual |
+| **Audio de celular saturado por firma reggaetón en Junín** | clasificador acústico no aplicado; ritmos temporales (cierre informal 6 pm) registrados solo como notas atmosféricas, no como quinta dimensión cuantitativa |
+| **Kappa = 0.0 entre observadores entrenados** | evidencia de subjetividad fenomenológica ineliminable; obliga al desempate por C1+C4 y limita C3 como fuente de validación cerrada |
+| **Baseline_proxy en simulación M-MASS** | parámetros no calibrados con mediciones absolutas; los resultados se leen como campo relativo entre escenarios, no como magnitudes empíricas del corredor |
 
-- una afirmación de colapso fenomenológico confirmado en cualquier celda del corredor (la matriz reporta 0/36);
-- una caracterización de las 30 celdas `inconcluyente` como "sin colapso" (significa cobertura < 2 fuentes, no ausencia de fenómeno);
-- una afirmación normativa sobre niveles reales de ruido o PM2.5 en cada nodo;
-- una generalización a toda Medellín;
-- una validación causal de que determinada condición produce determinada experiencia subjetiva.
+## 4.5. Implicaciones filosóficas
 
-## 4.4. Limitaciones principales
+La fenomenología clásica acertó sobre la primacía de la experiencia: el espacio se comprende desde el cuerpo, los hábitos, las pausas, las orientaciones (Merleau-Ponty, 1945/1993; Husserl, 1936/1991). Pero el corredor Junín–San Antonio excede a cualquier sujeto único, como el kappa = 0.0 entre Stev y Jacob lo testimonia con crudeza: dos descripciones cultivadas de los mismos nodos divergen sin posibilidad de jerarquización interna a la primera persona. La actualización metodológicamente honesta no es abandonar la fenomenología, sino **triangularla** con criminalidad, encuesta, codificación inter-rater y video procesado por HPC. Kinkaid (2020) lo formula como fenomenología crítica del espacio social: el *Lebenswelt* sigue siendo punto de partida, pero la validación migra al cruce de instrumentos. Esta tesis defiende esa actualización: la fenomenología es necesaria y no suficiente; la regla 3-de-4 es la forma operativa de esa insuficiencia.
 
-Las limitaciones no son notas marginales; determinan qué puede y qué no puede afirmar la tesis.
+## 4.6. Implicaciones políticas
 
-| Limitación | Riesgo académico | Mitigación |
-| --- | --- | --- |
-| `field_ingest_in_progress` | hablar de colapso antes de tener matriz | suspender afirmaciones empíricas hasta `collapse_matrix.json` |
-| Proyección horaria de criminalidad | confundir supuesto con dato | declarar el supuesto distribucional y no leer hora aislada |
-| Cobertura desigual de video por celda | extrapolar saturación a celdas sin imagen | reportar cobertura por celda y marcar `inconcluyente` cuando falte |
-| Codificación de entrevistas | sesgo del codificador | doble codificación o auditoría externa cuando sea viable |
-| Fuentes públicas incompletas | sesgo por disponibilidad | documentar fallas y buscar fuentes alternativas |
-| Malla ambiental no calibrada | valores absolutos engañosos | usar como campo relativo hasta medir |
-| Perfiles simplificados | reificación de sujetos | tratarlos como tipos analíticos, no identidades |
-| Calibraciones internas muy ajustadas | sobreajuste | validar con datos independientes |
-| Falta de sensibilidad sistemática | desconocer dependencia de parámetros | variar pesos y reportar efectos |
-| Falta de literatura empírica reciente | marco incompleto | ampliar revisión 2020–2025 |
-| Riesgo ético de estigmatización | daño interpretativo | anonimización, cuidado conceptual y no registro identificable; difuminar rostros en video |
-| Sub-zonas Coltejer-Ayacucho y "calle del consumo" definidas pero no muestreadas sistemáticamente | gradiente intra-nodo invisible al baseline | declarar como pendiente; el caso Andrés (2026-05-05) es el único registro y opera como signo, no como cobertura |
-| OCR sesgado a signage comercial diurno | sub-representación de grafiti, marcas nocturnas, micro-territorios | reportar como TODO de pipeline; la cross-validación 2026-05-07 documenta los dominios no falsables (vandalismo, indigencia, consumo, presencia policial) |
-| C2 (seguridad percibida) ausente en 0/36 celdas | la regla 3-de-4 opera de facto como 3-de-3 con C2=False, sesgando decisiones hacia fricción antes que hacia colapso | declararlo explícitamente en sensibilidad y conclusión; cualquier hallazgo de "no colapso" es condicional al cierre de C2 |
-| Inter-rater kappa = 0.0 (Stev vs Jacob, n=4) | aparente debilidad de codificación | la subjetividad fenomenológica no es bug sino feature: justifica la triangulación C1–C4 y el desempate por C3 in-situ; reportarse explícitamente, no esconderse |
+Las seis celdas en `friccion_acumulada` —especialmente los dos pilares robustos `junin_paseo|peak_am` y `plaza_botero|midday`— sugieren, sin sobreafirmar, que la política pública del centro de Medellín debería distinguir **eficiencia funcional** (flujo, conectividad metro) de **costo fenomenológico** (saturación material, presión vial, restricción de pausa). Que `san_antonio_metro|peak_am` concentre el máximo de `vehicle_intensity` (0.378) coincide con la literatura SALURBAL sobre mortalidad vial latinoamericana (Quistberg et al., 2022) y con estudios de estrés peatonal (Rodriguez-Valencia et al., 2022) y caminabilidad (Arellana et al., 2020). Que `plaza_botero|midday` y `parque_berrio|midday` saturen `human_density` y `saturation_max` indica que la productividad simbólica del centro convive con costos sensoriales documentables. Cualquier intervención normativa debe pasar por el cierre de C2; mientras tanto, la lectura es: **fricción material localizada, no colapso confirmado**.
 
-## 4.5. Habitabilidad, presión urbana y alcance de la inferencia
+## 4.7. Agenda real
 
-Los experimentos muestran que, bajo los supuestos del modelo, el aumento de densidad y fricción ambiental tiende a concentrar rutas, elevar entropía y reducir gradualmente la fluidez del sistema. Esta observación es compatible con una lectura emergentista de la ciudad (Aguilar, 2014; Johnson, 2001), pero no autoriza por sí sola una conclusión absoluta sobre la inhabitabilidad del corredor.
+1. **Cerrar C2** mediante encuesta de seguridad percibida tabulada en `field_observations_aggregate.csv`, prioridad sobre los dos pilares (`junin_paseo|peak_am`, `plaza_botero|midday`); es el único bloqueo estructural restante de la regla 3-de-4.
+2. **Ampliar muestreo** a sub-zonas Coltejer-Ayacucho y "calle del consumo" con conteos, fotos y entrevistas sistemáticas, para que el gradiente intra-nodo deje de operar como signo aislado.
+3. **Consolidar C4** en franjas `peak_pm` y `night` con material POV adicional, y reasignar `parque_san_antonio` a un bucket visual para habilitar su cross-validación texto-imagen.
+4. **Clasificación acústica** sobre el audio POV ya grabado para abrir una quinta dimensión sonora complementaria a C4.
+5. **Doble codificación externa** de C3 para acotar el kappa inter-rater en una segunda iteración.
 
-La hipótesis más defendible es la siguiente: la eficiencia funcional del espacio puede coexistir con costos fenomenológicos significativos. Dicho de otro modo, un corredor puede mover muchos cuerpos y, al mismo tiempo, producir saturación sensorial, restricciones de pausa, presión de seguridad y reducción práctica de alternativas. Esta tensión permite releer el *Lebenswelt* husserliano (Husserl, 1936/1991) en clave urbana sin convertir la simulación en autoridad final.
+## 4.8. Cierre
 
-A diferencia de versiones anteriores del cierre, esta hipótesis ya no se sostiene únicamente como tensión metodológica: la oleada 5 produce **hallazgo cuantitativamente respaldado**. Las métricas visuales de `vehicle_intensity` y `human_density` convergen con la narración POV de Stev y Jacob en dos pilares (`san_antonio_metro|peak_am` y `plaza_botero|midday`/`parque_berrio|midday`), y la robustez bajo bootstrap y barrido de umbrales otorga a `junin_paseo|peak_am` y `plaza_botero|midday` un estatus distinto del de las celdas frágiles. La conclusión sigue siendo moderada porque sin C2 no hay colapso confirmado, pero ya no es exclusivamente metodológica: hay convergencia cuantitativa entre dato visual y testimonio en al menos dos celdas del corredor.
+Esta tesis no afirma que el corredor Junín–San Antonio colapse fenomenológicamente. Afirma algo más exigente y más útil: que la categoría de colapso fenomenológico es **operativamente falsable**, que dos pilares (`junin_paseo|peak_am`, `plaza_botero|midday`) sobreviven al bootstrap, al barrido de umbrales y al leave-one-out, que cuatro celdas adicionales son frágiles y se reportan como tales, y que treinta quedan inconcluyentes por cobertura insuficiente. La matriz, no la prosa, decide.
 
-## 4.6. La brecha empírica como criterio de rigor
+La fenomenología sola no basta —el kappa = 0.0 entre dos observadores cultivados lo demuestra sin apelación. La triangulación con HPC, simulación M-MASS multicapa, criminalidad horaria, codificación de entrevistas y saturación visual procesada por dual-GPU sí discrimina: separa robustez de fragilidad, defendible de inconcluyente, ciencia urbana de comentario. Que el aparato hoy reporte 0/36 colapsos confirmados no es debilidad: es la prueba más fuerte de que la regla no se autoconfirma. Cerrar C2 sobre los dos pilares —tarea delimitada y tractable— decidirá si la categoría se confirma, se refuta o se refina. Cualquiera de los tres resultados será resultado.
 
-La matriz `collapse_matrix.json` ya existe y está auditada (post-fix C1, 2026-05-07). La brecha actual no es la ausencia de matriz, sino el carácter parcial de su poblamiento: C1 cubre 36/36 celdas, C4 cubre 4/36, C2 cubre 0/36 y C3 cubre 0/36. Esto significa que la regla 3-de-4 hoy es estructuralmente inalcanzable: ninguna celda puede llegar a 3 condiciones si solo dos fuentes están pobladas. La conclusión metodológicamente honesta es que el resultado actual (0/36 colapsos confirmados) **prueba la falsabilidad de la categoría**, no su falsedad: si C2 y C3 se poblaran y la regla siguiera dando 0/36, eso sí sería un resultado sustantivo en contra del colapso; si dieran ≥3/4 en `junin_paseo|peak_am`, sería evidencia a favor.
+El procedimiento académicamente correcto es declarar lo que se sabe, lo que no se sabe y por qué. Esta tesis lo hace.
 
-Esta brecha también tiene valor filosófico: recuerda que la experiencia urbana no se deja reducir completamente a datos disponibles, ni siquiera con campo abundante. La metáfora merleau-pontiana del cuerpo vivido ayuda a sostener que el espacio se comprende desde trayectorias, hábitos, incomodidades, pausas y orientaciones corporales (Merleau-Ponty, 1945/1993; Kinkaid, 2020). El colapso fenomenológico, definido como franja-evento, intenta operacionalizar esa intuición sin agotarla; cualquier celda en colapso seguirá apuntando a algo que la matriz no puede contener.
+## 4.9. Referencias bibliográficas
 
-## 4.7. Agenda mientras la torre procesa y el colega transcribe
+### Fenomenología y filosofía
 
-Mientras el procesamiento GPU de los videos avanza en la torre HPC y el colaborador transcribe las entrevistas, el trabajo en PC se concentra en tareas que no compiten por esos recursos:
-
-1. **Reproducibilidad:** documentar versiones, dependencias, semillas, parámetros, GPU/CPU y comandos de ejecución.
-2. **Sensibilidad:** correr o documentar variaciones de parámetros ±10%, ±20% y ±30% para pesos de riesgo, tiempo, ruido y densidad.
-3. **Ablación:** ejecutar escenarios sin ruido, sin riesgo, sin congestión o sin atracción comercial para estimar contribuciones relativas.
-4. **Pipeline de cruce:** preparar el script que tomará criminalidad MEData, `field_counts_*.csv`, transcripciones codificadas y `video_saturation_*.json` para producir `collapse_matrix.json`, con tests sobre dataset sintético antes de correrlo con datos reales.
-5. **Bibliografía empírica:** ampliar literatura reciente sobre movilidad peatonal, ruido urbano, percepción de seguridad, espacio público y estudios del centro de Medellín.
-6. **Anexo ético y multimedia:** consolidar consentimiento, protocolo de anonimización, difuminado de rostros en video y manejo de fotografías.
-7. **Tablas de trazabilidad:** mapear cada afirmación importante a archivo, fuente o celda de la matriz.
-
-Estas tareas no reemplazan el procesamiento empírico; lo preparan y evitan indulgencia metodológica.
-
-## 4.8. Agenda de cierre post-matriz
-
-La matriz ya existe; el `collapse_matrix.json` se construye con `build_collapse_matrix.py` y se inspecciona con `inspect_matrix.py`. C3 ya está poblado con n=15 entrevistas Stev+Jacob. Lo que falta para activar la regla 3-de-4 sobre celdas concretas es estrictamente delimitable:
-
-- **C2 — encuesta de seguridad percibida (0/36 → objetivo ≥ 9 celdas, prioridad `junin_paseo|peak_am` y `plaza_botero|midday`):** poblar `field_observations_aggregate.csv` con `security_score` por nodo y franja a partir de las encuestas ya recogidas en campo. Es el único bloqueo estructural restante de la matriz; mientras C2 = ∅, la regla 3-de-4 opera de facto como 3-de-3 y la conclusión "0/36 colapsos" es condicional.
-- **Ampliar muestreo a sub-zonas faltantes:** las sub-zonas `coltejer-ayacucho` (gradiente intra-Junín) y `calle-del-consumo` (adyacente a Botero) están definidas conceptualmente y registradas en C3 (caso Andrés, 2026-05-05) pero no muestreadas sistemáticamente. Falta repetir conteos, fotos y entrevistas en esas micro-zonas para que el gradiente intra-nodo deje de operar como signo aislado.
-- **R — clasificación de audio pendiente:** los marcadores sonoros (reggaetón vs vallenato en Junín, ritmos temporales 6pm de cierre informal) registrados por Jacob en notas atmosféricas no han sido pasados por un clasificador de audio. Es trabajo HPC pendiente que abriría una quinta dimensión (sonora) complementaria a C4 visual.
-- **C4 — consolidación para más franjas:** ampliar saturación de video más allá de las celdas actuales con material POV adicional ya grabado, especialmente en `peak_pm` y `night`, y reasignar `parque_san_antonio` a un bucket visual (hoy sin asignación, lo cual bloquea su cross-validación texto-imagen).
-- **C1 — documentar en cap. 2/3 el supuesto operacional `c1_high_by_window` precomputado** (post-fix), evitando re-evaluaciones contra la mediana mensual que ya fueron descartadas.
-
-La triangulación terminal —cierre de la regla 3-de-4 sobre `junin_paseo|peak_am` y `plaza_botero|midday`— depende, hoy, de C2 sobre esas dos celdas. Es un cierre tractable.
-
-## 4.9. Criterios mínimos para que la tesis sea defendible ante jurados
-
-Una evaluación exigente debería encontrar:
-
-1. problema claro y preguntas explícitas;
-2. objetivos verificables;
-3. estado del arte suficiente, incluyendo literatura reciente;
-4. método reproducible;
-5. variables operacionalizadas;
-6. resultados con fuente y límite;
-7. discusión de sensibilidad y sobreajuste;
-8. ética de campo y datos;
-9. bibliografía consistente;
-10. agenda de pendientes realista.
-
-La versión actual cubre una parte sustancial de esos puntos, pero todavía debe completar sensibilidad computacional, anexos de reproducibilidad, ampliación bibliográfica empírica y trabajo de campo.
-
-## 4.10. Postulados defendibles para sustentación académica
-
-1. **La simulación como instrumento crítico, no como demostración autosuficiente.** El modelo permite organizar escenarios y detectar tensiones, pero sus resultados deben contrastarse con campo y fuentes públicas.
-2. **La habitabilidad como problema multidimensional.** El derecho a la ciudad no se limita al acceso físico; incluye condiciones de orientación, pausa, percepción de seguridad, exposición ambiental y agencia cotidiana (Lefebvre, 1968/2017; Harvey, 2008).
-3. **La formalización debe conservar sus límites.** Un modelo que optimiza flujos sin mostrar costos sensoriales, desigualdades o restricciones prácticas queda incompleto. La tesis defiende una formalización crítica, capaz de mostrar tanto patrones como ausencias.
-4. **La agenda de campo es parte del resultado.** La fase siguiente debe priorizar observaciones por nodo y franja horaria para transformar el baseline proxy en un modelo calibrado con evidencia situada.
-5. **La autocrítica es condición de rigor.** En un proyecto híbrido entre filosofía y computación, declarar límites no es debilidad: es lo que impide vender simulación como certeza.
-
-```mermaid
-graph TD
-    A[Marco conceptual] --> D[Baseline proxy]
-    B[Fuentes públicas] --> D
-    C[Pipeline computacional] --> D
-    D --> E[Resultados exploratorios]
-    E --> F[Limitaciones y sensibilidad]
-    F --> G{Campo realizado}
-    G -->|en ingesta| H[Conteos, encuestas, fotos, GeoJSON]
-    G -->|en transcripción| I[Entrevistas: habitabilidad declarada]
-    G -->|en torre HPC con GPU| J[Videos POV: saturación material]
-    K[Criminalidad MEData] --> L{Triangulación}
-    H --> L
-    I --> L
-    J --> L
-    L --> M[collapse_matrix.json]
-    M --> N[Conclusiones empíricas con franjas-nodo identificadas]
-```
-
-## 4.11. Cierre
-
-La tesis debe defenderse como una investigación ambiciosa pero no autosatisfecha. Su ambición está en unir fenomenología, datos y simulación, y en proponer una categoría —el colapso fenomenológico— que se deja medir sin dejarse reducir. Su rigor está en haber construido una regla 3-de-4 que es **operativamente falsable** y en haber reportado, sin maquillaje, que esa regla **hoy no produce ninguna celda en colapso confirmado** (0/36) sobre el corredor Junín–San Antonio. Que la matriz esté vacía de colapsos es un resultado metodológicamente válido, no una falla: confirma que el aparato no se autoconfirma. La tesis sostiene un marco, un pipeline auditable, una matriz construida con 15 entrevistas C3 ingestadas, un análisis de sensibilidad publicado (1000 bootstrap V1, 25 escenarios V2, leave-one-out V3), un kappa inter-rater explícito (0.0, declarado como feature fenomenológica) y dos hallazgos materiales defendibles bajo bootstrap y barrido de umbrales: `junin_paseo|peak_am` y `plaza_botero|midday` como franjas-nodo de fricción acumulada robusta, además de la convergencia cuantitativa texto-imagen en `vehicle_intensity` y `human_density`. Lo que falta —cierre de C2 con la encuesta tabulada, ampliación a las sub-zonas Coltejer-Ayacucho y "calle del consumo", clasificación de audio y consolidación de C4 en más franjas— está delimitado y es tractable. El procedimiento académicamente correcto es declarar lo que se sabe, lo que no se sabe y por qué, y dejar que la matriz, no la prosa, decida si el corredor colapsa.
-
-## 4.12. Referencias bibliográficas
-
-- Aguilar, J. (2014). *Sistemas Emergentes y Control Inteligente*. Universidad de Los Andes.
-- Alcaldía de Medellín. (s. f.). *MEData: Datos Abiertos de Medellín*. https://medata.gov.co/
-- Arellana, J., Saltarín, M., Larrañaga, A. M., Alvarez, V., & Henao, C. A. (2020). Urban walkability considering pedestrians' perceptions of the built environment: A 10-year review and a case study in a medium-sized city in Latin America. *Transport Reviews, 40*(2), 183–203. https://doi.org/10.1080/01441647.2019.1703842
-- Área Metropolitana del Valle de Aburrá. (s. f.). *Datos abiertos ambientales del Valle de Aburrá / SIATA*. https://datosabiertos.metropol.gov.co/
-- Aristóteles. (1978). *Acerca de la memoria y la reminiscencia*. En *Acerca del alma* (T. Calvo, Trad.). Gredos.
-- Atkinson, R. C., & Shiffrin, R. M. (1968). Human memory: A proposed system and its control processes. En K. W. Spence & J. T. Spence (Eds.), *The psychology of learning and motivation* (Vol. 2, pp. 89–195). Academic Press.
-- Baddeley, A. D., & Hitch, G. (1974). Working memory. En G. H. Bower (Ed.), *The psychology of learning and motivation* (Vol. 8, pp. 47–89). Academic Press.
-- Badiou, A. (1998). Introducción a *El ser y el acontecimiento*. *Acontecimiento, 16*. (Texto introductorio a la obra original publicada en 1988).
-- Bartlett, F. C. (1932). *Remembering: A study in experimental and social psychology*. Cambridge University Press.
-- Batty, M. (2013). *The new science of cities*. MIT Press.
-- Bellman, R. (1957). *Dynamic programming*. Princeton University Press.
-- Bonabeau, E. (2002). Agent-based modeling: Methods and techniques for simulating human systems. *Proceedings of the National Academy of Sciences, 99*(suppl. 3), 7280–7287. https://doi.org/10.1073/pnas.082080899
-- Bueno, G. (1972). *Ensayos materialistas*. Taurus.
-- Cabeza, R., Rao, S. M., Wagner, A. D., Mayer, A. R., & Schacter, D. L. (2001). Can medial temporal lobe regions distinguish true from false? An event-related functional MRI study of veridical and illusory recognition memory. *Proceedings of the National Academy of Sciences, 98*(8), 4805–4810. https://doi.org/10.1073/pnas.081082698
-- Craik, F. I. M., & Lockhart, R. S. (1972). Levels of processing: A framework for memory research. *Journal of Verbal Learning and Verbal Behavior, 11*(6), 671–684.
-- Crombag, H. F. M., Wagenaar, W. A., & van Koppen, P. J. (1996). Crashing memories and the problem of "source monitoring". *Applied Cognitive Psychology, 10*(2), 95–104.
-- Departamento Administrativo Nacional de Estadística. (2018). *Censo Nacional de Población y Vivienda 2018*. https://www.dane.gov.co/
-- Deleuze, G. (1990). Post-scriptum sobre las sociedades de control. *L'Autre Journal*, 1.
-- Epstein, J. M. (2006). *Generative social science: Studies in agent-based computational modeling*. Princeton University Press.
-- Foucault, M. (2002). *Vigilar y castigar: nacimiento de la prisión* (A. Garzón del Camino, Trad.). Siglo XXI Editores. (Obra original publicada en 1975).
-- Garcia, S., Quistberg, D. A., Rodríguez, D. A., & Sarmiento, O. L. (2024). Pedestrian accessibility analysis of sidewalk-specific networks: Insights from three Latin American central squares. *Sustainability, 16*(21), 9294. https://doi.org/10.3390/su16219294
-- Haklay, M., & Weber, P. (2008). OpenStreetMap: User-generated street maps. *IEEE Pervasive Computing, 7*(4), 12–18. https://doi.org/10.1109/MPRV.2008.80
-- Haraway, D. J. (1995). *Ciencia, cyborgs y mujeres: La reinvención de la naturaleza* (M. Talens, Trad.). Ediciones Cátedra. (Obra original publicada en 1991).
-- Harvey, D. (2008). The right to the city. *New Left Review, 53*, 23–40.
-- Helbing, D., & Molnár, P. (1995). Social force model for pedestrian dynamics. *Physical Review E, 51*(5), 4282–4286. https://doi.org/10.1103/PhysRevE.51.4282
-- Heroy, S., Loaiza, I., Pentland, A., & O'Clery, N. (2023). Are neighbourhood amenities associated with more walking and less driving? Yes, but predominantly for the wealthy. *Environment and Planning B: Urban Analytics and City Science, 50*(8), 2167–2186. https://doi.org/10.1177/23998083221141439
 - Husserl, E. (1991). *La crisis de las ciencias europeas y la fenomenología trascendental* (J. Muñoz y S. Mas, Trads.). Crítica. (Obra original publicada en 1936).
-- Johnson, S. (2001). *Sistemas emergentes: O qué tienen en común hormigas, neuronas, ciudades y software*. Fondo de Cultura Económica.
-- Kinkaid, E. (2020). Re-encountering Lefebvre: Toward a critical phenomenology of social space. *Environment and Planning D: Society and Space, 38*(1), 167–186. https://doi.org/10.1177/0263775819854765
-- Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics, 22*(1), 79–86. https://doi.org/10.1214/aoms/1177729694
-- Lefebvre, H. (2017). *El derecho a la ciudad*. Capitán Swing. (Obra original publicada en 1968).
-- Liu, X., Ramirez, S., Pang, P. T., Puryear, C. B., Govindarajan, A., Deisseroth, K., & Tonegawa, S. (2012). Optogenetic stimulation of a hippocampal engram activates fear memory recall. *Nature, 484*, 381–385. https://doi.org/10.1038/nature11028
-- Locke, J. (1956). *Ensayo sobre el entendimiento humano* (E. O'Gorman, Trad.). Fondo de Cultura Económica. (Obra original publicada en 1689).
-- Loftus, E. F. (1993). The reality of repressed memories. *American Psychologist, 48*(5), 518–537.
-- Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile destruction: An example of the interaction between language and memory. *Journal of Verbal Learning and Verbal Behavior, 13*(5), 585–589.
-- Martin, C. B., & Deutscher, M. (1966). Remembering. *The Philosophical Review, 75*(2), 161–196.
-- Matthen, M. (2010). Is memory preservation? *Philosophical Studies, 148*(1), 3–14. https://doi.org/10.1007/s11098-010-9501-8
-- Medellín Cómo Vamos & Invamer. (2024). *Percepción ciudadana 2024: Medellín*. Medellín Cómo Vamos. https://www.medellincomovamos.org/
 - Merleau-Ponty, M. (1993). *Fenomenología de la percepción* (J. Cabanes, Trad.). Planeta-Agostini. (Obra original publicada en 1945).
-- Metro de Medellín. (s. f.). *Challenge: Mobility in San Antonio B*. https://www.metrodemedellin.gov.co/en/challenge-mobility-in-san-antonio-b
-- Michaelian, K. (2016). *Mental time travel: Episodic memory and our knowledge of the personal past*. MIT Press.
-- Milner, B. (1962). Les troubles de la mémoire accompagnant des lésions hippocampiques bilatérales. En *Physiologie de l'hippocampe* (pp. 257–272). CNRS.
-- Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., & Hassabis, D. (2015). Human-level control through deep reinforcement learning. *Nature, 518*, 529–533. https://doi.org/10.1038/nature14236
-- Nadel, L., & Moscovitch, M. (1997). Memory consolidation, retrograde amnesia and the hippocampal complex. *Current Opinion in Neurobiology, 7*(2), 217–227.
-- Nader, K., Schafe, G. E., & LeDoux, J. E. (2000). Fear memories require protein synthesis in the amygdala for reconsolidation after retrieval. *Nature, 406*, 722–726. https://doi.org/10.1038/35021052
-- OpenStreetMap contributors. (2026). *OpenStreetMap*. https://www.openstreetmap.org/copyright
-- Peden, M., Puvanachandra, P., Keller, M.-E., Rodrigues, E.-M., Quistberg, D. A., & Jagnoor, J. (2022). How the Covid-19 pandemic has drawn attention to the issue of active mobility and co-benefits in Latin American cities. *Salud Pública de México, 64*, S14–S21. https://doi.org/10.21149/12786
-- Platón. (1988). *Teeteto*. En *Diálogos V* (M. I. Santa Cruz, Á. Vallejo Campos & N. Cordero, Trads.). Gredos.
-- Quistberg, D. A., Hessel, P., Rodriguez, D. A., Sarmiento, O. L., Bilal, U., Caiaffa, W. T., … Diez Roux, A. V. (2022). Urban landscape and street-design factors associated with road traffic mortality in Latin America between 2010 and 2016 (SALURBAL): An ecological study. *The Lancet Planetary Health, 6*(2), e122–e131. https://doi.org/10.1016/S2542-5196(21)00323-5
-- Ramirez, S., Liu, X., Lin, P. A., Suh, J., Pignatelli, M., Redondo, R. L., Ryan, T. J., & Tonegawa, S. (2013). Creating a false memory in the hippocampus. *Science, 341*(6144), 387–391. https://doi.org/10.1126/science.1239073
-- Ribot, T. (1881). *Les maladies de la mémoire*. Germer Baillière.
-- Rodriguez-Valencia, A., Ortiz-Ramirez, H. A., Simancas, W., & Vallejo-Borda, J. A. (2022). Level of pedestrian stress in urban streetscapes. *Transportation Research Record, 2676*(7), 622–636. https://doi.org/10.1177/03611981211072804
-- Roediger, H. L., & McDermott, K. B. (1995). Creating false memories: Remembering words not presented in lists. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 21*(4), 803–814.
+- Kinkaid, E. (2020). Re-encountering Lefebvre: Toward a critical phenomenology of social space. *Environment and Planning D: Society and Space, 38*(1), 167–186. https://doi.org/10.1177/0263775819854765
+
+### Teoría crítica urbana
+
+- Foucault, M. (2002). *Vigilar y castigar: nacimiento de la prisión* (A. Garzón del Camino, Trad.). Siglo XXI Editores. (Obra original publicada en 1975).
+- Deleuze, G. (1990). Post-scriptum sobre las sociedades de control. *L'Autre Journal*, 1.
+- Lefebvre, H. (2017). *El derecho a la ciudad*. Capitán Swing. (Obra original publicada en 1968).
+- Harvey, D. (2008). The right to the city. *New Left Review, 53*, 23–40.
 - Sassen, S. (2014). *Expulsions: Brutality and complexity in the global economy*. Harvard University Press.
-- Schacter, D. L., Reiman, E., Curran, T., Yun, L. S., Bandy, D., McDermott, K. B., & Roediger, H. L. (1996). Neuroanatomical correlates of veridical and illusory recognition memory: Evidence from positron emission tomography. *Neuron, 17*(2), 267–274.
-- Schacter, D. L., Addis, D. R., & Buckner, R. L. (2007). Remembering the past to imagine the future: The prospective brain. *Nature Reviews Neuroscience, 8*(9), 657–661. https://doi.org/10.1038/nrn2213
-- Semon, R. (1904). *Die Mneme als erhaltendes Prinzip im Wechsel des organischen Geschehens*. Wilhelm Engelmann.
-- Shallice, T., & Warrington, E. K. (1970). Independent functioning of verbal memory stores: A neuropsychological study. *The Quarterly Journal of Experimental Psychology, 22*(2), 261–273.
-- Shannon, C. E. (1948). A mathematical theory of communication. *The Bell System Technical Journal, 27*(3), 379–423; *27*(4), 623–656. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
 - Simmel, G. (1986). *El individuo y la libertad. Ensayos de crítica de la cultura* (S. Masó, Trad.). Península. (Obra original publicada en 1903).
-- Soto, J., Orozco-Fontalvo, M., & Useche, S. A. (2022). Public transportation and fear of crime at BRT systems: Approaching to the case of Barranquilla (Colombia) through integrated choice and latent variable models. *Transportation Research Part A: Policy and Practice, 155*, 142–160. https://doi.org/10.1016/j.tra.2021.11.001
-- Squire, L. R., & Alvarez, P. (1995). Retrograde amnesia and memory consolidation: A neurobiological perspective. *Current Opinion in Neurobiology, 5*(2), 169–177.
-- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement learning: An introduction* (2nd ed.). MIT Press.
-- Teuber, H.-L. (1955). Physiological psychology. *Annual Review of Psychology, 6*, 267–296.
-- Tulving, E. (1972). Episodic and semantic memory. En E. Tulving & W. Donaldson (Eds.), *Organization of memory* (pp. 381–403). Academic Press.
 - Velásquez Ocampo, O., & Tamayo Arboleda, F. L. (2025). Estrategias de seguridad urbana en Medellín y regulación de las geografías de la memoria. *Novum Jus, 19*(3), 75–100. https://doi.org/10.14718/NovumJus.2025.19.3.3
+
+### Estudios urbanos empíricos recientes (2020–2025)
+
+- Arellana, J., Saltarín, M., Larrañaga, A. M., Alvarez, V., & Henao, C. A. (2020). Urban walkability considering pedestrians' perceptions of the built environment: A 10-year review and a case study in a medium-sized city in Latin America. *Transport Reviews, 40*(2), 183–203. https://doi.org/10.1080/01441647.2019.1703842
+- Soto, J., Orozco-Fontalvo, M., & Useche, S. A. (2022). Public transportation and fear of crime at BRT systems: Approaching to the case of Barranquilla (Colombia) through integrated choice and latent variable models. *Transportation Research Part A: Policy and Practice, 155*, 142–160. https://doi.org/10.1016/j.tra.2021.11.001
+- Rodriguez-Valencia, A., Ortiz-Ramirez, H. A., Simancas, W., & Vallejo-Borda, J. A. (2022). Level of pedestrian stress in urban streetscapes. *Transportation Research Record, 2676*(7), 622–636. https://doi.org/10.1177/03611981211072804
+- Quistberg, D. A., Hessel, P., Rodriguez, D. A., Sarmiento, O. L., Bilal, U., Caiaffa, W. T., … Diez Roux, A. V. (2022). Urban landscape and street-design factors associated with road traffic mortality in Latin America between 2010 and 2016 (SALURBAL): An ecological study. *The Lancet Planetary Health, 6*(2), e122–e131. https://doi.org/10.1016/S2542-5196(21)00323-5
+- Peden, M., Puvanachandra, P., Keller, M.-E., Rodrigues, E.-M., Quistberg, D. A., & Jagnoor, J. (2022). How the Covid-19 pandemic has drawn attention to the issue of active mobility and co-benefits in Latin American cities. *Salud Pública de México, 64*, S14–S21. https://doi.org/10.21149/12786
+- Heroy, S., Loaiza, I., Pentland, A., & O'Clery, N. (2023). Are neighbourhood amenities associated with more walking and less driving? Yes, but predominantly for the wealthy. *Environment and Planning B: Urban Analytics and City Science, 50*(8), 2167–2186. https://doi.org/10.1177/23998083221141439
+- Garcia, S., Quistberg, D. A., Rodríguez, D. A., & Sarmiento, O. L. (2024). Pedestrian accessibility analysis of sidewalk-specific networks: Insights from three Latin American central squares. *Sustainability, 16*(21), 9294. https://doi.org/10.3390/su16219294
+- Medellín Cómo Vamos & Invamer. (2024). *Percepción ciudadana 2024: Medellín*. Medellín Cómo Vamos. https://www.medellincomovamos.org/
+
+### Modelación, simulación y métodos computacionales
+
+- Helbing, D., & Molnár, P. (1995). Social force model for pedestrian dynamics. *Physical Review E, 51*(5), 4282–4286. https://doi.org/10.1103/PhysRevE.51.4282
+- Bonabeau, E. (2002). Agent-based modeling: Methods and techniques for simulating human systems. *Proceedings of the National Academy of Sciences, 99*(suppl. 3), 7280–7287. https://doi.org/10.1073/pnas.082080899
+- Epstein, J. M. (2006). *Generative social science: Studies in agent-based computational modeling*. Princeton University Press.
+- Batty, M. (2013). *The new science of cities*. MIT Press.
+- Aguilar, J. (2014). *Sistemas Emergentes y Control Inteligente*. Universidad de Los Andes.
+- Johnson, S. (2001). *Sistemas emergentes: O qué tienen en común hormigas, neuronas, ciudades y software*. Fondo de Cultura Económica.
+- Shannon, C. E. (1948). A mathematical theory of communication. *The Bell System Technical Journal, 27*(3), 379–423; *27*(4), 623–656. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x
+- Kullback, S., & Leibler, R. A. (1951). On information and sufficiency. *The Annals of Mathematical Statistics, 22*(1), 79–86. https://doi.org/10.1214/aoms/1177729694
+- Bellman, R. (1957). *Dynamic programming*. Princeton University Press.
+- Sutton, R. S., & Barto, A. G. (2018). *Reinforcement learning: An introduction* (2nd ed.). MIT Press.
+
+### Fuentes de datos públicas
+
+- Alcaldía de Medellín. (s. f.). *MEData: Datos Abiertos de Medellín*. https://medata.gov.co/
+- Área Metropolitana del Valle de Aburrá. (s. f.). *Datos abiertos ambientales del Valle de Aburrá / SIATA*. https://datosabiertos.metropol.gov.co/
+- Departamento Administrativo Nacional de Estadística. (2018). *Censo Nacional de Población y Vivienda 2018*. https://www.dane.gov.co/
+- Metro de Medellín. (s. f.). *Challenge: Mobility in San Antonio B*. https://www.metrodemedellin.gov.co/en/challenge-mobility-in-san-antonio-b
+- OpenStreetMap contributors. (2026). *OpenStreetMap*. https://www.openstreetmap.org/copyright
+- Haklay, M., & Weber, P. (2008). OpenStreetMap: User-generated street maps. *IEEE Pervasive Computing, 7*(4), 12–18. https://doi.org/10.1109/MPRV.2008.80

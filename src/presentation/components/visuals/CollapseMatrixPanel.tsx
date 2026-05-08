@@ -1,6 +1,16 @@
 import type { CSSProperties } from 'react'
 
-import type { CollapseDecision, CollapseMatrixCell, FieldCalibration } from '../../../types'
+import type {
+  CollapseDecision,
+  CollapseMatrixCell,
+  CollapseMatrixSensitivity,
+  FieldCalibration,
+} from '../../../types'
+
+const PARADIGMATIC_PILLARS = new Set([
+  'junin_paseo|peak_am',
+  'parque_berrio|peak_am',
+])
 
 const NODE_ORDER = [
   'san_antonio_metro',
@@ -56,13 +66,16 @@ function cellByKey(cells: CollapseMatrixCell[]): Record<string, CollapseMatrixCe
 export function CollapseMatrixPanel({
   field,
   compact = false,
+  sensitivity,
 }: {
   field: FieldCalibration
   compact?: boolean
+  sensitivity?: CollapseMatrixSensitivity
 }) {
   const matrix = field.collapse_matrix
   if (!matrix) return null
   const cells = cellByKey(matrix.cells)
+  const robustness = sensitivity?.robustness ?? field.collapse_matrix_sensitivity?.robustness
 
   return (
     <article className="deck-panel collapse-panel">
@@ -112,19 +125,27 @@ export function CollapseMatrixPanel({
                 c.C3 && 'C3',
                 c.C4 && 'C4',
               ].filter(Boolean) as string[]
+              const cellKey = `${n}|${w}`
+              const r = robustness?.[cellKey]
+              const isPillar = PARADIGMATIC_PILLARS.has(cellKey)
               const style: CSSProperties = {
                 background: DECISION_COLOR[c.decision],
                 color: c.decision === 'inconcluyente' ? 'rgba(255,255,255,0.55)' : '#fff8ec',
+                outline: isPillar ? '2px solid #ffd166' : undefined,
+                outlineOffset: isPillar ? '-2px' : undefined,
               }
               return (
                 <div
                   key={`${n}|${w}`}
                   className="collapse-grid__cell"
                   style={style}
-                  title={`${n} | ${w} → ${c.decision} (${c.conditions_met}/4, cobertura ${c.coverage}/4)\nflags: ${flags.join(', ') || '—'}`}
+                  title={`${n} | ${w} → ${c.decision} (${c.conditions_met}/4, cobertura ${c.coverage}/4)\nflags: ${flags.join(', ') || '—'}${r ? `\nshare mín=${r.min_share.toFixed(2)} ${r.robust ? '(robusta)' : r.fragile ? '(frágil)' : ''}` : ''}${isPillar ? '\n★ pilar paradigmático' : ''}`}
                 >
                   <strong>{DECISION_LABEL[c.decision]}</strong>
                   {flags.length > 0 && <small>{flags.join(' ')}</small>}
+                  {r?.robust && <span className="collapse-grid__badge collapse-grid__badge--robust">robusto</span>}
+                  {r?.fragile && <span className="collapse-grid__badge collapse-grid__badge--fragile">frágil</span>}
+                  {isPillar && <span className="collapse-grid__badge collapse-grid__badge--pillar">★</span>}
                 </div>
               )
             })}

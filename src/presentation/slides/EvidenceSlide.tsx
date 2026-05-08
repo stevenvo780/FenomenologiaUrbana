@@ -10,6 +10,8 @@ import { InterRaterPanel } from '../components/visuals/InterRaterPanel'
 import { SensitivityPanel } from '../components/visuals/SensitivityPanel'
 import { CrossValidationPanel } from '../components/visuals/CrossValidationPanel'
 import { SubZonesPanel } from '../components/visuals/SubZonesPanel'
+import { AudioPanel } from '../components/visuals/AudioPanel'
+import { VisualAggregatesPanel } from '../components/visuals/VisualAggregatesPanel'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, findPeakPeriod } from '../utils'
 
@@ -142,7 +144,10 @@ function EvidenceGallery({
       </article>
 
       {data.field_calibration?.collapse_matrix && (
-        <CollapseMatrixPanel field={data.field_calibration} />
+        <CollapseMatrixPanel
+          field={data.field_calibration}
+          sensitivity={data.field_calibration.collapse_matrix_sensitivity}
+        />
       )}
       {data.field_calibration?.inter_rater_reliability && (
         <InterRaterPanel data={data.field_calibration.inter_rater_reliability} />
@@ -157,6 +162,15 @@ function EvidenceGallery({
         <SubZonesPanel
           geometry={data.field_calibration?.node_geometry_v2}
           signage={data.field_calibration?.signage_ocr}
+        />
+      )}
+      {data.field_calibration?.audio_classification && (
+        <AudioPanel data={data.field_calibration.audio_classification} />
+      )}
+      {(data.field_calibration?.m1_visual_aggregate || data.field_calibration?.m3_visual_aggregate) && (
+        <VisualAggregatesPanel
+          m1={data.field_calibration?.m1_visual_aggregate}
+          m3={data.field_calibration?.m3_visual_aggregate}
         />
       )}
     </div>

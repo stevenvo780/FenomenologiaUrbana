@@ -5994,3 +5994,177 @@ body {
   color: rgba(255,248,236,0.62);
   font-style: italic;
 }
+
+/* === Collapse cell badges (robusto/frágil/pilar) === */
+.collapse-grid__cell { position: relative; }
+.collapse-grid__badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.55rem;
+  padding: 1px 5px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.collapse-grid__badge--robust { background: rgba(47,125,74,0.95); color: #fff8ec; }
+.collapse-grid__badge--fragile { background: rgba(224,122,70,0.95); color: #fff8ec; }
+.collapse-grid__badge--pillar {
+  top: -6px;
+  right: -6px;
+  background: #ffd166;
+  color: #2a1a08;
+  padding: 0 4px;
+  font-size: 0.7rem;
+}
+
+/* === Audio panel === */
+.audio-panel { grid-column: 1 / -1; }
+.audio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.audio-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.audio-card--highlight {
+  background: rgba(255,209,102,0.07);
+  border-color: rgba(255,209,102,0.5);
+}
+.audio-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.audio-card__head strong { color: #fff8ec; font-size: 0.86rem; flex: 1; }
+.audio-card__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  color: rgba(255,248,236,0.72);
+}
+.audio-card__row strong { color: #fff8ec; }
+.audio-card__bar { margin-top: 4px; }
+.audio-card__bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: rgba(255,248,236,0.6);
+  margin-bottom: 3px;
+}
+.audio-card__bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.audio-card__bar-fill {
+  height: 100%;
+  width: calc(var(--fill, 0) * 100%);
+  background: linear-gradient(90deg, #2f7d4a, #e07a46, #c72b3b);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+.audio-card__siren { color: #ffd166; font-size: 0.7rem; }
+.audio-panel__legend {
+  margin-top: 12px;
+  font-size: 0.74rem;
+  color: rgba(255,248,236,0.6);
+  font-style: italic;
+}
+
+/* === Visual aggregates panel (M1 / M3) === */
+.visual-aggregates-panel { grid-column: 1 / -1; }
+.va-tops {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.va-top {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.va-top__title {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255,248,236,0.7);
+  margin: 0 0 6px;
+}
+.va-top__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.va-top__list li {
+  display: grid;
+  grid-template-columns: 18px 1fr auto;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  color: rgba(255,248,236,0.85);
+}
+.va-top__rank {
+  background: rgba(255,209,102,0.18);
+  color: #ffd166;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  text-align: center;
+  font-weight: 700;
+}
+.va-top__label { color: rgba(255,248,236,0.78); }
+.va-top__list strong { color: #fff8ec; font-variant-numeric: tabular-nums; }
+.va-table {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.va-table__row {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(9, 1fr);
+  gap: 6px;
+  font-size: 0.72rem;
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,248,236,0.78);
+  font-variant-numeric: tabular-nums;
+}
+.va-table__row strong { color: #fff8ec; }
+.va-table__row--head {
+  position: sticky;
+  top: 0;
+  background: rgba(20,16,15,0.92);
+  color: rgba(255,248,236,0.6);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.66rem;
+  z-index: 1;
+}
+.visual-aggregates-panel__legend {
+  margin-top: 12px;
+  font-size: 0.74rem;
+  color: rgba(255,248,236,0.6);
+  font-style: italic;
+}
