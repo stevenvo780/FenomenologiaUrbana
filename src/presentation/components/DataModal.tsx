@@ -227,27 +227,90 @@ function ModalContent({
   }
 
   if (kind === 'fieldwork') {
+    const fc = data.field_calibration
+    const matrixDecisions = fc?.collapse_matrix?.decisions ?? {}
+    const friccion = matrixDecisions['friccion_acumulada'] ?? 0
+    const inconcluyente = matrixDecisions['inconcluyente'] ?? 0
+    const colapso = matrixDecisions['colapso_fenomenologico'] ?? 0
+    const photos = fc?.photo_assignments?.n_total ?? 0
+    const videos = fc?.video_assignments?.n_videos ?? 0
     return (
       <div className="modal-grid">
-        <ModalCard title="Dependencia externa declarada">
-          <MetricLine label="Sesiones cargadas" value={`${data.fieldwork.summary.sessions_count}`} />
-          <MetricLine label="Cobertura nodal" value={formatRatio(data.fieldwork.summary.node_coverage_ratio)} />
-          <p>{data.closure.non_fabrication_note}</p>
+        <ModalCard title="Ejercicio propuesto · cerrado">
+          <p>
+            La salida de campo solicitada por la profesora se ejecutó el 2026-05-05 con
+            dos observadores (Steven Vallejo y Jacob Agudelo) sobre 5 nodos del centro
+            de Medellín. El entregable está completo.
+          </p>
+          <MetricLine label="Nodos visitados" value="5 (San Antonio, Parque San Antonio, La Bastilla, Junín, Botero)" />
+          <MetricLine label="Entrevistas codificadas" value="15 (14 Stev + 1 Jacob)" />
+          <MetricLine label="Fotos georreferenciadas" value={`${photos}`} />
+          <MetricLine label="Videos procesados" value={`${videos}`} />
+          <MetricLine label="Inter-rater κ (Stev↔Jacob)" value="0.0 (n=4 nodos compartidos)" />
         </ModalCard>
-        <ModalCard title="Tareas pendientes">
-          {data.fieldwork.pending.map((task) => (
-            <div key={task.task} className="modal-row">
-              <strong>{task.task}</strong>
-              <p>{task.variable} · {task.method}</p>
-            </div>
-          ))}
+
+        <ModalCard title="Lo que se sostiene · pilares defendibles">
+          <div className="modal-row">
+            <strong>junin_paseo | peak_am</strong>
+            <p>C1+C4 · bootstrap 95.6% · sensibilidad 88.0%</p>
+          </div>
+          <div className="modal-row">
+            <strong>plaza_botero | midday</strong>
+            <p>C1+C3 · bootstrap 97.0% · sensibilidad 100% (único caso con C3 confirmatorio)</p>
+          </div>
+          <p>
+            Matriz: {colapso}/36 colapso · {friccion}/36 fricción acumulada · {inconcluyente}/36 inconcluyente.
+          </p>
         </ModalCard>
-        <ModalCard title="Plantillas e instrumentos listos">
-          <p><code>investigacion/data/interim/templates/field_counts_template.csv</code></p>
-          <p><code>investigacion/data/interim/templates/field_notes_template.md</code></p>
-          <p><code>investigacion/data/interim/templates/field_points_template.geojson</code></p>
-          <p><code>investigacion/docs/instrumentos-campo.md</code></p>
-          <p><code>investigacion/docs/etica-campo.md</code></p>
+
+        <ModalCard title="Limitaciones honestas (declaradas, no fingidas)">
+          <div className="modal-row">
+            <strong>C2 ausente</strong>
+            <p>Encuesta cuantitativa de seguridad percibida ≤2/5 no realizada. Sesga el sistema hacia "fricción" antes que "colapso".</p>
+          </div>
+          <div className="modal-row">
+            <strong>Sub-zonas vacías</strong>
+            <p>Coltejer-Ayacucho y "calle del consumo" definidas en el campo pero no muestreadas (sesgo de itinerario).</p>
+          </div>
+          <div className="modal-row">
+            <strong>n=2 observadores</strong>
+            <p>κ con n=2 es estadísticamente débil. Enmarcado como piloto, no medición poblacional.</p>
+          </div>
+        </ModalCard>
+
+        <ModalCard title="Marco funcional para replicar o extender">
+          <p>
+            El pipeline completo es reproducible. Para quien quiera completar los datos
+            o replicar el modelo en otro corredor:
+          </p>
+          <p><code>investigacion/hpc/</code> · 9 scripts (YOLO, audio PANNs, OCR, kappa, bootstrap, geometría)</p>
+          <p><code>investigacion/scripts/</code> · pipeline M-MASS multicapa</p>
+          <p><code>investigacion/data/interim/templates/</code> · plantillas de campo (counts, notes, geojson)</p>
+          <p><code>investigacion/docs/instrumentos-campo.md</code> · protocolo</p>
+          <p><code>investigacion/docs/etica-campo.md</code> · consentimiento, anonimización</p>
+          <p><code>tesis/historico/bitacora-consolidada-2026-05-08.md</code> · trazabilidad</p>
+          <p>
+            Repo público: <a href="https://github.com/stevenvo780/FenomenologiaUrbana" target="_blank" rel="noopener noreferrer">github.com/stevenvo780/FenomenologiaUrbana</a>
+          </p>
+        </ModalCard>
+
+        <ModalCard title="Extensiones opcionales (no bloquean el entregable)">
+          <div className="modal-row">
+            <strong>Cierre de C2</strong>
+            <p>Encuesta de seguridad percibida (escala 1-5 por subtramo) en una jornada adicional. Permite que la regla 3-de-4 opere realmente como 3-de-4.</p>
+          </div>
+          <div className="modal-row">
+            <strong>Muestreo de sub-zonas</strong>
+            <p>Coltejer-Ayacucho y calle del consumo, idealmente en ventanas peak_pm y night.</p>
+          </div>
+          <div className="modal-row">
+            <strong>Ampliar inter-rater</strong>
+            <p>Sumar 2-3 observadores adicionales para que κ sea estadísticamente sólido.</p>
+          </div>
+          <div className="modal-row">
+            <strong>Audio profesional</strong>
+            <p>Grabador de campo dedicado para no saturar la firma armónica (limita reggaetón vs vallenato).</p>
+          </div>
         </ModalCard>
       </div>
     )

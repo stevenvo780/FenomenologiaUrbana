@@ -10,14 +10,14 @@
 
 ---
 
-## 1. Apertura — Stev (1 min)
+## 1. Apertura — Stev (1 min) · 🖥️ slide **`apertura`** (Capítulo 1 · "La fenomenología sola no basta")
 
 - "Nos mandaron a la ciudad a hacer fenomenología. Yo me obsesioné un poco."
 - Lo que se pidió: salir, observar, escribir.
 - Lo que hicimos: salimos los dos, observamos, escribimos, **y además** corrimos un pipeline HPC con dos GPUs sobre fotos, videos, transcripciones y 14+1 entrevistas, construimos una matriz de colapso falsable, y montamos una web.
 - Hoy contamos las dos cosas: la experiencia de campo y lo que el sistema dijo de ella.
 
-## 2. Marco mínimo — Jacob (2 min)
+## 2. Marco mínimo — Jacob (2 min) · 🖥️ slide **`symploke`** (Capítulo 2 · "Triangulación M1+M2+M3+matriz falsable")
 
 - Fenomenología urbana: cómo se *vive* la ciudad antes de cómo se *mide*.
 - Husserl: la ciudad es mundo-de-vida, no dato objetivo previo.
@@ -26,14 +26,14 @@
 - Haraway: conocimiento situado — no hay mirada neutra.
 - La pregunta que cargamos: ¿alcanza con caminar y describir?
 
-## 3. El recorrido — Stev (2 min)
+## 3. El recorrido — Stev (2 min) · 🖥️ slide **`mapa`** (mapa del caso, los 5 nodos del corredor)
 
 - 5 nodos del centro: estación San Antonio, parque San Antonio, pasaje La Bastilla, pasaje Junín, parque Botero.
 - Una jornada (8 a.m. a noche). Los dos llevamos cuaderno, cámara, audio.
 - 34 fotos georreferenciadas, 17 videos, **14 entrevistas a transeúntes y vendedores**.
 - Corredor coherente: por eso pudimos triangular nodo por nodo.
 
-## 4. El choque inter-observador — Jacob (2 min)
+## 4. El choque inter-observador — Jacob (2 min) · 🖥️ slide **`triangulacion`** (panel **InterRater** · κ=0 · parque_san_antonio resaltado)
 
 - Misma plaza, mismo día, dos lecturas opuestas.
 - Parque San Antonio: Stev escribe *"tranquilidad en medio del ruido, no está rota la ventana"*. Yo escribí *"paso histórico del terror, vandalismo apela a Dios"*.
@@ -41,7 +41,7 @@
 - Cuantificado con Cohen's kappa: **κ = 0.0** sobre los 4 nodos compartidos.
 - **Esto no es ruido a corregir: es el dato fenomenológico que la tesis ataca.**
 
-## 5. Lo que el pipeline midió — Stev (3 min)
+## 5. Lo que el pipeline midió — Stev (3 min) · 🖥️ slides **`evidencia`** → **`triangulacion`** (paneles **Audio**, **VisualAggregates**, **CrossValidation**)
 
 - 4 criterios cuantitativos por nodo×franja (9 nodos × 4 franjas = 36 celdas):
   - C1 criminalidad histórica (MEData)
@@ -52,7 +52,7 @@
 - Audio: PANNs sobre 17 videos. Junín tiene música constante (1.0 ratio). Berrío registra el pico de ruido del corpus (-24.3 dB).
 - Cross-validation: el dato visual confirma lo narrado. *"Sofocante en Botero"* → densidad humana máxima 30 personas/frame en parque Berrío. *"Miedo de cruzar San Antonio"* → vehicle_intensity 0.378 (tope del corpus).
 
-## 6. La matriz — Jacob (2 min)
+## 6. La matriz — Jacob (2 min) · 🖥️ slide **`triangulacion`** (panel **CollapseMatrix** + **Sensitivity** · 2 pilares con outline dorado)
 
 - Resultado: **0/36 colapsos · 6/36 fricción acumulada · 30/36 inconcluyente**.
 - Cero colapsos confirmados. Y eso está bien — significa que la regla podía fallar y no la activamos sin evidencia.
@@ -61,7 +61,7 @@
   - **Botero midday**: C1+C3 (criminalidad + testimonios negativos), 97% robusta.
 - 4 celdas frágiles: dependen del umbral exacto. Lo declaramos.
 
-## 7. Limitaciones honestas — Stev (2 min)
+## 7. Limitaciones honestas — Stev (2 min) · 🖥️ slide **`triangulacion`** (panel **SubZones** · sub-zonas vacías) + abrir modal **"Estado del proyecto"** o **"Campo, ética e instrumentos"**
 
 - C2 ausente entera (no alcanzamos a hacer encuesta cuantitativa). Sesga el sistema hacia "fricción" antes que "colapso".
 - Sub-zonas Coltejer-Ayacucho y "calle del consumo" definidas porque salieron en entrevistas — pero no las muestreamos. El campo nos pidió ir, no fuimos.
@@ -69,7 +69,7 @@
 - Audio celular satura la firma armónica → no podemos confirmar reggaetón vs vallenato por modelo, solo por ratio de actividad musical.
 - 2 observadores es estadísticamente débil para κ. Lo enmarcamos como **piloto**, no medición definitiva.
 
-## 8. Tesis — Jacob (2 min)
+## 8. Tesis — Jacob (2 min) · 🖥️ slide **`heterotopias`** (lugares y tensiones, contraste Stev↔Jacob en parque_san_antonio)
 
 - **La fenomenología sola no basta para abordar la ciudad.**
 - κ=0 lo prueba: dos miradas formadas producen lecturas opuestas sin instrumento que arbitre.
@@ -79,7 +79,7 @@
   - Lo que no podemos afirmar (30 inconcluyentes).
 - Eso no es fracaso fenomenológico: es la fenomenología **operada** con anclaje empírico.
 
-## 9. Cierre — Stev (2 min)
+## 9. Cierre — Stev (2 min) · 🖥️ slide **`cierre`** (Capítulo 16 · 2 pilares · agenda explícita · botón Repositorio)
 
 - Lo que nos llevamos:
   - La fenomenología no se rinde ante los datos: pide más que ella misma.
@@ -93,20 +93,22 @@
 
 ---
 
-## Reparto rápido (referencia)
+## Reparto rápido (referencia con slide)
 
-| # | Min | Quien | Tema |
-|---|---|---|---|
-| 1 | 0–1 | Stev | Apertura + reconocimiento del over-engineering |
-| 2 | 1–3 | Jacob | Marco fenomenológico mínimo |
-| 3 | 3–5 | Stev | El recorrido, qué hicimos en campo |
-| 4 | 5–7 | Jacob | Choque inter-observador (κ=0) |
-| 5 | 7–10 | Stev | Pipeline cuantitativo + cross-val |
-| 6 | 10–12 | Jacob | Matriz: 0/6/30 + 2 pilares |
-| 7 | 12–14 | Stev | Limitaciones (sin sobre-disculparse) |
-| 8 | 14–16 | Jacob | Tesis: fenomenología no basta |
-| 9 | 16–18 | Stev | Cierre + agenda |
-| Q&A | 18–20 | ambos | Preguntas |
+| # | Min | Quien | Slide | Tema |
+|---|---|---|---|---|
+| 1 | 0–1 | Stev | `apertura` | Apertura + reconocimiento del over-engineering |
+| 2 | 1–3 | Jacob | `symploke` | Marco fenomenológico mínimo |
+| 3 | 3–5 | Stev | `mapa` | El recorrido, qué hicimos en campo |
+| 4 | 5–7 | Jacob | `triangulacion` (InterRater) | Choque inter-observador (κ=0) |
+| 5 | 7–10 | Stev | `evidencia` → `triangulacion` (Audio + Visual + CrossVal) | Pipeline cuantitativo + cross-val |
+| 6 | 10–12 | Jacob | `triangulacion` (CollapseMatrix + Sensitivity) | Matriz: 0/6/30 + 2 pilares |
+| 7 | 12–14 | Stev | `triangulacion` (SubZones) + modal pendientes | Limitaciones (sin sobre-disculparse) |
+| 8 | 14–16 | Jacob | `heterotopias` | Tesis: fenomenología no basta |
+| 9 | 16–18 | Stev | `cierre` | Cierre + agenda + botón Repositorio |
+| Q&A | 18–20 | ambos | (libre, modal "Estado" si necesario) | Preguntas |
+
+**Slides del deck que NO se usan en el guion** (15 min son insuficientes para abarcar todo): `perfiles`, `presion`, `simulacion`, `multitudes`, `estres`, `asfixia`, `ambiente`, `visibilidad`, `economia`, `historia`. Quedan como respaldo si una pregunta las hace pertinentes (ej. simulación 640k agentes si el jurado pregunta por la capa M-MASS).
 
 ---
 
