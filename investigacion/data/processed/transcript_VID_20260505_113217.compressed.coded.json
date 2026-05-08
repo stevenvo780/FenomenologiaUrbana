@@ -1,0 +1,61 @@
+{
+  "source": "/datos/repos/FenomenologiaUrbana/investigacion/data/processed/transcript_VID_20260505_113217.compressed.json",
+  "video": "VID_20260505_113217.compressed.mp4",
+  "node": "plaza_botero",
+  "window": null,
+  "captured_at": "2026-05-05T11:32:17-05:00",
+  "language": "es",
+  "model": "qwen3:14b",
+  "codes": [
+    "DESEABLE",
+    "DIFICIL_DE_VIVIR",
+    "AMBIVALENTE"
+  ],
+  "evidence": [
+    {
+      "code": "DESEABLE",
+      "quote": "Todo es perfecto. Ah, que tal. Voy a estar aquí. Eso me causa gustos.",
+      "rationale": "Expresión explícita de satisfacción y deseo de permanencia en el lugar."
+    },
+    {
+      "code": "DIFICIL_DE_VIVIR",
+      "quote": "No hay mucho buen día aquí, que siempre tenía como no, ya no está ni el cero",
+      "rationale": "Menciona la ausencia de condiciones positivas y una percepción de deterioro."
+    },
+    {
+      "code": "AMBIVALENTE",
+      "quote": "es una cosa muy muy buena... pero, pero hay que artícalo por aquí, claro",
+      "rationale": "Contradicción entre valoraciones positivas y reconocimiento de necesidades de mejora."
+    }
+  ],
+  "raw_classifications": [
+    {
+      "node": "plaza_botero",
+      "window": null,
+      "codes": [
+        "DESEABLE",
+        "DIFICIL_DE_VIVIR",
+        "AMBIVALENTE"
+      ],
+      "evidence": [
+        {
+          "code": "DESEABLE",
+          "quote": "Todo es perfecto. Ah, que tal. Voy a estar aquí. Eso me causa gustos.",
+          "rationale": "Expresión explícita de satisfacción y deseo de permanencia en el lugar."
+        },
+        {
+          "code": "DIFICIL_DE_VIVIR",
+          "quote": "No hay mucho buen día aquí, que siempre tenía como no, ya no está ni el cero",
+          "rationale": "Menciona la ausencia de condiciones positivas y una percepción de deterioro."
+        },
+        {
+          "code": "AMBIVALENTE",
+          "quote": "es una cosa muy muy buena... pero, pero hay que artícalo por aquí, claro",
+          "rationale": "Contradicción entre valoraciones positivas y reconocimiento de necesidades de mejora."
+        }
+      ]
+    }
+  ],
+  "node_textual": "plaza_botero",
+  "window_textual": null
+}

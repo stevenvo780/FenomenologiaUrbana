@@ -249,23 +249,10 @@ def build_matrix(case_model_path: Path, c1: dict, c2: dict, c3: dict, c4: dict) 
         except Exception:
             pass
 
-    # C1 evaluado por franja con la proyección horaria documentada.
-    # Para cada franja: comparamos su tasa por hora del último mes disponible
-    # (o el promedio reciente) contra el p75 propio de la franja.
-    c1_high_by_window: dict[str, bool] = {}
+    # C1 por franja: leemos directamente c1_high_by_window precomputado en load_c1_crime,
+    # que evalúa el corte p75 por franja sobre la serie histórica MEData (no sobre la mediana).
     proj = c1.get("hourly_projection") or {}
-    weights = proj.get("weights") or {}
-    p75_window = proj.get("p75_per_window_cases_per_hour") or {}
-    if proj and weights and p75_window:
-        # Elegimos el promedio mensual de los últimos 12 meses como referencia.
-        series = c1.get("monthly_series_total") or {}
-        # Si no llega series_total embebido, tomamos el max_month como conservador.
-        recent_avg = c1.get("median_month") or 0
-        for w, weight in weights.items():
-            hours = (proj.get("hours_per_window") or {}).get(w, 1) or 1
-            cases_w = recent_avg * weight
-            rate = cases_w / hours
-            c1_high_by_window[w] = rate >= (p75_window.get(w) or 1e9)
+    c1_high_by_window: dict[str, bool] = dict(c1.get("c1_high_by_window") or {})
 
     cells = {}
     for n in nodes:

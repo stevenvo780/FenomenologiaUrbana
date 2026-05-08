@@ -1,0 +1,22 @@
+{
+  "source": "/datos/repos/FenomenologiaUrbana/investigacion/data/processed/transcript_VID_20260505_154051.compressed.json",
+  "video": "VID_20260505_154051.compressed.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T15:40:51-05:00",
+  "language": "es",
+  "model": "heuristic-empty",
+  "codes": [],
+  "evidence": [],
+  "raw_classifications": [
+    {
+      "node": null,
+      "window": null,
+      "codes": [],
+      "evidence": [],
+      "reason": "texto insuficiente (0 chars)"
+    }
+  ],
+  "node_textual": null,
+  "window_textual": null
+}

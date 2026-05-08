@@ -3684,21 +3684,20 @@
     "collapse_matrix": {
       "rule": "3-de-4 entre C1 (crimen) / C2 (seguridad) / C3 (habitabilidad) / C4 (saturación)",
       "decisions": {
-        "flujo_ordinario": 2,
-        "inconcluyente": 33,
-        "friccion_acumulada": 1
+        "friccion_acumulada": 4,
+        "inconcluyente": 32
       },
       "cells": [
         {
           "key": "san_antonio_metro|peak_am",
           "node": "san_antonio_metro",
           "window": "peak_am",
-          "decision": "flujo_ordinario",
-          "C1": false,
+          "decision": "friccion_acumulada",
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 2
         },
         {
@@ -3706,11 +3705,11 @@
           "node": "san_antonio_metro",
           "window": "midday",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3718,11 +3717,11 @@
           "node": "san_antonio_metro",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3730,11 +3729,11 @@
           "node": "san_antonio_metro",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3742,11 +3741,11 @@
           "node": "parque_san_antonio",
           "window": "peak_am",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3754,11 +3753,11 @@
           "node": "parque_san_antonio",
           "window": "midday",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3766,11 +3765,11 @@
           "node": "parque_san_antonio",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3778,11 +3777,11 @@
           "node": "parque_san_antonio",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3790,11 +3789,11 @@
           "node": "palacio_nacional",
           "window": "peak_am",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3802,11 +3801,11 @@
           "node": "palacio_nacional",
           "window": "midday",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3814,11 +3813,11 @@
           "node": "palacio_nacional",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3826,47 +3825,47 @@
           "node": "palacio_nacional",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
           "key": "junin_paseo|peak_am",
           "node": "junin_paseo",
           "window": "peak_am",
-          "decision": "flujo_ordinario",
-          "C1": false,
+          "decision": "friccion_acumulada",
+          "C1": true,
           "C2": false,
           "C3": false,
-          "C4": false,
-          "conditions_met": 0,
+          "C4": true,
+          "conditions_met": 2,
           "coverage": 2
         },
         {
           "key": "junin_paseo|midday",
           "node": "junin_paseo",
           "window": "midday",
-          "decision": "inconcluyente",
-          "C1": false,
+          "decision": "friccion_acumulada",
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
-          "coverage": 1
+          "conditions_met": 1,
+          "coverage": 2
         },
         {
           "key": "junin_paseo|peak_pm",
           "node": "junin_paseo",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3874,11 +3873,11 @@
           "node": "junin_paseo",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3886,11 +3885,11 @@
           "node": "oriental_cruce",
           "window": "peak_am",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3898,11 +3897,11 @@
           "node": "oriental_cruce",
           "window": "midday",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3910,11 +3909,11 @@
           "node": "oriental_cruce",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3922,11 +3921,11 @@
           "node": "oriental_cruce",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3934,11 +3933,11 @@
           "node": "parque_berrio",
           "window": "peak_am",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3946,10 +3945,10 @@
           "node": "parque_berrio",
           "window": "midday",
           "decision": "friccion_acumulada",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
-          "C4": true,
+          "C4": false,
           "conditions_met": 1,
           "coverage": 2
         },
@@ -3958,11 +3957,11 @@
           "node": "parque_berrio",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3970,11 +3969,11 @@
           "node": "parque_berrio",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3982,11 +3981,11 @@
           "node": "carabobo_cultural",
           "window": "peak_am",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -3994,11 +3993,11 @@
           "node": "carabobo_cultural",
           "window": "midday",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4006,11 +4005,11 @@
           "node": "carabobo_cultural",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4018,11 +4017,11 @@
           "node": "carabobo_cultural",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4030,11 +4029,11 @@
           "node": "plaza_botero",
           "window": "peak_am",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4042,11 +4041,11 @@
           "node": "plaza_botero",
           "window": "midday",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4054,11 +4053,11 @@
           "node": "plaza_botero",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4066,11 +4065,11 @@
           "node": "plaza_botero",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4078,11 +4077,11 @@
           "node": "museo_antioquia",
           "window": "peak_am",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4090,11 +4089,11 @@
           "node": "museo_antioquia",
           "window": "midday",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4102,11 +4101,11 @@
           "node": "museo_antioquia",
           "window": "peak_pm",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         },
         {
@@ -4114,11 +4113,11 @@
           "node": "museo_antioquia",
           "window": "night",
           "decision": "inconcluyente",
-          "C1": false,
+          "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
-          "conditions_met": 0,
+          "conditions_met": 1,
           "coverage": 1
         }
       ]
@@ -4202,13 +4201,13 @@
       }
     },
     "video_assignments": {
-      "n_videos": 9,
-      "n_with_node": 9,
+      "n_videos": 17,
+      "n_with_node": 17,
       "by_confidence": {
-        "high": 2,
-        "medium": 4,
+        "high": 5,
+        "medium": 7,
         "low": 2,
-        "very_low": 1
+        "very_low": 3
       },
       "assignments": [
         {
@@ -4252,12 +4251,60 @@
           "delta_seconds": 224.0
         },
         {
+          "video": "VID_20260505_094243902_02.compressed.mp4",
+          "ts": "2026-05-05T09:42:43",
+          "window": "peak_am",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 224.0
+        },
+        {
+          "video": "VID_20260505_095806.compressed.mp4",
+          "ts": "2026-05-05T09:58:06",
+          "window": "peak_am",
+          "node": "junin_paseo",
+          "confidence": "medium",
+          "delta_seconds": 825.0
+        },
+        {
+          "video": "VID_20260505_100656.compressed.mp4",
+          "ts": "2026-05-05T10:06:56",
+          "window": "midday",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 295.0
+        },
+        {
+          "video": "VID_20260505_101033.compressed.mp4",
+          "ts": "2026-05-05T10:10:33",
+          "window": "midday",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 78.0
+        },
+        {
+          "video": "VID_20260505_104808.compressed.mp4",
+          "ts": "2026-05-05T10:48:08",
+          "window": "midday",
+          "node": "parque_berrio",
+          "confidence": "medium",
+          "delta_seconds": 385.0
+        },
+        {
           "video": "VID_20260505_110910.mp4",
           "ts": "2026-05-05T11:09:10",
           "window": "midday",
           "node": "parque_berrio",
           "confidence": "medium",
           "delta_seconds": 810.0
+        },
+        {
+          "video": "VID_20260505_112136.compressed.mp4",
+          "ts": "2026-05-05T11:21:36",
+          "window": "midday",
+          "node": "parque_berrio",
+          "confidence": "medium",
+          "delta_seconds": 1556.0
         },
         {
           "video": "VID_20260505_113217.compressed.mp4",
@@ -4274,6 +4321,22 @@
           "node": "parque_berrio",
           "confidence": "low",
           "delta_seconds": 3007.0
+        },
+        {
+          "video": "VID_20260505_154051.compressed.mp4",
+          "ts": "2026-05-05T15:40:51",
+          "window": "peak_pm",
+          "node": "parque_berrio",
+          "confidence": "very_low",
+          "delta_seconds": 17111.0
+        },
+        {
+          "video": "VID_20260505_155144.compressed.mp4",
+          "ts": "2026-05-05T15:51:44",
+          "window": "peak_pm",
+          "node": "parque_berrio",
+          "confidence": "very_low",
+          "delta_seconds": 17764.0
         },
         {
           "video": "VID_20260505_213002.mp4",
