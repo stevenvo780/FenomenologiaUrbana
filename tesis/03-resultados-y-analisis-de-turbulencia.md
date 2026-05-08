@@ -182,21 +182,35 @@ Aunque hay datos automáticos sólidos por foto y por video, **no se puede decla
 
 Aplicar la regla 3-de-4 a este estado parcial daría falsos negativos en todas las celdas. Por eso el reporte se limita a describir el corpus procesado y deja la regla suspendida en sus celdas en `inconcluyente` hasta que las cuatro condiciones tengan al menos una pasada de ingesta.
 
-### Primera matriz de colapso construida
+### Primera matriz de colapso construida y actualizada
 
-A pesar de los faltantes, la matriz `data/processed/collapse_matrix.json` ya se computa con C1 (proyección horaria documentada) y C4 (saturación de video por nodo). El reparto inicial de las 36 celdas es:
+La matriz `data/processed/collapse_matrix.json` se computa cada vez que entran nuevos datos. Tras procesar los 17 videos POV de la jornada (originales y comprimidos en torre HPC), el reparto de las 36 celdas es:
 
 | Decisión | Celdas |
 | --- | ---: |
-| `inconcluyente` | 33 |
-| `flujo_ordinario` | 2 |
+| `inconcluyente` | 32 |
+| `flujo_ordinario` | 3 |
 | `friccion_acumulada` | **1** |
 
-La única celda con fricción acumulada en esta primera pasada es **`parque_berrio | midday`**, que cumple C4 (`saturation_p75` por encima del p75 global) sin convergencia con las otras condiciones. Las dos celdas en `flujo_ordinario` son `san_antonio_metro | peak_am` y `junin_paseo | peak_am`, donde C1, C4 y la cobertura disponible no superan ningún umbral. El estado `friccion_acumulada` es importante por sí mismo: dice que hay una franja-evento donde la materialidad (saturación visible y sonora en video) ya alerta, aunque el resto de fuentes todavía no esté disponible para confirmar o descartar colapso.
+La única celda con fricción acumulada en esta pasada es **`junin_paseo | peak_am`**, que cumple C4 (`saturation_p75 ≈ 0.465`, por encima del p75 global) sin convergencia con las otras condiciones. Las tres celdas en `flujo_ordinario` son `san_antonio_metro | peak_am` (`sat_p75 ≈ 0.328`), `junin_paseo | midday` (`0.281`) y `parque_berrio | midday` (`0.395`). El estado `friccion_acumulada` es importante por sí mismo: dice que hay una franja-evento donde la materialidad —saturación visible y sonora en video, conteo de personas únicas y velocidad aparente del paso— ya alerta, aunque el resto de fuentes todavía no esté disponible para confirmar o descartar colapso.
+
+Esta primera lectura permite además discutir la **estabilidad del método ante nueva evidencia**. En una pasada anterior con seis videos, la celda en fricción era `parque_berrio | midday`. Al ingresar los nueve videos comprimidos restantes y recalcular, la celda en fricción se desplazó a `junin_paseo | peak_am` y `parque_berrio | midday` cayó a `flujo_ordinario`. Este desplazamiento no es una contradicción: indica que la primera celda fue señalada por una muestra pequeña que se diluyó al ampliar la cobertura, mientras que la nueva celda emergió porque concentra videos del comienzo de la jornada con densidad alta. Una evaluación rigurosa de la categoría exige que las celdas reportadas como `friccion_acumulada` o `colapso_fenomenologico` sigan siéndolo bajo distintos cortes muestrales; este criterio se documentará en futuras pasadas como "estabilidad bajo bootstrap".
 
 El supuesto distribucional de C1 (peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15, derivado de Cohen & Felson 1979 y Brantingham & Brantingham, ver `data/processed/c1_hourly_projection.json`) hace que el percentil 75 por franja sea más alto en `peak_pm` (62.5 hurtos/hora proyectados) que en las otras tres franjas. La mediana mensual histórica produce tasas por debajo de ese percentil, lo cual implica que en el "mes típico" C1_high es `false` para todas las franjas. Solo los meses pico de la serie (mayo y julio de varios años) lo activarían — pero la celda no se evalúa contra una franja específica de un mes, sino contra el supuesto de tasa típica.
 
-Este reporte parcial cumple su función académica: muestra que el pipeline produce decisiones legibles con cobertura declarada y que la regla 3-de-4 se respeta sin atajos. La matriz se reconstruirá automáticamente cada vez que entren más datos a cualquiera de las cuatro condiciones.
+### Cobertura por nodo del corpus procesado
+
+| Nodo | Fotos asignadas (GPS haversine) | Videos asignados (correlación temporal) | Confianza dominante |
+| --- | ---: | ---: | --- |
+| `junin_paseo` | 12 | 4 | high/medium |
+| `san_antonio_metro` | 11 | 3 | medium |
+| `parque_berrio` | 9 | 3 | medium/low |
+| `palacio_nacional` | 2 | 0 | — |
+| Resto de nodos | 0 | 0 | — |
+
+La asignación de videos se realiza buscando, para cada video sin GPS embebido, la foto temporalmente más cercana y heredando su nodo (script `assign_videos_by_time.py`). La confianza decrece con `delta_seconds`: `high` para Δ < 300 s, `medium` para Δ < 1800 s, `low` para Δ < 7200 s. Las franjas `peak_pm` y `night` quedan con confianza `very_low` (Δ > 17 000 s) porque no hay fotos georreferenciadas en esas ventanas — esto es un recordatorio de que la cobertura temporal del campo se concentró en la mañana del 5 de mayo.
+
+Este reporte parcial cumple su función académica: muestra que el pipeline produce decisiones legibles con cobertura declarada, que las decisiones cambian de manera trazable con la evidencia, y que la regla 3-de-4 se respeta sin atajos. La matriz se reconstruirá cada vez que entren más datos a cualquiera de las cuatro condiciones, y la versión utilizada para la sustentación quedará versionada en el repositorio.
 
 ## 3.13. Resultados que sí pueden sostenerse y resultados que no
 
