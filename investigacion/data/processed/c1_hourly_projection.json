@@ -1,0 +1,7320 @@
+{
+  "supuesto": "Criminología ambiental (Cohen & Felson 1979; Brantingham & Brantingham). Pesos por franja sobre total mensual: peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15. Horas por franja: peak_am 3h, midday 5h, peak_pm 5h, night 3h. C1_high se cumple cuando la tasa por hora proyectada de una franja-mes supera su percentil 75 dentro de la propia franja, o el percentil 75 global. La tesis se compromete a reevaluar el supuesto cuando MEData publique microdatos horarios.",
+  "weights": {
+    "peak_am": 0.2,
+    "midday": 0.2,
+    "peak_pm": 0.45,
+    "night": 0.15
+  },
+  "hours_per_window": {
+    "peak_am": 3,
+    "midday": 5,
+    "peak_pm": 5,
+    "night": 3
+  },
+  "n_months": 251,
+  "monthly_series_total": {
+    "2003-01": 60,
+    "2003-02": 62,
+    "2003-03": 64,
+    "2003-04": 106,
+    "2003-05": 98,
+    "2003-06": 86,
+    "2003-07": 174,
+    "2003-08": 144,
+    "2003-09": 198,
+    "2003-10": 172,
+    "2003-11": 154,
+    "2003-12": 122,
+    "2004-01": 200,
+    "2004-02": 138,
+    "2004-03": 100,
+    "2004-04": 122,
+    "2004-05": 112,
+    "2004-06": 142,
+    "2004-07": 168,
+    "2004-08": 148,
+    "2004-09": 142,
+    "2004-10": 120,
+    "2004-11": 164,
+    "2004-12": 134,
+    "2005-01": 106,
+    "2005-02": 152,
+    "2005-03": 166,
+    "2005-04": 142,
+    "2005-05": 152,
+    "2005-06": 186,
+    "2005-07": 186,
+    "2005-08": 250,
+    "2005-09": 200,
+    "2005-10": 154,
+    "2005-11": 272,
+    "2005-12": 300,
+    "2006-01": 150,
+    "2006-02": 120,
+    "2006-03": 86,
+    "2006-04": 62,
+    "2006-05": 122,
+    "2006-06": 46,
+    "2006-07": 80,
+    "2006-08": 48,
+    "2006-09": 74,
+    "2006-10": 50,
+    "2006-11": 82,
+    "2006-12": 58,
+    "2007-01": 12,
+    "2007-02": 48,
+    "2007-03": 80,
+    "2007-04": 78,
+    "2007-05": 115,
+    "2007-06": 76,
+    "2007-07": 76,
+    "2007-08": 118,
+    "2007-09": 52,
+    "2007-10": 98,
+    "2007-11": 90,
+    "2007-12": 86,
+    "2008-01": 100,
+    "2008-02": 116,
+    "2008-03": 60,
+    "2008-04": 98,
+    "2008-05": 108,
+    "2008-06": 108,
+    "2008-07": 162,
+    "2008-08": 114,
+    "2008-09": 154,
+    "2008-10": 154,
+    "2008-11": 134,
+    "2008-12": 92,
+    "2009-01": 130,
+    "2009-02": 60,
+    "2009-03": 128,
+    "2009-04": 88,
+    "2009-05": 82,
+    "2009-06": 14,
+    "2009-07": 54,
+    "2009-08": 82,
+    "2009-09": 80,
+    "2009-10": 80,
+    "2009-11": 46,
+    "2009-12": 102,
+    "2010-01": 90,
+    "2010-02": 94,
+    "2010-03": 68,
+    "2010-04": 18,
+    "2010-05": 76,
+    "2010-06": 88,
+    "2010-07": 90,
+    "2010-08": 56,
+    "2010-09": 76,
+    "2010-10": 60,
+    "2010-11": 88,
+    "2010-12": 66,
+    "2011-01": 42,
+    "2011-02": 51,
+    "2011-03": 47,
+    "2011-04": 69,
+    "2011-05": 32,
+    "2011-06": 40,
+    "2011-07": 35,
+    "2011-08": 49,
+    "2011-09": 31,
+    "2011-10": 38,
+    "2011-11": 59,
+    "2011-12": 52,
+    "2012-01": 109,
+    "2012-02": 70,
+    "2012-03": 77,
+    "2012-04": 163,
+    "2012-05": 50,
+    "2012-06": 51,
+    "2012-07": 66,
+    "2012-08": 52,
+    "2012-09": 68,
+    "2012-10": 51,
+    "2012-11": 33,
+    "2012-12": 100,
+    "2013-01": 271,
+    "2013-02": 65,
+    "2013-03": 53,
+    "2013-04": 75,
+    "2013-05": 50,
+    "2013-06": 98,
+    "2013-07": 87,
+    "2013-08": 103,
+    "2013-09": 247,
+    "2013-10": 494,
+    "2013-11": 219,
+    "2013-12": 235,
+    "2014-01": 382,
+    "2014-02": 269,
+    "2014-03": 258,
+    "2014-04": 111,
+    "2014-05": 181,
+    "2014-06": 256,
+    "2014-07": 318,
+    "2014-08": 183,
+    "2014-09": 375,
+    "2014-10": 246,
+    "2014-11": 234,
+    "2014-12": 191,
+    "2015-01": 354,
+    "2015-02": 531,
+    "2015-03": 366,
+    "2015-04": 424,
+    "2015-05": 466,
+    "2015-06": 411,
+    "2015-07": 498,
+    "2015-08": 476,
+    "2015-09": 480,
+    "2015-10": 467,
+    "2015-11": 352,
+    "2015-12": 387,
+    "2016-01": 293,
+    "2016-02": 456,
+    "2016-03": 410,
+    "2016-04": 514,
+    "2016-05": 430,
+    "2016-06": 362,
+    "2016-07": 413,
+    "2016-08": 522,
+    "2016-09": 617,
+    "2016-10": 700,
+    "2016-11": 740,
+    "2016-12": 697,
+    "2017-01": 525,
+    "2017-02": 638,
+    "2017-03": 742,
+    "2017-04": 651,
+    "2017-05": 771,
+    "2017-06": 618,
+    "2017-07": 607,
+    "2017-08": 959,
+    "2017-09": 801,
+    "2017-10": 1127,
+    "2017-11": 1156,
+    "2017-12": 1008,
+    "2018-01": 712,
+    "2018-02": 854,
+    "2018-03": 861,
+    "2018-04": 1055,
+    "2018-05": 1146,
+    "2018-06": 1095,
+    "2018-07": 1034,
+    "2018-08": 1155,
+    "2018-09": 1070,
+    "2018-10": 1085,
+    "2018-11": 1086,
+    "2018-12": 930,
+    "2019-01": 838,
+    "2019-02": 909,
+    "2019-03": 1239,
+    "2019-04": 1050,
+    "2019-05": 1168,
+    "2019-06": 1153,
+    "2019-07": 1303,
+    "2019-08": 1198,
+    "2019-09": 1070,
+    "2019-10": 1201,
+    "2019-11": 1359,
+    "2019-12": 1707,
+    "2020-01": 1400,
+    "2020-02": 869,
+    "2020-03": 740,
+    "2020-04": 158,
+    "2020-05": 348,
+    "2020-06": 429,
+    "2020-07": 574,
+    "2020-08": 692,
+    "2020-09": 696,
+    "2020-10": 775,
+    "2020-11": 757,
+    "2020-12": 848,
+    "2021-01": 603,
+    "2021-02": 601,
+    "2021-03": 680,
+    "2021-04": 613,
+    "2021-05": 719,
+    "2021-06": 746,
+    "2021-07": 733,
+    "2021-08": 820,
+    "2021-09": 749,
+    "2021-10": 978,
+    "2021-11": 841,
+    "2021-12": 838,
+    "2022-01": 761,
+    "2022-02": 788,
+    "2022-03": 886,
+    "2022-04": 904,
+    "2022-05": 872,
+    "2022-06": 712,
+    "2022-07": 724,
+    "2022-08": 879,
+    "2022-09": 915,
+    "2022-10": 932,
+    "2022-11": 951,
+    "2022-12": 956,
+    "2023-01": 609,
+    "2023-02": 618,
+    "2023-03": 643,
+    "2023-04": 641,
+    "2023-05": 709,
+    "2023-06": 706,
+    "2023-07": 662,
+    "2023-08": 515,
+    "2023-09": 324,
+    "2023-10": 276,
+    "2023-11": 185
+  },
+  "projection": {
+    "rows": [
+      {
+        "month": "2003-01",
+        "window": "peak_am",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2003-01",
+        "window": "midday",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 2.4
+      },
+      {
+        "month": "2003-01",
+        "window": "peak_pm",
+        "monthly_total": 60,
+        "projected_cases": 27.0,
+        "projected_per_hour": 5.4
+      },
+      {
+        "month": "2003-01",
+        "window": "night",
+        "monthly_total": 60,
+        "projected_cases": 9.0,
+        "projected_per_hour": 3.0
+      },
+      {
+        "month": "2003-02",
+        "window": "peak_am",
+        "monthly_total": 62,
+        "projected_cases": 12.4,
+        "projected_per_hour": 4.133
+      },
+      {
+        "month": "2003-02",
+        "window": "midday",
+        "monthly_total": 62,
+        "projected_cases": 12.4,
+        "projected_per_hour": 2.48
+      },
+      {
+        "month": "2003-02",
+        "window": "peak_pm",
+        "monthly_total": 62,
+        "projected_cases": 27.9,
+        "projected_per_hour": 5.58
+      },
+      {
+        "month": "2003-02",
+        "window": "night",
+        "monthly_total": 62,
+        "projected_cases": 9.3,
+        "projected_per_hour": 3.1
+      },
+      {
+        "month": "2003-03",
+        "window": "peak_am",
+        "monthly_total": 64,
+        "projected_cases": 12.8,
+        "projected_per_hour": 4.267
+      },
+      {
+        "month": "2003-03",
+        "window": "midday",
+        "monthly_total": 64,
+        "projected_cases": 12.8,
+        "projected_per_hour": 2.56
+      },
+      {
+        "month": "2003-03",
+        "window": "peak_pm",
+        "monthly_total": 64,
+        "projected_cases": 28.8,
+        "projected_per_hour": 5.76
+      },
+      {
+        "month": "2003-03",
+        "window": "night",
+        "monthly_total": 64,
+        "projected_cases": 9.6,
+        "projected_per_hour": 3.2
+      },
+      {
+        "month": "2003-04",
+        "window": "peak_am",
+        "monthly_total": 106,
+        "projected_cases": 21.2,
+        "projected_per_hour": 7.067
+      },
+      {
+        "month": "2003-04",
+        "window": "midday",
+        "monthly_total": 106,
+        "projected_cases": 21.2,
+        "projected_per_hour": 4.24
+      },
+      {
+        "month": "2003-04",
+        "window": "peak_pm",
+        "monthly_total": 106,
+        "projected_cases": 47.7,
+        "projected_per_hour": 9.54
+      },
+      {
+        "month": "2003-04",
+        "window": "night",
+        "monthly_total": 106,
+        "projected_cases": 15.9,
+        "projected_per_hour": 5.3
+      },
+      {
+        "month": "2003-05",
+        "window": "peak_am",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 6.533
+      },
+      {
+        "month": "2003-05",
+        "window": "midday",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 3.92
+      },
+      {
+        "month": "2003-05",
+        "window": "peak_pm",
+        "monthly_total": 98,
+        "projected_cases": 44.1,
+        "projected_per_hour": 8.82
+      },
+      {
+        "month": "2003-05",
+        "window": "night",
+        "monthly_total": 98,
+        "projected_cases": 14.7,
+        "projected_per_hour": 4.9
+      },
+      {
+        "month": "2003-06",
+        "window": "peak_am",
+        "monthly_total": 86,
+        "projected_cases": 17.2,
+        "projected_per_hour": 5.733
+      },
+      {
+        "month": "2003-06",
+        "window": "midday",
+        "monthly_total": 86,
+        "projected_cases": 17.2,
+        "projected_per_hour": 3.44
+      },
+      {
+        "month": "2003-06",
+        "window": "peak_pm",
+        "monthly_total": 86,
+        "projected_cases": 38.7,
+        "projected_per_hour": 7.74
+      },
+      {
+        "month": "2003-06",
+        "window": "night",
+        "monthly_total": 86,
+        "projected_cases": 12.9,
+        "projected_per_hour": 4.3
+      },
+      {
+        "month": "2003-07",
+        "window": "peak_am",
+        "monthly_total": 174,
+        "projected_cases": 34.8,
+        "projected_per_hour": 11.6
+      },
+      {
+        "month": "2003-07",
+        "window": "midday",
+        "monthly_total": 174,
+        "projected_cases": 34.8,
+        "projected_per_hour": 6.96
+      },
+      {
+        "month": "2003-07",
+        "window": "peak_pm",
+        "monthly_total": 174,
+        "projected_cases": 78.3,
+        "projected_per_hour": 15.66
+      },
+      {
+        "month": "2003-07",
+        "window": "night",
+        "monthly_total": 174,
+        "projected_cases": 26.1,
+        "projected_per_hour": 8.7
+      },
+      {
+        "month": "2003-08",
+        "window": "peak_am",
+        "monthly_total": 144,
+        "projected_cases": 28.8,
+        "projected_per_hour": 9.6
+      },
+      {
+        "month": "2003-08",
+        "window": "midday",
+        "monthly_total": 144,
+        "projected_cases": 28.8,
+        "projected_per_hour": 5.76
+      },
+      {
+        "month": "2003-08",
+        "window": "peak_pm",
+        "monthly_total": 144,
+        "projected_cases": 64.8,
+        "projected_per_hour": 12.96
+      },
+      {
+        "month": "2003-08",
+        "window": "night",
+        "monthly_total": 144,
+        "projected_cases": 21.6,
+        "projected_per_hour": 7.2
+      },
+      {
+        "month": "2003-09",
+        "window": "peak_am",
+        "monthly_total": 198,
+        "projected_cases": 39.6,
+        "projected_per_hour": 13.2
+      },
+      {
+        "month": "2003-09",
+        "window": "midday",
+        "monthly_total": 198,
+        "projected_cases": 39.6,
+        "projected_per_hour": 7.92
+      },
+      {
+        "month": "2003-09",
+        "window": "peak_pm",
+        "monthly_total": 198,
+        "projected_cases": 89.1,
+        "projected_per_hour": 17.82
+      },
+      {
+        "month": "2003-09",
+        "window": "night",
+        "monthly_total": 198,
+        "projected_cases": 29.7,
+        "projected_per_hour": 9.9
+      },
+      {
+        "month": "2003-10",
+        "window": "peak_am",
+        "monthly_total": 172,
+        "projected_cases": 34.4,
+        "projected_per_hour": 11.467
+      },
+      {
+        "month": "2003-10",
+        "window": "midday",
+        "monthly_total": 172,
+        "projected_cases": 34.4,
+        "projected_per_hour": 6.88
+      },
+      {
+        "month": "2003-10",
+        "window": "peak_pm",
+        "monthly_total": 172,
+        "projected_cases": 77.4,
+        "projected_per_hour": 15.48
+      },
+      {
+        "month": "2003-10",
+        "window": "night",
+        "monthly_total": 172,
+        "projected_cases": 25.8,
+        "projected_per_hour": 8.6
+      },
+      {
+        "month": "2003-11",
+        "window": "peak_am",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 10.267
+      },
+      {
+        "month": "2003-11",
+        "window": "midday",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 6.16
+      },
+      {
+        "month": "2003-11",
+        "window": "peak_pm",
+        "monthly_total": 154,
+        "projected_cases": 69.3,
+        "projected_per_hour": 13.86
+      },
+      {
+        "month": "2003-11",
+        "window": "night",
+        "monthly_total": 154,
+        "projected_cases": 23.1,
+        "projected_per_hour": 7.7
+      },
+      {
+        "month": "2003-12",
+        "window": "peak_am",
+        "monthly_total": 122,
+        "projected_cases": 24.4,
+        "projected_per_hour": 8.133
+      },
+      {
+        "month": "2003-12",
+        "window": "midday",
+        "monthly_total": 122,
+        "projected_cases": 24.4,
+        "projected_per_hour": 4.88
+      },
+      {
+        "month": "2003-12",
+        "window": "peak_pm",
+        "monthly_total": 122,
+        "projected_cases": 54.9,
+        "projected_per_hour": 10.98
+      },
+      {
+        "month": "2003-12",
+        "window": "night",
+        "monthly_total": 122,
+        "projected_cases": 18.3,
+        "projected_per_hour": 6.1
+      },
+      {
+        "month": "2004-01",
+        "window": "peak_am",
+        "monthly_total": 200,
+        "projected_cases": 40.0,
+        "projected_per_hour": 13.333
+      },
+      {
+        "month": "2004-01",
+        "window": "midday",
+        "monthly_total": 200,
+        "projected_cases": 40.0,
+        "projected_per_hour": 8.0
+      },
+      {
+        "month": "2004-01",
+        "window": "peak_pm",
+        "monthly_total": 200,
+        "projected_cases": 90.0,
+        "projected_per_hour": 18.0
+      },
+      {
+        "month": "2004-01",
+        "window": "night",
+        "monthly_total": 200,
+        "projected_cases": 30.0,
+        "projected_per_hour": 10.0
+      },
+      {
+        "month": "2004-02",
+        "window": "peak_am",
+        "monthly_total": 138,
+        "projected_cases": 27.6,
+        "projected_per_hour": 9.2
+      },
+      {
+        "month": "2004-02",
+        "window": "midday",
+        "monthly_total": 138,
+        "projected_cases": 27.6,
+        "projected_per_hour": 5.52
+      },
+      {
+        "month": "2004-02",
+        "window": "peak_pm",
+        "monthly_total": 138,
+        "projected_cases": 62.1,
+        "projected_per_hour": 12.42
+      },
+      {
+        "month": "2004-02",
+        "window": "night",
+        "monthly_total": 138,
+        "projected_cases": 20.7,
+        "projected_per_hour": 6.9
+      },
+      {
+        "month": "2004-03",
+        "window": "peak_am",
+        "monthly_total": 100,
+        "projected_cases": 20.0,
+        "projected_per_hour": 6.667
+      },
+      {
+        "month": "2004-03",
+        "window": "midday",
+        "monthly_total": 100,
+        "projected_cases": 20.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2004-03",
+        "window": "peak_pm",
+        "monthly_total": 100,
+        "projected_cases": 45.0,
+        "projected_per_hour": 9.0
+      },
+      {
+        "month": "2004-03",
+        "window": "night",
+        "monthly_total": 100,
+        "projected_cases": 15.0,
+        "projected_per_hour": 5.0
+      },
+      {
+        "month": "2004-04",
+        "window": "peak_am",
+        "monthly_total": 122,
+        "projected_cases": 24.4,
+        "projected_per_hour": 8.133
+      },
+      {
+        "month": "2004-04",
+        "window": "midday",
+        "monthly_total": 122,
+        "projected_cases": 24.4,
+        "projected_per_hour": 4.88
+      },
+      {
+        "month": "2004-04",
+        "window": "peak_pm",
+        "monthly_total": 122,
+        "projected_cases": 54.9,
+        "projected_per_hour": 10.98
+      },
+      {
+        "month": "2004-04",
+        "window": "night",
+        "monthly_total": 122,
+        "projected_cases": 18.3,
+        "projected_per_hour": 6.1
+      },
+      {
+        "month": "2004-05",
+        "window": "peak_am",
+        "monthly_total": 112,
+        "projected_cases": 22.4,
+        "projected_per_hour": 7.467
+      },
+      {
+        "month": "2004-05",
+        "window": "midday",
+        "monthly_total": 112,
+        "projected_cases": 22.4,
+        "projected_per_hour": 4.48
+      },
+      {
+        "month": "2004-05",
+        "window": "peak_pm",
+        "monthly_total": 112,
+        "projected_cases": 50.4,
+        "projected_per_hour": 10.08
+      },
+      {
+        "month": "2004-05",
+        "window": "night",
+        "monthly_total": 112,
+        "projected_cases": 16.8,
+        "projected_per_hour": 5.6
+      },
+      {
+        "month": "2004-06",
+        "window": "peak_am",
+        "monthly_total": 142,
+        "projected_cases": 28.4,
+        "projected_per_hour": 9.467
+      },
+      {
+        "month": "2004-06",
+        "window": "midday",
+        "monthly_total": 142,
+        "projected_cases": 28.4,
+        "projected_per_hour": 5.68
+      },
+      {
+        "month": "2004-06",
+        "window": "peak_pm",
+        "monthly_total": 142,
+        "projected_cases": 63.9,
+        "projected_per_hour": 12.78
+      },
+      {
+        "month": "2004-06",
+        "window": "night",
+        "monthly_total": 142,
+        "projected_cases": 21.3,
+        "projected_per_hour": 7.1
+      },
+      {
+        "month": "2004-07",
+        "window": "peak_am",
+        "monthly_total": 168,
+        "projected_cases": 33.6,
+        "projected_per_hour": 11.2
+      },
+      {
+        "month": "2004-07",
+        "window": "midday",
+        "monthly_total": 168,
+        "projected_cases": 33.6,
+        "projected_per_hour": 6.72
+      },
+      {
+        "month": "2004-07",
+        "window": "peak_pm",
+        "monthly_total": 168,
+        "projected_cases": 75.6,
+        "projected_per_hour": 15.12
+      },
+      {
+        "month": "2004-07",
+        "window": "night",
+        "monthly_total": 168,
+        "projected_cases": 25.2,
+        "projected_per_hour": 8.4
+      },
+      {
+        "month": "2004-08",
+        "window": "peak_am",
+        "monthly_total": 148,
+        "projected_cases": 29.6,
+        "projected_per_hour": 9.867
+      },
+      {
+        "month": "2004-08",
+        "window": "midday",
+        "monthly_total": 148,
+        "projected_cases": 29.6,
+        "projected_per_hour": 5.92
+      },
+      {
+        "month": "2004-08",
+        "window": "peak_pm",
+        "monthly_total": 148,
+        "projected_cases": 66.6,
+        "projected_per_hour": 13.32
+      },
+      {
+        "month": "2004-08",
+        "window": "night",
+        "monthly_total": 148,
+        "projected_cases": 22.2,
+        "projected_per_hour": 7.4
+      },
+      {
+        "month": "2004-09",
+        "window": "peak_am",
+        "monthly_total": 142,
+        "projected_cases": 28.4,
+        "projected_per_hour": 9.467
+      },
+      {
+        "month": "2004-09",
+        "window": "midday",
+        "monthly_total": 142,
+        "projected_cases": 28.4,
+        "projected_per_hour": 5.68
+      },
+      {
+        "month": "2004-09",
+        "window": "peak_pm",
+        "monthly_total": 142,
+        "projected_cases": 63.9,
+        "projected_per_hour": 12.78
+      },
+      {
+        "month": "2004-09",
+        "window": "night",
+        "monthly_total": 142,
+        "projected_cases": 21.3,
+        "projected_per_hour": 7.1
+      },
+      {
+        "month": "2004-10",
+        "window": "peak_am",
+        "monthly_total": 120,
+        "projected_cases": 24.0,
+        "projected_per_hour": 8.0
+      },
+      {
+        "month": "2004-10",
+        "window": "midday",
+        "monthly_total": 120,
+        "projected_cases": 24.0,
+        "projected_per_hour": 4.8
+      },
+      {
+        "month": "2004-10",
+        "window": "peak_pm",
+        "monthly_total": 120,
+        "projected_cases": 54.0,
+        "projected_per_hour": 10.8
+      },
+      {
+        "month": "2004-10",
+        "window": "night",
+        "monthly_total": 120,
+        "projected_cases": 18.0,
+        "projected_per_hour": 6.0
+      },
+      {
+        "month": "2004-11",
+        "window": "peak_am",
+        "monthly_total": 164,
+        "projected_cases": 32.8,
+        "projected_per_hour": 10.933
+      },
+      {
+        "month": "2004-11",
+        "window": "midday",
+        "monthly_total": 164,
+        "projected_cases": 32.8,
+        "projected_per_hour": 6.56
+      },
+      {
+        "month": "2004-11",
+        "window": "peak_pm",
+        "monthly_total": 164,
+        "projected_cases": 73.8,
+        "projected_per_hour": 14.76
+      },
+      {
+        "month": "2004-11",
+        "window": "night",
+        "monthly_total": 164,
+        "projected_cases": 24.6,
+        "projected_per_hour": 8.2
+      },
+      {
+        "month": "2004-12",
+        "window": "peak_am",
+        "monthly_total": 134,
+        "projected_cases": 26.8,
+        "projected_per_hour": 8.933
+      },
+      {
+        "month": "2004-12",
+        "window": "midday",
+        "monthly_total": 134,
+        "projected_cases": 26.8,
+        "projected_per_hour": 5.36
+      },
+      {
+        "month": "2004-12",
+        "window": "peak_pm",
+        "monthly_total": 134,
+        "projected_cases": 60.3,
+        "projected_per_hour": 12.06
+      },
+      {
+        "month": "2004-12",
+        "window": "night",
+        "monthly_total": 134,
+        "projected_cases": 20.1,
+        "projected_per_hour": 6.7
+      },
+      {
+        "month": "2005-01",
+        "window": "peak_am",
+        "monthly_total": 106,
+        "projected_cases": 21.2,
+        "projected_per_hour": 7.067
+      },
+      {
+        "month": "2005-01",
+        "window": "midday",
+        "monthly_total": 106,
+        "projected_cases": 21.2,
+        "projected_per_hour": 4.24
+      },
+      {
+        "month": "2005-01",
+        "window": "peak_pm",
+        "monthly_total": 106,
+        "projected_cases": 47.7,
+        "projected_per_hour": 9.54
+      },
+      {
+        "month": "2005-01",
+        "window": "night",
+        "monthly_total": 106,
+        "projected_cases": 15.9,
+        "projected_per_hour": 5.3
+      },
+      {
+        "month": "2005-02",
+        "window": "peak_am",
+        "monthly_total": 152,
+        "projected_cases": 30.4,
+        "projected_per_hour": 10.133
+      },
+      {
+        "month": "2005-02",
+        "window": "midday",
+        "monthly_total": 152,
+        "projected_cases": 30.4,
+        "projected_per_hour": 6.08
+      },
+      {
+        "month": "2005-02",
+        "window": "peak_pm",
+        "monthly_total": 152,
+        "projected_cases": 68.4,
+        "projected_per_hour": 13.68
+      },
+      {
+        "month": "2005-02",
+        "window": "night",
+        "monthly_total": 152,
+        "projected_cases": 22.8,
+        "projected_per_hour": 7.6
+      },
+      {
+        "month": "2005-03",
+        "window": "peak_am",
+        "monthly_total": 166,
+        "projected_cases": 33.2,
+        "projected_per_hour": 11.067
+      },
+      {
+        "month": "2005-03",
+        "window": "midday",
+        "monthly_total": 166,
+        "projected_cases": 33.2,
+        "projected_per_hour": 6.64
+      },
+      {
+        "month": "2005-03",
+        "window": "peak_pm",
+        "monthly_total": 166,
+        "projected_cases": 74.7,
+        "projected_per_hour": 14.94
+      },
+      {
+        "month": "2005-03",
+        "window": "night",
+        "monthly_total": 166,
+        "projected_cases": 24.9,
+        "projected_per_hour": 8.3
+      },
+      {
+        "month": "2005-04",
+        "window": "peak_am",
+        "monthly_total": 142,
+        "projected_cases": 28.4,
+        "projected_per_hour": 9.467
+      },
+      {
+        "month": "2005-04",
+        "window": "midday",
+        "monthly_total": 142,
+        "projected_cases": 28.4,
+        "projected_per_hour": 5.68
+      },
+      {
+        "month": "2005-04",
+        "window": "peak_pm",
+        "monthly_total": 142,
+        "projected_cases": 63.9,
+        "projected_per_hour": 12.78
+      },
+      {
+        "month": "2005-04",
+        "window": "night",
+        "monthly_total": 142,
+        "projected_cases": 21.3,
+        "projected_per_hour": 7.1
+      },
+      {
+        "month": "2005-05",
+        "window": "peak_am",
+        "monthly_total": 152,
+        "projected_cases": 30.4,
+        "projected_per_hour": 10.133
+      },
+      {
+        "month": "2005-05",
+        "window": "midday",
+        "monthly_total": 152,
+        "projected_cases": 30.4,
+        "projected_per_hour": 6.08
+      },
+      {
+        "month": "2005-05",
+        "window": "peak_pm",
+        "monthly_total": 152,
+        "projected_cases": 68.4,
+        "projected_per_hour": 13.68
+      },
+      {
+        "month": "2005-05",
+        "window": "night",
+        "monthly_total": 152,
+        "projected_cases": 22.8,
+        "projected_per_hour": 7.6
+      },
+      {
+        "month": "2005-06",
+        "window": "peak_am",
+        "monthly_total": 186,
+        "projected_cases": 37.2,
+        "projected_per_hour": 12.4
+      },
+      {
+        "month": "2005-06",
+        "window": "midday",
+        "monthly_total": 186,
+        "projected_cases": 37.2,
+        "projected_per_hour": 7.44
+      },
+      {
+        "month": "2005-06",
+        "window": "peak_pm",
+        "monthly_total": 186,
+        "projected_cases": 83.7,
+        "projected_per_hour": 16.74
+      },
+      {
+        "month": "2005-06",
+        "window": "night",
+        "monthly_total": 186,
+        "projected_cases": 27.9,
+        "projected_per_hour": 9.3
+      },
+      {
+        "month": "2005-07",
+        "window": "peak_am",
+        "monthly_total": 186,
+        "projected_cases": 37.2,
+        "projected_per_hour": 12.4
+      },
+      {
+        "month": "2005-07",
+        "window": "midday",
+        "monthly_total": 186,
+        "projected_cases": 37.2,
+        "projected_per_hour": 7.44
+      },
+      {
+        "month": "2005-07",
+        "window": "peak_pm",
+        "monthly_total": 186,
+        "projected_cases": 83.7,
+        "projected_per_hour": 16.74
+      },
+      {
+        "month": "2005-07",
+        "window": "night",
+        "monthly_total": 186,
+        "projected_cases": 27.9,
+        "projected_per_hour": 9.3
+      },
+      {
+        "month": "2005-08",
+        "window": "peak_am",
+        "monthly_total": 250,
+        "projected_cases": 50.0,
+        "projected_per_hour": 16.667
+      },
+      {
+        "month": "2005-08",
+        "window": "midday",
+        "monthly_total": 250,
+        "projected_cases": 50.0,
+        "projected_per_hour": 10.0
+      },
+      {
+        "month": "2005-08",
+        "window": "peak_pm",
+        "monthly_total": 250,
+        "projected_cases": 112.5,
+        "projected_per_hour": 22.5
+      },
+      {
+        "month": "2005-08",
+        "window": "night",
+        "monthly_total": 250,
+        "projected_cases": 37.5,
+        "projected_per_hour": 12.5
+      },
+      {
+        "month": "2005-09",
+        "window": "peak_am",
+        "monthly_total": 200,
+        "projected_cases": 40.0,
+        "projected_per_hour": 13.333
+      },
+      {
+        "month": "2005-09",
+        "window": "midday",
+        "monthly_total": 200,
+        "projected_cases": 40.0,
+        "projected_per_hour": 8.0
+      },
+      {
+        "month": "2005-09",
+        "window": "peak_pm",
+        "monthly_total": 200,
+        "projected_cases": 90.0,
+        "projected_per_hour": 18.0
+      },
+      {
+        "month": "2005-09",
+        "window": "night",
+        "monthly_total": 200,
+        "projected_cases": 30.0,
+        "projected_per_hour": 10.0
+      },
+      {
+        "month": "2005-10",
+        "window": "peak_am",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 10.267
+      },
+      {
+        "month": "2005-10",
+        "window": "midday",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 6.16
+      },
+      {
+        "month": "2005-10",
+        "window": "peak_pm",
+        "monthly_total": 154,
+        "projected_cases": 69.3,
+        "projected_per_hour": 13.86
+      },
+      {
+        "month": "2005-10",
+        "window": "night",
+        "monthly_total": 154,
+        "projected_cases": 23.1,
+        "projected_per_hour": 7.7
+      },
+      {
+        "month": "2005-11",
+        "window": "peak_am",
+        "monthly_total": 272,
+        "projected_cases": 54.4,
+        "projected_per_hour": 18.133
+      },
+      {
+        "month": "2005-11",
+        "window": "midday",
+        "monthly_total": 272,
+        "projected_cases": 54.4,
+        "projected_per_hour": 10.88
+      },
+      {
+        "month": "2005-11",
+        "window": "peak_pm",
+        "monthly_total": 272,
+        "projected_cases": 122.4,
+        "projected_per_hour": 24.48
+      },
+      {
+        "month": "2005-11",
+        "window": "night",
+        "monthly_total": 272,
+        "projected_cases": 40.8,
+        "projected_per_hour": 13.6
+      },
+      {
+        "month": "2005-12",
+        "window": "peak_am",
+        "monthly_total": 300,
+        "projected_cases": 60.0,
+        "projected_per_hour": 20.0
+      },
+      {
+        "month": "2005-12",
+        "window": "midday",
+        "monthly_total": 300,
+        "projected_cases": 60.0,
+        "projected_per_hour": 12.0
+      },
+      {
+        "month": "2005-12",
+        "window": "peak_pm",
+        "monthly_total": 300,
+        "projected_cases": 135.0,
+        "projected_per_hour": 27.0
+      },
+      {
+        "month": "2005-12",
+        "window": "night",
+        "monthly_total": 300,
+        "projected_cases": 45.0,
+        "projected_per_hour": 15.0
+      },
+      {
+        "month": "2006-01",
+        "window": "peak_am",
+        "monthly_total": 150,
+        "projected_cases": 30.0,
+        "projected_per_hour": 10.0
+      },
+      {
+        "month": "2006-01",
+        "window": "midday",
+        "monthly_total": 150,
+        "projected_cases": 30.0,
+        "projected_per_hour": 6.0
+      },
+      {
+        "month": "2006-01",
+        "window": "peak_pm",
+        "monthly_total": 150,
+        "projected_cases": 67.5,
+        "projected_per_hour": 13.5
+      },
+      {
+        "month": "2006-01",
+        "window": "night",
+        "monthly_total": 150,
+        "projected_cases": 22.5,
+        "projected_per_hour": 7.5
+      },
+      {
+        "month": "2006-02",
+        "window": "peak_am",
+        "monthly_total": 120,
+        "projected_cases": 24.0,
+        "projected_per_hour": 8.0
+      },
+      {
+        "month": "2006-02",
+        "window": "midday",
+        "monthly_total": 120,
+        "projected_cases": 24.0,
+        "projected_per_hour": 4.8
+      },
+      {
+        "month": "2006-02",
+        "window": "peak_pm",
+        "monthly_total": 120,
+        "projected_cases": 54.0,
+        "projected_per_hour": 10.8
+      },
+      {
+        "month": "2006-02",
+        "window": "night",
+        "monthly_total": 120,
+        "projected_cases": 18.0,
+        "projected_per_hour": 6.0
+      },
+      {
+        "month": "2006-03",
+        "window": "peak_am",
+        "monthly_total": 86,
+        "projected_cases": 17.2,
+        "projected_per_hour": 5.733
+      },
+      {
+        "month": "2006-03",
+        "window": "midday",
+        "monthly_total": 86,
+        "projected_cases": 17.2,
+        "projected_per_hour": 3.44
+      },
+      {
+        "month": "2006-03",
+        "window": "peak_pm",
+        "monthly_total": 86,
+        "projected_cases": 38.7,
+        "projected_per_hour": 7.74
+      },
+      {
+        "month": "2006-03",
+        "window": "night",
+        "monthly_total": 86,
+        "projected_cases": 12.9,
+        "projected_per_hour": 4.3
+      },
+      {
+        "month": "2006-04",
+        "window": "peak_am",
+        "monthly_total": 62,
+        "projected_cases": 12.4,
+        "projected_per_hour": 4.133
+      },
+      {
+        "month": "2006-04",
+        "window": "midday",
+        "monthly_total": 62,
+        "projected_cases": 12.4,
+        "projected_per_hour": 2.48
+      },
+      {
+        "month": "2006-04",
+        "window": "peak_pm",
+        "monthly_total": 62,
+        "projected_cases": 27.9,
+        "projected_per_hour": 5.58
+      },
+      {
+        "month": "2006-04",
+        "window": "night",
+        "monthly_total": 62,
+        "projected_cases": 9.3,
+        "projected_per_hour": 3.1
+      },
+      {
+        "month": "2006-05",
+        "window": "peak_am",
+        "monthly_total": 122,
+        "projected_cases": 24.4,
+        "projected_per_hour": 8.133
+      },
+      {
+        "month": "2006-05",
+        "window": "midday",
+        "monthly_total": 122,
+        "projected_cases": 24.4,
+        "projected_per_hour": 4.88
+      },
+      {
+        "month": "2006-05",
+        "window": "peak_pm",
+        "monthly_total": 122,
+        "projected_cases": 54.9,
+        "projected_per_hour": 10.98
+      },
+      {
+        "month": "2006-05",
+        "window": "night",
+        "monthly_total": 122,
+        "projected_cases": 18.3,
+        "projected_per_hour": 6.1
+      },
+      {
+        "month": "2006-06",
+        "window": "peak_am",
+        "monthly_total": 46,
+        "projected_cases": 9.2,
+        "projected_per_hour": 3.067
+      },
+      {
+        "month": "2006-06",
+        "window": "midday",
+        "monthly_total": 46,
+        "projected_cases": 9.2,
+        "projected_per_hour": 1.84
+      },
+      {
+        "month": "2006-06",
+        "window": "peak_pm",
+        "monthly_total": 46,
+        "projected_cases": 20.7,
+        "projected_per_hour": 4.14
+      },
+      {
+        "month": "2006-06",
+        "window": "night",
+        "monthly_total": 46,
+        "projected_cases": 6.9,
+        "projected_per_hour": 2.3
+      },
+      {
+        "month": "2006-07",
+        "window": "peak_am",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 5.333
+      },
+      {
+        "month": "2006-07",
+        "window": "midday",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 3.2
+      },
+      {
+        "month": "2006-07",
+        "window": "peak_pm",
+        "monthly_total": 80,
+        "projected_cases": 36.0,
+        "projected_per_hour": 7.2
+      },
+      {
+        "month": "2006-07",
+        "window": "night",
+        "monthly_total": 80,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2006-08",
+        "window": "peak_am",
+        "monthly_total": 48,
+        "projected_cases": 9.6,
+        "projected_per_hour": 3.2
+      },
+      {
+        "month": "2006-08",
+        "window": "midday",
+        "monthly_total": 48,
+        "projected_cases": 9.6,
+        "projected_per_hour": 1.92
+      },
+      {
+        "month": "2006-08",
+        "window": "peak_pm",
+        "monthly_total": 48,
+        "projected_cases": 21.6,
+        "projected_per_hour": 4.32
+      },
+      {
+        "month": "2006-08",
+        "window": "night",
+        "monthly_total": 48,
+        "projected_cases": 7.2,
+        "projected_per_hour": 2.4
+      },
+      {
+        "month": "2006-09",
+        "window": "peak_am",
+        "monthly_total": 74,
+        "projected_cases": 14.8,
+        "projected_per_hour": 4.933
+      },
+      {
+        "month": "2006-09",
+        "window": "midday",
+        "monthly_total": 74,
+        "projected_cases": 14.8,
+        "projected_per_hour": 2.96
+      },
+      {
+        "month": "2006-09",
+        "window": "peak_pm",
+        "monthly_total": 74,
+        "projected_cases": 33.3,
+        "projected_per_hour": 6.66
+      },
+      {
+        "month": "2006-09",
+        "window": "night",
+        "monthly_total": 74,
+        "projected_cases": 11.1,
+        "projected_per_hour": 3.7
+      },
+      {
+        "month": "2006-10",
+        "window": "peak_am",
+        "monthly_total": 50,
+        "projected_cases": 10.0,
+        "projected_per_hour": 3.333
+      },
+      {
+        "month": "2006-10",
+        "window": "midday",
+        "monthly_total": 50,
+        "projected_cases": 10.0,
+        "projected_per_hour": 2.0
+      },
+      {
+        "month": "2006-10",
+        "window": "peak_pm",
+        "monthly_total": 50,
+        "projected_cases": 22.5,
+        "projected_per_hour": 4.5
+      },
+      {
+        "month": "2006-10",
+        "window": "night",
+        "monthly_total": 50,
+        "projected_cases": 7.5,
+        "projected_per_hour": 2.5
+      },
+      {
+        "month": "2006-11",
+        "window": "peak_am",
+        "monthly_total": 82,
+        "projected_cases": 16.4,
+        "projected_per_hour": 5.467
+      },
+      {
+        "month": "2006-11",
+        "window": "midday",
+        "monthly_total": 82,
+        "projected_cases": 16.4,
+        "projected_per_hour": 3.28
+      },
+      {
+        "month": "2006-11",
+        "window": "peak_pm",
+        "monthly_total": 82,
+        "projected_cases": 36.9,
+        "projected_per_hour": 7.38
+      },
+      {
+        "month": "2006-11",
+        "window": "night",
+        "monthly_total": 82,
+        "projected_cases": 12.3,
+        "projected_per_hour": 4.1
+      },
+      {
+        "month": "2006-12",
+        "window": "peak_am",
+        "monthly_total": 58,
+        "projected_cases": 11.6,
+        "projected_per_hour": 3.867
+      },
+      {
+        "month": "2006-12",
+        "window": "midday",
+        "monthly_total": 58,
+        "projected_cases": 11.6,
+        "projected_per_hour": 2.32
+      },
+      {
+        "month": "2006-12",
+        "window": "peak_pm",
+        "monthly_total": 58,
+        "projected_cases": 26.1,
+        "projected_per_hour": 5.22
+      },
+      {
+        "month": "2006-12",
+        "window": "night",
+        "monthly_total": 58,
+        "projected_cases": 8.7,
+        "projected_per_hour": 2.9
+      },
+      {
+        "month": "2007-01",
+        "window": "peak_am",
+        "monthly_total": 12,
+        "projected_cases": 2.4,
+        "projected_per_hour": 0.8
+      },
+      {
+        "month": "2007-01",
+        "window": "midday",
+        "monthly_total": 12,
+        "projected_cases": 2.4,
+        "projected_per_hour": 0.48
+      },
+      {
+        "month": "2007-01",
+        "window": "peak_pm",
+        "monthly_total": 12,
+        "projected_cases": 5.4,
+        "projected_per_hour": 1.08
+      },
+      {
+        "month": "2007-01",
+        "window": "night",
+        "monthly_total": 12,
+        "projected_cases": 1.8,
+        "projected_per_hour": 0.6
+      },
+      {
+        "month": "2007-02",
+        "window": "peak_am",
+        "monthly_total": 48,
+        "projected_cases": 9.6,
+        "projected_per_hour": 3.2
+      },
+      {
+        "month": "2007-02",
+        "window": "midday",
+        "monthly_total": 48,
+        "projected_cases": 9.6,
+        "projected_per_hour": 1.92
+      },
+      {
+        "month": "2007-02",
+        "window": "peak_pm",
+        "monthly_total": 48,
+        "projected_cases": 21.6,
+        "projected_per_hour": 4.32
+      },
+      {
+        "month": "2007-02",
+        "window": "night",
+        "monthly_total": 48,
+        "projected_cases": 7.2,
+        "projected_per_hour": 2.4
+      },
+      {
+        "month": "2007-03",
+        "window": "peak_am",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 5.333
+      },
+      {
+        "month": "2007-03",
+        "window": "midday",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 3.2
+      },
+      {
+        "month": "2007-03",
+        "window": "peak_pm",
+        "monthly_total": 80,
+        "projected_cases": 36.0,
+        "projected_per_hour": 7.2
+      },
+      {
+        "month": "2007-03",
+        "window": "night",
+        "monthly_total": 80,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2007-04",
+        "window": "peak_am",
+        "monthly_total": 78,
+        "projected_cases": 15.6,
+        "projected_per_hour": 5.2
+      },
+      {
+        "month": "2007-04",
+        "window": "midday",
+        "monthly_total": 78,
+        "projected_cases": 15.6,
+        "projected_per_hour": 3.12
+      },
+      {
+        "month": "2007-04",
+        "window": "peak_pm",
+        "monthly_total": 78,
+        "projected_cases": 35.1,
+        "projected_per_hour": 7.02
+      },
+      {
+        "month": "2007-04",
+        "window": "night",
+        "monthly_total": 78,
+        "projected_cases": 11.7,
+        "projected_per_hour": 3.9
+      },
+      {
+        "month": "2007-05",
+        "window": "peak_am",
+        "monthly_total": 115,
+        "projected_cases": 23.0,
+        "projected_per_hour": 7.667
+      },
+      {
+        "month": "2007-05",
+        "window": "midday",
+        "monthly_total": 115,
+        "projected_cases": 23.0,
+        "projected_per_hour": 4.6
+      },
+      {
+        "month": "2007-05",
+        "window": "peak_pm",
+        "monthly_total": 115,
+        "projected_cases": 51.75,
+        "projected_per_hour": 10.35
+      },
+      {
+        "month": "2007-05",
+        "window": "night",
+        "monthly_total": 115,
+        "projected_cases": 17.25,
+        "projected_per_hour": 5.75
+      },
+      {
+        "month": "2007-06",
+        "window": "peak_am",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 5.067
+      },
+      {
+        "month": "2007-06",
+        "window": "midday",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 3.04
+      },
+      {
+        "month": "2007-06",
+        "window": "peak_pm",
+        "monthly_total": 76,
+        "projected_cases": 34.2,
+        "projected_per_hour": 6.84
+      },
+      {
+        "month": "2007-06",
+        "window": "night",
+        "monthly_total": 76,
+        "projected_cases": 11.4,
+        "projected_per_hour": 3.8
+      },
+      {
+        "month": "2007-07",
+        "window": "peak_am",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 5.067
+      },
+      {
+        "month": "2007-07",
+        "window": "midday",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 3.04
+      },
+      {
+        "month": "2007-07",
+        "window": "peak_pm",
+        "monthly_total": 76,
+        "projected_cases": 34.2,
+        "projected_per_hour": 6.84
+      },
+      {
+        "month": "2007-07",
+        "window": "night",
+        "monthly_total": 76,
+        "projected_cases": 11.4,
+        "projected_per_hour": 3.8
+      },
+      {
+        "month": "2007-08",
+        "window": "peak_am",
+        "monthly_total": 118,
+        "projected_cases": 23.6,
+        "projected_per_hour": 7.867
+      },
+      {
+        "month": "2007-08",
+        "window": "midday",
+        "monthly_total": 118,
+        "projected_cases": 23.6,
+        "projected_per_hour": 4.72
+      },
+      {
+        "month": "2007-08",
+        "window": "peak_pm",
+        "monthly_total": 118,
+        "projected_cases": 53.1,
+        "projected_per_hour": 10.62
+      },
+      {
+        "month": "2007-08",
+        "window": "night",
+        "monthly_total": 118,
+        "projected_cases": 17.7,
+        "projected_per_hour": 5.9
+      },
+      {
+        "month": "2007-09",
+        "window": "peak_am",
+        "monthly_total": 52,
+        "projected_cases": 10.4,
+        "projected_per_hour": 3.467
+      },
+      {
+        "month": "2007-09",
+        "window": "midday",
+        "monthly_total": 52,
+        "projected_cases": 10.4,
+        "projected_per_hour": 2.08
+      },
+      {
+        "month": "2007-09",
+        "window": "peak_pm",
+        "monthly_total": 52,
+        "projected_cases": 23.4,
+        "projected_per_hour": 4.68
+      },
+      {
+        "month": "2007-09",
+        "window": "night",
+        "monthly_total": 52,
+        "projected_cases": 7.8,
+        "projected_per_hour": 2.6
+      },
+      {
+        "month": "2007-10",
+        "window": "peak_am",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 6.533
+      },
+      {
+        "month": "2007-10",
+        "window": "midday",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 3.92
+      },
+      {
+        "month": "2007-10",
+        "window": "peak_pm",
+        "monthly_total": 98,
+        "projected_cases": 44.1,
+        "projected_per_hour": 8.82
+      },
+      {
+        "month": "2007-10",
+        "window": "night",
+        "monthly_total": 98,
+        "projected_cases": 14.7,
+        "projected_per_hour": 4.9
+      },
+      {
+        "month": "2007-11",
+        "window": "peak_am",
+        "monthly_total": 90,
+        "projected_cases": 18.0,
+        "projected_per_hour": 6.0
+      },
+      {
+        "month": "2007-11",
+        "window": "midday",
+        "monthly_total": 90,
+        "projected_cases": 18.0,
+        "projected_per_hour": 3.6
+      },
+      {
+        "month": "2007-11",
+        "window": "peak_pm",
+        "monthly_total": 90,
+        "projected_cases": 40.5,
+        "projected_per_hour": 8.1
+      },
+      {
+        "month": "2007-11",
+        "window": "night",
+        "monthly_total": 90,
+        "projected_cases": 13.5,
+        "projected_per_hour": 4.5
+      },
+      {
+        "month": "2007-12",
+        "window": "peak_am",
+        "monthly_total": 86,
+        "projected_cases": 17.2,
+        "projected_per_hour": 5.733
+      },
+      {
+        "month": "2007-12",
+        "window": "midday",
+        "monthly_total": 86,
+        "projected_cases": 17.2,
+        "projected_per_hour": 3.44
+      },
+      {
+        "month": "2007-12",
+        "window": "peak_pm",
+        "monthly_total": 86,
+        "projected_cases": 38.7,
+        "projected_per_hour": 7.74
+      },
+      {
+        "month": "2007-12",
+        "window": "night",
+        "monthly_total": 86,
+        "projected_cases": 12.9,
+        "projected_per_hour": 4.3
+      },
+      {
+        "month": "2008-01",
+        "window": "peak_am",
+        "monthly_total": 100,
+        "projected_cases": 20.0,
+        "projected_per_hour": 6.667
+      },
+      {
+        "month": "2008-01",
+        "window": "midday",
+        "monthly_total": 100,
+        "projected_cases": 20.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2008-01",
+        "window": "peak_pm",
+        "monthly_total": 100,
+        "projected_cases": 45.0,
+        "projected_per_hour": 9.0
+      },
+      {
+        "month": "2008-01",
+        "window": "night",
+        "monthly_total": 100,
+        "projected_cases": 15.0,
+        "projected_per_hour": 5.0
+      },
+      {
+        "month": "2008-02",
+        "window": "peak_am",
+        "monthly_total": 116,
+        "projected_cases": 23.2,
+        "projected_per_hour": 7.733
+      },
+      {
+        "month": "2008-02",
+        "window": "midday",
+        "monthly_total": 116,
+        "projected_cases": 23.2,
+        "projected_per_hour": 4.64
+      },
+      {
+        "month": "2008-02",
+        "window": "peak_pm",
+        "monthly_total": 116,
+        "projected_cases": 52.2,
+        "projected_per_hour": 10.44
+      },
+      {
+        "month": "2008-02",
+        "window": "night",
+        "monthly_total": 116,
+        "projected_cases": 17.4,
+        "projected_per_hour": 5.8
+      },
+      {
+        "month": "2008-03",
+        "window": "peak_am",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2008-03",
+        "window": "midday",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 2.4
+      },
+      {
+        "month": "2008-03",
+        "window": "peak_pm",
+        "monthly_total": 60,
+        "projected_cases": 27.0,
+        "projected_per_hour": 5.4
+      },
+      {
+        "month": "2008-03",
+        "window": "night",
+        "monthly_total": 60,
+        "projected_cases": 9.0,
+        "projected_per_hour": 3.0
+      },
+      {
+        "month": "2008-04",
+        "window": "peak_am",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 6.533
+      },
+      {
+        "month": "2008-04",
+        "window": "midday",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 3.92
+      },
+      {
+        "month": "2008-04",
+        "window": "peak_pm",
+        "monthly_total": 98,
+        "projected_cases": 44.1,
+        "projected_per_hour": 8.82
+      },
+      {
+        "month": "2008-04",
+        "window": "night",
+        "monthly_total": 98,
+        "projected_cases": 14.7,
+        "projected_per_hour": 4.9
+      },
+      {
+        "month": "2008-05",
+        "window": "peak_am",
+        "monthly_total": 108,
+        "projected_cases": 21.6,
+        "projected_per_hour": 7.2
+      },
+      {
+        "month": "2008-05",
+        "window": "midday",
+        "monthly_total": 108,
+        "projected_cases": 21.6,
+        "projected_per_hour": 4.32
+      },
+      {
+        "month": "2008-05",
+        "window": "peak_pm",
+        "monthly_total": 108,
+        "projected_cases": 48.6,
+        "projected_per_hour": 9.72
+      },
+      {
+        "month": "2008-05",
+        "window": "night",
+        "monthly_total": 108,
+        "projected_cases": 16.2,
+        "projected_per_hour": 5.4
+      },
+      {
+        "month": "2008-06",
+        "window": "peak_am",
+        "monthly_total": 108,
+        "projected_cases": 21.6,
+        "projected_per_hour": 7.2
+      },
+      {
+        "month": "2008-06",
+        "window": "midday",
+        "monthly_total": 108,
+        "projected_cases": 21.6,
+        "projected_per_hour": 4.32
+      },
+      {
+        "month": "2008-06",
+        "window": "peak_pm",
+        "monthly_total": 108,
+        "projected_cases": 48.6,
+        "projected_per_hour": 9.72
+      },
+      {
+        "month": "2008-06",
+        "window": "night",
+        "monthly_total": 108,
+        "projected_cases": 16.2,
+        "projected_per_hour": 5.4
+      },
+      {
+        "month": "2008-07",
+        "window": "peak_am",
+        "monthly_total": 162,
+        "projected_cases": 32.4,
+        "projected_per_hour": 10.8
+      },
+      {
+        "month": "2008-07",
+        "window": "midday",
+        "monthly_total": 162,
+        "projected_cases": 32.4,
+        "projected_per_hour": 6.48
+      },
+      {
+        "month": "2008-07",
+        "window": "peak_pm",
+        "monthly_total": 162,
+        "projected_cases": 72.9,
+        "projected_per_hour": 14.58
+      },
+      {
+        "month": "2008-07",
+        "window": "night",
+        "monthly_total": 162,
+        "projected_cases": 24.3,
+        "projected_per_hour": 8.1
+      },
+      {
+        "month": "2008-08",
+        "window": "peak_am",
+        "monthly_total": 114,
+        "projected_cases": 22.8,
+        "projected_per_hour": 7.6
+      },
+      {
+        "month": "2008-08",
+        "window": "midday",
+        "monthly_total": 114,
+        "projected_cases": 22.8,
+        "projected_per_hour": 4.56
+      },
+      {
+        "month": "2008-08",
+        "window": "peak_pm",
+        "monthly_total": 114,
+        "projected_cases": 51.3,
+        "projected_per_hour": 10.26
+      },
+      {
+        "month": "2008-08",
+        "window": "night",
+        "monthly_total": 114,
+        "projected_cases": 17.1,
+        "projected_per_hour": 5.7
+      },
+      {
+        "month": "2008-09",
+        "window": "peak_am",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 10.267
+      },
+      {
+        "month": "2008-09",
+        "window": "midday",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 6.16
+      },
+      {
+        "month": "2008-09",
+        "window": "peak_pm",
+        "monthly_total": 154,
+        "projected_cases": 69.3,
+        "projected_per_hour": 13.86
+      },
+      {
+        "month": "2008-09",
+        "window": "night",
+        "monthly_total": 154,
+        "projected_cases": 23.1,
+        "projected_per_hour": 7.7
+      },
+      {
+        "month": "2008-10",
+        "window": "peak_am",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 10.267
+      },
+      {
+        "month": "2008-10",
+        "window": "midday",
+        "monthly_total": 154,
+        "projected_cases": 30.8,
+        "projected_per_hour": 6.16
+      },
+      {
+        "month": "2008-10",
+        "window": "peak_pm",
+        "monthly_total": 154,
+        "projected_cases": 69.3,
+        "projected_per_hour": 13.86
+      },
+      {
+        "month": "2008-10",
+        "window": "night",
+        "monthly_total": 154,
+        "projected_cases": 23.1,
+        "projected_per_hour": 7.7
+      },
+      {
+        "month": "2008-11",
+        "window": "peak_am",
+        "monthly_total": 134,
+        "projected_cases": 26.8,
+        "projected_per_hour": 8.933
+      },
+      {
+        "month": "2008-11",
+        "window": "midday",
+        "monthly_total": 134,
+        "projected_cases": 26.8,
+        "projected_per_hour": 5.36
+      },
+      {
+        "month": "2008-11",
+        "window": "peak_pm",
+        "monthly_total": 134,
+        "projected_cases": 60.3,
+        "projected_per_hour": 12.06
+      },
+      {
+        "month": "2008-11",
+        "window": "night",
+        "monthly_total": 134,
+        "projected_cases": 20.1,
+        "projected_per_hour": 6.7
+      },
+      {
+        "month": "2008-12",
+        "window": "peak_am",
+        "monthly_total": 92,
+        "projected_cases": 18.4,
+        "projected_per_hour": 6.133
+      },
+      {
+        "month": "2008-12",
+        "window": "midday",
+        "monthly_total": 92,
+        "projected_cases": 18.4,
+        "projected_per_hour": 3.68
+      },
+      {
+        "month": "2008-12",
+        "window": "peak_pm",
+        "monthly_total": 92,
+        "projected_cases": 41.4,
+        "projected_per_hour": 8.28
+      },
+      {
+        "month": "2008-12",
+        "window": "night",
+        "monthly_total": 92,
+        "projected_cases": 13.8,
+        "projected_per_hour": 4.6
+      },
+      {
+        "month": "2009-01",
+        "window": "peak_am",
+        "monthly_total": 130,
+        "projected_cases": 26.0,
+        "projected_per_hour": 8.667
+      },
+      {
+        "month": "2009-01",
+        "window": "midday",
+        "monthly_total": 130,
+        "projected_cases": 26.0,
+        "projected_per_hour": 5.2
+      },
+      {
+        "month": "2009-01",
+        "window": "peak_pm",
+        "monthly_total": 130,
+        "projected_cases": 58.5,
+        "projected_per_hour": 11.7
+      },
+      {
+        "month": "2009-01",
+        "window": "night",
+        "monthly_total": 130,
+        "projected_cases": 19.5,
+        "projected_per_hour": 6.5
+      },
+      {
+        "month": "2009-02",
+        "window": "peak_am",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2009-02",
+        "window": "midday",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 2.4
+      },
+      {
+        "month": "2009-02",
+        "window": "peak_pm",
+        "monthly_total": 60,
+        "projected_cases": 27.0,
+        "projected_per_hour": 5.4
+      },
+      {
+        "month": "2009-02",
+        "window": "night",
+        "monthly_total": 60,
+        "projected_cases": 9.0,
+        "projected_per_hour": 3.0
+      },
+      {
+        "month": "2009-03",
+        "window": "peak_am",
+        "monthly_total": 128,
+        "projected_cases": 25.6,
+        "projected_per_hour": 8.533
+      },
+      {
+        "month": "2009-03",
+        "window": "midday",
+        "monthly_total": 128,
+        "projected_cases": 25.6,
+        "projected_per_hour": 5.12
+      },
+      {
+        "month": "2009-03",
+        "window": "peak_pm",
+        "monthly_total": 128,
+        "projected_cases": 57.6,
+        "projected_per_hour": 11.52
+      },
+      {
+        "month": "2009-03",
+        "window": "night",
+        "monthly_total": 128,
+        "projected_cases": 19.2,
+        "projected_per_hour": 6.4
+      },
+      {
+        "month": "2009-04",
+        "window": "peak_am",
+        "monthly_total": 88,
+        "projected_cases": 17.6,
+        "projected_per_hour": 5.867
+      },
+      {
+        "month": "2009-04",
+        "window": "midday",
+        "monthly_total": 88,
+        "projected_cases": 17.6,
+        "projected_per_hour": 3.52
+      },
+      {
+        "month": "2009-04",
+        "window": "peak_pm",
+        "monthly_total": 88,
+        "projected_cases": 39.6,
+        "projected_per_hour": 7.92
+      },
+      {
+        "month": "2009-04",
+        "window": "night",
+        "monthly_total": 88,
+        "projected_cases": 13.2,
+        "projected_per_hour": 4.4
+      },
+      {
+        "month": "2009-05",
+        "window": "peak_am",
+        "monthly_total": 82,
+        "projected_cases": 16.4,
+        "projected_per_hour": 5.467
+      },
+      {
+        "month": "2009-05",
+        "window": "midday",
+        "monthly_total": 82,
+        "projected_cases": 16.4,
+        "projected_per_hour": 3.28
+      },
+      {
+        "month": "2009-05",
+        "window": "peak_pm",
+        "monthly_total": 82,
+        "projected_cases": 36.9,
+        "projected_per_hour": 7.38
+      },
+      {
+        "month": "2009-05",
+        "window": "night",
+        "monthly_total": 82,
+        "projected_cases": 12.3,
+        "projected_per_hour": 4.1
+      },
+      {
+        "month": "2009-06",
+        "window": "peak_am",
+        "monthly_total": 14,
+        "projected_cases": 2.8,
+        "projected_per_hour": 0.933
+      },
+      {
+        "month": "2009-06",
+        "window": "midday",
+        "monthly_total": 14,
+        "projected_cases": 2.8,
+        "projected_per_hour": 0.56
+      },
+      {
+        "month": "2009-06",
+        "window": "peak_pm",
+        "monthly_total": 14,
+        "projected_cases": 6.3,
+        "projected_per_hour": 1.26
+      },
+      {
+        "month": "2009-06",
+        "window": "night",
+        "monthly_total": 14,
+        "projected_cases": 2.1,
+        "projected_per_hour": 0.7
+      },
+      {
+        "month": "2009-07",
+        "window": "peak_am",
+        "monthly_total": 54,
+        "projected_cases": 10.8,
+        "projected_per_hour": 3.6
+      },
+      {
+        "month": "2009-07",
+        "window": "midday",
+        "monthly_total": 54,
+        "projected_cases": 10.8,
+        "projected_per_hour": 2.16
+      },
+      {
+        "month": "2009-07",
+        "window": "peak_pm",
+        "monthly_total": 54,
+        "projected_cases": 24.3,
+        "projected_per_hour": 4.86
+      },
+      {
+        "month": "2009-07",
+        "window": "night",
+        "monthly_total": 54,
+        "projected_cases": 8.1,
+        "projected_per_hour": 2.7
+      },
+      {
+        "month": "2009-08",
+        "window": "peak_am",
+        "monthly_total": 82,
+        "projected_cases": 16.4,
+        "projected_per_hour": 5.467
+      },
+      {
+        "month": "2009-08",
+        "window": "midday",
+        "monthly_total": 82,
+        "projected_cases": 16.4,
+        "projected_per_hour": 3.28
+      },
+      {
+        "month": "2009-08",
+        "window": "peak_pm",
+        "monthly_total": 82,
+        "projected_cases": 36.9,
+        "projected_per_hour": 7.38
+      },
+      {
+        "month": "2009-08",
+        "window": "night",
+        "monthly_total": 82,
+        "projected_cases": 12.3,
+        "projected_per_hour": 4.1
+      },
+      {
+        "month": "2009-09",
+        "window": "peak_am",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 5.333
+      },
+      {
+        "month": "2009-09",
+        "window": "midday",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 3.2
+      },
+      {
+        "month": "2009-09",
+        "window": "peak_pm",
+        "monthly_total": 80,
+        "projected_cases": 36.0,
+        "projected_per_hour": 7.2
+      },
+      {
+        "month": "2009-09",
+        "window": "night",
+        "monthly_total": 80,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2009-10",
+        "window": "peak_am",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 5.333
+      },
+      {
+        "month": "2009-10",
+        "window": "midday",
+        "monthly_total": 80,
+        "projected_cases": 16.0,
+        "projected_per_hour": 3.2
+      },
+      {
+        "month": "2009-10",
+        "window": "peak_pm",
+        "monthly_total": 80,
+        "projected_cases": 36.0,
+        "projected_per_hour": 7.2
+      },
+      {
+        "month": "2009-10",
+        "window": "night",
+        "monthly_total": 80,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2009-11",
+        "window": "peak_am",
+        "monthly_total": 46,
+        "projected_cases": 9.2,
+        "projected_per_hour": 3.067
+      },
+      {
+        "month": "2009-11",
+        "window": "midday",
+        "monthly_total": 46,
+        "projected_cases": 9.2,
+        "projected_per_hour": 1.84
+      },
+      {
+        "month": "2009-11",
+        "window": "peak_pm",
+        "monthly_total": 46,
+        "projected_cases": 20.7,
+        "projected_per_hour": 4.14
+      },
+      {
+        "month": "2009-11",
+        "window": "night",
+        "monthly_total": 46,
+        "projected_cases": 6.9,
+        "projected_per_hour": 2.3
+      },
+      {
+        "month": "2009-12",
+        "window": "peak_am",
+        "monthly_total": 102,
+        "projected_cases": 20.4,
+        "projected_per_hour": 6.8
+      },
+      {
+        "month": "2009-12",
+        "window": "midday",
+        "monthly_total": 102,
+        "projected_cases": 20.4,
+        "projected_per_hour": 4.08
+      },
+      {
+        "month": "2009-12",
+        "window": "peak_pm",
+        "monthly_total": 102,
+        "projected_cases": 45.9,
+        "projected_per_hour": 9.18
+      },
+      {
+        "month": "2009-12",
+        "window": "night",
+        "monthly_total": 102,
+        "projected_cases": 15.3,
+        "projected_per_hour": 5.1
+      },
+      {
+        "month": "2010-01",
+        "window": "peak_am",
+        "monthly_total": 90,
+        "projected_cases": 18.0,
+        "projected_per_hour": 6.0
+      },
+      {
+        "month": "2010-01",
+        "window": "midday",
+        "monthly_total": 90,
+        "projected_cases": 18.0,
+        "projected_per_hour": 3.6
+      },
+      {
+        "month": "2010-01",
+        "window": "peak_pm",
+        "monthly_total": 90,
+        "projected_cases": 40.5,
+        "projected_per_hour": 8.1
+      },
+      {
+        "month": "2010-01",
+        "window": "night",
+        "monthly_total": 90,
+        "projected_cases": 13.5,
+        "projected_per_hour": 4.5
+      },
+      {
+        "month": "2010-02",
+        "window": "peak_am",
+        "monthly_total": 94,
+        "projected_cases": 18.8,
+        "projected_per_hour": 6.267
+      },
+      {
+        "month": "2010-02",
+        "window": "midday",
+        "monthly_total": 94,
+        "projected_cases": 18.8,
+        "projected_per_hour": 3.76
+      },
+      {
+        "month": "2010-02",
+        "window": "peak_pm",
+        "monthly_total": 94,
+        "projected_cases": 42.3,
+        "projected_per_hour": 8.46
+      },
+      {
+        "month": "2010-02",
+        "window": "night",
+        "monthly_total": 94,
+        "projected_cases": 14.1,
+        "projected_per_hour": 4.7
+      },
+      {
+        "month": "2010-03",
+        "window": "peak_am",
+        "monthly_total": 68,
+        "projected_cases": 13.6,
+        "projected_per_hour": 4.533
+      },
+      {
+        "month": "2010-03",
+        "window": "midday",
+        "monthly_total": 68,
+        "projected_cases": 13.6,
+        "projected_per_hour": 2.72
+      },
+      {
+        "month": "2010-03",
+        "window": "peak_pm",
+        "monthly_total": 68,
+        "projected_cases": 30.6,
+        "projected_per_hour": 6.12
+      },
+      {
+        "month": "2010-03",
+        "window": "night",
+        "monthly_total": 68,
+        "projected_cases": 10.2,
+        "projected_per_hour": 3.4
+      },
+      {
+        "month": "2010-04",
+        "window": "peak_am",
+        "monthly_total": 18,
+        "projected_cases": 3.6,
+        "projected_per_hour": 1.2
+      },
+      {
+        "month": "2010-04",
+        "window": "midday",
+        "monthly_total": 18,
+        "projected_cases": 3.6,
+        "projected_per_hour": 0.72
+      },
+      {
+        "month": "2010-04",
+        "window": "peak_pm",
+        "monthly_total": 18,
+        "projected_cases": 8.1,
+        "projected_per_hour": 1.62
+      },
+      {
+        "month": "2010-04",
+        "window": "night",
+        "monthly_total": 18,
+        "projected_cases": 2.7,
+        "projected_per_hour": 0.9
+      },
+      {
+        "month": "2010-05",
+        "window": "peak_am",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 5.067
+      },
+      {
+        "month": "2010-05",
+        "window": "midday",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 3.04
+      },
+      {
+        "month": "2010-05",
+        "window": "peak_pm",
+        "monthly_total": 76,
+        "projected_cases": 34.2,
+        "projected_per_hour": 6.84
+      },
+      {
+        "month": "2010-05",
+        "window": "night",
+        "monthly_total": 76,
+        "projected_cases": 11.4,
+        "projected_per_hour": 3.8
+      },
+      {
+        "month": "2010-06",
+        "window": "peak_am",
+        "monthly_total": 88,
+        "projected_cases": 17.6,
+        "projected_per_hour": 5.867
+      },
+      {
+        "month": "2010-06",
+        "window": "midday",
+        "monthly_total": 88,
+        "projected_cases": 17.6,
+        "projected_per_hour": 3.52
+      },
+      {
+        "month": "2010-06",
+        "window": "peak_pm",
+        "monthly_total": 88,
+        "projected_cases": 39.6,
+        "projected_per_hour": 7.92
+      },
+      {
+        "month": "2010-06",
+        "window": "night",
+        "monthly_total": 88,
+        "projected_cases": 13.2,
+        "projected_per_hour": 4.4
+      },
+      {
+        "month": "2010-07",
+        "window": "peak_am",
+        "monthly_total": 90,
+        "projected_cases": 18.0,
+        "projected_per_hour": 6.0
+      },
+      {
+        "month": "2010-07",
+        "window": "midday",
+        "monthly_total": 90,
+        "projected_cases": 18.0,
+        "projected_per_hour": 3.6
+      },
+      {
+        "month": "2010-07",
+        "window": "peak_pm",
+        "monthly_total": 90,
+        "projected_cases": 40.5,
+        "projected_per_hour": 8.1
+      },
+      {
+        "month": "2010-07",
+        "window": "night",
+        "monthly_total": 90,
+        "projected_cases": 13.5,
+        "projected_per_hour": 4.5
+      },
+      {
+        "month": "2010-08",
+        "window": "peak_am",
+        "monthly_total": 56,
+        "projected_cases": 11.2,
+        "projected_per_hour": 3.733
+      },
+      {
+        "month": "2010-08",
+        "window": "midday",
+        "monthly_total": 56,
+        "projected_cases": 11.2,
+        "projected_per_hour": 2.24
+      },
+      {
+        "month": "2010-08",
+        "window": "peak_pm",
+        "monthly_total": 56,
+        "projected_cases": 25.2,
+        "projected_per_hour": 5.04
+      },
+      {
+        "month": "2010-08",
+        "window": "night",
+        "monthly_total": 56,
+        "projected_cases": 8.4,
+        "projected_per_hour": 2.8
+      },
+      {
+        "month": "2010-09",
+        "window": "peak_am",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 5.067
+      },
+      {
+        "month": "2010-09",
+        "window": "midday",
+        "monthly_total": 76,
+        "projected_cases": 15.2,
+        "projected_per_hour": 3.04
+      },
+      {
+        "month": "2010-09",
+        "window": "peak_pm",
+        "monthly_total": 76,
+        "projected_cases": 34.2,
+        "projected_per_hour": 6.84
+      },
+      {
+        "month": "2010-09",
+        "window": "night",
+        "monthly_total": 76,
+        "projected_cases": 11.4,
+        "projected_per_hour": 3.8
+      },
+      {
+        "month": "2010-10",
+        "window": "peak_am",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2010-10",
+        "window": "midday",
+        "monthly_total": 60,
+        "projected_cases": 12.0,
+        "projected_per_hour": 2.4
+      },
+      {
+        "month": "2010-10",
+        "window": "peak_pm",
+        "monthly_total": 60,
+        "projected_cases": 27.0,
+        "projected_per_hour": 5.4
+      },
+      {
+        "month": "2010-10",
+        "window": "night",
+        "monthly_total": 60,
+        "projected_cases": 9.0,
+        "projected_per_hour": 3.0
+      },
+      {
+        "month": "2010-11",
+        "window": "peak_am",
+        "monthly_total": 88,
+        "projected_cases": 17.6,
+        "projected_per_hour": 5.867
+      },
+      {
+        "month": "2010-11",
+        "window": "midday",
+        "monthly_total": 88,
+        "projected_cases": 17.6,
+        "projected_per_hour": 3.52
+      },
+      {
+        "month": "2010-11",
+        "window": "peak_pm",
+        "monthly_total": 88,
+        "projected_cases": 39.6,
+        "projected_per_hour": 7.92
+      },
+      {
+        "month": "2010-11",
+        "window": "night",
+        "monthly_total": 88,
+        "projected_cases": 13.2,
+        "projected_per_hour": 4.4
+      },
+      {
+        "month": "2010-12",
+        "window": "peak_am",
+        "monthly_total": 66,
+        "projected_cases": 13.2,
+        "projected_per_hour": 4.4
+      },
+      {
+        "month": "2010-12",
+        "window": "midday",
+        "monthly_total": 66,
+        "projected_cases": 13.2,
+        "projected_per_hour": 2.64
+      },
+      {
+        "month": "2010-12",
+        "window": "peak_pm",
+        "monthly_total": 66,
+        "projected_cases": 29.7,
+        "projected_per_hour": 5.94
+      },
+      {
+        "month": "2010-12",
+        "window": "night",
+        "monthly_total": 66,
+        "projected_cases": 9.9,
+        "projected_per_hour": 3.3
+      },
+      {
+        "month": "2011-01",
+        "window": "peak_am",
+        "monthly_total": 42,
+        "projected_cases": 8.4,
+        "projected_per_hour": 2.8
+      },
+      {
+        "month": "2011-01",
+        "window": "midday",
+        "monthly_total": 42,
+        "projected_cases": 8.4,
+        "projected_per_hour": 1.68
+      },
+      {
+        "month": "2011-01",
+        "window": "peak_pm",
+        "monthly_total": 42,
+        "projected_cases": 18.9,
+        "projected_per_hour": 3.78
+      },
+      {
+        "month": "2011-01",
+        "window": "night",
+        "monthly_total": 42,
+        "projected_cases": 6.3,
+        "projected_per_hour": 2.1
+      },
+      {
+        "month": "2011-02",
+        "window": "peak_am",
+        "monthly_total": 51,
+        "projected_cases": 10.2,
+        "projected_per_hour": 3.4
+      },
+      {
+        "month": "2011-02",
+        "window": "midday",
+        "monthly_total": 51,
+        "projected_cases": 10.2,
+        "projected_per_hour": 2.04
+      },
+      {
+        "month": "2011-02",
+        "window": "peak_pm",
+        "monthly_total": 51,
+        "projected_cases": 22.95,
+        "projected_per_hour": 4.59
+      },
+      {
+        "month": "2011-02",
+        "window": "night",
+        "monthly_total": 51,
+        "projected_cases": 7.65,
+        "projected_per_hour": 2.55
+      },
+      {
+        "month": "2011-03",
+        "window": "peak_am",
+        "monthly_total": 47,
+        "projected_cases": 9.4,
+        "projected_per_hour": 3.133
+      },
+      {
+        "month": "2011-03",
+        "window": "midday",
+        "monthly_total": 47,
+        "projected_cases": 9.4,
+        "projected_per_hour": 1.88
+      },
+      {
+        "month": "2011-03",
+        "window": "peak_pm",
+        "monthly_total": 47,
+        "projected_cases": 21.15,
+        "projected_per_hour": 4.23
+      },
+      {
+        "month": "2011-03",
+        "window": "night",
+        "monthly_total": 47,
+        "projected_cases": 7.05,
+        "projected_per_hour": 2.35
+      },
+      {
+        "month": "2011-04",
+        "window": "peak_am",
+        "monthly_total": 69,
+        "projected_cases": 13.8,
+        "projected_per_hour": 4.6
+      },
+      {
+        "month": "2011-04",
+        "window": "midday",
+        "monthly_total": 69,
+        "projected_cases": 13.8,
+        "projected_per_hour": 2.76
+      },
+      {
+        "month": "2011-04",
+        "window": "peak_pm",
+        "monthly_total": 69,
+        "projected_cases": 31.05,
+        "projected_per_hour": 6.21
+      },
+      {
+        "month": "2011-04",
+        "window": "night",
+        "monthly_total": 69,
+        "projected_cases": 10.35,
+        "projected_per_hour": 3.45
+      },
+      {
+        "month": "2011-05",
+        "window": "peak_am",
+        "monthly_total": 32,
+        "projected_cases": 6.4,
+        "projected_per_hour": 2.133
+      },
+      {
+        "month": "2011-05",
+        "window": "midday",
+        "monthly_total": 32,
+        "projected_cases": 6.4,
+        "projected_per_hour": 1.28
+      },
+      {
+        "month": "2011-05",
+        "window": "peak_pm",
+        "monthly_total": 32,
+        "projected_cases": 14.4,
+        "projected_per_hour": 2.88
+      },
+      {
+        "month": "2011-05",
+        "window": "night",
+        "monthly_total": 32,
+        "projected_cases": 4.8,
+        "projected_per_hour": 1.6
+      },
+      {
+        "month": "2011-06",
+        "window": "peak_am",
+        "monthly_total": 40,
+        "projected_cases": 8.0,
+        "projected_per_hour": 2.667
+      },
+      {
+        "month": "2011-06",
+        "window": "midday",
+        "monthly_total": 40,
+        "projected_cases": 8.0,
+        "projected_per_hour": 1.6
+      },
+      {
+        "month": "2011-06",
+        "window": "peak_pm",
+        "monthly_total": 40,
+        "projected_cases": 18.0,
+        "projected_per_hour": 3.6
+      },
+      {
+        "month": "2011-06",
+        "window": "night",
+        "monthly_total": 40,
+        "projected_cases": 6.0,
+        "projected_per_hour": 2.0
+      },
+      {
+        "month": "2011-07",
+        "window": "peak_am",
+        "monthly_total": 35,
+        "projected_cases": 7.0,
+        "projected_per_hour": 2.333
+      },
+      {
+        "month": "2011-07",
+        "window": "midday",
+        "monthly_total": 35,
+        "projected_cases": 7.0,
+        "projected_per_hour": 1.4
+      },
+      {
+        "month": "2011-07",
+        "window": "peak_pm",
+        "monthly_total": 35,
+        "projected_cases": 15.75,
+        "projected_per_hour": 3.15
+      },
+      {
+        "month": "2011-07",
+        "window": "night",
+        "monthly_total": 35,
+        "projected_cases": 5.25,
+        "projected_per_hour": 1.75
+      },
+      {
+        "month": "2011-08",
+        "window": "peak_am",
+        "monthly_total": 49,
+        "projected_cases": 9.8,
+        "projected_per_hour": 3.267
+      },
+      {
+        "month": "2011-08",
+        "window": "midday",
+        "monthly_total": 49,
+        "projected_cases": 9.8,
+        "projected_per_hour": 1.96
+      },
+      {
+        "month": "2011-08",
+        "window": "peak_pm",
+        "monthly_total": 49,
+        "projected_cases": 22.05,
+        "projected_per_hour": 4.41
+      },
+      {
+        "month": "2011-08",
+        "window": "night",
+        "monthly_total": 49,
+        "projected_cases": 7.35,
+        "projected_per_hour": 2.45
+      },
+      {
+        "month": "2011-09",
+        "window": "peak_am",
+        "monthly_total": 31,
+        "projected_cases": 6.2,
+        "projected_per_hour": 2.067
+      },
+      {
+        "month": "2011-09",
+        "window": "midday",
+        "monthly_total": 31,
+        "projected_cases": 6.2,
+        "projected_per_hour": 1.24
+      },
+      {
+        "month": "2011-09",
+        "window": "peak_pm",
+        "monthly_total": 31,
+        "projected_cases": 13.95,
+        "projected_per_hour": 2.79
+      },
+      {
+        "month": "2011-09",
+        "window": "night",
+        "monthly_total": 31,
+        "projected_cases": 4.65,
+        "projected_per_hour": 1.55
+      },
+      {
+        "month": "2011-10",
+        "window": "peak_am",
+        "monthly_total": 38,
+        "projected_cases": 7.6,
+        "projected_per_hour": 2.533
+      },
+      {
+        "month": "2011-10",
+        "window": "midday",
+        "monthly_total": 38,
+        "projected_cases": 7.6,
+        "projected_per_hour": 1.52
+      },
+      {
+        "month": "2011-10",
+        "window": "peak_pm",
+        "monthly_total": 38,
+        "projected_cases": 17.1,
+        "projected_per_hour": 3.42
+      },
+      {
+        "month": "2011-10",
+        "window": "night",
+        "monthly_total": 38,
+        "projected_cases": 5.7,
+        "projected_per_hour": 1.9
+      },
+      {
+        "month": "2011-11",
+        "window": "peak_am",
+        "monthly_total": 59,
+        "projected_cases": 11.8,
+        "projected_per_hour": 3.933
+      },
+      {
+        "month": "2011-11",
+        "window": "midday",
+        "monthly_total": 59,
+        "projected_cases": 11.8,
+        "projected_per_hour": 2.36
+      },
+      {
+        "month": "2011-11",
+        "window": "peak_pm",
+        "monthly_total": 59,
+        "projected_cases": 26.55,
+        "projected_per_hour": 5.31
+      },
+      {
+        "month": "2011-11",
+        "window": "night",
+        "monthly_total": 59,
+        "projected_cases": 8.85,
+        "projected_per_hour": 2.95
+      },
+      {
+        "month": "2011-12",
+        "window": "peak_am",
+        "monthly_total": 52,
+        "projected_cases": 10.4,
+        "projected_per_hour": 3.467
+      },
+      {
+        "month": "2011-12",
+        "window": "midday",
+        "monthly_total": 52,
+        "projected_cases": 10.4,
+        "projected_per_hour": 2.08
+      },
+      {
+        "month": "2011-12",
+        "window": "peak_pm",
+        "monthly_total": 52,
+        "projected_cases": 23.4,
+        "projected_per_hour": 4.68
+      },
+      {
+        "month": "2011-12",
+        "window": "night",
+        "monthly_total": 52,
+        "projected_cases": 7.8,
+        "projected_per_hour": 2.6
+      },
+      {
+        "month": "2012-01",
+        "window": "peak_am",
+        "monthly_total": 109,
+        "projected_cases": 21.8,
+        "projected_per_hour": 7.267
+      },
+      {
+        "month": "2012-01",
+        "window": "midday",
+        "monthly_total": 109,
+        "projected_cases": 21.8,
+        "projected_per_hour": 4.36
+      },
+      {
+        "month": "2012-01",
+        "window": "peak_pm",
+        "monthly_total": 109,
+        "projected_cases": 49.05,
+        "projected_per_hour": 9.81
+      },
+      {
+        "month": "2012-01",
+        "window": "night",
+        "monthly_total": 109,
+        "projected_cases": 16.35,
+        "projected_per_hour": 5.45
+      },
+      {
+        "month": "2012-02",
+        "window": "peak_am",
+        "monthly_total": 70,
+        "projected_cases": 14.0,
+        "projected_per_hour": 4.667
+      },
+      {
+        "month": "2012-02",
+        "window": "midday",
+        "monthly_total": 70,
+        "projected_cases": 14.0,
+        "projected_per_hour": 2.8
+      },
+      {
+        "month": "2012-02",
+        "window": "peak_pm",
+        "monthly_total": 70,
+        "projected_cases": 31.5,
+        "projected_per_hour": 6.3
+      },
+      {
+        "month": "2012-02",
+        "window": "night",
+        "monthly_total": 70,
+        "projected_cases": 10.5,
+        "projected_per_hour": 3.5
+      },
+      {
+        "month": "2012-03",
+        "window": "peak_am",
+        "monthly_total": 77,
+        "projected_cases": 15.4,
+        "projected_per_hour": 5.133
+      },
+      {
+        "month": "2012-03",
+        "window": "midday",
+        "monthly_total": 77,
+        "projected_cases": 15.4,
+        "projected_per_hour": 3.08
+      },
+      {
+        "month": "2012-03",
+        "window": "peak_pm",
+        "monthly_total": 77,
+        "projected_cases": 34.65,
+        "projected_per_hour": 6.93
+      },
+      {
+        "month": "2012-03",
+        "window": "night",
+        "monthly_total": 77,
+        "projected_cases": 11.55,
+        "projected_per_hour": 3.85
+      },
+      {
+        "month": "2012-04",
+        "window": "peak_am",
+        "monthly_total": 163,
+        "projected_cases": 32.6,
+        "projected_per_hour": 10.867
+      },
+      {
+        "month": "2012-04",
+        "window": "midday",
+        "monthly_total": 163,
+        "projected_cases": 32.6,
+        "projected_per_hour": 6.52
+      },
+      {
+        "month": "2012-04",
+        "window": "peak_pm",
+        "monthly_total": 163,
+        "projected_cases": 73.35,
+        "projected_per_hour": 14.67
+      },
+      {
+        "month": "2012-04",
+        "window": "night",
+        "monthly_total": 163,
+        "projected_cases": 24.45,
+        "projected_per_hour": 8.15
+      },
+      {
+        "month": "2012-05",
+        "window": "peak_am",
+        "monthly_total": 50,
+        "projected_cases": 10.0,
+        "projected_per_hour": 3.333
+      },
+      {
+        "month": "2012-05",
+        "window": "midday",
+        "monthly_total": 50,
+        "projected_cases": 10.0,
+        "projected_per_hour": 2.0
+      },
+      {
+        "month": "2012-05",
+        "window": "peak_pm",
+        "monthly_total": 50,
+        "projected_cases": 22.5,
+        "projected_per_hour": 4.5
+      },
+      {
+        "month": "2012-05",
+        "window": "night",
+        "monthly_total": 50,
+        "projected_cases": 7.5,
+        "projected_per_hour": 2.5
+      },
+      {
+        "month": "2012-06",
+        "window": "peak_am",
+        "monthly_total": 51,
+        "projected_cases": 10.2,
+        "projected_per_hour": 3.4
+      },
+      {
+        "month": "2012-06",
+        "window": "midday",
+        "monthly_total": 51,
+        "projected_cases": 10.2,
+        "projected_per_hour": 2.04
+      },
+      {
+        "month": "2012-06",
+        "window": "peak_pm",
+        "monthly_total": 51,
+        "projected_cases": 22.95,
+        "projected_per_hour": 4.59
+      },
+      {
+        "month": "2012-06",
+        "window": "night",
+        "monthly_total": 51,
+        "projected_cases": 7.65,
+        "projected_per_hour": 2.55
+      },
+      {
+        "month": "2012-07",
+        "window": "peak_am",
+        "monthly_total": 66,
+        "projected_cases": 13.2,
+        "projected_per_hour": 4.4
+      },
+      {
+        "month": "2012-07",
+        "window": "midday",
+        "monthly_total": 66,
+        "projected_cases": 13.2,
+        "projected_per_hour": 2.64
+      },
+      {
+        "month": "2012-07",
+        "window": "peak_pm",
+        "monthly_total": 66,
+        "projected_cases": 29.7,
+        "projected_per_hour": 5.94
+      },
+      {
+        "month": "2012-07",
+        "window": "night",
+        "monthly_total": 66,
+        "projected_cases": 9.9,
+        "projected_per_hour": 3.3
+      },
+      {
+        "month": "2012-08",
+        "window": "peak_am",
+        "monthly_total": 52,
+        "projected_cases": 10.4,
+        "projected_per_hour": 3.467
+      },
+      {
+        "month": "2012-08",
+        "window": "midday",
+        "monthly_total": 52,
+        "projected_cases": 10.4,
+        "projected_per_hour": 2.08
+      },
+      {
+        "month": "2012-08",
+        "window": "peak_pm",
+        "monthly_total": 52,
+        "projected_cases": 23.4,
+        "projected_per_hour": 4.68
+      },
+      {
+        "month": "2012-08",
+        "window": "night",
+        "monthly_total": 52,
+        "projected_cases": 7.8,
+        "projected_per_hour": 2.6
+      },
+      {
+        "month": "2012-09",
+        "window": "peak_am",
+        "monthly_total": 68,
+        "projected_cases": 13.6,
+        "projected_per_hour": 4.533
+      },
+      {
+        "month": "2012-09",
+        "window": "midday",
+        "monthly_total": 68,
+        "projected_cases": 13.6,
+        "projected_per_hour": 2.72
+      },
+      {
+        "month": "2012-09",
+        "window": "peak_pm",
+        "monthly_total": 68,
+        "projected_cases": 30.6,
+        "projected_per_hour": 6.12
+      },
+      {
+        "month": "2012-09",
+        "window": "night",
+        "monthly_total": 68,
+        "projected_cases": 10.2,
+        "projected_per_hour": 3.4
+      },
+      {
+        "month": "2012-10",
+        "window": "peak_am",
+        "monthly_total": 51,
+        "projected_cases": 10.2,
+        "projected_per_hour": 3.4
+      },
+      {
+        "month": "2012-10",
+        "window": "midday",
+        "monthly_total": 51,
+        "projected_cases": 10.2,
+        "projected_per_hour": 2.04
+      },
+      {
+        "month": "2012-10",
+        "window": "peak_pm",
+        "monthly_total": 51,
+        "projected_cases": 22.95,
+        "projected_per_hour": 4.59
+      },
+      {
+        "month": "2012-10",
+        "window": "night",
+        "monthly_total": 51,
+        "projected_cases": 7.65,
+        "projected_per_hour": 2.55
+      },
+      {
+        "month": "2012-11",
+        "window": "peak_am",
+        "monthly_total": 33,
+        "projected_cases": 6.6,
+        "projected_per_hour": 2.2
+      },
+      {
+        "month": "2012-11",
+        "window": "midday",
+        "monthly_total": 33,
+        "projected_cases": 6.6,
+        "projected_per_hour": 1.32
+      },
+      {
+        "month": "2012-11",
+        "window": "peak_pm",
+        "monthly_total": 33,
+        "projected_cases": 14.85,
+        "projected_per_hour": 2.97
+      },
+      {
+        "month": "2012-11",
+        "window": "night",
+        "monthly_total": 33,
+        "projected_cases": 4.95,
+        "projected_per_hour": 1.65
+      },
+      {
+        "month": "2012-12",
+        "window": "peak_am",
+        "monthly_total": 100,
+        "projected_cases": 20.0,
+        "projected_per_hour": 6.667
+      },
+      {
+        "month": "2012-12",
+        "window": "midday",
+        "monthly_total": 100,
+        "projected_cases": 20.0,
+        "projected_per_hour": 4.0
+      },
+      {
+        "month": "2012-12",
+        "window": "peak_pm",
+        "monthly_total": 100,
+        "projected_cases": 45.0,
+        "projected_per_hour": 9.0
+      },
+      {
+        "month": "2012-12",
+        "window": "night",
+        "monthly_total": 100,
+        "projected_cases": 15.0,
+        "projected_per_hour": 5.0
+      },
+      {
+        "month": "2013-01",
+        "window": "peak_am",
+        "monthly_total": 271,
+        "projected_cases": 54.2,
+        "projected_per_hour": 18.067
+      },
+      {
+        "month": "2013-01",
+        "window": "midday",
+        "monthly_total": 271,
+        "projected_cases": 54.2,
+        "projected_per_hour": 10.84
+      },
+      {
+        "month": "2013-01",
+        "window": "peak_pm",
+        "monthly_total": 271,
+        "projected_cases": 121.95,
+        "projected_per_hour": 24.39
+      },
+      {
+        "month": "2013-01",
+        "window": "night",
+        "monthly_total": 271,
+        "projected_cases": 40.65,
+        "projected_per_hour": 13.55
+      },
+      {
+        "month": "2013-02",
+        "window": "peak_am",
+        "monthly_total": 65,
+        "projected_cases": 13.0,
+        "projected_per_hour": 4.333
+      },
+      {
+        "month": "2013-02",
+        "window": "midday",
+        "monthly_total": 65,
+        "projected_cases": 13.0,
+        "projected_per_hour": 2.6
+      },
+      {
+        "month": "2013-02",
+        "window": "peak_pm",
+        "monthly_total": 65,
+        "projected_cases": 29.25,
+        "projected_per_hour": 5.85
+      },
+      {
+        "month": "2013-02",
+        "window": "night",
+        "monthly_total": 65,
+        "projected_cases": 9.75,
+        "projected_per_hour": 3.25
+      },
+      {
+        "month": "2013-03",
+        "window": "peak_am",
+        "monthly_total": 53,
+        "projected_cases": 10.6,
+        "projected_per_hour": 3.533
+      },
+      {
+        "month": "2013-03",
+        "window": "midday",
+        "monthly_total": 53,
+        "projected_cases": 10.6,
+        "projected_per_hour": 2.12
+      },
+      {
+        "month": "2013-03",
+        "window": "peak_pm",
+        "monthly_total": 53,
+        "projected_cases": 23.85,
+        "projected_per_hour": 4.77
+      },
+      {
+        "month": "2013-03",
+        "window": "night",
+        "monthly_total": 53,
+        "projected_cases": 7.95,
+        "projected_per_hour": 2.65
+      },
+      {
+        "month": "2013-04",
+        "window": "peak_am",
+        "monthly_total": 75,
+        "projected_cases": 15.0,
+        "projected_per_hour": 5.0
+      },
+      {
+        "month": "2013-04",
+        "window": "midday",
+        "monthly_total": 75,
+        "projected_cases": 15.0,
+        "projected_per_hour": 3.0
+      },
+      {
+        "month": "2013-04",
+        "window": "peak_pm",
+        "monthly_total": 75,
+        "projected_cases": 33.75,
+        "projected_per_hour": 6.75
+      },
+      {
+        "month": "2013-04",
+        "window": "night",
+        "monthly_total": 75,
+        "projected_cases": 11.25,
+        "projected_per_hour": 3.75
+      },
+      {
+        "month": "2013-05",
+        "window": "peak_am",
+        "monthly_total": 50,
+        "projected_cases": 10.0,
+        "projected_per_hour": 3.333
+      },
+      {
+        "month": "2013-05",
+        "window": "midday",
+        "monthly_total": 50,
+        "projected_cases": 10.0,
+        "projected_per_hour": 2.0
+      },
+      {
+        "month": "2013-05",
+        "window": "peak_pm",
+        "monthly_total": 50,
+        "projected_cases": 22.5,
+        "projected_per_hour": 4.5
+      },
+      {
+        "month": "2013-05",
+        "window": "night",
+        "monthly_total": 50,
+        "projected_cases": 7.5,
+        "projected_per_hour": 2.5
+      },
+      {
+        "month": "2013-06",
+        "window": "peak_am",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 6.533
+      },
+      {
+        "month": "2013-06",
+        "window": "midday",
+        "monthly_total": 98,
+        "projected_cases": 19.6,
+        "projected_per_hour": 3.92
+      },
+      {
+        "month": "2013-06",
+        "window": "peak_pm",
+        "monthly_total": 98,
+        "projected_cases": 44.1,
+        "projected_per_hour": 8.82
+      },
+      {
+        "month": "2013-06",
+        "window": "night",
+        "monthly_total": 98,
+        "projected_cases": 14.7,
+        "projected_per_hour": 4.9
+      },
+      {
+        "month": "2013-07",
+        "window": "peak_am",
+        "monthly_total": 87,
+        "projected_cases": 17.4,
+        "projected_per_hour": 5.8
+      },
+      {
+        "month": "2013-07",
+        "window": "midday",
+        "monthly_total": 87,
+        "projected_cases": 17.4,
+        "projected_per_hour": 3.48
+      },
+      {
+        "month": "2013-07",
+        "window": "peak_pm",
+        "monthly_total": 87,
+        "projected_cases": 39.15,
+        "projected_per_hour": 7.83
+      },
+      {
+        "month": "2013-07",
+        "window": "night",
+        "monthly_total": 87,
+        "projected_cases": 13.05,
+        "projected_per_hour": 4.35
+      },
+      {
+        "month": "2013-08",
+        "window": "peak_am",
+        "monthly_total": 103,
+        "projected_cases": 20.6,
+        "projected_per_hour": 6.867
+      },
+      {
+        "month": "2013-08",
+        "window": "midday",
+        "monthly_total": 103,
+        "projected_cases": 20.6,
+        "projected_per_hour": 4.12
+      },
+      {
+        "month": "2013-08",
+        "window": "peak_pm",
+        "monthly_total": 103,
+        "projected_cases": 46.35,
+        "projected_per_hour": 9.27
+      },
+      {
+        "month": "2013-08",
+        "window": "night",
+        "monthly_total": 103,
+        "projected_cases": 15.45,
+        "projected_per_hour": 5.15
+      },
+      {
+        "month": "2013-09",
+        "window": "peak_am",
+        "monthly_total": 247,
+        "projected_cases": 49.4,
+        "projected_per_hour": 16.467
+      },
+      {
+        "month": "2013-09",
+        "window": "midday",
+        "monthly_total": 247,
+        "projected_cases": 49.4,
+        "projected_per_hour": 9.88
+      },
+      {
+        "month": "2013-09",
+        "window": "peak_pm",
+        "monthly_total": 247,
+        "projected_cases": 111.15,
+        "projected_per_hour": 22.23
+      },
+      {
+        "month": "2013-09",
+        "window": "night",
+        "monthly_total": 247,
+        "projected_cases": 37.05,
+        "projected_per_hour": 12.35
+      },
+      {
+        "month": "2013-10",
+        "window": "peak_am",
+        "monthly_total": 494,
+        "projected_cases": 98.8,
+        "projected_per_hour": 32.933
+      },
+      {
+        "month": "2013-10",
+        "window": "midday",
+        "monthly_total": 494,
+        "projected_cases": 98.8,
+        "projected_per_hour": 19.76
+      },
+      {
+        "month": "2013-10",
+        "window": "peak_pm",
+        "monthly_total": 494,
+        "projected_cases": 222.3,
+        "projected_per_hour": 44.46
+      },
+      {
+        "month": "2013-10",
+        "window": "night",
+        "monthly_total": 494,
+        "projected_cases": 74.1,
+        "projected_per_hour": 24.7
+      },
+      {
+        "month": "2013-11",
+        "window": "peak_am",
+        "monthly_total": 219,
+        "projected_cases": 43.8,
+        "projected_per_hour": 14.6
+      },
+      {
+        "month": "2013-11",
+        "window": "midday",
+        "monthly_total": 219,
+        "projected_cases": 43.8,
+        "projected_per_hour": 8.76
+      },
+      {
+        "month": "2013-11",
+        "window": "peak_pm",
+        "monthly_total": 219,
+        "projected_cases": 98.55,
+        "projected_per_hour": 19.71
+      },
+      {
+        "month": "2013-11",
+        "window": "night",
+        "monthly_total": 219,
+        "projected_cases": 32.85,
+        "projected_per_hour": 10.95
+      },
+      {
+        "month": "2013-12",
+        "window": "peak_am",
+        "monthly_total": 235,
+        "projected_cases": 47.0,
+        "projected_per_hour": 15.667
+      },
+      {
+        "month": "2013-12",
+        "window": "midday",
+        "monthly_total": 235,
+        "projected_cases": 47.0,
+        "projected_per_hour": 9.4
+      },
+      {
+        "month": "2013-12",
+        "window": "peak_pm",
+        "monthly_total": 235,
+        "projected_cases": 105.75,
+        "projected_per_hour": 21.15
+      },
+      {
+        "month": "2013-12",
+        "window": "night",
+        "monthly_total": 235,
+        "projected_cases": 35.25,
+        "projected_per_hour": 11.75
+      },
+      {
+        "month": "2014-01",
+        "window": "peak_am",
+        "monthly_total": 382,
+        "projected_cases": 76.4,
+        "projected_per_hour": 25.467
+      },
+      {
+        "month": "2014-01",
+        "window": "midday",
+        "monthly_total": 382,
+        "projected_cases": 76.4,
+        "projected_per_hour": 15.28
+      },
+      {
+        "month": "2014-01",
+        "window": "peak_pm",
+        "monthly_total": 382,
+        "projected_cases": 171.9,
+        "projected_per_hour": 34.38
+      },
+      {
+        "month": "2014-01",
+        "window": "night",
+        "monthly_total": 382,
+        "projected_cases": 57.3,
+        "projected_per_hour": 19.1
+      },
+      {
+        "month": "2014-02",
+        "window": "peak_am",
+        "monthly_total": 269,
+        "projected_cases": 53.8,
+        "projected_per_hour": 17.933
+      },
+      {
+        "month": "2014-02",
+        "window": "midday",
+        "monthly_total": 269,
+        "projected_cases": 53.8,
+        "projected_per_hour": 10.76
+      },
+      {
+        "month": "2014-02",
+        "window": "peak_pm",
+        "monthly_total": 269,
+        "projected_cases": 121.05,
+        "projected_per_hour": 24.21
+      },
+      {
+        "month": "2014-02",
+        "window": "night",
+        "monthly_total": 269,
+        "projected_cases": 40.35,
+        "projected_per_hour": 13.45
+      },
+      {
+        "month": "2014-03",
+        "window": "peak_am",
+        "monthly_total": 258,
+        "projected_cases": 51.6,
+        "projected_per_hour": 17.2
+      },
+      {
+        "month": "2014-03",
+        "window": "midday",
+        "monthly_total": 258,
+        "projected_cases": 51.6,
+        "projected_per_hour": 10.32
+      },
+      {
+        "month": "2014-03",
+        "window": "peak_pm",
+        "monthly_total": 258,
+        "projected_cases": 116.1,
+        "projected_per_hour": 23.22
+      },
+      {
+        "month": "2014-03",
+        "window": "night",
+        "monthly_total": 258,
+        "projected_cases": 38.7,
+        "projected_per_hour": 12.9
+      },
+      {
+        "month": "2014-04",
+        "window": "peak_am",
+        "monthly_total": 111,
+        "projected_cases": 22.2,
+        "projected_per_hour": 7.4
+      },
+      {
+        "month": "2014-04",
+        "window": "midday",
+        "monthly_total": 111,
+        "projected_cases": 22.2,
+        "projected_per_hour": 4.44
+      },
+      {
+        "month": "2014-04",
+        "window": "peak_pm",
+        "monthly_total": 111,
+        "projected_cases": 49.95,
+        "projected_per_hour": 9.99
+      },
+      {
+        "month": "2014-04",
+        "window": "night",
+        "monthly_total": 111,
+        "projected_cases": 16.65,
+        "projected_per_hour": 5.55
+      },
+      {
+        "month": "2014-05",
+        "window": "peak_am",
+        "monthly_total": 181,
+        "projected_cases": 36.2,
+        "projected_per_hour": 12.067
+      },
+      {
+        "month": "2014-05",
+        "window": "midday",
+        "monthly_total": 181,
+        "projected_cases": 36.2,
+        "projected_per_hour": 7.24
+      },
+      {
+        "month": "2014-05",
+        "window": "peak_pm",
+        "monthly_total": 181,
+        "projected_cases": 81.45,
+        "projected_per_hour": 16.29
+      },
+      {
+        "month": "2014-05",
+        "window": "night",
+        "monthly_total": 181,
+        "projected_cases": 27.15,
+        "projected_per_hour": 9.05
+      },
+      {
+        "month": "2014-06",
+        "window": "peak_am",
+        "monthly_total": 256,
+        "projected_cases": 51.2,
+        "projected_per_hour": 17.067
+      },
+      {
+        "month": "2014-06",
+        "window": "midday",
+        "monthly_total": 256,
+        "projected_cases": 51.2,
+        "projected_per_hour": 10.24
+      },
+      {
+        "month": "2014-06",
+        "window": "peak_pm",
+        "monthly_total": 256,
+        "projected_cases": 115.2,
+        "projected_per_hour": 23.04
+      },
+      {
+        "month": "2014-06",
+        "window": "night",
+        "monthly_total": 256,
+        "projected_cases": 38.4,
+        "projected_per_hour": 12.8
+      },
+      {
+        "month": "2014-07",
+        "window": "peak_am",
+        "monthly_total": 318,
+        "projected_cases": 63.6,
+        "projected_per_hour": 21.2
+      },
+      {
+        "month": "2014-07",
+        "window": "midday",
+        "monthly_total": 318,
+        "projected_cases": 63.6,
+        "projected_per_hour": 12.72
+      },
+      {
+        "month": "2014-07",
+        "window": "peak_pm",
+        "monthly_total": 318,
+        "projected_cases": 143.1,
+        "projected_per_hour": 28.62
+      },
+      {
+        "month": "2014-07",
+        "window": "night",
+        "monthly_total": 318,
+        "projected_cases": 47.7,
+        "projected_per_hour": 15.9
+      },
+      {
+        "month": "2014-08",
+        "window": "peak_am",
+        "monthly_total": 183,
+        "projected_cases": 36.6,
+        "projected_per_hour": 12.2
+      },
+      {
+        "month": "2014-08",
+        "window": "midday",
+        "monthly_total": 183,
+        "projected_cases": 36.6,
+        "projected_per_hour": 7.32
+      },
+      {
+        "month": "2014-08",
+        "window": "peak_pm",
+        "monthly_total": 183,
+        "projected_cases": 82.35,
+        "projected_per_hour": 16.47
+      },
+      {
+        "month": "2014-08",
+        "window": "night",
+        "monthly_total": 183,
+        "projected_cases": 27.45,
+        "projected_per_hour": 9.15
+      },
+      {
+        "month": "2014-09",
+        "window": "peak_am",
+        "monthly_total": 375,
+        "projected_cases": 75.0,
+        "projected_per_hour": 25.0
+      },
+      {
+        "month": "2014-09",
+        "window": "midday",
+        "monthly_total": 375,
+        "projected_cases": 75.0,
+        "projected_per_hour": 15.0
+      },
+      {
+        "month": "2014-09",
+        "window": "peak_pm",
+        "monthly_total": 375,
+        "projected_cases": 168.75,
+        "projected_per_hour": 33.75
+      },
+      {
+        "month": "2014-09",
+        "window": "night",
+        "monthly_total": 375,
+        "projected_cases": 56.25,
+        "projected_per_hour": 18.75
+      },
+      {
+        "month": "2014-10",
+        "window": "peak_am",
+        "monthly_total": 246,
+        "projected_cases": 49.2,
+        "projected_per_hour": 16.4
+      },
+      {
+        "month": "2014-10",
+        "window": "midday",
+        "monthly_total": 246,
+        "projected_cases": 49.2,
+        "projected_per_hour": 9.84
+      },
+      {
+        "month": "2014-10",
+        "window": "peak_pm",
+        "monthly_total": 246,
+        "projected_cases": 110.7,
+        "projected_per_hour": 22.14
+      },
+      {
+        "month": "2014-10",
+        "window": "night",
+        "monthly_total": 246,
+        "projected_cases": 36.9,
+        "projected_per_hour": 12.3
+      },
+      {
+        "month": "2014-11",
+        "window": "peak_am",
+        "monthly_total": 234,
+        "projected_cases": 46.8,
+        "projected_per_hour": 15.6
+      },
+      {
+        "month": "2014-11",
+        "window": "midday",
+        "monthly_total": 234,
+        "projected_cases": 46.8,
+        "projected_per_hour": 9.36
+      },
+      {
+        "month": "2014-11",
+        "window": "peak_pm",
+        "monthly_total": 234,
+        "projected_cases": 105.3,
+        "projected_per_hour": 21.06
+      },
+      {
+        "month": "2014-11",
+        "window": "night",
+        "monthly_total": 234,
+        "projected_cases": 35.1,
+        "projected_per_hour": 11.7
+      },
+      {
+        "month": "2014-12",
+        "window": "peak_am",
+        "monthly_total": 191,
+        "projected_cases": 38.2,
+        "projected_per_hour": 12.733
+      },
+      {
+        "month": "2014-12",
+        "window": "midday",
+        "monthly_total": 191,
+        "projected_cases": 38.2,
+        "projected_per_hour": 7.64
+      },
+      {
+        "month": "2014-12",
+        "window": "peak_pm",
+        "monthly_total": 191,
+        "projected_cases": 85.95,
+        "projected_per_hour": 17.19
+      },
+      {
+        "month": "2014-12",
+        "window": "night",
+        "monthly_total": 191,
+        "projected_cases": 28.65,
+        "projected_per_hour": 9.55
+      },
+      {
+        "month": "2015-01",
+        "window": "peak_am",
+        "monthly_total": 354,
+        "projected_cases": 70.8,
+        "projected_per_hour": 23.6
+      },
+      {
+        "month": "2015-01",
+        "window": "midday",
+        "monthly_total": 354,
+        "projected_cases": 70.8,
+        "projected_per_hour": 14.16
+      },
+      {
+        "month": "2015-01",
+        "window": "peak_pm",
+        "monthly_total": 354,
+        "projected_cases": 159.3,
+        "projected_per_hour": 31.86
+      },
+      {
+        "month": "2015-01",
+        "window": "night",
+        "monthly_total": 354,
+        "projected_cases": 53.1,
+        "projected_per_hour": 17.7
+      },
+      {
+        "month": "2015-02",
+        "window": "peak_am",
+        "monthly_total": 531,
+        "projected_cases": 106.2,
+        "projected_per_hour": 35.4
+      },
+      {
+        "month": "2015-02",
+        "window": "midday",
+        "monthly_total": 531,
+        "projected_cases": 106.2,
+        "projected_per_hour": 21.24
+      },
+      {
+        "month": "2015-02",
+        "window": "peak_pm",
+        "monthly_total": 531,
+        "projected_cases": 238.95,
+        "projected_per_hour": 47.79
+      },
+      {
+        "month": "2015-02",
+        "window": "night",
+        "monthly_total": 531,
+        "projected_cases": 79.65,
+        "projected_per_hour": 26.55
+      },
+      {
+        "month": "2015-03",
+        "window": "peak_am",
+        "monthly_total": 366,
+        "projected_cases": 73.2,
+        "projected_per_hour": 24.4
+      },
+      {
+        "month": "2015-03",
+        "window": "midday",
+        "monthly_total": 366,
+        "projected_cases": 73.2,
+        "projected_per_hour": 14.64
+      },
+      {
+        "month": "2015-03",
+        "window": "peak_pm",
+        "monthly_total": 366,
+        "projected_cases": 164.7,
+        "projected_per_hour": 32.94
+      },
+      {
+        "month": "2015-03",
+        "window": "night",
+        "monthly_total": 366,
+        "projected_cases": 54.9,
+        "projected_per_hour": 18.3
+      },
+      {
+        "month": "2015-04",
+        "window": "peak_am",
+        "monthly_total": 424,
+        "projected_cases": 84.8,
+        "projected_per_hour": 28.267
+      },
+      {
+        "month": "2015-04",
+        "window": "midday",
+        "monthly_total": 424,
+        "projected_cases": 84.8,
+        "projected_per_hour": 16.96
+      },
+      {
+        "month": "2015-04",
+        "window": "peak_pm",
+        "monthly_total": 424,
+        "projected_cases": 190.8,
+        "projected_per_hour": 38.16
+      },
+      {
+        "month": "2015-04",
+        "window": "night",
+        "monthly_total": 424,
+        "projected_cases": 63.6,
+        "projected_per_hour": 21.2
+      },
+      {
+        "month": "2015-05",
+        "window": "peak_am",
+        "monthly_total": 466,
+        "projected_cases": 93.2,
+        "projected_per_hour": 31.067
+      },
+      {
+        "month": "2015-05",
+        "window": "midday",
+        "monthly_total": 466,
+        "projected_cases": 93.2,
+        "projected_per_hour": 18.64
+      },
+      {
+        "month": "2015-05",
+        "window": "peak_pm",
+        "monthly_total": 466,
+        "projected_cases": 209.7,
+        "projected_per_hour": 41.94
+      },
+      {
+        "month": "2015-05",
+        "window": "night",
+        "monthly_total": 466,
+        "projected_cases": 69.9,
+        "projected_per_hour": 23.3
+      },
+      {
+        "month": "2015-06",
+        "window": "peak_am",
+        "monthly_total": 411,
+        "projected_cases": 82.2,
+        "projected_per_hour": 27.4
+      },
+      {
+        "month": "2015-06",
+        "window": "midday",
+        "monthly_total": 411,
+        "projected_cases": 82.2,
+        "projected_per_hour": 16.44
+      },
+      {
+        "month": "2015-06",
+        "window": "peak_pm",
+        "monthly_total": 411,
+        "projected_cases": 184.95,
+        "projected_per_hour": 36.99
+      },
+      {
+        "month": "2015-06",
+        "window": "night",
+        "monthly_total": 411,
+        "projected_cases": 61.65,
+        "projected_per_hour": 20.55
+      },
+      {
+        "month": "2015-07",
+        "window": "peak_am",
+        "monthly_total": 498,
+        "projected_cases": 99.6,
+        "projected_per_hour": 33.2
+      },
+      {
+        "month": "2015-07",
+        "window": "midday",
+        "monthly_total": 498,
+        "projected_cases": 99.6,
+        "projected_per_hour": 19.92
+      },
+      {
+        "month": "2015-07",
+        "window": "peak_pm",
+        "monthly_total": 498,
+        "projected_cases": 224.1,
+        "projected_per_hour": 44.82
+      },
+      {
+        "month": "2015-07",
+        "window": "night",
+        "monthly_total": 498,
+        "projected_cases": 74.7,
+        "projected_per_hour": 24.9
+      },
+      {
+        "month": "2015-08",
+        "window": "peak_am",
+        "monthly_total": 476,
+        "projected_cases": 95.2,
+        "projected_per_hour": 31.733
+      },
+      {
+        "month": "2015-08",
+        "window": "midday",
+        "monthly_total": 476,
+        "projected_cases": 95.2,
+        "projected_per_hour": 19.04
+      },
+      {
+        "month": "2015-08",
+        "window": "peak_pm",
+        "monthly_total": 476,
+        "projected_cases": 214.2,
+        "projected_per_hour": 42.84
+      },
+      {
+        "month": "2015-08",
+        "window": "night",
+        "monthly_total": 476,
+        "projected_cases": 71.4,
+        "projected_per_hour": 23.8
+      },
+      {
+        "month": "2015-09",
+        "window": "peak_am",
+        "monthly_total": 480,
+        "projected_cases": 96.0,
+        "projected_per_hour": 32.0
+      },
+      {
+        "month": "2015-09",
+        "window": "midday",
+        "monthly_total": 480,
+        "projected_cases": 96.0,
+        "projected_per_hour": 19.2
+      },
+      {
+        "month": "2015-09",
+        "window": "peak_pm",
+        "monthly_total": 480,
+        "projected_cases": 216.0,
+        "projected_per_hour": 43.2
+      },
+      {
+        "month": "2015-09",
+        "window": "night",
+        "monthly_total": 480,
+        "projected_cases": 72.0,
+        "projected_per_hour": 24.0
+      },
+      {
+        "month": "2015-10",
+        "window": "peak_am",
+        "monthly_total": 467,
+        "projected_cases": 93.4,
+        "projected_per_hour": 31.133
+      },
+      {
+        "month": "2015-10",
+        "window": "midday",
+        "monthly_total": 467,
+        "projected_cases": 93.4,
+        "projected_per_hour": 18.68
+      },
+      {
+        "month": "2015-10",
+        "window": "peak_pm",
+        "monthly_total": 467,
+        "projected_cases": 210.15,
+        "projected_per_hour": 42.03
+      },
+      {
+        "month": "2015-10",
+        "window": "night",
+        "monthly_total": 467,
+        "projected_cases": 70.05,
+        "projected_per_hour": 23.35
+      },
+      {
+        "month": "2015-11",
+        "window": "peak_am",
+        "monthly_total": 352,
+        "projected_cases": 70.4,
+        "projected_per_hour": 23.467
+      },
+      {
+        "month": "2015-11",
+        "window": "midday",
+        "monthly_total": 352,
+        "projected_cases": 70.4,
+        "projected_per_hour": 14.08
+      },
+      {
+        "month": "2015-11",
+        "window": "peak_pm",
+        "monthly_total": 352,
+        "projected_cases": 158.4,
+        "projected_per_hour": 31.68
+      },
+      {
+        "month": "2015-11",
+        "window": "night",
+        "monthly_total": 352,
+        "projected_cases": 52.8,
+        "projected_per_hour": 17.6
+      },
+      {
+        "month": "2015-12",
+        "window": "peak_am",
+        "monthly_total": 387,
+        "projected_cases": 77.4,
+        "projected_per_hour": 25.8
+      },
+      {
+        "month": "2015-12",
+        "window": "midday",
+        "monthly_total": 387,
+        "projected_cases": 77.4,
+        "projected_per_hour": 15.48
+      },
+      {
+        "month": "2015-12",
+        "window": "peak_pm",
+        "monthly_total": 387,
+        "projected_cases": 174.15,
+        "projected_per_hour": 34.83
+      },
+      {
+        "month": "2015-12",
+        "window": "night",
+        "monthly_total": 387,
+        "projected_cases": 58.05,
+        "projected_per_hour": 19.35
+      },
+      {
+        "month": "2016-01",
+        "window": "peak_am",
+        "monthly_total": 293,
+        "projected_cases": 58.6,
+        "projected_per_hour": 19.533
+      },
+      {
+        "month": "2016-01",
+        "window": "midday",
+        "monthly_total": 293,
+        "projected_cases": 58.6,
+        "projected_per_hour": 11.72
+      },
+      {
+        "month": "2016-01",
+        "window": "peak_pm",
+        "monthly_total": 293,
+        "projected_cases": 131.85,
+        "projected_per_hour": 26.37
+      },
+      {
+        "month": "2016-01",
+        "window": "night",
+        "monthly_total": 293,
+        "projected_cases": 43.95,
+        "projected_per_hour": 14.65
+      },
+      {
+        "month": "2016-02",
+        "window": "peak_am",
+        "monthly_total": 456,
+        "projected_cases": 91.2,
+        "projected_per_hour": 30.4
+      },
+      {
+        "month": "2016-02",
+        "window": "midday",
+        "monthly_total": 456,
+        "projected_cases": 91.2,
+        "projected_per_hour": 18.24
+      },
+      {
+        "month": "2016-02",
+        "window": "peak_pm",
+        "monthly_total": 456,
+        "projected_cases": 205.2,
+        "projected_per_hour": 41.04
+      },
+      {
+        "month": "2016-02",
+        "window": "night",
+        "monthly_total": 456,
+        "projected_cases": 68.4,
+        "projected_per_hour": 22.8
+      },
+      {
+        "month": "2016-03",
+        "window": "peak_am",
+        "monthly_total": 410,
+        "projected_cases": 82.0,
+        "projected_per_hour": 27.333
+      },
+      {
+        "month": "2016-03",
+        "window": "midday",
+        "monthly_total": 410,
+        "projected_cases": 82.0,
+        "projected_per_hour": 16.4
+      },
+      {
+        "month": "2016-03",
+        "window": "peak_pm",
+        "monthly_total": 410,
+        "projected_cases": 184.5,
+        "projected_per_hour": 36.9
+      },
+      {
+        "month": "2016-03",
+        "window": "night",
+        "monthly_total": 410,
+        "projected_cases": 61.5,
+        "projected_per_hour": 20.5
+      },
+      {
+        "month": "2016-04",
+        "window": "peak_am",
+        "monthly_total": 514,
+        "projected_cases": 102.8,
+        "projected_per_hour": 34.267
+      },
+      {
+        "month": "2016-04",
+        "window": "midday",
+        "monthly_total": 514,
+        "projected_cases": 102.8,
+        "projected_per_hour": 20.56
+      },
+      {
+        "month": "2016-04",
+        "window": "peak_pm",
+        "monthly_total": 514,
+        "projected_cases": 231.3,
+        "projected_per_hour": 46.26
+      },
+      {
+        "month": "2016-04",
+        "window": "night",
+        "monthly_total": 514,
+        "projected_cases": 77.1,
+        "projected_per_hour": 25.7
+      },
+      {
+        "month": "2016-05",
+        "window": "peak_am",
+        "monthly_total": 430,
+        "projected_cases": 86.0,
+        "projected_per_hour": 28.667
+      },
+      {
+        "month": "2016-05",
+        "window": "midday",
+        "monthly_total": 430,
+        "projected_cases": 86.0,
+        "projected_per_hour": 17.2
+      },
+      {
+        "month": "2016-05",
+        "window": "peak_pm",
+        "monthly_total": 430,
+        "projected_cases": 193.5,
+        "projected_per_hour": 38.7
+      },
+      {
+        "month": "2016-05",
+        "window": "night",
+        "monthly_total": 430,
+        "projected_cases": 64.5,
+        "projected_per_hour": 21.5
+      },
+      {
+        "month": "2016-06",
+        "window": "peak_am",
+        "monthly_total": 362,
+        "projected_cases": 72.4,
+        "projected_per_hour": 24.133
+      },
+      {
+        "month": "2016-06",
+        "window": "midday",
+        "monthly_total": 362,
+        "projected_cases": 72.4,
+        "projected_per_hour": 14.48
+      },
+      {
+        "month": "2016-06",
+        "window": "peak_pm",
+        "monthly_total": 362,
+        "projected_cases": 162.9,
+        "projected_per_hour": 32.58
+      },
+      {
+        "month": "2016-06",
+        "window": "night",
+        "monthly_total": 362,
+        "projected_cases": 54.3,
+        "projected_per_hour": 18.1
+      },
+      {
+        "month": "2016-07",
+        "window": "peak_am",
+        "monthly_total": 413,
+        "projected_cases": 82.6,
+        "projected_per_hour": 27.533
+      },
+      {
+        "month": "2016-07",
+        "window": "midday",
+        "monthly_total": 413,
+        "projected_cases": 82.6,
+        "projected_per_hour": 16.52
+      },
+      {
+        "month": "2016-07",
+        "window": "peak_pm",
+        "monthly_total": 413,
+        "projected_cases": 185.85,
+        "projected_per_hour": 37.17
+      },
+      {
+        "month": "2016-07",
+        "window": "night",
+        "monthly_total": 413,
+        "projected_cases": 61.95,
+        "projected_per_hour": 20.65
+      },
+      {
+        "month": "2016-08",
+        "window": "peak_am",
+        "monthly_total": 522,
+        "projected_cases": 104.4,
+        "projected_per_hour": 34.8
+      },
+      {
+        "month": "2016-08",
+        "window": "midday",
+        "monthly_total": 522,
+        "projected_cases": 104.4,
+        "projected_per_hour": 20.88
+      },
+      {
+        "month": "2016-08",
+        "window": "peak_pm",
+        "monthly_total": 522,
+        "projected_cases": 234.9,
+        "projected_per_hour": 46.98
+      },
+      {
+        "month": "2016-08",
+        "window": "night",
+        "monthly_total": 522,
+        "projected_cases": 78.3,
+        "projected_per_hour": 26.1
+      },
+      {
+        "month": "2016-09",
+        "window": "peak_am",
+        "monthly_total": 617,
+        "projected_cases": 123.4,
+        "projected_per_hour": 41.133
+      },
+      {
+        "month": "2016-09",
+        "window": "midday",
+        "monthly_total": 617,
+        "projected_cases": 123.4,
+        "projected_per_hour": 24.68
+      },
+      {
+        "month": "2016-09",
+        "window": "peak_pm",
+        "monthly_total": 617,
+        "projected_cases": 277.65,
+        "projected_per_hour": 55.53
+      },
+      {
+        "month": "2016-09",
+        "window": "night",
+        "monthly_total": 617,
+        "projected_cases": 92.55,
+        "projected_per_hour": 30.85
+      },
+      {
+        "month": "2016-10",
+        "window": "peak_am",
+        "monthly_total": 700,
+        "projected_cases": 140.0,
+        "projected_per_hour": 46.667
+      },
+      {
+        "month": "2016-10",
+        "window": "midday",
+        "monthly_total": 700,
+        "projected_cases": 140.0,
+        "projected_per_hour": 28.0
+      },
+      {
+        "month": "2016-10",
+        "window": "peak_pm",
+        "monthly_total": 700,
+        "projected_cases": 315.0,
+        "projected_per_hour": 63.0
+      },
+      {
+        "month": "2016-10",
+        "window": "night",
+        "monthly_total": 700,
+        "projected_cases": 105.0,
+        "projected_per_hour": 35.0
+      },
+      {
+        "month": "2016-11",
+        "window": "peak_am",
+        "monthly_total": 740,
+        "projected_cases": 148.0,
+        "projected_per_hour": 49.333
+      },
+      {
+        "month": "2016-11",
+        "window": "midday",
+        "monthly_total": 740,
+        "projected_cases": 148.0,
+        "projected_per_hour": 29.6
+      },
+      {
+        "month": "2016-11",
+        "window": "peak_pm",
+        "monthly_total": 740,
+        "projected_cases": 333.0,
+        "projected_per_hour": 66.6
+      },
+      {
+        "month": "2016-11",
+        "window": "night",
+        "monthly_total": 740,
+        "projected_cases": 111.0,
+        "projected_per_hour": 37.0
+      },
+      {
+        "month": "2016-12",
+        "window": "peak_am",
+        "monthly_total": 697,
+        "projected_cases": 139.4,
+        "projected_per_hour": 46.467
+      },
+      {
+        "month": "2016-12",
+        "window": "midday",
+        "monthly_total": 697,
+        "projected_cases": 139.4,
+        "projected_per_hour": 27.88
+      },
+      {
+        "month": "2016-12",
+        "window": "peak_pm",
+        "monthly_total": 697,
+        "projected_cases": 313.65,
+        "projected_per_hour": 62.73
+      },
+      {
+        "month": "2016-12",
+        "window": "night",
+        "monthly_total": 697,
+        "projected_cases": 104.55,
+        "projected_per_hour": 34.85
+      },
+      {
+        "month": "2017-01",
+        "window": "peak_am",
+        "monthly_total": 525,
+        "projected_cases": 105.0,
+        "projected_per_hour": 35.0
+      },
+      {
+        "month": "2017-01",
+        "window": "midday",
+        "monthly_total": 525,
+        "projected_cases": 105.0,
+        "projected_per_hour": 21.0
+      },
+      {
+        "month": "2017-01",
+        "window": "peak_pm",
+        "monthly_total": 525,
+        "projected_cases": 236.25,
+        "projected_per_hour": 47.25
+      },
+      {
+        "month": "2017-01",
+        "window": "night",
+        "monthly_total": 525,
+        "projected_cases": 78.75,
+        "projected_per_hour": 26.25
+      },
+      {
+        "month": "2017-02",
+        "window": "peak_am",
+        "monthly_total": 638,
+        "projected_cases": 127.6,
+        "projected_per_hour": 42.533
+      },
+      {
+        "month": "2017-02",
+        "window": "midday",
+        "monthly_total": 638,
+        "projected_cases": 127.6,
+        "projected_per_hour": 25.52
+      },
+      {
+        "month": "2017-02",
+        "window": "peak_pm",
+        "monthly_total": 638,
+        "projected_cases": 287.1,
+        "projected_per_hour": 57.42
+      },
+      {
+        "month": "2017-02",
+        "window": "night",
+        "monthly_total": 638,
+        "projected_cases": 95.7,
+        "projected_per_hour": 31.9
+      },
+      {
+        "month": "2017-03",
+        "window": "peak_am",
+        "monthly_total": 742,
+        "projected_cases": 148.4,
+        "projected_per_hour": 49.467
+      },
+      {
+        "month": "2017-03",
+        "window": "midday",
+        "monthly_total": 742,
+        "projected_cases": 148.4,
+        "projected_per_hour": 29.68
+      },
+      {
+        "month": "2017-03",
+        "window": "peak_pm",
+        "monthly_total": 742,
+        "projected_cases": 333.9,
+        "projected_per_hour": 66.78
+      },
+      {
+        "month": "2017-03",
+        "window": "night",
+        "monthly_total": 742,
+        "projected_cases": 111.3,
+        "projected_per_hour": 37.1
+      },
+      {
+        "month": "2017-04",
+        "window": "peak_am",
+        "monthly_total": 651,
+        "projected_cases": 130.2,
+        "projected_per_hour": 43.4
+      },
+      {
+        "month": "2017-04",
+        "window": "midday",
+        "monthly_total": 651,
+        "projected_cases": 130.2,
+        "projected_per_hour": 26.04
+      },
+      {
+        "month": "2017-04",
+        "window": "peak_pm",
+        "monthly_total": 651,
+        "projected_cases": 292.95,
+        "projected_per_hour": 58.59
+      },
+      {
+        "month": "2017-04",
+        "window": "night",
+        "monthly_total": 651,
+        "projected_cases": 97.65,
+        "projected_per_hour": 32.55
+      },
+      {
+        "month": "2017-05",
+        "window": "peak_am",
+        "monthly_total": 771,
+        "projected_cases": 154.2,
+        "projected_per_hour": 51.4
+      },
+      {
+        "month": "2017-05",
+        "window": "midday",
+        "monthly_total": 771,
+        "projected_cases": 154.2,
+        "projected_per_hour": 30.84
+      },
+      {
+        "month": "2017-05",
+        "window": "peak_pm",
+        "monthly_total": 771,
+        "projected_cases": 346.95,
+        "projected_per_hour": 69.39
+      },
+      {
+        "month": "2017-05",
+        "window": "night",
+        "monthly_total": 771,
+        "projected_cases": 115.65,
+        "projected_per_hour": 38.55
+      },
+      {
+        "month": "2017-06",
+        "window": "peak_am",
+        "monthly_total": 618,
+        "projected_cases": 123.6,
+        "projected_per_hour": 41.2
+      },
+      {
+        "month": "2017-06",
+        "window": "midday",
+        "monthly_total": 618,
+        "projected_cases": 123.6,
+        "projected_per_hour": 24.72
+      },
+      {
+        "month": "2017-06",
+        "window": "peak_pm",
+        "monthly_total": 618,
+        "projected_cases": 278.1,
+        "projected_per_hour": 55.62
+      },
+      {
+        "month": "2017-06",
+        "window": "night",
+        "monthly_total": 618,
+        "projected_cases": 92.7,
+        "projected_per_hour": 30.9
+      },
+      {
+        "month": "2017-07",
+        "window": "peak_am",
+        "monthly_total": 607,
+        "projected_cases": 121.4,
+        "projected_per_hour": 40.467
+      },
+      {
+        "month": "2017-07",
+        "window": "midday",
+        "monthly_total": 607,
+        "projected_cases": 121.4,
+        "projected_per_hour": 24.28
+      },
+      {
+        "month": "2017-07",
+        "window": "peak_pm",
+        "monthly_total": 607,
+        "projected_cases": 273.15,
+        "projected_per_hour": 54.63
+      },
+      {
+        "month": "2017-07",
+        "window": "night",
+        "monthly_total": 607,
+        "projected_cases": 91.05,
+        "projected_per_hour": 30.35
+      },
+      {
+        "month": "2017-08",
+        "window": "peak_am",
+        "monthly_total": 959,
+        "projected_cases": 191.8,
+        "projected_per_hour": 63.933
+      },
+      {
+        "month": "2017-08",
+        "window": "midday",
+        "monthly_total": 959,
+        "projected_cases": 191.8,
+        "projected_per_hour": 38.36
+      },
+      {
+        "month": "2017-08",
+        "window": "peak_pm",
+        "monthly_total": 959,
+        "projected_cases": 431.55,
+        "projected_per_hour": 86.31
+      },
+      {
+        "month": "2017-08",
+        "window": "night",
+        "monthly_total": 959,
+        "projected_cases": 143.85,
+        "projected_per_hour": 47.95
+      },
+      {
+        "month": "2017-09",
+        "window": "peak_am",
+        "monthly_total": 801,
+        "projected_cases": 160.2,
+        "projected_per_hour": 53.4
+      },
+      {
+        "month": "2017-09",
+        "window": "midday",
+        "monthly_total": 801,
+        "projected_cases": 160.2,
+        "projected_per_hour": 32.04
+      },
+      {
+        "month": "2017-09",
+        "window": "peak_pm",
+        "monthly_total": 801,
+        "projected_cases": 360.45,
+        "projected_per_hour": 72.09
+      },
+      {
+        "month": "2017-09",
+        "window": "night",
+        "monthly_total": 801,
+        "projected_cases": 120.15,
+        "projected_per_hour": 40.05
+      },
+      {
+        "month": "2017-10",
+        "window": "peak_am",
+        "monthly_total": 1127,
+        "projected_cases": 225.4,
+        "projected_per_hour": 75.133
+      },
+      {
+        "month": "2017-10",
+        "window": "midday",
+        "monthly_total": 1127,
+        "projected_cases": 225.4,
+        "projected_per_hour": 45.08
+      },
+      {
+        "month": "2017-10",
+        "window": "peak_pm",
+        "monthly_total": 1127,
+        "projected_cases": 507.15,
+        "projected_per_hour": 101.43
+      },
+      {
+        "month": "2017-10",
+        "window": "night",
+        "monthly_total": 1127,
+        "projected_cases": 169.05,
+        "projected_per_hour": 56.35
+      },
+      {
+        "month": "2017-11",
+        "window": "peak_am",
+        "monthly_total": 1156,
+        "projected_cases": 231.2,
+        "projected_per_hour": 77.067
+      },
+      {
+        "month": "2017-11",
+        "window": "midday",
+        "monthly_total": 1156,
+        "projected_cases": 231.2,
+        "projected_per_hour": 46.24
+      },
+      {
+        "month": "2017-11",
+        "window": "peak_pm",
+        "monthly_total": 1156,
+        "projected_cases": 520.2,
+        "projected_per_hour": 104.04
+      },
+      {
+        "month": "2017-11",
+        "window": "night",
+        "monthly_total": 1156,
+        "projected_cases": 173.4,
+        "projected_per_hour": 57.8
+      },
+      {
+        "month": "2017-12",
+        "window": "peak_am",
+        "monthly_total": 1008,
+        "projected_cases": 201.6,
+        "projected_per_hour": 67.2
+      },
+      {
+        "month": "2017-12",
+        "window": "midday",
+        "monthly_total": 1008,
+        "projected_cases": 201.6,
+        "projected_per_hour": 40.32
+      },
+      {
+        "month": "2017-12",
+        "window": "peak_pm",
+        "monthly_total": 1008,
+        "projected_cases": 453.6,
+        "projected_per_hour": 90.72
+      },
+      {
+        "month": "2017-12",
+        "window": "night",
+        "monthly_total": 1008,
+        "projected_cases": 151.2,
+        "projected_per_hour": 50.4
+      },
+      {
+        "month": "2018-01",
+        "window": "peak_am",
+        "monthly_total": 712,
+        "projected_cases": 142.4,
+        "projected_per_hour": 47.467
+      },
+      {
+        "month": "2018-01",
+        "window": "midday",
+        "monthly_total": 712,
+        "projected_cases": 142.4,
+        "projected_per_hour": 28.48
+      },
+      {
+        "month": "2018-01",
+        "window": "peak_pm",
+        "monthly_total": 712,
+        "projected_cases": 320.4,
+        "projected_per_hour": 64.08
+      },
+      {
+        "month": "2018-01",
+        "window": "night",
+        "monthly_total": 712,
+        "projected_cases": 106.8,
+        "projected_per_hour": 35.6
+      },
+      {
+        "month": "2018-02",
+        "window": "peak_am",
+        "monthly_total": 854,
+        "projected_cases": 170.8,
+        "projected_per_hour": 56.933
+      },
+      {
+        "month": "2018-02",
+        "window": "midday",
+        "monthly_total": 854,
+        "projected_cases": 170.8,
+        "projected_per_hour": 34.16
+      },
+      {
+        "month": "2018-02",
+        "window": "peak_pm",
+        "monthly_total": 854,
+        "projected_cases": 384.3,
+        "projected_per_hour": 76.86
+      },
+      {
+        "month": "2018-02",
+        "window": "night",
+        "monthly_total": 854,
+        "projected_cases": 128.1,
+        "projected_per_hour": 42.7
+      },
+      {
+        "month": "2018-03",
+        "window": "peak_am",
+        "monthly_total": 861,
+        "projected_cases": 172.2,
+        "projected_per_hour": 57.4
+      },
+      {
+        "month": "2018-03",
+        "window": "midday",
+        "monthly_total": 861,
+        "projected_cases": 172.2,
+        "projected_per_hour": 34.44
+      },
+      {
+        "month": "2018-03",
+        "window": "peak_pm",
+        "monthly_total": 861,
+        "projected_cases": 387.45,
+        "projected_per_hour": 77.49
+      },
+      {
+        "month": "2018-03",
+        "window": "night",
+        "monthly_total": 861,
+        "projected_cases": 129.15,
+        "projected_per_hour": 43.05
+      },
+      {
+        "month": "2018-04",
+        "window": "peak_am",
+        "monthly_total": 1055,
+        "projected_cases": 211.0,
+        "projected_per_hour": 70.333
+      },
+      {
+        "month": "2018-04",
+        "window": "midday",
+        "monthly_total": 1055,
+        "projected_cases": 211.0,
+        "projected_per_hour": 42.2
+      },
+      {
+        "month": "2018-04",
+        "window": "peak_pm",
+        "monthly_total": 1055,
+        "projected_cases": 474.75,
+        "projected_per_hour": 94.95
+      },
+      {
+        "month": "2018-04",
+        "window": "night",
+        "monthly_total": 1055,
+        "projected_cases": 158.25,
+        "projected_per_hour": 52.75
+      },
+      {
+        "month": "2018-05",
+        "window": "peak_am",
+        "monthly_total": 1146,
+        "projected_cases": 229.2,
+        "projected_per_hour": 76.4
+      },
+      {
+        "month": "2018-05",
+        "window": "midday",
+        "monthly_total": 1146,
+        "projected_cases": 229.2,
+        "projected_per_hour": 45.84
+      },
+      {
+        "month": "2018-05",
+        "window": "peak_pm",
+        "monthly_total": 1146,
+        "projected_cases": 515.7,
+        "projected_per_hour": 103.14
+      },
+      {
+        "month": "2018-05",
+        "window": "night",
+        "monthly_total": 1146,
+        "projected_cases": 171.9,
+        "projected_per_hour": 57.3
+      },
+      {
+        "month": "2018-06",
+        "window": "peak_am",
+        "monthly_total": 1095,
+        "projected_cases": 219.0,
+        "projected_per_hour": 73.0
+      },
+      {
+        "month": "2018-06",
+        "window": "midday",
+        "monthly_total": 1095,
+        "projected_cases": 219.0,
+        "projected_per_hour": 43.8
+      },
+      {
+        "month": "2018-06",
+        "window": "peak_pm",
+        "monthly_total": 1095,
+        "projected_cases": 492.75,
+        "projected_per_hour": 98.55
+      },
+      {
+        "month": "2018-06",
+        "window": "night",
+        "monthly_total": 1095,
+        "projected_cases": 164.25,
+        "projected_per_hour": 54.75
+      },
+      {
+        "month": "2018-07",
+        "window": "peak_am",
+        "monthly_total": 1034,
+        "projected_cases": 206.8,
+        "projected_per_hour": 68.933
+      },
+      {
+        "month": "2018-07",
+        "window": "midday",
+        "monthly_total": 1034,
+        "projected_cases": 206.8,
+        "projected_per_hour": 41.36
+      },
+      {
+        "month": "2018-07",
+        "window": "peak_pm",
+        "monthly_total": 1034,
+        "projected_cases": 465.3,
+        "projected_per_hour": 93.06
+      },
+      {
+        "month": "2018-07",
+        "window": "night",
+        "monthly_total": 1034,
+        "projected_cases": 155.1,
+        "projected_per_hour": 51.7
+      },
+      {
+        "month": "2018-08",
+        "window": "peak_am",
+        "monthly_total": 1155,
+        "projected_cases": 231.0,
+        "projected_per_hour": 77.0
+      },
+      {
+        "month": "2018-08",
+        "window": "midday",
+        "monthly_total": 1155,
+        "projected_cases": 231.0,
+        "projected_per_hour": 46.2
+      },
+      {
+        "month": "2018-08",
+        "window": "peak_pm",
+        "monthly_total": 1155,
+        "projected_cases": 519.75,
+        "projected_per_hour": 103.95
+      },
+      {
+        "month": "2018-08",
+        "window": "night",
+        "monthly_total": 1155,
+        "projected_cases": 173.25,
+        "projected_per_hour": 57.75
+      },
+      {
+        "month": "2018-09",
+        "window": "peak_am",
+        "monthly_total": 1070,
+        "projected_cases": 214.0,
+        "projected_per_hour": 71.333
+      },
+      {
+        "month": "2018-09",
+        "window": "midday",
+        "monthly_total": 1070,
+        "projected_cases": 214.0,
+        "projected_per_hour": 42.8
+      },
+      {
+        "month": "2018-09",
+        "window": "peak_pm",
+        "monthly_total": 1070,
+        "projected_cases": 481.5,
+        "projected_per_hour": 96.3
+      },
+      {
+        "month": "2018-09",
+        "window": "night",
+        "monthly_total": 1070,
+        "projected_cases": 160.5,
+        "projected_per_hour": 53.5
+      },
+      {
+        "month": "2018-10",
+        "window": "peak_am",
+        "monthly_total": 1085,
+        "projected_cases": 217.0,
+        "projected_per_hour": 72.333
+      },
+      {
+        "month": "2018-10",
+        "window": "midday",
+        "monthly_total": 1085,
+        "projected_cases": 217.0,
+        "projected_per_hour": 43.4
+      },
+      {
+        "month": "2018-10",
+        "window": "peak_pm",
+        "monthly_total": 1085,
+        "projected_cases": 488.25,
+        "projected_per_hour": 97.65
+      },
+      {
+        "month": "2018-10",
+        "window": "night",
+        "monthly_total": 1085,
+        "projected_cases": 162.75,
+        "projected_per_hour": 54.25
+      },
+      {
+        "month": "2018-11",
+        "window": "peak_am",
+        "monthly_total": 1086,
+        "projected_cases": 217.2,
+        "projected_per_hour": 72.4
+      },
+      {
+        "month": "2018-11",
+        "window": "midday",
+        "monthly_total": 1086,
+        "projected_cases": 217.2,
+        "projected_per_hour": 43.44
+      },
+      {
+        "month": "2018-11",
+        "window": "peak_pm",
+        "monthly_total": 1086,
+        "projected_cases": 488.7,
+        "projected_per_hour": 97.74
+      },
+      {
+        "month": "2018-11",
+        "window": "night",
+        "monthly_total": 1086,
+        "projected_cases": 162.9,
+        "projected_per_hour": 54.3
+      },
+      {
+        "month": "2018-12",
+        "window": "peak_am",
+        "monthly_total": 930,
+        "projected_cases": 186.0,
+        "projected_per_hour": 62.0
+      },
+      {
+        "month": "2018-12",
+        "window": "midday",
+        "monthly_total": 930,
+        "projected_cases": 186.0,
+        "projected_per_hour": 37.2
+      },
+      {
+        "month": "2018-12",
+        "window": "peak_pm",
+        "monthly_total": 930,
+        "projected_cases": 418.5,
+        "projected_per_hour": 83.7
+      },
+      {
+        "month": "2018-12",
+        "window": "night",
+        "monthly_total": 930,
+        "projected_cases": 139.5,
+        "projected_per_hour": 46.5
+      },
+      {
+        "month": "2019-01",
+        "window": "peak_am",
+        "monthly_total": 838,
+        "projected_cases": 167.6,
+        "projected_per_hour": 55.867
+      },
+      {
+        "month": "2019-01",
+        "window": "midday",
+        "monthly_total": 838,
+        "projected_cases": 167.6,
+        "projected_per_hour": 33.52
+      },
+      {
+        "month": "2019-01",
+        "window": "peak_pm",
+        "monthly_total": 838,
+        "projected_cases": 377.1,
+        "projected_per_hour": 75.42
+      },
+      {
+        "month": "2019-01",
+        "window": "night",
+        "monthly_total": 838,
+        "projected_cases": 125.7,
+        "projected_per_hour": 41.9
+      },
+      {
+        "month": "2019-02",
+        "window": "peak_am",
+        "monthly_total": 909,
+        "projected_cases": 181.8,
+        "projected_per_hour": 60.6
+      },
+      {
+        "month": "2019-02",
+        "window": "midday",
+        "monthly_total": 909,
+        "projected_cases": 181.8,
+        "projected_per_hour": 36.36
+      },
+      {
+        "month": "2019-02",
+        "window": "peak_pm",
+        "monthly_total": 909,
+        "projected_cases": 409.05,
+        "projected_per_hour": 81.81
+      },
+      {
+        "month": "2019-02",
+        "window": "night",
+        "monthly_total": 909,
+        "projected_cases": 136.35,
+        "projected_per_hour": 45.45
+      },
+      {
+        "month": "2019-03",
+        "window": "peak_am",
+        "monthly_total": 1239,
+        "projected_cases": 247.8,
+        "projected_per_hour": 82.6
+      },
+      {
+        "month": "2019-03",
+        "window": "midday",
+        "monthly_total": 1239,
+        "projected_cases": 247.8,
+        "projected_per_hour": 49.56
+      },
+      {
+        "month": "2019-03",
+        "window": "peak_pm",
+        "monthly_total": 1239,
+        "projected_cases": 557.55,
+        "projected_per_hour": 111.51
+      },
+      {
+        "month": "2019-03",
+        "window": "night",
+        "monthly_total": 1239,
+        "projected_cases": 185.85,
+        "projected_per_hour": 61.95
+      },
+      {
+        "month": "2019-04",
+        "window": "peak_am",
+        "monthly_total": 1050,
+        "projected_cases": 210.0,
+        "projected_per_hour": 70.0
+      },
+      {
+        "month": "2019-04",
+        "window": "midday",
+        "monthly_total": 1050,
+        "projected_cases": 210.0,
+        "projected_per_hour": 42.0
+      },
+      {
+        "month": "2019-04",
+        "window": "peak_pm",
+        "monthly_total": 1050,
+        "projected_cases": 472.5,
+        "projected_per_hour": 94.5
+      },
+      {
+        "month": "2019-04",
+        "window": "night",
+        "monthly_total": 1050,
+        "projected_cases": 157.5,
+        "projected_per_hour": 52.5
+      },
+      {
+        "month": "2019-05",
+        "window": "peak_am",
+        "monthly_total": 1168,
+        "projected_cases": 233.6,
+        "projected_per_hour": 77.867
+      },
+      {
+        "month": "2019-05",
+        "window": "midday",
+        "monthly_total": 1168,
+        "projected_cases": 233.6,
+        "projected_per_hour": 46.72
+      },
+      {
+        "month": "2019-05",
+        "window": "peak_pm",
+        "monthly_total": 1168,
+        "projected_cases": 525.6,
+        "projected_per_hour": 105.12
+      },
+      {
+        "month": "2019-05",
+        "window": "night",
+        "monthly_total": 1168,
+        "projected_cases": 175.2,
+        "projected_per_hour": 58.4
+      },
+      {
+        "month": "2019-06",
+        "window": "peak_am",
+        "monthly_total": 1153,
+        "projected_cases": 230.6,
+        "projected_per_hour": 76.867
+      },
+      {
+        "month": "2019-06",
+        "window": "midday",
+        "monthly_total": 1153,
+        "projected_cases": 230.6,
+        "projected_per_hour": 46.12
+      },
+      {
+        "month": "2019-06",
+        "window": "peak_pm",
+        "monthly_total": 1153,
+        "projected_cases": 518.85,
+        "projected_per_hour": 103.77
+      },
+      {
+        "month": "2019-06",
+        "window": "night",
+        "monthly_total": 1153,
+        "projected_cases": 172.95,
+        "projected_per_hour": 57.65
+      },
+      {
+        "month": "2019-07",
+        "window": "peak_am",
+        "monthly_total": 1303,
+        "projected_cases": 260.6,
+        "projected_per_hour": 86.867
+      },
+      {
+        "month": "2019-07",
+        "window": "midday",
+        "monthly_total": 1303,
+        "projected_cases": 260.6,
+        "projected_per_hour": 52.12
+      },
+      {
+        "month": "2019-07",
+        "window": "peak_pm",
+        "monthly_total": 1303,
+        "projected_cases": 586.35,
+        "projected_per_hour": 117.27
+      },
+      {
+        "month": "2019-07",
+        "window": "night",
+        "monthly_total": 1303,
+        "projected_cases": 195.45,
+        "projected_per_hour": 65.15
+      },
+      {
+        "month": "2019-08",
+        "window": "peak_am",
+        "monthly_total": 1198,
+        "projected_cases": 239.6,
+        "projected_per_hour": 79.867
+      },
+      {
+        "month": "2019-08",
+        "window": "midday",
+        "monthly_total": 1198,
+        "projected_cases": 239.6,
+        "projected_per_hour": 47.92
+      },
+      {
+        "month": "2019-08",
+        "window": "peak_pm",
+        "monthly_total": 1198,
+        "projected_cases": 539.1,
+        "projected_per_hour": 107.82
+      },
+      {
+        "month": "2019-08",
+        "window": "night",
+        "monthly_total": 1198,
+        "projected_cases": 179.7,
+        "projected_per_hour": 59.9
+      },
+      {
+        "month": "2019-09",
+        "window": "peak_am",
+        "monthly_total": 1070,
+        "projected_cases": 214.0,
+        "projected_per_hour": 71.333
+      },
+      {
+        "month": "2019-09",
+        "window": "midday",
+        "monthly_total": 1070,
+        "projected_cases": 214.0,
+        "projected_per_hour": 42.8
+      },
+      {
+        "month": "2019-09",
+        "window": "peak_pm",
+        "monthly_total": 1070,
+        "projected_cases": 481.5,
+        "projected_per_hour": 96.3
+      },
+      {
+        "month": "2019-09",
+        "window": "night",
+        "monthly_total": 1070,
+        "projected_cases": 160.5,
+        "projected_per_hour": 53.5
+      },
+      {
+        "month": "2019-10",
+        "window": "peak_am",
+        "monthly_total": 1201,
+        "projected_cases": 240.2,
+        "projected_per_hour": 80.067
+      },
+      {
+        "month": "2019-10",
+        "window": "midday",
+        "monthly_total": 1201,
+        "projected_cases": 240.2,
+        "projected_per_hour": 48.04
+      },
+      {
+        "month": "2019-10",
+        "window": "peak_pm",
+        "monthly_total": 1201,
+        "projected_cases": 540.45,
+        "projected_per_hour": 108.09
+      },
+      {
+        "month": "2019-10",
+        "window": "night",
+        "monthly_total": 1201,
+        "projected_cases": 180.15,
+        "projected_per_hour": 60.05
+      },
+      {
+        "month": "2019-11",
+        "window": "peak_am",
+        "monthly_total": 1359,
+        "projected_cases": 271.8,
+        "projected_per_hour": 90.6
+      },
+      {
+        "month": "2019-11",
+        "window": "midday",
+        "monthly_total": 1359,
+        "projected_cases": 271.8,
+        "projected_per_hour": 54.36
+      },
+      {
+        "month": "2019-11",
+        "window": "peak_pm",
+        "monthly_total": 1359,
+        "projected_cases": 611.55,
+        "projected_per_hour": 122.31
+      },
+      {
+        "month": "2019-11",
+        "window": "night",
+        "monthly_total": 1359,
+        "projected_cases": 203.85,
+        "projected_per_hour": 67.95
+      },
+      {
+        "month": "2019-12",
+        "window": "peak_am",
+        "monthly_total": 1707,
+        "projected_cases": 341.4,
+        "projected_per_hour": 113.8
+      },
+      {
+        "month": "2019-12",
+        "window": "midday",
+        "monthly_total": 1707,
+        "projected_cases": 341.4,
+        "projected_per_hour": 68.28
+      },
+      {
+        "month": "2019-12",
+        "window": "peak_pm",
+        "monthly_total": 1707,
+        "projected_cases": 768.15,
+        "projected_per_hour": 153.63
+      },
+      {
+        "month": "2019-12",
+        "window": "night",
+        "monthly_total": 1707,
+        "projected_cases": 256.05,
+        "projected_per_hour": 85.35
+      },
+      {
+        "month": "2020-01",
+        "window": "peak_am",
+        "monthly_total": 1400,
+        "projected_cases": 280.0,
+        "projected_per_hour": 93.333
+      },
+      {
+        "month": "2020-01",
+        "window": "midday",
+        "monthly_total": 1400,
+        "projected_cases": 280.0,
+        "projected_per_hour": 56.0
+      },
+      {
+        "month": "2020-01",
+        "window": "peak_pm",
+        "monthly_total": 1400,
+        "projected_cases": 630.0,
+        "projected_per_hour": 126.0
+      },
+      {
+        "month": "2020-01",
+        "window": "night",
+        "monthly_total": 1400,
+        "projected_cases": 210.0,
+        "projected_per_hour": 70.0
+      },
+      {
+        "month": "2020-02",
+        "window": "peak_am",
+        "monthly_total": 869,
+        "projected_cases": 173.8,
+        "projected_per_hour": 57.933
+      },
+      {
+        "month": "2020-02",
+        "window": "midday",
+        "monthly_total": 869,
+        "projected_cases": 173.8,
+        "projected_per_hour": 34.76
+      },
+      {
+        "month": "2020-02",
+        "window": "peak_pm",
+        "monthly_total": 869,
+        "projected_cases": 391.05,
+        "projected_per_hour": 78.21
+      },
+      {
+        "month": "2020-02",
+        "window": "night",
+        "monthly_total": 869,
+        "projected_cases": 130.35,
+        "projected_per_hour": 43.45
+      },
+      {
+        "month": "2020-03",
+        "window": "peak_am",
+        "monthly_total": 740,
+        "projected_cases": 148.0,
+        "projected_per_hour": 49.333
+      },
+      {
+        "month": "2020-03",
+        "window": "midday",
+        "monthly_total": 740,
+        "projected_cases": 148.0,
+        "projected_per_hour": 29.6
+      },
+      {
+        "month": "2020-03",
+        "window": "peak_pm",
+        "monthly_total": 740,
+        "projected_cases": 333.0,
+        "projected_per_hour": 66.6
+      },
+      {
+        "month": "2020-03",
+        "window": "night",
+        "monthly_total": 740,
+        "projected_cases": 111.0,
+        "projected_per_hour": 37.0
+      },
+      {
+        "month": "2020-04",
+        "window": "peak_am",
+        "monthly_total": 158,
+        "projected_cases": 31.6,
+        "projected_per_hour": 10.533
+      },
+      {
+        "month": "2020-04",
+        "window": "midday",
+        "monthly_total": 158,
+        "projected_cases": 31.6,
+        "projected_per_hour": 6.32
+      },
+      {
+        "month": "2020-04",
+        "window": "peak_pm",
+        "monthly_total": 158,
+        "projected_cases": 71.1,
+        "projected_per_hour": 14.22
+      },
+      {
+        "month": "2020-04",
+        "window": "night",
+        "monthly_total": 158,
+        "projected_cases": 23.7,
+        "projected_per_hour": 7.9
+      },
+      {
+        "month": "2020-05",
+        "window": "peak_am",
+        "monthly_total": 348,
+        "projected_cases": 69.6,
+        "projected_per_hour": 23.2
+      },
+      {
+        "month": "2020-05",
+        "window": "midday",
+        "monthly_total": 348,
+        "projected_cases": 69.6,
+        "projected_per_hour": 13.92
+      },
+      {
+        "month": "2020-05",
+        "window": "peak_pm",
+        "monthly_total": 348,
+        "projected_cases": 156.6,
+        "projected_per_hour": 31.32
+      },
+      {
+        "month": "2020-05",
+        "window": "night",
+        "monthly_total": 348,
+        "projected_cases": 52.2,
+        "projected_per_hour": 17.4
+      },
+      {
+        "month": "2020-06",
+        "window": "peak_am",
+        "monthly_total": 429,
+        "projected_cases": 85.8,
+        "projected_per_hour": 28.6
+      },
+      {
+        "month": "2020-06",
+        "window": "midday",
+        "monthly_total": 429,
+        "projected_cases": 85.8,
+        "projected_per_hour": 17.16
+      },
+      {
+        "month": "2020-06",
+        "window": "peak_pm",
+        "monthly_total": 429,
+        "projected_cases": 193.05,
+        "projected_per_hour": 38.61
+      },
+      {
+        "month": "2020-06",
+        "window": "night",
+        "monthly_total": 429,
+        "projected_cases": 64.35,
+        "projected_per_hour": 21.45
+      },
+      {
+        "month": "2020-07",
+        "window": "peak_am",
+        "monthly_total": 574,
+        "projected_cases": 114.8,
+        "projected_per_hour": 38.267
+      },
+      {
+        "month": "2020-07",
+        "window": "midday",
+        "monthly_total": 574,
+        "projected_cases": 114.8,
+        "projected_per_hour": 22.96
+      },
+      {
+        "month": "2020-07",
+        "window": "peak_pm",
+        "monthly_total": 574,
+        "projected_cases": 258.3,
+        "projected_per_hour": 51.66
+      },
+      {
+        "month": "2020-07",
+        "window": "night",
+        "monthly_total": 574,
+        "projected_cases": 86.1,
+        "projected_per_hour": 28.7
+      },
+      {
+        "month": "2020-08",
+        "window": "peak_am",
+        "monthly_total": 692,
+        "projected_cases": 138.4,
+        "projected_per_hour": 46.133
+      },
+      {
+        "month": "2020-08",
+        "window": "midday",
+        "monthly_total": 692,
+        "projected_cases": 138.4,
+        "projected_per_hour": 27.68
+      },
+      {
+        "month": "2020-08",
+        "window": "peak_pm",
+        "monthly_total": 692,
+        "projected_cases": 311.4,
+        "projected_per_hour": 62.28
+      },
+      {
+        "month": "2020-08",
+        "window": "night",
+        "monthly_total": 692,
+        "projected_cases": 103.8,
+        "projected_per_hour": 34.6
+      },
+      {
+        "month": "2020-09",
+        "window": "peak_am",
+        "monthly_total": 696,
+        "projected_cases": 139.2,
+        "projected_per_hour": 46.4
+      },
+      {
+        "month": "2020-09",
+        "window": "midday",
+        "monthly_total": 696,
+        "projected_cases": 139.2,
+        "projected_per_hour": 27.84
+      },
+      {
+        "month": "2020-09",
+        "window": "peak_pm",
+        "monthly_total": 696,
+        "projected_cases": 313.2,
+        "projected_per_hour": 62.64
+      },
+      {
+        "month": "2020-09",
+        "window": "night",
+        "monthly_total": 696,
+        "projected_cases": 104.4,
+        "projected_per_hour": 34.8
+      },
+      {
+        "month": "2020-10",
+        "window": "peak_am",
+        "monthly_total": 775,
+        "projected_cases": 155.0,
+        "projected_per_hour": 51.667
+      },
+      {
+        "month": "2020-10",
+        "window": "midday",
+        "monthly_total": 775,
+        "projected_cases": 155.0,
+        "projected_per_hour": 31.0
+      },
+      {
+        "month": "2020-10",
+        "window": "peak_pm",
+        "monthly_total": 775,
+        "projected_cases": 348.75,
+        "projected_per_hour": 69.75
+      },
+      {
+        "month": "2020-10",
+        "window": "night",
+        "monthly_total": 775,
+        "projected_cases": 116.25,
+        "projected_per_hour": 38.75
+      },
+      {
+        "month": "2020-11",
+        "window": "peak_am",
+        "monthly_total": 757,
+        "projected_cases": 151.4,
+        "projected_per_hour": 50.467
+      },
+      {
+        "month": "2020-11",
+        "window": "midday",
+        "monthly_total": 757,
+        "projected_cases": 151.4,
+        "projected_per_hour": 30.28
+      },
+      {
+        "month": "2020-11",
+        "window": "peak_pm",
+        "monthly_total": 757,
+        "projected_cases": 340.65,
+        "projected_per_hour": 68.13
+      },
+      {
+        "month": "2020-11",
+        "window": "night",
+        "monthly_total": 757,
+        "projected_cases": 113.55,
+        "projected_per_hour": 37.85
+      },
+      {
+        "month": "2020-12",
+        "window": "peak_am",
+        "monthly_total": 848,
+        "projected_cases": 169.6,
+        "projected_per_hour": 56.533
+      },
+      {
+        "month": "2020-12",
+        "window": "midday",
+        "monthly_total": 848,
+        "projected_cases": 169.6,
+        "projected_per_hour": 33.92
+      },
+      {
+        "month": "2020-12",
+        "window": "peak_pm",
+        "monthly_total": 848,
+        "projected_cases": 381.6,
+        "projected_per_hour": 76.32
+      },
+      {
+        "month": "2020-12",
+        "window": "night",
+        "monthly_total": 848,
+        "projected_cases": 127.2,
+        "projected_per_hour": 42.4
+      },
+      {
+        "month": "2021-01",
+        "window": "peak_am",
+        "monthly_total": 603,
+        "projected_cases": 120.6,
+        "projected_per_hour": 40.2
+      },
+      {
+        "month": "2021-01",
+        "window": "midday",
+        "monthly_total": 603,
+        "projected_cases": 120.6,
+        "projected_per_hour": 24.12
+      },
+      {
+        "month": "2021-01",
+        "window": "peak_pm",
+        "monthly_total": 603,
+        "projected_cases": 271.35,
+        "projected_per_hour": 54.27
+      },
+      {
+        "month": "2021-01",
+        "window": "night",
+        "monthly_total": 603,
+        "projected_cases": 90.45,
+        "projected_per_hour": 30.15
+      },
+      {
+        "month": "2021-02",
+        "window": "peak_am",
+        "monthly_total": 601,
+        "projected_cases": 120.2,
+        "projected_per_hour": 40.067
+      },
+      {
+        "month": "2021-02",
+        "window": "midday",
+        "monthly_total": 601,
+        "projected_cases": 120.2,
+        "projected_per_hour": 24.04
+      },
+      {
+        "month": "2021-02",
+        "window": "peak_pm",
+        "monthly_total": 601,
+        "projected_cases": 270.45,
+        "projected_per_hour": 54.09
+      },
+      {
+        "month": "2021-02",
+        "window": "night",
+        "monthly_total": 601,
+        "projected_cases": 90.15,
+        "projected_per_hour": 30.05
+      },
+      {
+        "month": "2021-03",
+        "window": "peak_am",
+        "monthly_total": 680,
+        "projected_cases": 136.0,
+        "projected_per_hour": 45.333
+      },
+      {
+        "month": "2021-03",
+        "window": "midday",
+        "monthly_total": 680,
+        "projected_cases": 136.0,
+        "projected_per_hour": 27.2
+      },
+      {
+        "month": "2021-03",
+        "window": "peak_pm",
+        "monthly_total": 680,
+        "projected_cases": 306.0,
+        "projected_per_hour": 61.2
+      },
+      {
+        "month": "2021-03",
+        "window": "night",
+        "monthly_total": 680,
+        "projected_cases": 102.0,
+        "projected_per_hour": 34.0
+      },
+      {
+        "month": "2021-04",
+        "window": "peak_am",
+        "monthly_total": 613,
+        "projected_cases": 122.6,
+        "projected_per_hour": 40.867
+      },
+      {
+        "month": "2021-04",
+        "window": "midday",
+        "monthly_total": 613,
+        "projected_cases": 122.6,
+        "projected_per_hour": 24.52
+      },
+      {
+        "month": "2021-04",
+        "window": "peak_pm",
+        "monthly_total": 613,
+        "projected_cases": 275.85,
+        "projected_per_hour": 55.17
+      },
+      {
+        "month": "2021-04",
+        "window": "night",
+        "monthly_total": 613,
+        "projected_cases": 91.95,
+        "projected_per_hour": 30.65
+      },
+      {
+        "month": "2021-05",
+        "window": "peak_am",
+        "monthly_total": 719,
+        "projected_cases": 143.8,
+        "projected_per_hour": 47.933
+      },
+      {
+        "month": "2021-05",
+        "window": "midday",
+        "monthly_total": 719,
+        "projected_cases": 143.8,
+        "projected_per_hour": 28.76
+      },
+      {
+        "month": "2021-05",
+        "window": "peak_pm",
+        "monthly_total": 719,
+        "projected_cases": 323.55,
+        "projected_per_hour": 64.71
+      },
+      {
+        "month": "2021-05",
+        "window": "night",
+        "monthly_total": 719,
+        "projected_cases": 107.85,
+        "projected_per_hour": 35.95
+      },
+      {
+        "month": "2021-06",
+        "window": "peak_am",
+        "monthly_total": 746,
+        "projected_cases": 149.2,
+        "projected_per_hour": 49.733
+      },
+      {
+        "month": "2021-06",
+        "window": "midday",
+        "monthly_total": 746,
+        "projected_cases": 149.2,
+        "projected_per_hour": 29.84
+      },
+      {
+        "month": "2021-06",
+        "window": "peak_pm",
+        "monthly_total": 746,
+        "projected_cases": 335.7,
+        "projected_per_hour": 67.14
+      },
+      {
+        "month": "2021-06",
+        "window": "night",
+        "monthly_total": 746,
+        "projected_cases": 111.9,
+        "projected_per_hour": 37.3
+      },
+      {
+        "month": "2021-07",
+        "window": "peak_am",
+        "monthly_total": 733,
+        "projected_cases": 146.6,
+        "projected_per_hour": 48.867
+      },
+      {
+        "month": "2021-07",
+        "window": "midday",
+        "monthly_total": 733,
+        "projected_cases": 146.6,
+        "projected_per_hour": 29.32
+      },
+      {
+        "month": "2021-07",
+        "window": "peak_pm",
+        "monthly_total": 733,
+        "projected_cases": 329.85,
+        "projected_per_hour": 65.97
+      },
+      {
+        "month": "2021-07",
+        "window": "night",
+        "monthly_total": 733,
+        "projected_cases": 109.95,
+        "projected_per_hour": 36.65
+      },
+      {
+        "month": "2021-08",
+        "window": "peak_am",
+        "monthly_total": 820,
+        "projected_cases": 164.0,
+        "projected_per_hour": 54.667
+      },
+      {
+        "month": "2021-08",
+        "window": "midday",
+        "monthly_total": 820,
+        "projected_cases": 164.0,
+        "projected_per_hour": 32.8
+      },
+      {
+        "month": "2021-08",
+        "window": "peak_pm",
+        "monthly_total": 820,
+        "projected_cases": 369.0,
+        "projected_per_hour": 73.8
+      },
+      {
+        "month": "2021-08",
+        "window": "night",
+        "monthly_total": 820,
+        "projected_cases": 123.0,
+        "projected_per_hour": 41.0
+      },
+      {
+        "month": "2021-09",
+        "window": "peak_am",
+        "monthly_total": 749,
+        "projected_cases": 149.8,
+        "projected_per_hour": 49.933
+      },
+      {
+        "month": "2021-09",
+        "window": "midday",
+        "monthly_total": 749,
+        "projected_cases": 149.8,
+        "projected_per_hour": 29.96
+      },
+      {
+        "month": "2021-09",
+        "window": "peak_pm",
+        "monthly_total": 749,
+        "projected_cases": 337.05,
+        "projected_per_hour": 67.41
+      },
+      {
+        "month": "2021-09",
+        "window": "night",
+        "monthly_total": 749,
+        "projected_cases": 112.35,
+        "projected_per_hour": 37.45
+      },
+      {
+        "month": "2021-10",
+        "window": "peak_am",
+        "monthly_total": 978,
+        "projected_cases": 195.6,
+        "projected_per_hour": 65.2
+      },
+      {
+        "month": "2021-10",
+        "window": "midday",
+        "monthly_total": 978,
+        "projected_cases": 195.6,
+        "projected_per_hour": 39.12
+      },
+      {
+        "month": "2021-10",
+        "window": "peak_pm",
+        "monthly_total": 978,
+        "projected_cases": 440.1,
+        "projected_per_hour": 88.02
+      },
+      {
+        "month": "2021-10",
+        "window": "night",
+        "monthly_total": 978,
+        "projected_cases": 146.7,
+        "projected_per_hour": 48.9
+      },
+      {
+        "month": "2021-11",
+        "window": "peak_am",
+        "monthly_total": 841,
+        "projected_cases": 168.2,
+        "projected_per_hour": 56.067
+      },
+      {
+        "month": "2021-11",
+        "window": "midday",
+        "monthly_total": 841,
+        "projected_cases": 168.2,
+        "projected_per_hour": 33.64
+      },
+      {
+        "month": "2021-11",
+        "window": "peak_pm",
+        "monthly_total": 841,
+        "projected_cases": 378.45,
+        "projected_per_hour": 75.69
+      },
+      {
+        "month": "2021-11",
+        "window": "night",
+        "monthly_total": 841,
+        "projected_cases": 126.15,
+        "projected_per_hour": 42.05
+      },
+      {
+        "month": "2021-12",
+        "window": "peak_am",
+        "monthly_total": 838,
+        "projected_cases": 167.6,
+        "projected_per_hour": 55.867
+      },
+      {
+        "month": "2021-12",
+        "window": "midday",
+        "monthly_total": 838,
+        "projected_cases": 167.6,
+        "projected_per_hour": 33.52
+      },
+      {
+        "month": "2021-12",
+        "window": "peak_pm",
+        "monthly_total": 838,
+        "projected_cases": 377.1,
+        "projected_per_hour": 75.42
+      },
+      {
+        "month": "2021-12",
+        "window": "night",
+        "monthly_total": 838,
+        "projected_cases": 125.7,
+        "projected_per_hour": 41.9
+      },
+      {
+        "month": "2022-01",
+        "window": "peak_am",
+        "monthly_total": 761,
+        "projected_cases": 152.2,
+        "projected_per_hour": 50.733
+      },
+      {
+        "month": "2022-01",
+        "window": "midday",
+        "monthly_total": 761,
+        "projected_cases": 152.2,
+        "projected_per_hour": 30.44
+      },
+      {
+        "month": "2022-01",
+        "window": "peak_pm",
+        "monthly_total": 761,
+        "projected_cases": 342.45,
+        "projected_per_hour": 68.49
+      },
+      {
+        "month": "2022-01",
+        "window": "night",
+        "monthly_total": 761,
+        "projected_cases": 114.15,
+        "projected_per_hour": 38.05
+      },
+      {
+        "month": "2022-02",
+        "window": "peak_am",
+        "monthly_total": 788,
+        "projected_cases": 157.6,
+        "projected_per_hour": 52.533
+      },
+      {
+        "month": "2022-02",
+        "window": "midday",
+        "monthly_total": 788,
+        "projected_cases": 157.6,
+        "projected_per_hour": 31.52
+      },
+      {
+        "month": "2022-02",
+        "window": "peak_pm",
+        "monthly_total": 788,
+        "projected_cases": 354.6,
+        "projected_per_hour": 70.92
+      },
+      {
+        "month": "2022-02",
+        "window": "night",
+        "monthly_total": 788,
+        "projected_cases": 118.2,
+        "projected_per_hour": 39.4
+      },
+      {
+        "month": "2022-03",
+        "window": "peak_am",
+        "monthly_total": 886,
+        "projected_cases": 177.2,
+        "projected_per_hour": 59.067
+      },
+      {
+        "month": "2022-03",
+        "window": "midday",
+        "monthly_total": 886,
+        "projected_cases": 177.2,
+        "projected_per_hour": 35.44
+      },
+      {
+        "month": "2022-03",
+        "window": "peak_pm",
+        "monthly_total": 886,
+        "projected_cases": 398.7,
+        "projected_per_hour": 79.74
+      },
+      {
+        "month": "2022-03",
+        "window": "night",
+        "monthly_total": 886,
+        "projected_cases": 132.9,
+        "projected_per_hour": 44.3
+      },
+      {
+        "month": "2022-04",
+        "window": "peak_am",
+        "monthly_total": 904,
+        "projected_cases": 180.8,
+        "projected_per_hour": 60.267
+      },
+      {
+        "month": "2022-04",
+        "window": "midday",
+        "monthly_total": 904,
+        "projected_cases": 180.8,
+        "projected_per_hour": 36.16
+      },
+      {
+        "month": "2022-04",
+        "window": "peak_pm",
+        "monthly_total": 904,
+        "projected_cases": 406.8,
+        "projected_per_hour": 81.36
+      },
+      {
+        "month": "2022-04",
+        "window": "night",
+        "monthly_total": 904,
+        "projected_cases": 135.6,
+        "projected_per_hour": 45.2
+      },
+      {
+        "month": "2022-05",
+        "window": "peak_am",
+        "monthly_total": 872,
+        "projected_cases": 174.4,
+        "projected_per_hour": 58.133
+      },
+      {
+        "month": "2022-05",
+        "window": "midday",
+        "monthly_total": 872,
+        "projected_cases": 174.4,
+        "projected_per_hour": 34.88
+      },
+      {
+        "month": "2022-05",
+        "window": "peak_pm",
+        "monthly_total": 872,
+        "projected_cases": 392.4,
+        "projected_per_hour": 78.48
+      },
+      {
+        "month": "2022-05",
+        "window": "night",
+        "monthly_total": 872,
+        "projected_cases": 130.8,
+        "projected_per_hour": 43.6
+      },
+      {
+        "month": "2022-06",
+        "window": "peak_am",
+        "monthly_total": 712,
+        "projected_cases": 142.4,
+        "projected_per_hour": 47.467
+      },
+      {
+        "month": "2022-06",
+        "window": "midday",
+        "monthly_total": 712,
+        "projected_cases": 142.4,
+        "projected_per_hour": 28.48
+      },
+      {
+        "month": "2022-06",
+        "window": "peak_pm",
+        "monthly_total": 712,
+        "projected_cases": 320.4,
+        "projected_per_hour": 64.08
+      },
+      {
+        "month": "2022-06",
+        "window": "night",
+        "monthly_total": 712,
+        "projected_cases": 106.8,
+        "projected_per_hour": 35.6
+      },
+      {
+        "month": "2022-07",
+        "window": "peak_am",
+        "monthly_total": 724,
+        "projected_cases": 144.8,
+        "projected_per_hour": 48.267
+      },
+      {
+        "month": "2022-07",
+        "window": "midday",
+        "monthly_total": 724,
+        "projected_cases": 144.8,
+        "projected_per_hour": 28.96
+      },
+      {
+        "month": "2022-07",
+        "window": "peak_pm",
+        "monthly_total": 724,
+        "projected_cases": 325.8,
+        "projected_per_hour": 65.16
+      },
+      {
+        "month": "2022-07",
+        "window": "night",
+        "monthly_total": 724,
+        "projected_cases": 108.6,
+        "projected_per_hour": 36.2
+      },
+      {
+        "month": "2022-08",
+        "window": "peak_am",
+        "monthly_total": 879,
+        "projected_cases": 175.8,
+        "projected_per_hour": 58.6
+      },
+      {
+        "month": "2022-08",
+        "window": "midday",
+        "monthly_total": 879,
+        "projected_cases": 175.8,
+        "projected_per_hour": 35.16
+      },
+      {
+        "month": "2022-08",
+        "window": "peak_pm",
+        "monthly_total": 879,
+        "projected_cases": 395.55,
+        "projected_per_hour": 79.11
+      },
+      {
+        "month": "2022-08",
+        "window": "night",
+        "monthly_total": 879,
+        "projected_cases": 131.85,
+        "projected_per_hour": 43.95
+      },
+      {
+        "month": "2022-09",
+        "window": "peak_am",
+        "monthly_total": 915,
+        "projected_cases": 183.0,
+        "projected_per_hour": 61.0
+      },
+      {
+        "month": "2022-09",
+        "window": "midday",
+        "monthly_total": 915,
+        "projected_cases": 183.0,
+        "projected_per_hour": 36.6
+      },
+      {
+        "month": "2022-09",
+        "window": "peak_pm",
+        "monthly_total": 915,
+        "projected_cases": 411.75,
+        "projected_per_hour": 82.35
+      },
+      {
+        "month": "2022-09",
+        "window": "night",
+        "monthly_total": 915,
+        "projected_cases": 137.25,
+        "projected_per_hour": 45.75
+      },
+      {
+        "month": "2022-10",
+        "window": "peak_am",
+        "monthly_total": 932,
+        "projected_cases": 186.4,
+        "projected_per_hour": 62.133
+      },
+      {
+        "month": "2022-10",
+        "window": "midday",
+        "monthly_total": 932,
+        "projected_cases": 186.4,
+        "projected_per_hour": 37.28
+      },
+      {
+        "month": "2022-10",
+        "window": "peak_pm",
+        "monthly_total": 932,
+        "projected_cases": 419.4,
+        "projected_per_hour": 83.88
+      },
+      {
+        "month": "2022-10",
+        "window": "night",
+        "monthly_total": 932,
+        "projected_cases": 139.8,
+        "projected_per_hour": 46.6
+      },
+      {
+        "month": "2022-11",
+        "window": "peak_am",
+        "monthly_total": 951,
+        "projected_cases": 190.2,
+        "projected_per_hour": 63.4
+      },
+      {
+        "month": "2022-11",
+        "window": "midday",
+        "monthly_total": 951,
+        "projected_cases": 190.2,
+        "projected_per_hour": 38.04
+      },
+      {
+        "month": "2022-11",
+        "window": "peak_pm",
+        "monthly_total": 951,
+        "projected_cases": 427.95,
+        "projected_per_hour": 85.59
+      },
+      {
+        "month": "2022-11",
+        "window": "night",
+        "monthly_total": 951,
+        "projected_cases": 142.65,
+        "projected_per_hour": 47.55
+      },
+      {
+        "month": "2022-12",
+        "window": "peak_am",
+        "monthly_total": 956,
+        "projected_cases": 191.2,
+        "projected_per_hour": 63.733
+      },
+      {
+        "month": "2022-12",
+        "window": "midday",
+        "monthly_total": 956,
+        "projected_cases": 191.2,
+        "projected_per_hour": 38.24
+      },
+      {
+        "month": "2022-12",
+        "window": "peak_pm",
+        "monthly_total": 956,
+        "projected_cases": 430.2,
+        "projected_per_hour": 86.04
+      },
+      {
+        "month": "2022-12",
+        "window": "night",
+        "monthly_total": 956,
+        "projected_cases": 143.4,
+        "projected_per_hour": 47.8
+      },
+      {
+        "month": "2023-01",
+        "window": "peak_am",
+        "monthly_total": 609,
+        "projected_cases": 121.8,
+        "projected_per_hour": 40.6
+      },
+      {
+        "month": "2023-01",
+        "window": "midday",
+        "monthly_total": 609,
+        "projected_cases": 121.8,
+        "projected_per_hour": 24.36
+      },
+      {
+        "month": "2023-01",
+        "window": "peak_pm",
+        "monthly_total": 609,
+        "projected_cases": 274.05,
+        "projected_per_hour": 54.81
+      },
+      {
+        "month": "2023-01",
+        "window": "night",
+        "monthly_total": 609,
+        "projected_cases": 91.35,
+        "projected_per_hour": 30.45
+      },
+      {
+        "month": "2023-02",
+        "window": "peak_am",
+        "monthly_total": 618,
+        "projected_cases": 123.6,
+        "projected_per_hour": 41.2
+      },
+      {
+        "month": "2023-02",
+        "window": "midday",
+        "monthly_total": 618,
+        "projected_cases": 123.6,
+        "projected_per_hour": 24.72
+      },
+      {
+        "month": "2023-02",
+        "window": "peak_pm",
+        "monthly_total": 618,
+        "projected_cases": 278.1,
+        "projected_per_hour": 55.62
+      },
+      {
+        "month": "2023-02",
+        "window": "night",
+        "monthly_total": 618,
+        "projected_cases": 92.7,
+        "projected_per_hour": 30.9
+      },
+      {
+        "month": "2023-03",
+        "window": "peak_am",
+        "monthly_total": 643,
+        "projected_cases": 128.6,
+        "projected_per_hour": 42.867
+      },
+      {
+        "month": "2023-03",
+        "window": "midday",
+        "monthly_total": 643,
+        "projected_cases": 128.6,
+        "projected_per_hour": 25.72
+      },
+      {
+        "month": "2023-03",
+        "window": "peak_pm",
+        "monthly_total": 643,
+        "projected_cases": 289.35,
+        "projected_per_hour": 57.87
+      },
+      {
+        "month": "2023-03",
+        "window": "night",
+        "monthly_total": 643,
+        "projected_cases": 96.45,
+        "projected_per_hour": 32.15
+      },
+      {
+        "month": "2023-04",
+        "window": "peak_am",
+        "monthly_total": 641,
+        "projected_cases": 128.2,
+        "projected_per_hour": 42.733
+      },
+      {
+        "month": "2023-04",
+        "window": "midday",
+        "monthly_total": 641,
+        "projected_cases": 128.2,
+        "projected_per_hour": 25.64
+      },
+      {
+        "month": "2023-04",
+        "window": "peak_pm",
+        "monthly_total": 641,
+        "projected_cases": 288.45,
+        "projected_per_hour": 57.69
+      },
+      {
+        "month": "2023-04",
+        "window": "night",
+        "monthly_total": 641,
+        "projected_cases": 96.15,
+        "projected_per_hour": 32.05
+      },
+      {
+        "month": "2023-05",
+        "window": "peak_am",
+        "monthly_total": 709,
+        "projected_cases": 141.8,
+        "projected_per_hour": 47.267
+      },
+      {
+        "month": "2023-05",
+        "window": "midday",
+        "monthly_total": 709,
+        "projected_cases": 141.8,
+        "projected_per_hour": 28.36
+      },
+      {
+        "month": "2023-05",
+        "window": "peak_pm",
+        "monthly_total": 709,
+        "projected_cases": 319.05,
+        "projected_per_hour": 63.81
+      },
+      {
+        "month": "2023-05",
+        "window": "night",
+        "monthly_total": 709,
+        "projected_cases": 106.35,
+        "projected_per_hour": 35.45
+      },
+      {
+        "month": "2023-06",
+        "window": "peak_am",
+        "monthly_total": 706,
+        "projected_cases": 141.2,
+        "projected_per_hour": 47.067
+      },
+      {
+        "month": "2023-06",
+        "window": "midday",
+        "monthly_total": 706,
+        "projected_cases": 141.2,
+        "projected_per_hour": 28.24
+      },
+      {
+        "month": "2023-06",
+        "window": "peak_pm",
+        "monthly_total": 706,
+        "projected_cases": 317.7,
+        "projected_per_hour": 63.54
+      },
+      {
+        "month": "2023-06",
+        "window": "night",
+        "monthly_total": 706,
+        "projected_cases": 105.9,
+        "projected_per_hour": 35.3
+      },
+      {
+        "month": "2023-07",
+        "window": "peak_am",
+        "monthly_total": 662,
+        "projected_cases": 132.4,
+        "projected_per_hour": 44.133
+      },
+      {
+        "month": "2023-07",
+        "window": "midday",
+        "monthly_total": 662,
+        "projected_cases": 132.4,
+        "projected_per_hour": 26.48
+      },
+      {
+        "month": "2023-07",
+        "window": "peak_pm",
+        "monthly_total": 662,
+        "projected_cases": 297.9,
+        "projected_per_hour": 59.58
+      },
+      {
+        "month": "2023-07",
+        "window": "night",
+        "monthly_total": 662,
+        "projected_cases": 99.3,
+        "projected_per_hour": 33.1
+      },
+      {
+        "month": "2023-08",
+        "window": "peak_am",
+        "monthly_total": 515,
+        "projected_cases": 103.0,
+        "projected_per_hour": 34.333
+      },
+      {
+        "month": "2023-08",
+        "window": "midday",
+        "monthly_total": 515,
+        "projected_cases": 103.0,
+        "projected_per_hour": 20.6
+      },
+      {
+        "month": "2023-08",
+        "window": "peak_pm",
+        "monthly_total": 515,
+        "projected_cases": 231.75,
+        "projected_per_hour": 46.35
+      },
+      {
+        "month": "2023-08",
+        "window": "night",
+        "monthly_total": 515,
+        "projected_cases": 77.25,
+        "projected_per_hour": 25.75
+      },
+      {
+        "month": "2023-09",
+        "window": "peak_am",
+        "monthly_total": 324,
+        "projected_cases": 64.8,
+        "projected_per_hour": 21.6
+      },
+      {
+        "month": "2023-09",
+        "window": "midday",
+        "monthly_total": 324,
+        "projected_cases": 64.8,
+        "projected_per_hour": 12.96
+      },
+      {
+        "month": "2023-09",
+        "window": "peak_pm",
+        "monthly_total": 324,
+        "projected_cases": 145.8,
+        "projected_per_hour": 29.16
+      },
+      {
+        "month": "2023-09",
+        "window": "night",
+        "monthly_total": 324,
+        "projected_cases": 48.6,
+        "projected_per_hour": 16.2
+      },
+      {
+        "month": "2023-10",
+        "window": "peak_am",
+        "monthly_total": 276,
+        "projected_cases": 55.2,
+        "projected_per_hour": 18.4
+      },
+      {
+        "month": "2023-10",
+        "window": "midday",
+        "monthly_total": 276,
+        "projected_cases": 55.2,
+        "projected_per_hour": 11.04
+      },
+      {
+        "month": "2023-10",
+        "window": "peak_pm",
+        "monthly_total": 276,
+        "projected_cases": 124.2,
+        "projected_per_hour": 24.84
+      },
+      {
+        "month": "2023-10",
+        "window": "night",
+        "monthly_total": 276,
+        "projected_cases": 41.4,
+        "projected_per_hour": 13.8
+      },
+      {
+        "month": "2023-11",
+        "window": "peak_am",
+        "monthly_total": 185,
+        "projected_cases": 37.0,
+        "projected_per_hour": 12.333
+      },
+      {
+        "month": "2023-11",
+        "window": "midday",
+        "monthly_total": 185,
+        "projected_cases": 37.0,
+        "projected_per_hour": 7.4
+      },
+      {
+        "month": "2023-11",
+        "window": "peak_pm",
+        "monthly_total": 185,
+        "projected_cases": 83.25,
+        "projected_per_hour": 16.65
+      },
+      {
+        "month": "2023-11",
+        "window": "night",
+        "monthly_total": 185,
+        "projected_cases": 27.75,
+        "projected_per_hour": 9.25
+      }
+    ],
+    "p50_per_window_cases_per_hour": {
+      "peak_am": 12.4,
+      "midday": 7.44,
+      "peak_pm": 16.740000000000002,
+      "night": 9.299999999999999
+    },
+    "p75_per_window_cases_per_hour": {
+      "peak_am": 46.26666666666667,
+      "midday": 27.76,
+      "peak_pm": 62.46,
+      "night": 34.7
+    },
+    "p90_per_window_cases_per_hour": {
+      "peak_am": 63.400000000000006,
+      "midday": 38.040000000000006,
+      "peak_pm": 85.59,
+      "night": 47.55
+    },
+    "p75_global_cases_per_hour": 37.1775
+  }
+}

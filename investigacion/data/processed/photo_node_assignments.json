@@ -1,0 +1,592 @@
+{
+  "n_photos_total": 34,
+  "n_with_gps": 34,
+  "n_without_gps": 0,
+  "no_gps_files": [],
+  "aggregates_by_node": {
+    "palacio_nacional": {
+      "n_photos": 2,
+      "persons_mean": 0.0,
+      "persons_max": 0,
+      "saturation_mean": 0.18775989979166666,
+      "saturation_max": 0.2369470336111111
+    },
+    "san_antonio_metro": {
+      "n_photos": 11,
+      "persons_mean": 3.3636363636363638,
+      "persons_max": 26,
+      "saturation_mean": 0.25004155999357497,
+      "saturation_max": 0.8804020363182139
+    },
+    "junin_paseo": {
+      "n_photos": 12,
+      "persons_mean": 3.75,
+      "persons_max": 14,
+      "saturation_mean": 0.24038299187783443,
+      "saturation_max": 0.5521912931410561
+    },
+    "parque_berrio": {
+      "n_photos": 9,
+      "persons_mean": 9.666666666666666,
+      "persons_max": 30,
+      "saturation_mean": 0.3742672693891587,
+      "saturation_max": 0.8009971721670492
+    }
+  },
+  "aggregates_by_node_window": {
+    "palacio_nacional|night": {
+      "n_photos": 2,
+      "persons_mean": 0.0,
+      "persons_max": 0,
+      "saturation_mean": 0.18775989979166666
+    },
+    "san_antonio_metro|peak_am": {
+      "n_photos": 10,
+      "persons_mean": 1.1,
+      "persons_max": 3,
+      "saturation_mean": 0.18700551236111113
+    },
+    "junin_paseo|peak_am": {
+      "n_photos": 11,
+      "persons_mean": 4.090909090909091,
+      "persons_max": 14,
+      "saturation_mean": 0.25727808101319316
+    },
+    "parque_berrio|peak_am": {
+      "n_photos": 3,
+      "persons_mean": 0.0,
+      "persons_max": 0,
+      "saturation_mean": 0.11892765898148148
+    },
+    "junin_paseo|midday": {
+      "n_photos": 1,
+      "persons_mean": 0.0,
+      "persons_max": 0,
+      "saturation_mean": 0.05453701138888889
+    },
+    "san_antonio_metro|midday": {
+      "n_photos": 1,
+      "persons_mean": 26.0,
+      "persons_max": 26,
+      "saturation_mean": 0.8804020363182139
+    },
+    "parque_berrio|midday": {
+      "n_photos": 6,
+      "persons_mean": 14.5,
+      "persons_max": 30,
+      "saturation_mean": 0.5019370745929973
+    }
+  },
+  "assignments": [
+    {
+      "photo": "IMG_20260503_211541487.jpg",
+      "captured_at": "2026:05:03 21:15:47",
+      "gps": [
+        6.239951972222222,
+        -75.54939097222223
+      ],
+      "nearest_node": "palacio_nacional",
+      "distance_m": 2024.3,
+      "inferred_window": "night",
+      "persons": 0,
+      "saturation_index": 0.1385727659722222,
+      "edge_density": 13.70971375,
+      "brightness": 108.29904891666666
+    },
+    {
+      "photo": "IMG_20260503_211554661.jpg",
+      "captured_at": "2026:05:03 21:15:55",
+      "gps": [
+        6.239951972222222,
+        -75.54939097222223
+      ],
+      "nearest_node": "palacio_nacional",
+      "distance_m": 2024.3,
+      "inferred_window": "night",
+      "persons": 0,
+      "saturation_index": 0.2369470336111111,
+      "edge_density": 20.02797625,
+      "brightness": 135.85416241666667
+    },
+    {
+      "photo": "IMG_20260505_085013122.jpg",
+      "captured_at": "2026:05:05 08:50:14",
+      "gps": [
+        6.246483972222222,
+        -75.56794699999999
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 103.3,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.08124759513888889,
+      "edge_density": 1.65665,
+      "brightness": 77.24506866666667
+    },
+    {
+      "photo": "IMG_20260505_085019484.jpg",
+      "captured_at": "2026:05:05 08:50:20",
+      "gps": [
+        6.246483972222222,
+        -75.56794699999999
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 103.3,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.07667692833333334,
+      "edge_density": 3.3924775,
+      "brightness": 115.45129558333333
+    },
+    {
+      "photo": "IMG_20260505_085022964.jpg",
+      "captured_at": "2026:05:05 08:50:23",
+      "gps": [
+        6.246883972222222,
+        -75.56783
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 64.7,
+      "inferred_window": "peak_am",
+      "persons": 1,
+      "saturation_index": 0.1783647440277778,
+      "edge_density": 4.3959025,
+      "brightness": 120.88015383333334
+    },
+    {
+      "photo": "IMG_20260505_085053355.jpg",
+      "captured_at": "2026:05:05 08:50:54",
+      "gps": [
+        6.246273,
+        -75.56802997222222
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 125.6,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.6880150451388888,
+      "edge_density": 78.84685,
+      "brightness": 72.72704316666666
+    },
+    {
+      "photo": "IMG_20260505_085127870.jpg",
+      "captured_at": "2026:05:05 08:51:28",
+      "gps": [
+        6.246171972222222,
+        -75.56806499999999
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 136.6,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.062066788194444444,
+      "edge_density": 0.0,
+      "brightness": 55.343384666666665
+    },
+    {
+      "photo": "IMG_20260505_085150719.jpg",
+      "captured_at": "2026:05:05 08:51:51",
+      "gps": [
+        6.246171972222222,
+        -75.56806499999999
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 136.6,
+      "inferred_window": "peak_am",
+      "persons": 2,
+      "saturation_index": 0.33419075000000004,
+      "edge_density": 32.98210375,
+      "brightness": 143.65956958333334
+    },
+    {
+      "photo": "IMG_20260505_091445130.jpg",
+      "captured_at": "2026:05:05 09:14:49",
+      "gps": [
+        6.245555972222222,
+        -75.56796797222222
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 205.6,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.11756023902777778,
+      "edge_density": 13.89726625,
+      "brightness": 147.52764408333334
+    },
+    {
+      "photo": "IMG_20260505_091456052.jpg",
+      "captured_at": "2026:05:05 09:14:57",
+      "gps": [
+        6.245699,
+        -75.568128
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 189.2,
+      "inferred_window": "peak_am",
+      "persons": 3,
+      "saturation_index": 0.10469558611111111,
+      "edge_density": 2.598535,
+      "brightness": 118.94935908333333
+    },
+    {
+      "photo": "IMG_20260505_091456420.jpg",
+      "captured_at": "2026:05:05 09:14:57",
+      "gps": [
+        6.245699,
+        -75.568128
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 189.2,
+      "inferred_window": "peak_am",
+      "persons": 3,
+      "saturation_index": 0.10305845958333333,
+      "edge_density": 2.43106375,
+      "brightness": 119.87227083333333
+    },
+    {
+      "photo": "IMG_20260505_091458043.jpg",
+      "captured_at": "2026:05:05 09:14:58",
+      "gps": [
+        6.245699,
+        -75.568128
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 189.2,
+      "inferred_window": "peak_am",
+      "persons": 2,
+      "saturation_index": 0.12417898805555555,
+      "edge_density": 5.79417375,
+      "brightness": 110.8174655
+    },
+    {
+      "photo": "IMG_20260505_092728915.jpg",
+      "captured_at": "2026:05:05 09:27:31",
+      "gps": [
+        6.248043,
+        -75.566575
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 101.8,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.11340569402777777,
+      "edge_density": 2.99316875,
+      "brightness": 100.26503941666667
+    },
+    {
+      "photo": "IMG_20260505_092959106.jpg",
+      "captured_at": "2026:05:05 09:30:03",
+      "gps": [
+        6.248986,
+        -75.566951
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 11.1,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.10929376347222221,
+      "edge_density": 0.72111875,
+      "brightness": 110.50304925
+    },
+    {
+      "photo": "IMG_20260505_093632206.jpg",
+      "captured_at": "2026:05:05 09:36:34",
+      "gps": [
+        6.249761972222222,
+        -75.56784797222222
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 117.8,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.10825715972222222,
+      "edge_density": 2.93847125,
+      "brightness": 128.763675
+    },
+    {
+      "photo": "IMG_20260505_093633811.jpg",
+      "captured_at": "2026:05:05 09:36:35",
+      "gps": [
+        6.249761972222222,
+        -75.56784797222222
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 117.8,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.10965300388888889,
+      "edge_density": 2.89401625,
+      "brightness": 133.47500625
+    },
+    {
+      "photo": "IMG_20260505_093701884.jpg",
+      "captured_at": "2026:05:05 09:37:02",
+      "gps": [
+        6.249672,
+        -75.567982
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 118.0,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.13887281333333332,
+      "edge_density": 3.653045,
+      "brightness": 115.69649266666667
+    },
+    {
+      "photo": "IMG_20260505_093817507.jpg",
+      "captured_at": "2026:05:05 09:38:17",
+      "gps": [
+        6.249372,
+        -75.56736397222222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 73.4,
+      "inferred_window": "peak_am",
+      "persons": 3,
+      "saturation_index": 0.16531035666666666,
+      "edge_density": 5.65103375,
+      "brightness": 105.80174491666666
+    },
+    {
+      "photo": "IMG_20260505_093824399.jpg",
+      "captured_at": "2026:05:05 09:38:24",
+      "gps": [
+        6.249372,
+        -75.56736397222222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 73.4,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.12106075541666665,
+      "edge_density": 8.1384525,
+      "brightness": 134.67624491666666
+    },
+    {
+      "photo": "IMG_20260505_093825596.jpg",
+      "captured_at": "2026:05:05 09:38:25",
+      "gps": [
+        6.249372,
+        -75.56736397222222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 73.4,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.12378504819444446,
+      "edge_density": 8.69454375,
+      "brightness": 134.26642275
+    },
+    {
+      "photo": "IMG_20260505_093830.jpg",
+      "captured_at": "2026:05:05 09:38:30",
+      "gps": [
+        6.2494883,
+        -75.56737409972222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 83.8,
+      "inferred_window": "peak_am",
+      "persons": 7,
+      "saturation_index": 0.38842455553251815,
+      "edge_density": 32.745972038506764,
+      "brightness": 123.34366426611797
+    },
+    {
+      "photo": "IMG_20260505_093832.jpg",
+      "captured_at": "2026:05:05 09:38:30",
+      "gps": [
+        6.2494883,
+        -75.56737409972222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 83.8,
+      "inferred_window": "peak_am",
+      "persons": 9,
+      "saturation_index": 0.4305752430001493,
+      "edge_density": 33.27568276539011,
+      "brightness": 120.31936177248677
+    },
+    {
+      "photo": "IMG_20260505_093834.jpg",
+      "captured_at": "2026:05:05 09:38:32",
+      "gps": [
+        6.2494883,
+        -75.56737409972222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 83.8,
+      "inferred_window": "peak_am",
+      "persons": 7,
+      "saturation_index": 0.4026835138848064,
+      "edge_density": 34.60726555282607,
+      "brightness": 120.3441830435878
+    },
+    {
+      "photo": "IMG_20260505_093837.jpg",
+      "captured_at": "2026:05:05 09:38:37",
+      "gps": [
+        6.2494883,
+        -75.56737409972222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 83.8,
+      "inferred_window": "peak_am",
+      "persons": 14,
+      "saturation_index": 0.5521912931410561,
+      "edge_density": 39.655969833921226,
+      "brightness": 135.73073196614035
+    },
+    {
+      "photo": "IMG_20260505_093838042.jpg",
+      "captured_at": "2026:05:05 09:38:38",
+      "gps": [
+        6.249372,
+        -75.56736397222222
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 73.4,
+      "inferred_window": "peak_am",
+      "persons": 5,
+      "saturation_index": 0.21945379597222217,
+      "edge_density": 13.420395,
+      "brightness": 131.06324283333333
+    },
+    {
+      "photo": "IMG_20260505_093859.jpg",
+      "captured_at": "2026:05:05 09:38:59",
+      "gps": [
+        6.2495998,
+        -75.56728439972221
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 88.7,
+      "inferred_window": "peak_am",
+      "persons": 0,
+      "saturation_index": 0.20387487183659472,
+      "edge_density": 9.645442281851013,
+      "brightness": 134.844772026609
+    },
+    {
+      "photo": "IMG_20260505_101146844.jpg",
+      "captured_at": "2026:05:05 10:11:51",
+      "gps": [
+        6.249431,
+        -75.56664897222223
+      ],
+      "nearest_node": "junin_paseo",
+      "distance_m": 65.2,
+      "inferred_window": "midday",
+      "persons": 0,
+      "saturation_index": 0.05453701138888889,
+      "edge_density": 0.559725,
+      "brightness": 108.04843216666667
+    },
+    {
+      "photo": "IMG_20260505_104119.jpg",
+      "captured_at": "2026:05:05 10:41:19",
+      "gps": [
+        6.2468931,
+        -75.56813319999999
+      ],
+      "nearest_node": "san_antonio_metro",
+      "distance_m": 56.5,
+      "inferred_window": "midday",
+      "persons": 26,
+      "saturation_index": 0.8804020363182139,
+      "edge_density": 56.39467264529269,
+      "brightness": 115.57486667506508
+    },
+    {
+      "photo": "IMG_20260505_105433.jpg",
+      "captured_at": "2026:05:05 10:54:33",
+      "gps": [
+        6.2525358,
+        -75.56826969972222
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 216.8,
+      "inferred_window": "midday",
+      "persons": 30,
+      "saturation_index": 0.8009971721670492,
+      "edge_density": 34.69094958585286,
+      "brightness": 142.89423839880604
+    },
+    {
+      "photo": "IMG_20260505_105451.jpg",
+      "captured_at": "2026:05:05 10:54:51",
+      "gps": [
+        6.2525358,
+        -75.56826969972222
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 216.8,
+      "inferred_window": "midday",
+      "persons": 23,
+      "saturation_index": 0.6780289627425043,
+      "edge_density": 28.88337250409423,
+      "brightness": 153.13852703504242
+    },
+    {
+      "photo": "IMG_20260505_105502.jpg",
+      "captured_at": "2026:05:05 10:55:02",
+      "gps": [
+        6.2516503,
+        -75.56865379999999
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 118.0,
+      "inferred_window": "midday",
+      "persons": 2,
+      "saturation_index": 0.3585255698751551,
+      "edge_density": 36.9941985281767,
+      "brightness": 142.13919814324908
+    },
+    {
+      "photo": "IMG_20260505_105513.jpg",
+      "captured_at": "2026:05:05 10:55:02",
+      "gps": [
+        6.2516503,
+        -75.56865379999999
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 118.0,
+      "inferred_window": "midday",
+      "persons": 11,
+      "saturation_index": 0.4359296498091692,
+      "edge_density": 17.987270814961786,
+      "brightness": 117.87440008153467
+    },
+    {
+      "photo": "IMG_20260505_105538.jpg",
+      "captured_at": "2026:05:05 10:55:38",
+      "gps": [
+        6.2516503,
+        -75.56865379999999
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 118.0,
+      "inferred_window": "midday",
+      "persons": 15,
+      "saturation_index": 0.4651252230466089,
+      "edge_density": 21.10641816525993,
+      "brightness": 129.5999945760197
+    },
+    {
+      "photo": "IMG_20260505_105540.jpg",
+      "captured_at": "2026:05:05 10:55:40",
+      "gps": [
+        6.2516503,
+        -75.56865379999999
+      ],
+      "nearest_node": "parque_berrio",
+      "distance_m": 118.0,
+      "inferred_window": "midday",
+      "persons": 6,
+      "saturation_index": 0.27301586991749716,
+      "edge_density": 17.323542939552365,
+      "brightness": 123.30510884266258
+    }
+  ]
+}

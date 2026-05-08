@@ -541,6 +541,7 @@ export type Payload = {
       }
     }
   }
+  field_calibration?: FieldCalibration
   docs: Record<string, string>
 }
 
@@ -558,4 +559,69 @@ export type EnvironmentalAirComponent = {
   } | null
   network_latest_mean?: number | null
   note?: string
+}
+
+export type CollapseDecision =
+  | 'colapso_fenomenologico'
+  | 'friccion_acumulada'
+  | 'flujo_ordinario'
+  | 'inconcluyente'
+
+export type CollapseMatrixCell = {
+  key: string
+  node: string
+  window: string
+  decision: CollapseDecision
+  C1: boolean
+  C2: boolean
+  C3: boolean
+  C4: boolean
+  conditions_met: number
+  coverage: number
+}
+
+export type FieldCalibration = {
+  status: string
+  captured_on?: string
+  ingested_at_iso?: string | null
+  collapse_matrix?: {
+    rule: string
+    decisions: Partial<Record<CollapseDecision, number>>
+    cells: CollapseMatrixCell[]
+  }
+  photo_assignments?: {
+    n_total?: number
+    n_with_gps?: number
+    by_node?: Record<string, {
+      n_photos: number
+      persons_mean?: number | null
+      persons_max?: number | null
+      saturation_mean?: number | null
+      saturation_max?: number | null
+    }>
+    by_node_window?: Record<string, {
+      n_photos: number
+      persons_mean?: number | null
+      persons_max?: number | null
+      saturation_mean?: number | null
+    }>
+  }
+  video_assignments?: {
+    n_videos?: number
+    n_with_node?: number
+    by_confidence?: Record<string, number>
+    assignments?: Array<{
+      video: string
+      ts: string
+      window: string | null
+      node: string | null
+      confidence: string | null
+      delta_seconds?: number | null
+    }>
+  }
+  c1_hourly_projection?: {
+    supuesto?: string
+    weights?: Record<string, number>
+    p75_per_window_cases_per_hour?: Record<string, number>
+  }
 }
