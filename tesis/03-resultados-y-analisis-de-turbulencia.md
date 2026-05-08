@@ -133,6 +133,56 @@ Más allá de la matriz, el conjunto de notas fenomenológicas, fotos y recorrid
 
 **Estado:** insumos en archivo; redacción tras matriz.
 
+## 3.12bis. Resultados preliminares de la jornada del 5 de mayo de 2026
+
+Esta sección reporta lo que el pipeline ya produjo a partir de la jornada del 5 de mayo de 2026. Es un **avance de procesamiento**, no la matriz final. Antes de cualquier afirmación interpretativa conviene declarar la cobertura observada y sus límites.
+
+### Cobertura del corpus procesado
+
+La jornada produjo 17 videos POV/saturación (~11 GB en total), 15 fotografías de campo (~50 MB) y un conjunto de notas y encuestas todavía en ingesta. Al momento de cierre de esta primera pasada, el pipeline `fenomurb/proc:cuda128` había procesado en torre HPC: seis videos completos (incluyendo la versión recodificada de uno de 2.5 GB), las quince fotos con detección multi-clase y EXIF, y cinco transcripciones de audio vía Whisper. Los nueve videos restantes están en cola de compresión local (libopenh264 sobre CPU 20 cores) y subida a la torre.
+
+La cobertura **espacial** es asimétrica. Las quince fotografías llevan EXIF GPS válido y se asignan al nodo más cercano del modelo M-MASS por distancia haversine (`scripts/hpc/assign_nodes.py` →  `data/processed/photo_node_assignments.json`). La distribución resultante es:
+
+| Nodo | Fotos asignadas | Distancia mínima al nodo |
+| --- | ---: | --- |
+| `junin_paseo` | ~7-8 | < 100 m |
+| `carabobo_cultural` | ~4 | ~140 m |
+| `parque_berrio` | 2 | ~210 m (frontera con `carabobo_cultural`) |
+| `san_antonio_metro` | 1 | ~60 m |
+| Resto de nodos | 0 | — |
+
+El sesgo hacia Junín es real y reconocido: la jornada se concentró en ese eje y deja sin cobertura fotográfica directa a `parque_san_antonio`, `palacio_nacional`, `oriental_cruce`, `plaza_botero` y `museo_antioquia`. La matriz final tendrá que reportar esas celdas como `inconcluyente` por C4 hasta que entren más jornadas, o complementarlas con video cuando se confirme su ubicación.
+
+La cobertura **temporal** es de una sola jornada y se concentra en el tramo 8:30–11:46 (peak_am extendido y midday temprano), con un único video al 21:30 (night). Las franjas `peak_pm` y la mayor parte de `night` están ausentes en el material procesado hasta ahora.
+
+### Conteos automáticos por foto
+
+Las quince fotografías procesadas con YOLO11x a 1280 px arrojan rangos de personas detectadas que van de 0 a 30 por cuadro. Los valores más altos —y las saturaciones más altas— aparecen en dos puntos:
+
+- una foto en la zona de `san_antonio_metro` con **26 personas detectadas** y `saturation_index = 0.88`;
+- una foto en la zona de `parque_berrio`/`carabobo_cultural` con **30 personas detectadas** y `saturation_index = 0.80`.
+
+Estos valores no constituyen evidencia de colapso por sí solos: son lecturas puntuales de un cuadro fijo en un instante. Lo que sí permiten sostener es que la jornada captó momentos de densidad sustantiva en al menos dos nodos del corredor, lo que justifica priorizar esos nodos en jornadas futuras o en el procesamiento de los videos pendientes.
+
+### Tracking de personas en video
+
+El procesamiento con BoTSORT sobre los seis videos disponibles produjo conteos de personas únicas por video que oscilan entre 0 y **129 personas únicas en `VID_20260505_110910` (40 segundos de duración, 1080p)**. Los videos también permiten extraer permanencia mediana, velocidad aparente en píxeles, audio (dB-FS RMS por segundo) y detecciones de motos, autos, mochilas y celulares. Estas métricas están disponibles celda por celda en `video_saturation_*.json` pero la asignación de cada video a un nodo específico depende del mapeo manual que el operador del campo pueda confirmar (los archivos del celular no embeben GPS en el contenedor MP4).
+
+### Transcripción de audio
+
+El servicio Whisper ASR local produjo transcripciones para los videos con audio audible. Tres de los cinco transcritos quedaron sin contenido lingüístico (audio ambiente sin habla); uno produjo un fragmento corto en español (`VID_20260505_213002`, 21:30, 18.5 s de procesamiento). Las transcripciones constituyen un insumo complementario para C3 (habitabilidad declarada), pero no la sustituyen: la fuente principal sigue siendo el conjunto de entrevistas semiestructuradas en transcripción por colaborador externo.
+
+### Lo que estos resultados todavía no permiten afirmar
+
+Aunque hay datos automáticos sólidos por foto y por video, **no se puede declarar todavía una sola celda en colapso fenomenológico**. Las razones son explícitas:
+
+1. **C1 sin proyección horaria.** La serie mensual de criminalidad en comuna 10 está cargada (capítulo 3.2) pero falta documentar el supuesto distribucional que la lleve a franjas horarias. La matriz lo reporta como `false` por defecto hasta que ese supuesto exista, lo cual hace efectivamente imposible alcanzar 3-de-4 sin C1.
+2. **C3 sin codificación.** Las entrevistas no han llegado codificadas; sin esquema `HABITABLE/EVITABLE/...` aplicado, C3 también es `false`.
+3. **C2 sin ingesta.** Los `field_counts_*.csv` con `security_score` por nodo y franja todavía no están en `data/interim/YYYY_MM_DD/`.
+4. **Cobertura desigual de C4.** Solo seis videos procesados, con asignación de nodo pendiente para la mayoría.
+
+Aplicar la regla 3-de-4 a este estado parcial daría falsos negativos en todas las celdas. Por eso el reporte se limita a describir el corpus procesado y deja la regla suspendida hasta que las cuatro condiciones tengan al menos una pasada de ingesta.
+
 ## 3.13. Resultados que sí pueden sostenerse y resultados que no
 
 | Afirmación | Estado | Justificación |
