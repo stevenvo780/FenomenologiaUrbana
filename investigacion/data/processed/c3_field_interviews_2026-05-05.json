@@ -1,0 +1,25 @@
+{
+  "source": "field_interviews",
+  "captured_on": "2026-05-05",
+  "observer": "stev",
+  "schema": "c3_field_interviews_v1",
+  "description": "Entrevistas codificadas en campo (Stev, 2026-05-05). Cada item es equivalente a un *.coded.json con node/window/codes y se inyecta en el mismo bucket que la codificación de transcripciones de video para C3.",
+  "n_interviews": 14,
+  "rule": "C3 negativo si EVITABLE+NO_DESEABLE+DIFICIL_DE_VIVIR > HABITABLE+DESEABLE por nodo×ventana (AMBIVALENTE no cuenta).",
+  "interviews": [
+    {"interview_id": "2026-05-05_psa_001", "node": "parque_san_antonio", "window": "midday", "window_inferred": true, "interviewee": "Jose Alejandro", "codes": ["AMBIVALENTE", "HABITABLE"]},
+    {"interview_id": "2026-05-05_psa_002", "node": "parque_san_antonio", "window": "midday", "window_inferred": true, "interviewee": "Mendez", "codes": ["EVITABLE", "NO_DESEABLE"]},
+    {"interview_id": "2026-05-05_psa_003", "node": "parque_san_antonio", "window": "midday", "window_inferred": true, "interviewee": "Michel", "codes": ["HABITABLE"]},
+    {"interview_id": "2026-05-05_jun_001", "node": "junin_paseo", "window": "midday", "window_inferred": true, "interviewee": "Luis Alberto", "codes": ["HABITABLE", "DESEABLE"]},
+    {"interview_id": "2026-05-05_jun_002", "node": "junin_paseo", "window": "midday", "window_inferred": true, "interviewee": "Natalia Vergara", "codes": ["HABITABLE"]},
+    {"interview_id": "2026-05-05_jun_003", "node": "junin_paseo", "window": "midday", "window_inferred": true, "interviewee": "Andres", "codes": ["DIFICIL_DE_VIVIR"]},
+    {"interview_id": "2026-05-05_jun_004", "node": "junin_paseo", "window": "midday", "window_inferred": true, "interviewee": "Alfonso", "codes": ["HABITABLE"]},
+    {"interview_id": "2026-05-05_jun_005", "node": "junin_paseo", "window": "midday", "window_inferred": true, "interviewee": "Jovana", "codes": ["AMBIVALENTE", "HABITABLE"]},
+    {"interview_id": "2026-05-05_jun_006", "node": "junin_paseo", "window": "midday", "window_inferred": true, "interviewee": "Blanca Ema", "codes": ["HABITABLE"]},
+    {"interview_id": "2026-05-05_jun_007", "node": "junin_paseo", "window": "midday", "window_inferred": true, "interviewee": "Johan Jaramillo", "codes": ["AMBIVALENTE", "DESEABLE"]},
+    {"interview_id": "2026-05-05_bot_001", "node": "plaza_botero", "window": "midday", "window_inferred": true, "interviewee": "Andres", "codes": ["EVITABLE", "NO_DESEABLE"]},
+    {"interview_id": "2026-05-05_bot_002", "node": "plaza_botero", "window": "midday", "window_inferred": true, "interviewee": "Dario Franco", "codes": ["AMBIVALENTE", "DIFICIL_DE_VIVIR"]},
+    {"interview_id": "2026-05-05_bot_003", "node": "plaza_botero", "window": "midday", "window_inferred": true, "interviewee": "Alexander", "interviewee_role": "seguridad del Estado", "codes": ["AMBIVALENTE", "EVITABLE"]},
+    {"interview_id": "2026-05-05_sam_001", "node": "san_antonio_metro", "window": "peak_am", "window_inferred": true, "interviewee": "Jacob", "codes": ["HABITABLE"], "notes": "fragmentario"}
+  ]
+}

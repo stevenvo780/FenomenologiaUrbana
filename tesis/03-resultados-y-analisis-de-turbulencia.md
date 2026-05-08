@@ -109,9 +109,9 @@ La encuesta breve (escala 1–5 más códigos de incomodidad) sigue en cuaderno 
 
 ### 3.12.3. C3 — Habitabilidad declarada en entrevistas
 
-El esquema de codificación `HABITABLE / DESEABLE / EVITABLE / NO_DESEABLE / DIFICIL_DE_VIVIR / AMBIVALENTE` está definido, pero las transcripciones aún están en proceso por colaborador externo. La única transcripción con testimonio sustantivo recibida hasta la fecha es la asociada al nodo `plaza_botero`; aún no aplicada al esquema, no aparece en la matriz como C3 cumplido.
+El esquema de codificación `HABITABLE / DESEABLE / EVITABLE / NO_DESEABLE / DIFICIL_DE_VIVIR / AMBIVALENTE` está definido y, al cierre del 7 de mayo de 2026, **14 entrevistas semiestructuradas de la jornada del 5 de mayo ya están codificadas** y disponibles en `investigacion/data/interim/2026-05-05/interviews/interviews_2026-05-05.json`. Las entrevistas se distribuyen así por nodo y franja: `junin_paseo|midday` (n=7), `parque_san_antonio|midday` (n=3), `plaza_botero|midday` (n=3), `san_antonio_metro|peak_am` (n=1, truncada). La triangulación nodo-franja con C3 codificado se desarrolla en §3.12.8.
 
-**Estado:** 0/36 celdas con dato codificado; un transcript con testimonio sustantivo (plaza_botero) pendiente de codificación.
+**Estado:** 4/36 celdas con dato codificado (n=14 entrevistas externas); pendiente la ingesta del CSV agregado a `field_observations_aggregate.csv` y la propagación al script `build_collapse_matrix.py` para que C3 se refleje en la próxima regeneración de la matriz.
 
 ### 3.12.4. C4 — Saturación material en video
 
@@ -120,6 +120,8 @@ El pipeline GPU procesó 16 archivos `video_saturation_*.json` y 34 fotografías
 **Estado:** 4/36 celdas con dato; 1/36 celda con C4 cumplido.
 
 ### 3.12.5. Matriz de colapso fenomenológico (post-fix C1, 2026-05-07)
+
+Los números de esta sección reflejan el estado de la matriz `collapse_matrix.json` regenerada el 7 de mayo de 2026 con C1 y C4 únicamente; las 14 entrevistas codificadas en la jornada del 5 de mayo aún no están propagadas al script `build_collapse_matrix.py`. Tras integrar esas entrevistas en una próxima pasada (§3.12.8), la celda `plaza_botero|midday` emerge como candidata adicional a `friccion_acumulada` por convergencia de C3 negativo (3/3 entrevistas EVITABLE/AMBIVALENTE/NO_DESEABLE, sin HABITABLE) con la franja midday del corredor; podría aproximarse a 3/4 si C1 horario y C4 con video específico de Botero confirman.
 
 La matriz `investigacion/data/processed/collapse_matrix.json`, regenerada el 7 de mayo de 2026 tras el fix de C1, distribuye las 36 celdas (9 nodos × 4 franjas) como sigue:
 
@@ -177,6 +179,56 @@ Más allá de la matriz, las 34 fotografías, los 16 videos procesados y el tran
 
 **Estado:** insumos en archivo; redacción narrativa pendiente para versión final.
 
+### 3.12.8. Triangulación con campo 2026-05-05: entrevistas codificadas y observación participante
+
+Esta subsección integra el corpus codificado de la jornada del 5 de mayo de 2026 (`investigacion/data/interim/2026-05-05/`). Distingue dos registros que la metodología no debe confundir: las **14 entrevistas a personas externas** (insumo C3 propiamente dicho) y las **apreciaciones fenomenológicas (AF) del observador Stev** (observación participante auto-etnográfica, no codificable como C3).
+
+#### 3.12.8.1. Síntesis nodo × franja con C3 codificado, M1 y AF
+
+| Nodo × Franja | n entrev. | C3 dominante | Safety AF (1–5) | M1 destacado | Lectura |
+| --- | :-: | --- | :-: | --- | --- |
+| `san_antonio_metro|peak_am` | 1 (Jacob, truncada) | HABITABLE (baja confianza) | 2 | riesgo vial alto; contraste 3ª edad/modernidad | inseguridad funcional matinal verbalizada por el observador |
+| `parque_san_antonio|midday` | 3 | HABITABLE con disenso (1 EVITABLE/NO_DESEABLE de Méndez) | 4 | 6 obstáculos/cuadra; vandalismo 2/10 | "no está rota la ventana": efecto inverso al *broken-window theorem* |
+| `junin_paseo|midday` | 7 | **HABITABLE 5 + DESEABLE 2** (sin EVITABLE/NO_DESEABLE) | 4 | indigencia 3/10, consumo 4/10, AC, ruido bajo, limpieza extrema | saturación **comercial ordenada**, no hostil; mono-uso |
+| `plaza_botero|midday` | 3 | **EVITABLE / AMBIVALENTE negativo** (HABITABLE 0) | **2** | ~5% turistas; sofocante; alta presencia policial | candidata fuerte a `friccion_acumulada` o colapso si C1+C4 confirman |
+| `pasaje_la_bastilla` (s/d franja) | 0 | s/d | 3 | s/d (heterotopía 5/5) | máxima diversidad comercial; no entra a la matriz hoy |
+
+La distribución global de códigos C3 sobre n=14 es: HABITABLE 8, AMBIVALENTE 5, EVITABLE 3, DESEABLE 2, NO_DESEABLE 2, DIFICIL_DE_VIVIR 2 (los códigos no son mutuamente excluyentes; una entrevista puede recibir más de uno).
+
+#### 3.12.8.2. Testimonios literales atribuidos
+
+Se reproducen seis testimonios codificados que sostienen la lectura de §3.12.8.1. Cada cita conserva la identificación del entrevistado tal como figura en `interviews_2026-05-05.json`:
+
+- **Junín, midday — Luis Alberto (vendedor):** "Como vendedor es seguro. Le gusta el lugar." (HABITABLE + DESEABLE).
+- **Junín, midday — Andrés:** "No es peligroso, es difícil vivir." (DIFICIL_DE_VIVIR; disocia peligrosidad de habitabilidad cotidiana).
+- **Junín, midday — Alfonso:** "No ha cambiado y es seguro." (HABITABLE; estabilidad temporal percibida).
+- **Junín, midday — Blanca Ema:** "No es inseguro. Antes era muy bueno, antes era más seguro y es habitable." (HABITABLE con deterioro relativo respecto al pasado).
+- **Plaza Botero, midday — Darío Franco:** "Muy inseguro. Más habitable. Mucho comercio. Si me roban hago escándalo." (AMBIVALENTE + DIFICIL_DE_VIVIR; coexistencia de inseguridad alta y reconocimiento de habitabilidad relativa, con estrategia defensiva personal).
+- **Parque San Antonio, midday — Méndez (uniformado):** "Roban harto. De civil Méndez no estaría." (EVITABLE + NO_DESEABLE; evitación práctica fuera de función). El testimonio es metodológicamente potente porque el sujeto, profesionalmente vinculado a la seguridad, declara evitación personal del lugar.
+
+Dos testimonios adicionales matizan el caso Botero: Andrés en Botero declara "Es bastante inseguro. Mucho hurto. No es tan agradable." (EVITABLE + NO_DESEABLE), y Alexander, identificado como personal de seguridad del Estado, afirma "No es muy seguro pero tampoco inseguro. Pero se prefieren otras zonas. Un cambio tremendo." (AMBIVALENTE + EVITABLE). Las tres voces convergen, desde posiciones distintas, en evitación o ambivalencia negativa.
+
+#### 3.12.8.3. La apreciación fenomenológica (AF) como observación complementaria
+
+Las AF de Stev son **observación participante del investigador**, no entrevistas a terceros, y por construcción metodológica **no se codifican como C3**: la regla 3-de-4 exige que C3 provenga de testimonio externo. Sin embargo, las AF cumplen tres funciones legítimas en el capítulo, en línea con la tradición auto-etnográfica (Ellis, Adams & Bochner, 2011):
+
+1. **Sustento de M2 (atmósfera, miedo, blasé):** la dimensión fenomenológica del modelo se ancla en evidencia de primera persona del observador del marco teórico.
+2. **Scoring directo de M3 (heterotopía):** la asignación de heterotopía 5/5 (La Bastilla), 4/5 (Botero, San Antonio), 2/5 (Junín mono-uso) procede de la lectura situada del observador.
+3. **Señal metodológica para la matriz:** cuando el observador del marco verbaliza espontáneamente "colapsa" frente a un nodo no marcado por la matriz cuantitativa, es indicio fuerte de que la matriz puede estar perdiendo C3/C2 por falta de instrumentación, no por ausencia del fenómeno.
+
+El registro auto-etnográfico más relevante de la jornada es la verbalización espontánea del término "colapsa" por parte de Stev en `plaza_botero|midday` —primer registro auto-etnográfico del término operacionalizado por la tesis— acompañada de la frase contextual "movieron el Bronx solo una calle" que el observador recoge en notas y que apunta a un desplazamiento territorial del fenómeno de marginalidad sin transformación estructural. Esta verbalización, sumada a las tres entrevistas externas con C3 negativo en el mismo nodo-franja y a una `safety AF` de 2/5, constituye el motivo metodológico para tratar `plaza_botero|midday` como candidata prioritaria de la próxima pasada de la matriz.
+
+#### 3.12.8.4. Heterotopía contraintuitiva
+
+La asignación M3 del observador entrega un patrón que contradice la lectura simple "más comercio = más heterotopía": **La Bastilla 5/5** (máxima diversidad comercial), **Plaza Botero 4/5** pese a menor densidad comercial (mezcla turista/local, arte público, presencia policial), **Junín 2/5** (mono-uso comercial pese a su densidad de tránsito). El hallazgo sugiere que la heterotopía foucaultiana, leída en el corredor, depende menos del volumen de actividad económica que de la **co-presencia de regímenes de uso heterogéneos** (turismo, vigilancia, arte, comercio popular, paso) en un mismo nodo.
+
+#### 3.12.8.5. Implicaciones para la próxima pasada de la matriz
+
+Las 14 entrevistas codificadas permiten anticipar dos efectos sobre `collapse_matrix.json` cuando C3 se ingeste:
+
+1. **`junin_paseo|midday` no escala a colapso por C3.** Las 7/7 entrevistas en HABITABLE/DESEABLE (sin EVITABLE/NO_DESEABLE) inhabilitan la propagación del hallazgo `junin_paseo|peak_am` (2/4 con C1+C4) hacia midday vía C3. La fricción material matinal de Junín no debe extrapolarse a otras franjas sin nueva evidencia de campo en peak_am específicamente.
+2. **`plaza_botero|midday` se aproxima a 3/4.** Con 3/3 entrevistas en C3 negativo, esta celda alcanzaría C3 cumplido en la próxima regeneración. Sumado a C1 (activo en midday a nivel global, §3.12.1), la celda quedaría en 2/4 con C3+C1; si una jornada futura aporta video de Botero con saturación sobre el p75 global, cruzaría 3/4 (colapso fenomenológico en sentido estricto). La prioridad de captura de campo, en consecuencia, se desplaza hacia Botero midday.
+
 ## 3.12bis. Insumos de la jornada del 5 de mayo de 2026
 
 Esta sección reporta el corpus técnico que alimentó la matriz post-fix. Es el sustrato material de §3.12.5; los conteos de personas y los índices de saturación que se citan abajo son los insumos crudos de C4.
@@ -220,6 +272,8 @@ El supuesto distribucional de C1 (`peak_am 0.20, midday 0.20, peak_pm 0.45, nigh
 | La matriz de colapso está construida con C1 y C4 | Sostenible | `collapse_matrix.json` regenerada 2026-05-07 post-fix |
 | Existen franjas-nodo en colapso fenomenológico | No sostenible hoy | 0/36 celdas alcanzan 3-de-4; C2 y C3 vacíos |
 | Existe una celda con fricción material y criminal convergente | Sostenible | `junin_paseo|peak_am` con 2/4 (C1+C4, n=4 videos, p75=0.465) |
+| Existe evidencia C3 codificada de la jornada de campo | Sostenible | 14 entrevistas codificadas en `interviews_2026-05-05.json` cubriendo 4 celdas; ingesta a la matriz pendiente (§3.12.8) |
+| `plaza_botero|midday` es candidata fuerte a colapso por C3 | Sostenible como hipótesis | 3/3 entrevistas EVITABLE/AMBIVALENTE/NO_DESEABLE + verbalización auto-etnográfica de "colapsa"; falta C4 con video de Botero |
 | Los perfiles simulados equivalen a sujetos reales | No sostenible | son tipos analíticos simplificados |
 | La desigualdad de ruta está demostrada empíricamente | Parcial | métrica simulada, falta cruce con campo |
 

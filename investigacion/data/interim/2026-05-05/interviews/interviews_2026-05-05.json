@@ -1,0 +1,144 @@
+[
+  {
+    "interview_id": "2026-05-05_psa_001",
+    "node": "parque_san_antonio",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Jose Alejandro",
+    "verbatim": "Hay varias respuestas: es tanto seguro o inseguro depende del día. Le gusta.",
+    "codes": ["AMBIVALENTE", "HABITABLE"],
+    "evidence": ["habitabilidad declarada con apego ('le gusta') pero seguridad oscilante día a día"]
+  },
+  {
+    "interview_id": "2026-05-05_psa_002",
+    "node": "parque_san_antonio",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Mendez",
+    "verbatim": "Roban harto. De civil Mendez no estaria.",
+    "codes": ["EVITABLE", "NO_DESEABLE"],
+    "evidence": ["reconocimiento explicito de hurto frecuente", "evitacion practica fuera de uniforme/funcion"]
+  },
+  {
+    "interview_id": "2026-05-05_psa_003",
+    "node": "parque_san_antonio",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Michel",
+    "verbatim": "Esto es lo mas tranquilo. Botero es peor.",
+    "codes": ["HABITABLE"],
+    "evidence": ["valoracion comparativa positiva frente a Botero", "tranquilidad como atributo dominante"]
+  },
+  {
+    "interview_id": "2026-05-05_jun_001",
+    "node": "junin_paseo",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Luis Alberto",
+    "verbatim": "Como vendedor es seguro. Le gusta el lugar.",
+    "codes": ["HABITABLE", "DESEABLE"],
+    "evidence": ["habitabilidad laboral", "apego afectivo"]
+  },
+  {
+    "interview_id": "2026-05-05_jun_002",
+    "node": "junin_paseo",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Natalia Vergara",
+    "verbatim": "Este ano... le parece tranquilo.",
+    "codes": ["HABITABLE"],
+    "evidence": ["tranquilidad declarada en el periodo reciente"]
+  },
+  {
+    "interview_id": "2026-05-05_jun_003",
+    "node": "junin_paseo",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Andres",
+    "verbatim": "No es peligroso, es dificil vivir.",
+    "codes": ["DIFICIL_DE_VIVIR"],
+    "evidence": ["disocia peligrosidad de habitabilidad cotidiana", "dificultad estructural del habitar (economica/social)"]
+  },
+  {
+    "interview_id": "2026-05-05_jun_004",
+    "node": "junin_paseo",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Alfonso",
+    "verbatim": "No ha cambiado y es seguro.",
+    "codes": ["HABITABLE"],
+    "evidence": ["estabilidad temporal percibida", "seguridad afirmada"]
+  },
+  {
+    "interview_id": "2026-05-05_jun_005",
+    "node": "junin_paseo",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Jovana",
+    "verbatim": "No es muy seguro. Es agradable.",
+    "codes": ["AMBIVALENTE", "HABITABLE"],
+    "evidence": ["tension entre inseguridad parcial y agrado"]
+  },
+  {
+    "interview_id": "2026-05-05_jun_006",
+    "node": "junin_paseo",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Blanca Ema",
+    "verbatim": "No es inseguro. Antes era muy bueno, antes era mas seguro y es habitable.",
+    "codes": ["HABITABLE"],
+    "evidence": ["habitabilidad explicita", "deterioro relativo respecto al pasado pero no inseguro hoy"]
+  },
+  {
+    "interview_id": "2026-05-05_jun_007",
+    "node": "junin_paseo",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Johan Jaramillo",
+    "verbatim": "Ni seguro ni inseguro. Me encanta este lugar.",
+    "codes": ["AMBIVALENTE", "DESEABLE"],
+    "evidence": ["seguridad neutra", "fuerte apego afectivo"]
+  },
+  {
+    "interview_id": "2026-05-05_bot_001",
+    "node": "plaza_botero",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Andres",
+    "verbatim": "Es bastante inseguro. Mucho hurto. No es tan agradable.",
+    "codes": ["EVITABLE", "NO_DESEABLE"],
+    "evidence": ["inseguridad alta declarada", "hurto recurrente", "desagrado afectivo"]
+  },
+  {
+    "interview_id": "2026-05-05_bot_002",
+    "node": "plaza_botero",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Dario Franco",
+    "verbatim": "Muy inseguro. Mas habitable. Mucho comercio. Si me roban hago escandalo.",
+    "codes": ["AMBIVALENTE", "DIFICIL_DE_VIVIR"],
+    "evidence": ["coexistencia de inseguridad alta y reconocimiento de habitabilidad relativa", "estrategia defensiva personal frente al hurto"]
+  },
+  {
+    "interview_id": "2026-05-05_bot_003",
+    "node": "plaza_botero",
+    "window": "midday",
+    "window_inferred": true,
+    "interviewee": "Alexander",
+    "interviewee_role": "seguridad del Estado",
+    "verbatim": "No es muy seguro pero tampoco inseguro. Pero se prefiere otras zonas. Un cambio tremendo.",
+    "codes": ["AMBIVALENTE", "EVITABLE"],
+    "evidence": ["seguridad intermedia", "preferencia explicita por otros nodos (evitacion comparativa)", "reconocimiento de transformacion del lugar"]
+  },
+  {
+    "interview_id": "2026-05-05_sam_001",
+    "node": "san_antonio_metro",
+    "window": "peak_am",
+    "window_inferred": true,
+    "interviewee": "Jacob",
+    "verbatim": "A las 8 de la manana se siente la calma consecuente del [observacion interrumpida].",
+    "codes": ["HABITABLE"],
+    "evidence": ["calma matinal declarada", "TRUNCATED: observacion incompleta en el campo"],
+    "notes": "testimonio fragmentario; usar con cautela"
+  }
+]

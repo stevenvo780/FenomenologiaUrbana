@@ -151,30 +151,58 @@ def load_c2_field(csv_path: Path) -> dict:
     return {"available": bool(out), "cells": out}
 
 
-def load_c3_interviews(interim_dir: Path) -> dict:
+def load_c3_interviews(interim_dir: Path, processed_dir: Path | None = None) -> dict:
     """C3: codificación de entrevistas con esquema HABITABLE/DESEABLE/EVITABLE/...
-    Espera archivos *.coded.json con `node`, `window`, `codes: [str, ...]`.
+    Espera archivos *.coded.json (uno por entrevista o transcript) con
+    `node`, `window`, `codes: [str, ...]`.
+
+    Adicionalmente, si `processed_dir` contiene `c3_field_interviews_*.json`
+    (entrevistas de campo agregadas), su lista `interviews` se inyecta como
+    items equivalentes a *.coded.json (cada entry: node/window/codes).
     """
-    if not interim_dir.exists():
-        return {"available": False, "reason": f"{interim_dir} no existe"}
-    files = list(interim_dir.rglob("*.coded.json"))
-    if not files:
-        return {"available": False, "reason": "no hay *.coded.json codificadas aún"}
     bucket: dict[tuple[str, str], Counter] = defaultdict(Counter)
     n_files = 0
-    for f in files:
-        try:
-            data = json.loads(f.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        node = data.get("node")
-        win = data.get("window")
-        codes = data.get("codes") or []
-        if not node or not win:
-            continue
-        n_files += 1
-        for c in codes:
-            bucket[(node, win)][c.upper()] += 1
+    sources_used: list[str] = []
+    n_field_interviews = 0
+
+    if interim_dir.exists():
+        for f in interim_dir.rglob("*.coded.json"):
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            node = data.get("node")
+            win = data.get("window")
+            codes = data.get("codes") or []
+            if not node or not win:
+                continue
+            n_files += 1
+            for c in codes:
+                bucket[(node, win)][c.upper()] += 1
+
+    if processed_dir and processed_dir.exists():
+        for f in sorted(processed_dir.glob("c3_field_interviews_*.json")):
+            try:
+                data = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            interviews = data.get("interviews") or []
+            if not interviews:
+                continue
+            sources_used.append(f.name)
+            for it in interviews:
+                node = it.get("node")
+                win = it.get("window")
+                codes = it.get("codes") or []
+                if not node or not win:
+                    continue
+                n_field_interviews += 1
+                for c in codes:
+                    bucket[(node, win)][c.upper()] += 1
+
+    if not bucket:
+        return {"available": False, "reason": "no hay *.coded.json ni c3_field_interviews_*.json"}
+
     cells = {}
     for (n, w), counter in bucket.items():
         neg = sum(counter[k] for k in NEGATIVE_HABITABILITY)
@@ -185,7 +213,13 @@ def load_c3_interviews(interim_dir: Path) -> dict:
             "positive": pos,
             "dominant_negative": neg > pos,
         }
-    return {"available": True, "files_total": n_files, "cells": cells}
+    return {
+        "available": True,
+        "files_total": n_files,
+        "field_interviews_total": n_field_interviews,
+        "field_interview_sources": sources_used,
+        "cells": cells,
+    }
 
 
 def load_c4_video(processed_dir: Path) -> dict:
@@ -314,7 +348,7 @@ def main() -> int:
         projection_path=root / "data" / "processed" / "c1_hourly_projection.json",
     )
     c2 = load_c2_field(root / "data" / "processed" / "field_observations_aggregate.csv")
-    c3 = load_c3_interviews(root / "data" / "interim")
+    c3 = load_c3_interviews(root / "data" / "interim", processed_dir=root / "data" / "processed")
     c4 = load_c4_video(root / "data" / "processed")
     case_model = root / "outputs" / "case_model.json"
     matrix = build_matrix(case_model, c1, c2, c3, c4)

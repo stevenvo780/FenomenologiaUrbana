@@ -1,0 +1,86 @@
+[
+  {
+    "node": "san_antonio_metro",
+    "observer": "stev",
+    "date": "2026-05-05",
+    "atmosphere_notes": [
+      "pobreza ortodoxa: lo precario en sitio estrategico",
+      "sensacion de orden aparente con vigilancia interna obligada",
+      "contraste fuerte 3a edad vs modernidad"
+    ],
+    "fear_signals": [
+      "'debo tener mucho cuidado' (vigilancia personal sostenida)",
+      "miedo por riesgo vial: gente arriesga la vida al cruzar"
+    ],
+    "blase_signals": [
+      "naturalizacion del cruce peligroso por parte de los peatones"
+    ],
+    "perceived_safety_score_1_5": 2,
+    "score_rationale": "lenguaje de cuidado obligado y miedo vial situa la seguridad percibida en el extremo bajo-medio"
+  },
+  {
+    "node": "parque_san_antonio",
+    "observer": "stev",
+    "date": "2026-05-05",
+    "atmosphere_notes": [
+      "espacio para el arte; 'no esta rota la ventana' (Wilson-Kelling invertido)",
+      "tranquilidad en medio del ruido (atmosfera contemplativa)",
+      "uso curioso del reciclaje"
+    ],
+    "fear_signals": [],
+    "blase_signals": [
+      "ventas ambulantes como flujo aceptado/integrado al espacio"
+    ],
+    "perceived_safety_score_1_5": 4,
+    "score_rationale": "Stev describe tranquilidad sostenida y ausencia de vandalismo visible; sin senales de miedo del observador"
+  },
+  {
+    "node": "pasaje_la_bastilla",
+    "observer": "stev",
+    "date": "2026-05-05",
+    "atmosphere_notes": [
+      "altamente heterotopico: diversidad alta, todo tipo de comercio"
+    ],
+    "fear_signals": [],
+    "blase_signals": [],
+    "perceived_safety_score_1_5": 3,
+    "score_rationale": "registro corto; neutral por defecto, sin marcadores explicitos de inseguridad ni de tranquilidad"
+  },
+  {
+    "node": "junin_paseo",
+    "observer": "stev",
+    "date": "2026-05-05",
+    "atmosphere_notes": [
+      "modernidad sobre lo antiguo (asentamiento aprox. anos 70)",
+      "humildad del lugar; muy antioqueno con perdida de cultura percibida",
+      "extremadamente limpio; presencia de recicladores",
+      "muy habitable: pocos obstaculos y poco ruido"
+    ],
+    "fear_signals": [],
+    "blase_signals": [
+      "ordenamiento auto-mantenido por habitantes/comerciantes"
+    ],
+    "perceived_safety_score_1_5": 4,
+    "score_rationale": "lenguaje de Stev sostenidamente positivo ('muy habitable', 'limpio', 'humildad'); ausencia total de marcadores de miedo"
+  },
+  {
+    "node": "plaza_botero",
+    "observer": "stev",
+    "date": "2026-05-05",
+    "atmosphere_notes": [
+      "rezagos de tiempos violentos sobre planeacion urbana antigua",
+      "sofocante: apretura, multiples entradas/salidas (calor doble: termico y simbolico)",
+      "presion social por exceso de seguridad",
+      "presencia significativa de poblacion externa/extranjera"
+    ],
+    "fear_signals": [
+      "'colapsa por eso' (verbalizacion explicita de colapso fenomenologico)",
+      "casi sin espacios habitables percibidos"
+    ],
+    "blase_signals": [
+      "policia altamente presente como fondo aceptado"
+    ],
+    "perceived_safety_score_1_5": 2,
+    "score_rationale": "Stev usa 'colapsa', 'sofocante', 'precario', 'presion social'; el observador mismo registra desbordamiento del filtro blase"
+  }
+]

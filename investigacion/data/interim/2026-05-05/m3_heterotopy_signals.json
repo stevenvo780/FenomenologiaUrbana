@@ -1,0 +1,47 @@
+[
+  {
+    "node": "san_antonio_metro",
+    "date": "2026-05-05",
+    "heterotopy_score_0_5": 3,
+    "uses_observed": ["transporte masivo", "paso peatonal", "comercio adyacente"],
+    "demographics_notes": "fuerte presencia de adultos mayores en contraste con infraestructura moderna; mezcla generacional marcada",
+    "social_pressure": "media: precariedad ortodoxa con orden aparente",
+    "rationale": "Stev nombra contraste 3a edad/modernidad; sin descripcion explicita de multi-uso intenso"
+  },
+  {
+    "node": "parque_san_antonio",
+    "date": "2026-05-05",
+    "heterotopy_score_0_5": 4,
+    "uses_observed": ["arte publico", "ventas ambulantes", "paso intermedio", "reciclaje"],
+    "demographics_notes": "mezcla de transeuntes, vendedores informales, recicladores",
+    "social_pressure": "baja-media: tranquilidad declarada por Stev y por entrevistados",
+    "rationale": "Stev afirma explicitamente 'existe heterotopia: se le dan muchos mas usos de los esperados'"
+  },
+  {
+    "node": "pasaje_la_bastilla",
+    "date": "2026-05-05",
+    "heterotopy_score_0_5": 5,
+    "uses_observed": ["comercio formal diverso", "comercio informal", "paso"],
+    "demographics_notes": "alta diversidad declarada; sin conteos finos",
+    "social_pressure": "indeterminada",
+    "rationale": "Stev: 'altamente heterotopico, la diversidad es alta, todo tipo de comercio'"
+  },
+  {
+    "node": "junin_paseo",
+    "date": "2026-05-05",
+    "heterotopy_score_0_5": 2,
+    "uses_observed": ["comercio formal", "paseo"],
+    "demographics_notes": "predominio de gente mayor; baja presencia de jovenes; baja informalidad",
+    "social_pressure": "baja: humildad declarada, ordenamiento auto-mantenido",
+    "rationale": "Stev: 'poco heterotopico: casi exclusivo para comercio'; mono-uso comercial moderno"
+  },
+  {
+    "node": "plaza_botero",
+    "date": "2026-05-05",
+    "heterotopy_score_0_5": 4,
+    "uses_observed": ["turismo", "comercio", "circulacion", "control policial visible", "pulguero"],
+    "demographics_notes": "5% turistas (Stev); mucha gente del exterior o fuera de la ciudad; poblacion local que percibe el lugar como turistico aunque no se sienta asi",
+    "social_pressure": "alta: 'demasiada seguridad', presion percibida pese a no eliminar el microtrafico (desplazado, no removido)",
+    "rationale": "Stev: 'no hay mas comercio pero se siente mas heterotopico que Junin' por mezcla de poblaciones y usos simbolicos divergentes"
+  }
+]

@@ -1,0 +1,243 @@
+{
+  "_meta": {
+    "generator": "investigacion/hpc/extract_visual_aggregates.py",
+    "n_buckets": 9,
+    "sources": {
+      "photo_summary_files": 34,
+      "video_saturation_files": 16
+    },
+    "vehicle_classes": [
+      "bus",
+      "car",
+      "motorcycle",
+      "truck"
+    ],
+    "carried_obstacle_classes": [
+      "backpack",
+      "handbag",
+      "suitcase"
+    ],
+    "tourist_proxy_classes": [
+      "backpack",
+      "cell_phone",
+      "handbag",
+      "suitcase"
+    ],
+    "commerce_proxy_classes": [
+      "apple",
+      "banana",
+      "bottle",
+      "bowl",
+      "cake",
+      "cup",
+      "donut",
+      "handbag",
+      "hot dog",
+      "orange",
+      "pizza",
+      "sandwich",
+      "wine glass"
+    ]
+  },
+  "by_node_window": {
+    "palacio_nacional|night": {
+      "node": "palacio_nacional",
+      "window": "night",
+      "n_photos": 2,
+      "n_videos": 0,
+      "tourist_proxy_ratio": 0.0,
+      "tourist_proxy_hits": 0,
+      "commerce_proxy": 0.0,
+      "commerce_proxy_hits": 0,
+      "heterogeneity_index_visual": 0.0,
+      "heterogeneity_index_visual_norm": 0.0,
+      "n_distinct_classes": 1,
+      "class_distribution": {},
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "san_antonio_metro|peak_am": {
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_photos": 10,
+      "n_videos": 3,
+      "tourist_proxy_ratio": 0.10344827586206896,
+      "tourist_proxy_hits": 6,
+      "commerce_proxy": 0.0,
+      "commerce_proxy_hits": 0,
+      "heterogeneity_index_visual": 1.6938314354476045,
+      "heterogeneity_index_visual_norm": 0.655263445785019,
+      "n_distinct_classes": 6,
+      "class_distribution": {
+        "person": 37,
+        "car": 5,
+        "motorcycle": 7,
+        "backpack": 6,
+        "bicycle": 1,
+        "bus": 2
+      },
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "junin_paseo|peak_am": {
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_photos": 11,
+      "n_videos": 4,
+      "tourist_proxy_ratio": 0.13259833134684149,
+      "tourist_proxy_hits": 445,
+      "commerce_proxy": 0.030393325387365912,
+      "commerce_proxy_hits": 102,
+      "heterogeneity_index_visual": 1.351676528786952,
+      "heterogeneity_index_visual_norm": 0.4264064696079374,
+      "n_distinct_classes": 9,
+      "class_distribution": {
+        "motorcycle": 44,
+        "person": 2489,
+        "handbag": 102,
+        "backpack": 103,
+        "bicycle": 1,
+        "car": 372,
+        "bus": 1,
+        "truck": 4,
+        "suitcase": 240
+      },
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "parque_berrio|peak_am": {
+      "node": "parque_berrio",
+      "window": "peak_am",
+      "n_photos": 3,
+      "n_videos": 0,
+      "tourist_proxy_ratio": 0.0,
+      "tourist_proxy_hits": 0,
+      "commerce_proxy": 0.0,
+      "commerce_proxy_hits": 0,
+      "heterogeneity_index_visual": 0.0,
+      "heterogeneity_index_visual_norm": 0.0,
+      "n_distinct_classes": 1,
+      "class_distribution": {},
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "junin_paseo|midday": {
+      "node": "junin_paseo",
+      "window": "midday",
+      "n_photos": 1,
+      "n_videos": 2,
+      "tourist_proxy_ratio": 0.06090808416389812,
+      "tourist_proxy_hits": 110,
+      "commerce_proxy": 0.036544850498338874,
+      "commerce_proxy_hits": 66,
+      "heterogeneity_index_visual": 0.5238610161684375,
+      "heterogeneity_index_visual_norm": 0.18660305900490926,
+      "n_distinct_classes": 7,
+      "class_distribution": {
+        "suitcase": 15,
+        "person": 1673,
+        "handbag": 66,
+        "backpack": 29,
+        "motorcycle": 3,
+        "bicycle": 17,
+        "truck": 3
+      },
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "san_antonio_metro|midday": {
+      "node": "san_antonio_metro",
+      "window": "midday",
+      "n_photos": 1,
+      "n_videos": 0,
+      "tourist_proxy_ratio": 0.15625,
+      "tourist_proxy_hits": 5,
+      "commerce_proxy": 0.125,
+      "commerce_proxy_hits": 4,
+      "heterogeneity_index_visual": 0.9308927290103626,
+      "heterogeneity_index_visual_norm": 0.4654463645051813,
+      "n_distinct_classes": 4,
+      "class_distribution": {
+        "person": 26,
+        "backpack": 1,
+        "handbag": 4,
+        "car": 1
+      },
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "parque_berrio|midday": {
+      "node": "parque_berrio",
+      "window": "midday",
+      "n_photos": 6,
+      "n_videos": 4,
+      "tourist_proxy_ratio": 0.036542056074766356,
+      "tourist_proxy_hits": 782,
+      "commerce_proxy": 0.01425233644859813,
+      "commerce_proxy_hits": 305,
+      "heterogeneity_index_visual": 0.5919223352326467,
+      "heterogeneity_index_visual_norm": 0.17818637800849726,
+      "n_distinct_classes": 10,
+      "class_distribution": {
+        "person": 19774,
+        "backpack": 400,
+        "handbag": 305,
+        "car": 329,
+        "motorcycle": 263,
+        "bicycle": 145,
+        "suitcase": 77,
+        "truck": 76,
+        "bus": 28,
+        "dog": 3
+      },
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "parque_berrio|peak_pm": {
+      "node": "parque_berrio",
+      "window": "peak_pm",
+      "n_photos": 0,
+      "n_videos": 2,
+      "tourist_proxy_ratio": 0.1433366597115123,
+      "tourist_proxy_hits": 1580,
+      "commerce_proxy": 0.07466207021681938,
+      "commerce_proxy_hits": 823,
+      "heterogeneity_index_visual": 1.0780741331081756,
+      "heterogeneity_index_visual_norm": 0.3116333120447223,
+      "n_distinct_classes": 11,
+      "class_distribution": {
+        "person": 9082,
+        "handbag": 823,
+        "suitcase": 232,
+        "backpack": 518,
+        "bicycle": 65,
+        "motorcycle": 131,
+        "dog": 16,
+        "cell_phone": 7,
+        "car": 78,
+        "bus": 42,
+        "truck": 29
+      },
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    },
+    "parque_berrio|night": {
+      "node": "parque_berrio",
+      "window": "night",
+      "n_photos": 0,
+      "n_videos": 1,
+      "tourist_proxy_ratio": 0.0,
+      "tourist_proxy_hits": 0,
+      "commerce_proxy": 0.0,
+      "commerce_proxy_hits": 0,
+      "heterogeneity_index_visual": 0.0,
+      "heterogeneity_index_visual_norm": 0.0,
+      "n_distinct_classes": 1,
+      "class_distribution": {
+        "person": 1
+      },
+      "police_proxy": null,
+      "police_proxy_note": "TODO: YOLO COCO no distingue uniforme; requiere clasificador adicional o anotación manual."
+    }
+  }
+}

@@ -3684,8 +3684,8 @@
     "collapse_matrix": {
       "rule": "3-de-4 entre C1 (crimen) / C2 (seguridad) / C3 (habitabilidad) / C4 (saturación)",
       "decisions": {
-        "friccion_acumulada": 4,
-        "inconcluyente": 32
+        "friccion_acumulada": 6,
+        "inconcluyente": 30
       },
       "cells": [
         {
@@ -3698,7 +3698,7 @@
           "C3": false,
           "C4": false,
           "conditions_met": 1,
-          "coverage": 2
+          "coverage": 3
         },
         {
           "key": "san_antonio_metro|midday",
@@ -3752,13 +3752,13 @@
           "key": "parque_san_antonio|midday",
           "node": "parque_san_antonio",
           "window": "midday",
-          "decision": "inconcluyente",
+          "decision": "friccion_acumulada",
           "C1": true,
           "C2": false,
           "C3": false,
           "C4": false,
           "conditions_met": 1,
-          "coverage": 1
+          "coverage": 2
         },
         {
           "key": "parque_san_antonio|peak_pm",
@@ -3854,7 +3854,7 @@
           "C3": false,
           "C4": false,
           "conditions_met": 1,
-          "coverage": 2
+          "coverage": 3
         },
         {
           "key": "junin_paseo|peak_pm",
@@ -4040,13 +4040,13 @@
           "key": "plaza_botero|midday",
           "node": "plaza_botero",
           "window": "midday",
-          "decision": "inconcluyente",
+          "decision": "friccion_acumulada",
           "C1": true,
           "C2": false,
-          "C3": false,
+          "C3": true,
           "C4": false,
-          "conditions_met": 1,
-          "coverage": 1
+          "conditions_met": 2,
+          "coverage": 2
         },
         {
           "key": "plaza_botero|peak_pm",

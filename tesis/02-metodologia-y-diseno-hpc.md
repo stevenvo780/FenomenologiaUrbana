@@ -66,7 +66,7 @@ La traducción entre teoría y modelo requiere declarar variables, unidades y l�
 | Libertad de ruta | entropía/divergencia | simulación | exploratorio | depende de supuestos de agentes |
 | Criminalidad objetiva (C1) | bandera `c1_high` por franja, derivada de proyección horaria de hurto a persona | MEData criminalidad (serie histórica comuna 10) | precomputado en `c1_hourly_projection.json` | desfase temporal, escala comuna, no por nodo |
 | Seguridad percibida situada (C2) | `security_score` 1–5 | encuesta breve en campo | pendiente de encuesta | dependiente de hora, observador y muestreo |
-| Habitabilidad declarada (C3) | códigos `HABITABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR` | entrevistas escritas en `data/interim/` | pendiente de codificación (Ollama qwen3:14b en torre HPC) | autoselección, deseabilidad social |
+| Habitabilidad declarada (C3) | códigos `HABITABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR` | entrevistas escritas codificadas en `investigacion/data/interim/YYYY-MM-DD/interviews/` | pendiente de codificación (Ollama qwen3:14b en torre HPC) | autoselección, deseabilidad social |
 | Saturación material (C4) | densidad por frame y conteo YOLO11; umbral global p75 = 0.413 | videos POV / time-lapse procesados en torre HPC dual-GPU | procesado | encuadre, recorte, ausencia de afecto |
 
 Esta tabla cumple una función de control: impide presentar todas las variables con el mismo grado de evidencia. Las cuatro últimas filas (C1–C4) son los insumos del cruce que produce la matriz de colapso fenomenológico discutida más abajo.
@@ -160,6 +160,27 @@ La salida de este cruce es la matriz `collapse_matrix.json` con 36 celdas (9 nod
 | Asignación espacial | EXIF de fotos + GPS + timestamps de video | `process_photos.py`, `assign_nodes.py` (haversine), `assign_videos_by_time.py` | `photo_node_assignments.json`, `photo_summary_*.json` | procesado |
 | Audio (no usado como C3) | pista de audio de videos POV | `transcribe_audio.py` | transcripciones marcadas como ruido ambiente | descartado para C3 |
 | Ensamblaje final | salidas C1–C4 anteriores | `build_collapse_matrix.py`, `inspect_matrix.py` | `collapse_matrix.json` | en construcción |
+
+## 2.9.3. Operacionalización empírica de las capas M-MASS
+
+Las secciones 2.5–2.8 definen las tres capas del modelo M-MASS ($M_1$ material, $M_2$ decisional/fenomenológico, $M_3$ normativo/socioespacial) en términos teóricos. Esta subsección documenta que cada capa cuenta ya con **fuentes de campo operativas**, ingestadas en la jornada de campo del 2026-05-05 y archivadas en `investigacion/data/interim/2026-05-05/`. La metodología no es un esquema vacío: las tres capas se alimentan de datos efectivamente recogidos, no de proxies hipotéticos.
+
+La siguiente tabla cruza cada capa con su fuente de datos primaria y un ejemplo concreto extraído de la jornada del 2026-05-05 (archivos `m1_physical_counts.json`, `m2_phenomenological_observations.json`, `m3_heterotopy_signals.json` y `field_notes/field_notes_stev_2026-05-05.md`, sintetizados en `analysis_summary_2026-05-05.md`):
+
+| Capa M-MASS | Fuente de datos operativa | Ejemplo del campo 2026-05-05 |
+| --- | --- | --- |
+| $M_1$ físico-ambiental | `photo_summary_*.json` (YOLO11) + `video_saturation_*.json` (HPC dual-GPU) + conteos POV de campo: obstáculos por cuadra, escala de indigencia 0-10, escala de consumo 0-10, ratio de turistas, presencia policial | `parque_san_antonio`: 6 vendedores ambulantes/cuadra, vandalismo 2/10; `junin_paseo`: indigencia 3/10, consumo 4/10; `plaza_botero`: ~5% turistas |
+| $M_2$ agentes/experiencia | apreciaciones fenomenológicas (AF) auto-etnográficas del observador (Stev) registradas en `field_notes_stev_2026-05-05.md` + percepciones inferidas de las entrevistas escritas | Stev "debo tener mucho cuidado" en San Antonio (safety inferido 2/5); Stev "colapsa por eso" en plaza Botero; "tranquilidad en medio del ruido" en parque San Antonio |
+| $M_3$ social/heterotopía | scoring de heterotopía por nodo (mezcla de usos, demografía, comercio formal/informal) en `m3_heterotopy_signals.json` | La Bastilla 5/5; parque San Antonio 4/5 (arte + ambulantes + paso); plaza Botero 4/5 (turista + local + presencia estatal); Junín 2/5 (mono-uso comercial); San Antonio 3/5 |
+
+**Validez de las apreciaciones fenomenológicas en $M_2$.** Las AF del observador no son anecdóticas: constituyen **observación participante** en el sentido clásico de la fenomenología y la antropología urbana. La tradición fenomenológica husserliana (descripción del mundo de la vida, *Lebenswelt*) y la fenomenología de la percepción de Merleau-Ponty (cuerpo como medio de acceso al espacio vivido) sostienen que la experiencia situada del observador es una fuente legítima de conocimiento sobre la atmósfera, el miedo, la actitud *blasé* simmeliana y el colapso fenomenológico. Por eso las AF alimentan formalmente la capa $M_2$: entran al modelo como evidencia sobre la dimensión decisional/experiencial del corredor, articulando los pesos de riesgo, exposición y recompensa que la sección 2.7 deja abstractos.
+
+**Distinción metodológica respecto a C3.** Es crucial separar dos roles distintos del material auto-etnográfico:
+
+- Las AF **alimentan $M_2$** (capa decisional/fenomenológica del modelo) y se reportan en el capítulo 3 como **evidencia auto-etnográfica complementaria**, identificada como tal y atribuida al observador.
+- Las AF **no se cuentan como C3** (testimonio de habitabilidad declarada) en la matriz de colapso. C3 exige entrevistas escritas elicitadas a terceros, codificadas según el esquema `HABITABLE/DESEABLE/EVITABLE/NO_DESEABLE/DIFICIL_DE_VIVIR/AMBIVALENTE` (ver §2.9.1 y §2.9.2). Confundir AF con testimonio incurriría en el sesgo del observador único que la triangulación 3-de-4 está diseñada para evitar.
+
+Esta doble inscripción —AF válidas para $M_2$, AF excluidas de C3— preserva la triangulación sin descartar la riqueza descriptiva de la jornada de campo, y deja explícito que las tres capas del modelo M-MASS tienen ya, al cierre de redacción, fuentes empíricas operativas y ejemplos concretos por nodo.
 
 ## 2.10. Pipeline HPC real ejecutado
 

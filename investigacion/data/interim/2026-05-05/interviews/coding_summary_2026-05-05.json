@@ -1,0 +1,60 @@
+{
+  "date": "2026-05-05",
+  "observer": "stev",
+  "total_interviews": 14,
+  "by_node_window": [
+    {
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_interviews": 1,
+      "code_counts": {"HABITABLE": 1},
+      "dominant_code": "HABITABLE",
+      "notes": "una sola entrevista (Jacob) y truncada; baja confianza"
+    },
+    {
+      "node": "parque_san_antonio",
+      "window": "midday",
+      "n_interviews": 3,
+      "code_counts": {"HABITABLE": 2, "AMBIVALENTE": 1, "EVITABLE": 1, "NO_DESEABLE": 1},
+      "dominant_code": "HABITABLE",
+      "notes": "tendencia habitable con disenso interno (Mendez evita el lugar fuera de funcion)"
+    },
+    {
+      "node": "junin_paseo",
+      "window": "midday",
+      "n_interviews": 7,
+      "code_counts": {"HABITABLE": 5, "DESEABLE": 2, "AMBIVALENTE": 2, "DIFICIL_DE_VIVIR": 1},
+      "dominant_code": "HABITABLE",
+      "notes": "predominio claro habitable/deseable; sin codigos EVITABLE ni NO_DESEABLE"
+    },
+    {
+      "node": "plaza_botero",
+      "window": "midday",
+      "n_interviews": 3,
+      "code_counts": {"AMBIVALENTE": 2, "EVITABLE": 2, "NO_DESEABLE": 1, "DIFICIL_DE_VIVIR": 1},
+      "dominant_code": "EVITABLE",
+      "notes": "predominio negativo: 2/3 con EVITABLE; soporta habitabilidad declarada negativa (C3)"
+    }
+  ],
+  "global_code_distribution": {
+    "HABITABLE": 8,
+    "DESEABLE": 2,
+    "AMBIVALENTE": 5,
+    "EVITABLE": 3,
+    "NO_DESEABLE": 2,
+    "DIFICIL_DE_VIVIR": 2
+  },
+  "c3_trigger_cells": [
+    {
+      "node": "plaza_botero",
+      "window": "midday",
+      "c3_negative_dominant": true,
+      "rationale": "EVITABLE+NO_DESEABLE+DIFICIL_DE_VIVIR (4) > HABITABLE+DESEABLE (0); AMBIVALENTE (2) no anula"
+    }
+  ],
+  "limitations": [
+    "todas las ventanas son inferidas (notas de campo no fechan hora exacta)",
+    "san_antonio_metro y pasaje_la_bastilla sin entrevistas codificables",
+    "muestra pequena por nodo (n<=7); inferencia exploratoria"
+  ]
+}
