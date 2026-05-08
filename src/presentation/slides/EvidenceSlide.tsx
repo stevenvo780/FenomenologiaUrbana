@@ -5,13 +5,6 @@ import type { Payload } from '../../types'
 import { DECK_CHART_TEXT } from '../constants'
 import type { ModalKind } from '../deckTypes'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
-import { CollapseMatrixPanel } from '../components/visuals/CollapseMatrixPanel'
-import { InterRaterPanel } from '../components/visuals/InterRaterPanel'
-import { SensitivityPanel } from '../components/visuals/SensitivityPanel'
-import { CrossValidationPanel } from '../components/visuals/CrossValidationPanel'
-import { SubZonesPanel } from '../components/visuals/SubZonesPanel'
-import { AudioPanel } from '../components/visuals/AudioPanel'
-import { VisualAggregatesPanel } from '../components/visuals/VisualAggregatesPanel'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, findPeakPeriod } from '../utils'
 
@@ -25,8 +18,8 @@ export function EvidenceSlide({
   return (
     <SlideShell id="evidencia" className="evidence-slide">
       <SlideHeader
-        eyebrow="Capítulo 15 · evidencia y faltantes"
-        title="Qué tenemos, qué falta y qué no se debe fingir"
+        eyebrow="Capítulo 15 · evidencia pública y baseline"
+        title="Qué tenemos del centro · evidencia pública"
         text="El deck distingue evidencia pública, salidas computacionales y trabajo de campo pendiente. Esa separación es parte del rigor."
         action={<button type="button" className="ghost-action" onClick={() => onOpenModal('evidence')}>Data room empírico</button>}
       />
@@ -142,37 +135,6 @@ function EvidenceGallery({
           Ver trazabilidad
         </button>
       </article>
-
-      {data.field_calibration?.collapse_matrix && (
-        <CollapseMatrixPanel
-          field={data.field_calibration}
-          sensitivity={data.field_calibration.collapse_matrix_sensitivity}
-        />
-      )}
-      {data.field_calibration?.inter_rater_reliability && (
-        <InterRaterPanel data={data.field_calibration.inter_rater_reliability} />
-      )}
-      {data.field_calibration?.collapse_matrix_sensitivity && (
-        <SensitivityPanel data={data.field_calibration.collapse_matrix_sensitivity} />
-      )}
-      {data.field_calibration?.cross_validation && (
-        <CrossValidationPanel data={data.field_calibration.cross_validation} />
-      )}
-      {(data.field_calibration?.node_geometry_v2 || data.field_calibration?.signage_ocr) && (
-        <SubZonesPanel
-          geometry={data.field_calibration?.node_geometry_v2}
-          signage={data.field_calibration?.signage_ocr}
-        />
-      )}
-      {data.field_calibration?.audio_classification && (
-        <AudioPanel data={data.field_calibration.audio_classification} />
-      )}
-      {(data.field_calibration?.m1_visual_aggregate || data.field_calibration?.m3_visual_aggregate) && (
-        <VisualAggregatesPanel
-          m1={data.field_calibration?.m1_visual_aggregate}
-          m3={data.field_calibration?.m3_visual_aggregate}
-        />
-      )}
     </div>
   )
 }

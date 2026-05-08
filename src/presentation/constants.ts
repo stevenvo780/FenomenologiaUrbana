@@ -15,7 +15,8 @@ export const SLIDES: Array<{ id: SlideId; label: string; shortLabel: string }> =
   { id: 'visibilidad', label: 'Visibilidad', shortLabel: 'M3' },
   { id: 'economia', label: 'Comercio y atracción', shortLabel: 'Comercio' },
   { id: 'historia', label: 'Historia', shortLabel: 'Hist' },
-  { id: 'evidencia', label: 'Evidencia y faltantes', shortLabel: 'Evidencia' },
+  { id: 'evidencia', label: 'Evidencia pública', shortLabel: 'Evidencia' },
+  { id: 'triangulacion', label: 'Triangulación de campo', shortLabel: 'Triang' },
   { id: 'cierre', label: 'Cierre crítico', shortLabel: 'Cierre' },
 ]
 

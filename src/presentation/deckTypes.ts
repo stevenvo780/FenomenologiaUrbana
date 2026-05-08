@@ -27,6 +27,7 @@ export type SlideId =
   | 'economia'
   | 'historia'
   | 'evidencia'
+  | 'triangulacion'
   | 'cierre'
 
 export type DeckRoute = ScenarioSummary['top_routes'][number]

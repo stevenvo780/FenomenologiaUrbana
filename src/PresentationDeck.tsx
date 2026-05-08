@@ -22,6 +22,7 @@ import { ProfilesSlide } from './presentation/slides/ProfilesSlide'
 import { SimulationSlide } from './presentation/slides/SimulationSlide'
 import { StressSlide } from './presentation/slides/StressSlide'
 import { SymplokeSlide } from './presentation/slides/SymplokeSlide'
+import { TriangulationSlide } from './presentation/slides/TriangulationSlide'
 import { VisibilitySlide } from './presentation/slides/VisibilitySlide'
 import type { SlideId } from './presentation/deckTypes'
 import type { Payload } from './types'
@@ -150,6 +151,8 @@ export function PresentationDeck({ data }: { data: Payload }) {
         )
       case 'evidencia':
         return <EvidenceSlide data={data} onOpenModal={deck.openModal} />
+      case 'triangulacion':
+        return <TriangulationSlide data={data} onOpenModal={deck.openModal} />
       case 'cierre':
         return (
           <ClosingSlide
