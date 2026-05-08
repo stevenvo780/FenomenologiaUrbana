@@ -1,5 +1,8 @@
 # Capítulo 3. Resultados, discusión y evaluación crítica
 
+**Autores:** Steven Vallejo · Jacob Agudelo
+**Repositorio público:** <https://github.com/stevenvo780/FenomenologiaUrbana>
+
 ## 3.1. Criterio de lectura de resultados
 
 Los resultados del modelo M-MASS se presentan como una lectura exploratoria del corredor Junín-San Antonio. No sustituyen la observación directa ni autorizan conclusiones definitivas sobre todos los usuarios del centro de Medellín. Su aporte principal consiste en organizar datos públicos, supuestos de modelación y escenarios de simulación para discutir patrones de fricción ambiental, concentración de trayectorias y presión de flujo.

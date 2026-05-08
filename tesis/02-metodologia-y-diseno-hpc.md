@@ -1,5 +1,8 @@
 # Capítulo 2. Metodología y diseño computacional
 
+**Autores:** Steven Vallejo · Jacob Agudelo
+**Repositorio público:** <https://github.com/stevenvo780/FenomenologiaUrbana>
+
 ## 2.1. Diseño general de la triangulación
 
 La tesis nuclear de esta investigación —que la fenomenología por sí sola es insuficiente para diagnosticar el colapso urbano— exige un diseño metodológico que articule cuatro registros heterogéneos en lugar de privilegiar uno. La metodología cruza (i) descripción fenomenológica situada en la capa $M_2$ del modelo, (ii) simulación multi-agente sobre el corredor real (M-MASS), (iii) procesamiento HPC dual-GPU de evidencia de campo (fotos georreferenciadas, videos POV, entrevistas escritas, serie histórica MEData), y (iv) una matriz de colapso falsable construida bajo regla **3-de-4** sobre 36 celdas (9 nodos × 4 franjas horarias). Ninguno de los cuatro registros tiene autoridad por sí mismo: la convergencia mínima entre tres es la única condición que autoriza el diagnóstico de colapso, y cualquier celda con menos de tres condiciones se reporta como *fricción acumulada* o *flujo ordinario*.

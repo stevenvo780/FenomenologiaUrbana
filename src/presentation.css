@@ -3363,6 +3363,30 @@ body {
   gap: 10px;
 }
 
+.open-authors {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 248, 236, 0.78);
+  font-weight: 500;
+}
+
+.open-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.closing-authors {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: rgba(255, 248, 236, 0.7);
+  font-weight: 500;
+}
+
 .open-terms span,
 .systemic-pressure-chip,
 .heatline-legend span,

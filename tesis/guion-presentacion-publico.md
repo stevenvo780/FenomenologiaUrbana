@@ -1,4 +1,6 @@
-# Guion de presentación — 20 minutos · Stev + Jacob
+# Guion de presentación — 20 minutos · Steven Vallejo + Jacob Agudelo
+
+**Repositorio público:** <https://github.com/stevenvo780/FenomenologiaUrbana>
 
 **Contexto**: tarea de campo de la profesora ("vayan al centro y hagan fenomenología"). La salimos al centro de Medellín el 2026-05-05. Stev decidió escalarlo a un sistema computacional completo. Esta presentación cuenta lo hecho sin abrumar, con honestidad sobre el sobre-esfuerzo y rigor donde lo hubo.
 

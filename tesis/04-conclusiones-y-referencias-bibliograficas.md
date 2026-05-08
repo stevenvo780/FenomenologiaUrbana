@@ -1,5 +1,8 @@
 # Capítulo 4. Conclusiones, limitaciones y referencias
 
+**Autores:** Steven Vallejo · Jacob Agudelo
+**Repositorio público:** <https://github.com/stevenvo780/FenomenologiaUrbana>
+
 ## 4.1. Tesis y alcance
 
 La fenomenología urbana, entendida como descripción cultivada de la experiencia situada, **no es suficiente para abordar la ciudad**. Esta tesis lo demuestra empíricamente: dos observadores entrenados (Stev y Jacob) recorriendo los mismos cuatro nodos del corredor Junín–San Antonio producen lecturas divergentes con kappa inter-rater = 0.0 (n=4 nodos compartidos). El caso paradigmático `parque_san_antonio` (Stev = 4 alto / Jacob = 2 bajo) no es ruido de medición: es el límite intrínseco de la primera persona como instancia única de validación. La fenomenología pura, por sí sola, **no falsa nada**.

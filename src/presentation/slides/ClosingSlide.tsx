@@ -40,7 +40,16 @@ export function ClosingSlide({
             <button type="button" className="ghost-action" onClick={() => onOpenModal('status')}>
               Estatus completo
             </button>
+            <a
+              className="ghost-action"
+              href="https://github.com/stevenvo780/FenomenologiaUrbana"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Repositorio ↗
+            </a>
           </div>
+          <p className="closing-authors">Steven Vallejo · Jacob Agudelo</p>
           <p className="closing-typewriter" aria-label={finalQuote}>
             {finalQuote.split('').map((char, index) => (
               <motion.span key={`${char}-${index}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: index * 0.035 }}>

@@ -1,5 +1,8 @@
 # Capítulo 1. Planteamiento del problema, objetivos y marco teórico
 
+**Autores:** Steven Vallejo · Jacob Agudelo
+**Repositorio público:** <https://github.com/stevenvo780/FenomenologiaUrbana>
+
 ## 1.1. Contexto y problema de investigación
 
 El corredor San Antonio–Junín–Parque Berrío–Plaza Botero, en el centro de Medellín, articula estación de Metro, centralidad peatonal, comercio formal e informal, patrimonio, vigilancia, presencia institucional, habitantes de calle y turismo. Esa superposición de funciones lo vuelve un laboratorio privilegiado de fricción urbana: las capas no conviven armónicamente, y la experiencia del tránsito ocurre en su roce.

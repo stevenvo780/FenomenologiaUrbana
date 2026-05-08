@@ -43,14 +43,26 @@ export const OpenSlide = memo(function OpenSlide({
             <span>lógos</span>
             <span>Lebenswelt</span>
           </motion.div>
-          <motion.button
-            variants={openChild}
-            type="button"
-            className="primary-action"
-            onClick={() => onGoToSlide('symploke')}
-          >
-            VER RECORRIDO
-          </motion.button>
+          <motion.p variants={openChild} className="open-authors">
+            Steven Vallejo · Jacob Agudelo
+          </motion.p>
+          <motion.div variants={openChild} className="open-actions">
+            <button
+              type="button"
+              className="primary-action"
+              onClick={() => onGoToSlide('symploke')}
+            >
+              VER RECORRIDO
+            </button>
+            <a
+              className="ghost-action"
+              href="https://github.com/stevenvo780/FenomenologiaUrbana"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              REPOSITORIO ↗
+            </a>
+          </motion.div>
         </motion.article>
 
         <HeroConstellation
