@@ -1,0 +1,116 @@
+{
+  "version": "v2",
+  "rationale": "Refina la asignación de nodos para rescatar pasaje_la_bastilla y modelar dos sub-zonas narradas en campo (Coltejer-Ayacucho intra-Junín; calle del consumo adyacente a Botero).",
+  "subzone_max_radius_m": 80.0,
+  "global_max_radius_m": 400.0,
+  "nodes": [
+    {
+      "id": "san_antonio_metro",
+      "lat": 6.2474,
+      "lon": -75.5681,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "parque_san_antonio",
+      "lat": 6.2478,
+      "lon": -75.5693,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "palacio_nacional",
+      "lat": 6.2467,
+      "lon": -75.5664,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "junin_paseo",
+      "lat": 6.2489,
+      "lon": -75.5669,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "oriental_cruce",
+      "lat": 6.2497,
+      "lon": -75.5654,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "parque_berrio",
+      "lat": 6.2506,
+      "lon": -75.5685,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "carabobo_cultural",
+      "lat": 6.2511,
+      "lon": -75.5697,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "plaza_botero",
+      "lat": 6.2517,
+      "lon": -75.5708,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "museo_antioquia",
+      "lat": 6.252,
+      "lon": -75.5713,
+      "kind": "canonical",
+      "parent_hint": null,
+      "max_radius_m": null,
+      "source": "case_model.json (v1)"
+    },
+    {
+      "id": "pasaje_la_bastilla",
+      "lat": 6.2497,
+      "lon": -75.568,
+      "kind": "subzone",
+      "parent_hint": "junin_paseo",
+      "max_radius_m": 80.0,
+      "source": "Cra. 49 (Junín) entre Cl. 51 y Cl. 52 — Pasaje comercial La Bastilla, Centro de Medellín. Geocodificación manual basada en cartografía pública de la Comuna 10."
+    },
+    {
+      "id": "junin_coltejer_ayacucho",
+      "lat": 6.2477,
+      "lon": -75.5681,
+      "kind": "subzone",
+      "parent_hint": "junin_paseo",
+      "max_radius_m": 80.0,
+      "source": "Centroide del tramo Junín entre Cl. 49 (Ayacucho) y Cl. 52 (Edificio Coltejer). Referencia: entrevista a 'Andrés' (Jacob, field_notes 2026-05-05)."
+    },
+    {
+      "id": "botero_calle_consumo",
+      "lat": 6.252,
+      "lon": -75.5722,
+      "kind": "subzone",
+      "parent_hint": "plaza_botero",
+      "max_radius_m": 80.0,
+      "source": "Cra. 55 (Cundinamarca) con Cl. 54-55, una cuadra al occidente de Plaza Botero. Referencia: 'la calle del consumo' (Jacob, field_notes 2026-05-05) — desplazamiento Bronx 'movieron una calle' (Stev)."
+    }
+  ]
+}

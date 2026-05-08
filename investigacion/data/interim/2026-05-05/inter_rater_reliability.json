@@ -1,0 +1,86 @@
+{
+  "schema": "inter_rater_reliability_v1",
+  "date": "2026-05-05",
+  "raters": ["stev", "jacob"],
+  "shared_nodes": ["san_antonio_metro", "parque_san_antonio", "junin_paseo", "parque_botero"],
+  "binarization_rule": "perceived_safety_score_1_5 >= 3 => 'alto'; < 3 => 'bajo'",
+  "scoring_per_observer_per_node": {
+    "san_antonio_metro": {
+      "stev":  {"perceived_safety_1_5": 2, "binary": "bajo", "atmosphere_keywords": ["pobreza ortodoxa","vigilancia obligada","contraste 3a edad/modernidad"], "fear": ["debo tener mucho cuidado","riesgo vial"], "blase": ["naturalizacion del cruce peligroso"]},
+      "jacob": {"perceived_safety_1_5": 3, "binary": "alto", "atmosphere_keywords": ["calma matutina consecuente","flujo trabajadores"], "fear": [], "blase": ["prisa segun perfil del transeunte"]}
+    },
+    "parque_san_antonio": {
+      "stev":  {"perceived_safety_1_5": 4, "binary": "alto", "atmosphere_keywords": ["tranquilidad en medio del ruido","no esta rota la ventana","arte"], "fear": [], "blase": ["ventas ambulantes integradas"]},
+      "jacob": {"perceived_safety_1_5": 2, "binary": "bajo", "atmosphere_keywords": ["se ve la violencia","paso historico del terror","subalternos","teatro de masas","vandalismo apela a Dios"], "fear": ["paso historico del terror","nuevo territorio que prueba el limite"], "blase": []}
+    },
+    "junin_paseo": {
+      "stev":  {"perceived_safety_1_5": 4, "binary": "alto", "atmosphere_keywords": ["muy habitable","extremadamente limpio","humildad","modernidad sobre lo antiguo"], "fear": [], "blase": ["ordenamiento auto-mantenido"]},
+      "jacob": {"perceived_safety_1_5": 3, "binary": "alto", "atmosphere_keywords": ["comercio informal heterotopico","figuras catolicas trascienden","reggaeton vs vallenato","clase media"], "fear": ["para vendedor seguro / para transeunte no","Coltejer-Ayacucho peligroso"], "blase": ["informal limpia y deja libre la calle"]}
+    },
+    "parque_botero": {
+      "stev":  {"perceived_safety_1_5": 2, "binary": "bajo", "atmosphere_keywords": ["sofocante","rezagos de violencia","presion social por exceso de seguridad","poblacion extranjera"], "fear": ["colapsa por eso","casi sin espacios habitables"], "blase": ["policia altamente presente como fondo"]},
+      "jacob": {"perceived_safety_1_5": 2, "binary": "bajo", "atmosphere_keywords": ["zona mas turistica","hoteles viejos","sofisticacion vs precariedad","iconografia Botero"], "fear": ["prostitucion y consumo","calle del consumo adyacente","Ejercito reclutando"], "blase": ["seguridad privada estatal como fondo"]}
+    }
+  },
+  "cohens_kappa": {
+    "variable": "perceived_safety_binarized (alto/bajo)",
+    "n_items": 4,
+    "stev_labels":  ["bajo", "alto", "alto", "bajo"],
+    "jacob_labels": ["alto", "bajo", "alto", "bajo"],
+    "p_observed": 0.5,
+    "p_expected": 0.5,
+    "kappa": 0.0,
+    "interpretation": "kappa=0.0 indica concordancia equivalente al azar (Landis & Koch: 'poor agreement', <0.20). Lejos del umbral 0.4 considerado mínimo aceptable.",
+    "defensive_reading": "El resultado bajo NO invalida el estudio: confirma la tesis fenomenológica de que la atmósfera urbana es ineliminablemente subjetiva y depende de la sensibilidad cultivada del observador. Justifica metodológicamente la triangulación multi-observador y el uso de C3 (testimonios in-situ) como tercer eje, en lugar de depender solo de la AF de un único observador."
+  },
+  "qualitative_thematic_concordance": {
+    "heterotopia": {
+      "stev": "pasaje_la_bastilla='altamente heterotopico'",
+      "jacob": "junin_paseo='comercio informal se apodera heterotopicamente'",
+      "concordance": "convergente_conceptual_divergente_locacional",
+      "notes": "Ambos invocan la categoría heterotopía pero la anclan a nodos distintos."
+    },
+    "presencia_policial_estatal": {
+      "stev": "policia altamente presente en plaza_botero (blase)",
+      "jacob": "policia + seguridad privada estatal + Ejercito reclutando en parque_botero",
+      "concordance": "convergente",
+      "notes": "Jacob añade dimensiones (seguridad privada, militar) que Stev no captó; refuerza lectura de vigilancia heterogénea."
+    },
+    "comercio_informal_junin": {
+      "stev": "casi nada de comercio informal; muy habitable",
+      "jacob": "comercio informal se apodera heterotopicamente",
+      "concordance": "divergente_fuerte",
+      "notes": "Posible explicación: tramos/franjas distintos del paseo. Triangular con foto-evidencia."
+    },
+    "atmosfera_parque_san_antonio": {
+      "stev": "tranquilidad contemplativa, arte, 'no esta rota la ventana'",
+      "jacob": "violencia, paso historico del terror, subalternos",
+      "concordance": "divergente_radical",
+      "notes": "Misma plaza, mismo día, lecturas opuestas. Caso paradigmático de la subjetividad fenomenológica."
+    },
+    "consumo_microtrafico_botero": {
+      "stev": "no explicito",
+      "jacob": "calle del consumo adyacente, prostitucion y consumo",
+      "concordance": "asimetrica_jacob_aporta",
+      "notes": "Jacob expone el circuito microtráfico ausente en el registro de Stev."
+    },
+    "ritmos_temporales": {
+      "stev": "no explicito",
+      "jacob": "Junin: 6pm la mayoria se va; informal se va al fin de jornada",
+      "concordance": "asimetrica_jacob_aporta",
+      "notes": "Solo Jacob marca cierres temporales del nodo."
+    },
+    "marcadores_culturales_sonoros": {
+      "stev": "no explicito",
+      "jacob": "reggaeton en Junin / vallenato en otros nodos",
+      "concordance": "asimetrica_jacob_aporta",
+      "notes": "Marcador cultural sonoro como diferenciador inter-nodo."
+    }
+  },
+  "summary": {
+    "kappa_quantitative": 0.0,
+    "convergencias": ["heterotopía como categoría", "presencia policial fuerte", "sensación de mejora parcial en parque_botero", "calma matutina en san_antonio_metro (matiz)"],
+    "divergencias": ["parque_san_antonio (divergencia radical)", "comercio informal en junin (divergencia fuerte)", "san_antonio_metro safety (Stev bajo / Jacob alto)"],
+    "aportes_unicos_jacob": ["Ejército reclutando", "seguridad privada estatal", "calle del consumo", "ritmos temporales 6pm", "marcadores sonoros (reggaeton/vallenato)", "gradiente intra-nodo Coltejer-Ayacucho", "vendedor seguro / transeúnte no"]
+  }
+}

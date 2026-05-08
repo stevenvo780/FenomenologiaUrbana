@@ -1,0 +1,22 @@
+{
+  "source": "field_interviews",
+  "captured_on": "2026-05-05",
+  "observer": "jacob",
+  "schema": "c3_field_interviews_v1",
+  "description": "Entrevistas codificadas en campo (Jacob, 2026-05-05). Mismo recorrido que Stev, observador independiente para inter-rater reliability. Schema idéntico a c3_field_interviews_2026-05-05.json para que build_collapse_matrix.py lo recoja vía glob c3_field_interviews_*.json.",
+  "n_interviews": 1,
+  "rule": "C3 negativo si EVITABLE+NO_DESEABLE+DIFICIL_DE_VIVIR > HABITABLE+DESEABLE por nodo×ventana (AMBIVALENTE no cuenta).",
+  "interviews": [
+    {
+      "interview_id": "2026-05-05_jun_jacob_001",
+      "node": "junin_paseo",
+      "window": "midday",
+      "window_inferred": true,
+      "interviewee": "Andres",
+      "interviewee_role": "vendedor",
+      "subzone": "Coltejer-Ayacucho",
+      "codes": ["HABITABLE", "DIFICIL_DE_VIVIR"],
+      "notes": "Distinto del Andres registrado por Stev. Evalúa Junín como seguro para él como vendedor pero advierte sub-zona Coltejer-Ayacucho como peligrosa; cita: 'uno se acostumbra, es pesado'. Doble código: HABITABLE (anclaje local del vendedor) + DIFICIL_DE_VIVIR (anclaje contextual de la sub-zona y el habituar)."
+    }
+  ]
+}

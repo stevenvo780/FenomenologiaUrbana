@@ -1,0 +1,1112 @@
+{
+  "meta": {
+    "n_iter_bootstrap": 1000,
+    "seed": 7,
+    "n_threshold_scenarios": 25,
+    "n_interviews_loo": 15,
+    "baseline_path": "investigacion/data/processed/collapse_matrix.json",
+    "rule": "robusta=share>=0.80 en V1 y V2; frágil=share<0.80 en V1 o V2"
+  },
+  "baseline_decisions": {
+    "san_antonio_metro|peak_am": "friccion_acumulada",
+    "san_antonio_metro|midday": "inconcluyente",
+    "san_antonio_metro|peak_pm": "inconcluyente",
+    "san_antonio_metro|night": "inconcluyente",
+    "parque_san_antonio|peak_am": "inconcluyente",
+    "parque_san_antonio|midday": "friccion_acumulada",
+    "parque_san_antonio|peak_pm": "inconcluyente",
+    "parque_san_antonio|night": "inconcluyente",
+    "palacio_nacional|peak_am": "inconcluyente",
+    "palacio_nacional|midday": "inconcluyente",
+    "palacio_nacional|peak_pm": "inconcluyente",
+    "palacio_nacional|night": "inconcluyente",
+    "junin_paseo|peak_am": "friccion_acumulada",
+    "junin_paseo|midday": "friccion_acumulada",
+    "junin_paseo|peak_pm": "inconcluyente",
+    "junin_paseo|night": "inconcluyente",
+    "oriental_cruce|peak_am": "inconcluyente",
+    "oriental_cruce|midday": "inconcluyente",
+    "oriental_cruce|peak_pm": "inconcluyente",
+    "oriental_cruce|night": "inconcluyente",
+    "parque_berrio|peak_am": "inconcluyente",
+    "parque_berrio|midday": "friccion_acumulada",
+    "parque_berrio|peak_pm": "inconcluyente",
+    "parque_berrio|night": "inconcluyente",
+    "carabobo_cultural|peak_am": "inconcluyente",
+    "carabobo_cultural|midday": "inconcluyente",
+    "carabobo_cultural|peak_pm": "inconcluyente",
+    "carabobo_cultural|night": "inconcluyente",
+    "plaza_botero|peak_am": "inconcluyente",
+    "plaza_botero|midday": "friccion_acumulada",
+    "plaza_botero|peak_pm": "inconcluyente",
+    "plaza_botero|night": "inconcluyente",
+    "museo_antioquia|peak_am": "inconcluyente",
+    "museo_antioquia|midday": "inconcluyente",
+    "museo_antioquia|peak_pm": "inconcluyente",
+    "museo_antioquia|night": "inconcluyente"
+  },
+  "variant1_bootstrap": {
+    "san_antonio_metro|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.477,
+      "flujo_ordinario": 0.523,
+      "inconcluyente": 0.0,
+      "_n_iter": 1000
+    },
+    "san_antonio_metro|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "san_antonio_metro|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "san_antonio_metro|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "parque_san_antonio|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "parque_san_antonio|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.668,
+      "flujo_ordinario": 0.291,
+      "inconcluyente": 0.041,
+      "_n_iter": 1000
+    },
+    "parque_san_antonio|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "parque_san_antonio|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "palacio_nacional|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "palacio_nacional|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "palacio_nacional|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "palacio_nacional|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "junin_paseo|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.956,
+      "flujo_ordinario": 0.044,
+      "inconcluyente": 0.0,
+      "_n_iter": 1000
+    },
+    "junin_paseo|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.499,
+      "flujo_ordinario": 0.501,
+      "inconcluyente": 0.0,
+      "_n_iter": 1000
+    },
+    "junin_paseo|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "junin_paseo|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "oriental_cruce|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "oriental_cruce|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "oriental_cruce|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "oriental_cruce|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "parque_berrio|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "parque_berrio|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.497,
+      "flujo_ordinario": 0.503,
+      "inconcluyente": 0.0,
+      "_n_iter": 1000
+    },
+    "parque_berrio|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "parque_berrio|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "carabobo_cultural|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "carabobo_cultural|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "carabobo_cultural|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "carabobo_cultural|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "plaza_botero|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "plaza_botero|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.97,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 0.03,
+      "_n_iter": 1000
+    },
+    "plaza_botero|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "plaza_botero|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "museo_antioquia|peak_am": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "museo_antioquia|midday": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "museo_antioquia|peak_pm": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    },
+    "museo_antioquia|night": {
+      "colapso_fenomenologico": 0.0,
+      "friccion_acumulada": 0.0,
+      "flujo_ordinario": 0.0,
+      "inconcluyente": 1.0,
+      "_n_iter": 1000
+    }
+  },
+  "variant2_thresholds": {
+    "per_cell": {
+      "san_antonio_metro|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.4,
+        "flujo_ordinario": 0.6,
+        "inconcluyente": 0.0,
+        "_n_scenarios": 25
+      },
+      "san_antonio_metro|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "san_antonio_metro|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "san_antonio_metro|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "parque_san_antonio|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "parque_san_antonio|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.4,
+        "flujo_ordinario": 0.6,
+        "inconcluyente": 0.0,
+        "_n_scenarios": 25
+      },
+      "parque_san_antonio|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "parque_san_antonio|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "palacio_nacional|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "palacio_nacional|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "palacio_nacional|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "palacio_nacional|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "junin_paseo|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.88,
+        "flujo_ordinario": 0.12,
+        "inconcluyente": 0.0,
+        "_n_scenarios": 25
+      },
+      "junin_paseo|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.4,
+        "flujo_ordinario": 0.6,
+        "inconcluyente": 0.0,
+        "_n_scenarios": 25
+      },
+      "junin_paseo|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "junin_paseo|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "oriental_cruce|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "oriental_cruce|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "oriental_cruce|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "oriental_cruce|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "parque_berrio|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "parque_berrio|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.4,
+        "flujo_ordinario": 0.6,
+        "inconcluyente": 0.0,
+        "_n_scenarios": 25
+      },
+      "parque_berrio|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "parque_berrio|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "carabobo_cultural|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "carabobo_cultural|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "carabobo_cultural|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "carabobo_cultural|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "plaza_botero|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "plaza_botero|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 1.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 0.0,
+        "_n_scenarios": 25
+      },
+      "plaza_botero|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "plaza_botero|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "museo_antioquia|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "museo_antioquia|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "museo_antioquia|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      },
+      "museo_antioquia|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_scenarios": 25
+      }
+    },
+    "n_scenarios": 25
+  },
+  "variant3_loo_c3": {
+    "per_cell": {
+      "san_antonio_metro|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 1.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 0.0,
+        "_n_loo": 15
+      },
+      "san_antonio_metro|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "san_antonio_metro|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "san_antonio_metro|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "parque_san_antonio|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "parque_san_antonio|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 1.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 0.0,
+        "_n_loo": 15
+      },
+      "parque_san_antonio|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "parque_san_antonio|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "palacio_nacional|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "palacio_nacional|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "palacio_nacional|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "palacio_nacional|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "junin_paseo|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 1.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 0.0,
+        "_n_loo": 15
+      },
+      "junin_paseo|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 1.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 0.0,
+        "_n_loo": 15
+      },
+      "junin_paseo|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "junin_paseo|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "oriental_cruce|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "oriental_cruce|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "oriental_cruce|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "oriental_cruce|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "parque_berrio|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "parque_berrio|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 1.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 0.0,
+        "_n_loo": 15
+      },
+      "parque_berrio|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "parque_berrio|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "carabobo_cultural|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "carabobo_cultural|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "carabobo_cultural|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "carabobo_cultural|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "plaza_botero|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "plaza_botero|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 1.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 0.0,
+        "_n_loo": 15
+      },
+      "plaza_botero|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "plaza_botero|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "museo_antioquia|peak_am": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "museo_antioquia|midday": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "museo_antioquia|peak_pm": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      },
+      "museo_antioquia|night": {
+        "colapso_fenomenologico": 0.0,
+        "friccion_acumulada": 0.0,
+        "flujo_ordinario": 0.0,
+        "inconcluyente": 1.0,
+        "_n_loo": 15
+      }
+    },
+    "n_interviews": 15,
+    "cells_with_c3": [
+      "junin_paseo|midday",
+      "parque_san_antonio|midday",
+      "plaza_botero|midday",
+      "san_antonio_metro|peak_am"
+    ]
+  },
+  "robustness": {
+    "san_antonio_metro|peak_am": {
+      "baseline_decision": "friccion_acumulada",
+      "v1_share_baseline": 0.477,
+      "v2_share_baseline": 0.4,
+      "robust": false,
+      "fragile": true,
+      "min_share": 0.4
+    },
+    "san_antonio_metro|midday": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "san_antonio_metro|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "san_antonio_metro|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "parque_san_antonio|peak_am": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "parque_san_antonio|midday": {
+      "baseline_decision": "friccion_acumulada",
+      "v1_share_baseline": 0.668,
+      "v2_share_baseline": 0.4,
+      "robust": false,
+      "fragile": true,
+      "min_share": 0.4
+    },
+    "parque_san_antonio|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "parque_san_antonio|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "palacio_nacional|peak_am": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "palacio_nacional|midday": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "palacio_nacional|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "palacio_nacional|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "junin_paseo|peak_am": {
+      "baseline_decision": "friccion_acumulada",
+      "v1_share_baseline": 0.956,
+      "v2_share_baseline": 0.88,
+      "robust": true,
+      "fragile": false,
+      "min_share": 0.88
+    },
+    "junin_paseo|midday": {
+      "baseline_decision": "friccion_acumulada",
+      "v1_share_baseline": 0.499,
+      "v2_share_baseline": 0.4,
+      "robust": false,
+      "fragile": true,
+      "min_share": 0.4
+    },
+    "junin_paseo|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "junin_paseo|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "oriental_cruce|peak_am": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "oriental_cruce|midday": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "oriental_cruce|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "oriental_cruce|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "parque_berrio|peak_am": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "parque_berrio|midday": {
+      "baseline_decision": "friccion_acumulada",
+      "v1_share_baseline": 0.497,
+      "v2_share_baseline": 0.4,
+      "robust": false,
+      "fragile": true,
+      "min_share": 0.4
+    },
+    "parque_berrio|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "parque_berrio|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "carabobo_cultural|peak_am": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "carabobo_cultural|midday": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "carabobo_cultural|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "carabobo_cultural|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "plaza_botero|peak_am": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "plaza_botero|midday": {
+      "baseline_decision": "friccion_acumulada",
+      "v1_share_baseline": 0.97,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 0.97
+    },
+    "plaza_botero|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "plaza_botero|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "museo_antioquia|peak_am": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "museo_antioquia|midday": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "museo_antioquia|peak_pm": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    },
+    "museo_antioquia|night": {
+      "baseline_decision": "inconcluyente",
+      "v1_share_baseline": 1.0,
+      "v2_share_baseline": 1.0,
+      "robust": true,
+      "fragile": false,
+      "min_share": 1.0
+    }
+  }
+}

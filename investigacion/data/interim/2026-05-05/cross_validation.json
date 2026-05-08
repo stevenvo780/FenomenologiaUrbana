@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "generator": "manual cross-validation",
+    "date": "2026-05-07",
+    "purpose": "Triangular reclamos cuantificables del campo (texto Stev/Jacob) con agregados visuales YOLO (M1/M3) para inter-method reliability defensa.",
+    "convergence_levels": ["alta", "media", "baja", "no_evaluable"],
+    "source_files": [
+      "investigacion/data/interim/2026-05-05/m1_physical_counts.json",
+      "investigacion/data/interim/2026-05-05/m3_heterotopy_signals.json",
+      "investigacion/data/processed/m1_visual_aggregate.json",
+      "investigacion/data/processed/m3_visual_aggregate.json",
+      "investigacion/data/processed/c3_field_interviews_2026-05-05.json",
+      "investigacion/data/processed/c3_field_interviews_jacob_2026-05-05.json"
+    ],
+    "caveats": [
+      "obstacle_proxy_count en M1 visual cuenta backpack/handbag/suitcase: es proxy de carga peatonal y no equivale a 'ventas ambulantes/cuadra'.",
+      "YOLO COCO no detecta uniformes; police_proxy null en todos los buckets.",
+      "human_density está en personas por frame; max no es por cuadra ni por minuto.",
+      "Buckets visuales con n_photos<=3 y video=0 (parque_berrio peak_am, palacio_nacional night) producen métricas no representativas."
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "san_antonio_metro_traffic_risk",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "field_observer": "stev",
+      "field_value": "riesgo vial alto, 'debo tener mucho cuidado', safety=2/5",
+      "visual_metric": "vehicle_intensity + human_density",
+      "visual_value": "vehicle_intensity=0.378 (mas alto del corpus), vehicle_total=14, human_density_p75=3, max=5; midday excepcional con human_density=26",
+      "convergence": "alta",
+      "note": "El bucket peak_am tiene la vehicle_intensity mas alta de todo el corpus (0.38 vs <=0.17 en otros), confirmando intensidad de flujo vehicular en zona peatonal de transferencia. Sustenta el safety=2 reportado."
+    },
+    {
+      "claim_id": "parque_san_antonio_obstaculos",
+      "node": "parque_san_antonio",
+      "window": "midday",
+      "field_observer": "stev",
+      "field_value": "6 obstaculos ambulantes por cuadra (M1)",
+      "visual_metric": "obstacle_proxy_count",
+      "visual_value": "no hay bucket parque_san_antonio en m1_visual_aggregate (no figura en by_node_window)",
+      "convergence": "no_evaluable",
+      "note": "No existen photo_summary asignados al nodo parque_san_antonio en el agregado visual. Pendiente reclasificar fotos del corredor al nodo correcto antes de validar el conteo de Stev."
+    },
+    {
+      "claim_id": "parque_san_antonio_vandalismo",
+      "node": "parque_san_antonio",
+      "window": "midday",
+      "field_observer": "stev",
+      "field_value": "vandalismo 1-3 / 10 (M1, punto medio 2)",
+      "visual_metric": "OCR/grafiti tags y densidad periferica",
+      "visual_value": "no disponible: pipeline OCR/grafiti aun no integrado",
+      "convergence": "no_evaluable",
+      "note": "El OCR de tags y la segmentacion de grafiti no estan en el pipeline visual actual. Reclamo no falsable hoy. Marcar TODO."
+    },
+    {
+      "claim_id": "junin_indigencia",
+      "node": "junin_paseo",
+      "window": "midday",
+      "field_observer": "stev",
+      "field_value": "indigencia 3/10",
+      "visual_metric": "proxy YOLO (no fiable)",
+      "visual_value": "no hay clase YOLO COCO para indigencia",
+      "convergence": "no_evaluable",
+      "note": "YOLO COCO no detecta poblacion en situacion de calle. Score de Stev queda apoyado solo por testimonio C3 (HABITABLE 5 + DESEABLE 2 sin negativos en midday) — convergencia interna texto-texto, no texto-imagen."
+    },
+    {
+      "claim_id": "junin_consumo_sustancias",
+      "node": "junin_paseo",
+      "window": "midday",
+      "field_observer": "stev",
+      "field_value": "consumo de sustancias 4/10",
+      "visual_metric": "proxy YOLO (no fiable)",
+      "visual_value": "no hay clase YOLO COCO para consumo",
+      "convergence": "no_evaluable",
+      "note": "Igual que indigencia: fuera del alcance de YOLO COCO. No falsable visualmente."
+    },
+    {
+      "claim_id": "junin_comercio_informal_stev_vs_jacob",
+      "node": "junin_paseo",
+      "window": "peak_am+midday",
+      "field_observer": "stev_vs_jacob",
+      "field_value": "Stev: 'casi nulo' / informal_commerce='casi nulo' / heterotopia 2/5 'mono-uso comercial'. Jacob: discurso narrativo de 'comercio informal heterotopicamente' (no codificado cuantitativamente; entrevista a vendedor Andres con codigos HABITABLE+DIFICIL_DE_VIVIR).",
+      "visual_metric": "commerce_proxy + material_diversity (n_distinct_classes)",
+      "visual_value": "peak_am: commerce_proxy=0.0304, hits=102 handbags, 9 clases distintas. midday: commerce_proxy=0.0365, hits=66 handbags, 7 clases. tourist_proxy_ratio peak_am=0.13 con 240 suitcases.",
+      "convergence": "media",
+      "note": "El visual NO sustenta 'casi nulo': hay 102+66 handbags y 240 suitcases que sugieren actividad comercial-portatil sostenida (aunque handbag/suitcase tambien son uso turistico/transeunte). 9 clases distintas en peak_am es alto. Sin embargo, ausencia de fruta/comida/bottle (clases COCO de comercio callejero alimentario) es 0 en commerce_proxy_hits alimentarios, lo cual SI apoya parcialmente a Stev: el comercio existente es formal (locales) y el informal callejero alimentario es marginal. La narrativa de Jacob (heterotopia comercial) recibe apoyo simbolico parcial, la de Stev (mono-uso formal) recibe apoyo en composicion de clases. Veredicto: AMBOS PARCIALMENTE CORRECTOS — Stev acierta en ausencia de venta callejera de comida; Jacob acierta en que el flujo de bolsos/maletas crea un palimpsesto comercial mas heterotopico de lo que sugiere el M3 score 2/5."
+    },
+    {
+      "claim_id": "botero_turistas",
+      "node": "plaza_botero",
+      "window": "midday",
+      "field_observer": "stev",
+      "field_value": "1 turista por cada 20 personas = 5%",
+      "visual_metric": "tourist_proxy_ratio",
+      "visual_value": "no hay bucket plaza_botero en m3_visual_aggregate; el unico bucket con datos densos en franja midday es parque_berrio|midday con tourist_proxy_ratio=0.0365 (3.6%)",
+      "convergence": "media",
+      "note": "Si parque_berrio|midday se interpreta como aproximado de la zona Botero/Berrio (adyacente, mismo eje peatonal del centro), el ratio 3.6% esta cerca del 5% reportado por Stev (orden de magnitud correcto). Convergencia media porque la asignacion de nodo es debil. Pendiente: separar fotos/videos especificas de plaza_botero antes de afirmar convergencia alta."
+    },
+    {
+      "claim_id": "botero_policia",
+      "node": "plaza_botero",
+      "window": "midday",
+      "field_observer": "stev",
+      "field_value": "alta presencia policial, 'demasiada seguridad'",
+      "visual_metric": "police_proxy",
+      "visual_value": "null en todos los buckets",
+      "convergence": "no_evaluable",
+      "note": "YOLO COCO no distingue uniforme. Requiere clasificador adicional o anotacion manual. Reclamo NO falsable con pipeline actual — TODO documentado en m3_visual_aggregate.json."
+    },
+    {
+      "claim_id": "botero_sofocante_colapsa",
+      "node": "plaza_botero",
+      "window": "midday",
+      "field_observer": "stev",
+      "field_value": "sofocante, colapsa, 'demasiada presion'",
+      "visual_metric": "human_density y saturation (proxy de parque_berrio|midday)",
+      "visual_value": "parque_berrio|midday: human_density_p75=8, max=30, mean=3.79; saturation_max=71.2; obstacle_proxy=782 hits",
+      "convergence": "alta",
+      "note": "human_density_max=30 personas/frame es el mas alto de todo el corpus (junto con san_antonio_metro|midday=26). saturation_max=71 es el mas alto. Estas metricas convergen con el reporte fenomenologico 'sofocante/colapsa' de Stev. Asumiendo equivalencia parque_berrio~plaza_botero (eje Berrio-Botero), la convergencia es alta y robusta."
+    },
+    {
+      "claim_id": "parque_san_antonio_tranquilidad_stev_vs_jacob",
+      "node": "parque_san_antonio",
+      "window": "midday",
+      "field_observer": "stev_vs_jacob",
+      "field_value": "Stev: tranquilidad declarada, safety=4/5, vandalismo 2/10, 'no esta rota la ventana'. Jacob (interpretacion alternativa registrada): lectura mas tensa, contradictoria con calma de Stev.",
+      "visual_metric": "human_density, vehicle_intensity, heterogeneity_index_visual",
+      "visual_value": "parque_san_antonio NO figura como bucket independiente en agregados visuales (mismo problema que claim obstaculos)",
+      "convergence": "no_evaluable",
+      "note": "Sin bucket visual asignado al nodo, la triangulacion no es posible. El consenso C3 de las 3 entrevistas (HABITABLE con disenso) y M3 score 4/5 (heterotopia alta por arte+ambulantes+paso+reciclaje) tiende a apoyar a Stev: tranquilidad funcional con diversidad de usos, no violencia. Veredicto provisional: STEV mejor sustentado por C3, pendiente confirmacion visual."
+    }
+  ],
+  "summary": {
+    "alta_convergencia": [
+      "san_antonio_metro_traffic_risk",
+      "botero_sofocante_colapsa"
+    ],
+    "media_convergencia": [
+      "junin_comercio_informal_stev_vs_jacob",
+      "botero_turistas"
+    ],
+    "baja_convergencia": [],
+    "no_evaluable": [
+      "parque_san_antonio_obstaculos",
+      "parque_san_antonio_vandalismo",
+      "junin_indigencia",
+      "junin_consumo_sustancias",
+      "botero_policia",
+      "parque_san_antonio_tranquilidad_stev_vs_jacob"
+    ],
+    "inter_rater_resolution": {
+      "junin_informal": "ambos parcialmente correctos: Stev acierta en ausencia de venta callejera alimentaria (commerce_proxy alimentario=0); Jacob acierta en flujo comercial-portatil (240 suitcases + 102 handbags peak_am).",
+      "parque_san_antonio_tono": "Stev mejor sustentado por C3 inter-rater (HABITABLE consensual) y M3 4/5; pendiente visual."
+    }
+  }
+}

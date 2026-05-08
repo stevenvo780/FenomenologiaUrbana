@@ -1,0 +1,127 @@
+{
+  "engine": "easyocr",
+  "engine_gpu": false,
+  "languages": [
+    "es",
+    "en"
+  ],
+  "min_chars": 3,
+  "min_confidence": 0.5,
+  "n_photos_processed": 34,
+  "n_strings_total": 68,
+  "n_tags_total": 23,
+  "n_unique_tags_global": 15,
+  "global_top_repeated_tags": [
+    {
+      "tag": "relojeria",
+      "count": 4
+    },
+    {
+      "tag": "#cerd@",
+      "count": 3
+    },
+    {
+      "tag": "hsh;",
+      "count": 2
+    },
+    {
+      "tag": "ies",
+      "count": 2
+    },
+    {
+      "tag": "#res",
+      "count": 2
+    }
+  ],
+  "by_node": {
+    "palacio_nacional": {
+      "n_photos": 2,
+      "n_text_strings": 0,
+      "n_tags": 0,
+      "n_unique_tags": 0,
+      "tag_repetition_score": 0,
+      "tag_repetition_volume": 0,
+      "top_repeated_tags": [],
+      "n_commerce": 0,
+      "commerce_density": 0.0,
+      "n_marcas": 0,
+      "n_direcciones": 0,
+      "language_diversity": {}
+    },
+    "san_antonio_metro": {
+      "n_photos": 11,
+      "n_text_strings": 6,
+      "n_tags": 1,
+      "n_unique_tags": 1,
+      "tag_repetition_score": 0,
+      "tag_repetition_volume": 0,
+      "top_repeated_tags": [
+        {
+          "tag": "ulyi",
+          "count": 1
+        }
+      ],
+      "n_commerce": 0,
+      "commerce_density": 0.0,
+      "n_marcas": 0,
+      "n_direcciones": 0,
+      "language_diversity": {
+        "es": 0.667,
+        "other": 0.333
+      }
+    },
+    "junin_paseo": {
+      "n_photos": 12,
+      "n_text_strings": 62,
+      "n_tags": 22,
+      "n_unique_tags": 14,
+      "tag_repetition_score": 5,
+      "tag_repetition_volume": 13,
+      "top_repeated_tags": [
+        {
+          "tag": "relojeria",
+          "count": 4
+        },
+        {
+          "tag": "#cerd@",
+          "count": 3
+        },
+        {
+          "tag": "hsh;",
+          "count": 2
+        },
+        {
+          "tag": "ies",
+          "count": 2
+        },
+        {
+          "tag": "#res",
+          "count": 2
+        }
+      ],
+      "n_commerce": 11,
+      "commerce_density": 0.917,
+      "n_marcas": 0,
+      "n_direcciones": 5,
+      "language_diversity": {
+        "other": 0.839,
+        "es": 0.161
+      }
+    },
+    "parque_berrio": {
+      "n_photos": 9,
+      "n_text_strings": 0,
+      "n_tags": 0,
+      "n_unique_tags": 0,
+      "tag_repetition_score": 0,
+      "tag_repetition_volume": 0,
+      "top_repeated_tags": [],
+      "n_commerce": 0,
+      "commerce_density": 0.0,
+      "n_marcas": 0,
+      "n_direcciones": 0,
+      "language_diversity": {}
+    }
+  },
+  "elapsed_seconds": 139.5
+}

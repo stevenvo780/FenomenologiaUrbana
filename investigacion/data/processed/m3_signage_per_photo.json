@@ -1,0 +1,726 @@
+{
+  "photos": [
+    {
+      "photo": "IMG_20260503_211541487.jpg",
+      "node": "palacio_nacional",
+      "window": "night",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260503_211554661.jpg",
+      "node": "palacio_nacional",
+      "window": "night",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_085013122.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_085019484.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_085022964.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_085053355.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_085127870.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_085150719.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_091445130.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 5,
+      "strings": [
+        {
+          "text": "En este lugar el 10 de Junio de 1995",
+          "norm": "en este lugar el 10 de junio de 1995",
+          "conf": 0.647,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "Jhon Jairo Córa",
+          "norm": "jhon jairo cora",
+          "conf": 0.922,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "Bermúdez | 0 años de edad",
+          "norm": "bermudez | 0 anos de edad",
+          "conf": 0.555,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "Alba",
+          "norm": "alba",
+          "conf": 0.993,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "Osorio González 33 años de eded , Lina Marcelz Taborda Herrera",
+          "norm": "osorio gonzalez 33 anos de eded , lina marcelz taborda herrera",
+          "conf": 0.652,
+          "class": "OTRO",
+          "lang": "es"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_091456052.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_091456420.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_091458043.jpg",
+      "node": "san_antonio_metro",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_092728915.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 1,
+      "strings": [
+        {
+          "text": "\"ASOBASTILLA\"",
+          "norm": "\"asobastilla\"",
+          "conf": 0.714,
+          "class": "OTRO",
+          "lang": "other"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_092959106.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093632206.jpg",
+      "node": "parque_berrio",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093633811.jpg",
+      "node": "parque_berrio",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093701884.jpg",
+      "node": "parque_berrio",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093817507.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093824399.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093825596.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093830.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 14,
+      "strings": [
+        {
+          "text": "RESTAURANTE",
+          "norm": "restaurante",
+          "conf": 0.953,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "CRISTALES PARA RELOU",
+          "norm": "cristales para relou",
+          "conf": 0.612,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "REI",
+          "norm": "rei",
+          "conf": 0.586,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "JES",
+          "norm": "jes",
+          "conf": 0.96,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "CAMBIODEPILAS",
+          "norm": "cambiodepilas",
+          "conf": 0.981,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "RELOJERIA",
+          "norm": "relojeria",
+          "conf": 0.694,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "HSH;",
+          "norm": "hsh;",
+          "conf": 0.588,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "RESTAURANT",
+          "norm": "restaurant",
+          "conf": 0.991,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "BAR",
+          "norm": "bar",
+          "conf": 1.0,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "CAF",
+          "norm": "caf",
+          "conf": 0.993,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "C@N CALENTA@",
+          "norm": "c@n calenta@",
+          "conf": 0.604,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "#BES",
+          "norm": "#bes",
+          "conf": 0.55,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "#CERD@",
+          "norm": "#cerd@",
+          "conf": 0.564,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "1312",
+          "norm": "1312",
+          "conf": 0.858,
+          "class": "DIRECCION",
+          "lang": "other"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_093832.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 22,
+      "strings": [
+        {
+          "text": "RESTAURANTE",
+          "norm": "restaurante",
+          "conf": 0.975,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "CRISTALES PARA RELOU",
+          "norm": "cristales para relou",
+          "conf": 0.631,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "IES",
+          "norm": "ies",
+          "conf": 0.989,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "BIO DE PILAS",
+          "norm": "bio de pilas",
+          "conf": 0.538,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "CAMBIODEPILAS",
+          "norm": "cambiodepilas",
+          "conf": 0.987,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "RELOJERIA",
+          "norm": "relojeria",
+          "conf": 0.948,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "RESTAURANTE AURES",
+          "norm": "restaurante aures",
+          "conf": 0.986,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "BAR Y",
+          "norm": "bar y",
+          "conf": 0.982,
+          "class": "COMERCIO",
+          "lang": "es"
+        },
+        {
+          "text": "CAFETERIA",
+          "norm": "cafeteria",
+          "conf": 0.986,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "C@N CALENTA@",
+          "norm": "c@n calenta@",
+          "conf": 0.69,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "8000",
+          "norm": "8000",
+          "conf": 0.908,
+          "class": "DIRECCION",
+          "lang": "other"
+        },
+        {
+          "text": "4800",
+          "norm": "4800",
+          "conf": 0.945,
+          "class": "DIRECCION",
+          "lang": "other"
+        },
+        {
+          "text": "#CHECHIARRON",
+          "norm": "#chechiarron",
+          "conf": 0.528,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "150",
+          "norm": "150",
+          "conf": 0.549,
+          "class": "DIRECCION",
+          "lang": "other"
+        },
+        {
+          "text": "#RES",
+          "norm": "#res",
+          "conf": 0.907,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "150",
+          "norm": "150",
+          "conf": 0.516,
+          "class": "DIRECCION",
+          "lang": "other"
+        },
+        {
+          "text": "#CERD@",
+          "norm": "#cerd@",
+          "conf": 0.908,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "A2C",
+          "norm": "a2c",
+          "conf": 0.924,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "#C@STELLA BB@",
+          "norm": "#c@stella bb@",
+          "conf": 0.549,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "#PECHUGA A LA PLANCHA",
+          "norm": "#pechuga a la plancha",
+          "conf": 0.663,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "#P@STA SUDADA",
+          "norm": "#p@sta sudada",
+          "conf": 0.603,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "1312 _",
+          "norm": "1312 _",
+          "conf": 0.539,
+          "class": "OTRO",
+          "lang": "other"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_093834.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 15,
+      "strings": [
+        {
+          "text": "RESTAURANTE",
+          "norm": "restaurante",
+          "conf": 0.96,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "CRistALES PARA RELOJ",
+          "norm": "cristales para reloj",
+          "conf": 0.509,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "IES",
+          "norm": "ies",
+          "conf": 0.764,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "CAMBIODEPILAS",
+          "norm": "cambiodepilas",
+          "conf": 0.989,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "RELOJERIA",
+          "norm": "relojeria",
+          "conf": 0.967,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "SINK",
+          "norm": "sink",
+          "conf": 0.571,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "HsH;",
+          "norm": "hsh;",
+          "conf": 0.649,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "RESTAURANTE AU",
+          "norm": "restaurante au",
+          "conf": 0.573,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "BAR Y CAFETER",
+          "norm": "bar y cafeter",
+          "conf": 0.882,
+          "class": "COMERCIO",
+          "lang": "es"
+        },
+        {
+          "text": "#DESAYUN@ EC@N@MEC@",
+          "norm": "#desayun@ ec@n@mec@",
+          "conf": 0.719,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "C@N CALENTA@",
+          "norm": "c@n calenta@",
+          "conf": 0.777,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "#BANDEJA ESPECZAL",
+          "norm": "#bandeja especzal",
+          "conf": 0.731,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "#RES",
+          "norm": "#res",
+          "conf": 0.624,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "#CERD@",
+          "norm": "#cerd@",
+          "conf": 0.805,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "#COSTZLLA BBQ",
+          "norm": "#costzlla bbq",
+          "conf": 0.595,
+          "class": "OTRO",
+          "lang": "other"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_093837.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 9,
+      "strings": [
+        {
+          "text": "RESTAURANTE",
+          "norm": "restaurante",
+          "conf": 0.86,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "CRISTALES PARA RELOJ",
+          "norm": "cristales para reloj",
+          "conf": 0.512,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "OJES",
+          "norm": "ojes",
+          "conf": 0.974,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "MBIO DE PILAS",
+          "norm": "mbio de pilas",
+          "conf": 0.906,
+          "class": "OTRO",
+          "lang": "es"
+        },
+        {
+          "text": "CAMBIODEPILAS",
+          "norm": "cambiodepilas",
+          "conf": 0.97,
+          "class": "OTRO",
+          "lang": "other"
+        },
+        {
+          "text": "RELOJERIA",
+          "norm": "relojeria",
+          "conf": 0.883,
+          "class": "TAG",
+          "lang": "other"
+        },
+        {
+          "text": "RESTAURANTE AC",
+          "norm": "restaurante ac",
+          "conf": 0.852,
+          "class": "COMERCIO",
+          "lang": "other"
+        },
+        {
+          "text": "BAR Y CAFETER",
+          "norm": "bar y cafeter",
+          "conf": 0.837,
+          "class": "COMERCIO",
+          "lang": "es"
+        },
+        {
+          "text": "C@N CALENTA@",
+          "norm": "c@n calenta@",
+          "conf": 0.902,
+          "class": "OTRO",
+          "lang": "other"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_093838042.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_093859.jpg",
+      "node": "junin_paseo",
+      "window": "peak_am",
+      "n_strings": 1,
+      "strings": [
+        {
+          "text": "1312 _",
+          "norm": "1312 _",
+          "conf": 0.623,
+          "class": "OTRO",
+          "lang": "other"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_101146844.jpg",
+      "node": "junin_paseo",
+      "window": "midday",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_104119.jpg",
+      "node": "san_antonio_metro",
+      "window": "midday",
+      "n_strings": 1,
+      "strings": [
+        {
+          "text": "ULYI",
+          "norm": "ulyi",
+          "conf": 0.954,
+          "class": "TAG",
+          "lang": "other"
+        }
+      ]
+    },
+    {
+      "photo": "IMG_20260505_105433.jpg",
+      "node": "parque_berrio",
+      "window": "midday",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_105451.jpg",
+      "node": "parque_berrio",
+      "window": "midday",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_105502.jpg",
+      "node": "parque_berrio",
+      "window": "midday",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_105513.jpg",
+      "node": "parque_berrio",
+      "window": "midday",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_105538.jpg",
+      "node": "parque_berrio",
+      "window": "midday",
+      "n_strings": 0,
+      "strings": []
+    },
+    {
+      "photo": "IMG_20260505_105540.jpg",
+      "node": "parque_berrio",
+      "window": "midday",
+      "n_strings": 0,
+      "strings": []
+    }
+  ]
+}
