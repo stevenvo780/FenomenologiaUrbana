@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "photo": "IMG_20260505_093859.jpg",
+    "node": null,
+    "window": null,
+    "captured_at": "2026:05:05 09:38:59",
+    "width": 2268,
+    "height": 4032,
+    "exif": {
+      "datetime_original": "2026:05:05 09:38:59",
+      "camera_make": "HONOR",
+      "camera_model": "ALT-NX3",
+      "gps_lat": 6.2495998,
+      "gps_lon": -75.56728439972221,
+      "gps_alt_m": 1510.9
+    },
+    "counts": {
+      "person": 0,
+      "bicycle": 0,
+      "car": 0,
+      "motorcycle": 0,
+      "bus": 0,
+      "truck": 0,
+      "dog": 0,
+      "backpack": 0,
+      "handbag": 0,
+      "suitcase": 0,
+      "cell_phone": 0
+    },
+    "detections": [],
+    "persons": 0,
+    "brightness": 134.844772026609,
+    "contrast": 34.69481599319635,
+    "saturation": 83.74315397455278,
+    "edge_density": 9.645442281851013,
+    "saturation_index": 0.20387487183659472,
+    "worker": "worker_photos",
+    "yolo_model": "yolo11x.pt",
+    "processed_at": "2026-05-07T23:50:08+0000"
+  }
+}

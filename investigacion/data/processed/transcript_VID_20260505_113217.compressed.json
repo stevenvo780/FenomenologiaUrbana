@@ -1,0 +1,6056 @@
+{
+  "video": "VID_20260505_113217.compressed.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T11:32:17-05:00",
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 420.0560302734375,
+  "whisper": {
+    "text": " ¿Qué es esto? Sí, estamos a la mando de todo lo que es antoño al paso conmigo. Acá toda la Plaza Botero para un estudio de ampliabilidad con el estado de San Diego. Estamos viendo el paro de la Plaza Botero, no se la ven a ser hasta el estado, pero la Plaza Laia, la Tierra y la Maldición, la gente. Lo que hace es que como acá están los que le ven los discos, de esta parte le aguele el proceso de un pulguero a toda la vida antiguo. Y como al pronto aquí te piden, lo que pasa es que no hay un tribunal. Pulgueros, un termino, no hay mucho en el ciudad. Y si que trabajan, se ponen bien. No hay conocimiento.ikuji Copyright. AMAZONA. Sí, yo creo que hay mucho TVs que hayan ænekeys, una davada para strokes de 10.000 reflets. No es para fermes hacke了 ones. Hasta la pandemia ayudaron(?) No, no falta lo que le añadió, que yo soy un joven de estado. Si le digan por acá, si me van a asistir, no, me lo dejo de aquí. No, que no estoy como tierno en la ciudad y en los barrios. Todo es perfecto. Ah, que tal. Voy a estar aquí. Eso me causa gustos. En cadattto más de la vencura buses no? Bebraroná largos, parqueas,prübes, No hay mucho buen día aquí, que siempre tenía como no, ya no está ni el cero, pero a ver, entonces, nosotros no van a tener nada. Pero... es una cosa muy muy buena. Sí, ya, pues, a ver, que tiene buena seguridad, porque hoy, si, ya, tienen mucha seguridad. Pero es por eso que tienen, pues, es una zona que se llama de tolerancia con tu. Y no dirás que no son una aceleración. No. ¿Cómo se? Claro, aquí, si, ya, me ha quedado mucho, mucho más más controlado por el comercio, por el comercio, para la inmigración. Ya tienen la sensación de la capturía, porque, en este, se ve una capturía. El narcoturismo, lo hay, se ve, más o más... nosotros estamos en esto, de vos. Nos estamos un poco calentados en el que es solar, que se va a hacer un poco de vacanciamiento, para el comercio. Para el comercio, es un poco de precioso. Entonces, para las restauraciones, con las que son, que eran, que eran, que eran, pero, en este momento, se pueden estar aquí, controlando. Muy bien, pero, pero hay que artícalo por aquí, claro. ¿Cómo, cómo hace el humor? Se quedará, el clima para acá. Muy, a ver. El clima se recibe, está muy caliente, la hostilación, y se, a día de, en el que hace, no sé, más que tiene este tema, más lo apico, lo hace por aquí. Pero, por ejemplo, en cuina, pero también es el calor, no es el calor. hay que más calor. No, porque, cuando estemos aquí, un poquito de hilo, claro. Para ganar, un poquito de alucin, por acá, es para, todo, para coar, para que se pegue. Muy importante, yo. Me da, yo. No, no, no. No. No.",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 0.8,
+        "text": " ¿Qué es esto?",
+        "tokens": [
+          50364,
+          3841,
+          15137,
+          785,
+          7433,
+          30,
+          50464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9280305342240767,
+        "compression_ratio": 1.4950980392156863,
+        "no_speech_prob": 0.8427671194076538,
+        "words": [
+          {
+            "word": " ¿Qué",
+            "start": 0.0,
+            "end": 0.42,
+            "probability": 0.08756576105952263
+          },
+          {
+            "word": " es",
+            "start": 0.42,
+            "end": 0.64,
+            "probability": 0.13595448434352875
+          },
+          {
+            "word": " esto?",
+            "start": 0.64,
+            "end": 0.8,
+            "probability": 0.46083712577819824
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 4.84,
+        "end": 9.0,
+        "text": " Sí, estamos a la mando de todo lo que es antoño al paso conmigo.",
+        "tokens": [
+          50614,
+          12375,
+          11,
+          10382,
+          257,
+          635,
+          7411,
+          78,
+          368,
+          5149,
+          450,
+          631,
+          785,
+          364,
+          1353,
+          7716,
+          419,
+          29212,
+          416,
+          76,
+          7483,
+          13,
+          50814
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9280305342240767,
+        "compression_ratio": 1.4950980392156863,
+        "no_speech_prob": 0.8427671194076538,
+        "words": [
+          {
+            "word": " Sí,",
+            "start": 4.84,
+            "end": 5.32,
+            "probability": 0.15152090787887573
+          },
+          {
+            "word": " estamos",
+            "start": 5.46,
+            "end": 5.62,
+            "probability": 0.647433340549469
+          },
+          {
+            "word": " a",
+            "start": 5.62,
+            "end": 5.82,
+            "probability": 0.5511122345924377
+          },
+          {
+            "word": " la",
+            "start": 5.82,
+            "end": 5.84,
+            "probability": 0.6636356711387634
+          },
+          {
+            "word": " mando",
+            "start": 5.84,
+            "end": 6.14,
+            "probability": 0.5111904740333557
+          },
+          {
+            "word": " de",
+            "start": 6.14,
+            "end": 6.54,
+            "probability": 0.9563782811164856
+          },
+          {
+            "word": " todo",
+            "start": 6.54,
+            "end": 6.86,
+            "probability": 0.8525640368461609
+          },
+          {
+            "word": " lo",
+            "start": 6.86,
+            "end": 7.06,
+            "probability": 0.950760543346405
+          },
+          {
+            "word": " que",
+            "start": 7.06,
+            "end": 7.18,
+            "probability": 0.9945055842399597
+          },
+          {
+            "word": " es",
+            "start": 7.18,
+            "end": 7.36,
+            "probability": 0.2920951545238495
+          },
+          {
+            "word": " antoño",
+            "start": 7.36,
+            "end": 7.92,
+            "probability": 0.3047380844751994
+          },
+          {
+            "word": " al",
+            "start": 7.92,
+            "end": 8.28,
+            "probability": 0.34292343258857727
+          },
+          {
+            "word": " paso",
+            "start": 8.28,
+            "end": 8.88,
+            "probability": 0.516819417476654
+          },
+          {
+            "word": " conmigo.",
+            "start": 8.88,
+            "end": 9.120000000000001,
+            "probability": 0.5204792221387228
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 9.94,
+        "end": 15.14,
+        "text": " Acá toda la Plaza Botero para un estudio de ampliabilidad con el estado de San Diego.",
+        "tokens": [
+          50864,
+          5097,
+          842,
+          11687,
+          635,
+          41890,
+          25486,
+          2032,
+          1690,
+          517,
+          44286,
+          368,
+          9731,
+          72,
+          5177,
+          4580,
+          416,
+          806,
+          18372,
+          368,
+          5271,
+          16377,
+          13,
+          51114
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9280305342240767,
+        "compression_ratio": 1.4950980392156863,
+        "no_speech_prob": 0.8427671194076538,
+        "words": [
+          {
+            "word": " Acá",
+            "start": 9.94,
+            "end": 10.26,
+            "probability": 0.8527416288852692
+          },
+          {
+            "word": " toda",
+            "start": 10.26,
+            "end": 10.44,
+            "probability": 0.8504650592803955
+          },
+          {
+            "word": " la",
+            "start": 10.44,
+            "end": 10.58,
+            "probability": 0.9805495142936707
+          },
+          {
+            "word": " Plaza",
+            "start": 10.58,
+            "end": 10.76,
+            "probability": 0.4970361292362213
+          },
+          {
+            "word": " Botero",
+            "start": 10.76,
+            "end": 11.28,
+            "probability": 0.6664439588785172
+          },
+          {
+            "word": " para",
+            "start": 11.28,
+            "end": 12.3,
+            "probability": 0.7197446227073669
+          },
+          {
+            "word": " un",
+            "start": 12.3,
+            "end": 12.82,
+            "probability": 0.42471668124198914
+          },
+          {
+            "word": " estudio",
+            "start": 12.82,
+            "end": 13.12,
+            "probability": 0.9977757334709167
+          },
+          {
+            "word": " de",
+            "start": 13.12,
+            "end": 13.36,
+            "probability": 0.96844881772995
+          },
+          {
+            "word": " ampliabilidad",
+            "start": 13.36,
+            "end": 14.0,
+            "probability": 0.8743160963058472
+          },
+          {
+            "word": " con",
+            "start": 14.0,
+            "end": 14.24,
+            "probability": 0.132777139544487
+          },
+          {
+            "word": " el",
+            "start": 14.24,
+            "end": 14.34,
+            "probability": 0.6984205842018127
+          },
+          {
+            "word": " estado",
+            "start": 14.34,
+            "end": 14.66,
+            "probability": 0.5349735617637634
+          },
+          {
+            "word": " de",
+            "start": 14.66,
+            "end": 14.84,
+            "probability": 0.8230873346328735
+          },
+          {
+            "word": " San",
+            "start": 14.84,
+            "end": 14.96,
+            "probability": 0.02653145231306553
+          },
+          {
+            "word": " Diego.",
+            "start": 14.96,
+            "end": 15.14,
+            "probability": 0.2306128293275833
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 17.86,
+        "end": 20.86,
+        "text": " Estamos viendo el paro de la Plaza Botero, no se la ven a ser hasta el estado,",
+        "tokens": [
+          51264,
+          34563,
+          34506,
+          806,
+          971,
+          78,
+          368,
+          635,
+          41890,
+          25486,
+          2032,
+          11,
+          572,
+          369,
+          635,
+          6138,
+          257,
+          816,
+          10764,
+          806,
+          18372,
+          11,
+          51414
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9280305342240767,
+        "compression_ratio": 1.4950980392156863,
+        "no_speech_prob": 0.8427671194076538,
+        "words": [
+          {
+            "word": " Estamos",
+            "start": 17.86,
+            "end": 18.34,
+            "probability": 0.13862435519695282
+          },
+          {
+            "word": " viendo",
+            "start": 18.34,
+            "end": 18.74,
+            "probability": 0.9659653306007385
+          },
+          {
+            "word": " el",
+            "start": 18.74,
+            "end": 18.9,
+            "probability": 0.4492945671081543
+          },
+          {
+            "word": " paro",
+            "start": 18.9,
+            "end": 19.04,
+            "probability": 0.8211594521999359
+          },
+          {
+            "word": " de",
+            "start": 19.04,
+            "end": 19.12,
+            "probability": 0.5823580622673035
+          },
+          {
+            "word": " la",
+            "start": 19.12,
+            "end": 19.2,
+            "probability": 0.9331236481666565
+          },
+          {
+            "word": " Plaza",
+            "start": 19.2,
+            "end": 19.32,
+            "probability": 0.709256649017334
+          },
+          {
+            "word": " Botero,",
+            "start": 19.32,
+            "end": 19.66,
+            "probability": 0.988165020942688
+          },
+          {
+            "word": " no",
+            "start": 19.66,
+            "end": 19.92,
+            "probability": 0.5577248334884644
+          },
+          {
+            "word": " se",
+            "start": 19.92,
+            "end": 20.02,
+            "probability": 0.11337095499038696
+          },
+          {
+            "word": " la",
+            "start": 20.02,
+            "end": 20.12,
+            "probability": 0.6018920540809631
+          },
+          {
+            "word": " ven",
+            "start": 20.12,
+            "end": 20.24,
+            "probability": 0.0508076511323452
+          },
+          {
+            "word": " a",
+            "start": 20.24,
+            "end": 20.32,
+            "probability": 0.21506811678409576
+          },
+          {
+            "word": " ser",
+            "start": 20.32,
+            "end": 20.38,
+            "probability": 0.19035834074020386
+          },
+          {
+            "word": " hasta",
+            "start": 20.38,
+            "end": 20.62,
+            "probability": 0.07792868465185165
+          },
+          {
+            "word": " el",
+            "start": 20.62,
+            "end": 20.86,
+            "probability": 0.12243969738483429
+          },
+          {
+            "word": " estado,",
+            "start": 20.86,
+            "end": 20.86,
+            "probability": 0.789873480796814
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 21.14,
+        "end": 26.72,
+        "text": " pero la Plaza Laia, la Tierra y la Maldición, la gente.",
+        "tokens": [
+          51414,
+          4768,
+          635,
+          41890,
+          2369,
+          654,
+          11,
+          635,
+          314,
+          17452,
+          288,
+          635,
+          376,
+          3976,
+          15534,
+          11,
+          635,
+          3788,
+          13,
+          51764
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9280305342240767,
+        "compression_ratio": 1.4950980392156863,
+        "no_speech_prob": 0.8427671194076538,
+        "words": [
+          {
+            "word": " pero",
+            "start": 21.14,
+            "end": 21.38,
+            "probability": 0.9488533139228821
+          },
+          {
+            "word": " la",
+            "start": 21.38,
+            "end": 21.74,
+            "probability": 0.5766201615333557
+          },
+          {
+            "word": " Plaza",
+            "start": 21.74,
+            "end": 22.06,
+            "probability": 0.3835371434688568
+          },
+          {
+            "word": " Laia,",
+            "start": 22.06,
+            "end": 22.54,
+            "probability": 0.17757413536310196
+          },
+          {
+            "word": " la",
+            "start": 22.64,
+            "end": 23.5,
+            "probability": 0.13218718767166138
+          },
+          {
+            "word": " Tierra",
+            "start": 23.5,
+            "end": 23.72,
+            "probability": 0.08799585420638323
+          },
+          {
+            "word": " y",
+            "start": 23.72,
+            "end": 23.82,
+            "probability": 0.3380586802959442
+          },
+          {
+            "word": " la",
+            "start": 23.82,
+            "end": 24.12,
+            "probability": 0.40448325872421265
+          },
+          {
+            "word": " Maldición,",
+            "start": 24.12,
+            "end": 24.54,
+            "probability": 0.2015634849667549
+          },
+          {
+            "word": " la",
+            "start": 26.02,
+            "end": 26.12,
+            "probability": 0.3004949688911438
+          },
+          {
+            "word": " gente.",
+            "start": 26.12,
+            "end": 26.72,
+            "probability": 0.28215348720550537
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 2672,
+        "start": 28.520000000000003,
+        "end": 31.32,
+        "text": " Lo que hace es que como acá están los que le ven los discos,",
+        "tokens": [
+          50414,
+          6130,
+          631,
+          10032,
+          785,
+          631,
+          2617,
+          23496,
+          10368,
+          1750,
+          631,
+          476,
+          6138,
+          1750,
+          2983,
+          329,
+          11,
+          50564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9838148418225741,
+        "compression_ratio": 1.5449735449735449,
+        "no_speech_prob": 0.11601205170154572,
+        "words": [
+          {
+            "word": " Lo",
+            "start": 28.520000000000003,
+            "end": 28.900000000000002,
+            "probability": 0.002026365604251623
+          },
+          {
+            "word": " que",
+            "start": 28.900000000000002,
+            "end": 29.28,
+            "probability": 0.2155347466468811
+          },
+          {
+            "word": " hace",
+            "start": 29.28,
+            "end": 29.28,
+            "probability": 0.026983922347426414
+          },
+          {
+            "word": " es",
+            "start": 29.28,
+            "end": 29.38,
+            "probability": 0.6541667580604553
+          },
+          {
+            "word": " que",
+            "start": 29.38,
+            "end": 29.46,
+            "probability": 0.708929717540741
+          },
+          {
+            "word": " como",
+            "start": 29.46,
+            "end": 29.64,
+            "probability": 0.5392581224441528
+          },
+          {
+            "word": " acá",
+            "start": 29.64,
+            "end": 29.86,
+            "probability": 0.9220547676086426
+          },
+          {
+            "word": " están",
+            "start": 29.86,
+            "end": 30.4,
+            "probability": 0.11396918445825577
+          },
+          {
+            "word": " los",
+            "start": 30.4,
+            "end": 30.58,
+            "probability": 0.7964075803756714
+          },
+          {
+            "word": " que",
+            "start": 30.58,
+            "end": 30.72,
+            "probability": 0.3384248614311218
+          },
+          {
+            "word": " le",
+            "start": 30.72,
+            "end": 30.76,
+            "probability": 0.4274756610393524
+          },
+          {
+            "word": " ven",
+            "start": 30.76,
+            "end": 30.9,
+            "probability": 0.09855514019727707
+          },
+          {
+            "word": " los",
+            "start": 30.9,
+            "end": 31.06,
+            "probability": 0.2585045397281647
+          },
+          {
+            "word": " discos,",
+            "start": 31.06,
+            "end": 31.32,
+            "probability": 0.3152460362762213
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 2672,
+        "start": 31.52,
+        "end": 35.04,
+        "text": " de esta parte le aguele el proceso de un pulguero a toda la vida antiguo.",
+        "tokens": [
+          50564,
+          368,
+          5283,
+          6975,
+          476,
+          623,
+          622,
+          306,
+          806,
+          29314,
+          368,
+          517,
+          8331,
+          2794,
+          2032,
+          257,
+          11687,
+          635,
+          7644,
+          2511,
+          16397,
+          78,
+          13,
+          50764
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9838148418225741,
+        "compression_ratio": 1.5449735449735449,
+        "no_speech_prob": 0.11601205170154572,
+        "words": [
+          {
+            "word": " de",
+            "start": 31.52,
+            "end": 31.68,
+            "probability": 0.45016127824783325
+          },
+          {
+            "word": " esta",
+            "start": 31.68,
+            "end": 31.8,
+            "probability": 0.5647218227386475
+          },
+          {
+            "word": " parte",
+            "start": 31.8,
+            "end": 32.1,
+            "probability": 0.9359822273254395
+          },
+          {
+            "word": " le",
+            "start": 32.1,
+            "end": 32.5,
+            "probability": 0.502760112285614
+          },
+          {
+            "word": " aguele",
+            "start": 32.5,
+            "end": 32.84,
+            "probability": 0.4479254384835561
+          },
+          {
+            "word": " el",
+            "start": 32.84,
+            "end": 33.06,
+            "probability": 0.6456903219223022
+          },
+          {
+            "word": " proceso",
+            "start": 33.06,
+            "end": 33.18,
+            "probability": 0.330848753452301
+          },
+          {
+            "word": " de",
+            "start": 33.18,
+            "end": 33.56,
+            "probability": 0.27268633246421814
+          },
+          {
+            "word": " un",
+            "start": 33.56,
+            "end": 33.62,
+            "probability": 0.3703748881816864
+          },
+          {
+            "word": " pulguero",
+            "start": 33.62,
+            "end": 34.02,
+            "probability": 0.6550011535485586
+          },
+          {
+            "word": " a",
+            "start": 34.02,
+            "end": 34.22,
+            "probability": 0.3121089041233063
+          },
+          {
+            "word": " toda",
+            "start": 34.22,
+            "end": 34.34,
+            "probability": 0.646117091178894
+          },
+          {
+            "word": " la",
+            "start": 34.34,
+            "end": 34.48,
+            "probability": 0.9954214692115784
+          },
+          {
+            "word": " vida",
+            "start": 34.48,
+            "end": 34.64,
+            "probability": 0.976793646812439
+          },
+          {
+            "word": " antiguo.",
+            "start": 34.64,
+            "end": 35.04,
+            "probability": 0.37877408663431805
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 2672,
+        "start": 36.2,
+        "end": 39.88,
+        "text": " Y como al pronto aquí te piden, lo que pasa es que no hay un tribunal.",
+        "tokens": [
+          50814,
+          398,
+          2617,
+          419,
+          26194,
+          6661,
+          535,
+          280,
+          4380,
+          11,
+          450,
+          631,
+          20260,
+          785,
+          631,
+          572,
+          4842,
+          517,
+          15039,
+          33304,
+          13,
+          51014
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9838148418225741,
+        "compression_ratio": 1.5449735449735449,
+        "no_speech_prob": 0.11601205170154572,
+        "words": [
+          {
+            "word": " Y",
+            "start": 36.2,
+            "end": 36.58,
+            "probability": 0.5072005987167358
+          },
+          {
+            "word": " como",
+            "start": 36.58,
+            "end": 36.74,
+            "probability": 0.9618176221847534
+          },
+          {
+            "word": " al",
+            "start": 36.74,
+            "end": 36.92,
+            "probability": 0.4445825219154358
+          },
+          {
+            "word": " pronto",
+            "start": 36.92,
+            "end": 37.22,
+            "probability": 0.3652353286743164
+          },
+          {
+            "word": " aquí",
+            "start": 37.22,
+            "end": 37.6,
+            "probability": 0.31237924098968506
+          },
+          {
+            "word": " te",
+            "start": 37.6,
+            "end": 37.72,
+            "probability": 0.18173924088478088
+          },
+          {
+            "word": " piden,",
+            "start": 37.72,
+            "end": 38.16,
+            "probability": 0.24690719693899155
+          },
+          {
+            "word": " lo",
+            "start": 38.48,
+            "end": 38.72,
+            "probability": 0.05131533369421959
+          },
+          {
+            "word": " que",
+            "start": 38.72,
+            "end": 38.72,
+            "probability": 0.1525373011827469
+          },
+          {
+            "word": " pasa",
+            "start": 38.72,
+            "end": 39.1,
+            "probability": 0.38015368580818176
+          },
+          {
+            "word": " es",
+            "start": 39.1,
+            "end": 39.26,
+            "probability": 0.8717840909957886
+          },
+          {
+            "word": " que",
+            "start": 39.26,
+            "end": 39.28,
+            "probability": 0.5202316641807556
+          },
+          {
+            "word": " no",
+            "start": 39.28,
+            "end": 39.32,
+            "probability": 0.39782726764678955
+          },
+          {
+            "word": " hay",
+            "start": 39.32,
+            "end": 39.42,
+            "probability": 0.16378861665725708
+          },
+          {
+            "word": " un",
+            "start": 39.42,
+            "end": 39.5,
+            "probability": 0.1565808355808258
+          },
+          {
+            "word": " tribunal.",
+            "start": 39.5,
+            "end": 39.88,
+            "probability": 0.5062939301133156
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "seek": 2672,
+        "start": 44.84,
+        "end": 46.76,
+        "text": " Pulgueros, un termino, no hay mucho en el ciudad.",
+        "tokens": [
+          51214,
+          35568,
+          2794,
+          16771,
+          11,
+          517,
+          1433,
+          2982,
+          11,
+          572,
+          4842,
+          9824,
+          465,
+          806,
+          24329,
+          13,
+          51364
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9838148418225741,
+        "compression_ratio": 1.5449735449735449,
+        "no_speech_prob": 0.11601205170154572,
+        "words": [
+          {
+            "word": " Pulgueros,",
+            "start": 44.84,
+            "end": 45.22,
+            "probability": 0.5756058990955353
+          },
+          {
+            "word": " un",
+            "start": 45.38,
+            "end": 45.46,
+            "probability": 0.10964079201221466
+          },
+          {
+            "word": " termino,",
+            "start": 45.46,
+            "end": 45.74,
+            "probability": 0.7832605540752411
+          },
+          {
+            "word": " no",
+            "start": 45.98,
+            "end": 46.02,
+            "probability": 0.13608822226524353
+          },
+          {
+            "word": " hay",
+            "start": 46.02,
+            "end": 46.08,
+            "probability": 0.7285674810409546
+          },
+          {
+            "word": " mucho",
+            "start": 46.08,
+            "end": 46.28,
+            "probability": 0.16461975872516632
+          },
+          {
+            "word": " en",
+            "start": 46.28,
+            "end": 46.4,
+            "probability": 0.42744681239128113
+          },
+          {
+            "word": " el",
+            "start": 46.4,
+            "end": 46.5,
+            "probability": 0.9810458421707153
+          },
+          {
+            "word": " ciudad.",
+            "start": 46.5,
+            "end": 46.76,
+            "probability": 0.022417834028601646
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "seek": 2672,
+        "start": 53.08,
+        "end": 54.82,
+        "text": " Y si que trabajan, se ponen bien.",
+        "tokens": [
+          51664,
+          398,
+          1511,
+          631,
+          9618,
+          282,
+          11,
+          369,
+          9224,
+          268,
+          3610,
+          13,
+          51764
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9838148418225741,
+        "compression_ratio": 1.5449735449735449,
+        "no_speech_prob": 0.11601205170154572,
+        "words": [
+          {
+            "word": " Y",
+            "start": 53.08,
+            "end": 53.46,
+            "probability": 0.5134735703468323
+          },
+          {
+            "word": " si",
+            "start": 53.46,
+            "end": 53.62,
+            "probability": 0.05472034588456154
+          },
+          {
+            "word": " que",
+            "start": 53.62,
+            "end": 53.78,
+            "probability": 0.22228042781352997
+          },
+          {
+            "word": " trabajan,",
+            "start": 53.78,
+            "end": 54.1,
+            "probability": 0.35285232961177826
+          },
+          {
+            "word": " se",
+            "start": 54.24,
+            "end": 54.26,
+            "probability": 0.3185270130634308
+          },
+          {
+            "word": " ponen",
+            "start": 54.26,
+            "end": 54.66,
+            "probability": 0.5025154314935207
+          },
+          {
+            "word": " bien.",
+            "start": 54.66,
+            "end": 54.82,
+            "probability": 0.24252092838287354
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "seek": 5672,
+        "start": 56.72,
+        "end": 60.18,
+        "text": " No hay conocimiento.",
+        "tokens": [
+          50414,
+          883,
+          4842,
+          15871,
+          14007,
+          13,
+          50564
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.7318872228845374,
+        "compression_ratio": 1.1676300578034682,
+        "no_speech_prob": 0.01474488340318203,
+        "words": [
+          {
+            "word": " No",
+            "start": 56.72,
+            "end": 57.1,
+            "probability": 0.0077646211721003056
+          },
+          {
+            "word": " hay",
+            "start": 57.1,
+            "end": 57.32,
+            "probability": 0.13450303673744202
+          },
+          {
+            "word": " conocimiento",
+            "start": 57.32,
+            "end": 57.68,
+            "probability": 0.43715955076913815
+          },
+          {
+            "word": ".ikuji",
+            "start": 57.68,
+            "end": 60.18,
+            "probability": 0.17800965250989975
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "seek": 5672,
+        "start": 60.18,
+        "end": 61.24,
+        "text": "ikuji Copyright.",
+        "tokens": [
+          50614,
+          24320,
+          4013,
+          25653,
+          1938,
+          13,
+          50764
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.7318872228845374,
+        "compression_ratio": 1.1676300578034682,
+        "no_speech_prob": 0.01474488340318203,
+        "words": [
+          {
+            "word": " Copyright.",
+            "start": 60.18,
+            "end": 60.76,
+            "probability": 0.45861673276522197
+          },
+          {
+            "word": " AMAZONA.",
+            "start": 60.76,
+            "end": 61.24,
+            "probability": 0.37089645162632223
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "seek": 5672,
+        "start": 64.12,
+        "end": 65.8,
+        "text": " AMAZONA.",
+        "tokens": [
+          50814,
+          6475,
+          32,
+          57,
+          49659,
+          13,
+          50914
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.7318872228845374,
+        "compression_ratio": 1.1676300578034682,
+        "no_speech_prob": 0.01474488340318203,
+        "words": [
+          {
+            "word": " Sí,",
+            "start": 64.12,
+            "end": 64.84,
+            "probability": 0.18362919986248016
+          },
+          {
+            "word": " yo",
+            "start": 65.3,
+            "end": 65.7,
+            "probability": 0.009955444373190403
+          },
+          {
+            "word": " creo",
+            "start": 65.7,
+            "end": 65.7,
+            "probability": 0.1001247987151146
+          },
+          {
+            "word": " que",
+            "start": 65.7,
+            "end": 65.8,
+            "probability": 0.9800707697868347
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "seek": 5672,
+        "start": 65.8,
+        "end": 68.92,
+        "text": " Sí, yo creo que hay mucho TVs que hayan ænekeys,",
+        "tokens": [
+          51014,
+          12375,
+          11,
+          5290,
+          14336,
+          631,
+          4842,
+          9824,
+          38085,
+          631,
+          4842,
+          282,
+          690,
+          99,
+          716,
+          18847,
+          11,
+          51081
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.7318872228845374,
+        "compression_ratio": 1.1676300578034682,
+        "no_speech_prob": 0.01474488340318203,
+        "words": [
+          {
+            "word": " hay",
+            "start": 65.8,
+            "end": 65.92,
+            "probability": 0.6164068579673767
+          },
+          {
+            "word": " mucho",
+            "start": 65.92,
+            "end": 66.6,
+            "probability": 0.7735206484794617
+          },
+          {
+            "word": " TVs",
+            "start": 66.6,
+            "end": 66.86,
+            "probability": 4.158102001383668e-06
+          },
+          {
+            "word": " que",
+            "start": 66.86,
+            "end": 67.44,
+            "probability": 0.5242056846618652
+          },
+          {
+            "word": " hayan",
+            "start": 67.44,
+            "end": 67.7,
+            "probability": 0.34598489850759506
+          },
+          {
+            "word": " ænekeys,",
+            "start": 67.7,
+            "end": 68.2,
+            "probability": 0.015402354128127627
+          },
+          {
+            "word": " una",
+            "start": 68.32,
+            "end": 68.66,
+            "probability": 0.009361367672681808
+          },
+          {
+            "word": " davada",
+            "start": 68.66,
+            "end": 68.9,
+            "probability": 0.054848726373165846
+          },
+          {
+            "word": " para",
+            "start": 68.9,
+            "end": 68.92,
+            "probability": 0.6398290991783142
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "seek": 5672,
+        "start": 68.92,
+        "end": 71.7,
+        "text": " una davada para strokes de 10.000 reflets.",
+        "tokens": [
+          51131,
+          2002,
+          1120,
+          85,
+          1538,
+          1690,
+          24493,
+          368,
+          1266,
+          13,
+          1360,
+          1895,
+          2631,
+          82,
+          13,
+          51264
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.7318872228845374,
+        "compression_ratio": 1.1676300578034682,
+        "no_speech_prob": 0.01474488340318203,
+        "words": [
+          {
+            "word": " strokes",
+            "start": 68.92,
+            "end": 69.06,
+            "probability": 0.00021251475845929235
+          },
+          {
+            "word": " de",
+            "start": 69.06,
+            "end": 69.64,
+            "probability": 0.07085046172142029
+          },
+          {
+            "word": " 10",
+            "start": 69.64,
+            "end": 69.64,
+            "probability": 0.0009079079609364271
+          },
+          {
+            "word": ".000",
+            "start": 69.64,
+            "end": 69.88,
+            "probability": 0.23364849016070366
+          },
+          {
+            "word": " reflets.",
+            "start": 69.88,
+            "end": 70.08,
+            "probability": 0.25536095186544117
+          },
+          {
+            "word": " No",
+            "start": 70.5,
+            "end": 71.1,
+            "probability": 0.11688872426748276
+          },
+          {
+            "word": " es",
+            "start": 71.1,
+            "end": 71.26,
+            "probability": 0.25125744938850403
+          },
+          {
+            "word": " para",
+            "start": 71.26,
+            "end": 71.38,
+            "probability": 0.5682280659675598
+          },
+          {
+            "word": " fermes",
+            "start": 71.38,
+            "end": 71.7,
+            "probability": 0.0031665034912293777
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "seek": 5672,
+        "start": 72.5,
+        "end": 77.68,
+        "text": " No es para fermes hacke了 ones.",
+        "tokens": [
+          51314,
+          883,
+          785,
+          1690,
+          26558,
+          279,
+          324,
+          18627,
+          2289,
+          2306,
+          13,
+          51426
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.7318872228845374,
+        "compression_ratio": 1.1676300578034682,
+        "no_speech_prob": 0.01474488340318203,
+        "words": [
+          {
+            "word": " hacke了",
+            "start": 72.5,
+            "end": 73.22,
+            "probability": 0.002146475594296741
+          },
+          {
+            "word": " ones.",
+            "start": 73.22,
+            "end": 73.4,
+            "probability": 9.669706741988193e-06
+          },
+          {
+            "word": " Hasta",
+            "start": 74.74,
+            "end": 75.32,
+            "probability": 0.010696543380618095
+          },
+          {
+            "word": " la",
+            "start": 75.32,
+            "end": 75.5,
+            "probability": 0.8540874719619751
+          },
+          {
+            "word": " pandemia",
+            "start": 75.5,
+            "end": 75.94,
+            "probability": 0.9422265291213989
+          },
+          {
+            "word": " ayudaron(?)",
+            "start": 75.94,
+            "end": 77.68,
+            "probability": 0.06612092145860515
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "seek": 5672,
+        "start": 78.72,
+        "end": 81.82,
+        "text": " Hasta la pandemia ayudaron(?)",
+        "tokens": [
+          51464,
+          45027,
+          635,
+          33245,
+          20333,
+          6372,
+          20396,
+          51619
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.7318872228845374,
+        "compression_ratio": 1.1676300578034682,
+        "no_speech_prob": 0.01474488340318203,
+        "words": []
+      },
+      {
+        "id": 17,
+        "seek": 31768,
+        "start": 318.32000000000005,
+        "end": 321.0,
+        "text": " No, no falta lo que le añadió, que yo soy un joven de estado.",
+        "tokens": [
+          50364,
+          883,
+          11,
+          572,
+          22111,
+          450,
+          631,
+          476,
+          37837,
+          5688,
+          812,
+          11,
+          631,
+          5290,
+          8812,
+          517,
+          1488,
+          553,
+          368,
+          18372,
+          13,
+          50564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9437217283784674,
+        "compression_ratio": 1.3850574712643677,
+        "no_speech_prob": 0.8060289025306702,
+        "words": [
+          {
+            "word": " No,",
+            "start": 318.32000000000005,
+            "end": 318.72,
+            "probability": 0.11922021210193634
+          },
+          {
+            "word": " no",
+            "start": 318.86,
+            "end": 318.86,
+            "probability": 0.5299067497253418
+          },
+          {
+            "word": " falta",
+            "start": 318.86,
+            "end": 319.06,
+            "probability": 0.19103513658046722
+          },
+          {
+            "word": " lo",
+            "start": 319.06,
+            "end": 319.26,
+            "probability": 0.6905644536018372
+          },
+          {
+            "word": " que",
+            "start": 319.26,
+            "end": 319.36,
+            "probability": 0.8804007768630981
+          },
+          {
+            "word": " le",
+            "start": 319.36,
+            "end": 319.48,
+            "probability": 0.24374593794345856
+          },
+          {
+            "word": " añadió,",
+            "start": 319.48,
+            "end": 319.9,
+            "probability": 0.41258611778418225
+          },
+          {
+            "word": " que",
+            "start": 319.94,
+            "end": 320.0,
+            "probability": 0.15592046082019806
+          },
+          {
+            "word": " yo",
+            "start": 320.0,
+            "end": 320.12,
+            "probability": 0.5004535913467407
+          },
+          {
+            "word": " soy",
+            "start": 320.12,
+            "end": 320.12,
+            "probability": 0.09791380167007446
+          },
+          {
+            "word": " un",
+            "start": 320.12,
+            "end": 320.22,
+            "probability": 0.578642725944519
+          },
+          {
+            "word": " joven",
+            "start": 320.22,
+            "end": 320.52,
+            "probability": 0.5028199777007103
+          },
+          {
+            "word": " de",
+            "start": 320.52,
+            "end": 320.72,
+            "probability": 0.24678505957126617
+          },
+          {
+            "word": " estado.",
+            "start": 320.72,
+            "end": 321.0,
+            "probability": 0.14424796402454376
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "seek": 31768,
+        "start": 325.52000000000004,
+        "end": 328.88,
+        "text": " Si le digan por acá, si me van a asistir, no, me lo dejo de aquí.",
+        "tokens": [
+          50764,
+          4909,
+          476,
+          2528,
+          282,
+          1515,
+          23496,
+          11,
+          1511,
+          385,
+          3161,
+          257,
+          382,
+          468,
+          347,
+          11,
+          572,
+          11,
+          385,
+          450,
+          368,
+          5134,
+          368,
+          6661,
+          13,
+          50914
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9437217283784674,
+        "compression_ratio": 1.3850574712643677,
+        "no_speech_prob": 0.8060289025306702,
+        "words": [
+          {
+            "word": " Si",
+            "start": 325.52000000000004,
+            "end": 325.92,
+            "probability": 0.26653462648391724
+          },
+          {
+            "word": " le",
+            "start": 325.92,
+            "end": 326.04,
+            "probability": 0.20886610448360443
+          },
+          {
+            "word": " digan",
+            "start": 326.04,
+            "end": 326.3,
+            "probability": 0.3076201118528843
+          },
+          {
+            "word": " por",
+            "start": 326.3,
+            "end": 326.48,
+            "probability": 0.7733689546585083
+          },
+          {
+            "word": " acá,",
+            "start": 326.48,
+            "end": 326.62,
+            "probability": 0.8124058842658997
+          },
+          {
+            "word": " si",
+            "start": 326.76,
+            "end": 326.96,
+            "probability": 0.30740636587142944
+          },
+          {
+            "word": " me",
+            "start": 326.96,
+            "end": 327.12,
+            "probability": 0.295187383890152
+          },
+          {
+            "word": " van",
+            "start": 327.12,
+            "end": 327.2,
+            "probability": 0.3248690664768219
+          },
+          {
+            "word": " a",
+            "start": 327.2,
+            "end": 327.34,
+            "probability": 0.5554705858230591
+          },
+          {
+            "word": " asistir,",
+            "start": 327.34,
+            "end": 327.5,
+            "probability": 0.4986925721168518
+          },
+          {
+            "word": " no,",
+            "start": 327.7,
+            "end": 327.82,
+            "probability": 0.2160048484802246
+          },
+          {
+            "word": " me",
+            "start": 328.02,
+            "end": 328.16,
+            "probability": 0.16877613961696625
+          },
+          {
+            "word": " lo",
+            "start": 328.16,
+            "end": 328.18,
+            "probability": 0.6372702121734619
+          },
+          {
+            "word": " dejo",
+            "start": 328.18,
+            "end": 328.6,
+            "probability": 0.26625216752290726
+          },
+          {
+            "word": " de",
+            "start": 328.6,
+            "end": 328.72,
+            "probability": 0.6222251057624817
+          },
+          {
+            "word": " aquí.",
+            "start": 328.72,
+            "end": 328.88,
+            "probability": 0.8331496715545654
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "seek": 31768,
+        "start": 329.26,
+        "end": 331.92,
+        "text": " No, que no estoy como tierno en la ciudad y en los barrios.",
+        "tokens": [
+          50914,
+          883,
+          11,
+          631,
+          572,
+          15796,
+          2617,
+          12362,
+          1771,
+          465,
+          635,
+          24329,
+          288,
+          465,
+          1750,
+          2159,
+          37994,
+          13,
+          51064
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9437217283784674,
+        "compression_ratio": 1.3850574712643677,
+        "no_speech_prob": 0.8060289025306702,
+        "words": [
+          {
+            "word": " No,",
+            "start": 329.26,
+            "end": 329.48,
+            "probability": 0.7182121872901917
+          },
+          {
+            "word": " que",
+            "start": 329.56,
+            "end": 329.64,
+            "probability": 0.4962140619754791
+          },
+          {
+            "word": " no",
+            "start": 329.64,
+            "end": 329.76,
+            "probability": 0.8690773844718933
+          },
+          {
+            "word": " estoy",
+            "start": 329.76,
+            "end": 329.94,
+            "probability": 0.1718876212835312
+          },
+          {
+            "word": " como",
+            "start": 329.94,
+            "end": 330.22,
+            "probability": 0.9003881812095642
+          },
+          {
+            "word": " tierno",
+            "start": 330.22,
+            "end": 330.6,
+            "probability": 0.2827695831656456
+          },
+          {
+            "word": " en",
+            "start": 330.6,
+            "end": 330.7,
+            "probability": 0.4571566581726074
+          },
+          {
+            "word": " la",
+            "start": 330.7,
+            "end": 330.82,
+            "probability": 0.5389919281005859
+          },
+          {
+            "word": " ciudad",
+            "start": 330.82,
+            "end": 330.94,
+            "probability": 0.9927619099617004
+          },
+          {
+            "word": " y",
+            "start": 330.94,
+            "end": 331.18,
+            "probability": 0.31919780373573303
+          },
+          {
+            "word": " en",
+            "start": 331.18,
+            "end": 331.3,
+            "probability": 0.18275600671768188
+          },
+          {
+            "word": " los",
+            "start": 331.3,
+            "end": 331.42,
+            "probability": 0.9404827952384949
+          },
+          {
+            "word": " barrios.",
+            "start": 331.42,
+            "end": 331.92,
+            "probability": 0.41186871752142906
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "seek": 31768,
+        "start": 332.74,
+        "end": 333.72,
+        "text": " Todo es perfecto.",
+        "tokens": [
+          51114,
+          26466,
+          785,
+          2176,
+          78,
+          13,
+          51164
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9437217283784674,
+        "compression_ratio": 1.3850574712643677,
+        "no_speech_prob": 0.8060289025306702,
+        "words": [
+          {
+            "word": " Todo",
+            "start": 332.74,
+            "end": 333.06,
+            "probability": 0.5501514077186584
+          },
+          {
+            "word": " es",
+            "start": 333.06,
+            "end": 333.26,
+            "probability": 0.5545973777770996
+          },
+          {
+            "word": " perfecto.",
+            "start": 333.26,
+            "end": 333.72,
+            "probability": 0.6034985035657883
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "seek": 31768,
+        "start": 334.66,
+        "end": 335.72,
+        "text": " Ah, que tal.",
+        "tokens": [
+          51214,
+          2438,
+          11,
+          631,
+          4023,
+          13,
+          51264
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9437217283784674,
+        "compression_ratio": 1.3850574712643677,
+        "no_speech_prob": 0.8060289025306702,
+        "words": [
+          {
+            "word": " Ah,",
+            "start": 334.66,
+            "end": 335.06,
+            "probability": 0.6416856050491333
+          },
+          {
+            "word": " que",
+            "start": 335.36,
+            "end": 335.54,
+            "probability": 0.05852283537387848
+          },
+          {
+            "word": " tal.",
+            "start": 335.54,
+            "end": 335.72,
+            "probability": 0.17618721723556519
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "seek": 31768,
+        "start": 337.62,
+        "end": 338.48,
+        "text": " Voy a estar aquí.",
+        "tokens": [
+          51364,
+          25563,
+          257,
+          8755,
+          6661,
+          13,
+          51414
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9437217283784674,
+        "compression_ratio": 1.3850574712643677,
+        "no_speech_prob": 0.8060289025306702,
+        "words": [
+          {
+            "word": " Voy",
+            "start": 337.62,
+            "end": 338.02,
+            "probability": 0.0963590145111084
+          },
+          {
+            "word": " a",
+            "start": 338.02,
+            "end": 338.26,
+            "probability": 0.8866500854492188
+          },
+          {
+            "word": " estar",
+            "start": 338.26,
+            "end": 338.26,
+            "probability": 0.40266793966293335
+          },
+          {
+            "word": " aquí.",
+            "start": 338.26,
+            "end": 338.48,
+            "probability": 0.8935860395431519
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "seek": 34768,
+        "start": 347.68,
+        "end": 347.68,
+        "text": "",
+        "tokens": [],
+        "temperature": 1.0,
+        "avg_logprob": -3.783121209395559,
+        "compression_ratio": 1.1507936507936507,
+        "no_speech_prob": 0.2017267793416977,
+        "words": []
+      },
+      {
+        "id": 24,
+        "seek": 34768,
+        "start": 353.1,
+        "end": 354.9,
+        "text": " Eso me causa gustos.",
+        "tokens": [
+          50714,
+          27795,
+          385,
+          23667,
+          9679,
+          329,
+          13,
+          50814
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.783121209395559,
+        "compression_ratio": 1.1507936507936507,
+        "no_speech_prob": 0.2017267793416977,
+        "words": [
+          {
+            "word": " Eso",
+            "start": 353.1,
+            "end": 354.1,
+            "probability": 0.004321201238781214
+          },
+          {
+            "word": " me",
+            "start": 354.1,
+            "end": 354.36,
+            "probability": 0.0872620940208435
+          },
+          {
+            "word": " causa",
+            "start": 354.36,
+            "end": 354.4,
+            "probability": 0.0012998778838664293
+          },
+          {
+            "word": " gustos.",
+            "start": 354.4,
+            "end": 354.9,
+            "probability": 0.393047616500553
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "seek": 34768,
+        "start": 355.96,
+        "end": 360.64,
+        "text": " En cadattto más de la vencura buses no?",
+        "tokens": [
+          50814,
+          2193,
+          8411,
+          6319,
+          1353,
+          3573,
+          368,
+          635,
+          6138,
+          66,
+          2991,
+          20519,
+          572,
+          30,
+          51014
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.783121209395559,
+        "compression_ratio": 1.1507936507936507,
+        "no_speech_prob": 0.2017267793416977,
+        "words": [
+          {
+            "word": " En",
+            "start": 355.96,
+            "end": 356.26,
+            "probability": 0.003333047032356262
+          },
+          {
+            "word": " cadattto",
+            "start": 356.26,
+            "end": 356.62,
+            "probability": 0.019333704937632017
+          },
+          {
+            "word": " más",
+            "start": 356.62,
+            "end": 356.64,
+            "probability": 0.0014218086143955588
+          },
+          {
+            "word": " de",
+            "start": 356.64,
+            "end": 356.64,
+            "probability": 0.10897736251354218
+          },
+          {
+            "word": " la",
+            "start": 356.64,
+            "end": 356.64,
+            "probability": 0.07578080892562866
+          },
+          {
+            "word": " vencura",
+            "start": 356.64,
+            "end": 357.06,
+            "probability": 0.057580579382677875
+          },
+          {
+            "word": " buses",
+            "start": 357.06,
+            "end": 359.6,
+            "probability": 8.559880370739847e-06
+          },
+          {
+            "word": " no?",
+            "start": 359.6,
+            "end": 360.64,
+            "probability": 0.019384896382689476
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "seek": 34768,
+        "start": 360.64,
+        "end": 362.64,
+        "text": " Bebraroná largos, parqueas,prübes,",
+        "tokens": [
+          51014,
+          879,
+          1443,
+          6372,
+          842,
+          11034,
+          329,
+          11,
+          971,
+          1077,
+          296,
+          11,
+          48715,
+          6446,
+          11,
+          51264
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.783121209395559,
+        "compression_ratio": 1.1507936507936507,
+        "no_speech_prob": 0.2017267793416977,
+        "words": [
+          {
+            "word": " Bebraroná",
+            "start": 360.64,
+            "end": 361.4,
+            "probability": 0.06987517089328321
+          },
+          {
+            "word": " largos,",
+            "start": 361.4,
+            "end": 361.4,
+            "probability": 0.11246412554919516
+          },
+          {
+            "word": " parqueas",
+            "start": 361.52,
+            "end": 362.38,
+            "probability": 0.053502505916791655
+          },
+          {
+            "word": ",prübes,",
+            "start": 362.38,
+            "end": 362.64,
+            "probability": 0.1283887697851848
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "seek": 34768,
+        "start": 363.96,
+        "end": 365.92,
+        "text": " No hay mucho buen día aquí,",
+        "tokens": [
+          51264,
+          883,
+          4842,
+          9824,
+          30037,
+          12271,
+          6661,
+          11,
+          51832
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.783121209395559,
+        "compression_ratio": 1.1507936507936507,
+        "no_speech_prob": 0.2017267793416977,
+        "words": [
+          {
+            "word": " No",
+            "start": 363.96,
+            "end": 363.96,
+            "probability": 0.000259775115409866
+          },
+          {
+            "word": " hay",
+            "start": 363.96,
+            "end": 364.28,
+            "probability": 0.043172501027584076
+          },
+          {
+            "word": " mucho",
+            "start": 364.28,
+            "end": 364.44,
+            "probability": 0.46873798966407776
+          },
+          {
+            "word": " buen",
+            "start": 364.44,
+            "end": 365.1,
+            "probability": 0.0010632631601765752
+          },
+          {
+            "word": " día",
+            "start": 365.1,
+            "end": 365.34,
+            "probability": 0.5546149611473083
+          },
+          {
+            "word": " aquí,",
+            "start": 365.34,
+            "end": 365.92,
+            "probability": 0.017055759206414223
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "seek": 45592,
+        "start": 456.58,
+        "end": 458.02,
+        "text": " que siempre tenía como no,",
+        "tokens": [
+          50364,
+          631,
+          12758,
+          23718,
+          2617,
+          572,
+          11,
+          50464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " que",
+            "start": 456.58,
+            "end": 456.94,
+            "probability": 0.042236555367708206
+          },
+          {
+            "word": " siempre",
+            "start": 456.94,
+            "end": 457.3,
+            "probability": 0.5343764424324036
+          },
+          {
+            "word": " tenía",
+            "start": 457.3,
+            "end": 457.68,
+            "probability": 0.15437248349189758
+          },
+          {
+            "word": " como",
+            "start": 457.68,
+            "end": 457.86,
+            "probability": 0.44764259457588196
+          },
+          {
+            "word": " no,",
+            "start": 457.86,
+            "end": 458.02,
+            "probability": 0.10608480870723724
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "seek": 45592,
+        "start": 458.12,
+        "end": 458.9,
+        "text": " ya no está ni el cero,",
+        "tokens": [
+          50464,
+          2478,
+          572,
+          3192,
+          3867,
+          806,
+          269,
+          2032,
+          11,
+          50514
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " ya",
+            "start": 458.12,
+            "end": 458.22,
+            "probability": 0.21689696609973907
+          },
+          {
+            "word": " no",
+            "start": 458.22,
+            "end": 458.32,
+            "probability": 0.2720501124858856
+          },
+          {
+            "word": " está",
+            "start": 458.32,
+            "end": 458.46,
+            "probability": 0.1944754272699356
+          },
+          {
+            "word": " ni",
+            "start": 458.46,
+            "end": 458.64,
+            "probability": 0.5111492276191711
+          },
+          {
+            "word": " el",
+            "start": 458.64,
+            "end": 458.78,
+            "probability": 0.1438392847776413
+          },
+          {
+            "word": " cero,",
+            "start": 458.78,
+            "end": 458.9,
+            "probability": 0.09750415198504925
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "seek": 45592,
+        "start": 459.02,
+        "end": 459.72,
+        "text": " pero a ver, entonces,",
+        "tokens": [
+          50514,
+          4768,
+          257,
+          1306,
+          11,
+          13003,
+          11,
+          50564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " pero",
+            "start": 459.02,
+            "end": 459.18,
+            "probability": 0.7413299679756165
+          },
+          {
+            "word": " a",
+            "start": 459.18,
+            "end": 459.28,
+            "probability": 0.15439821779727936
+          },
+          {
+            "word": " ver,",
+            "start": 459.28,
+            "end": 459.36,
+            "probability": 0.2927885353565216
+          },
+          {
+            "word": " entonces,",
+            "start": 459.52,
+            "end": 459.72,
+            "probability": 0.32711121439933777
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "seek": 45592,
+        "start": 459.9,
+        "end": 461.58,
+        "text": " nosotros no van a tener nada.",
+        "tokens": [
+          50564,
+          13863,
+          572,
+          3161,
+          257,
+          11640,
+          8096,
+          13,
+          50614
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " nosotros",
+            "start": 459.9,
+            "end": 460.26,
+            "probability": 0.06553018093109131
+          },
+          {
+            "word": " no",
+            "start": 460.26,
+            "end": 460.44,
+            "probability": 0.169269859790802
+          },
+          {
+            "word": " van",
+            "start": 460.44,
+            "end": 460.52,
+            "probability": 0.13365429639816284
+          },
+          {
+            "word": " a",
+            "start": 460.52,
+            "end": 460.76,
+            "probability": 0.905917227268219
+          },
+          {
+            "word": " tener",
+            "start": 460.76,
+            "end": 461.08,
+            "probability": 0.27601712942123413
+          },
+          {
+            "word": " nada.",
+            "start": 461.08,
+            "end": 461.58,
+            "probability": 0.3903568983078003
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "seek": 45592,
+        "start": 462.3,
+        "end": 462.66,
+        "text": " Pero...",
+        "tokens": [
+          50614,
+          9377,
+          485,
+          50664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " Pero...",
+            "start": 462.3,
+            "end": 462.66,
+            "probability": 0.09042752161622047
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "seek": 45592,
+        "start": 464.26,
+        "end": 466.02,
+        "text": " es una cosa muy muy buena.",
+        "tokens": [
+          50764,
+          785,
+          2002,
+          10163,
+          5323,
+          5323,
+          25710,
+          13,
+          50864
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " es",
+            "start": 464.26,
+            "end": 464.62,
+            "probability": 0.030092058703303337
+          },
+          {
+            "word": " una",
+            "start": 464.62,
+            "end": 464.76,
+            "probability": 0.28968337178230286
+          },
+          {
+            "word": " cosa",
+            "start": 464.76,
+            "end": 465.22,
+            "probability": 0.021905286237597466
+          },
+          {
+            "word": " muy",
+            "start": 465.22,
+            "end": 465.22,
+            "probability": 0.24505116045475006
+          },
+          {
+            "word": " muy",
+            "start": 465.22,
+            "end": 465.56,
+            "probability": 0.06246904283761978
+          },
+          {
+            "word": " buena.",
+            "start": 465.56,
+            "end": 466.02,
+            "probability": 0.1834024339914322
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "seek": 45592,
+        "start": 466.5,
+        "end": 467.46,
+        "text": " Sí, ya, pues, a ver,",
+        "tokens": [
+          50864,
+          12375,
+          11,
+          2478,
+          11,
+          11059,
+          11,
+          257,
+          1306,
+          11,
+          50914
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " Sí,",
+            "start": 466.5,
+            "end": 466.86,
+            "probability": 0.6848041415214539
+          },
+          {
+            "word": " ya,",
+            "start": 467.0,
+            "end": 467.14,
+            "probability": 0.2477949857711792
+          },
+          {
+            "word": " pues,",
+            "start": 467.14,
+            "end": 467.24,
+            "probability": 0.533314049243927
+          },
+          {
+            "word": " a",
+            "start": 467.34,
+            "end": 467.36,
+            "probability": 0.35299739241600037
+          },
+          {
+            "word": " ver,",
+            "start": 467.36,
+            "end": 467.46,
+            "probability": 0.7040470242500305
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "seek": 45592,
+        "start": 467.46,
+        "end": 468.26,
+        "text": " que tiene buena seguridad,",
+        "tokens": [
+          50914,
+          631,
+          7066,
+          25710,
+          35415,
+          11,
+          50964
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " que",
+            "start": 467.46,
+            "end": 467.54,
+            "probability": 0.7240929007530212
+          },
+          {
+            "word": " tiene",
+            "start": 467.54,
+            "end": 467.72,
+            "probability": 0.889525294303894
+          },
+          {
+            "word": " buena",
+            "start": 467.72,
+            "end": 467.92,
+            "probability": 0.8705416321754456
+          },
+          {
+            "word": " seguridad,",
+            "start": 467.92,
+            "end": 468.26,
+            "probability": 0.893521249294281
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "seek": 45592,
+        "start": 468.78,
+        "end": 469.56,
+        "text": " porque hoy, si, ya,",
+        "tokens": [
+          50964,
+          4021,
+          13775,
+          11,
+          1511,
+          11,
+          2478,
+          11,
+          51014
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " porque",
+            "start": 468.78,
+            "end": 468.94,
+            "probability": 0.9778456091880798
+          },
+          {
+            "word": " hoy,",
+            "start": 468.94,
+            "end": 469.16,
+            "probability": 0.6095792055130005
+          },
+          {
+            "word": " si,",
+            "start": 469.24,
+            "end": 469.32,
+            "probability": 0.10390546172857285
+          },
+          {
+            "word": " ya,",
+            "start": 469.4,
+            "end": 469.56,
+            "probability": 0.6809305548667908
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "seek": 45592,
+        "start": 469.64,
+        "end": 470.36,
+        "text": " tienen mucha seguridad.",
+        "tokens": [
+          51014,
+          12536,
+          25248,
+          35415,
+          13,
+          51064
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " tienen",
+            "start": 469.64,
+            "end": 469.74,
+            "probability": 0.5332823991775513
+          },
+          {
+            "word": " mucha",
+            "start": 469.74,
+            "end": 470.02,
+            "probability": 0.7476674914360046
+          },
+          {
+            "word": " seguridad.",
+            "start": 470.02,
+            "end": 470.36,
+            "probability": 0.9227724671363831
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "seek": 45592,
+        "start": 470.74,
+        "end": 472.04,
+        "text": " Pero es por eso que tienen,",
+        "tokens": [
+          51064,
+          9377,
+          785,
+          1515,
+          7287,
+          631,
+          12536,
+          11,
+          51164
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " Pero",
+            "start": 470.74,
+            "end": 470.92,
+            "probability": 0.2994612455368042
+          },
+          {
+            "word": " es",
+            "start": 470.92,
+            "end": 471.06,
+            "probability": 0.40174400806427
+          },
+          {
+            "word": " por",
+            "start": 471.06,
+            "end": 471.18,
+            "probability": 0.5891836881637573
+          },
+          {
+            "word": " eso",
+            "start": 471.18,
+            "end": 471.46,
+            "probability": 0.9269669651985168
+          },
+          {
+            "word": " que",
+            "start": 471.46,
+            "end": 471.7,
+            "probability": 0.8397990465164185
+          },
+          {
+            "word": " tienen,",
+            "start": 471.7,
+            "end": 472.04,
+            "probability": 0.16359536349773407
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "seek": 45592,
+        "start": 472.26,
+        "end": 473.32,
+        "text": " pues, es una zona",
+        "tokens": [
+          51164,
+          11059,
+          11,
+          785,
+          2002,
+          24848,
+          51214
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " pues,",
+            "start": 472.26,
+            "end": 472.36,
+            "probability": 0.9570102095603943
+          },
+          {
+            "word": " es",
+            "start": 472.82,
+            "end": 472.98,
+            "probability": 0.655372679233551
+          },
+          {
+            "word": " una",
+            "start": 472.98,
+            "end": 473.12,
+            "probability": 0.9816550016403198
+          },
+          {
+            "word": " zona",
+            "start": 473.12,
+            "end": 473.32,
+            "probability": 0.9411736130714417
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "seek": 45592,
+        "start": 473.32,
+        "end": 474.76,
+        "text": " que se llama de tolerancia",
+        "tokens": [
+          51214,
+          631,
+          369,
+          23272,
+          368,
+          11125,
+          22862,
+          51314
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " que",
+            "start": 473.32,
+            "end": 473.52,
+            "probability": 0.3840947151184082
+          },
+          {
+            "word": " se",
+            "start": 473.52,
+            "end": 473.84,
+            "probability": 0.19224341213703156
+          },
+          {
+            "word": " llama",
+            "start": 473.84,
+            "end": 474.0,
+            "probability": 0.9551353454589844
+          },
+          {
+            "word": " de",
+            "start": 474.0,
+            "end": 474.16,
+            "probability": 0.27419179677963257
+          },
+          {
+            "word": " tolerancia",
+            "start": 474.16,
+            "end": 474.76,
+            "probability": 0.8283247947692871
+          }
+        ]
+      },
+      {
+        "id": 41,
+        "seek": 45592,
+        "start": 474.76,
+        "end": 475.6,
+        "text": " con tu.",
+        "tokens": [
+          51314,
+          416,
+          2604,
+          13,
+          51364
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " con",
+            "start": 474.76,
+            "end": 475.44,
+            "probability": 0.20395724475383759
+          },
+          {
+            "word": " tu.",
+            "start": 475.44,
+            "end": 475.6,
+            "probability": 0.2527438998222351
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "seek": 45592,
+        "start": 476.18,
+        "end": 477.3,
+        "text": " Y no dirás que no son",
+        "tokens": [
+          51364,
+          398,
+          572,
+          4746,
+          2490,
+          631,
+          572,
+          1872,
+          51414
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " Y",
+            "start": 476.18,
+            "end": 476.42,
+            "probability": 0.20696377754211426
+          },
+          {
+            "word": " no",
+            "start": 476.42,
+            "end": 476.56,
+            "probability": 0.15007637441158295
+          },
+          {
+            "word": " dirás",
+            "start": 476.56,
+            "end": 476.84,
+            "probability": 0.6392436772584915
+          },
+          {
+            "word": " que",
+            "start": 476.84,
+            "end": 476.98,
+            "probability": 0.549265444278717
+          },
+          {
+            "word": " no",
+            "start": 476.98,
+            "end": 477.1,
+            "probability": 0.6281445026397705
+          },
+          {
+            "word": " son",
+            "start": 477.1,
+            "end": 477.3,
+            "probability": 0.3079880177974701
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "seek": 45592,
+        "start": 477.3,
+        "end": 477.92,
+        "text": " una aceleración.",
+        "tokens": [
+          51414,
+          2002,
+          696,
+          6185,
+          3482,
+          13,
+          51464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " una",
+            "start": 477.3,
+            "end": 477.54,
+            "probability": 0.0576748251914978
+          },
+          {
+            "word": " aceleración.",
+            "start": 477.54,
+            "end": 477.92,
+            "probability": 0.5072719566524029
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "seek": 45592,
+        "start": 478.4,
+        "end": 478.52,
+        "text": " No.",
+        "tokens": [
+          51464,
+          883,
+          13,
+          51514
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " No.",
+            "start": 478.4,
+            "end": 478.52,
+            "probability": 0.8127710223197937
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "seek": 45592,
+        "start": 483.18,
+        "end": 483.84,
+        "text": " ¿Cómo se?",
+        "tokens": [
+          51714,
+          3841,
+          28342,
+          369,
+          30,
+          51764
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8540292822796366,
+        "compression_ratio": 1.5702127659574467,
+        "no_speech_prob": 0.933519721031189,
+        "words": [
+          {
+            "word": " ¿Cómo",
+            "start": 483.18,
+            "end": 483.54,
+            "probability": 0.3725708946585655
+          },
+          {
+            "word": " se?",
+            "start": 483.54,
+            "end": 483.84,
+            "probability": 0.11738555878400803
+          }
+        ]
+      },
+      {
+        "id": 46,
+        "seek": 48384,
+        "start": 485.36,
+        "end": 487.2,
+        "text": " Claro, aquí, si, ya,",
+        "tokens": [
+          50414,
+          33380,
+          11,
+          6661,
+          11,
+          1511,
+          11,
+          2478,
+          11,
+          50514
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " Claro,",
+            "start": 485.36,
+            "end": 485.8,
+            "probability": 0.0023220828734338284
+          },
+          {
+            "word": " aquí,",
+            "start": 485.98,
+            "end": 486.2,
+            "probability": 0.4198484718799591
+          },
+          {
+            "word": " si,",
+            "start": 486.32,
+            "end": 486.66,
+            "probability": 0.16021519899368286
+          },
+          {
+            "word": " ya,",
+            "start": 486.92,
+            "end": 487.2,
+            "probability": 0.5716522932052612
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "seek": 48384,
+        "start": 487.28,
+        "end": 487.9,
+        "text": " me ha quedado mucho,",
+        "tokens": [
+          50514,
+          385,
+          324,
+          13617,
+          1573,
+          9824,
+          11,
+          50564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " me",
+            "start": 487.28,
+            "end": 487.36,
+            "probability": 0.8268854022026062
+          },
+          {
+            "word": " ha",
+            "start": 487.36,
+            "end": 487.42,
+            "probability": 0.43690183758735657
+          },
+          {
+            "word": " quedado",
+            "start": 487.42,
+            "end": 487.62,
+            "probability": 0.5318409502506256
+          },
+          {
+            "word": " mucho,",
+            "start": 487.62,
+            "end": 487.9,
+            "probability": 0.9116373658180237
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "seek": 48384,
+        "start": 488.24,
+        "end": 489.66,
+        "text": " mucho más más controlado",
+        "tokens": [
+          50564,
+          9824,
+          3573,
+          3573,
+          1969,
+          1573,
+          50614
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " mucho",
+            "start": 488.24,
+            "end": 488.68,
+            "probability": 0.8994588851928711
+          },
+          {
+            "word": " más",
+            "start": 488.68,
+            "end": 488.94,
+            "probability": 0.7109069228172302
+          },
+          {
+            "word": " más",
+            "start": 488.94,
+            "end": 489.14,
+            "probability": 0.22359007596969604
+          },
+          {
+            "word": " controlado",
+            "start": 489.14,
+            "end": 489.66,
+            "probability": 0.4713415652513504
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "seek": 48384,
+        "start": 489.66,
+        "end": 491.12,
+        "text": " por el comercio,",
+        "tokens": [
+          50614,
+          1515,
+          806,
+          16510,
+          8529,
+          11,
+          50664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " por",
+            "start": 489.66,
+            "end": 490.18,
+            "probability": 0.5752618312835693
+          },
+          {
+            "word": " el",
+            "start": 490.18,
+            "end": 490.4,
+            "probability": 0.7728137969970703
+          },
+          {
+            "word": " comercio,",
+            "start": 490.4,
+            "end": 491.12,
+            "probability": 0.4849118683487177
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "seek": 48384,
+        "start": 491.24,
+        "end": 491.58,
+        "text": " por el comercio,",
+        "tokens": [
+          50664,
+          1515,
+          806,
+          16510,
+          8529,
+          11,
+          50714
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " por",
+            "start": 491.24,
+            "end": 491.34,
+            "probability": 0.19341810047626495
+          },
+          {
+            "word": " el",
+            "start": 491.34,
+            "end": 491.44,
+            "probability": 0.5719925165176392
+          },
+          {
+            "word": " comercio,",
+            "start": 491.44,
+            "end": 491.58,
+            "probability": 0.702320858836174
+          }
+        ]
+      },
+      {
+        "id": 51,
+        "seek": 48384,
+        "start": 491.9,
+        "end": 492.62,
+        "text": " para la inmigración.",
+        "tokens": [
+          50714,
+          1690,
+          635,
+          41052,
+          328,
+          46205,
+          13,
+          50814
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " para",
+            "start": 491.9,
+            "end": 492.1,
+            "probability": 0.19881795346736908
+          },
+          {
+            "word": " la",
+            "start": 492.1,
+            "end": 492.24,
+            "probability": 0.07650060951709747
+          },
+          {
+            "word": " inmigración.",
+            "start": 492.24,
+            "end": 492.62,
+            "probability": 0.507881491134564
+          }
+        ]
+      },
+      {
+        "id": 52,
+        "seek": 48384,
+        "start": 494.56,
+        "end": 495.66,
+        "text": " Ya tienen la sensación",
+        "tokens": [
+          50864,
+          6080,
+          12536,
+          635,
+          2923,
+          3482,
+          50914
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " Ya",
+            "start": 494.56,
+            "end": 495.0,
+            "probability": 0.12245308607816696
+          },
+          {
+            "word": " tienen",
+            "start": 495.0,
+            "end": 495.22,
+            "probability": 0.5518261194229126
+          },
+          {
+            "word": " la",
+            "start": 495.22,
+            "end": 495.4,
+            "probability": 0.31189411878585815
+          },
+          {
+            "word": " sensación",
+            "start": 495.4,
+            "end": 495.66,
+            "probability": 0.49302697740495205
+          }
+        ]
+      },
+      {
+        "id": 53,
+        "seek": 48384,
+        "start": 495.66,
+        "end": 496.08,
+        "text": " de la capturía,",
+        "tokens": [
+          50914,
+          368,
+          635,
+          3770,
+          374,
+          2686,
+          11,
+          50964
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " de",
+            "start": 495.66,
+            "end": 495.8,
+            "probability": 0.7011919617652893
+          },
+          {
+            "word": " la",
+            "start": 495.8,
+            "end": 495.8,
+            "probability": 0.09902742505073547
+          },
+          {
+            "word": " capturía,",
+            "start": 495.8,
+            "end": 496.08,
+            "probability": 0.33039673045277596
+          }
+        ]
+      },
+      {
+        "id": 54,
+        "seek": 48384,
+        "start": 496.42,
+        "end": 496.96,
+        "text": " porque, en este,",
+        "tokens": [
+          50964,
+          4021,
+          11,
+          465,
+          4065,
+          11,
+          51014
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " porque,",
+            "start": 496.42,
+            "end": 496.6,
+            "probability": 0.029911484569311142
+          },
+          {
+            "word": " en",
+            "start": 496.72,
+            "end": 496.9,
+            "probability": 0.2366616129875183
+          },
+          {
+            "word": " este,",
+            "start": 496.9,
+            "end": 496.96,
+            "probability": 0.14827385544776917
+          }
+        ]
+      },
+      {
+        "id": 55,
+        "seek": 48384,
+        "start": 496.96,
+        "end": 497.78,
+        "text": " se ve una capturía.",
+        "tokens": [
+          51014,
+          369,
+          1241,
+          2002,
+          3770,
+          374,
+          2686,
+          13,
+          51064
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " se",
+            "start": 496.96,
+            "end": 497.16,
+            "probability": 0.1427146941423416
+          },
+          {
+            "word": " ve",
+            "start": 497.16,
+            "end": 497.22,
+            "probability": 0.18031060695648193
+          },
+          {
+            "word": " una",
+            "start": 497.22,
+            "end": 497.5,
+            "probability": 0.2609426975250244
+          },
+          {
+            "word": " capturía.",
+            "start": 497.5,
+            "end": 497.78,
+            "probability": 0.9735018213589987
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "seek": 48384,
+        "start": 499.52,
+        "end": 500.4,
+        "text": " El narcoturismo,",
+        "tokens": [
+          51114,
+          2699,
+          21328,
+          310,
+          374,
+          6882,
+          11,
+          51164
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " El",
+            "start": 499.52,
+            "end": 499.96,
+            "probability": 0.2162582278251648
+          },
+          {
+            "word": " narcoturismo,",
+            "start": 499.96,
+            "end": 500.4,
+            "probability": 0.7324117869138718
+          }
+        ]
+      },
+      {
+        "id": 57,
+        "seek": 48384,
+        "start": 500.58,
+        "end": 501.04,
+        "text": " lo hay,",
+        "tokens": [
+          51164,
+          450,
+          4842,
+          11,
+          51214
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " lo",
+            "start": 500.58,
+            "end": 500.82,
+            "probability": 0.3844960927963257
+          },
+          {
+            "word": " hay,",
+            "start": 500.82,
+            "end": 501.04,
+            "probability": 0.1545172482728958
+          }
+        ]
+      },
+      {
+        "id": 58,
+        "seek": 48384,
+        "start": 501.14,
+        "end": 501.3,
+        "text": " se ve,",
+        "tokens": [
+          51214,
+          369,
+          1241,
+          11,
+          51264
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " se",
+            "start": 501.14,
+            "end": 501.24,
+            "probability": 0.6320496201515198
+          },
+          {
+            "word": " ve,",
+            "start": 501.24,
+            "end": 501.3,
+            "probability": 0.0854850634932518
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "seek": 48384,
+        "start": 501.34,
+        "end": 505.84,
+        "text": " más o más...",
+        "tokens": [
+          51414,
+          3573,
+          277,
+          3573,
+          485,
+          51464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " más",
+            "start": 501.34,
+            "end": 501.7,
+            "probability": 0.0162787027657032
+          },
+          {
+            "word": " o",
+            "start": 501.7,
+            "end": 505.78,
+            "probability": 0.31144362688064575
+          },
+          {
+            "word": " más...",
+            "start": 505.78,
+            "end": 506.0,
+            "probability": 0.47456439584493637
+          }
+        ]
+      },
+      {
+        "id": 60,
+        "seek": 48384,
+        "start": 507.1,
+        "end": 508.06,
+        "text": " nosotros estamos en esto,",
+        "tokens": [
+          51514,
+          13863,
+          10382,
+          465,
+          7433,
+          11,
+          51564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " nosotros",
+            "start": 507.1,
+            "end": 507.42,
+            "probability": 0.008254352025687695
+          },
+          {
+            "word": " estamos",
+            "start": 507.42,
+            "end": 507.7,
+            "probability": 0.24401144683361053
+          },
+          {
+            "word": " en",
+            "start": 507.7,
+            "end": 507.88,
+            "probability": 0.7396787405014038
+          },
+          {
+            "word": " esto,",
+            "start": 507.88,
+            "end": 508.06,
+            "probability": 0.40944528579711914
+          }
+        ]
+      },
+      {
+        "id": 61,
+        "seek": 48384,
+        "start": 508.18,
+        "end": 508.34,
+        "text": " de vos.",
+        "tokens": [
+          51564,
+          368,
+          13845,
+          13,
+          51614
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " de",
+            "start": 508.18,
+            "end": 508.22,
+            "probability": 0.11545387655496597
+          },
+          {
+            "word": " vos.",
+            "start": 508.22,
+            "end": 508.34,
+            "probability": 0.12259989976882935
+          }
+        ]
+      },
+      {
+        "id": 62,
+        "seek": 48384,
+        "start": 509.88,
+        "end": 511.3,
+        "text": " Nos estamos un poco calentados",
+        "tokens": [
+          51664,
+          18749,
+          10382,
+          517,
+          10639,
+          2104,
+          317,
+          4181,
+          51714
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " Nos",
+            "start": 509.88,
+            "end": 510.26,
+            "probability": 0.6490346789360046
+          },
+          {
+            "word": " estamos",
+            "start": 510.26,
+            "end": 510.46,
+            "probability": 0.6518398523330688
+          },
+          {
+            "word": " un",
+            "start": 510.46,
+            "end": 510.8,
+            "probability": 0.3643531799316406
+          },
+          {
+            "word": " poco",
+            "start": 510.8,
+            "end": 510.8,
+            "probability": 0.8841320872306824
+          },
+          {
+            "word": " calentados",
+            "start": 510.8,
+            "end": 511.3,
+            "probability": 0.6869845787684122
+          }
+        ]
+      },
+      {
+        "id": 63,
+        "seek": 48384,
+        "start": 511.3,
+        "end": 512.04,
+        "text": " en el que es solar,",
+        "tokens": [
+          51714,
+          465,
+          806,
+          631,
+          785,
+          7936,
+          11,
+          51764
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7771209947990648,
+        "compression_ratio": 1.6231884057971016,
+        "no_speech_prob": 0.03357718884944916,
+        "words": [
+          {
+            "word": " en",
+            "start": 511.3,
+            "end": 511.46,
+            "probability": 0.6993283629417419
+          },
+          {
+            "word": " el",
+            "start": 511.46,
+            "end": 511.52,
+            "probability": 0.17046229541301727
+          },
+          {
+            "word": " que",
+            "start": 511.52,
+            "end": 511.6,
+            "probability": 0.08737597614526749
+          },
+          {
+            "word": " es",
+            "start": 511.6,
+            "end": 511.78,
+            "probability": 0.4426695704460144
+          },
+          {
+            "word": " solar,",
+            "start": 511.78,
+            "end": 512.04,
+            "probability": 0.07370493561029434
+          }
+        ]
+      },
+      {
+        "id": 64,
+        "seek": 51384,
+        "start": 513.84,
+        "end": 517.18,
+        "text": " que se va a hacer un poco de vacanciamiento,",
+        "tokens": [
+          50414,
+          631,
+          369,
+          2773,
+          257,
+          6720,
+          517,
+          10639,
+          368,
+          2842,
+          38840,
+          16971,
+          11,
+          50514
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " que",
+            "start": 513.84,
+            "end": 514.18,
+            "probability": 0.028396528214216232
+          },
+          {
+            "word": " se",
+            "start": 514.18,
+            "end": 514.58,
+            "probability": 0.0325508713722229
+          },
+          {
+            "word": " va",
+            "start": 514.58,
+            "end": 516.04,
+            "probability": 0.1794402152299881
+          },
+          {
+            "word": " a",
+            "start": 516.04,
+            "end": 516.12,
+            "probability": 0.822439968585968
+          },
+          {
+            "word": " hacer",
+            "start": 516.12,
+            "end": 516.18,
+            "probability": 0.1067308560013771
+          },
+          {
+            "word": " un",
+            "start": 516.18,
+            "end": 516.38,
+            "probability": 0.1366526484489441
+          },
+          {
+            "word": " poco",
+            "start": 516.38,
+            "end": 516.52,
+            "probability": 0.004768766462802887
+          },
+          {
+            "word": " de",
+            "start": 516.52,
+            "end": 516.66,
+            "probability": 0.7557477355003357
+          },
+          {
+            "word": " vacanciamiento,",
+            "start": 516.66,
+            "end": 517.18,
+            "probability": 0.5266271233558655
+          }
+        ]
+      },
+      {
+        "id": 65,
+        "seek": 51384,
+        "start": 517.38,
+        "end": 518.24,
+        "text": " para el comercio.",
+        "tokens": [
+          50514,
+          1690,
+          806,
+          16510,
+          8529,
+          13,
+          50564
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " para",
+            "start": 517.38,
+            "end": 517.92,
+            "probability": 0.1617075800895691
+          },
+          {
+            "word": " el",
+            "start": 517.92,
+            "end": 518.08,
+            "probability": 0.11267600208520889
+          },
+          {
+            "word": " comercio.",
+            "start": 518.08,
+            "end": 518.24,
+            "probability": 0.4365110845246818
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "seek": 51384,
+        "start": 518.24,
+        "end": 518.32,
+        "text": " Para el comercio,",
+        "tokens": [
+          50564,
+          11107,
+          806,
+          16510,
+          8529,
+          11,
+          50614
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " Para",
+            "start": 518.24,
+            "end": 518.24,
+            "probability": 0.011376241222023964
+          },
+          {
+            "word": " el",
+            "start": 518.24,
+            "end": 518.24,
+            "probability": 0.3495699167251587
+          },
+          {
+            "word": " comercio,",
+            "start": 518.24,
+            "end": 518.32,
+            "probability": 0.9640754759311676
+          }
+        ]
+      },
+      {
+        "id": 67,
+        "seek": 51384,
+        "start": 518.38,
+        "end": 519.84,
+        "text": " es un poco de precioso.",
+        "tokens": [
+          50614,
+          785,
+          517,
+          10639,
+          368,
+          659,
+          537,
+          9869,
+          13,
+          50664
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " es",
+            "start": 518.38,
+            "end": 518.56,
+            "probability": 0.08995484560728073
+          },
+          {
+            "word": " un",
+            "start": 518.56,
+            "end": 518.58,
+            "probability": 0.09491925686597824
+          },
+          {
+            "word": " poco",
+            "start": 518.58,
+            "end": 518.68,
+            "probability": 0.05235912650823593
+          },
+          {
+            "word": " de",
+            "start": 518.68,
+            "end": 518.84,
+            "probability": 0.9009897112846375
+          },
+          {
+            "word": " precioso.",
+            "start": 518.84,
+            "end": 519.84,
+            "probability": 0.2934584418932597
+          }
+        ]
+      },
+      {
+        "id": 68,
+        "seek": 51384,
+        "start": 520.82,
+        "end": 521.22,
+        "text": " Entonces,",
+        "tokens": [
+          50714,
+          15097,
+          11,
+          50764
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " Entonces,",
+            "start": 520.82,
+            "end": 521.22,
+            "probability": 0.06390353292226791
+          }
+        ]
+      },
+      {
+        "id": 69,
+        "seek": 51384,
+        "start": 521.48,
+        "end": 522.2,
+        "text": " para las restauraciones,",
+        "tokens": [
+          50764,
+          1690,
+          2439,
+          4793,
+          9188,
+          11,
+          50814
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " para",
+            "start": 521.48,
+            "end": 521.52,
+            "probability": 0.07212955504655838
+          },
+          {
+            "word": " las",
+            "start": 521.52,
+            "end": 521.7,
+            "probability": 0.12623381614685059
+          },
+          {
+            "word": " restauraciones,",
+            "start": 521.7,
+            "end": 522.2,
+            "probability": 0.3515740893781185
+          }
+        ]
+      },
+      {
+        "id": 70,
+        "seek": 51384,
+        "start": 523.8,
+        "end": 523.8,
+        "text": "",
+        "tokens": [],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": []
+      },
+      {
+        "id": 71,
+        "seek": 51384,
+        "start": 523.8,
+        "end": 524.64,
+        "text": " con las que son,",
+        "tokens": [
+          50864,
+          416,
+          2439,
+          631,
+          1872,
+          11,
+          50914
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " con",
+            "start": 523.8,
+            "end": 524.02,
+            "probability": 0.43126359581947327
+          },
+          {
+            "word": " las",
+            "start": 524.02,
+            "end": 524.22,
+            "probability": 0.6821407675743103
+          },
+          {
+            "word": " que",
+            "start": 524.22,
+            "end": 524.52,
+            "probability": 0.08903448283672333
+          },
+          {
+            "word": " son,",
+            "start": 524.52,
+            "end": 524.64,
+            "probability": 0.02773815207183361
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "seek": 51384,
+        "start": 524.72,
+        "end": 525.08,
+        "text": " que eran,",
+        "tokens": [
+          50914,
+          631,
+          32762,
+          11,
+          50964
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " que",
+            "start": 524.72,
+            "end": 524.82,
+            "probability": 0.3384931683540344
+          },
+          {
+            "word": " eran,",
+            "start": 524.82,
+            "end": 525.08,
+            "probability": 0.7056171894073486
+          }
+        ]
+      },
+      {
+        "id": 73,
+        "seek": 51384,
+        "start": 525.96,
+        "end": 526.42,
+        "text": " que eran,",
+        "tokens": [
+          50964,
+          631,
+          32762,
+          11,
+          51014
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " que",
+            "start": 525.96,
+            "end": 526.22,
+            "probability": 0.63035649061203
+          },
+          {
+            "word": " eran,",
+            "start": 526.22,
+            "end": 526.42,
+            "probability": 0.7530642151832581
+          }
+        ]
+      },
+      {
+        "id": 74,
+        "seek": 51384,
+        "start": 526.58,
+        "end": 527.08,
+        "text": " que eran,",
+        "tokens": [
+          51014,
+          631,
+          32762,
+          11,
+          51064
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " que",
+            "start": 526.58,
+            "end": 526.66,
+            "probability": 0.3732829988002777
+          },
+          {
+            "word": " eran,",
+            "start": 526.66,
+            "end": 527.08,
+            "probability": 0.44746679067611694
+          }
+        ]
+      },
+      {
+        "id": 75,
+        "seek": 51384,
+        "start": 527.94,
+        "end": 528.34,
+        "text": " pero,",
+        "tokens": [
+          51064,
+          4768,
+          11,
+          51114
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " pero,",
+            "start": 527.94,
+            "end": 528.34,
+            "probability": 0.08561420440673828
+          }
+        ]
+      },
+      {
+        "id": 76,
+        "seek": 51384,
+        "start": 528.5,
+        "end": 528.76,
+        "text": " en este momento,",
+        "tokens": [
+          51114,
+          465,
+          4065,
+          9333,
+          11,
+          51164
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " en",
+            "start": 528.5,
+            "end": 528.56,
+            "probability": 0.07847125828266144
+          },
+          {
+            "word": " este",
+            "start": 528.56,
+            "end": 528.62,
+            "probability": 0.09163621813058853
+          },
+          {
+            "word": " momento,",
+            "start": 528.62,
+            "end": 528.76,
+            "probability": 0.8536375164985657
+          }
+        ]
+      },
+      {
+        "id": 77,
+        "seek": 51384,
+        "start": 529.1,
+        "end": 529.84,
+        "text": " se pueden estar aquí,",
+        "tokens": [
+          51164,
+          369,
+          14714,
+          8755,
+          6661,
+          11,
+          51214
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " se",
+            "start": 529.1,
+            "end": 529.22,
+            "probability": 0.11449793726205826
+          },
+          {
+            "word": " pueden",
+            "start": 529.22,
+            "end": 529.4,
+            "probability": 0.09682437777519226
+          },
+          {
+            "word": " estar",
+            "start": 529.4,
+            "end": 529.62,
+            "probability": 0.08096545189619064
+          },
+          {
+            "word": " aquí,",
+            "start": 529.62,
+            "end": 529.84,
+            "probability": 0.30341023206710815
+          }
+        ]
+      },
+      {
+        "id": 78,
+        "seek": 51384,
+        "start": 530.98,
+        "end": 531.38,
+        "text": " controlando.",
+        "tokens": [
+          51214,
+          1969,
+          1806,
+          13,
+          51264
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " controlando.",
+            "start": 530.98,
+            "end": 531.38,
+            "probability": 0.346169076859951
+          }
+        ]
+      },
+      {
+        "id": 79,
+        "seek": 51384,
+        "start": 532.82,
+        "end": 533.42,
+        "text": " Muy bien,",
+        "tokens": [
+          51314,
+          39586,
+          3610,
+          11,
+          51364
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " Muy",
+            "start": 532.82,
+            "end": 533.22,
+            "probability": 0.6908078789710999
+          },
+          {
+            "word": " bien,",
+            "start": 533.22,
+            "end": 533.42,
+            "probability": 0.15848156809806824
+          }
+        ]
+      },
+      {
+        "id": 80,
+        "seek": 51384,
+        "start": 533.56,
+        "end": 533.92,
+        "text": " pero,",
+        "tokens": [
+          51364,
+          4768,
+          11,
+          51414
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " pero,",
+            "start": 533.56,
+            "end": 533.92,
+            "probability": 0.2734008729457855
+          }
+        ]
+      },
+      {
+        "id": 81,
+        "seek": 51384,
+        "start": 534.02,
+        "end": 535.16,
+        "text": " pero hay que artícalo",
+        "tokens": [
+          51414,
+          4768,
+          4842,
+          631,
+          1523,
+          870,
+          9895,
+          78,
+          51464
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " pero",
+            "start": 534.02,
+            "end": 534.54,
+            "probability": 0.4219382703304291
+          },
+          {
+            "word": " hay",
+            "start": 534.54,
+            "end": 534.64,
+            "probability": 0.27902674674987793
+          },
+          {
+            "word": " que",
+            "start": 534.64,
+            "end": 534.72,
+            "probability": 0.8885067105293274
+          },
+          {
+            "word": " artícalo",
+            "start": 534.72,
+            "end": 535.16,
+            "probability": 0.6709442287683487
+          }
+        ]
+      },
+      {
+        "id": 82,
+        "seek": 51384,
+        "start": 535.16,
+        "end": 535.54,
+        "text": " por aquí,",
+        "tokens": [
+          51464,
+          1515,
+          6661,
+          11,
+          51514
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " por",
+            "start": 535.16,
+            "end": 535.36,
+            "probability": 0.25686007738113403
+          },
+          {
+            "word": " aquí,",
+            "start": 535.36,
+            "end": 535.54,
+            "probability": 0.27116256952285767
+          }
+        ]
+      },
+      {
+        "id": 83,
+        "seek": 51384,
+        "start": 535.6,
+        "end": 535.76,
+        "text": " claro.",
+        "tokens": [
+          51514,
+          16742,
+          13,
+          51564
+        ],
+        "temperature": 0.2,
+        "avg_logprob": -0.7719124082535033,
+        "compression_ratio": 1.729281767955801,
+        "no_speech_prob": 0.005764423403888941,
+        "words": [
+          {
+            "word": " claro.",
+            "start": 535.6,
+            "end": 535.76,
+            "probability": 0.004039950668811798
+          }
+        ]
+      },
+      {
+        "id": 84,
+        "seek": 54384,
+        "start": 545.3599999999999,
+        "end": 546.62,
+        "text": " ¿Cómo, cómo hace el humor?",
+        "tokens": [
+          50414,
+          3841,
+          28342,
+          11,
+          12826,
+          10032,
+          806,
+          14318,
+          30,
+          50514
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " ¿Cómo,",
+            "start": 545.3599999999999,
+            "end": 545.8,
+            "probability": 0.4406970255076885
+          },
+          {
+            "word": " cómo",
+            "start": 545.88,
+            "end": 546.14,
+            "probability": 0.769202709197998
+          },
+          {
+            "word": " hace",
+            "start": 546.14,
+            "end": 546.3,
+            "probability": 0.21887744963169098
+          },
+          {
+            "word": " el",
+            "start": 546.3,
+            "end": 546.42,
+            "probability": 0.48012852668762207
+          },
+          {
+            "word": " humor?",
+            "start": 546.42,
+            "end": 546.62,
+            "probability": 0.25252628326416016
+          }
+        ]
+      },
+      {
+        "id": 85,
+        "seek": 54384,
+        "start": 547.16,
+        "end": 547.86,
+        "text": " Se quedará,",
+        "tokens": [
+          50514,
+          1100,
+          13617,
+          21534,
+          11,
+          50564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " Se",
+            "start": 547.16,
+            "end": 547.4,
+            "probability": 0.1566179245710373
+          },
+          {
+            "word": " quedará,",
+            "start": 547.4,
+            "end": 547.86,
+            "probability": 0.7309992611408234
+          }
+        ]
+      },
+      {
+        "id": 86,
+        "seek": 54384,
+        "start": 548.06,
+        "end": 548.78,
+        "text": " el clima para acá.",
+        "tokens": [
+          50564,
+          806,
+          596,
+          4775,
+          1690,
+          23496,
+          13,
+          50614
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " el",
+            "start": 548.06,
+            "end": 548.12,
+            "probability": 0.16183888912200928
+          },
+          {
+            "word": " clima",
+            "start": 548.12,
+            "end": 548.36,
+            "probability": 0.6440265774726868
+          },
+          {
+            "word": " para",
+            "start": 548.36,
+            "end": 548.58,
+            "probability": 0.28166434168815613
+          },
+          {
+            "word": " acá.",
+            "start": 548.58,
+            "end": 548.78,
+            "probability": 0.043273575603961945
+          }
+        ]
+      },
+      {
+        "id": 87,
+        "seek": 54384,
+        "start": 548.94,
+        "end": 549.12,
+        "text": " Muy,",
+        "tokens": [
+          50614,
+          39586,
+          11,
+          50664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " Muy,",
+            "start": 548.94,
+            "end": 549.12,
+            "probability": 0.5309498906135559
+          }
+        ]
+      },
+      {
+        "id": 88,
+        "seek": 54384,
+        "start": 549.34,
+        "end": 549.7,
+        "text": " a ver.",
+        "tokens": [
+          50664,
+          257,
+          1306,
+          13,
+          50714
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " a",
+            "start": 549.34,
+            "end": 549.44,
+            "probability": 0.179745614528656
+          },
+          {
+            "word": " ver.",
+            "start": 549.44,
+            "end": 549.7,
+            "probability": 0.14633531868457794
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "seek": 54384,
+        "start": 551.56,
+        "end": 552.7,
+        "text": " El clima se recibe,",
+        "tokens": [
+          50764,
+          2699,
+          596,
+          4775,
+          369,
+          4214,
+          650,
+          11,
+          50814
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " El",
+            "start": 551.56,
+            "end": 551.9,
+            "probability": 0.6758704781532288
+          },
+          {
+            "word": " clima",
+            "start": 551.9,
+            "end": 552.16,
+            "probability": 0.8498717546463013
+          },
+          {
+            "word": " se",
+            "start": 552.16,
+            "end": 552.4,
+            "probability": 0.28804224729537964
+          },
+          {
+            "word": " recibe,",
+            "start": 552.4,
+            "end": 552.7,
+            "probability": 0.4530268907546997
+          }
+        ]
+      },
+      {
+        "id": 90,
+        "seek": 54384,
+        "start": 553.02,
+        "end": 554.24,
+        "text": " está muy caliente,",
+        "tokens": [
+          50814,
+          3192,
+          5323,
+          2104,
+          8413,
+          11,
+          50864
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " está",
+            "start": 553.02,
+            "end": 553.02,
+            "probability": 0.4568607211112976
+          },
+          {
+            "word": " muy",
+            "start": 553.02,
+            "end": 553.56,
+            "probability": 0.8914269804954529
+          },
+          {
+            "word": " caliente,",
+            "start": 553.56,
+            "end": 554.24,
+            "probability": 0.9938601553440094
+          }
+        ]
+      },
+      {
+        "id": 91,
+        "seek": 54384,
+        "start": 555.2,
+        "end": 556.08,
+        "text": " la hostilación,",
+        "tokens": [
+          50914,
+          635,
+          3975,
+          388,
+          3482,
+          11,
+          50964
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " la",
+            "start": 555.2,
+            "end": 555.4,
+            "probability": 0.0753595232963562
+          },
+          {
+            "word": " hostilación,",
+            "start": 555.4,
+            "end": 556.08,
+            "probability": 0.6612847844759623
+          }
+        ]
+      },
+      {
+        "id": 92,
+        "seek": 54384,
+        "start": 557.78,
+        "end": 558.4,
+        "text": " y se,",
+        "tokens": [
+          51064,
+          288,
+          369,
+          11,
+          51114
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " y",
+            "start": 557.78,
+            "end": 558.18,
+            "probability": 0.20452840626239777
+          },
+          {
+            "word": " se,",
+            "start": 558.18,
+            "end": 558.4,
+            "probability": 0.2662430703639984
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "seek": 54384,
+        "start": 559.2199999999999,
+        "end": 560.08,
+        "text": " a día de,",
+        "tokens": [
+          51114,
+          257,
+          12271,
+          368,
+          11,
+          51164
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " a",
+            "start": 559.2199999999999,
+            "end": 559.66,
+            "probability": 0.19749002158641815
+          },
+          {
+            "word": " día",
+            "start": 559.66,
+            "end": 559.84,
+            "probability": 0.368076890707016
+          },
+          {
+            "word": " de,",
+            "start": 559.84,
+            "end": 560.08,
+            "probability": 0.9178099632263184
+          }
+        ]
+      },
+      {
+        "id": 94,
+        "seek": 54384,
+        "start": 560.7,
+        "end": 561.28,
+        "text": " en el que hace,",
+        "tokens": [
+          51214,
+          465,
+          806,
+          631,
+          10032,
+          11,
+          51264
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " en",
+            "start": 560.7,
+            "end": 560.9,
+            "probability": 0.1322191208600998
+          },
+          {
+            "word": " el",
+            "start": 560.9,
+            "end": 561.0,
+            "probability": 0.2402496039867401
+          },
+          {
+            "word": " que",
+            "start": 561.0,
+            "end": 561.06,
+            "probability": 0.059133030474185944
+          },
+          {
+            "word": " hace,",
+            "start": 561.06,
+            "end": 561.28,
+            "probability": 0.22949495911598206
+          }
+        ]
+      },
+      {
+        "id": 95,
+        "seek": 54384,
+        "start": 561.74,
+        "end": 562.04,
+        "text": " no sé,",
+        "tokens": [
+          51264,
+          572,
+          7910,
+          11,
+          51314
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " no",
+            "start": 561.74,
+            "end": 562.0,
+            "probability": 0.25346240401268005
+          },
+          {
+            "word": " sé,",
+            "start": 562.0,
+            "end": 562.04,
+            "probability": 0.4176657199859619
+          }
+        ]
+      },
+      {
+        "id": 96,
+        "seek": 54384,
+        "start": 562.72,
+        "end": 563.84,
+        "text": " más que tiene este tema,",
+        "tokens": [
+          51314,
+          3573,
+          631,
+          7066,
+          4065,
+          15854,
+          11,
+          51364
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " más",
+            "start": 562.72,
+            "end": 562.9,
+            "probability": 0.17416317760944366
+          },
+          {
+            "word": " que",
+            "start": 562.9,
+            "end": 563.14,
+            "probability": 0.4744040071964264
+          },
+          {
+            "word": " tiene",
+            "start": 563.14,
+            "end": 563.42,
+            "probability": 0.4106762111186981
+          },
+          {
+            "word": " este",
+            "start": 563.42,
+            "end": 563.6,
+            "probability": 0.6096938848495483
+          },
+          {
+            "word": " tema,",
+            "start": 563.6,
+            "end": 563.84,
+            "probability": 0.6263930797576904
+          }
+        ]
+      },
+      {
+        "id": 97,
+        "seek": 54384,
+        "start": 564.0,
+        "end": 564.3,
+        "text": " más lo apico,",
+        "tokens": [
+          51364,
+          3573,
+          450,
+          1882,
+          2789,
+          11,
+          51414
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " más",
+            "start": 564.0,
+            "end": 564.0,
+            "probability": 0.2763955295085907
+          },
+          {
+            "word": " lo",
+            "start": 564.0,
+            "end": 564.08,
+            "probability": 0.134257510304451
+          },
+          {
+            "word": " apico,",
+            "start": 564.08,
+            "end": 564.3,
+            "probability": 0.11653603240847588
+          }
+        ]
+      },
+      {
+        "id": 98,
+        "seek": 54384,
+        "start": 564.42,
+        "end": 564.96,
+        "text": " lo hace por aquí.",
+        "tokens": [
+          51414,
+          450,
+          10032,
+          1515,
+          6661,
+          13,
+          51464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " lo",
+            "start": 564.42,
+            "end": 564.48,
+            "probability": 0.8245877623558044
+          },
+          {
+            "word": " hace",
+            "start": 564.48,
+            "end": 564.62,
+            "probability": 0.9815236926078796
+          },
+          {
+            "word": " por",
+            "start": 564.62,
+            "end": 564.76,
+            "probability": 0.21780040860176086
+          },
+          {
+            "word": " aquí.",
+            "start": 564.76,
+            "end": 564.96,
+            "probability": 0.07179799675941467
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "seek": 54384,
+        "start": 565.98,
+        "end": 566.42,
+        "text": " Pero,",
+        "tokens": [
+          51464,
+          9377,
+          11,
+          51514
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " Pero,",
+            "start": 565.98,
+            "end": 566.42,
+            "probability": 0.5865670442581177
+          }
+        ]
+      },
+      {
+        "id": 100,
+        "seek": 54384,
+        "start": 566.5,
+        "end": 566.72,
+        "text": " por ejemplo,",
+        "tokens": [
+          51514,
+          1515,
+          13358,
+          11,
+          51564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " por",
+            "start": 566.5,
+            "end": 566.72,
+            "probability": 0.3825683891773224
+          },
+          {
+            "word": " ejemplo,",
+            "start": 566.72,
+            "end": 566.72,
+            "probability": 0.9958069324493408
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "seek": 54384,
+        "start": 567.06,
+        "end": 567.58,
+        "text": " en cuina,",
+        "tokens": [
+          51564,
+          465,
+          2702,
+          1426,
+          11,
+          51614
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " en",
+            "start": 567.06,
+            "end": 567.12,
+            "probability": 0.5138571858406067
+          },
+          {
+            "word": " cuina,",
+            "start": 567.12,
+            "end": 567.58,
+            "probability": 0.3973912578076124
+          }
+        ]
+      },
+      {
+        "id": 102,
+        "seek": 54384,
+        "start": 567.72,
+        "end": 568.48,
+        "text": " pero también es el calor,",
+        "tokens": [
+          51614,
+          4768,
+          6407,
+          785,
+          806,
+          31575,
+          11,
+          51664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " pero",
+            "start": 567.72,
+            "end": 567.78,
+            "probability": 0.6576788425445557
+          },
+          {
+            "word": " también",
+            "start": 567.78,
+            "end": 567.98,
+            "probability": 0.39618515968322754
+          },
+          {
+            "word": " es",
+            "start": 567.98,
+            "end": 568.12,
+            "probability": 0.17524071037769318
+          },
+          {
+            "word": " el",
+            "start": 568.12,
+            "end": 568.22,
+            "probability": 0.41409289836883545
+          },
+          {
+            "word": " calor,",
+            "start": 568.22,
+            "end": 568.48,
+            "probability": 0.9990058541297913
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "seek": 54384,
+        "start": 568.62,
+        "end": 569.28,
+        "text": " no es el calor.",
+        "tokens": [
+          51664,
+          572,
+          785,
+          806,
+          31575,
+          13,
+          51714
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.6527862548828125,
+        "compression_ratio": 1.4615384615384615,
+        "no_speech_prob": 0.1895768642425537,
+        "words": [
+          {
+            "word": " no",
+            "start": 568.62,
+            "end": 568.7,
+            "probability": 0.7208112478256226
+          },
+          {
+            "word": " es",
+            "start": 568.7,
+            "end": 568.78,
+            "probability": 0.3941359519958496
+          },
+          {
+            "word": " el",
+            "start": 568.78,
+            "end": 568.98,
+            "probability": 0.8189741373062134
+          },
+          {
+            "word": " calor.",
+            "start": 568.98,
+            "end": 569.28,
+            "probability": 0.6620833277702332
+          }
+        ]
+      },
+      {
+        "id": 104,
+        "seek": 56928,
+        "start": 569.28,
+        "end": 569.28,
+        "text": "",
+        "tokens": [],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": []
+      },
+      {
+        "id": 105,
+        "seek": 56928,
+        "start": 571.24,
+        "end": 572.3,
+        "text": " hay que más calor.",
+        "tokens": [
+          50464,
+          4842,
+          631,
+          3573,
+          31575,
+          13,
+          50514
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " hay",
+            "start": 571.24,
+            "end": 571.76,
+            "probability": 0.06540638953447342
+          },
+          {
+            "word": " que",
+            "start": 571.76,
+            "end": 571.86,
+            "probability": 0.194137305021286
+          },
+          {
+            "word": " más",
+            "start": 571.86,
+            "end": 572.12,
+            "probability": 0.10703418403863907
+          },
+          {
+            "word": " calor.",
+            "start": 572.12,
+            "end": 572.3,
+            "probability": 0.005636081099510193
+          }
+        ]
+      },
+      {
+        "id": 106,
+        "seek": 56928,
+        "start": 574.54,
+        "end": 574.88,
+        "text": " No,",
+        "tokens": [
+          50614,
+          883,
+          11,
+          50664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " No,",
+            "start": 574.54,
+            "end": 574.88,
+            "probability": 0.08424963057041168
+          }
+        ]
+      },
+      {
+        "id": 107,
+        "seek": 56928,
+        "start": 575.06,
+        "end": 575.66,
+        "text": " porque,",
+        "tokens": [
+          50714,
+          4021,
+          11,
+          50764
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " porque,",
+            "start": 575.06,
+            "end": 575.66,
+            "probability": 0.13906145095825195
+          }
+        ]
+      },
+      {
+        "id": 108,
+        "seek": 56928,
+        "start": 576.84,
+        "end": 578.0,
+        "text": " cuando estemos aquí,",
+        "tokens": [
+          50764,
+          7767,
+          871,
+          4485,
+          6661,
+          11,
+          50814
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " cuando",
+            "start": 576.84,
+            "end": 577.36,
+            "probability": 0.19945070147514343
+          },
+          {
+            "word": " estemos",
+            "start": 577.36,
+            "end": 577.74,
+            "probability": 0.42357033491134644
+          },
+          {
+            "word": " aquí,",
+            "start": 577.74,
+            "end": 578.0,
+            "probability": 0.1621522158384323
+          }
+        ]
+      },
+      {
+        "id": 109,
+        "seek": 56928,
+        "start": 578.12,
+        "end": 578.84,
+        "text": " un poquito de hilo,",
+        "tokens": [
+          50814,
+          517,
+          28229,
+          368,
+          276,
+          10720,
+          11,
+          50864
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " un",
+            "start": 578.12,
+            "end": 578.12,
+            "probability": 0.6576023697853088
+          },
+          {
+            "word": " poquito",
+            "start": 578.12,
+            "end": 578.32,
+            "probability": 0.9190884828567505
+          },
+          {
+            "word": " de",
+            "start": 578.32,
+            "end": 578.7,
+            "probability": 0.33626794815063477
+          },
+          {
+            "word": " hilo,",
+            "start": 578.7,
+            "end": 578.84,
+            "probability": 0.1887919157743454
+          }
+        ]
+      },
+      {
+        "id": 110,
+        "seek": 56928,
+        "start": 578.98,
+        "end": 579.58,
+        "text": " claro.",
+        "tokens": [
+          50864,
+          16742,
+          13,
+          50914
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " claro.",
+            "start": 578.98,
+            "end": 579.58,
+            "probability": 0.04419435188174248
+          }
+        ]
+      },
+      {
+        "id": 111,
+        "seek": 56928,
+        "start": 582.12,
+        "end": 582.66,
+        "text": " Para ganar,",
+        "tokens": [
+          51014,
+          11107,
+          7574,
+          289,
+          11,
+          51064
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " Para",
+            "start": 582.12,
+            "end": 582.38,
+            "probability": 0.4335483908653259
+          },
+          {
+            "word": " ganar,",
+            "start": 582.38,
+            "end": 582.66,
+            "probability": 0.7895729541778564
+          }
+        ]
+      },
+      {
+        "id": 112,
+        "seek": 56928,
+        "start": 582.8,
+        "end": 583.78,
+        "text": " un poquito de alucin,",
+        "tokens": [
+          51064,
+          517,
+          28229,
+          368,
+          419,
+          1311,
+          259,
+          11,
+          51114
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " un",
+            "start": 582.8,
+            "end": 583.0,
+            "probability": 0.048391878604888916
+          },
+          {
+            "word": " poquito",
+            "start": 583.0,
+            "end": 583.28,
+            "probability": 0.3383043110370636
+          },
+          {
+            "word": " de",
+            "start": 583.28,
+            "end": 583.44,
+            "probability": 0.9511500597000122
+          },
+          {
+            "word": " alucin,",
+            "start": 583.44,
+            "end": 583.78,
+            "probability": 0.32684025168418884
+          }
+        ]
+      },
+      {
+        "id": 113,
+        "seek": 56928,
+        "start": 583.9,
+        "end": 584.16,
+        "text": " por acá,",
+        "tokens": [
+          51114,
+          1515,
+          23496,
+          11,
+          51164
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " por",
+            "start": 583.9,
+            "end": 584.02,
+            "probability": 0.46005627512931824
+          },
+          {
+            "word": " acá,",
+            "start": 584.02,
+            "end": 584.16,
+            "probability": 0.1977374106645584
+          }
+        ]
+      },
+      {
+        "id": 114,
+        "seek": 56928,
+        "start": 584.24,
+        "end": 585.12,
+        "text": " es para,",
+        "tokens": [
+          51164,
+          785,
+          1690,
+          11,
+          51214
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " es",
+            "start": 584.24,
+            "end": 584.4,
+            "probability": 0.1306459754705429
+          },
+          {
+            "word": " para,",
+            "start": 584.4,
+            "end": 585.12,
+            "probability": 0.32310348749160767
+          }
+        ]
+      },
+      {
+        "id": 115,
+        "seek": 56928,
+        "start": 585.78,
+        "end": 586.12,
+        "text": " todo,",
+        "tokens": [
+          51214,
+          5149,
+          11,
+          51264
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " todo,",
+            "start": 585.78,
+            "end": 586.12,
+            "probability": 0.07770711183547974
+          }
+        ]
+      },
+      {
+        "id": 116,
+        "seek": 56928,
+        "start": 587.06,
+        "end": 587.7,
+        "text": " para coar,",
+        "tokens": [
+          51264,
+          1690,
+          598,
+          289,
+          11,
+          51314
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " para",
+            "start": 587.06,
+            "end": 587.28,
+            "probability": 0.14839065074920654
+          },
+          {
+            "word": " coar,",
+            "start": 587.28,
+            "end": 587.7,
+            "probability": 0.023283607326447964
+          }
+        ]
+      },
+      {
+        "id": 117,
+        "seek": 56928,
+        "start": 587.88,
+        "end": 588.38,
+        "text": " para que se pegue.",
+        "tokens": [
+          51314,
+          1690,
+          631,
+          369,
+          520,
+          11929,
+          13,
+          51364
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " para",
+            "start": 587.88,
+            "end": 588.0,
+            "probability": 0.6471077799797058
+          },
+          {
+            "word": " que",
+            "start": 588.0,
+            "end": 588.16,
+            "probability": 0.08060166239738464
+          },
+          {
+            "word": " se",
+            "start": 588.16,
+            "end": 588.26,
+            "probability": 0.27785229682922363
+          },
+          {
+            "word": " pegue.",
+            "start": 588.26,
+            "end": 588.38,
+            "probability": 0.2485401090234518
+          }
+        ]
+      },
+      {
+        "id": 118,
+        "seek": 56928,
+        "start": 590.38,
+        "end": 591.3,
+        "text": " Muy importante,",
+        "tokens": [
+          51414,
+          39586,
+          9416,
+          11,
+          51464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " Muy",
+            "start": 590.38,
+            "end": 590.9,
+            "probability": 0.33960291743278503
+          },
+          {
+            "word": " importante,",
+            "start": 590.9,
+            "end": 591.3,
+            "probability": 0.8187186121940613
+          }
+        ]
+      },
+      {
+        "id": 119,
+        "seek": 56928,
+        "start": 591.58,
+        "end": 591.74,
+        "text": " yo.",
+        "tokens": [
+          51464,
+          5290,
+          13,
+          51514
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " yo.",
+            "start": 591.58,
+            "end": 591.74,
+            "probability": 0.1277814656496048
+          }
+        ]
+      },
+      {
+        "id": 120,
+        "seek": 56928,
+        "start": 593.42,
+        "end": 593.98,
+        "text": " Me da,",
+        "tokens": [
+          51564,
+          1923,
+          1120,
+          11,
+          51614
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " Me",
+            "start": 593.42,
+            "end": 593.8,
+            "probability": 0.05359655246138573
+          },
+          {
+            "word": " da,",
+            "start": 593.8,
+            "end": 593.98,
+            "probability": 0.07111315429210663
+          }
+        ]
+      },
+      {
+        "id": 121,
+        "seek": 56928,
+        "start": 594.12,
+        "end": 594.26,
+        "text": " yo.",
+        "tokens": [
+          51614,
+          5290,
+          13,
+          51664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7713363949615176,
+        "compression_ratio": 1.4109589041095891,
+        "no_speech_prob": 0.07254781574010849,
+        "words": [
+          {
+            "word": " yo.",
+            "start": 594.12,
+            "end": 594.26,
+            "probability": 0.3712707757949829
+          }
+        ]
+      },
+      {
+        "id": 122,
+        "seek": 59426,
+        "start": 595.24,
+        "end": 595.88,
+        "text": " No,",
+        "tokens": [
+          50414,
+          883,
+          11,
+          50464
+        ],
+        "temperature": 0.8,
+        "avg_logprob": -0.8967488606770834,
+        "compression_ratio": 1.0,
+        "no_speech_prob": 0.7897697687149048,
+        "words": [
+          {
+            "word": " No,",
+            "start": 595.24,
+            "end": 595.88,
+            "probability": 0.014880985021591187
+          }
+        ]
+      },
+      {
+        "id": 123,
+        "seek": 59426,
+        "start": 595.88,
+        "end": 595.94,
+        "text": " no,",
+        "tokens": [
+          50514,
+          572,
+          11,
+          50564
+        ],
+        "temperature": 0.8,
+        "avg_logprob": -0.8967488606770834,
+        "compression_ratio": 1.0,
+        "no_speech_prob": 0.7897697687149048,
+        "words": [
+          {
+            "word": " no,",
+            "start": 595.88,
+            "end": 595.94,
+            "probability": 0.5606333017349243
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "seek": 59426,
+        "start": 595.94,
+        "end": 596.0,
+        "text": " no.",
+        "tokens": [
+          50564,
+          572,
+          13,
+          50614
+        ],
+        "temperature": 0.8,
+        "avg_logprob": -0.8967488606770834,
+        "compression_ratio": 1.0,
+        "no_speech_prob": 0.7897697687149048,
+        "words": [
+          {
+            "word": " no.",
+            "start": 595.94,
+            "end": 596.0,
+            "probability": 0.808479368686676
+          }
+        ]
+      },
+      {
+        "id": 125,
+        "seek": 59426,
+        "start": 599.42,
+        "end": 600.06,
+        "text": " No.",
+        "tokens": [
+          50664,
+          883,
+          13,
+          50714
+        ],
+        "temperature": 0.8,
+        "avg_logprob": -0.8967488606770834,
+        "compression_ratio": 1.0,
+        "no_speech_prob": 0.7897697687149048,
+        "words": [
+          {
+            "word": " No.",
+            "start": 599.42,
+            "end": 600.06,
+            "probability": 0.23676306009292603
+          }
+        ]
+      },
+      {
+        "id": 126,
+        "seek": 59426,
+        "start": 600.1,
+        "end": 600.68,
+        "text": " No.",
+        "tokens": [
+          50964,
+          883,
+          13,
+          51014
+        ],
+        "temperature": 0.8,
+        "avg_logprob": -0.8967488606770834,
+        "compression_ratio": 1.0,
+        "no_speech_prob": 0.7897697687149048,
+        "words": [
+          {
+            "word": " No.",
+            "start": 600.1,
+            "end": 600.68,
+            "probability": 0.44942349195480347
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}

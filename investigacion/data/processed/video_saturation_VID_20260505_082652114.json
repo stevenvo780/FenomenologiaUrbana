@@ -1,0 +1,442 @@
+{
+  "summary": {
+    "video": "VID_20260505_082652114.mp4",
+    "node": "san_antonio_metro",
+    "window": "peak_am",
+    "captured_at": null,
+    "width": 1920,
+    "height": 1080,
+    "duration_s": 40.78142222222222,
+    "fps": 30.160792168983264,
+    "frames_total": 1230,
+    "frames_sampled": 12,
+    "persons_unique": 9,
+    "persons_p50": 1.5,
+    "persons_p75": 4.0,
+    "persons_p90": 4.9,
+    "persons_max": 5,
+    "vehicles_p75": 1.25,
+    "bicycles_p75": 0.0,
+    "dwell_seconds_median": 1.3925363685636856,
+    "dwell_seconds_p75": 1.7904039024390244,
+    "apparent_speed_px_p50": 71.0612682305602,
+    "brightness_mean": 111.99289504565327,
+    "brightness_std": 1.3896936743399186,
+    "contrast_mean": 58.49718061124605,
+    "saturation_mean": 55.79639515817902,
+    "edge_density_mean": 21.491071084104934,
+    "audio": {
+      "sample_rate": 16000,
+      "duration_s": 2.048,
+      "rms_dbfs_p50": -30.088720321655273,
+      "rms_dbfs_p75": -28.11890411376953,
+      "rms_dbfs_p90": -26.937013626098633,
+      "rms_dbfs_max": -26.149085998535156,
+      "silence_ratio": 0.0
+    },
+    "saturation_index": 0.36483545103975773,
+    "worker": "worker_2060",
+    "lot": "secondary",
+    "yolo_model": "yolo11s.pt",
+    "processed_at": "2026-05-07T23:27:26+0000",
+    "duration_processing_s": 1.3928256034851074,
+    "node_assignment_method": "temporal_correlation_with_photo",
+    "node_assignment_confidence": "medium",
+    "node_assignment_delta_seconds": 1402.0,
+    "node_assignment_reference_photo": "IMG_20260505_085013122.jpg"
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_s": 0.0,
+      "counts": {
+        "person": 5,
+        "bicycle": 0,
+        "car": 1,
+        "motorcycle": 2,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 1,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.7351781129837036,
+      "brightness": 112.75908661265431,
+      "contrast": 59.19564070248811,
+      "saturation": 54.9218359375,
+      "edge_density": 21.87212818287037
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_s": 0.16577813911472447,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 111.78469184027777,
+      "contrast": 59.36663848642598,
+      "saturation": 56.6342544367284,
+      "edge_density": 21.528660300925925
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_s": 0.33155627822944894,
+      "counts": {
+        "person": 3,
+        "bicycle": 0,
+        "car": 1,
+        "motorcycle": 1,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 1,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.7548115849494934,
+      "brightness": 111.62100405092593,
+      "contrast": 59.16929280813421,
+      "saturation": 56.11844039351852,
+      "edge_density": 21.874833622685184
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_s": 0.49733441734417344,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 111.87777247299383,
+      "contrast": 58.653206029196745,
+      "saturation": 56.414909336419754,
+      "edge_density": 21.801171875
+    },
+    {
+      "frame_idx": 20,
+      "timestamp_s": 0.6631125564588979,
+      "counts": {
+        "person": 4,
+        "bicycle": 0,
+        "car": 1,
+        "motorcycle": 1,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 1,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.7427198886871338,
+      "brightness": 112.3794671103395,
+      "contrast": 58.338781360882216,
+      "saturation": 56.372763310185185,
+      "edge_density": 21.926728877314815
+    },
+    {
+      "frame_idx": 25,
+      "timestamp_s": 0.8288906955736224,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 112.51779272762346,
+      "contrast": 58.23432217096765,
+      "saturation": 56.48461516203704,
+      "edge_density": 21.935828993055555
+    },
+    {
+      "frame_idx": 30,
+      "timestamp_s": 0.9946688346883469,
+      "counts": {
+        "person": 3,
+        "bicycle": 1,
+        "car": 1,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 1,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.8603942394256592,
+      "brightness": 112.37748167438272,
+      "contrast": 58.3739630815116,
+      "saturation": 56.34045187114197,
+      "edge_density": 22.102582465277777
+    },
+    {
+      "frame_idx": 35,
+      "timestamp_s": 1.1604469738030714,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 112.78277777777778,
+      "contrast": 57.51437047076278,
+      "saturation": 55.89714457947531,
+      "edge_density": 21.828349247685185
+    },
+    {
+      "frame_idx": 40,
+      "timestamp_s": 1.3262251129177958,
+      "counts": {
+        "person": 4,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 1,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.7627463936805725,
+      "brightness": 108.44147087191358,
+      "contrast": 57.29836185860053,
+      "saturation": 58.53976369598765,
+      "edge_density": 21.508615451388888
+    },
+    {
+      "frame_idx": 45,
+      "timestamp_s": 1.4920032520325204,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 114.49055459104939,
+      "contrast": 56.845282287503686,
+      "saturation": 54.32431037808642,
+      "edge_density": 20.43160445601852
+    },
+    {
+      "frame_idx": 50,
+      "timestamp_s": 1.6577813911472448,
+      "counts": {
+        "person": 5,
+        "bicycle": 0,
+        "car": 1,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 1,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.7222108244895935,
+      "brightness": 110.50942322530864,
+      "contrast": 59.24605972643825,
+      "saturation": 53.791992669753085,
+      "edge_density": 20.574500868055555
+    },
+    {
+      "frame_idx": 55,
+      "timestamp_s": 1.8235595302619692,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 112.3732175925926,
+      "contrast": 59.730248352040874,
+      "saturation": 53.71626012731482,
+      "edge_density": 20.50784866898148
+    }
+  ],
+  "tracks": [
+    {
+      "track_id": 1,
+      "class_name": "person",
+      "frames_seen": 28,
+      "duration_s": 1.7904039024390244,
+      "distance_px": 1526.0550537109375,
+      "speed_px_per_s": 852.3523946926329,
+      "bbox_area_mean": 304251.09375
+    },
+    {
+      "track_id": 2,
+      "class_name": "person",
+      "frames_seen": 21,
+      "duration_s": 1.6577813911472448,
+      "distance_px": 120.01185655593872,
+      "speed_px_per_s": 72.39305326794998,
+      "bbox_area_mean": 19074.111328125
+    },
+    {
+      "track_id": 3,
+      "class_name": "person",
+      "frames_seen": 22,
+      "duration_s": 1.8567151580849142,
+      "distance_px": 43.35533269494772,
+      "speed_px_per_s": 23.350556764811486,
+      "bbox_area_mean": 16629.0546875
+    },
+    {
+      "track_id": 4,
+      "class_name": "backpack",
+      "frames_seen": 28,
+      "duration_s": 1.7904039024390244,
+      "distance_px": 1733.5019989013672,
+      "speed_px_per_s": 968.2183983959479,
+      "bbox_area_mean": 87914.0234375
+    },
+    {
+      "track_id": 5,
+      "class_name": "motorcycle",
+      "frames_seen": 21,
+      "duration_s": 1.8567151580849142,
+      "distance_px": 34.709596902132034,
+      "speed_px_per_s": 18.694088186328386,
+      "bbox_area_mean": 15748.7978515625
+    },
+    {
+      "track_id": 6,
+      "class_name": "person",
+      "frames_seen": 22,
+      "duration_s": 1.8567151580849142,
+      "distance_px": 131.94053387641907,
+      "speed_px_per_s": 71.0612682305602,
+      "bbox_area_mean": 5959.53955078125
+    },
+    {
+      "track_id": 7,
+      "class_name": "car",
+      "frames_seen": 23,
+      "duration_s": 1.8567151580849142,
+      "distance_px": 89.01075685024261,
+      "speed_px_per_s": 47.93990961007269,
+      "bbox_area_mean": 14344.3330078125
+    },
+    {
+      "track_id": 8,
+      "class_name": "motorcycle",
+      "frames_seen": 5,
+      "duration_s": 0.26524502258355914,
+      "distance_px": 54.53134250640869,
+      "speed_px_per_s": 205.58856100392944,
+      "bbox_area_mean": 8393.7060546875
+    },
+    {
+      "track_id": 9,
+      "class_name": "person",
+      "frames_seen": 3,
+      "duration_s": 0.13262251129177957,
+      "distance_px": 8.584833979606628,
+      "speed_px_per_s": 64.73134836603526,
+      "bbox_area_mean": 4473.046875
+    },
+    {
+      "track_id": 16,
+      "class_name": "person",
+      "frames_seen": 5,
+      "duration_s": 1.3925363685636856,
+      "distance_px": 9.863057732582092,
+      "speed_px_per_s": 7.0828008195974235,
+      "bbox_area_mean": 3790.457763671875
+    },
+    {
+      "track_id": 24,
+      "class_name": "person",
+      "frames_seen": 9,
+      "duration_s": 0.5304900451671183,
+      "distance_px": 706.116382598877,
+      "speed_px_per_s": 1331.0643414174374,
+      "bbox_area_mean": 507715.5
+    },
+    {
+      "track_id": 26,
+      "class_name": "person",
+      "frames_seen": 1,
+      "duration_s": 0.0,
+      "distance_px": 0.0,
+      "speed_px_per_s": 0.0,
+      "bbox_area_mean": 3370.3115234375
+    },
+    {
+      "track_id": 28,
+      "class_name": "person",
+      "frames_seen": 4,
+      "duration_s": 0.19893376693766937,
+      "distance_px": 172.11398315429688,
+      "speed_px_per_s": 865.1823458821058,
+      "bbox_area_mean": 186789.25
+    },
+    {
+      "track_id": 36,
+      "class_name": "backpack",
+      "frames_seen": 1,
+      "duration_s": 0.0,
+      "distance_px": 0.0,
+      "speed_px_per_s": 0.0,
+      "bbox_area_mean": 66416.2578125
+    }
+  ]
+}

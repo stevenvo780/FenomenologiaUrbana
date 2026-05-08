@@ -5,6 +5,7 @@ import type { Payload } from '../../types'
 import { DECK_CHART_TEXT } from '../constants'
 import type { ModalKind } from '../deckTypes'
 import { MeasuredChart } from '../components/visuals/MeasuredChart'
+import { CollapseMatrixPanel } from '../components/visuals/CollapseMatrixPanel'
 import { KpiPill, SlideHeader, SlideShell } from '../components/ui'
 import { compactNumber, findPeakPeriod } from '../utils'
 
@@ -126,7 +127,7 @@ function EvidenceGallery({
 
       <article className="deck-panel ghost-member-card panel-alert-pulse">
         <p className="deck-eyebrow">Campo pendiente</p>
-        <h3>{data.fieldwork.status}</h3>
+        <h3>{data.field_calibration?.status ?? data.fieldwork.status}</h3>
         <p>
           DANE: {dane.status} · geovisor directo {dane.direct_geoportal_downloaded ? 'descargado' : 'bloqueado'} ·
           fuentes fallidas {data.source_summary.failed}.
@@ -135,6 +136,10 @@ function EvidenceGallery({
           Ver trazabilidad
         </button>
       </article>
+
+      {data.field_calibration?.collapse_matrix && (
+        <CollapseMatrixPanel field={data.field_calibration} />
+      )}
     </div>
   )
 }

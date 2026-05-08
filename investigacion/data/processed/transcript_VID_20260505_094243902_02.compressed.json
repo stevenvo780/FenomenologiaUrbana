@@ -1,0 +1,800 @@
+{
+  "video": "VID_20260505_094243902_02.compressed.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T09:42:43-05:00",
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 81.59927916526794,
+  "whisper": {
+    "text": "便 ediyorum los orientationes ya ready y brujero a confirmation ¿Cómo es ahí el río? ¿Qué es el río? Pues, vemos la grabación desde la esquina ya está, ya está para captar todo el tema de la luz y el ruido ok ¿Qué? ¿Nogramos el perro? ¿Cuál? Ah, qué bueno Vean las cuevas Ahí, también son las fotos ¿Qué? ¡Muchas gracias!",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 4.699999999999999,
+        "end": 6.1,
+        "text": "便 ediyorum",
+        "tokens": [
+          50370,
+          27364,
+          39203,
+          50519
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -5.69665283203125,
+        "compression_ratio": 0.9552238805970149,
+        "no_speech_prob": 0.5235744714736938,
+        "words": [
+          {
+            "word": "便",
+            "start": 4.699999999999999,
+            "end": 6.1,
+            "probability": 6.935888904990861e-06
+          },
+          {
+            "word": " ediyorum",
+            "start": 6.1,
+            "end": 6.1,
+            "probability": 7.5435864346218295e-06
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 6.1,
+        "end": 6.9,
+        "text": " los orientationes ya",
+        "tokens": [
+          50839,
+          1750,
+          14764,
+          279,
+          2478,
+          51055
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -5.69665283203125,
+        "compression_ratio": 0.9552238805970149,
+        "no_speech_prob": 0.5235744714736938,
+        "words": [
+          {
+            "word": " los",
+            "start": 6.1,
+            "end": 6.1,
+            "probability": 0.0021792661864310503
+          },
+          {
+            "word": " orientationes",
+            "start": 6.1,
+            "end": 6.54,
+            "probability": 0.20013396249669313
+          },
+          {
+            "word": " ya",
+            "start": 6.54,
+            "end": 6.9,
+            "probability": 0.22717279195785522
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 6.9,
+        "end": 11.26,
+        "text": " ready y",
+        "tokens": [
+          51088,
+          1919,
+          288,
+          51097
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -5.69665283203125,
+        "compression_ratio": 0.9552238805970149,
+        "no_speech_prob": 0.5235744714736938,
+        "words": [
+          {
+            "word": " ready",
+            "start": 6.9,
+            "end": 7.58,
+            "probability": 5.1948143664048985e-05
+          },
+          {
+            "word": " y",
+            "start": 7.58,
+            "end": 11.26,
+            "probability": 0.023993775248527527
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 13.66,
+        "end": 15.06,
+        "text": " brujero",
+        "tokens": [
+          51159,
+          738,
+          4579,
+          2032,
+          51224
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -5.69665283203125,
+        "compression_ratio": 0.9552238805970149,
+        "no_speech_prob": 0.5235744714736938,
+        "words": [
+          {
+            "word": " brujero",
+            "start": 13.66,
+            "end": 15.06,
+            "probability": 0.029414800056353368
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 0,
+        "start": 27.020000000000003,
+        "end": 29.82,
+        "text": " a confirmation",
+        "tokens": [
+          51266,
+          257,
+          21871,
+          51433
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -5.69665283203125,
+        "compression_ratio": 0.9552238805970149,
+        "no_speech_prob": 0.5235744714736938,
+        "words": [
+          {
+            "word": " a",
+            "start": 27.020000000000003,
+            "end": 28.42,
+            "probability": 0.021336140111088753
+          },
+          {
+            "word": " confirmation",
+            "start": 28.42,
+            "end": 29.82,
+            "probability": 2.0857232811977156e-05
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "seek": 2982,
+        "start": 29.82,
+        "end": 30.58,
+        "text": " ¿Cómo es ahí el río?",
+        "tokens": [
+          50364,
+          3841,
+          28342,
+          785,
+          12571,
+          806,
+          367,
+          20492,
+          30,
+          50464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7677607043036099,
+        "compression_ratio": 1.2125984251968505,
+        "no_speech_prob": 0.570902943611145,
+        "words": [
+          {
+            "word": " ¿Cómo",
+            "start": 29.82,
+            "end": 29.82,
+            "probability": 0.11661046370863914
+          },
+          {
+            "word": " es",
+            "start": 29.82,
+            "end": 30.0,
+            "probability": 0.5554421544075012
+          },
+          {
+            "word": " ahí",
+            "start": 30.0,
+            "end": 30.14,
+            "probability": 0.2669343948364258
+          },
+          {
+            "word": " el",
+            "start": 30.14,
+            "end": 30.36,
+            "probability": 0.31650862097740173
+          },
+          {
+            "word": " río?",
+            "start": 30.36,
+            "end": 30.58,
+            "probability": 0.5935776978731155
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "seek": 2982,
+        "start": 31.1,
+        "end": 31.52,
+        "text": " ¿Qué es el río?",
+        "tokens": [
+          50464,
+          3841,
+          15137,
+          785,
+          806,
+          367,
+          20492,
+          30,
+          50564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7677607043036099,
+        "compression_ratio": 1.2125984251968505,
+        "no_speech_prob": 0.570902943611145,
+        "words": [
+          {
+            "word": " ¿Qué",
+            "start": 31.1,
+            "end": 31.22,
+            "probability": 0.18712035566568375
+          },
+          {
+            "word": " es",
+            "start": 31.22,
+            "end": 31.34,
+            "probability": 0.23591797053813934
+          },
+          {
+            "word": " el",
+            "start": 31.34,
+            "end": 31.52,
+            "probability": 0.29675519466400146
+          },
+          {
+            "word": " río?",
+            "start": 31.52,
+            "end": 31.52,
+            "probability": 0.968925952911377
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "seek": 2982,
+        "start": 32.46,
+        "end": 34.8,
+        "text": " Pues, vemos la grabación desde la esquina",
+        "tokens": [
+          50564,
+          22386,
+          11,
+          20909,
+          635,
+          4444,
+          3482,
+          10188,
+          635,
+          34611,
+          1426,
+          50664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7677607043036099,
+        "compression_ratio": 1.2125984251968505,
+        "no_speech_prob": 0.570902943611145,
+        "words": [
+          {
+            "word": " Pues,",
+            "start": 32.46,
+            "end": 32.9,
+            "probability": 0.05238708108663559
+          },
+          {
+            "word": " vemos",
+            "start": 33.14,
+            "end": 33.32,
+            "probability": 0.14914929866790771
+          },
+          {
+            "word": " la",
+            "start": 33.32,
+            "end": 33.58,
+            "probability": 0.8936945199966431
+          },
+          {
+            "word": " grabación",
+            "start": 33.58,
+            "end": 34.04,
+            "probability": 0.974299818277359
+          },
+          {
+            "word": " desde",
+            "start": 34.04,
+            "end": 34.36,
+            "probability": 0.31300023198127747
+          },
+          {
+            "word": " la",
+            "start": 34.36,
+            "end": 34.54,
+            "probability": 0.6971507668495178
+          },
+          {
+            "word": " esquina",
+            "start": 34.54,
+            "end": 34.8,
+            "probability": 0.4760752320289612
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "seek": 2982,
+        "start": 34.8,
+        "end": 37.04,
+        "text": " ya está, ya está para captar todo el tema de la luz",
+        "tokens": [
+          50664,
+          2478,
+          3192,
+          11,
+          2478,
+          3192,
+          1690,
+          3770,
+          289,
+          5149,
+          806,
+          15854,
+          368,
+          635,
+          20671,
+          50764
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7677607043036099,
+        "compression_ratio": 1.2125984251968505,
+        "no_speech_prob": 0.570902943611145,
+        "words": [
+          {
+            "word": " ya",
+            "start": 34.8,
+            "end": 35.06,
+            "probability": 0.10374593734741211
+          },
+          {
+            "word": " está,",
+            "start": 35.06,
+            "end": 35.3,
+            "probability": 0.2588701844215393
+          },
+          {
+            "word": " ya",
+            "start": 35.44,
+            "end": 35.48,
+            "probability": 0.716799795627594
+          },
+          {
+            "word": " está",
+            "start": 35.48,
+            "end": 35.7,
+            "probability": 0.336153119802475
+          },
+          {
+            "word": " para",
+            "start": 35.7,
+            "end": 35.74,
+            "probability": 0.4455944001674652
+          },
+          {
+            "word": " captar",
+            "start": 35.74,
+            "end": 36.14,
+            "probability": 0.6858284175395966
+          },
+          {
+            "word": " todo",
+            "start": 36.14,
+            "end": 36.28,
+            "probability": 0.9552716612815857
+          },
+          {
+            "word": " el",
+            "start": 36.28,
+            "end": 36.4,
+            "probability": 0.9805676341056824
+          },
+          {
+            "word": " tema",
+            "start": 36.4,
+            "end": 36.58,
+            "probability": 0.4203064441680908
+          },
+          {
+            "word": " de",
+            "start": 36.58,
+            "end": 36.74,
+            "probability": 0.9294159412384033
+          },
+          {
+            "word": " la",
+            "start": 36.74,
+            "end": 36.82,
+            "probability": 0.9775261282920837
+          },
+          {
+            "word": " luz",
+            "start": 36.82,
+            "end": 37.04,
+            "probability": 0.9256051778793335
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "seek": 2982,
+        "start": 37.54,
+        "end": 38.9,
+        "text": " y el ruido",
+        "tokens": [
+          50764,
+          288,
+          806,
+          5420,
+          2925,
+          50864
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7677607043036099,
+        "compression_ratio": 1.2125984251968505,
+        "no_speech_prob": 0.570902943611145,
+        "words": [
+          {
+            "word": " y",
+            "start": 37.54,
+            "end": 37.98,
+            "probability": 0.36936280131340027
+          },
+          {
+            "word": " el",
+            "start": 37.98,
+            "end": 38.14,
+            "probability": 0.9640379548072815
+          },
+          {
+            "word": " ruido",
+            "start": 38.14,
+            "end": 38.9,
+            "probability": 0.968653529882431
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "seek": 2982,
+        "start": 40.42,
+        "end": 40.86,
+        "text": " ok",
+        "tokens": [
+          50864,
+          3133,
+          50964
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7677607043036099,
+        "compression_ratio": 1.2125984251968505,
+        "no_speech_prob": 0.570902943611145,
+        "words": [
+          {
+            "word": " ok",
+            "start": 40.42,
+            "end": 40.86,
+            "probability": 0.06375196576118469
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "seek": 4086,
+        "start": 51.26,
+        "end": 51.78,
+        "text": " ¿Qué?",
+        "tokens": [
+          50364,
+          3841,
+          15137,
+          30,
+          50464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.4735816429401266,
+        "compression_ratio": 0.896551724137931,
+        "no_speech_prob": 0.32044336199760437,
+        "words": [
+          {
+            "word": " ¿Qué?",
+            "start": 51.26,
+            "end": 51.78,
+            "probability": 0.12372574955224991
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "seek": 4086,
+        "start": 58.94,
+        "end": 59.62,
+        "text": " ¿Nogramos el perro?",
+        "tokens": [
+          51264,
+          3841,
+          45,
+          664,
+          30227,
+          806,
+          680,
+          340,
+          30,
+          51364
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.4735816429401266,
+        "compression_ratio": 0.896551724137931,
+        "no_speech_prob": 0.32044336199760437,
+        "words": [
+          {
+            "word": " ¿Nogramos",
+            "start": 58.94,
+            "end": 59.24,
+            "probability": 0.4111390906618908
+          },
+          {
+            "word": " el",
+            "start": 59.24,
+            "end": 59.46,
+            "probability": 0.7862206697463989
+          },
+          {
+            "word": " perro?",
+            "start": 59.46,
+            "end": 59.62,
+            "probability": 0.7772940397262573
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "seek": 4086,
+        "start": 61.18,
+        "end": 61.7,
+        "text": " ¿Cuál?",
+        "tokens": [
+          51364,
+          3841,
+          35222,
+          11447,
+          30,
+          51464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.4735816429401266,
+        "compression_ratio": 0.896551724137931,
+        "no_speech_prob": 0.32044336199760437,
+        "words": [
+          {
+            "word": " ¿Cuál?",
+            "start": 61.18,
+            "end": 61.7,
+            "probability": 0.8266561627388
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "seek": 4086,
+        "start": 63.06,
+        "end": 63.86,
+        "text": " Ah, qué bueno",
+        "tokens": [
+          51464,
+          2438,
+          11,
+          8057,
+          11974,
+          51564
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.4735816429401266,
+        "compression_ratio": 0.896551724137931,
+        "no_speech_prob": 0.32044336199760437,
+        "words": [
+          {
+            "word": " Ah,",
+            "start": 63.06,
+            "end": 63.5,
+            "probability": 0.06648306548595428
+          },
+          {
+            "word": " qué",
+            "start": 63.52,
+            "end": 63.64,
+            "probability": 0.5218461155891418
+          },
+          {
+            "word": " bueno",
+            "start": 63.64,
+            "end": 63.86,
+            "probability": 0.9222615361213684
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "seek": 6386,
+        "start": 64.3,
+        "end": 65.32,
+        "text": " Vean las cuevas",
+        "tokens": [
+          50364,
+          9706,
+          282,
+          2439,
+          22656,
+          7967,
+          50464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7936161160469055,
+        "compression_ratio": 0.9361702127659575,
+        "no_speech_prob": 0.10553529858589172,
+        "words": [
+          {
+            "word": " Vean",
+            "start": 64.3,
+            "end": 64.7,
+            "probability": 0.24327095411717892
+          },
+          {
+            "word": " las",
+            "start": 64.7,
+            "end": 64.88,
+            "probability": 0.7054702043533325
+          },
+          {
+            "word": " cuevas",
+            "start": 64.88,
+            "end": 65.32,
+            "probability": 0.4539007507264614
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "seek": 6386,
+        "start": 68.47999999999999,
+        "end": 69.84,
+        "text": " Ahí, también son las fotos",
+        "tokens": [
+          50564,
+          49924,
+          11,
+          6407,
+          1872,
+          2439,
+          32301,
+          50664
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.7936161160469055,
+        "compression_ratio": 0.9361702127659575,
+        "no_speech_prob": 0.10553529858589172,
+        "words": [
+          {
+            "word": " Ahí,",
+            "start": 68.47999999999999,
+            "end": 68.88,
+            "probability": 0.05309683829545975
+          },
+          {
+            "word": " también",
+            "start": 68.96,
+            "end": 69.12,
+            "probability": 0.3485870361328125
+          },
+          {
+            "word": " son",
+            "start": 69.12,
+            "end": 69.32,
+            "probability": 0.2990140914916992
+          },
+          {
+            "word": " las",
+            "start": 69.32,
+            "end": 69.48,
+            "probability": 0.8440147638320923
+          },
+          {
+            "word": " fotos",
+            "start": 69.48,
+            "end": 69.84,
+            "probability": 0.9530643820762634
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "seek": 9386,
+        "start": 122.44,
+        "end": 123.84,
+        "text": " ¿Qué?",
+        "tokens": [
+          50364,
+          3841,
+          15137,
+          30,
+          50464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.948371410369873,
+        "compression_ratio": 0.4666666666666667,
+        "no_speech_prob": 0.8935786485671997,
+        "words": [
+          {
+            "word": " ¿Qué?",
+            "start": 122.44,
+            "end": 123.84,
+            "probability": 0.11401050887070596
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "seek": 12386,
+        "start": 123.86,
+        "end": 125.06,
+        "text": " ¡Muchas gracias!",
+        "tokens": [
+          50364,
+          6514,
+          44,
+          625,
+          296,
+          16611,
+          0,
+          50464
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.8842073016696506,
+        "compression_ratio": 0.68,
+        "no_speech_prob": 0.9625791907310486,
+        "words": [
+          {
+            "word": " ¡Muchas",
+            "start": 123.86,
+            "end": 125.02,
+            "probability": 0.3173928433097899
+          },
+          {
+            "word": " gracias!",
+            "start": 125.02,
+            "end": 125.06,
+            "probability": 0.8799126148223877
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}

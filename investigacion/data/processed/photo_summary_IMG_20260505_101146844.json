@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "photo": "IMG_20260505_101146844.jpg",
+    "node": null,
+    "window": null,
+    "captured_at": "2026:05:05 10:11:51",
+    "width": 3000,
+    "height": 4000,
+    "exif": {
+      "datetime_original": "2026:05:05 10:11:51",
+      "orientation": 6,
+      "camera_make": "motorola",
+      "camera_model": "moto g(9) play",
+      "gps_lat": 6.249431,
+      "gps_lon": -75.56664897222223,
+      "gps_alt_m": 1511.897
+    },
+    "counts": {
+      "person": 0,
+      "bicycle": 0,
+      "car": 0,
+      "motorcycle": 0,
+      "bus": 0,
+      "truck": 0,
+      "dog": 0,
+      "backpack": 0,
+      "handbag": 0,
+      "suitcase": 3,
+      "cell_phone": 0
+    },
+    "detections": [
+      {
+        "class_name": "suitcase",
+        "confidence": 0.33595627546310425,
+        "bbox_xyxy": [
+          612.2581787109375,
+          797.56787109375,
+          2990.0595703125,
+          1453.1485595703125
+        ]
+      },
+      {
+        "class_name": "suitcase",
+        "confidence": 0.33290907740592957,
+        "bbox_xyxy": [
+          523.9990234375,
+          794.9413452148438,
+          2907.76416015625,
+          1792.3570556640625
+        ]
+      },
+      {
+        "class_name": "suitcase",
+        "confidence": 0.2670925259590149,
+        "bbox_xyxy": [
+          443.8995361328125,
+          739.25439453125,
+          2908.7578125,
+          2719.826416015625
+        ]
+      }
+    ],
+    "persons": 0,
+    "brightness": 108.04843216666667,
+    "contrast": 50.20030608298348,
+    "saturation": 30.483306833333334,
+    "edge_density": 0.559725,
+    "saturation_index": 0.05453701138888889,
+    "worker": "worker_photos",
+    "yolo_model": "yolo11x.pt",
+    "processed_at": "2026-05-07T23:50:08+0000"
+  }
+}

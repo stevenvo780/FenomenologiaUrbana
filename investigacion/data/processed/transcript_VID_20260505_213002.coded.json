@@ -1,0 +1,21 @@
+{
+  "source": "/home/stev/FenomenologiaUrbana/investigacion/data/processed/transcript_VID_20260505_213002.json",
+  "video": "VID_20260505_213002.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T21:30:02-05:00",
+  "language": "es",
+  "model": "qwen3:14b",
+  "codes": [],
+  "evidence": [],
+  "raw_classifications": [
+    {
+      "node": null,
+      "window": null,
+      "codes": [],
+      "evidence": []
+    }
+  ],
+  "node_textual": null,
+  "window_textual": null
+}

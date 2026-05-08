@@ -1,0 +1,39 @@
+{
+  "video": "VID_20260505_082857885.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T08:28:57-05:00",
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 5.150295734405518,
+  "whisper": {
+    "text": " también",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 3000,
+        "start": 50.38,
+        "end": 51.78,
+        "text": " también",
+        "tokens": [
+          50364,
+          6407,
+          50701
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -3.674508571624756,
+        "compression_ratio": 0.5,
+        "no_speech_prob": 0.56119304895401,
+        "words": [
+          {
+            "word": " también",
+            "start": 50.38,
+            "end": 51.78,
+            "probability": 0.00040908201481215656
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}

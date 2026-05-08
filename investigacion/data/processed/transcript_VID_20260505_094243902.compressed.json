@@ -1,0 +1,46 @@
+{
+  "video": "VID_20260505_094243902.compressed.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": null,
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 8.849883317947388,
+  "whisper": {
+    "text": " Te 해",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 2.38,
+        "text": " Te 해",
+        "tokens": [
+          50414,
+          1989,
+          11683,
+          50514
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -5.239343643188477,
+        "compression_ratio": 0.42857142857142855,
+        "no_speech_prob": 0.5265499949455261,
+        "words": [
+          {
+            "word": " Te",
+            "start": 0.0,
+            "end": 2.14,
+            "probability": 0.003638142952695489
+          },
+          {
+            "word": " 해",
+            "start": 2.14,
+            "end": 2.38,
+            "probability": 1.825755498430226e-05
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "summary": {
+    "photo": "IMG_20260505_093817507.jpg",
+    "node": null,
+    "window": null,
+    "captured_at": "2026:05:05 09:38:17",
+    "width": 3000,
+    "height": 4000,
+    "exif": {
+      "datetime_original": "2026:05:05 09:38:17",
+      "orientation": 6,
+      "camera_make": "motorola",
+      "camera_model": "moto g(9) play",
+      "gps_lat": 6.249372,
+      "gps_lon": -75.56736397222222,
+      "gps_alt_m": 1485.67
+    },
+    "counts": {
+      "person": 3,
+      "bicycle": 0,
+      "car": 0,
+      "motorcycle": 3,
+      "bus": 0,
+      "truck": 0,
+      "dog": 0,
+      "backpack": 0,
+      "handbag": 0,
+      "suitcase": 0,
+      "cell_phone": 0
+    },
+    "detections": [
+      {
+        "class_name": "motorcycle",
+        "confidence": 0.9518331289291382,
+        "bbox_xyxy": [
+          42.238426208496094,
+          2430.780517578125,
+          1127.6622314453125,
+          3176.892578125
+        ]
+      },
+      {
+        "class_name": "motorcycle",
+        "confidence": 0.9015781879425049,
+        "bbox_xyxy": [
+          1218.489501953125,
+          2300.662109375,
+          1549.320068359375,
+          2720.538818359375
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.8692800402641296,
+        "bbox_xyxy": [
+          1733.38427734375,
+          2186.357421875,
+          1821.5343017578125,
+          2373.34326171875
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.7687711715698242,
+        "bbox_xyxy": [
+          1609.5347900390625,
+          2155.994384765625,
+          1662.338623046875,
+          2344.04150390625
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.6632933020591736,
+        "bbox_xyxy": [
+          1843.011474609375,
+          2169.012939453125,
+          1917.6551513671875,
+          2351.48779296875
+        ]
+      },
+      {
+        "class_name": "motorcycle",
+        "confidence": 0.5034219622612,
+        "bbox_xyxy": [
+          1791.149169921875,
+          2205.456298828125,
+          1980.9150390625,
+          2345.708740234375
+        ]
+      }
+    ],
+    "persons": 3,
+    "brightness": 105.80174491666666,
+    "contrast": 60.53957550923689,
+    "saturation": 46.582079,
+    "edge_density": 5.65103375,
+    "saturation_index": 0.16531035666666666,
+    "worker": "worker_photos",
+    "yolo_model": "yolo11x.pt",
+    "processed_at": "2026-05-07T23:50:06+0000"
+  }
+}

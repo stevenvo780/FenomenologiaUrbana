@@ -1,0 +1,46 @@
+{
+  "video": "VID_20260505_094143350.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T09:41:43-05:00",
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 12.70809030532837,
+  "whisper": {
+    "text": "抽 2",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 0.82,
+        "text": "抽 2",
+        "tokens": [
+          50364,
+          46022,
+          568,
+          51368
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -4.488656616210937,
+        "compression_ratio": 0.38461538461538464,
+        "no_speech_prob": 0.1560259610414505,
+        "words": [
+          {
+            "word": "抽",
+            "start": 0.0,
+            "end": 0.56,
+            "probability": 7.830914910300635e-06
+          },
+          {
+            "word": " 2",
+            "start": 0.56,
+            "end": 0.82,
+            "probability": 0.006244705058634281
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}

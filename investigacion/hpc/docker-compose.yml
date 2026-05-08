@@ -1,0 +1,131 @@
+# Despliegue dual-GPU para procesamiento de videos + fotos.
+#
+# proc-5070ti  → RTX 5070 Ti (sm_120) · video tracking + multi-clase con yolo11x
+# proc-2060    → RTX 2060   (sm_75)   · video tracking + multi-clase con yolo11s (lote secundario)
+# proc-photos  → RTX 2060   (sm_75)   · fotos con yolo11x (mejor recall, no tan exigente como video)
+#
+# Asignación de GPU vía CDI (nvidia.com/gpu=N) por bug eBPF en kernel 6.17 con docker 29.
+#
+# Lanzamiento desde investigacion/hpc/ en la torre:
+#   docker compose build
+#   docker compose up -d
+#   docker compose logs -f
+#
+# Volúmenes:
+#   ../data/raw/video/   videos crudos (RO)
+#   ../data/raw/photo/   fotos crudas (RO) — colocar fotos aquí
+#   ../data/processed/   salida video_saturation_*.json y photo_summary_*.json
+
+services:
+  proc-5070ti:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenomurb/proc:cuda128
+    container_name: fenomurb_proc_5070ti
+    devices:
+      - "nvidia.com/gpu=0"
+    environment:
+      - WORKER_NAME=worker_5070ti
+      - WORKER_LOT=primary
+      - YOLO_MODEL=yolo11x.pt
+      - IMGSZ=640
+      - SAMPLE_STRIDE=5
+      - TRACK_STRIDE=2
+      - CONF_THRESH=0.30
+    volumes:
+      - ../data/raw/video:/data/raw/video:ro
+      - ../data/processed:/data/processed
+      - ./jobs:/jobs
+      - ./logs:/logs
+    command:
+      - /workspace/process_video.py
+      - --jobs-dir=/jobs
+      - --raw-dir=/data/raw/video
+      - --out-dir=/data/processed
+      - --worker-name=worker_5070ti
+      - --lot=primary
+    restart: unless-stopped
+
+  proc-2060:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenomurb/proc:cuda128
+    container_name: fenomurb_proc_2060
+    devices:
+      - "nvidia.com/gpu=1"
+    environment:
+      - WORKER_NAME=worker_2060
+      - WORKER_LOT=secondary
+      - YOLO_MODEL=yolo11s.pt
+      - IMGSZ=640
+      - SAMPLE_STRIDE=5
+      - TRACK_STRIDE=2
+      - CONF_THRESH=0.30
+    volumes:
+      - ../data/raw/video:/data/raw/video:ro
+      - ../data/processed:/data/processed
+      - ./jobs:/jobs
+      - ./logs:/logs
+    command:
+      - /workspace/process_video.py
+      - --jobs-dir=/jobs
+      - --raw-dir=/data/raw/video
+      - --out-dir=/data/processed
+      - --worker-name=worker_2060
+      - --lot=secondary
+    restart: unless-stopped
+
+  proc-photos:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenomurb/proc:cuda128
+    container_name: fenomurb_proc_photos
+    profiles: ["photos"]
+    devices:
+      - "nvidia.com/gpu=1"
+    environment:
+      - WORKER_NAME=worker_photos
+      - YOLO_MODEL=yolo11x.pt
+      - IMGSZ=1280
+      - CONF_THRESH=0.25
+    volumes:
+      - ../data/raw/photo:/data/raw/photo:ro
+      - ../data/processed:/data/processed
+      - ./jobs_photos:/jobs
+      - ./logs:/logs
+    command:
+      - /workspace/process_photos.py
+      - --jobs-dir=/jobs
+      - --raw-dir=/data/raw/photo
+      - --out-dir=/data/processed
+      - --worker-name=worker_photos
+    restart: unless-stopped
+
+  proc-transcribe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fenomurb/proc:cuda128
+    container_name: fenomurb_proc_transcribe
+    profiles: ["transcribe"]
+    runtime: runc
+    network_mode: host
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=void
+      - WHISPER_URL=http://localhost:8007
+      - WHISPER_LANG=es
+      - WHISPER_TASK=transcribe
+    volumes:
+      - ../data/raw/video:/data/raw/video:ro
+      - ../data/processed:/data/processed
+      - ./jobs:/jobs
+      - ./logs:/logs
+    command:
+      - /workspace/transcribe_audio.py
+      - --jobs-dir=/jobs
+      - --raw-dir=/data/raw/video
+      - --out-dir=/data/processed
+    restart: unless-stopped

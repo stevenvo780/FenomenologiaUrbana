@@ -16,7 +16,9 @@ El archivo `empirical_summary.json` permite establecer un primer punto no especu
 
 Estas cifras no prueban por sí mismas una tesis fenomenológica, pero sí justifican el caso: el centro aparece como un espacio de alta funcionalidad y alta fricción percibida. En términos teóricos, esto permite discutir la diferencia entre centralidad urbana y habitabilidad. Un lugar puede ser muy usado, muy necesario y al mismo tiempo experimentado como agotador, inseguro o difícil de habitar.
 
-La criminalidad agregada de comuna 10 muestra que en 2023 la conducta dominante fue hurto a persona, con 5,888 casos registrados. Esta cifra debe manejarse con cuidado: no se traduce automáticamente en percepción individual de miedo ni permite etiquetar todo el corredor como inseguro. Sirve, más bien, para sostener que la seguridad no puede quedar fuera del modelo de experiencia urbana.
+La criminalidad agregada de comuna 10 muestra que en 2023 la conducta dominante fue hurto a persona, con 5,888 casos registrados; le siguen, a distancia considerable, hurto de moto (593), extorsión (94), hurto a residencia (86) y hurto de carro (76). Esta cifra debe manejarse con cuidado: no se traduce automáticamente en percepción individual de miedo ni permite etiquetar todo el corredor como inseguro. Sirve, más bien, para sostener que la seguridad no puede quedar fuera del modelo de experiencia urbana, y para fijar uno de los cuatro ejes (C1) sobre los que se construye la categoría de **colapso fenomenológico** introducida en el capítulo 2.
+
+La serie mensual de comuna 10 también ofrece una estructura útil para la triangulación: entre 2016 y 2019 los casos crecieron de 7,511 a 15,429, con caída en 2020 (9,306) y un nuevo ciclo entre 2022 (11,260) y 2023 (6,737). Dentro de 2023 el pico mensual disponible es mayo (811 casos) y el valle hacia el cierre de la serie pública es noviembre (213 casos). Esta variación —en órdenes de magnitud por mes— es la base sobre la que el campo intentará proyectar una distribución por franja horaria, dado que MEData no publica la hora del hecho. La proyección horaria es un supuesto documentado, no una medición; cualquier afirmación de colapso en un horario específico exige que las otras tres condiciones (C2 encuesta, C3 entrevista, C4 saturación) lo respalden de manera independiente.
 
 Los indicadores barriales de La Candelaria también muestran tensiones estructurales: densidad empresarial alta, concentración de suelo múltiple y bajo espacio público efectivo por habitante. De nuevo, la lectura debe ser prudente: estos datos son de escala barrial y no reemplazan mediciones finas en los nodos del corredor.
 
@@ -87,38 +89,136 @@ Los reportes `hpc_calibration_report.json` y `hpc_multipoint_calibration.json` m
 
 Por tanto, estos reportes deben usarse como evidencia de que el sistema puede optimizar parámetros, no como prueba de que la ciudad real fue calibrada. El paso crítico será contrastar esos parámetros con datos de campo independientes.
 
-## 3.12. Validación de campo pendiente
+## 3.12. Estado de campo: campo realizado, triangulación en curso
 
-La calibración de campo (`field_calibration_delta.json`) aparece en estado `pending_no_capture`. Este resultado no debe dramatizarse ni minimizarse. Significa que el pipeline está preparado para recibir observaciones situadas, pero aún no dispone de una jornada suficiente para recalibrar nodos, aristas y escenarios.
+La calibración de campo (`field_calibration_delta.json`) salió del estado `pending_no_capture` con la jornada efectivamente ejecutada antes del 6 de mayo de 2026. El estado actual del archivo, sin embargo, no es aún `field_calibrated` sino **`field_ingest_in_progress`**: los conteos, fotos y notas aguardan ingesta a `investigacion/data/interim/YYYY_MM_DD/`; las entrevistas semiestructuradas se encuentran en transcripción a cargo de un colaborador externo bajo acuerdo de confidencialidad; los videos POV y de saturación están en cola para procesamiento en torre HPC con GPU del autor.
 
-La consecuencia académica es clara: la tesis puede defender una fase de diseño, baseline y simulación exploratoria; no puede defender todavía una validación empírica completa. Para avanzar, deben capturarse como mínimo:
+Esta distinción importa para la lectura del capítulo: lo que sigue **no son resultados de campo**. Son los andamiajes de las cuatro líneas analíticas que la tesis se propone reportar cuando termine la triangulación, junto con las salvaguardas que cada una requerirá. El compromiso académico es no escribir nada en estas subsecciones que no esté respaldado por la matriz `collapse_matrix.json` cuando exista.
 
-- conteos peatonales por nodo cada 15 minutos;
-- flujos direccionales por subtramo;
-- tiempos de permanencia;
-- ruido puntual;
-- iluminación nocturna;
-- seguridad percibida;
-- obstáculos temporales y puntos de decisión.
+### 3.12.1. C1 — Criminalidad como eje temporal
+
+La línea de criminalidad ya está cargada desde MEData y discutida en 3.2 a escala de comuna 10 y mes. Lo que falta es proyectar esa serie hacia la malla nodo × franja del modelo y declarar el supuesto distribucional que se use (uniforme por franja, ponderado por horario público típico de hurto, o derivado de literatura). Cualquiera de estas opciones se asume como hipótesis, no como medición horaria. La salida final entregará, por cada celda, si supera o no el umbral de su percentil 75.
+
+**Estado:** datos disponibles, proyección horaria pendiente.
+
+### 3.12.2. C2 — Seguridad percibida en encuesta breve
+
+La encuesta breve recogida en campo (escala 1–5 más códigos de incomodidad) alimentará la columna `security_score` de `field_counts_*.csv` por nodo y franja. El reporte debe incluir tamaño muestral por celda, distribución de respuestas y advertencia explícita sobre la imposibilidad de leer una franja-nodo con menos de un mínimo de respuestas (sugerido: 10).
+
+**Estado:** datos en cuaderno y formularios; ingesta a CSV pendiente.
+
+### 3.12.3. C3 — Habitabilidad declarada en entrevistas
+
+Las entrevistas semiestructuradas formulan dos preguntas eje: cuándo el corredor se vuelve **difícil de vivir** y cuándo es **deseable** estar en él. Las transcripciones se codificarán con el esquema `HABITABLE / DESEABLE / EVITABLE / NO_DESEABLE / DIFICIL_DE_VIVIR / AMBIVALENTE` y se ubicarán por nodo y franja cuando la persona entrevistada lo haya nombrado explícitamente. El reporte distinguirá entre ubicaciones nombradas por las personas y atribuciones del investigador, para no forzar la espacialización de testimonios genéricos.
+
+**Estado:** transcripciones en proceso (colaborador externo).
+
+### 3.12.4. C4 — Saturación material en video
+
+Los videos POV y los recorridos por sectores se procesarán en torre HPC con GPU. El producto esperado es `investigacion/data/processed/video_saturation_*.json` con métricas de densidad por frame, conteo automático y un indicador agregado de saturación por celda. Esta línea reemplazará, allí donde el video lo permita, el `crowding` proxy del modelo. La cobertura no será simétrica: habrá celdas con video y celdas sin él; la matriz de colapso lo reportará explícitamente.
+
+**Estado:** videos crudos archivados; pipeline GPU en preparación.
+
+### 3.12.5. Matriz de colapso fenomenológico
+
+La síntesis de C1–C4 se reportará en `collapse_matrix.json`, con 36 celdas (9 nodos × 4 franjas) y, por celda, los siguientes campos: el valor o estado de cada condición, el conteo de condiciones cumplidas, la decisión final (`flujo_ordinario`, `friccion_acumulada`, `colapso_fenomenologico`) y la cobertura de evidencia (cuántas fuentes aportaron datos a esa celda). Las celdas con cobertura insuficiente se reportarán como `inconcluyente`, no como `flujo_ordinario`.
+
+Esta matriz es el resultado cuantitativo central de la fase empírica. Si al construirla se encuentra que ninguna celda alcanza la convergencia mínima de tres condiciones, el capítulo deberá reportarlo así; el rigor exige aceptar esa posibilidad y no forzar la categoría.
+
+**Estado:** no construida.
+
+### 3.12.6. Lectura cualitativa complementaria
+
+Más allá de la matriz, el conjunto de notas fenomenológicas, fotos y recorridos POV se usará para una lectura cualitativa de las celdas en colapso o fricción acumulada. El propósito de esta lectura no es ilustrar la matriz, sino exponer lo que la matriz no captura: trayectorias acortadas, pausas evitadas, miradas desviadas, atmósferas y discursos. Esta capa se reporta sin pretensión de generalización.
+
+**Estado:** insumos en archivo; redacción tras matriz.
+
+## 3.12bis. Resultados preliminares de la jornada del 5 de mayo de 2026
+
+Esta sección reporta lo que el pipeline ya produjo a partir de la jornada del 5 de mayo de 2026. Es un **avance de procesamiento**, no la matriz final. Antes de cualquier afirmación interpretativa conviene declarar la cobertura observada y sus límites.
+
+### Cobertura del corpus procesado
+
+La jornada produjo 17 videos POV/saturación (~11 GB en total), 15 fotografías de campo (~50 MB) y un conjunto de notas y encuestas todavía en ingesta. Al momento de cierre de esta primera pasada, el pipeline `fenomurb/proc:cuda128` había procesado en torre HPC: seis videos completos (incluyendo la versión recodificada de uno de 2.5 GB), las quince fotos con detección multi-clase y EXIF, y cinco transcripciones de audio vía Whisper. Los nueve videos restantes están en cola de compresión local (libopenh264 sobre CPU 20 cores) y subida a la torre.
+
+La cobertura **espacial** es asimétrica. Las quince fotografías llevan EXIF GPS válido y se asignan al nodo más cercano del modelo M-MASS por distancia haversine (`scripts/hpc/assign_nodes.py` →  `data/processed/photo_node_assignments.json`). La distribución resultante es:
+
+| Nodo | Fotos asignadas | Distancia mínima al nodo |
+| --- | ---: | --- |
+| `junin_paseo` | ~7-8 | < 100 m |
+| `carabobo_cultural` | ~4 | ~140 m |
+| `parque_berrio` | 2 | ~210 m (frontera con `carabobo_cultural`) |
+| `san_antonio_metro` | 1 | ~60 m |
+| Resto de nodos | 0 | — |
+
+El sesgo hacia Junín es real y reconocido: la jornada se concentró en ese eje y deja sin cobertura fotográfica directa a `parque_san_antonio`, `palacio_nacional`, `oriental_cruce`, `plaza_botero` y `museo_antioquia`. La matriz final tendrá que reportar esas celdas como `inconcluyente` por C4 hasta que entren más jornadas, o complementarlas con video cuando se confirme su ubicación.
+
+La cobertura **temporal** es de una sola jornada y se concentra en el tramo 8:30–11:46 (peak_am extendido y midday temprano), con un único video al 21:30 (night). Las franjas `peak_pm` y la mayor parte de `night` están ausentes en el material procesado hasta ahora.
+
+### Conteos automáticos por foto
+
+Las quince fotografías procesadas con YOLO11x a 1280 px arrojan rangos de personas detectadas que van de 0 a 30 por cuadro. Los valores más altos —y las saturaciones más altas— aparecen en dos puntos:
+
+- una foto en la zona de `san_antonio_metro` con **26 personas detectadas** y `saturation_index = 0.88`;
+- una foto en la zona de `parque_berrio`/`carabobo_cultural` con **30 personas detectadas** y `saturation_index = 0.80`.
+
+Estos valores no constituyen evidencia de colapso por sí solos: son lecturas puntuales de un cuadro fijo en un instante. Lo que sí permiten sostener es que la jornada captó momentos de densidad sustantiva en al menos dos nodos del corredor, lo que justifica priorizar esos nodos en jornadas futuras o en el procesamiento de los videos pendientes.
+
+### Tracking de personas en video
+
+El procesamiento con BoTSORT sobre los seis videos disponibles produjo conteos de personas únicas por video que oscilan entre 0 y **129 personas únicas en `VID_20260505_110910` (40 segundos de duración, 1080p)**. Los videos también permiten extraer permanencia mediana, velocidad aparente en píxeles, audio (dB-FS RMS por segundo) y detecciones de motos, autos, mochilas y celulares. Estas métricas están disponibles celda por celda en `video_saturation_*.json` pero la asignación de cada video a un nodo específico depende del mapeo manual que el operador del campo pueda confirmar (los archivos del celular no embeben GPS en el contenedor MP4).
+
+### Transcripción de audio
+
+El servicio Whisper ASR local produjo transcripciones para los videos con audio audible. Tres de los cinco transcritos quedaron sin contenido lingüístico (audio ambiente sin habla); uno produjo un fragmento corto en español (`VID_20260505_213002`, 21:30, 18.5 s de procesamiento). Las transcripciones constituyen un insumo complementario para C3 (habitabilidad declarada), pero no la sustituyen: la fuente principal sigue siendo el conjunto de entrevistas semiestructuradas en transcripción por colaborador externo.
+
+### Lo que estos resultados todavía no permiten afirmar
+
+Aunque hay datos automáticos sólidos por foto y por video, **no se puede declarar todavía una sola celda en colapso fenomenológico**. Las razones son explícitas:
+
+1. **C3 sin codificación.** Las entrevistas no han llegado codificadas; sin esquema `HABITABLE/EVITABLE/...` aplicado, C3 es `false` para todas las celdas.
+2. **C2 sin ingesta.** Los `field_counts_*.csv` con `security_score` por nodo y franja todavía no están en `data/interim/YYYY_MM_DD/`.
+3. **Cobertura asimétrica.** Solo nueve videos procesados con asignación de nodo (seis con confianza `medium` o `high`), y solo cuatro nodos del corredor cubiertos por C4: `san_antonio_metro`, `junin_paseo`, `parque_berrio` y, por proximidad, `carabobo_cultural`.
+
+Aplicar la regla 3-de-4 a este estado parcial daría falsos negativos en todas las celdas. Por eso el reporte se limita a describir el corpus procesado y deja la regla suspendida en sus celdas en `inconcluyente` hasta que las cuatro condiciones tengan al menos una pasada de ingesta.
+
+### Primera matriz de colapso construida
+
+A pesar de los faltantes, la matriz `data/processed/collapse_matrix.json` ya se computa con C1 (proyección horaria documentada) y C4 (saturación de video por nodo). El reparto inicial de las 36 celdas es:
+
+| Decisión | Celdas |
+| --- | ---: |
+| `inconcluyente` | 33 |
+| `flujo_ordinario` | 2 |
+| `friccion_acumulada` | **1** |
+
+La única celda con fricción acumulada en esta primera pasada es **`parque_berrio | midday`**, que cumple C4 (`saturation_p75` por encima del p75 global) sin convergencia con las otras condiciones. Las dos celdas en `flujo_ordinario` son `san_antonio_metro | peak_am` y `junin_paseo | peak_am`, donde C1, C4 y la cobertura disponible no superan ningún umbral. El estado `friccion_acumulada` es importante por sí mismo: dice que hay una franja-evento donde la materialidad (saturación visible y sonora en video) ya alerta, aunque el resto de fuentes todavía no esté disponible para confirmar o descartar colapso.
+
+El supuesto distribucional de C1 (peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15, derivado de Cohen & Felson 1979 y Brantingham & Brantingham, ver `data/processed/c1_hourly_projection.json`) hace que el percentil 75 por franja sea más alto en `peak_pm` (62.5 hurtos/hora proyectados) que en las otras tres franjas. La mediana mensual histórica produce tasas por debajo de ese percentil, lo cual implica que en el "mes típico" C1_high es `false` para todas las franjas. Solo los meses pico de la serie (mayo y julio de varios años) lo activarían — pero la celda no se evalúa contra una franja específica de un mes, sino contra el supuesto de tasa típica.
+
+Este reporte parcial cumple su función académica: muestra que el pipeline produce decisiones legibles con cobertura declarada y que la regla 3-de-4 se respeta sin atajos. La matriz se reconstruirá automáticamente cada vez que entren más datos a cualquiera de las cuatro condiciones.
 
 ## 3.13. Resultados que sí pueden sostenerse y resultados que no
 
 | Afirmación | Estado | Justificación |
 | --- | --- | --- |
 | El centro tiene percepción ambivalente | Sostenible | EPC 2024 integrada en `empirical_summary.json` |
+| La criminalidad de comuna 10 tiene estructura mensual marcada | Sostenible | serie MEData 2016–2023 |
 | El pipeline integra fuentes públicas trazables | Sostenible | `source_status.json` documenta fuentes y fallas |
 | El modelo produce escenarios de presión y fricción | Sostenible | salidas M-MASS y scripts del repositorio |
 | La simulación muestra estabilidad numérica | Sostenible bajo supuestos | Monte Carlo con baja incertidumbre relativa |
 | El corredor real colapsa a 500,000 agentes | No sostenible | es umbral interno de escenario simulado |
-| La experiencia real está calibrada | No sostenible todavía | `pending_no_capture` |
+| El campo se realizó con cobertura mínima | Sostenible | jornada ejecutada antes del 2026-05-06 |
+| La experiencia real está calibrada | Pendiente de matriz | `field_ingest_in_progress`; falta `collapse_matrix.json` |
+| Existen franjas-nodo en colapso fenomenológico | Pendiente de matriz | requiere convergencia de C1–C4 verificada |
 | Los perfiles simulados equivalen a sujetos reales | No sostenible | son tipos analíticos simplificados |
-| La desigualdad de ruta está demostrada empíricamente | Parcial | métrica simulada, falta campo |
+| La desigualdad de ruta está demostrada empíricamente | Parcial | métrica simulada, falta cruce con campo |
 
 ## 3.14. Discusión filosófica de los resultados
 
 Los resultados sugieren que el corredor puede leerse como un sistema de fricciones acumuladas. La experiencia urbana no depende solo de la posibilidad abstracta de pasar por un lugar, sino de las condiciones bajo las cuales se pasa: ruido, presión, riesgo, visibilidad, orientación, comercio, vigilancia y posibilidad de detenerse.
 
-Desde Merleau-Ponty, la movilidad no es una línea trazada en un mapa, sino una práctica corporal. Desde Simmel, el exceso de estímulos puede conducir a estrategias de filtrado. Desde Lefebvre y Harvey, el derecho a la ciudad no se reduce al acceso físico; incluye apropiación, permanencia y agencia. Desde Foucault y Deleuze, el movimiento puede ser orientado por dispositivos que no necesariamente prohíben, pero sí modulan.
+Desde Merleau-Ponty, la movilidad no es una línea trazada en un mapa, sino una práctica corporal. Desde Simmel, el exceso de estímulos puede conducir a estrategias de filtrado. Desde Lefebvre y Harvey, el derecho a la ciudad no se reduce al acceso físico; incluye apropiación, permanencia y agencia. Desde Foucault y Deleuze, el movimiento puede ser orientado por dispositivos que no necesariamente prohíben, pero sí modulan. Y desde la teoría reconstructiva de la memoria (Bartlett 1932; Schacter, Addis & Buckner 2007; Matthen 2010, ver anexo A), los testimonios sobre el corredor no son lecturas de una huella estable: son construcciones presentes guiadas por esquemas culturales. Esto hace que C3 dependa, no de la fidelidad de cada recuerdo aislado, sino de la coherencia entre testimonios, criminalidad registrada, encuesta situada y saturación material —es decir, de la triangulación misma.
 
 La simulación ayuda a ordenar estas tensiones, pero no las resuelve. Su valor está en hacer explícitos los supuestos y generar preguntas mejores para el campo.
 
@@ -141,6 +241,6 @@ graph LR
 
 ## 3.16. Balance del capítulo
 
-El capítulo muestra avances reales: datos públicos integrados, pipeline trazable, modelo de caso, simulaciones, incertidumbre, estrés, ciclo horario y desigualdad relativa entre perfiles. También muestra límites importantes: falta campo, falta sensibilidad sistemática, falta validación externa y algunas salidas requieren revisión crítica.
+El capítulo muestra avances reales: datos públicos integrados, pipeline trazable, modelo de caso, simulaciones, incertidumbre, estrés, ciclo horario, desigualdad relativa entre perfiles y un campo ya realizado con un protocolo multimodal (criminalidad, encuesta, entrevista, video). También muestra límites importantes: la triangulación de campo aún no se ha sintetizado en `collapse_matrix.json`, falta sensibilidad sistemática, falta validación externa y algunas salidas requieren revisión crítica.
 
-La tesis gana fuerza cuando evita declarar verdades cerradas y, en cambio, muestra con precisión qué patrones emergen del modelo, qué supuestos los producen y qué observaciones faltan para confirmarlos, corregirlos o refutarlos.
+La tesis gana fuerza cuando evita declarar verdades cerradas y, en cambio, muestra con precisión qué patrones emergen del modelo, qué supuestos los producen, qué condiciones empíricas se reportarán franja por franja y qué observaciones faltan por procesar para confirmarlos, corregirlos o refutarlos. La defensa académica del concepto de colapso fenomenológico depende, sin atajo, de que esa matriz exista y se sostenga; mientras tanto, el concepto queda definido y operacionalizado, pero sin reporte aún.

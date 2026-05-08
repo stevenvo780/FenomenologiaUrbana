@@ -1,0 +1,123 @@
+{
+  "summary": {
+    "photo": "IMG_20260505_093838042.jpg",
+    "node": null,
+    "window": null,
+    "captured_at": "2026:05:05 09:38:38",
+    "width": 3000,
+    "height": 4000,
+    "exif": {
+      "datetime_original": "2026:05:05 09:38:38",
+      "orientation": 6,
+      "camera_make": "motorola",
+      "camera_model": "moto g(9) play",
+      "gps_lat": 6.249372,
+      "gps_lon": -75.56736397222222,
+      "gps_alt_m": 1485.67
+    },
+    "counts": {
+      "person": 5,
+      "bicycle": 0,
+      "car": 0,
+      "motorcycle": 2,
+      "bus": 0,
+      "truck": 0,
+      "dog": 0,
+      "backpack": 1,
+      "handbag": 0,
+      "suitcase": 0,
+      "cell_phone": 0
+    },
+    "detections": [
+      {
+        "class_name": "motorcycle",
+        "confidence": 0.9336395859718323,
+        "bbox_xyxy": [
+          0.9284496307373047,
+          2294.912353515625,
+          536.2637329101562,
+          2769.959716796875
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.869661808013916,
+        "bbox_xyxy": [
+          2697.20556640625,
+          2215.6689453125,
+          2873.717041015625,
+          2640.02392578125
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.7061439156532288,
+        "bbox_xyxy": [
+          2899.890625,
+          2225.457275390625,
+          2999.179931640625,
+          2411.59375
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.528799295425415,
+        "bbox_xyxy": [
+          2539.58203125,
+          2247.845458984375,
+          2608.53125,
+          2420.3056640625
+        ]
+      },
+      {
+        "class_name": "motorcycle",
+        "confidence": 0.4305485486984253,
+        "bbox_xyxy": [
+          2443.385986328125,
+          2389.54736328125,
+          2615.151123046875,
+          2619.786376953125
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.38083019852638245,
+        "bbox_xyxy": [
+          2014.3466796875,
+          2224.342041015625,
+          2211.787109375,
+          2904.828369140625
+        ]
+      },
+      {
+        "class_name": "person",
+        "confidence": 0.38007065653800964,
+        "bbox_xyxy": [
+          2177.1240234375,
+          2295.84228515625,
+          2278.0361328125,
+          2558.69287109375
+        ]
+      },
+      {
+        "class_name": "backpack",
+        "confidence": 0.2804117798805237,
+        "bbox_xyxy": [
+          0.19391179084777832,
+          2447.9697265625,
+          69.85154724121094,
+          2632.2060546875
+        ]
+      }
+    ],
+    "persons": 5,
+    "brightness": 131.06324283333333,
+    "contrast": 58.152126721018234,
+    "saturation": 27.990697583333333,
+    "edge_density": 13.420395,
+    "saturation_index": 0.21945379597222217,
+    "worker": "worker_photos",
+    "yolo_model": "yolo11x.pt",
+    "processed_at": "2026-05-07T23:50:08+0000"
+  }
+}

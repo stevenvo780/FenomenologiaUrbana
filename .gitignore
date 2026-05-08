@@ -24,3 +24,24 @@ dist-ssr
 *.sw?
 node_modules
 *__pycache__*
+
+# HPC virtualenv
+venv_hpc/
+
+# Heavy raw media (videos y fotos de campo)
+investigacion/data/raw/video/
+investigacion/data/raw/photo/
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.MOV
+*.MP4
+
+# Backups con timestamp generados por scripts
+*.bak.*
+
+# HPC runtime artifacts (jobs/logs locales)
+investigacion/hpc/logs/
+investigacion/hpc/jobs/
+investigacion/hpc/jobs_photos/

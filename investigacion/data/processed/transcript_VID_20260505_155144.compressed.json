@@ -1,0 +1,55 @@
+{
+  "video": "VID_20260505_155144.compressed.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T15:51:44-05:00",
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 124.18442678451538,
+  "whisper": {
+    "text": " Maldito de agua",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 33000,
+        "start": 340.86,
+        "end": 342.26,
+        "text": " Maldito de agua",
+        "tokens": [
+          50406,
+          376,
+          3976,
+          3528,
+          368,
+          19330,
+          50629
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -4.9820577833387585,
+        "compression_ratio": 0.6521739130434783,
+        "no_speech_prob": 0.5105524063110352,
+        "words": [
+          {
+            "word": " Maldito",
+            "start": 340.86,
+            "end": 342.26,
+            "probability": 0.12225148982057969
+          },
+          {
+            "word": " de",
+            "start": 342.26,
+            "end": 342.26,
+            "probability": 0.0612390972673893
+          },
+          {
+            "word": " agua",
+            "start": 342.26,
+            "end": 342.26,
+            "probability": 0.0018544510239735246
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}

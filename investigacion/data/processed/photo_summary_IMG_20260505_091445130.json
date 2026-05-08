@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "photo": "IMG_20260505_091445130.jpg",
+    "node": null,
+    "window": null,
+    "captured_at": "2026:05:05 09:14:49",
+    "width": 4000,
+    "height": 3000,
+    "exif": {
+      "datetime_original": "2026:05:05 09:14:49",
+      "orientation": 1,
+      "camera_make": "motorola",
+      "camera_model": "moto g(9) play",
+      "gps_lat": 6.245555972222222,
+      "gps_lon": -75.56796797222222,
+      "gps_alt_m": 1515.923
+    },
+    "counts": {
+      "person": 0,
+      "bicycle": 0,
+      "car": 0,
+      "motorcycle": 0,
+      "bus": 0,
+      "truck": 0,
+      "dog": 0,
+      "backpack": 0,
+      "handbag": 0,
+      "suitcase": 0,
+      "cell_phone": 0
+    },
+    "detections": [],
+    "persons": 0,
+    "brightness": 147.52764408333334,
+    "contrast": 41.53165552288185,
+    "saturation": 14.947078416666667,
+    "edge_density": 13.89726625,
+    "saturation_index": 0.11756023902777778,
+    "worker": "worker_photos",
+    "yolo_model": "yolo11x.pt",
+    "processed_at": "2026-05-07T23:50:04+0000"
+  }
+}

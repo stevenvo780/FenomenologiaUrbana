@@ -3,7 +3,8 @@
     "generated_at": "2026-04-25T03:46:08+00:00",
     "pipeline_version": "0.4.0-top-lvl",
     "status": "final_repo_ready_with_external_fieldwork_dependency",
-    "engine": "M-MASS + DRL + SFM (GPU/CUDA)"
+    "engine": "M-MASS + DRL + SFM (GPU/CUDA)",
+    "field_published_at": null
   },
   "case_study": {
     "title": "Corredor fenomenologico de La Candelaria",
@@ -1538,7 +1539,7 @@
   "advanced_reports": {
     "urban_inequality": {
       "generated_at": "2026-04-25T03:45:59+00:00",
-      "key_findings": "An\u00e1lisis de desigualdad fenomenol\u00f3gica basado en M-MASS x100.",
+      "key_findings": "Análisis de desigualdad fenomenológica basado en M-MASS x100.",
       "scenarios": [
         {
           "scenario_id": "peak_am",
@@ -1573,7 +1574,7 @@
           "inequity_ratio": 1.27
         }
       ],
-      "conclusion": "La desigualdad en la libertad de ruta (entrop\u00eda) es un indicador de la calidad democr\u00e1tica del espacio urbano."
+      "conclusion": "La desigualdad en la libertad de ruta (entropía) es un indicador de la calidad democrática del espacio urbano."
     },
     "hpc_24h": {
       "generated_at": "2026-04-25T03:45:49+00:00",
@@ -1808,7 +1809,7 @@
           "pressure_index": 1.9073486328125
         }
       ],
-      "conclusion": "El colapso sist\u00e9mico del corredor ocurre a los 500000 agentes simult\u00e1neos."
+      "conclusion": "El colapso sistémico del corredor ocurre a los 500000 agentes simultáneos."
     },
     "hpc_uncertainty": {
       "generated_at": "2026-04-24T23:13:11+00:00",
@@ -1842,7 +1843,7 @@
           "relative_uncertainty": 0.00026260617106482005
         }
       },
-      "note": "Intervalos de confianza calculados mediante Monte Carlo para blindar la tesis contra cr\u00edticas de variabilidad."
+      "note": "Intervalos de confianza calculados mediante Monte Carlo para blindar la tesis contra críticas de variabilidad."
     },
     "hpc_multipoint_calibration": {
       "generated_at": "2026-04-24T23:08:10+00:00",
@@ -2270,7 +2271,7 @@
           "relative_uncertainty": 0.00026260617106482005
         }
       },
-      "note": "Intervalos de confianza calculados mediante Monte Carlo para blindar la tesis contra cr\u00edticas de variabilidad."
+      "note": "Intervalos de confianza calculados mediante Monte Carlo para blindar la tesis contra críticas de variabilidad."
     },
     "micro": {
       "generated_at": "2026-04-24T22:42:26+00:00",
@@ -3164,7 +3165,7 @@
           "cases": 593
         },
         {
-          "label": "Extorsi\u00f3n",
+          "label": "Extorsión",
           "cases": 94
         },
         {
@@ -3186,7 +3187,7 @@
           "cases": 16
         },
         {
-          "label": "Extorsi\u00f3n",
+          "label": "Extorsión",
           "cases": 8
         },
         {
@@ -3205,52 +3206,52 @@
       "target_barrio": "La Candelaria",
       "la_candelaria_metrics": [
         {
-          "label": "Poblaci\u00f3n total",
+          "label": "Población total",
           "value": 3535.0,
-          "unit": "N\u00famero",
-          "theme": "Vivienda y poblaci\u00f3n"
+          "unit": "Número",
+          "theme": "Vivienda y población"
         },
         {
           "label": "Densidad poblacional",
           "value": 85.0632039596995,
-          "unit": "Habitantes por hect\u00e1rea",
+          "unit": "Habitantes por hectárea",
           "theme": "Estado del territorio"
         },
         {
-          "label": "Suelo m\u00faltiple (comercio y servicios)",
+          "label": "Suelo múltiple (comercio y servicios)",
           "value": 264243.202306352,
           "unit": "Metros cuadrados",
           "theme": "Estado del territorio"
         },
         {
-          "label": "Metros cuadrados construidos en m\u00faltiple (comercio y servicios)",
+          "label": "Metros cuadrados construidos en múltiple (comercio y servicios)",
           "value": 1154830.0,
           "unit": "Metros cuadrados construidos",
           "theme": "Estado del territorio"
         },
         {
-          "label": "Espacio p\u00fablico efectivo por habitante",
+          "label": "Espacio público efectivo por habitante",
           "value": 2.07078425473127,
           "unit": "Metros cuadrados por habitante",
-          "theme": "Espacio p\u00fablico"
+          "theme": "Espacio público"
         },
         {
-          "label": "D\u00e9ficit espacio p\u00fablico efectivo",
+          "label": "Déficit espacio público efectivo",
           "value": 4.92921574526873,
           "unit": "Metros cuadrados por habitante",
-          "theme": "Espacio p\u00fablico"
+          "theme": "Espacio público"
         },
         {
-          "label": "Densidad de espacio p\u00fablico efectivo",
+          "label": "Densidad de espacio público efectivo",
           "value": 0.0796020260925405,
           "unit": "Cantidad EP/Ha",
-          "theme": "Espacio p\u00fablico"
+          "theme": "Espacio público"
         },
         {
           "label": "Densidad empresarial",
           "value": 1719.09476661952,
           "unit": "Empresas por cada 1.000 habitantes",
-          "theme": "Econom\u00eda"
+          "theme": "Economía"
         }
       ],
       "comparison_barrios": [
@@ -3264,42 +3265,42 @@
       ],
       "metric_comparisons": [
         {
-          "metric": "Poblaci\u00f3n total",
+          "metric": "Población total",
           "ranked_values": [
             {
               "barrio": "Boston",
               "value": 14270.0,
-              "unit": "N\u00famero"
+              "unit": "Número"
             },
             {
               "barrio": "Prado",
               "value": 9466.0,
-              "unit": "N\u00famero"
+              "unit": "Número"
             },
             {
               "barrio": "San Diego",
               "value": 8416.0,
-              "unit": "N\u00famero"
+              "unit": "Número"
             },
             {
               "barrio": "Villa Nueva",
               "value": 4443.0,
-              "unit": "N\u00famero"
+              "unit": "Número"
             },
             {
               "barrio": "La Candelaria",
               "value": 3535.0,
-              "unit": "N\u00famero"
+              "unit": "Número"
             },
             {
               "barrio": "Guayaquil",
               "value": 793.0,
-              "unit": "N\u00famero"
+              "unit": "Número"
             },
             {
               "barrio": "Perpetuo Socorro",
               "value": 76.0,
-              "unit": "N\u00famero"
+              "unit": "Número"
             }
           ]
         },
@@ -3309,37 +3310,37 @@
             {
               "barrio": "Boston",
               "value": 412.414107492492,
-              "unit": "Habitantes por hect\u00e1rea"
+              "unit": "Habitantes por hectárea"
             },
             {
               "barrio": "Villa Nueva",
               "value": 209.417018865278,
-              "unit": "Habitantes por hect\u00e1rea"
+              "unit": "Habitantes por hectárea"
             },
             {
               "barrio": "Prado",
               "value": 201.286095432682,
-              "unit": "Habitantes por hect\u00e1rea"
+              "unit": "Habitantes por hectárea"
             },
             {
               "barrio": "San Diego",
               "value": 195.757689079526,
-              "unit": "Habitantes por hect\u00e1rea"
+              "unit": "Habitantes por hectárea"
             },
             {
               "barrio": "La Candelaria",
               "value": 85.0632039596995,
-              "unit": "Habitantes por hect\u00e1rea"
+              "unit": "Habitantes por hectárea"
             },
             {
               "barrio": "Guayaquil",
               "value": 40.6848211980379,
-              "unit": "Habitantes por hect\u00e1rea"
+              "unit": "Habitantes por hectárea"
             },
             {
               "barrio": "Perpetuo Socorro",
               "value": 1.65686376724045,
-              "unit": "Habitantes por hect\u00e1rea"
+              "unit": "Habitantes por hectárea"
             }
           ]
         },
@@ -3384,7 +3385,7 @@
           ]
         },
         {
-          "metric": "Suelo m\u00faltiple (comercio y servicios)",
+          "metric": "Suelo múltiple (comercio y servicios)",
           "ranked_values": [
             {
               "barrio": "La Candelaria",
@@ -3424,7 +3425,7 @@
           ]
         },
         {
-          "metric": "Metros cuadrados construidos en m\u00faltiple (comercio y servicios)",
+          "metric": "Metros cuadrados construidos en múltiple (comercio y servicios)",
           "ranked_values": [
             {
               "barrio": "La Candelaria",
@@ -3464,7 +3465,7 @@
           ]
         },
         {
-          "metric": "Espacio p\u00fablico efectivo por habitante",
+          "metric": "Espacio público efectivo por habitante",
           "ranked_values": [
             {
               "barrio": "San Diego",
@@ -3504,7 +3505,7 @@
           ]
         },
         {
-          "metric": "D\u00e9ficit espacio p\u00fablico efectivo",
+          "metric": "Déficit espacio público efectivo",
           "ranked_values": [
             {
               "barrio": "Villa Nueva",
@@ -3544,7 +3545,7 @@
           ]
         },
         {
-          "metric": "Densidad de espacio p\u00fablico efectivo",
+          "metric": "Densidad de espacio público efectivo",
           "ranked_values": [
             {
               "barrio": "Boston",
@@ -3612,7 +3613,7 @@
           "station_count": 21,
           "stations_with_valid_latest": 20,
           "nearest_station": {
-            "name": "Estaci\u00f3n Tr\u00e1fico Centro",
+            "name": "Estación Tráfico Centro",
             "short_name": "CEN-TRAF",
             "distance_km": 0.3,
             "latest_at": "2022-10-12 04:00:00",
@@ -3627,7 +3628,7 @@
           "station_count": 10,
           "stations_with_valid_latest": 7,
           "nearest_station": {
-            "name": "Estaci\u00f3n Tr\u00e1fico Centro",
+            "name": "Estación Tráfico Centro",
             "short_name": "CEN-TRAF",
             "distance_km": 0.3,
             "latest_at": "2022-12-14 04:00:00",
@@ -3675,5 +3676,629 @@
     "modelo": "../04-modelado/05-modelo-computacional.md",
     "metricas": "../04-modelado/06-metricas.md",
     "estado_empirico": "../investigacion/docs/estado-empirico.md"
+  },
+  "field_calibration": {
+    "status": "field_ingest_in_progress",
+    "captured_on": "2026-05-05",
+    "ingested_at_iso": "2026-04-25T03:46:08+00:00",
+    "collapse_matrix": {
+      "rule": "3-de-4 entre C1 (crimen) / C2 (seguridad) / C3 (habitabilidad) / C4 (saturación)",
+      "decisions": {
+        "flujo_ordinario": 2,
+        "inconcluyente": 33,
+        "friccion_acumulada": 1
+      },
+      "cells": [
+        {
+          "key": "san_antonio_metro|peak_am",
+          "node": "san_antonio_metro",
+          "window": "peak_am",
+          "decision": "flujo_ordinario",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 2
+        },
+        {
+          "key": "san_antonio_metro|midday",
+          "node": "san_antonio_metro",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "san_antonio_metro|peak_pm",
+          "node": "san_antonio_metro",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "san_antonio_metro|night",
+          "node": "san_antonio_metro",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "parque_san_antonio|peak_am",
+          "node": "parque_san_antonio",
+          "window": "peak_am",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "parque_san_antonio|midday",
+          "node": "parque_san_antonio",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "parque_san_antonio|peak_pm",
+          "node": "parque_san_antonio",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "parque_san_antonio|night",
+          "node": "parque_san_antonio",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "palacio_nacional|peak_am",
+          "node": "palacio_nacional",
+          "window": "peak_am",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "palacio_nacional|midday",
+          "node": "palacio_nacional",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "palacio_nacional|peak_pm",
+          "node": "palacio_nacional",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "palacio_nacional|night",
+          "node": "palacio_nacional",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "junin_paseo|peak_am",
+          "node": "junin_paseo",
+          "window": "peak_am",
+          "decision": "flujo_ordinario",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 2
+        },
+        {
+          "key": "junin_paseo|midday",
+          "node": "junin_paseo",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "junin_paseo|peak_pm",
+          "node": "junin_paseo",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "junin_paseo|night",
+          "node": "junin_paseo",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "oriental_cruce|peak_am",
+          "node": "oriental_cruce",
+          "window": "peak_am",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "oriental_cruce|midday",
+          "node": "oriental_cruce",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "oriental_cruce|peak_pm",
+          "node": "oriental_cruce",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "oriental_cruce|night",
+          "node": "oriental_cruce",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "parque_berrio|peak_am",
+          "node": "parque_berrio",
+          "window": "peak_am",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "parque_berrio|midday",
+          "node": "parque_berrio",
+          "window": "midday",
+          "decision": "friccion_acumulada",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": true,
+          "conditions_met": 1,
+          "coverage": 2
+        },
+        {
+          "key": "parque_berrio|peak_pm",
+          "node": "parque_berrio",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "parque_berrio|night",
+          "node": "parque_berrio",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "carabobo_cultural|peak_am",
+          "node": "carabobo_cultural",
+          "window": "peak_am",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "carabobo_cultural|midday",
+          "node": "carabobo_cultural",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "carabobo_cultural|peak_pm",
+          "node": "carabobo_cultural",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "carabobo_cultural|night",
+          "node": "carabobo_cultural",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "plaza_botero|peak_am",
+          "node": "plaza_botero",
+          "window": "peak_am",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "plaza_botero|midday",
+          "node": "plaza_botero",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "plaza_botero|peak_pm",
+          "node": "plaza_botero",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "plaza_botero|night",
+          "node": "plaza_botero",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "museo_antioquia|peak_am",
+          "node": "museo_antioquia",
+          "window": "peak_am",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "museo_antioquia|midday",
+          "node": "museo_antioquia",
+          "window": "midday",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "museo_antioquia|peak_pm",
+          "node": "museo_antioquia",
+          "window": "peak_pm",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        },
+        {
+          "key": "museo_antioquia|night",
+          "node": "museo_antioquia",
+          "window": "night",
+          "decision": "inconcluyente",
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "conditions_met": 0,
+          "coverage": 1
+        }
+      ]
+    },
+    "photo_assignments": {
+      "n_total": 34,
+      "n_with_gps": 34,
+      "by_node": {
+        "palacio_nacional": {
+          "n_photos": 2,
+          "persons_mean": 0.0,
+          "persons_max": 0,
+          "saturation_mean": 0.18775989979166666,
+          "saturation_max": 0.2369470336111111
+        },
+        "san_antonio_metro": {
+          "n_photos": 11,
+          "persons_mean": 3.3636363636363638,
+          "persons_max": 26,
+          "saturation_mean": 0.25004155999357497,
+          "saturation_max": 0.8804020363182139
+        },
+        "junin_paseo": {
+          "n_photos": 12,
+          "persons_mean": 3.75,
+          "persons_max": 14,
+          "saturation_mean": 0.24038299187783443,
+          "saturation_max": 0.5521912931410561
+        },
+        "parque_berrio": {
+          "n_photos": 9,
+          "persons_mean": 9.666666666666666,
+          "persons_max": 30,
+          "saturation_mean": 0.3742672693891587,
+          "saturation_max": 0.8009971721670492
+        }
+      },
+      "by_node_window": {
+        "palacio_nacional|night": {
+          "n_photos": 2,
+          "persons_mean": 0.0,
+          "persons_max": 0,
+          "saturation_mean": 0.18775989979166666
+        },
+        "san_antonio_metro|peak_am": {
+          "n_photos": 10,
+          "persons_mean": 1.1,
+          "persons_max": 3,
+          "saturation_mean": 0.18700551236111113
+        },
+        "junin_paseo|peak_am": {
+          "n_photos": 11,
+          "persons_mean": 4.090909090909091,
+          "persons_max": 14,
+          "saturation_mean": 0.25727808101319316
+        },
+        "parque_berrio|peak_am": {
+          "n_photos": 3,
+          "persons_mean": 0.0,
+          "persons_max": 0,
+          "saturation_mean": 0.11892765898148148
+        },
+        "junin_paseo|midday": {
+          "n_photos": 1,
+          "persons_mean": 0.0,
+          "persons_max": 0,
+          "saturation_mean": 0.05453701138888889
+        },
+        "san_antonio_metro|midday": {
+          "n_photos": 1,
+          "persons_mean": 26.0,
+          "persons_max": 26,
+          "saturation_mean": 0.8804020363182139
+        },
+        "parque_berrio|midday": {
+          "n_photos": 6,
+          "persons_mean": 14.5,
+          "persons_max": 30,
+          "saturation_mean": 0.5019370745929973
+        }
+      }
+    },
+    "video_assignments": {
+      "n_videos": 9,
+      "n_with_node": 9,
+      "by_confidence": {
+        "high": 2,
+        "medium": 4,
+        "low": 2,
+        "very_low": 1
+      },
+      "assignments": [
+        {
+          "video": "VID_20260505_082652114.mp4",
+          "ts": "2026-05-05T08:26:52",
+          "window": "peak_am",
+          "node": "san_antonio_metro",
+          "confidence": "medium",
+          "delta_seconds": 1402.0
+        },
+        {
+          "video": "VID_20260505_082857885.mp4",
+          "ts": "2026-05-05T08:28:57",
+          "window": "peak_am",
+          "node": "san_antonio_metro",
+          "confidence": "medium",
+          "delta_seconds": 1277.0
+        },
+        {
+          "video": "VID_20260505_083042543.compressed.mp4",
+          "ts": "2026-05-05T08:30:42",
+          "window": "peak_am",
+          "node": "san_antonio_metro",
+          "confidence": "medium",
+          "delta_seconds": 1172.0
+        },
+        {
+          "video": "VID_20260505_094143350.mp4",
+          "ts": "2026-05-05T09:41:43",
+          "window": "peak_am",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 164.0
+        },
+        {
+          "video": "VID_20260505_094243902.compressed.mp4",
+          "ts": "2026-05-05T09:42:43",
+          "window": "peak_am",
+          "node": "junin_paseo",
+          "confidence": "high",
+          "delta_seconds": 224.0
+        },
+        {
+          "video": "VID_20260505_110910.mp4",
+          "ts": "2026-05-05T11:09:10",
+          "window": "midday",
+          "node": "parque_berrio",
+          "confidence": "medium",
+          "delta_seconds": 810.0
+        },
+        {
+          "video": "VID_20260505_113217.compressed.mp4",
+          "ts": "2026-05-05T11:32:17",
+          "window": "midday",
+          "node": "parque_berrio",
+          "confidence": "low",
+          "delta_seconds": 2197.0
+        },
+        {
+          "video": "VID_20260505_114547.mp4",
+          "ts": "2026-05-05T11:45:47",
+          "window": "midday",
+          "node": "parque_berrio",
+          "confidence": "low",
+          "delta_seconds": 3007.0
+        },
+        {
+          "video": "VID_20260505_213002.mp4",
+          "ts": "2026-05-05T21:30:02",
+          "window": "night",
+          "node": "parque_berrio",
+          "confidence": "very_low",
+          "delta_seconds": 38062.0
+        }
+      ]
+    },
+    "c1_hourly_projection": {
+      "supuesto": "Criminología ambiental (Cohen & Felson 1979; Brantingham & Brantingham). Pesos por franja sobre total mensual: peak_am 0.20, midday 0.20, peak_pm 0.45, night 0.15. Horas por franja: peak_am 3h, midday 5h, peak_pm 5h, night 3h. C1_high se cumple cuando la tasa por hora proyectada de una franja-mes supera su percentil 75 dentro de la propia franja, o el percentil 75 global. La tesis se compromete a reevaluar el supuesto cuando MEData publique microdatos horarios.",
+      "weights": {
+        "peak_am": 0.2,
+        "midday": 0.2,
+        "peak_pm": 0.45,
+        "night": 0.15
+      },
+      "p75_per_window_cases_per_hour": {
+        "peak_am": 46.26666666666667,
+        "midday": 27.76,
+        "peak_pm": 62.46,
+        "night": 34.7
+      }
+    }
   }
 }

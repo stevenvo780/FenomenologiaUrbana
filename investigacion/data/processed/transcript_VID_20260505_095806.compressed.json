@@ -1,0 +1,14 @@
+{
+  "video": "VID_20260505_095806.compressed.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T09:58:06-05:00",
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 3.4103755950927734,
+  "whisper": {
+    "text": "",
+    "segments": [],
+    "language": "es"
+  }
+}

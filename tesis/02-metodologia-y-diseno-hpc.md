@@ -6,13 +6,16 @@ El diseño metodológico combina revisión filosófica, datos públicos, modelac
 
 La investigación se encuentra en fase `baseline_proxy`. Esto significa que existe un pipeline funcional, datos públicos descargados, modelos derivados, simulaciones y salidas visuales; pero todavía no existe una jornada de campo suficiente para recalibrar el modelo. Esta distinción es metodológicamente central: todo resultado debe leerse como exploratorio hasta que `field_calibration_delta.json` deje de estar en `pending_no_capture`.
 
-El método se organiza en cinco momentos:
+El método se organiza en seis momentos:
 
 1. **Construcción del caso:** delimitación del corredor y selección de nodos, aristas, perfiles y escenarios horarios.
 2. **Ingesta y derivación de datos:** descarga de fuentes públicas, normalización y generación de indicadores urbanos.
 3. **Modelación:** construcción del grafo, agentes, campos ambientales, escenarios y métricas de trayectoria.
 4. **Análisis:** cálculo de incertidumbre, estrés, entropía, desigualdad relativa y patrones de concentración.
-5. **Validación pendiente:** diseño de captura de campo para recalibrar conteos, permanencia, percepción y condiciones ambientales.
+5. **Trabajo de campo y captura multimodal:** observación situada en los nueve nodos y cuatro franjas, encuestas breves de seguridad percibida, entrevistas semiestructuradas sobre habitabilidad declarada, registro fotográfico, recorridos POV y videos de saturación.
+6. **Triangulación y detección de colapso:** cruce de criminalidad MEData, encuestas, transcripciones de entrevistas y procesamiento de video en torre HPC con GPU, para producir la matriz de colapso fenomenológico (`collapse_matrix.json`) por nodo y franja.
+
+El estado de cada momento se declara en su sección correspondiente. Al cierre de redacción de este documento, los momentos 1 a 4 están ejecutados, el momento 5 fue completado en campo y se encuentra en fase de ingesta, y el momento 6 está en preparación: las transcripciones las realiza un colaborador externo y los videos serán procesados con GPU en la torre HPC del autor.
 
 ## 2.2. Delimitación espacial y unidades de análisis
 
@@ -61,8 +64,12 @@ La traducción entre teoría y modelo requiere declarar variables, unidades y l�
 | Iluminación | lux nocturno | no capturado | `pending_field` | falta medición por nodo |
 | Accesibilidad | nodos/aristas | grafo del caso | funcional | requiere validación de obstáculos reales |
 | Libertad de ruta | entropía/divergencia | simulación | exploratorio | depende de supuestos de agentes |
+| Criminalidad objetiva (C1) | hurtos por mes en comuna 10 | MEData criminalidad | público y trazable | desfase temporal, escala comuna, no por nodo |
+| Seguridad percibida situada (C2) | `security_score` 1–5 | encuesta breve en campo | en ingesta | dependiente de hora, observador y muestreo |
+| Habitabilidad declarada (C3) | códigos `HABITABLE/EVITABLE/...` | entrevistas semiestructuradas | en transcripción (colaborador) | autoselección, deseabilidad social |
+| Saturación material (C4) | densidad por frame, conteo automático | videos POV / time-lapse | en cola para torre HPC | encuadre, recorte, ausencia de afecto |
 
-Esta tabla cumple una función de control: impide presentar todas las variables con el mismo grado de evidencia.
+Esta tabla cumple una función de control: impide presentar todas las variables con el mismo grado de evidencia. Las cuatro últimas filas (C1–C4) son los insumos del cruce que produce la matriz de colapso fenomenológico discutida más abajo.
 
 ## 2.5. Modelo M-MASS y arquitectura de capas
 
@@ -127,7 +134,22 @@ $$ D_{KL}(P \parallel Q) = \sum_{x \in \mathcal{X}} P(x) \log \left( \frac{P(x)}
 
 Estas métricas no deben confundirse con juicios normativos automáticos. Un valor alto puede indicar restricción, diversidad, ruido o mala especificación, según el diseño del experimento. La interpretación exige contraste con observación y teoría.
 
-## 2.10. Reproducibilidad computacional
+## 2.9.1. Operacionalización del colapso fenomenológico
+
+Las métricas anteriores describen comportamiento simulado. El colapso fenomenológico, en cambio, es una condición observable en la franja-evento (nodo × ventana horaria) y se construye por triangulación de cuatro fuentes empíricas independientes. La definición completa, con sus salvaguardas y supuestos de falsabilidad, se encuentra en `tesis/pendientes/colapso-fenomenologico.md`; aquí se resume su forma operacional.
+
+Para cada celda $(n, w)$ —donde $n$ es uno de los nueve nodos del modelo y $w$ una de las cuatro franjas (`peak_am`, `midday`, `peak_pm`, `night`)— se evalúan cuatro condiciones binarias:
+
+- **C1 — Carga objetiva de criminalidad.** Se cumple si la tasa estimada de hurto a persona en comuna 10, distribuida hacia la franja $w$ mediante un supuesto distribucional documentado, supera el percentil 75 de la serie pública 2016–2023 (`investigacion/data/raw/medata_criminalidad_csv.csv`).
+- **C2 — Seguridad percibida deprimida.** Se cumple si el promedio del `security_score` recogido en `field_counts_*.csv` para esa celda es ≤ 2/5 o si las notas de campo registran `RIESGO_PERCIBIDO` como código dominante.
+- **C3 — Habitabilidad declarada negativa.** Se cumple si las transcripciones de entrevistas codifican mayoritariamente `EVITABLE`, `NO_DESEABLE` o `DIFICIL_DE_VIVIR` por encima de `HABITABLE`/`DESEABLE` en esa franja. Las salvaguardas para el manejo de testimonios —protocolo de entrevista con preguntas neutras antes de términos cargados, registro literal de la formulación, código `AMBIVALENTE` reservado para no forzar respuestas binarias, no tratar la convicción subjetiva como prueba— derivan de la teoría reconstructiva de la memoria desarrollada en el anexo A (especialmente §A.13.2 sobre el *misinformation effect* de Loftus 1993 y §A.17.2).
+- **C4 — Saturación material.** Se cumple si los videos POV / time-lapse procesados en la torre HPC reportan densidad por frame y conteo automático por encima del percentil 75 de la celda.
+
+La regla de decisión es deliberadamente exigente: la celda se reporta como **colapso fenomenológico** solo si **al menos tres de las cuatro condiciones** se cumplen simultáneamente. Si se cumplen una o dos, se reporta como **fricción acumulada**. Si no se cumple ninguna, se reporta como **flujo ordinario**. Esta regla impide que un dato suelto se convierta en diagnóstico y obliga a la triangulación.
+
+La salida de este cruce es la matriz `collapse_matrix.json` con 36 celdas (9 nodos × 4 franjas) y un campo de estado por celda. Esta matriz no existe al cierre de redacción de este capítulo; se construirá cuando termine la ingesta de transcripciones y el procesamiento de video.
+
+
 
 La reproducibilidad se apoya en tres elementos ya presentes en el repositorio:
 
@@ -148,28 +170,31 @@ Estos elementos pueden resolverse en el computador antes del trabajo de campo y 
 
 ## 2.11. Validación, sensibilidad y falsabilidad
 
-El modelo debe someterse a tres tipos de prueba:
+El modelo debe someterse a cuatro tipos de prueba:
 
 1. **Validación interna:** comprobar que los scripts producen salidas consistentes, que las métricas se calculan correctamente y que no hay errores de pipeline.
 2. **Sensibilidad:** variar parámetros clave para observar cuánto cambian velocidad, entropía, concentración de rutas y desigualdad entre perfiles.
 3. **Validación empírica:** comparar salidas con conteos, permanencias, mediciones y encuestas de campo.
+4. **Triangulación de colapso:** cruzar las cuatro fuentes empíricas independientes (criminalidad, encuesta, entrevista, video) sobre la malla nodo × franja para producir y auditar `collapse_matrix.json`. Esta prueba no busca confirmar la simulación; busca decidir, celda por celda, si la convergencia mínima de tres condiciones se sostiene.
 
-La validación interna y parte de la sensibilidad pueden hacerse ya en PC. La validación empírica no. Por tanto, el modelo debe ser falsable: si los conteos reales muestran flujos distintos, si la percepción de seguridad contradice los proxies o si el ruido puntual no corresponde a los campos simulados, el modelo debe recalibrarse.
+La validación interna y parte de la sensibilidad pueden hacerse ya en PC. La validación empírica y la triangulación requieren ingesta de campo y procesamiento de video en la torre HPC con GPU. Por tanto, el modelo debe ser falsable: si los conteos reales muestran flujos distintos, si la percepción de seguridad contradice los proxies, si el ruido puntual no corresponde a los campos simulados, o si las cuatro fuentes del colapso no convergen en ninguna celda, el modelo y la categoría deben recalibrarse o retraerse.
 
 Esta validación no debe entenderse como simple confirmación numérica. En términos epistemológicos, la fase de campo debe producir conocimiento situado: cada conteo, medición o encuesta depende de hora, posición, instrumento, observador y protocolo. Esta cautela sigue la advertencia de Haraway (1995): no existe una mirada neutral “desde ninguna parte”; hay perspectivas parciales que deben declararse para ser discutibles.
 
 ## 2.12. Consideraciones éticas
 
-Aunque la fase actual usa datos públicos y simulación, la agenda de campo introduce obligaciones éticas. Las encuestas de seguridad percibida y observaciones de permanencia deben evitar recoger datos personales identificables. Las fotografías, si se usan, deben centrarse en obstáculos, condiciones espaciales o flujos agregados, no en exposición de individuos vulnerables. Cualquier mención a habitantes de calle, informalidad o inseguridad debe tratarse como categoría urbana agregada, no como estigma de grupos.
+La fase de campo y la fase de ingesta multimedia introducen obligaciones éticas adicionales. Las encuestas de seguridad percibida y las entrevistas sobre habitabilidad declarada deben evitar recoger datos personales identificables. Las fotografías y los videos POV deben centrarse en obstáculos, flujos agregados, geometría y condiciones espaciales, no en rostros ni en exposición de individuos vulnerables. Cualquier mención a habitantes de calle, informalidad o inseguridad debe tratarse como categoría urbana agregada, no como estigma de grupos.
 
-El protocolo de campo debe incluir:
+El protocolo de campo y de procesamiento debe incluir:
 
-- consentimiento verbal o escrito para encuestas breves;
+- consentimiento verbal o escrito para encuestas y entrevistas;
 - anonimización de observadores y participantes;
-- no registro de rostros identificables sin autorización;
-- almacenamiento seguro de archivos;
-- uso académico limitado de los datos;
-- posibilidad de no responder sin consecuencia alguna.
+- no registro de rostros identificables sin autorización; cuando aparezcan en video, deben difuminarse antes del procesamiento o mantenerse fuera del entregable público;
+- almacenamiento seguro de archivos (videos, fotos y audios crudos no publicables);
+- uso académico limitado de los datos y supresión de fragmentos sensibles antes de cualquier difusión;
+- posibilidad de no responder ni autorizar uso, sin consecuencia alguna;
+- transcripción anonimizada por colaborador externo, bajo acuerdo de confidencialidad;
+- procesamiento de video en torre HPC local del autor, sin envío a servicios de terceros.
 
 ## 2.13. Diagrama del método
 
@@ -185,10 +210,17 @@ graph TD
     F --> G
     G --> H[Resultados baseline_proxy]
     H --> I{Validación de campo}
-    I -->|pendiente| J[pending_no_capture]
-    I -->|futuro| K[Modelo recalibrado]
+    I -->|en ingesta| J[Conteos, encuestas, fotos, GeoJSON]
+    I -->|en transcripción| K[Entrevistas: habitabilidad declarada]
+    I -->|en torre HPC| L[Videos POV: saturación material]
+    M[Criminalidad MEData] --> N{Triangulación de colapso}
+    J --> N
+    K --> N
+    L --> N
+    N --> O[collapse_matrix.json: nodo x franja]
+    O --> P[Modelo recalibrado y discusión final]
 ```
 
 ## 2.14. Balance metodológico
 
-El método es suficientemente robusto para una fase exploratoria: integra fuentes públicas, variables urbanas, simulación y lectura filosófica. Pero todavía no es suficiente para una afirmación empírica fuerte sobre el corredor. La fortaleza del trabajo está en declarar esta diferencia y convertirla en plan: primero baseline trazable, luego campo, después recalibración y discusión final.
+El método es suficientemente robusto para una fase exploratoria: integra fuentes públicas, variables urbanas, simulación, lectura filosófica y un protocolo de campo cumplido. Lo que aún no puede sostenerse es la afirmación empírica fuerte sobre el corredor, porque el cruce de las cuatro fuentes del colapso (criminalidad, encuesta, entrevista, video) está en fase de ingesta. La fortaleza del trabajo está en declarar esta diferencia y convertirla en plan: primero baseline trazable, después campo realizado, ahora ingesta y triangulación, y solo entonces discusión final con la matriz de colapso a la vista.

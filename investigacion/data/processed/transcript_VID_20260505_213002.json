@@ -1,0 +1,250 @@
+{
+  "video": "VID_20260505_213002.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": "2026-05-05T21:30:02-05:00",
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 18.487773895263672,
+  "whisper": {
+    "text": " Vamos a hacer que esto jeje sei que vive con los a la lista de promotional que es lo posible ¡Suscríbete!",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 0.0,
+        "end": 13.02,
+        "text": " Vamos a hacer que esto jeje sei que vive con los",
+        "tokens": [
+          50364,
+          10894,
+          257,
+          6720,
+          631,
+          7433,
+          1506,
+          2884,
+          10842,
+          631,
+          28927,
+          416,
+          1750,
+          50769
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -4.775944301060268,
+        "compression_ratio": 1.1134020618556701,
+        "no_speech_prob": 0.24498942494392395,
+        "words": [
+          {
+            "word": " Vamos",
+            "start": 0.0,
+            "end": 0.92,
+            "probability": 0.0027384813874959946
+          },
+          {
+            "word": " a",
+            "start": 0.92,
+            "end": 1.1,
+            "probability": 0.738753080368042
+          },
+          {
+            "word": " hacer",
+            "start": 1.1,
+            "end": 1.18,
+            "probability": 0.21341678500175476
+          },
+          {
+            "word": " que",
+            "start": 1.18,
+            "end": 1.3,
+            "probability": 0.036415547132492065
+          },
+          {
+            "word": " esto",
+            "start": 1.3,
+            "end": 1.48,
+            "probability": 0.11762575060129166
+          },
+          {
+            "word": " jeje",
+            "start": 1.48,
+            "end": 1.74,
+            "probability": 0.4782688037666958
+          },
+          {
+            "word": " sei",
+            "start": 1.74,
+            "end": 3.04,
+            "probability": 4.847562195209321e-06
+          },
+          {
+            "word": " que",
+            "start": 3.04,
+            "end": 3.24,
+            "probability": 0.24135705828666687
+          },
+          {
+            "word": " vive",
+            "start": 3.24,
+            "end": 4.32,
+            "probability": 1.8521743186283857e-05
+          },
+          {
+            "word": " con",
+            "start": 4.32,
+            "end": 9.28,
+            "probability": 0.03405742719769478
+          },
+          {
+            "word": " los",
+            "start": 9.28,
+            "end": 13.02,
+            "probability": 0.03979439660906792
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "seek": 0,
+        "start": 13.02,
+        "end": 13.02,
+        "text": "",
+        "tokens": [],
+        "temperature": 1.0,
+        "avg_logprob": -4.775944301060268,
+        "compression_ratio": 1.1134020618556701,
+        "no_speech_prob": 0.24498942494392395,
+        "words": []
+      },
+      {
+        "id": 2,
+        "seek": 0,
+        "start": 13.02,
+        "end": 14.48,
+        "text": " a la lista de promotional",
+        "tokens": [
+          51329,
+          257,
+          635,
+          27764,
+          368,
+          41790,
+          51525
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -4.775944301060268,
+        "compression_ratio": 1.1134020618556701,
+        "no_speech_prob": 0.24498942494392395,
+        "words": [
+          {
+            "word": " a",
+            "start": 13.02,
+            "end": 13.2,
+            "probability": 0.008611452765762806
+          },
+          {
+            "word": " la",
+            "start": 13.2,
+            "end": 14.48,
+            "probability": 0.10081370174884796
+          },
+          {
+            "word": " lista",
+            "start": 14.48,
+            "end": 14.48,
+            "probability": 0.002986926818266511
+          },
+          {
+            "word": " de",
+            "start": 14.48,
+            "end": 14.48,
+            "probability": 0.20983178913593292
+          },
+          {
+            "word": " promotional",
+            "start": 14.48,
+            "end": 14.48,
+            "probability": 1.9758121197810397e-05
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "seek": 0,
+        "start": 14.48,
+        "end": 15.38,
+        "text": " que es lo posible",
+        "tokens": [
+          51547,
+          631,
+          785,
+          450,
+          26644,
+          51821
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -4.775944301060268,
+        "compression_ratio": 1.1134020618556701,
+        "no_speech_prob": 0.24498942494392395,
+        "words": [
+          {
+            "word": " que",
+            "start": 14.48,
+            "end": 15.0,
+            "probability": 0.026946833357214928
+          },
+          {
+            "word": " es",
+            "start": 15.0,
+            "end": 15.04,
+            "probability": 0.04255225136876106
+          },
+          {
+            "word": " lo",
+            "start": 15.04,
+            "end": 15.06,
+            "probability": 0.03361840546131134
+          },
+          {
+            "word": " posible",
+            "start": 15.06,
+            "end": 15.38,
+            "probability": 0.0011463218834251165
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "seek": 1538,
+        "start": 15.38,
+        "end": 15.7,
+        "text": " ¡Suscríbete!",
+        "tokens": [
+          50364,
+          6514,
+          50,
+          301,
+          10757,
+          49662,
+          3498,
+          0,
+          50414
+        ],
+        "temperature": 0.0,
+        "avg_logprob": -0.9570344924926758,
+        "compression_ratio": 0.6363636363636364,
+        "no_speech_prob": 0.8362223505973816,
+        "words": [
+          {
+            "word": " ¡Suscríbete!",
+            "start": 15.38,
+            "end": 15.7,
+            "probability": 0.6008092164993286
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}

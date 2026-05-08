@@ -1,0 +1,150 @@
+{
+  "summary": {
+    "video": "VID_20260505_082857885.mp4",
+    "node": "san_antonio_metro",
+    "window": "peak_am",
+    "captured_at": null,
+    "width": 1920,
+    "height": 1080,
+    "duration_s": 51.92172222222222,
+    "fps": 30.16078691106591,
+    "frames_total": 1566,
+    "frames_sampled": 2,
+    "persons_unique": 5,
+    "persons_p50": 0.5,
+    "persons_p75": 0.75,
+    "persons_p90": 0.9,
+    "persons_max": 1,
+    "vehicles_p75": 0.0,
+    "bicycles_p75": 0.0,
+    "dwell_seconds_median": 0.06631126720590322,
+    "dwell_seconds_p75": 0.06631126720590322,
+    "apparent_speed_px_p50": 126.78560755642846,
+    "brightness_mean": 115.38025318287038,
+    "brightness_std": 0.3445515046296279,
+    "contrast_mean": 55.988519797836055,
+    "saturation_mean": 44.000985484182095,
+    "edge_density_mean": 21.699410445601853,
+    "audio": {
+      "sample_rate": 16000,
+      "duration_s": 1.0453125,
+      "rms_dbfs_p50": -35.16783905029297,
+      "rms_dbfs_p75": -35.16783905029297,
+      "rms_dbfs_p90": -35.16783905029297,
+      "rms_dbfs_max": -35.16783905029297,
+      "silence_ratio": 0.0
+    },
+    "saturation_index": 0.2909525193579403,
+    "worker": "worker_2060",
+    "lot": "secondary",
+    "yolo_model": "yolo11s.pt",
+    "processed_at": "2026-05-07T23:30:11+0000",
+    "duration_processing_s": 0.26346921920776367,
+    "node_assignment_method": "temporal_correlation_with_photo",
+    "node_assignment_confidence": "medium",
+    "node_assignment_delta_seconds": 1277.0,
+    "node_assignment_reference_photo": "IMG_20260505_085013122.jpg"
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_s": 0.0,
+      "counts": {
+        "person": 1,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.8990103602409363,
+      "brightness": 115.7248046875,
+      "contrast": 56.211751734566356,
+      "saturation": 44.91774064429012,
+      "edge_density": 22.080078125
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_s": 0.16577816801475806,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 115.03570167824074,
+      "contrast": 55.765287861105755,
+      "saturation": 43.08423032407408,
+      "edge_density": 21.318742766203705
+    }
+  ],
+  "tracks": [
+    {
+      "track_id": 28,
+      "class_name": "person",
+      "frames_seen": 3,
+      "duration_s": 0.13262253441180644,
+      "distance_px": 112.79117202758789,
+      "speed_px_per_s": 850.4676262433641,
+      "bbox_area_mean": 336499.03125
+    },
+    {
+      "track_id": 39,
+      "class_name": "bicycle",
+      "frames_seen": 2,
+      "duration_s": 0.06631126720590322,
+      "distance_px": 42.67374801635742,
+      "speed_px_per_s": 643.5369103089389,
+      "bbox_area_mean": 26995.078125
+    },
+    {
+      "track_id": 40,
+      "class_name": "person",
+      "frames_seen": 2,
+      "duration_s": 0.06631126720590322,
+      "distance_px": 52.98601531982422,
+      "speed_px_per_s": 799.049958663846,
+      "bbox_area_mean": 22617.62109375
+    },
+    {
+      "track_id": 41,
+      "class_name": "person",
+      "frames_seen": 2,
+      "duration_s": 0.06631126720590322,
+      "distance_px": 4.213037014007568,
+      "speed_px_per_s": 63.53425581395784,
+      "bbox_area_mean": 22028.296875
+    },
+    {
+      "track_id": 42,
+      "class_name": "person",
+      "frames_seen": 2,
+      "duration_s": 0.06631126720590322,
+      "distance_px": 8.40731430053711,
+      "speed_px_per_s": 126.78560755642846,
+      "bbox_area_mean": 5580.390625
+    },
+    {
+      "track_id": 47,
+      "class_name": "person",
+      "frames_seen": 1,
+      "duration_s": 0.0,
+      "distance_px": 0.0,
+      "speed_px_per_s": 0.0,
+      "bbox_area_mean": 4433.630859375
+    }
+  ]
+}

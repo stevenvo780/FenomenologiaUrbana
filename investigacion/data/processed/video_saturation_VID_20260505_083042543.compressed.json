@@ -1,0 +1,168 @@
+{
+  "summary": {
+    "video": "VID_20260505_083042543.compressed.mp4",
+    "node": "san_antonio_metro",
+    "window": "peak_am",
+    "captured_at": null,
+    "width": 1920,
+    "height": 1080,
+    "duration_s": 1003.9170666666666,
+    "fps": 30.141932042726506,
+    "frames_total": 30260,
+    "frames_sampled": 4,
+    "persons_unique": 0,
+    "persons_p50": 0.0,
+    "persons_p75": 0.25,
+    "persons_p90": 0.7000000000000002,
+    "persons_max": 1,
+    "vehicles_p75": 2.25,
+    "bicycles_p75": 0.0,
+    "dwell_seconds_median": 0.0,
+    "dwell_seconds_p75": 0.0,
+    "apparent_speed_px_p50": 0.0,
+    "brightness_mean": 112.51578968942901,
+    "brightness_std": 0.8343837447570809,
+    "contrast_mean": 66.55034825049795,
+    "saturation_mean": 50.17354359567902,
+    "edge_density_mean": 18.55101634837963,
+    "audio": null,
+    "saturation_index": 0.18967683015046297,
+    "worker": "worker_2060",
+    "lot": "secondary",
+    "yolo_model": "yolo11s.pt",
+    "processed_at": "2026-05-07T23:50:43+0000",
+    "duration_processing_s": 0.305523157119751,
+    "node_assignment_method": "temporal_correlation_with_photo",
+    "node_assignment_confidence": "medium",
+    "node_assignment_delta_seconds": 1172.0,
+    "node_assignment_reference_photo": "IMG_20260505_085013122.jpg"
+  },
+  "frames": [
+    {
+      "frame_idx": 0,
+      "timestamp_s": 0.0,
+      "counts": {
+        "person": 1,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 2,
+        "bus": 1,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.5529696345329285,
+      "brightness": 112.96521412037038,
+      "contrast": 67.0624601930294,
+      "saturation": 50.311137152777775,
+      "edge_density": 19.80357349537037
+    },
+    {
+      "frame_idx": 5,
+      "timestamp_s": 0.16588186825291915,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 111.3969034529321,
+      "contrast": 67.20319490068684,
+      "saturation": 50.06532455632716,
+      "edge_density": 18.80870949074074
+    },
+    {
+      "frame_idx": 10,
+      "timestamp_s": 0.3317637365058383,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 1,
+        "bus": 1,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 112.10660976080247,
+      "contrast": 66.18138832330861,
+      "saturation": 50.16158420138889,
+      "edge_density": 17.95797164351852
+    },
+    {
+      "frame_idx": 15,
+      "timestamp_s": 0.4976456047587574,
+      "counts": {
+        "person": 0,
+        "bicycle": 0,
+        "car": 0,
+        "motorcycle": 0,
+        "bus": 0,
+        "truck": 0,
+        "dog": 0,
+        "backpack": 0,
+        "handbag": 0,
+        "suitcase": 0,
+        "cell_phone": 0
+      },
+      "persons_conf_mean": 0.0,
+      "brightness": 113.59443142361111,
+      "contrast": 65.7543495849669,
+      "saturation": 50.15612847222222,
+      "edge_density": 17.63381076388889
+    }
+  ],
+  "tracks": [
+    {
+      "track_id": 869,
+      "class_name": "bus",
+      "frames_seen": 8,
+      "duration_s": 0.46446923110817356,
+      "distance_px": 282.6346015930176,
+      "speed_px_per_s": 608.5109252957012,
+      "bbox_area_mean": 484622.34375
+    },
+    {
+      "track_id": 871,
+      "class_name": "motorcycle",
+      "frames_seen": 3,
+      "duration_s": 0.19905824190350296,
+      "distance_px": 54.67710876464844,
+      "speed_px_per_s": 274.6789494461332,
+      "bbox_area_mean": 14759.44921875
+    },
+    {
+      "track_id": 879,
+      "class_name": "motorcycle",
+      "frames_seen": 4,
+      "duration_s": 0.19905824190350296,
+      "distance_px": 33.41307020187378,
+      "speed_px_per_s": 167.85574856062158,
+      "bbox_area_mean": 20498.58984375
+    },
+    {
+      "track_id": 880,
+      "class_name": "car",
+      "frames_seen": 2,
+      "duration_s": 0.06635274730116765,
+      "distance_px": 7.000044822692871,
+      "speed_px_per_s": 105.49743767082403,
+      "bbox_area_mean": 8334.3251953125
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "video": "VID_20260505_112136.compressed.mp4",
+  "node": null,
+  "window": null,
+  "captured_at": null,
+  "language": "es",
+  "task": "transcribe",
+  "duration_processing_s": 5.02123761177063,
+  "whisper": {
+    "text": " cinco",
+    "segments": [
+      {
+        "id": 0,
+        "seek": 0,
+        "start": 6.6,
+        "end": 7.2,
+        "text": " cinco",
+        "tokens": [
+          50364,
+          21350,
+          50724
+        ],
+        "temperature": 1.0,
+        "avg_logprob": -4.328324794769287,
+        "compression_ratio": 0.38461538461538464,
+        "no_speech_prob": 0.5664258599281311,
+        "words": [
+          {
+            "word": " cinco",
+            "start": 6.6,
+            "end": 7.3,
+            "probability": 3.785720036830753e-05
+          }
+        ]
+      }
+    ],
+    "language": "es"
+  }
+}
