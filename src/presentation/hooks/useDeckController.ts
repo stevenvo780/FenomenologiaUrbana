@@ -54,9 +54,8 @@ export function useDeckController(data: Payload): DeckController {
     const onKeyDown = (event: KeyboardEvent) => {
       const target = event.target
       const isTyping =
-        target instanceof HTMLInputElement ||
-        target instanceof HTMLTextAreaElement ||
-        target instanceof HTMLSelectElement
+        target instanceof Element &&
+        Boolean(target.closest('input, textarea, select, button, a[href]'))
 
       if (modal || isTyping) {
         return
